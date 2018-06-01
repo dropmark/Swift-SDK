@@ -1,0 +1,21 @@
+use_frameworks!
+
+target 'iOS Demo' do
+  pod 'DropmarkSDK', :path => '../'
+  pod 'AlamofireImage', '~> 3.3'
+
+  target 'DropmarkSDK_Tests' do
+    inherit! :search_paths
+  end
+  
+end
+
+target 'macOS Demo' do
+    pod 'DropmarkSDK', :path => '../'
+    pod 'AlamofireImage', '~> 3.3'
+end
+
+target 'tvOS Demo' do
+    pod 'DropmarkSDK', :path => '../'
+    pod 'AlamofireImage', '~> 3.3'
+end

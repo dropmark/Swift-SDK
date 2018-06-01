@@ -1,0 +1,6 @@
+framework module DropmarkSDK {
+  umbrella header "DropmarkSDK-tvOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
