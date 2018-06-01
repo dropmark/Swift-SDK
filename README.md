@@ -56,7 +56,7 @@ Image, Video, Audio, and Other contain files, and are convertible from Apple UTI
 
 ## Migration
 
-### Version 0.1
+### Version 0.1.0
 
 `DropmarkSDK` supports iOS 10.0, macOS 10.10, tvOS 11.0, Swift 4, and Xcode 9.0.
 
