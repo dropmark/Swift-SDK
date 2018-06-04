@@ -565,7 +565,7 @@
 		01D4EB71683ACEAB70AA39264DBBC2B9 /* UTIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UTIKit.swift; sourceTree = "<group>"; };
 		021648929B58BA6452070B8C9ACCFFDF /* Pods-iOS Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		03559CEACA104CF322ABAD53EFB27E57 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		03C7760B92C63FB9DF21C766294AA57B /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		03C7760B92C63FB9DF21C766294AA57B /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = "Alamofire-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04CB6CBACB3C0A306057FAB5F5CE726D /* PromiseKit-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PromiseKit-iOS-umbrella.h"; sourceTree = "<group>"; };
 		061B521CDD73CE921B818027A629EFBD /* UIView+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Promise.swift"; path = "Extensions/UIKit/Sources/UIView+Promise.swift"; sourceTree = "<group>"; };
 		0740C573CBAEDA3AD9BC858709F06FE4 /* DataRequest+PromiseKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DataRequest+PromiseKit.swift"; sourceTree = "<group>"; };
@@ -581,11 +581,11 @@
 		0CBF2456FAB0139A01D14C1C93A8DB20 /* AlamofireImage-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "AlamofireImage-tvOS.modulemap"; path = "../AlamofireImage-tvOS/AlamofireImage-tvOS.modulemap"; sourceTree = "<group>"; };
 		0E2222B2549DFD15AE764F7051704125 /* DropmarkSDK-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropmarkSDK-iOS-umbrella.h"; sourceTree = "<group>"; };
 		0F36B6C33322E4ED850BA9C28720DD31 /* firstly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = firstly.swift; path = Sources/firstly.swift; sourceTree = "<group>"; };
-		12AE5384553789A1F3DE1D319BCCF49F /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		12AE5384553789A1F3DE1D319BCCF49F /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AlamofireImage.framework; path = "AlamofireImage-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		12FCE4ECF022EA568D4153265F746C3B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../DropmarkSDK-tvOS/Info.plist"; sourceTree = "<group>"; };
-		130C9D00A20FC88C6671D2FF58CA3956 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		130C9D00A20FC88C6671D2FF58CA3956 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PromiseKit.framework; path = "PromiseKit.root-CorePromise-Foundation.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1363003C0CD79FD284CDE64273F97F8D /* PagingGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PagingGenerator.swift; sourceTree = "<group>"; };
-		13DFCADFB3A61D9AD4320EE6E819012F /* Pods_iOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13DFCADFB3A61D9AD4320EE6E819012F /* Pods_iOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_iOS_Demo.framework; path = "Pods-iOS Demo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13EE55CFBF26FF71FBB01CC78DA8789A /* Pods-tvOS Demo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tvOS Demo-resources.sh"; sourceTree = "<group>"; };
 		14196AF75046CFE773CA4EA70351715F /* Alamofire-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-iOS-dummy.m"; sourceTree = "<group>"; };
 		145FD5346BFCDB56A1441EFF8EE31DE8 /* Alamofire-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Alamofire-tvOS-umbrella.h"; path = "../Alamofire-tvOS/Alamofire-tvOS-umbrella.h"; sourceTree = "<group>"; };
@@ -600,7 +600,7 @@
 		1CE2F710DE83B1FCAC1200D5098131AB /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
 		1D5EF0DCB8EFEB7673767D29EF8DAC25 /* String+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		1F31818E41782232973A72378428E524 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		20AD505597EE018733D3468CF5CCA425 /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20AD505597EE018733D3468CF5CCA425 /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeychainSwift.framework; path = "KeychainSwift-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20E8EEE8BF5962AE1EDC19C1C0D4B274 /* NSObject+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSObject+Promise.swift"; path = "Extensions/Foundation/Sources/NSObject+Promise.swift"; sourceTree = "<group>"; };
 		232B1B90DC81A0A8B1B9C55FEC58FF03 /* Alamofire-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Alamofire-tvOS-dummy.m"; path = "../Alamofire-tvOS/Alamofire-tvOS-dummy.m"; sourceTree = "<group>"; };
 		23EA7802B6957F336214DBEFF3C98FA2 /* AlamofireImage-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "AlamofireImage-macOS.modulemap"; path = "../AlamofireImage-macOS/AlamofireImage-macOS.modulemap"; sourceTree = "<group>"; };
@@ -624,7 +624,7 @@
 		3DA86AD7657E05F98E9C06DF90F1938C /* Pods-DropmarkSDK_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DropmarkSDK_Tests-resources.sh"; sourceTree = "<group>"; };
 		3DAF37E54989472CC452DC73D19DDF64 /* PromiseKit-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "PromiseKit-iOS.xcconfig"; sourceTree = "<group>"; };
 		3E43EDBB6B0C7D1715A602BDE8087029 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F831AA9E5D3FBF352DE9B8F43BC63A5 /* DropmarkSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DropmarkSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3F831AA9E5D3FBF352DE9B8F43BC63A5 /* DropmarkSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DropmarkSDK.framework; path = "DropmarkSDK-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F8727DA7125D51DBE50E74A3DAFDBA4 /* Thumbnails.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Thumbnails.swift; sourceTree = "<group>"; };
 		40268F6059B8C0C20F08DD0F13492FB7 /* UIImageView+AlamofireImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImageView+AlamofireImage.swift"; path = "Source/UIImageView+AlamofireImage.swift"; sourceTree = "<group>"; };
 		406DC801FE9750FDB1D9C02CF2E1A670 /* Alamofire-macOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Alamofire-macOS-prefix.pch"; path = "../Alamofire-macOS/Alamofire-macOS-prefix.pch"; sourceTree = "<group>"; };
@@ -644,7 +644,7 @@
 		4D1D955A4C63DDE94CF0DECFB842069D /* Pods-macOS Demo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-macOS Demo-resources.sh"; sourceTree = "<group>"; };
 		50D6DECB75A2F6E933B96B84279A5B3B /* UTIKit+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UTIKit+Extensions.swift"; sourceTree = "<group>"; };
 		511101A59745786782AD9998F12DD5CE /* AlamofireImage-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AlamofireImage-tvOS-umbrella.h"; path = "../AlamofireImage-tvOS/AlamofireImage-tvOS-umbrella.h"; sourceTree = "<group>"; };
-		5150B281FD51982FA3B82FC07D7A0C42 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5150B281FD51982FA3B82FC07D7A0C42 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = "Alamofire-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5225E91008AB19A5C48F4CDB834ED8C5 /* Serializers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Serializers.swift; sourceTree = "<group>"; };
 		523A0A40CCAF02A3CD31BB494C6C09CD /* Alamofire-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Alamofire-tvOS-prefix.pch"; path = "../Alamofire-tvOS/Alamofire-tvOS-prefix.pch"; sourceTree = "<group>"; };
 		5282F825CE4C2F5708F48D3075A37DCF /* PromiseKit-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "PromiseKit-tvOS-dummy.m"; path = "../PromiseKit-tvOS/PromiseKit-tvOS-dummy.m"; sourceTree = "<group>"; };
@@ -668,7 +668,7 @@
 		62ACC16E1A0B0DEF6D5B164260A83C4C /* DropmarkSDK-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DropmarkSDK-tvOS-umbrella.h"; path = "../DropmarkSDK-tvOS/DropmarkSDK-tvOS-umbrella.h"; sourceTree = "<group>"; };
 		633E10C55B60A509EDC6F3DC0DDFF41A /* KeychainSwift-tvOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "KeychainSwift-tvOS.xcconfig"; path = "../KeychainSwift-tvOS/KeychainSwift-tvOS.xcconfig"; sourceTree = "<group>"; };
 		644328245B958796F8A8703D41C880E7 /* KeychainSwift-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "KeychainSwift-macOS-dummy.m"; path = "../KeychainSwift-macOS/KeychainSwift-macOS-dummy.m"; sourceTree = "<group>"; };
-		666B7C4A4A11B7B5C7E16D4FC9A87F94 /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		666B7C4A4A11B7B5C7E16D4FC9A87F94 /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AlamofireImage.framework; path = "AlamofireImage-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		672005CB4EDBC719409F8D34483F527A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../DropmarkSDK-macOS/Info.plist"; sourceTree = "<group>"; };
 		68F72F2C7DF93BDC2F65BA9E54AA4277 /* NSURLSession+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSURLSession+Promise.swift"; path = "Extensions/Foundation/Sources/NSURLSession+Promise.swift"; sourceTree = "<group>"; };
 		6AB64D242FE55F7A53AB42816468F37E /* TegKeychainConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TegKeychainConstants.swift; path = Sources/TegKeychainConstants.swift; sourceTree = "<group>"; };
@@ -679,7 +679,7 @@
 		6F3DEB1B294B142C72E96F24EC3B60E2 /* AFIError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFIError.swift; path = Source/AFIError.swift; sourceTree = "<group>"; };
 		6FCEBA25EB283E18807594BCC3F89075 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7061FBD9A55A5C55029AE371CF993B7B /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
-		7291D45EEDE97DFD3C05F43C46BE681E /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7291D45EEDE97DFD3C05F43C46BE681E /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AlamofireImage.framework; path = "AlamofireImage-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7391212EDBFF724CDF8B2A9E62ACC40F /* Resolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resolver.swift; path = Sources/Resolver.swift; sourceTree = "<group>"; };
 		77A84A8E9A01DFC1FF6BBEDD846048C6 /* Pods-iOS Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Demo.release.xcconfig"; sourceTree = "<group>"; };
 		77B6C8FDEC789F406C0EC6FFA749D5EC /* Alamofire-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-iOS-prefix.pch"; sourceTree = "<group>"; };
@@ -695,7 +695,7 @@
 		810CC97E28DFF75D9B6BADDD47B111D5 /* Pods-iOS Demo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-iOS Demo.modulemap"; sourceTree = "<group>"; };
 		8137671094A6300CC55752EF4196C1B5 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
 		863F733EE2CE40B3AE5797AE78AA7B12 /* UIViewPropertyAnimator+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewPropertyAnimator+Promise.swift"; path = "Extensions/UIKit/Sources/UIViewPropertyAnimator+Promise.swift"; sourceTree = "<group>"; };
-		86A61E47A49EE887C847DA25DE6310D5 /* Pods_DropmarkSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DropmarkSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86A61E47A49EE887C847DA25DE6310D5 /* Pods_DropmarkSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DropmarkSDK_Tests.framework; path = "Pods-DropmarkSDK_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		87116EAD855137D3CBEA5D3D9F7BB9F3 /* KeychainSwiftAccessOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainSwiftAccessOptions.swift; path = Sources/KeychainSwiftAccessOptions.swift; sourceTree = "<group>"; };
 		8753E94349339FC4D50518E978D6BB41 /* Alamofire-iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Alamofire-iOS.xcconfig"; sourceTree = "<group>"; };
 		87CA643549C10A7BF82902494DDF32F7 /* Pods-DropmarkSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DropmarkSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -714,16 +714,16 @@
 		9035B4414269E56406D69D0DDB9E11B4 /* DropmarkSDK-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DropmarkSDK-tvOS-prefix.pch"; path = "../DropmarkSDK-tvOS/DropmarkSDK-tvOS-prefix.pch"; sourceTree = "<group>"; };
 		9084D7CBF9D449F0FB84845F5C76F3EC /* Pods-macOS Demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-macOS Demo-acknowledgements.plist"; sourceTree = "<group>"; };
 		90BFCEE313319DBF8545DE7318DBBDEB /* Pods-tvOS Demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tvOS Demo-dummy.m"; sourceTree = "<group>"; };
-		932D0A8D1BD7E7C49B08AA9200BA7370 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		932D0A8D1BD7E7C49B08AA9200BA7370 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PromiseKit.framework; path = "PromiseKit-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93A4FB5FDDAA93A4CBFE1843585F5E3D /* KeychainSwift.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KeychainSwift.swift; path = Sources/KeychainSwift.swift; sourceTree = "<group>"; };
 		95439352C7BA740F4CFED962CAEE1357 /* PromiseKit-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PromiseKit-iOS-prefix.pch"; sourceTree = "<group>"; };
 		972B5C10799AA2EA107A67CE16E90F14 /* KeychainSwift-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "KeychainSwift-tvOS-dummy.m"; path = "../KeychainSwift-tvOS/KeychainSwift-tvOS-dummy.m"; sourceTree = "<group>"; };
 		979AD267A2FD302410B3E842542CD6A4 /* Pods-macOS Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-macOS Demo.release.xcconfig"; sourceTree = "<group>"; };
 		9898B7013E0EB9A3F0DD691100888194 /* Process+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Process+Promise.swift"; path = "Extensions/Foundation/Sources/Process+Promise.swift"; sourceTree = "<group>"; };
 		99251B34521EE17B10F67106D431B155 /* AlamofireImage-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AlamofireImage-tvOS-prefix.pch"; path = "../AlamofireImage-tvOS/AlamofireImage-tvOS-prefix.pch"; sourceTree = "<group>"; };
-		9C072BD27EA3FE70AA81F242480D4EE6 /* DropmarkSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DropmarkSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CA0D80CC0677FBC7A376CDCBAF37942 /* DropmarkSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DropmarkSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C072BD27EA3FE70AA81F242480D4EE6 /* DropmarkSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DropmarkSDK.framework; path = "DropmarkSDK-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CA0D80CC0677FBC7A376CDCBAF37942 /* DropmarkSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DropmarkSDK.framework; path = "DropmarkSDK-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D131157D47E9B80EB0F0519648B511F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D39308093A9C3B7249AE64026001039 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		9D9F99F98738D4689583AC44B30AFFC0 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
@@ -734,7 +734,7 @@
 		A46B2DA16EDB07ADF08E108F1CD82771 /* PromiseKit-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "PromiseKit-tvOS.modulemap"; path = "../PromiseKit-tvOS/PromiseKit-tvOS.modulemap"; sourceTree = "<group>"; };
 		A65F93946D933AD35196C0F1F632CA4E /* AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AnyPromise.m; path = Sources/AnyPromise.m; sourceTree = "<group>"; };
 		A74DB4D8CC6EC3896384CF79B2F9DCB5 /* DropmarkSDK-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropmarkSDK-iOS-prefix.pch"; sourceTree = "<group>"; };
-		A774771B877F49FF42C71F32CE1A3878 /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A774771B877F49FF42C71F32CE1A3878 /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeychainSwift.framework; path = "KeychainSwift-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C148632507BD80D7E4A3C5B1C0BF81 /* Pods-tvOS Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tvOS Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		A9E9960796DF19A087CC34E046317A0A /* KeychainSwift-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "KeychainSwift-tvOS-prefix.pch"; path = "../KeychainSwift-tvOS/KeychainSwift-tvOS-prefix.pch"; sourceTree = "<group>"; };
 		A9FD32522582C944229DFCC1CFE5558E /* after.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = after.swift; path = Sources/after.swift; sourceTree = "<group>"; };
@@ -753,7 +753,7 @@
 		B4FEDCFE258C056EA752E7F80D7221C8 /* AlamofireImage-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "AlamofireImage-macOS-dummy.m"; path = "../AlamofireImage-macOS/AlamofireImage-macOS-dummy.m"; sourceTree = "<group>"; };
 		B70B1394874E2A2B8859442378D64AFE /* Pods-tvOS Demo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-tvOS Demo.modulemap"; sourceTree = "<group>"; };
 		B86150CBB4E8F63A5CBEBB17F6C0DEEB /* AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AnyPromise.h; path = Sources/AnyPromise.h; sourceTree = "<group>"; };
-		B883A0C9320A81EC3511377BF32BD8C7 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B883A0C9320A81EC3511377BF32BD8C7 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = "Alamofire-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD784AEF7A478A5D63F938439F263A2 /* after.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = after.m; path = Sources/after.m; sourceTree = "<group>"; };
 		BDA24E2286E1E3C2C9854DAFF77791B9 /* PromiseKit-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PromiseKit-iOS-dummy.m"; sourceTree = "<group>"; };
 		BE4510702F27F65236B5A9D33BA81091 /* Pods-macOS Demo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-macOS Demo.modulemap"; sourceTree = "<group>"; };
@@ -777,33 +777,33 @@
 		D5278F7ADB2447461A2030713C4F4D99 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		D52C39718BED98419AD74C9CD6F22241 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
 		D647A6C47B8530463DF7F06DE2CB5003 /* Keychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Keychain.swift; path = Source/Keychain.swift; sourceTree = "<group>"; };
-		D671EF0AA69CD068F1D2DA5A75CB1B52 /* Pods_tvOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvOS_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D671EF0AA69CD068F1D2DA5A75CB1B52 /* Pods_tvOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_tvOS_Demo.framework; path = "Pods-tvOS Demo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D780B158BEBD6F732FCC86A1DC6D92B1 /* Item.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		D9D96917C31FE6D69A536EDEBCA5A472 /* Pods-macOS Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-macOS Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		DB18F0C150B138F88E1DB971E237C5B8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../Alamofire-tvOS/Info.plist"; sourceTree = "<group>"; };
-		DB83A65AE79D19CF9203833602903569 /* Pods_macOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB83A65AE79D19CF9203833602903569 /* Pods_macOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_macOS_Demo.framework; path = "Pods-macOS Demo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD278259D69A606E24B5C6701009CAF7 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		DD81E39B451774A3CD1309E059EF0767 /* Collection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		DDE8D9E5736CE6D0E5069313BE7E8F11 /* CustomStringConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomStringConvertible.swift; path = Sources/CustomStringConvertible.swift; sourceTree = "<group>"; };
 		DEFD795D2530A9F5D9857B043C5691FF /* UIViewController+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+AnyPromise.m"; path = "Extensions/UIKit/Sources/UIViewController+AnyPromise.m"; sourceTree = "<group>"; };
 		DFD6E6049B85E79AC08CDE2C25FD9786 /* NSNotificationCenter+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSNotificationCenter+AnyPromise.h"; sourceTree = "<group>"; };
-		E0E359D32ACA42A8D0B7307E18DA6D8B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E0E359D32ACA42A8D0B7307E18DA6D8B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		E1CE3C9656335CE5166C3AC5BAE8BE08 /* Pods-macOS Demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-macOS Demo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E1D4380F4424F7AE97A01978B082AB6C /* ImageCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = Source/ImageCache.swift; sourceTree = "<group>"; };
 		E2222C85D049AFA2E7BA3A3E0358EF60 /* DropmarkSDK-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "DropmarkSDK-iOS.modulemap"; sourceTree = "<group>"; };
 		E2A971CDDC5A9500CA03274D9E749810 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		E487ACF0BD0D35DA8357CEAE6DDDB3B7 /* Pods-tvOS Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tvOS Demo.release.xcconfig"; sourceTree = "<group>"; };
-		E513897FECAB4692F9B4B6458427E15E /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E57BFD337DF047A14EBD7C7A268FC481 /* DropmarkSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = DropmarkSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		E513897FECAB4692F9B4B6458427E15E /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PromiseKit.framework; path = "PromiseKit-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E57BFD337DF047A14EBD7C7A268FC481 /* DropmarkSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = DropmarkSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E70BF3E650955871BE8648080E2086DE /* PMKUIKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKUIKit.h; path = Extensions/UIKit/Sources/PMKUIKit.h; sourceTree = "<group>"; };
 		E712C8299AF9BE34384188393F59E5BE /* PromiseKit.root-CorePromise-Foundation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PromiseKit.root-CorePromise-Foundation-prefix.pch"; path = "../PromiseKit.root-CorePromise-Foundation/PromiseKit.root-CorePromise-Foundation-prefix.pch"; sourceTree = "<group>"; };
 		E8122CA4B5CAFED9D559E23A907E1C45 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E8AD9203FAE72265FB424DFB25AF4E11 /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8AD9203FAE72265FB424DFB25AF4E11 /* KeychainSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KeychainSwift.framework; path = "KeychainSwift-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4D9F3D6084359FFC29BEA6BD766627 /* Router.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		EAE63D26551F3FEC30713FFA2B7D2776 /* UIButton+AlamofireImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIButton+AlamofireImage.swift"; path = "Source/UIButton+AlamofireImage.swift"; sourceTree = "<group>"; };
 		ECC0C39E735EA11872019715AD94FA92 /* Tag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		ED05C1F6219555628679769197BE0FBA /* Pods-iOS Demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Demo-acknowledgements.plist"; sourceTree = "<group>"; };
-		F16DB49D8DBA5C08BF057CAD545A0122 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F16DB49D8DBA5C08BF057CAD545A0122 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		F1B0EF4652ABB9D8DF60610245CFD78F /* UIImage+AlamofireImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIImage+AlamofireImage.swift"; path = "Source/UIImage+AlamofireImage.swift"; sourceTree = "<group>"; };
 		F3819C83F2CB0813DDFE3F64821DDF16 /* Pods-DropmarkSDK_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DropmarkSDK_Tests-umbrella.h"; sourceTree = "<group>"; };
 		F3D3D502630A23856CD5098618C8C617 /* Guarantee.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Guarantee.swift; path = Sources/Guarantee.swift; sourceTree = "<group>"; };
@@ -1013,6 +1013,7 @@
 				74F3EA8BC8D6787710C7088BA693F1C9 /* Support Files */,
 				2AF73D76F4B2EC7207E8336B542D9A57 /* UIKit */,
 			);
+			name = PromiseKit;
 			path = PromiseKit;
 			sourceTree = "<group>";
 		};
@@ -1145,6 +1146,7 @@
 				AF3BFDF7FE5C727FF1744484778CC065 /* Validation.swift */,
 				7BA853106EA771E80CCE75B5CDE8D880 /* Support Files */,
 			);
+			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1230,6 +1232,7 @@
 				40268F6059B8C0C20F08DD0F13492FB7 /* UIImageView+AlamofireImage.swift */,
 				F143D4539E1A6F8AB391C4227D396B4D /* Support Files */,
 			);
+			name = AlamofireImage;
 			path = AlamofireImage;
 			sourceTree = "<group>";
 		};
@@ -1252,6 +1255,7 @@
 				6AB64D242FE55F7A53AB42816468F37E /* TegKeychainConstants.swift */,
 				6AE092A6DA5EC06AFB14F9B75B3B6EC6 /* Support Files */,
 			);
+			name = KeychainSwift;
 			path = KeychainSwift;
 			sourceTree = "<group>";
 		};
@@ -2049,7 +2053,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 0930;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -2890,7 +2894,6 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
 				TVOS_DEPLOYMENT_TARGET = 11.3;
 			};
