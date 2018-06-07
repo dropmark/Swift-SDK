@@ -30,7 +30,7 @@ public enum Router: URLRequestConvertible {
     
     public static let baseURLString = "https://api.dropmark.com/v1"
     
-    public static var token: String {
+    public static var apiToken: String {
         let token = Bundle.keyForID("DropmarkAPIToken")
         assert(token != nil, "Dropmark API token was not loaded from keys.plist")
         return token!
@@ -394,24 +394,16 @@ public enum Router: URLRequestConvertible {
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         urlRequest.httpMethod = method.rawValue
         
-        // Set API token
-        urlRequest.setValue("\(Router.token)", forHTTPHeaderField: "X-API-Key")
-        
         switch self {
+            
         case .authenticate, .createUser:
-            break
+            Router.authenticateURLRequest(&urlRequest)
             
         default:
-            
-            guard let user = Keychain.user, let token = user.token else {
+            guard let user = Router.user else {
                 throw NetworkError.badCredentials
             }
-            
-            // Set user credentials
-            let plainString = "\(user.id!):\(token)" as NSString
-            let plainData = plainString.data(using: String.Encoding.utf8.rawValue)
-            let base64String = plainData?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
-            urlRequest.setValue("Basic \(base64String!)", forHTTPHeaderField: "Authorization")
+            Router.authenticateURLRequest(&urlRequest, withUser: user)
 
         }
         
@@ -601,6 +593,31 @@ public enum Router: URLRequestConvertible {
         }
         
         return urlRequest
+    }
+    
+    // MARK: Authentication Utlity
+    
+    /**
+     
+     Pass in a URL Request to add token authentication, and optionally authenticate a user.
+     
+     */
+    
+    public static func authenticateURLRequest(_ urlRequest: inout URLRequest, withUser user: User? = nil) {
+        
+        // Set API token
+        urlRequest.setValue("\(Router.apiToken)", forHTTPHeaderField: "X-API-Key")
+        
+        // Set user credentials, if necessary
+        if let userID = user?.id, let userToken = user?.token {
+            
+            let plainString = "\(userID):\(userToken)" as NSString
+            let plainData = plainString.data(using: String.Encoding.utf8.rawValue)
+            let base64String = plainData?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
+            urlRequest.setValue("Basic \(base64String!)", forHTTPHeaderField: "Authorization")
+            
+        }
+        
     }
     
 }
