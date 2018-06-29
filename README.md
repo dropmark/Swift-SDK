@@ -36,7 +36,7 @@ import DropmarkSDK
 To include the library as a dependency in another CocoaPod, reference the following line in your *podspec*.
 
 ```ruby
-s.dependency 'DropmarkSDK', '~> 0.1'
+s.dependency 'DropmarkSDK', '~> 0.2'
 ```
 
 ## Types
@@ -55,6 +55,9 @@ Dropmark supports the following item types:
 Image, Video, Audio, and Other contain files, and are convertible from Apple UTIs. Link, Text, and Color types contain their data in a string. Stack items are special, and behave as a parent to other items.
 
 ## Migration
+
+### Version 0.2.0
+A new naming scheme was introduced for object classes, prefixing each class name with "DK".
 
 ### Version 0.1.1
 
