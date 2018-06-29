@@ -29,7 +29,7 @@ import DropmarkSDK
 
 class ItemViewController: UIViewController {
     
-    var item: Item!
+    var item: DKItem!
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!

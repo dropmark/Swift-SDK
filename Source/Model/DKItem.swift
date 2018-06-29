@@ -25,8 +25,8 @@
 
 import Foundation
 
-@objc(Item)
-public final class Item: NSObject, NSCoding, ResponseObjectSerializable, ResponseListSerializable {
+@objc(DKItem)
+public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
     public var id : NSNumber!
     public var collectionID : NSNumber!
@@ -42,7 +42,7 @@ public final class Item: NSObject, NSCoding, ResponseObjectSerializable, Respons
     public var shareable : Bool?
     public var size : NSNumber?
     public var sort : NSNumber?
-    public var type : ItemType!
+    public var type : DKItemType!
     public var mime : String?
     public var latitude : NSNumber?
     public var longitude : NSNumber?
@@ -52,15 +52,15 @@ public final class Item: NSObject, NSCoding, ResponseObjectSerializable, Respons
     public var reactionsTotalCount : NSNumber?
     public var url : String!
     public var shortURL : String!
-    public var thumbnails : Thumbnails?
+    public var thumbnails : DKThumbnails?
     public var isURL : Bool?
-    public var tags : [Tag]?
+    public var tags : [DKTag]?
     public var metadata : [String: AnyObject]?
-    public var items: [Item]?
+    public var items: [DKItem]?
     public var itemsTotalCount: NSNumber?
-    public var user: User?
-    public var reactions : [Reaction]?
-    public var comments : [DMComment]?
+    public var user: DKUser?
+    public var reactions : [DKReaction]?
+    public var comments : [DKComment]?
     
     // Init from Alamofire
     public init?(response: HTTPURLResponse, representation: Any) {
@@ -89,7 +89,7 @@ public final class Item: NSObject, NSCoding, ResponseObjectSerializable, Respons
         shareable = representation["shareable"] as? Bool
         size = representation["size"] as? NSNumber
         sort = representation["sort"] as? NSNumber
-        type = ItemType(rawValue: typeString) ?? .other
+        type = DKItemType(rawValue: typeString) ?? .other
         mime = representation["mime"] as? String
         latitude = representation["latitude"] as? NSNumber
         longitude = representation["longitude"] as? NSNumber
@@ -105,33 +105,33 @@ public final class Item: NSObject, NSCoding, ResponseObjectSerializable, Respons
         self.shortURL = shortURL
         isURL = representation["is_url"] as? Bool
         if let thumbnailsRepresentation = representation["thumbnails"]  {
-            thumbnails = Thumbnails(response: response, representation: thumbnailsRepresentation)
+            thumbnails = DKThumbnails(response: response, representation: thumbnailsRepresentation)
         }
         if let metadataDict = representation["metadata"] as? [String: AnyObject] {
             metadata = metadataDict
         }
         if let itemsRepresentation = representation["items"] as? [AnyObject] {
-            items = itemsRepresentation.map({ Item(response:response, representation: $0)! })
+            items = itemsRepresentation.map({ DKItem(response:response, representation: $0)! })
         }
         if let tagsRepresentation = representation["tags"] as? [AnyObject] {
-            tags = tagsRepresentation.map({ Tag(response:response, representation: $0)! })
+            tags = tagsRepresentation.map({ DKTag(response:response, representation: $0)! })
         }
         itemsTotalCount = representation["items_total_count"] as? NSNumber
         
-        if let userID = representation["user_id"] as? NSNumber, let user = User(id: userID) {
+        if let userID = representation["user_id"] as? NSNumber, let user = DKUser(id: userID) {
             user.name = representation["user_name"] as? String
             user.email = representation["user_email"] as? String
-            if let planString = representation["user_plan"] as? String, let plan = User.Plan(rawValue: planString) {
+            if let planString = representation["user_plan"] as? String, let plan = DKUser.Plan(rawValue: planString) {
                 user.plan = plan
             }
             user.avatar = representation["user_avatar"] as? String
             self.user = user
         }
         if let reactionsRepresentation = representation["reactions"] as? [AnyObject] {
-            reactions = reactionsRepresentation.map({ Reaction(response:response, representation: $0)! })
+            reactions = reactionsRepresentation.map({ DKReaction(response:response, representation: $0)! })
         }
         if let commentsRepresentation = representation["comments"] as? [AnyObject] {
-            let originalComments = commentsRepresentation.map({ DMComment(response:response, representation: $0)! })
+            let originalComments = commentsRepresentation.map({ DKComment(response:response, representation: $0)! })
             comments = originalComments.sorted(by: { $0.createdAt < $1.createdAt })
         }
         
@@ -155,7 +155,7 @@ public final class Item: NSObject, NSCoding, ResponseObjectSerializable, Respons
         size = aDecoder.decodeObject(forKey: "size") as? NSNumber
         sort = aDecoder.decodeObject(forKey: "sort") as? NSNumber
         let typeString = aDecoder.decodeObject(forKey: "type") as! String
-        type = ItemType(rawValue: typeString) ?? .other
+        type = DKItemType(rawValue: typeString) ?? .other
         mime = aDecoder.decodeObject(forKey: "mime") as? String
         latitude = aDecoder.decodeObject(forKey: "latitude") as? NSNumber
         longitude = aDecoder.decodeObject(forKey: "longitude") as? NSNumber
@@ -166,12 +166,12 @@ public final class Item: NSObject, NSCoding, ResponseObjectSerializable, Respons
         url = aDecoder.decodeObject(forKey: "url") as! String
         shortURL = aDecoder.decodeObject(forKey: "short_url") as! String
         isURL = aDecoder.decodeObject(forKey: "is_url") as? Bool
-        thumbnails = aDecoder.decodeObject(forKey: "thumbnails") as? Thumbnails
+        thumbnails = aDecoder.decodeObject(forKey: "thumbnails") as? DKThumbnails
         metadata = aDecoder.decodeObject(forKey: "metadata") as? [String: AnyObject]
-        items = aDecoder.decodeObject(forKey: "items") as? [Item]
-        tags = aDecoder.decodeObject(forKey: "tags") as? [Tag]
+        items = aDecoder.decodeObject(forKey: "items") as? [DKItem]
+        tags = aDecoder.decodeObject(forKey: "tags") as? [DKTag]
         itemsTotalCount = aDecoder.decodeObject(forKey: "items_total_count") as? NSNumber
-        user = aDecoder.decodeObject(forKey: "user") as? User
+        user = aDecoder.decodeObject(forKey: "user") as? DKUser
         
     }
     
@@ -215,18 +215,18 @@ public final class Item: NSObject, NSCoding, ResponseObjectSerializable, Respons
 
 // MARK: Equatable
 
-public func ==(lhs: Item, rhs: Item) -> Bool {
+public func ==(lhs: DKItem, rhs: DKItem) -> Bool {
     return lhs.id == rhs.id
 }
 
-public func ==(lhs: Item?, rhs: Item) -> Bool {
+public func ==(lhs: DKItem?, rhs: DKItem) -> Bool {
     return lhs?.id == rhs.id
 }
 
-public func ==(lhs: Item, rhs: Item?) -> Bool {
+public func ==(lhs: DKItem, rhs: DKItem?) -> Bool {
     return lhs.id == rhs?.id
 }
 
-public func ==(lhs: Item?, rhs: Item?) -> Bool {
+public func ==(lhs: DKItem?, rhs: DKItem?) -> Bool {
     return lhs?.id == rhs?.id
 }

@@ -55,7 +55,7 @@ class LoginViewController: NSViewController {
     override func viewDidAppear() {
         super.viewDidAppear()
         
-        if let existingUser = Keychain.user {
+        if let existingUser = DKKeychain.user {
             showOKAlertWith(text: "Already logged in as \(existingUser.name!)!")
         }
         
@@ -78,7 +78,7 @@ class LoginViewController: NSViewController {
             RequestGenerator.authenticate(email: email, password: password)
         }.done {
             
-            Keychain.store(user: $0) // Securely store the user for future app sessions
+            DKKeychain.store(user: $0) // Securely store the user for future app sessions
             Router.authenticateWith(user: $0) // Authenticate requests for the current app session
             
             self.showOKAlertWith(text: "Successfully logged in as \($0.name!)!")

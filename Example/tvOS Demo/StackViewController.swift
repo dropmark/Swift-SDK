@@ -29,9 +29,9 @@ import DropmarkSDK
 
 class StackViewController: UITableViewController {
     
-    var collection: DMCollection!
-    var stack: Item!
-    var items = [Item]()
+    var collection: DKCollection!
+    var stack: DKItem!
+    var items = [DKItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

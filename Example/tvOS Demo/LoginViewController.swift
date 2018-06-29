@@ -53,9 +53,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         // If a user already exists in our keychain, skip login
-        guard let existingUser = Keychain.user else { return }
+        guard let existingUser = DKKeychain.user else { return }
         
-        Router.authenticateWith(user: existingUser) // Authenticate requests for the current app session
+        DKRouter.authenticateWith(user: existingUser) // Authenticate requests for the current app session
         
         performSegue(withIdentifier: showDashboardSegue, sender: self)
     }
@@ -73,7 +73,7 @@ class LoginViewController: UIViewController {
             RequestGenerator.authenticate(email: email, password: password)
         }.done {
             
-            Keychain.store(user: $0) // Securely store the user for future app sessions
+            DKKeychain.store(user: $0) // Securely store the user for future app sessions
             Router.authenticateWith(user: $0) // Authenticate requests for the current app session
             
             self.passwordTextField.text = nil

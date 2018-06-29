@@ -33,14 +33,14 @@ public extension Error {
 
 // MARK: Single objects
 
-public protocol ResponseObjectSerializable {
+public protocol DKResponseObjectSerializable {
     init?(response: HTTPURLResponse, representation: Any)
 }
 
 public extension DataRequest {
     
     @discardableResult
-    public func responseObject<T: ResponseObjectSerializable>(
+    public func responseObject<T: DKResponseObjectSerializable>(
         queue: DispatchQueue? = nil,
         completionHandler: @escaping (DataResponse<T>) -> Void)
         -> Self
@@ -93,11 +93,11 @@ public extension DataRequest {
 
 // MARK: List of objects of Type
 
-public protocol ResponseListSerializable {
+public protocol DKResponseListSerializable {
     static func list(from response: HTTPURLResponse, withRepresentation representation: Any) -> [Self]
 }
 
-public extension ResponseListSerializable where Self: ResponseObjectSerializable {
+public extension DKResponseListSerializable where Self: DKResponseObjectSerializable {
     public static func list(from response: HTTPURLResponse, withRepresentation representation: Any) -> [Self] {
         var list: [Self] = []
         
@@ -116,7 +116,7 @@ public extension ResponseListSerializable where Self: ResponseObjectSerializable
 public extension DataRequest {
     
     @discardableResult
-    public func responseList<T: ResponseListSerializable>(
+    public func responseList<T: DKResponseListSerializable>(
         queue: DispatchQueue? = nil,
         completionHandler: @escaping (DataResponse<[T]>) -> Void) -> Self
     {
@@ -227,27 +227,27 @@ public extension DataRequest {
                         switch type {
                             
                         case "collection":
-                            if let collection = DMCollection(response: response, representation: objectRepresentation) {
+                            if let collection = DKCollection(response: response, representation: objectRepresentation) {
                                 list.append(collection)
                             }
                             
                         case "reaction":
-                            if let reaction = Reaction(response: response, representation: objectRepresentation) {
+                            if let reaction = DKReaction(response: response, representation: objectRepresentation) {
                                 list.append(reaction)
                             }
                             
                         case "comment":
-                            if let comment = DMComment(response: response, representation: objectRepresentation) {
+                            if let comment = DKComment(response: response, representation: objectRepresentation) {
                                 list.append(comment)
                             }
                             
                         case "invite":
-                            if let invite = Invite(response: response, representation: objectRepresentation) {
+                            if let invite = DKInvite(response: response, representation: objectRepresentation) {
                                 list.append(invite)
                             }
                             
                         default:
-                            if let item = Item(response: response, representation: objectRepresentation) {
+                            if let item = DKItem(response: response, representation: objectRepresentation) {
                                 list.append(item)
                             }
                             

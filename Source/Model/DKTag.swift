@@ -1,5 +1,5 @@
 //
-//  Permissions.swift
+//  Tag.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -25,49 +25,42 @@
 
 import Foundation
 
-@objc(Permissions)
-public class Permissions: NSObject, NSCoding {
+@objc(DKTag)
+public final class DKTag: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
-    public var admin: Bool?
-    public var edit: Bool?
-    public var share: Bool?
-    public var leave: Bool?
-    public var delete: Bool?
+    public var name: String!
+    public var itemsTotalCount: NSNumber?
+    
+    public init(name: String) {
+        self.name = name
+    }
     
     // Init from Alamofire
     public init?(response: HTTPURLResponse, representation: Any) {
         
         guard
-            let representation = representation as? [String: Any]
+            let representation = representation as? [String: Any],
+            let name = representation["name"] as? String
         else { return nil }
         
-        admin = representation["admin"] as? Bool
-        edit = representation["edit"] as? Bool
-        share = representation["share"] as? Bool
-        leave = representation["leave"] as? Bool
-        delete = representation["delete"] as? Bool
+        self.name = name
+        itemsTotalCount = representation["items_total_count"] as? NSNumber
         
     }
     
     // Init from NSUserDefaults
     public required init(coder aDecoder: NSCoder) {
         
-        admin = aDecoder.decodeObject(forKey: "admin") as? Bool
-        edit = aDecoder.decodeObject(forKey: "edit") as? Bool
-        share = aDecoder.decodeObject(forKey: "share") as? Bool
-        leave = aDecoder.decodeObject(forKey: "leave") as? Bool
-        delete = aDecoder.decodeObject(forKey: "delete") as? Bool
+        name = aDecoder.decodeObject(forKey: "name") as! String
+        itemsTotalCount = aDecoder.decodeObject(forKey: "items_total_count") as? NSNumber
         
     }
     
     // Save to NSUserDefaults
     public func encode(with aCoder: NSCoder) {
         
-        aCoder.encode(admin, forKey: "admin")
-        aCoder.encode(edit, forKey: "edit")
-        aCoder.encode(share, forKey: "share")
-        aCoder.encode(leave, forKey: "leave")
-        aCoder.encode(delete, forKey: "delete")
+        aCoder.encode(name, forKey: "name")
+        aCoder.encode(itemsTotalCount, forKey: "items_total_count")
         
     }
     

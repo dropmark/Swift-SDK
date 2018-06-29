@@ -27,7 +27,7 @@ import Foundation
 import Alamofire
 import PromiseKit
 
-public class PagingGenerator<T> {
+public class DKPagingGenerator<T> {
     
     public var next: ((_ page: Int) -> Promise<[T]>)!
     
@@ -89,7 +89,7 @@ public class PagingGenerator<T> {
 
 // Infinite scroll utilities
 
-public extension PagingGenerator {
+public extension DKPagingGenerator {
     
     #if os(iOS)
     public func shouldGetNextPage(at indexPath: IndexPath, for collectionView: UICollectionView) -> Bool {

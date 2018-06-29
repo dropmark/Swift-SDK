@@ -26,7 +26,7 @@
 import Foundation
 import Alamofire
 
-public enum Router: URLRequestConvertible {
+public enum DKRouter: URLRequestConvertible {
     
     public static let baseURLString = "https://api.dropmark.com/v1"
     
@@ -38,9 +38,9 @@ public enum Router: URLRequestConvertible {
     
     public static let pageSize = 24
     
-    public static var user: User?
+    public static var user: DKUser?
     
-    public static func authenticateWith(user: User) {
+    public static func authenticateWith(user: DKUser) {
         self.user = user
     }
     
@@ -390,20 +390,20 @@ public enum Router: URLRequestConvertible {
     
     public func asURLRequest() throws -> URLRequest {
         
-        let url = try Router.baseURLString.asURL()
+        let url = try DKRouter.baseURLString.asURL()
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         urlRequest.httpMethod = method.rawValue
         
         switch self {
             
         case .authenticate, .createUser:
-            Router.authenticateURLRequest(&urlRequest)
+            DKRouter.authenticateURLRequest(&urlRequest)
             
         default:
-            guard let user = Router.user else {
+            guard let user = DKRouter.user else {
                 throw NetworkError.badCredentials
             }
-            Router.authenticateURLRequest(&urlRequest, withUser: user)
+            DKRouter.authenticateURLRequest(&urlRequest, withUser: user)
 
         }
         
@@ -527,12 +527,12 @@ public enum Router: URLRequestConvertible {
         // Tags
         case .listTags:
             let queryParamters: Parameters = [
-                "per_page": Router.pageSize
+                "per_page": DKRouter.pageSize
             ]
             urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParamters)
         case .listTagsForItem:
             let queryParamters: Parameters = [
-                "per_page": Router.pageSize
+                "per_page": DKRouter.pageSize
             ]
             urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParamters)
         case .createTagForItem(_, let name):
@@ -603,10 +603,10 @@ public enum Router: URLRequestConvertible {
      
      */
     
-    public static func authenticateURLRequest(_ urlRequest: inout URLRequest, withUser user: User? = nil) {
+    public static func authenticateURLRequest(_ urlRequest: inout URLRequest, withUser user: DKUser? = nil) {
         
         // Set API token
-        urlRequest.setValue("\(Router.apiToken)", forHTTPHeaderField: "X-API-Key")
+        urlRequest.setValue("\(DKRouter.apiToken)", forHTTPHeaderField: "X-API-Key")
         
         // Set user credentials, if necessary
         if let userID = user?.id, let userToken = user?.token {
@@ -649,7 +649,7 @@ extension Dictionary {
     }
     
     mutating func addListParams() {
-        self.add(key: "per_page", value: Router.pageSize)
+        self.add(key: "per_page", value: DKRouter.pageSize)
     }
     
     mutating func addCollectionParams() {

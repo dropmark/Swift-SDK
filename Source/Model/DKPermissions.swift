@@ -1,5 +1,5 @@
 //
-//  Thumbnails.swift
+//  Permissions.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -25,16 +25,14 @@
 
 import Foundation
 
-@objc(Thumbnails)
-public class Thumbnails: NSObject, NSCoding {
+@objc(DKPermissions)
+public class DKPermissions: NSObject, NSCoding {
     
-    public var mini: String?
-    public var small: String?
-    public var cropped: String?
-    public var uncropped: String?
-    public var large: String?
-    public var croppedAnimated: String?
-    public var uncroppedAnimated: String?
+    public var admin: Bool?
+    public var edit: Bool?
+    public var share: Bool?
+    public var leave: Bool?
+    public var delete: Bool?
     
     // Init from Alamofire
     public init?(response: HTTPURLResponse, representation: Any) {
@@ -43,39 +41,33 @@ public class Thumbnails: NSObject, NSCoding {
             let representation = representation as? [String: Any]
         else { return nil }
         
-        mini = representation["mini"] as? String
-        small = representation["small"] as? String
-        cropped = representation["cropped"] as? String
-        uncropped = representation["uncropped"] as? String
-        large = representation["large"] as? String
-        croppedAnimated = representation["cropped_animated"] as? String
-        uncroppedAnimated = representation["uncropped_animated"] as? String
+        admin = representation["admin"] as? Bool
+        edit = representation["edit"] as? Bool
+        share = representation["share"] as? Bool
+        leave = representation["leave"] as? Bool
+        delete = representation["delete"] as? Bool
         
     }
-
+    
     // Init from NSUserDefaults
     public required init(coder aDecoder: NSCoder) {
         
-        mini = aDecoder.decodeObject(forKey: "mini") as? String
-        small = aDecoder.decodeObject(forKey: "small") as? String
-        cropped = aDecoder.decodeObject(forKey: "cropped") as? String
-        uncropped = aDecoder.decodeObject(forKey: "uncropped") as? String
-        large = aDecoder.decodeObject(forKey: "large") as? String
-        croppedAnimated = aDecoder.decodeObject(forKey: "cropped_animated") as? String
-        uncroppedAnimated = aDecoder.decodeObject(forKey: "uncropped_animated") as? String
+        admin = aDecoder.decodeObject(forKey: "admin") as? Bool
+        edit = aDecoder.decodeObject(forKey: "edit") as? Bool
+        share = aDecoder.decodeObject(forKey: "share") as? Bool
+        leave = aDecoder.decodeObject(forKey: "leave") as? Bool
+        delete = aDecoder.decodeObject(forKey: "delete") as? Bool
         
     }
     
     // Save to NSUserDefaults
     public func encode(with aCoder: NSCoder) {
-
-        aCoder.encode(mini, forKey: "mini")
-        aCoder.encode(small, forKey: "small")
-        aCoder.encode(cropped, forKey: "cropped")
-        aCoder.encode(uncropped, forKey: "uncropped")
-        aCoder.encode(large, forKey: "large")
-        aCoder.encode(uncropped, forKey: "cropped_animated")
-        aCoder.encode(large, forKey: "uncropped_animated")
+        
+        aCoder.encode(admin, forKey: "admin")
+        aCoder.encode(edit, forKey: "edit")
+        aCoder.encode(share, forKey: "share")
+        aCoder.encode(leave, forKey: "leave")
+        aCoder.encode(delete, forKey: "delete")
         
     }
     

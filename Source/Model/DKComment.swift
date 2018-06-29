@@ -25,8 +25,8 @@
 
 import Foundation
 
-@objc(DMComment)
-public final class DMComment: NSObject, NSCoding, ResponseObjectSerializable, ResponseListSerializable {
+@objc(DKComment)
+public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
     public var id : NSNumber!
     public var itemID: NSNumber?
@@ -40,7 +40,7 @@ public final class DMComment: NSObject, NSCoding, ResponseObjectSerializable, Re
     public var annotation : String?
     public var URL : String?
     public var shortURL : String?
-    public var user: User?
+    public var user: DKUser?
     
     // Init from Alamofire
     public init?(response: HTTPURLResponse, representation: Any) {
@@ -67,7 +67,7 @@ public final class DMComment: NSObject, NSCoding, ResponseObjectSerializable, Re
         URL = representation["url"] as? String
         shortURL = representation["short_url"] as? String
         
-        if let userID = representation["user_id"] as? NSNumber, let user = User(id: userID) {
+        if let userID = representation["user_id"] as? NSNumber, let user = DKUser(id: userID) {
             user.username = representation["username"] as? String
             if let name = representation["user_name"] as? String {
                 user.name = name
@@ -104,7 +104,7 @@ public final class DMComment: NSObject, NSCoding, ResponseObjectSerializable, Re
         annotation = aDecoder.decodeObject(forKey: "annotation") as? String
         URL = aDecoder.decodeObject(forKey: "url") as? String
         shortURL = aDecoder.decodeObject(forKey: "short_url") as? String
-        user = aDecoder.decodeObject(forKey: "user") as? User
+        user = aDecoder.decodeObject(forKey: "user") as? DKUser
         
     }
     
@@ -131,18 +131,18 @@ public final class DMComment: NSObject, NSCoding, ResponseObjectSerializable, Re
 
 // MARK: Equatable
 
-public func ==(lhs: DMComment, rhs: DMComment) -> Bool {
+public func ==(lhs: DKComment, rhs: DKComment) -> Bool {
     return lhs.id == rhs.id
 }
 
-public func ==(lhs: DMComment?, rhs: DMComment) -> Bool {
+public func ==(lhs: DKComment?, rhs: DKComment) -> Bool {
     return lhs?.id == rhs.id
 }
 
-public func ==(lhs: DMComment, rhs: DMComment?) -> Bool {
+public func ==(lhs: DKComment, rhs: DKComment?) -> Bool {
     return lhs.id == rhs?.id
 }
 
-public func ==(lhs: DMComment?, rhs: DMComment?) -> Bool {
+public func ==(lhs: DKComment?, rhs: DKComment?) -> Bool {
     return lhs?.id == rhs?.id
 }

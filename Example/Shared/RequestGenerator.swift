@@ -30,19 +30,19 @@ import DropmarkSDK
 
 class RequestGenerator {
     
-    static func authenticate(email: String, password: String) -> Promise<User> {
+    static func authenticate(email: String, password: String) -> Promise<DKUser> {
         let parameters: Parameters = [
             "email": email,
             "password": password
         ]
-        return request(Router.authenticate(parameters: parameters)).validate().responseObject()
+        return request(DKRouter.authenticate(parameters: parameters)).validate().responseObject()
     }
     
-    static func listCollections() -> Promise<[DMCollection]> {
-        return request(Router.listCollections(queryParameters: nil)).validate().responseList()
+    static func listCollections() -> Promise<[DKCollection]> {
+        return request(DKRouter.listCollections(queryParameters: nil)).validate().responseList()
     }
     
-    static func listItemsIn(collection: DMCollection) -> Promise<[Item]> {
+    static func listItemsIn(collection: DKCollection) -> Promise<[DKItem]> {
         
         var queryParameters = Parameters()
         
@@ -50,20 +50,20 @@ class RequestGenerator {
         queryParameters["parent_id"] = ""
         
         // Create request
-        let itemsRequest = request(Router.listItemsInCollection(id: collection.id, queryParameters: queryParameters)).validate()
+        let itemsRequest = request(DKRouter.listItemsInCollection(id: collection.id, queryParameters: queryParameters)).validate()
         
         return itemsRequest.responseList()
         
     }
     
-    static func listItemsIn(collection: DMCollection, stack: Item) -> Promise<[Item]> {
+    static func listItemsIn(collection: DKCollection, stack: DKItem) -> Promise<[DKItem]> {
         
         var queryParameters = Parameters()
         
         // Retrieve items within the parent stack
         queryParameters["parent_id"] = stack.id
         
-        let itemsRequest = request(Router.listItemsInCollection(id: collection.id, queryParameters: queryParameters)).validate()
+        let itemsRequest = request(DKRouter.listItemsInCollection(id: collection.id, queryParameters: queryParameters)).validate()
         
         return itemsRequest.responseList()
         

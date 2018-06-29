@@ -3,7 +3,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DropmarkSDK'
-  s.version          = '0.1.2'
+  s.version          = '0.2.0'
   s.summary          = 'Network and model controllers for Dropmark, written in Swift.'
 
   s.homepage         = 'https://github.com/dropmark/Swift-SDK'
