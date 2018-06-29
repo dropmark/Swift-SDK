@@ -36,7 +36,7 @@ public extension UTI {
      
      */
     
-    public var itemType: ItemType? {
+    public var itemType: DKItemType? {
         
         switch self {
             

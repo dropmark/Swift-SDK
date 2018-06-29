@@ -25,15 +25,15 @@
 
 import Foundation
 
-@objc(DMCollection)
-public final class DMCollection: NSObject, NSCoding, ResponseObjectSerializable, ResponseListSerializable {
+@objc(DKCollection)
+public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
     public enum Kind : String {
         case `private`
         case `public`
         case global
         
-        static var allValues: [DMCollection.Kind] = [
+        static var allValues: [DKCollection.Kind] = [
             .private,
             .public,
             .global
@@ -82,11 +82,11 @@ public final class DMCollection: NSObject, NSCoding, ResponseObjectSerializable,
     public var usersTotalCount : NSNumber?
     public var url : String!
     public var shortURL : String!
-    public var thumbnails : Thumbnails?
-    public var permissions : Permissions?
-    public var user: User? // User that created the collection
-    public var users: [User]? // Collaborators
-    public var items: [Item]?
+    public var thumbnails : DKThumbnails?
+    public var permissions : DKPermissions?
+    public var user: DKUser? // User that created the collection
+    public var users: [DKUser]? // Collaborators
+    public var items: [DKItem]?
     
     // Init from Alamofire
     public required init?(response: HTTPURLResponse, representation: Any) {
@@ -133,27 +133,27 @@ public final class DMCollection: NSObject, NSCoding, ResponseObjectSerializable,
         self.url = url
         self.shortURL = shortURL
         if let thumbnailsRepresentation = representation["thumbnails"]  {
-            thumbnails = Thumbnails(response: response, representation: thumbnailsRepresentation)
+            thumbnails = DKThumbnails(response: response, representation: thumbnailsRepresentation)
         }
         if let permissionsRepresentation = representation["permissions"]  {
-            permissions = Permissions(response: response, representation: permissionsRepresentation)
+            permissions = DKPermissions(response: response, representation: permissionsRepresentation)
         }
-        if let userID = representation["user_id"] as? NSNumber, let user = User(id: userID) {
+        if let userID = representation["user_id"] as? NSNumber, let user = DKUser(id: userID) {
             user.name = representation["user_name"] as? String
             user.username = representation["username"] as? String
             user.email = representation["user_email"] as? String
             user.avatar = representation["user_avatar"] as? String
-            if let planString = representation["user_plan"] as? String, let plan = User.Plan(rawValue: planString) {
+            if let planString = representation["user_plan"] as? String, let plan = DKUser.Plan(rawValue: planString) {
                 user.plan = plan
             }
             user.planIsActive = representation["user_plan_active"] as? Bool
             self.user = user
         }
         if let usersRepresentation = representation["users"] as? [Any] {
-            users = usersRepresentation.map({ User(response:response, representation: $0)! })
+            users = usersRepresentation.map({ DKUser(response:response, representation: $0)! })
         }
         if let itemsRepresentation = representation["items"] as? [Any] {
-            items = itemsRepresentation.map({ Item(response:response, representation: $0)! })
+            items = itemsRepresentation.map({ DKItem(response:response, representation: $0)! })
         }
     }
     
@@ -187,9 +187,9 @@ public final class DMCollection: NSObject, NSCoding, ResponseObjectSerializable,
         usersTotalCount = aDecoder.decodeObject(forKey: "users_total_count") as? NSNumber
         url = aDecoder.decodeObject(forKey: "url") as! String
         shortURL = aDecoder.decodeObject(forKey: "short_url") as! String
-        thumbnails = aDecoder.decodeObject(forKey: "thumbnails") as? Thumbnails
-        permissions = aDecoder.decodeObject(forKey: "permissions") as? Permissions
-        user = aDecoder.decodeObject(forKey: "user") as? User
+        thumbnails = aDecoder.decodeObject(forKey: "thumbnails") as? DKThumbnails
+        permissions = aDecoder.decodeObject(forKey: "permissions") as? DKPermissions
+        user = aDecoder.decodeObject(forKey: "user") as? DKUser
         
     }
     
@@ -225,19 +225,19 @@ public final class DMCollection: NSObject, NSCoding, ResponseObjectSerializable,
 
 // MARK: Equatable
 
-public func ==(lhs: DMCollection, rhs: DMCollection) -> Bool {
+public func ==(lhs: DKCollection, rhs: DKCollection) -> Bool {
     return lhs.id == rhs.id
 }
 
-public func ==(lhs: DMCollection?, rhs: DMCollection) -> Bool {
+public func ==(lhs: DKCollection?, rhs: DKCollection) -> Bool {
     return lhs?.id == rhs.id
 }
 
-public func ==(lhs: DMCollection, rhs: DMCollection?) -> Bool {
+public func ==(lhs: DKCollection, rhs: DKCollection?) -> Bool {
     return lhs.id == rhs?.id
 }
 
-public func ==(lhs: DMCollection?, rhs: DMCollection?) -> Bool {
+public func ==(lhs: DKCollection?, rhs: DKCollection?) -> Bool {
     return lhs?.id == rhs?.id
 }
 

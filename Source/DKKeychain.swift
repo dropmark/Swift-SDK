@@ -29,7 +29,7 @@ import KeychainSwift
 
 private let userKey = "com.dropmark.user"
 
-public class Keychain {
+public class DKKeychain {
     
     public static var accessGroup: String {
         set {
@@ -45,14 +45,14 @@ public class Keychain {
 
 }
 
-public extension Keychain {
+public extension DKKeychain {
     
-    public class var user: User? {
+    public class var user: DKUser? {
         
         get {
             if
                 let userData = KeychainSwift().getData(userKey),
-                let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? User
+                let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? DKUser
             {
                 return user
             }
@@ -68,10 +68,6 @@ public extension Keychain {
             }
         }
         
-    }
-    
-    public class func store(user: User) {
-        Keychain.user = user
     }
     
 }

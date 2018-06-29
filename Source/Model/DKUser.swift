@@ -1,5 +1,5 @@
 //
-//  Team.swift
+//  User.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -25,12 +25,14 @@
 
 import Foundation
 
-@objc(Team)
-public final class Team: NSObject, NSCoding, ResponseObjectSerializable, ResponseListSerializable {
+@objc(DKUser)
+public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
-    public enum Status: String {
-        case active
-        case inactive
+    public enum Kind: String {
+        case owner
+        case creator
+        case manager
+        case user
     }
     
     public enum Plan: String {
@@ -41,13 +43,13 @@ public final class Team: NSObject, NSCoding, ResponseObjectSerializable, Respons
         case team
     }
     
-    public enum UserKind: String {
-        case manager
-        case user
+    public enum Status: String {
+        case active
+        case inactive
     }
     
     public var id : NSNumber!
-    public var name : String!
+    public var name : String?
     public var email : String?
     public var username : String?
     public var customDomain : String?
@@ -59,29 +61,27 @@ public final class Team: NSObject, NSCoding, ResponseObjectSerializable, Respons
     public var planIsActive : Bool?
     public var planQuantity : NSNumber?
     public var billingEmail : String?
+    public var kind: Kind?
     public var status : Status = .active
     public var createdAt : Date?
-    public var feedKey : String?
-    public var usage : [String: AnyObject]?
-    public var userKind : UserKind?
-    public var users: [User]?
     public var avatar: String?
+    public var teams: [DKTeam]?
+    public var token: String?
     
     public init?(id: NSNumber) {
         self.id = id
     }
     
     // Init from Alamofire
-    public init?(response: HTTPURLResponse, representation: Any) {
+    public required init?(response: HTTPURLResponse, representation: Any) {
         
         guard
             let representation = representation as? [String: Any],
-            let id = representation["id"] as? NSNumber,
-            let name = representation["name"] as? String
+            let id = representation["id"] as? NSNumber
         else { return nil }
         
         self.id = id
-        self.name = name
+        name = representation["name"] as? String
         email = representation["email"] as? String
         username = representation["username"] as? String
         customDomain = representation["custom_domain"] as? String
@@ -89,36 +89,37 @@ public final class Team: NSObject, NSCoding, ResponseObjectSerializable, Respons
         sortOrder = representation["sort_order"] as? String
         viewMode = representation["view_mode"] as? String
         labels = representation["labels"] as? Bool
-        if let planString = representation["user_plan"] as? String, let plan = Plan(rawValue: planString) {
+        if let planString = representation["plan"] as? String, let plan = Plan(rawValue: planString) {
             self.plan = plan
         }
         planIsActive = representation["plan_active"] as? Bool
         planQuantity = representation["plan_quantity"] as? NSNumber
         billingEmail = representation["billing_email"] as? String
+        if let kindString = representation["kind"] as? String, let kind = Kind(rawValue: kindString) {
+            self.kind = kind
+        }
         if let statusString = representation["status"] as? String, let status = Status(rawValue: statusString) {
             self.status = status
         }
         if let createdAtString = representation["created_at"] as? String {
             createdAt = createdAtString.date
         }
-        feedKey = representation["feed_key"] as? String
-        if let userKindString = representation["user_kind"] as? String {
-            userKind = UserKind(rawValue: userKindString)
-        }
-        if let usersRepresentation = representation["users"] as? [AnyObject] {
-            users = usersRepresentation.map({ User(response:response, representation: $0)! })
-        }
         avatar = representation["avatar"] as? String
         if avatar == nil {
             avatar = representation["user_avatar"] as? String
         }
+        if let teamsRepresentation = representation["teams"] as? [Any] {
+            teams = teamsRepresentation.map({ DKTeam(response:response, representation: $0)! })
+        }
+        token = representation["token"] as? String
+
     }
     
     // Init from NSUserDefaults
     public required init(coder aDecoder: NSCoder) {
         
         id = aDecoder.decodeObject(forKey: "id") as! NSNumber
-        name = aDecoder.decodeObject(forKey: "name") as! String
+        name = aDecoder.decodeObject(forKey: "name") as? String
         email = aDecoder.decodeObject(forKey: "email") as? String
         username = aDecoder.decodeObject(forKey: "username") as? String
         customDomain = aDecoder.decodeObject(forKey: "custom_domain") as? String
@@ -127,7 +128,7 @@ public final class Team: NSObject, NSCoding, ResponseObjectSerializable, Respons
         viewMode = aDecoder.decodeObject(forKey: "view_mode") as? String
         labels = aDecoder.decodeObject(forKey: "labels") as? Bool
         if let planString = aDecoder.decodeObject(forKey: "plan") as? String {
-            plan = Plan(rawValue: planString) ?? .free
+            self.plan = Plan(rawValue: planString) ?? .free
         }
         planIsActive = aDecoder.decodeObject(forKey: "plan_active") as? Bool
         planQuantity = aDecoder.decodeObject(forKey: "plan_quantity") as? NSNumber
@@ -136,12 +137,10 @@ public final class Team: NSObject, NSCoding, ResponseObjectSerializable, Respons
             status = Status(rawValue: statusString) ?? .active
         }
         createdAt = aDecoder.decodeObject(forKey: "created_at") as? Date
-        feedKey = aDecoder.decodeObject(forKey: "feed_key") as? String
-        if let userKindString = aDecoder.decodeObject(forKey: "user_kind") as? String {
-            userKind = UserKind(rawValue: userKindString)
-        }
-        users = aDecoder.decodeObject(forKey: "users") as? [User]
         avatar = aDecoder.decodeObject(forKey: "avatar") as? String
+        teams = aDecoder.decodeObject(forKey: "teams") as? [DKTeam]
+        token = aDecoder.decodeObject(forKey: "token") as? String
+        
     }
     
     // Save to NSUserDefaults
@@ -162,32 +161,48 @@ public final class Team: NSObject, NSCoding, ResponseObjectSerializable, Respons
         aCoder.encode(billingEmail, forKey: "billing_email")
         aCoder.encode(status.rawValue, forKey: "status")
         aCoder.encode(createdAt, forKey: "created_at")
-        aCoder.encode(feedKey, forKey: "feed_key")
-        aCoder.encode(userKind?.rawValue, forKey: "user_kind")
-        aCoder.encode(users, forKey: "users")
         aCoder.encode(avatar, forKey: "avatar")
+        aCoder.encode(teams, forKey: "teams")
+        aCoder.encode(token, forKey: "token")
         
+    }
+    
+    public override var description: String {
+        var description = "User (\(self.id)):"
+        if let name = self.name {
+            description += " "
+            description += name
+            description += ","
+        }
+        if let email = self.email {
+            description += " "
+            description += email
+            description += ","
+        }
+        if let username = self.username {
+            description += " "
+            description += username
+            description += ","
+        }
+        return description
     }
 }
 
 // MARK: Equatable
 
-public func ==(lhs: Team, rhs: Team) -> Bool {
+public func ==(lhs: DKUser, rhs: DKUser) -> Bool {
     return lhs.id == rhs.id
 }
 
-public func !=(lhs: Team, rhs: Team) -> Bool {
-    return lhs.id != rhs.id
-}
-
-public func ==(lhs: Team?, rhs: Team) -> Bool {
+public func ==(lhs: DKUser?, rhs: DKUser) -> Bool {
     return lhs?.id == rhs.id
 }
 
-public func ==(lhs: Team, rhs: Team?) -> Bool {
+public func ==(lhs: DKUser, rhs: DKUser?) -> Bool {
     return lhs.id == rhs?.id
 }
 
-func ==(lhs: Team?, rhs: Team?) -> Bool {
+public func ==(lhs: DKUser?, rhs: DKUser?) -> Bool {
     return lhs?.id == rhs?.id
 }
+

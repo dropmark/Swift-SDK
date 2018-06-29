@@ -25,8 +25,8 @@
 
 import Foundation
 
-@objc(Reaction)
-public final class Reaction: NSObject, NSCoding, ResponseObjectSerializable, ResponseListSerializable {
+@objc(DKReaction)
+public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
     public var id : NSNumber!
     public var itemID : NSNumber!
@@ -35,7 +35,7 @@ public final class Reaction: NSObject, NSCoding, ResponseObjectSerializable, Res
     public var collectionName: String?
     public var createdAt : Date!
     public var updatedAt : Date?
-    public var user: User?
+    public var user: DKUser?
     
     // Init from Alamofire
     public init?(response: HTTPURLResponse, representation: Any) {
@@ -56,7 +56,7 @@ public final class Reaction: NSObject, NSCoding, ResponseObjectSerializable, Res
         if let updatedAtString = representation["updated_at"] as? String {
             updatedAt = updatedAtString.date
         }
-        if let userID = representation["user_id"] as? NSNumber, let user = User(id: userID) {
+        if let userID = representation["user_id"] as? NSNumber, let user = DKUser(id: userID) {
             user.username = representation["username"] as? String
             if let name = representation["user_name"] as? String {
                 user.name = name
@@ -87,7 +87,7 @@ public final class Reaction: NSObject, NSCoding, ResponseObjectSerializable, Res
         collectionName = aDecoder.decodeObject(forKey: "collection_name") as? String
         createdAt = aDecoder.decodeObject(forKey: "created_at") as! Date
         updatedAt = aDecoder.decodeObject(forKey: "updated_at") as? Date
-        user = aDecoder.decodeObject(forKey: "user") as? User
+        user = aDecoder.decodeObject(forKey: "user") as? DKUser
         
     }
     
@@ -109,18 +109,18 @@ public final class Reaction: NSObject, NSCoding, ResponseObjectSerializable, Res
 
 // MARK: Equatable
 
-func ==(lhs: Reaction, rhs: Reaction) -> Bool {
+func ==(lhs: DKReaction, rhs: DKReaction) -> Bool {
     return lhs.id == rhs.id
 }
 
-func ==(lhs: Reaction?, rhs: Reaction) -> Bool {
+func ==(lhs: DKReaction?, rhs: DKReaction) -> Bool {
     return lhs?.id == rhs.id
 }
 
-func ==(lhs: Reaction, rhs: Reaction?) -> Bool {
+func ==(lhs: DKReaction, rhs: DKReaction?) -> Bool {
     return lhs.id == rhs?.id
 }
 
-func ==(lhs: Reaction?, rhs: Reaction?) -> Bool {
+func ==(lhs: DKReaction?, rhs: DKReaction?) -> Bool {
     return lhs?.id == rhs?.id
 }

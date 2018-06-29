@@ -28,7 +28,7 @@ import DropmarkSDK
 
 class DashboardViewController: UITableViewController {
     
-    var collections = [DMCollection]()
+    var collections = [DKCollection]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +48,8 @@ class DashboardViewController: UITableViewController {
     }
     
     @objc func didPressLogoutButton() {
-        Keychain.user = nil
-        Router.user = nil
+        DKKeychain.user = nil
+        DKRouter.user = nil
         navigationController?.popToRootViewController(animated: true)
     }
     

@@ -25,7 +25,7 @@
 
 import Foundation
 
-public enum ItemType : String {
+public enum DKItemType: String {
     
     case image
     case video

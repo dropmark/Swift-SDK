@@ -29,8 +29,8 @@ import DropmarkSDK
 
 class CollectionViewController: UITableViewController {
     
-    var collection: DMCollection!
-    var items = [Item]()
+    var collection: DKCollection!
+    var items = [DKItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

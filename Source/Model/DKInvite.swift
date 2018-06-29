@@ -24,7 +24,7 @@
 
 import Foundation
 
-public final class Invite: NSObject, ResponseObjectSerializable, ResponseListSerializable {
+public final class DKInvite: NSObject, DKResponseObjectSerializable, DKResponseListSerializable {
     
     public var id : NSNumber!
     public var name : String!
@@ -34,8 +34,8 @@ public final class Invite: NSObject, ResponseObjectSerializable, ResponseListSer
     public var createdAt : Date!
     public var updatedAt : Date?
     public var thumbnail : String?
-    public var thumbnails : Thumbnails?
-    public var user: User?
+    public var thumbnails : DKThumbnails?
+    public var user: DKUser?
     
     // Init from Alamofire
     public required init?(response: HTTPURLResponse, representation: Any) {
@@ -53,14 +53,14 @@ public final class Invite: NSObject, ResponseObjectSerializable, ResponseListSer
         self.name = name
         thumbnail = representation["thumbnail"] as? String
         if let thumbnailsRepresentation = representation["thumbnails"]  {
-            thumbnails = Thumbnails(response: response, representation: thumbnailsRepresentation)
+            thumbnails = DKThumbnails(response: response, representation: thumbnailsRepresentation)
         }
         descriptionText = representation["description"] as? String
         createdAt = createdAtString.date
         if let updatedAtString = representation["updated_at"] as? String {
             updatedAt = updatedAtString.date
         }
-        if let userID = representation["user_id"] as? NSNumber, let user = User(id: userID) {
+        if let userID = representation["user_id"] as? NSNumber, let user = DKUser(id: userID) {
             user.name = representation["user_name"] as? String
             user.username = representation["username"] as? String
             user.email = representation["user_email"] as? String
@@ -76,18 +76,18 @@ public final class Invite: NSObject, ResponseObjectSerializable, ResponseListSer
 
 // MARK: Equatable
 
-public func ==(lhs: Invite, rhs: Invite) -> Bool {
+public func ==(lhs: DKInvite, rhs: DKInvite) -> Bool {
     return lhs.id == rhs.id
 }
 
-public func ==(lhs: Invite?, rhs: Invite) -> Bool {
+public func ==(lhs: DKInvite?, rhs: DKInvite) -> Bool {
     return lhs?.id == rhs.id
 }
 
-public func ==(lhs: Invite, rhs: Invite?) -> Bool {
+public func ==(lhs: DKInvite, rhs: DKInvite?) -> Bool {
     return lhs.id == rhs?.id
 }
 
-public func ==(lhs: Invite?, rhs: Invite?) -> Bool {
+public func ==(lhs: DKInvite?, rhs: DKInvite?) -> Bool {
     return lhs?.id == rhs?.id
 }

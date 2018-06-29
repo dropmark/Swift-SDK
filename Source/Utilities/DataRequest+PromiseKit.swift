@@ -42,7 +42,7 @@ public extension DataRequest {
         }
     }
     
-    public func responseObject<T: ResponseObjectSerializable>() -> Promise<T> {
+    public func responseObject<T: DKResponseObjectSerializable>() -> Promise<T> {
         return Promise<T> { seal in
             self.responseObject { (response: DataResponse<T>) in
                 seal.resolve(response.result.error, response.result.value)
@@ -50,7 +50,7 @@ public extension DataRequest {
         }
     }
     
-    public func responseList<T: ResponseListSerializable>() -> Promise<[T]> {
+    public func responseList<T: DKResponseListSerializable>() -> Promise<[T]> {
         return Promise<[T]> { seal in
             self.responseList { (response: DataResponse<[T]>) in
                 seal.resolve(response.result.error, response.result.value)
