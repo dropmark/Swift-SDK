@@ -27,27 +27,11 @@ import Foundation
 import PromiseKit
 import KeychainSwift
 
-private let userKey = "com.dropmark.user"
-
-public class DKKeychain {
+public struct DKKeychain {
     
-    public static var accessGroup: String {
-        set {
-            _accessGroup = newValue
-        }
-        get {
-            assert(_accessGroup != nil, "accessGroup required to store and manage the Keychain.")
-            return _accessGroup!
-        }
-    }
+    private static let userKey = "com.dropmark.user"
     
-    private static var _accessGroup: String?
-
-}
-
-public extension DKKeychain {
-    
-    public class var user: DKUser? {
+    public static var user: DKUser? {
         
         get {
             if
