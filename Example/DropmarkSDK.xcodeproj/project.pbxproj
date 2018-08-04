@@ -17,7 +17,6 @@
 		A52FC3CC20BF57E200A6E2B7 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3BF20BF57E200A6E2B7 /* DashboardViewController.swift */; };
 		A52FC3CD20BF57E200A6E2B7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3C020BF57E200A6E2B7 /* LaunchScreen.xib */; };
 		A52FC3CE20BF57E200A6E2B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3C120BF57E200A6E2B7 /* Main.storyboard */; };
-		A52FC3CF20BF57E200A6E2B7 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C320BF57E200A6E2B7 /* UIViewController+Extensions.swift */; };
 		A52FC3D020BF57E200A6E2B7 /* iOS Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3C520BF57E200A6E2B7 /* iOS Images.xcassets */; };
 		A52FC3D220BF57E200A6E2B7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C720BF57E200A6E2B7 /* LoginViewController.swift */; };
 		A52FC3D320BF57E200A6E2B7 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C820BF57E200A6E2B7 /* StackViewController.swift */; };
@@ -33,7 +32,6 @@
 		A52FC3E520BF5C1D00A6E2B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3E420BF5C1D00A6E2B7 /* Main.storyboard */; };
 		A52FC3EA20BF5C3300A6E2B7 /* macOS Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3E820BF5C3300A6E2B7 /* macOS Assets.xcassets */; };
 		A52FC3EE20BF5C8900A6E2B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3ED20BF5C8900A6E2B7 /* Main.storyboard */; };
-		A52FC3FE20C0919500A6E2B7 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C320BF57E200A6E2B7 /* UIViewController+Extensions.swift */; };
 		A53760F02116424500114013 /* tvOS Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3F020BF5C9400A6E2B7 /* tvOS Assets.xcassets */; };
 		A53E7DA7211506B8002CD0B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C720BF57E200A6E2B7 /* LoginViewController.swift */; };
 		A53E7DA821150ABA002CD0B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C920BF57E200A6E2B7 /* AppDelegate.swift */; };
@@ -75,7 +73,6 @@
 		A52FC3BF20BF57E200A6E2B7 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		A52FC3C020BF57E200A6E2B7 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		A52FC3C120BF57E200A6E2B7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		A52FC3C320BF57E200A6E2B7 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		A52FC3C520BF57E200A6E2B7 /* iOS Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "iOS Images.xcassets"; sourceTree = "<group>"; };
 		A52FC3C620BF57E200A6E2B7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A52FC3C720BF57E200A6E2B7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -230,7 +227,6 @@
 		A52FC3C220BF57E200A6E2B7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A52FC3C320BF57E200A6E2B7 /* UIViewController+Extensions.swift */,
 				A52C41FF21160D1100BA2054 /* UIAlertController+Extensions.swift */,
 			);
 			path = Extensions;
@@ -622,7 +618,6 @@
 				A52FC3D220BF57E200A6E2B7 /* LoginViewController.swift in Sources */,
 				A52FC3D620BF57E200A6E2B7 /* CollectionViewController.swift in Sources */,
 				A52FC3D320BF57E200A6E2B7 /* StackViewController.swift in Sources */,
-				A52FC3CF20BF57E200A6E2B7 /* UIViewController+Extensions.swift in Sources */,
 				A52C420021160D1100BA2054 /* UIAlertController+Extensions.swift in Sources */,
 				A52FC3CC20BF57E200A6E2B7 /* DashboardViewController.swift in Sources */,
 			);
@@ -643,7 +638,6 @@
 				A53E7DAA21150ADE002CD0B9 /* CollectionViewController.swift in Sources */,
 				A53E7DB0211523E4002CD0B9 /* ItemViewController.swift in Sources */,
 				A53E7DA7211506B8002CD0B9 /* LoginViewController.swift in Sources */,
-				A52FC3FE20C0919500A6E2B7 /* UIViewController+Extensions.swift in Sources */,
 				A52FC3DB20BF586B00A6E2B7 /* RequestGenerator.swift in Sources */,
 				A53E7DA921150AD3002CD0B9 /* DashboardViewController.swift in Sources */,
 				A53E7DAB21150AE0002CD0B9 /* StackViewController.swift in Sources */,

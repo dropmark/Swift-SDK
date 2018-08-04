@@ -110,8 +110,6 @@ class CollectionViewController: UITableViewController {
             itemViewController.item = items[indexPath.row]
         }
         
-        
     }
-    
     
 }

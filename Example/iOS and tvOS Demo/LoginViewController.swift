@@ -63,8 +63,15 @@ class LoginViewController: UIViewController {
     
     @IBAction func didPressLoginButton(_ sender: Any) {
         
-        guard let email = emailTextField.text, let password = passwordTextField.text else {
-            showOKAlertWithTitle("Missing field", message: "Please enter an email and password for your Dropmark account.")
+        guard
+            let email = emailTextField.text,
+            let password = passwordTextField.text
+        else {
+            let title = "Missing field"
+            let message = "Please enter an email and password for your Dropmark account."
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default))
+            self.present(alert, animated: true)
             return
         }
         
