@@ -29,6 +29,8 @@ import PromiseKit
 import DropmarkSDK
 
 class LoginViewController: NSViewController {
+    
+    let showNavigatorSegueIdentifier = "ShowNavigatorController"
 
     @IBOutlet weak var emailTextField: NSTextField!
     @IBOutlet weak var passwordTextField: NSSecureTextField!
@@ -78,10 +80,13 @@ class LoginViewController: NSViewController {
             RequestGenerator.authenticate(email: email, password: password)
         }.done {
             
-            DKKeychain.store(user: $0) // Securely store the user for future app sessions
-            Router.authenticateWith(user: $0) // Authenticate requests for the current app session
+            DKKeychain.user = $0 // Securely store the user for future app sessions
+            DKRouter.user = $0 // Authenticate requests for the current app session
             
-            self.showOKAlertWith(text: "Successfully logged in as \($0.name!)!")
+            let identifer = NSStoryboardSegue.Identifier.init(self.showNavigatorSegueIdentifier)
+            self.performSegue(withIdentifier: identifer, sender: nil)
+            
+//            self.showOKAlertWith(text: "Successfully logged in as \($0.name!)!")
             
 //            self.passwordTextField.stringValue = ""
 //            self.emailTextField.stringValue = ""

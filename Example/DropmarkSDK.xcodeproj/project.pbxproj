@@ -11,6 +11,7 @@
 		474B8CB31553F52B4E064409 /* Pods_macOS_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0183385C8B2CDD2D4E9469FA /* Pods_macOS_Demo.framework */; };
 		4987F2319753824F5F773446 /* Pods_iOS_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88DB797774C8FBBDF7649FCE /* Pods_iOS_Demo.framework */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		A506952D2114B0D8003639E5 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506952C2114B0D8003639E5 /* NavigationViewController.swift */; };
 		A52FC3CC20BF57E200A6E2B7 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3BF20BF57E200A6E2B7 /* DashboardViewController.swift */; };
 		A52FC3CD20BF57E200A6E2B7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3C020BF57E200A6E2B7 /* LaunchScreen.xib */; };
 		A52FC3CE20BF57E200A6E2B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3C120BF57E200A6E2B7 /* Main.storyboard */; };
@@ -32,12 +33,12 @@
 		A52FC3EE20BF5C8900A6E2B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3ED20BF5C8900A6E2B7 /* Main.storyboard */; };
 		A52FC3F320BF5C9400A6E2B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3F020BF5C9400A6E2B7 /* Assets.xcassets */; };
 		A52FC3FE20C0919500A6E2B7 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C320BF57E200A6E2B7 /* UIViewController+Extensions.swift */; };
-		A52FC40020C091EA00A6E2B7 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3FF20C091EA00A6E2B7 /* DashboardViewController.swift */; };
-		A52FC40220C096E200A6E2B7 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC40120C096E200A6E2B7 /* CollectionViewController.swift */; };
-		A52FC40420C096E900A6E2B7 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC40320C096E900A6E2B7 /* StackViewController.swift */; };
-		A52FC40620C096F000A6E2B7 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC40520C096F000A6E2B7 /* ItemViewController.swift */; };
-		A57B6E6420BCAF6200595C3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B6E6320BCAF6200595C3E /* AppDelegate.swift */; };
-		A57B6E6620BCAF6200595C3E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57B6E6520BCAF6200595C3E /* LoginViewController.swift */; };
+		A53E7DA7211506B8002CD0B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C720BF57E200A6E2B7 /* LoginViewController.swift */; };
+		A53E7DA821150ABA002CD0B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C920BF57E200A6E2B7 /* AppDelegate.swift */; };
+		A53E7DA921150AD3002CD0B9 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3BF20BF57E200A6E2B7 /* DashboardViewController.swift */; };
+		A53E7DAA21150ADE002CD0B9 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3CB20BF57E200A6E2B7 /* CollectionViewController.swift */; };
+		A53E7DAB21150AE0002CD0B9 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C820BF57E200A6E2B7 /* StackViewController.swift */; };
+		A53E7DB0211523E4002CD0B9 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3CA20BF57E200A6E2B7 /* ItemViewController.swift */; };
 		A5B57F9C20B9C74700B766D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B57F9B20B9C74700B766D6 /* AppDelegate.swift */; };
 		A5B57F9E20B9C74700B766D6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B57F9D20B9C74700B766D6 /* LoginViewController.swift */; };
 		F31A4221E36D40925F1179C0 /* Pods_tvOS_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C720F496829D377779BFBE /* Pods_tvOS_Demo.framework */; };
@@ -67,6 +68,7 @@
 		7CC8559AD692CB3EF7BB6DC8 /* Pods-iOS Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Demo/Pods-iOS Demo.release.xcconfig"; sourceTree = "<group>"; };
 		88DB797774C8FBBDF7649FCE /* Pods_iOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		948C593ECC1D4DB79124392C /* Pods-DropmarkSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DropmarkSDK_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DropmarkSDK_Tests/Pods-DropmarkSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		A506952C2114B0D8003639E5 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		A52FC3BF20BF57E200A6E2B7 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		A52FC3C020BF57E200A6E2B7 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		A52FC3C120BF57E200A6E2B7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -87,13 +89,7 @@
 		A52FC3ED20BF5C8900A6E2B7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A52FC3F020BF5C9400A6E2B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A52FC3F120BF5C9400A6E2B7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A52FC3FF20C091EA00A6E2B7 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		A52FC40120C096E200A6E2B7 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
-		A52FC40320C096E900A6E2B7 /* StackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
-		A52FC40520C096F000A6E2B7 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		A57B6E6120BCAF6100595C3E /* tvOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tvOS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A57B6E6320BCAF6200595C3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A57B6E6520BCAF6200595C3E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A5B57F9920B9C74700B766D6 /* Dropmark SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dropmark SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B57F9B20B9C74700B766D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B57F9D20B9C74700B766D6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -161,9 +157,8 @@
 			children = (
 				A52FC3DF20BF588500A6E2B7 /* keys.plist */,
 				A52FC3D720BF586B00A6E2B7 /* RequestGenerator.swift */,
-				A52FC3BE20BF57E200A6E2B7 /* iOS Demo */,
+				A52FC3BE20BF57E200A6E2B7 /* iOS and tvOS Demo */,
 				A5B57F9A20B9C74700B766D6 /* macOS Demo */,
-				A57B6E6220BCAF6100595C3E /* tvOS Demo */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				086B5A6AC3BA1513028D714B /* Pods */,
@@ -213,38 +208,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A52FC3BE20BF57E200A6E2B7 /* iOS Demo */ = {
+		A52FC3BE20BF57E200A6E2B7 /* iOS and tvOS Demo */ = {
 			isa = PBXGroup;
 			children = (
-				A52FC3C020BF57E200A6E2B7 /* LaunchScreen.xib */,
-				A52FC3C120BF57E200A6E2B7 /* Main.storyboard */,
 				A52FC3C920BF57E200A6E2B7 /* AppDelegate.swift */,
 				A52FC3C720BF57E200A6E2B7 /* LoginViewController.swift */,
 				A52FC3BF20BF57E200A6E2B7 /* DashboardViewController.swift */,
 				A52FC3CB20BF57E200A6E2B7 /* CollectionViewController.swift */,
 				A52FC3C820BF57E200A6E2B7 /* StackViewController.swift */,
 				A52FC3CA20BF57E200A6E2B7 /* ItemViewController.swift */,
-				A52FC3C220BF57E200A6E2B7 /* Utilities */,
-				A52FC3C420BF57E200A6E2B7 /* Supporting Files */,
+				A53E7DAE2115208C002CD0B9 /* iOS Demo */,
+				A53E7DAF211520A9002CD0B9 /* tvOS Demo */,
+				A52FC3C220BF57E200A6E2B7 /* Extensions */,
 			);
-			path = "iOS Demo";
+			path = "iOS and tvOS Demo";
 			sourceTree = "<group>";
 		};
-		A52FC3C220BF57E200A6E2B7 /* Utilities */ = {
+		A52FC3C220BF57E200A6E2B7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				A52FC3C320BF57E200A6E2B7 /* UIViewController+Extensions.swift */,
 			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		A52FC3C420BF57E200A6E2B7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A52FC3C620BF57E200A6E2B7 /* Info.plist */,
-				A52FC3C520BF57E200A6E2B7 /* Images.xcassets */,
-			);
-			path = "Supporting Files";
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		A52FC3E620BF5C3300A6E2B7 /* Supporting Files */ = {
@@ -257,41 +242,23 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		A52FC3EC20BF5C3800A6E2B7 /* Utilities */ = {
+		A53E7DAE2115208C002CD0B9 /* iOS Demo */ = {
 			isa = PBXGroup;
 			children = (
+				A52FC3C020BF57E200A6E2B7 /* LaunchScreen.xib */,
+				A52FC3C120BF57E200A6E2B7 /* Main.storyboard */,
+				A52FC3C620BF57E200A6E2B7 /* Info.plist */,
+				A52FC3C520BF57E200A6E2B7 /* Images.xcassets */,
 			);
-			path = Utilities;
+			path = "iOS Demo";
 			sourceTree = "<group>";
 		};
-		A52FC3EF20BF5C9400A6E2B7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A52FC3F120BF5C9400A6E2B7 /* Info.plist */,
-				A52FC3F020BF5C9400A6E2B7 /* Assets.xcassets */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A52FC3F220BF5C9400A6E2B7 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		A57B6E6220BCAF6100595C3E /* tvOS Demo */ = {
+		A53E7DAF211520A9002CD0B9 /* tvOS Demo */ = {
 			isa = PBXGroup;
 			children = (
 				A52FC3ED20BF5C8900A6E2B7 /* Main.storyboard */,
-				A57B6E6320BCAF6200595C3E /* AppDelegate.swift */,
-				A57B6E6520BCAF6200595C3E /* LoginViewController.swift */,
-				A52FC3FF20C091EA00A6E2B7 /* DashboardViewController.swift */,
-				A52FC40120C096E200A6E2B7 /* CollectionViewController.swift */,
-				A52FC40320C096E900A6E2B7 /* StackViewController.swift */,
-				A52FC40520C096F000A6E2B7 /* ItemViewController.swift */,
-				A52FC3F220BF5C9400A6E2B7 /* Utilities */,
-				A52FC3EF20BF5C9400A6E2B7 /* Supporting Files */,
+				A52FC3F120BF5C9400A6E2B7 /* Info.plist */,
+				A52FC3F020BF5C9400A6E2B7 /* Assets.xcassets */,
 			);
 			path = "tvOS Demo";
 			sourceTree = "<group>";
@@ -302,7 +269,7 @@
 				A52FC3E420BF5C1D00A6E2B7 /* Main.storyboard */,
 				A5B57F9B20B9C74700B766D6 /* AppDelegate.swift */,
 				A5B57F9D20B9C74700B766D6 /* LoginViewController.swift */,
-				A52FC3EC20BF5C3800A6E2B7 /* Utilities */,
+				A506952C2114B0D8003639E5 /* NavigationViewController.swift */,
 				A52FC3E620BF5C3300A6E2B7 /* Supporting Files */,
 			);
 			path = "macOS Demo";
@@ -399,11 +366,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = WGR9T9JH4L;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = B34U9MBMKJ;
+						DevelopmentTeam = WGR9T9JH4L;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -413,6 +381,7 @@
 					};
 					A5B57F9820B9C74700B766D6 = {
 						CreatedOnToolsVersion = 9.3.1;
+						DevelopmentTeam = WGR9T9JH4L;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -436,8 +405,8 @@
 			projectRoot = "";
 			targets = (
 				607FACCF1AFB9204008FA782 /* iOS Demo */,
-				A5B57F9820B9C74700B766D6 /* macOS Demo */,
 				A57B6E6020BCAF6100595C3E /* tvOS Demo */,
+				A5B57F9820B9C74700B766D6 /* macOS Demo */,
 				607FACE41AFB9204008FA782 /* DropmarkSDK_Tests */,
 			);
 		};
@@ -665,14 +634,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A52FC40220C096E200A6E2B7 /* CollectionViewController.swift in Sources */,
-				A52FC40620C096F000A6E2B7 /* ItemViewController.swift in Sources */,
+				A53E7DAA21150ADE002CD0B9 /* CollectionViewController.swift in Sources */,
+				A53E7DB0211523E4002CD0B9 /* ItemViewController.swift in Sources */,
+				A53E7DA7211506B8002CD0B9 /* LoginViewController.swift in Sources */,
 				A52FC3FE20C0919500A6E2B7 /* UIViewController+Extensions.swift in Sources */,
 				A52FC3DB20BF586B00A6E2B7 /* RequestGenerator.swift in Sources */,
-				A52FC40420C096E900A6E2B7 /* StackViewController.swift in Sources */,
-				A52FC40020C091EA00A6E2B7 /* DashboardViewController.swift in Sources */,
-				A57B6E6620BCAF6200595C3E /* LoginViewController.swift in Sources */,
-				A57B6E6420BCAF6200595C3E /* AppDelegate.swift in Sources */,
+				A53E7DA921150AD3002CD0B9 /* DashboardViewController.swift in Sources */,
+				A53E7DAB21150AE0002CD0B9 /* StackViewController.swift in Sources */,
+				A53E7DA821150ABA002CD0B9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -680,6 +649,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A506952D2114B0D8003639E5 /* NavigationViewController.swift in Sources */,
 				A52FC3DA20BF586B00A6E2B7 /* RequestGenerator.swift in Sources */,
 				A5B57F9E20B9C74700B766D6 /* LoginViewController.swift in Sources */,
 				A5B57F9C20B9C74700B766D6 /* AppDelegate.swift in Sources */,
@@ -807,14 +777,15 @@
 			baseConfigurationReference = 4F4DD828505A6DC4446EBA0C /* Pods-iOS Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "iOS Demo/Supporting Files/Info.plist";
+				DEVELOPMENT_TEAM = WGR9T9JH4L;
+				INFOPLIST_FILE = "iOS and tvOS Demo/iOS Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.drompark-sdk.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -823,14 +794,15 @@
 			baseConfigurationReference = 7CC8559AD692CB3EF7BB6DC8 /* Pods-iOS Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "iOS Demo/Supporting Files/Info.plist";
+				DEVELOPMENT_TEAM = WGR9T9JH4L;
+				INFOPLIST_FILE = "iOS and tvOS Demo/iOS Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.drompark-sdk.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -838,7 +810,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EA669FF00620E79A8942E4D1 /* Pods-DropmarkSDK_Tests.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = B34U9MBMKJ;
+				DEVELOPMENT_TEAM = WGR9T9JH4L;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -856,7 +828,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 948C593ECC1D4DB79124392C /* Pods-DropmarkSDK_Tests.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = B34U9MBMKJ;
+				DEVELOPMENT_TEAM = WGR9T9JH4L;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
@@ -881,7 +853,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "tvOS Demo/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "iOS and tvOS Demo/tvOS Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.drompark-sdk.tvos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -907,7 +879,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = "tvOS Demo/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "iOS and tvOS Demo/tvOS Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.drompark-sdk.tvos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -936,7 +908,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WGR9T9JH4L;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "macOS Demo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -966,7 +938,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WGR9T9JH4L;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "macOS Demo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
