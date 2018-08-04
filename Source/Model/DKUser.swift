@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  DKUser.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //

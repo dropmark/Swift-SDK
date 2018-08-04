@@ -60,7 +60,7 @@ class StackViewController: UITableViewController {
         let item = items[indexPath.row]
         
         cell.textLabel?.text = item.name
-        cell.detailTextLabel?.text = item.type.title
+        cell.detailTextLabel?.text = item.type.rawValue.capitalized
         
         return cell
         

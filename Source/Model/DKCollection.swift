@@ -1,5 +1,5 @@
 //
-//  Collection.swift
+//  DKCollection.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //

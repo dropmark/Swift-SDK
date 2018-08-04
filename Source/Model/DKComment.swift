@@ -1,5 +1,5 @@
 //
-//  Comment.swift
+//  DKComment.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //

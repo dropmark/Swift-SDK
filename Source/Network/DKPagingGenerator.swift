@@ -1,5 +1,5 @@
 //
-//  PagingGenerator.swift
+//  DKPagingGenerator.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //

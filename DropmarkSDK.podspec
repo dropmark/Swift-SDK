@@ -2,6 +2,7 @@
 # valid spec before submitting.
 
 Pod::Spec.new do |s|
+    
   s.name             = 'DropmarkSDK'
   s.version          = '0.2.0'
   s.summary          = 'Network and model controllers for Dropmark, written in Swift.'

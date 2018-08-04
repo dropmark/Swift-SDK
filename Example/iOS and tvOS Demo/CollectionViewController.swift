@@ -64,10 +64,10 @@ class CollectionViewController: UITableViewController {
             
         case .stack:
             let itemCount = item.itemsTotalCount ?? 0
-            cell.detailTextLabel?.text = "\(item.type.title) - \(itemCount) items"
+            cell.detailTextLabel?.text = "\(item.type.rawValue.capitalized) - \(itemCount) items"
             
         default:
-            cell.detailTextLabel?.text = item.type.title
+            cell.detailTextLabel?.text = item.type.rawValue.capitalized
             
         }
         

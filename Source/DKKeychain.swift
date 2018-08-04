@@ -1,5 +1,5 @@
 //
-//  Keychain.swift
+//  DKKeychain.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //

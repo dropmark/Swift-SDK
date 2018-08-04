@@ -998,7 +998,7 @@
 				58246220314D6F9165EF8F139763B747 /* Network */,
 				B50B8CF9C9850E7705B1A02E6F6F49FF /* Pod */,
 				CD4AF97AAD849EE7EFE6ECA005AB9A5E /* Support Files */,
-				53022B5A5F30713C60E8E57B27DE4ED2 /* Utilities */,
+				53022B5A5F30713C60E8E57B27DE4ED2 /* Extensions */,
 				29D26D7853D6D638D1D3BA9518714C65 /* Vendor */,
 			);
 			name = DropmarkSDK;
@@ -1148,7 +1148,7 @@
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
-		53022B5A5F30713C60E8E57B27DE4ED2 /* Utilities */ = {
+		53022B5A5F30713C60E8E57B27DE4ED2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				9D9F99F98738D4689583AC44B30AFFC0 /* Bundle+Extensions.swift */,
@@ -1156,8 +1156,8 @@
 				1D5EF0DCB8EFEB7673767D29EF8DAC25 /* String+Extensions.swift */,
 				50D6DECB75A2F6E933B96B84279A5B3B /* UTIKit+Extensions.swift */,
 			);
-			name = Utilities;
-			path = Source/Utilities;
+			name = Extensions;
+			path = Source/Extensions;
 			sourceTree = "<group>";
 		};
 		58246220314D6F9165EF8F139763B747 /* Network */ = {

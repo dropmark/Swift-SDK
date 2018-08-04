@@ -36,7 +36,7 @@ class DashboardViewController: UITableViewController {
         
         let logoutButton = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(didPressLogoutButton))
         navigationItem.leftBarButtonItem = logoutButton
-        
+                
         firstly {
             RequestGenerator.listCollections()
         }.done {

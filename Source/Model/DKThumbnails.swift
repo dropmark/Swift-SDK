@@ -1,5 +1,5 @@
 //
-//  Thumbnails.swift
+//  DKThumbnails.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //

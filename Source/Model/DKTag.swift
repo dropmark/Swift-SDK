@@ -1,5 +1,5 @@
 //
-//  Tag.swift
+//  DKTag.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
