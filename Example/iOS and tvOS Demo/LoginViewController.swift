@@ -71,7 +71,9 @@ class LoginViewController: UIViewController {
         isLoading = true
         
         firstly {
+            
             RequestGenerator.authenticate(email: email, password: password)
+            
         }.done {
             
             DKKeychain.user = $0 // Securely store the user for future app sessions
@@ -83,9 +85,14 @@ class LoginViewController: UIViewController {
             self.performSegue(withIdentifier: self.showDashboardSegue, sender: self)
             
         }.ensure {
+            
             self.isLoading = false
+            
         }.catch { error in
-            self.showOKAlertWithTitle("An error occurred", message: error.localizedDescription)
+            
+            let alert = UIAlertController(error: error, preferredStyle: .alert)
+            self.present(alert, animated: true)
+            
         }
         
     }

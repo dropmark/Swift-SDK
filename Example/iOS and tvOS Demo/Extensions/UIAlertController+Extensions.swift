@@ -1,5 +1,5 @@
 //
-//  DKErrors.swift
+//  UIAlertController+Extensions.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -22,21 +22,32 @@
 //  THE SOFTWARE.
 //
 
+import UIKit
+import DropmarkSDK
 
-import Foundation
-
-public enum PaginationError: Error {
-    case didReachEnd
-    case isFetchingPage
-}
-
-public enum NetworkError: Error {
-    case network(statusCode: Int, message: String, error: Error)
-    case jsonSerialization(error: Error)
-    case objectSerialization(reason: String)
-    case unableToRetrieveData
-    case badCredentials
-    case badPermissions
-    case userCancelled
-    case offline
+extension UIAlertController {
+    
+    convenience init(error: Error, preferredStyle: UIAlertControllerStyle) {
+        
+        var title: String?
+        var message: String?
+        
+        if let serverError = error as? ServerError {
+            
+            title = "Server Error (\(serverError.statusCode))"
+            message = serverError.message ?? "No message"
+            
+        } else {
+            
+            title = "Error"
+            message = error.localizedDescription
+            
+        }
+        
+        self.init(title: title, message: message, preferredStyle: preferredStyle)
+        
+        addAction(UIAlertAction(title: "OK", style: .default))
+        
+    }
+    
 }

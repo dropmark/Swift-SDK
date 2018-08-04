@@ -43,7 +43,8 @@ class CollectionViewController: UITableViewController {
             self.items = $0
             self.tableView.reloadData()
         }.catch { error in
-            self.showOKAlertWithTitle("An error occurred", message: error.localizedDescription)
+            let alert = UIAlertController(error: error, preferredStyle: .alert)
+            self.present(alert, animated: true)
         }
         
     }

@@ -12,11 +12,13 @@
 		4987F2319753824F5F773446 /* Pods_iOS_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88DB797774C8FBBDF7649FCE /* Pods_iOS_Demo.framework */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		A506952D2114B0D8003639E5 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506952C2114B0D8003639E5 /* NavigationViewController.swift */; };
+		A52C420021160D1100BA2054 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C41FF21160D1100BA2054 /* UIAlertController+Extensions.swift */; };
+		A52C420121160D1100BA2054 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C41FF21160D1100BA2054 /* UIAlertController+Extensions.swift */; };
 		A52FC3CC20BF57E200A6E2B7 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3BF20BF57E200A6E2B7 /* DashboardViewController.swift */; };
 		A52FC3CD20BF57E200A6E2B7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3C020BF57E200A6E2B7 /* LaunchScreen.xib */; };
 		A52FC3CE20BF57E200A6E2B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3C120BF57E200A6E2B7 /* Main.storyboard */; };
 		A52FC3CF20BF57E200A6E2B7 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C320BF57E200A6E2B7 /* UIViewController+Extensions.swift */; };
-		A52FC3D020BF57E200A6E2B7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3C520BF57E200A6E2B7 /* Images.xcassets */; };
+		A52FC3D020BF57E200A6E2B7 /* iOS Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3C520BF57E200A6E2B7 /* iOS Images.xcassets */; };
 		A52FC3D220BF57E200A6E2B7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C720BF57E200A6E2B7 /* LoginViewController.swift */; };
 		A52FC3D320BF57E200A6E2B7 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C820BF57E200A6E2B7 /* StackViewController.swift */; };
 		A52FC3D420BF57E200A6E2B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C920BF57E200A6E2B7 /* AppDelegate.swift */; };
@@ -29,10 +31,10 @@
 		A52FC3E120BF588500A6E2B7 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3DF20BF588500A6E2B7 /* keys.plist */; };
 		A52FC3E220BF588500A6E2B7 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3DF20BF588500A6E2B7 /* keys.plist */; };
 		A52FC3E520BF5C1D00A6E2B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3E420BF5C1D00A6E2B7 /* Main.storyboard */; };
-		A52FC3EA20BF5C3300A6E2B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3E820BF5C3300A6E2B7 /* Assets.xcassets */; };
+		A52FC3EA20BF5C3300A6E2B7 /* macOS Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3E820BF5C3300A6E2B7 /* macOS Assets.xcassets */; };
 		A52FC3EE20BF5C8900A6E2B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3ED20BF5C8900A6E2B7 /* Main.storyboard */; };
-		A52FC3F320BF5C9400A6E2B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3F020BF5C9400A6E2B7 /* Assets.xcassets */; };
 		A52FC3FE20C0919500A6E2B7 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C320BF57E200A6E2B7 /* UIViewController+Extensions.swift */; };
+		A53760F02116424500114013 /* tvOS Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3F020BF5C9400A6E2B7 /* tvOS Assets.xcassets */; };
 		A53E7DA7211506B8002CD0B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C720BF57E200A6E2B7 /* LoginViewController.swift */; };
 		A53E7DA821150ABA002CD0B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C920BF57E200A6E2B7 /* AppDelegate.swift */; };
 		A53E7DA921150AD3002CD0B9 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3BF20BF57E200A6E2B7 /* DashboardViewController.swift */; };
@@ -69,11 +71,12 @@
 		88DB797774C8FBBDF7649FCE /* Pods_iOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		948C593ECC1D4DB79124392C /* Pods-DropmarkSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DropmarkSDK_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DropmarkSDK_Tests/Pods-DropmarkSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A506952C2114B0D8003639E5 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
+		A52C41FF21160D1100BA2054 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 		A52FC3BF20BF57E200A6E2B7 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		A52FC3C020BF57E200A6E2B7 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		A52FC3C120BF57E200A6E2B7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A52FC3C320BF57E200A6E2B7 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
-		A52FC3C520BF57E200A6E2B7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A52FC3C520BF57E200A6E2B7 /* iOS Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "iOS Images.xcassets"; sourceTree = "<group>"; };
 		A52FC3C620BF57E200A6E2B7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A52FC3C720BF57E200A6E2B7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A52FC3C820BF57E200A6E2B7 /* StackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
@@ -84,10 +87,10 @@
 		A52FC3DF20BF588500A6E2B7 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		A52FC3E420BF5C1D00A6E2B7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A52FC3E720BF5C3300A6E2B7 /* Dropmark SDK for Mac.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "Dropmark SDK for Mac.entitlements"; sourceTree = "<group>"; };
-		A52FC3E820BF5C3300A6E2B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A52FC3E820BF5C3300A6E2B7 /* macOS Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "macOS Assets.xcassets"; sourceTree = "<group>"; };
 		A52FC3E920BF5C3300A6E2B7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A52FC3ED20BF5C8900A6E2B7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		A52FC3F020BF5C9400A6E2B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A52FC3F020BF5C9400A6E2B7 /* tvOS Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "tvOS Assets.xcassets"; sourceTree = "<group>"; };
 		A52FC3F120BF5C9400A6E2B7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A57B6E6120BCAF6100595C3E /* tvOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tvOS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B57F9920B9C74700B766D6 /* Dropmark SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dropmark SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -228,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				A52FC3C320BF57E200A6E2B7 /* UIViewController+Extensions.swift */,
+				A52C41FF21160D1100BA2054 /* UIAlertController+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -237,7 +241,7 @@
 			children = (
 				A52FC3E720BF5C3300A6E2B7 /* Dropmark SDK for Mac.entitlements */,
 				A52FC3E920BF5C3300A6E2B7 /* Info.plist */,
-				A52FC3E820BF5C3300A6E2B7 /* Assets.xcassets */,
+				A52FC3E820BF5C3300A6E2B7 /* macOS Assets.xcassets */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -248,7 +252,7 @@
 				A52FC3C020BF57E200A6E2B7 /* LaunchScreen.xib */,
 				A52FC3C120BF57E200A6E2B7 /* Main.storyboard */,
 				A52FC3C620BF57E200A6E2B7 /* Info.plist */,
-				A52FC3C520BF57E200A6E2B7 /* Images.xcassets */,
+				A52FC3C520BF57E200A6E2B7 /* iOS Images.xcassets */,
 			);
 			path = "iOS Demo";
 			sourceTree = "<group>";
@@ -258,7 +262,7 @@
 			children = (
 				A52FC3ED20BF5C8900A6E2B7 /* Main.storyboard */,
 				A52FC3F120BF5C9400A6E2B7 /* Info.plist */,
-				A52FC3F020BF5C9400A6E2B7 /* Assets.xcassets */,
+				A52FC3F020BF5C9400A6E2B7 /* tvOS Assets.xcassets */,
 			);
 			path = "tvOS Demo";
 			sourceTree = "<group>";
@@ -377,6 +381,7 @@
 					};
 					A57B6E6020BCAF6100595C3E = {
 						CreatedOnToolsVersion = 9.3.1;
+						DevelopmentTeam = WGR9T9JH4L;
 						ProvisioningStyle = Automatic;
 					};
 					A5B57F9820B9C74700B766D6 = {
@@ -419,7 +424,7 @@
 			files = (
 				A52FC3E020BF588500A6E2B7 /* keys.plist in Resources */,
 				A52FC3CE20BF57E200A6E2B7 /* Main.storyboard in Resources */,
-				A52FC3D020BF57E200A6E2B7 /* Images.xcassets in Resources */,
+				A52FC3D020BF57E200A6E2B7 /* iOS Images.xcassets in Resources */,
 				A52FC3CD20BF57E200A6E2B7 /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,8 +441,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A52FC3E220BF588500A6E2B7 /* keys.plist in Resources */,
-				A52FC3F320BF5C9400A6E2B7 /* Assets.xcassets in Resources */,
 				A52FC3EE20BF5C8900A6E2B7 /* Main.storyboard in Resources */,
+				A53760F02116424500114013 /* tvOS Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A52FC3E120BF588500A6E2B7 /* keys.plist in Resources */,
-				A52FC3EA20BF5C3300A6E2B7 /* Assets.xcassets in Resources */,
+				A52FC3EA20BF5C3300A6E2B7 /* macOS Assets.xcassets in Resources */,
 				A52FC3E520BF5C1D00A6E2B7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -618,6 +623,7 @@
 				A52FC3D620BF57E200A6E2B7 /* CollectionViewController.swift in Sources */,
 				A52FC3D320BF57E200A6E2B7 /* StackViewController.swift in Sources */,
 				A52FC3CF20BF57E200A6E2B7 /* UIViewController+Extensions.swift in Sources */,
+				A52C420021160D1100BA2054 /* UIAlertController+Extensions.swift in Sources */,
 				A52FC3CC20BF57E200A6E2B7 /* DashboardViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -641,6 +647,7 @@
 				A52FC3DB20BF586B00A6E2B7 /* RequestGenerator.swift in Sources */,
 				A53E7DA921150AD3002CD0B9 /* DashboardViewController.swift in Sources */,
 				A53E7DAB21150AE0002CD0B9 /* StackViewController.swift in Sources */,
+				A52C420121160D1100BA2054 /* UIAlertController+Extensions.swift in Sources */,
 				A53E7DA821150ABA002CD0B9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -779,6 +786,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WGR9T9JH4L;
 				INFOPLIST_FILE = "iOS and tvOS Demo/iOS Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.drompark-sdk.ios";
@@ -796,6 +804,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = WGR9T9JH4L;
 				INFOPLIST_FILE = "iOS and tvOS Demo/iOS Demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.drompark-sdk.ios";
@@ -851,7 +860,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WGR9T9JH4L;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "iOS and tvOS Demo/tvOS Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -877,7 +886,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = WGR9T9JH4L;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "iOS and tvOS Demo/tvOS Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -912,7 +921,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "macOS Demo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.drompark-sdk.macos";
 				PRODUCT_NAME = "Dropmark SDK";
 				SDKROOT = macosx;
@@ -942,7 +951,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "macOS Demo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.drompark-sdk.macos";
 				PRODUCT_NAME = "Dropmark SDK";
 				SDKROOT = macosx;

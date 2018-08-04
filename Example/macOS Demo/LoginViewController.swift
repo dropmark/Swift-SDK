@@ -86,10 +86,8 @@ class LoginViewController: NSViewController {
             let identifer = NSStoryboardSegue.Identifier.init(self.showNavigatorSegueIdentifier)
             self.performSegue(withIdentifier: identifer, sender: nil)
             
-//            self.showOKAlertWith(text: "Successfully logged in as \($0.name!)!")
-            
-//            self.passwordTextField.stringValue = ""
-//            self.emailTextField.stringValue = ""
+            self.passwordTextField.stringValue = ""
+            self.emailTextField.stringValue = ""
             
         }.ensure {
             self.isLoading = false
