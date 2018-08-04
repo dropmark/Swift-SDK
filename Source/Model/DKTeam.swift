@@ -25,6 +25,16 @@
 
 import Foundation
 
+/**
+ 
+ Teams are similar to a user account, they have their own username, dashboard and subscription, but a team can be managed by multiple users.
+ 
+ A user associated with a team can be a manager or a user. Managers have more privledges than a normal user and some API endpoints are limited to managers only.
+ 
+ Teams can be added to a collection as a collaborator by username or user_id (use the team id for this).
+ 
+ */
+
 @objc(DKTeam)
 public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     

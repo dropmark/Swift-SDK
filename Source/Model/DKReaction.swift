@@ -25,6 +25,12 @@
 
 import Foundation
 
+/**
+ 
+ Reactions are essentially a way for a user to “Like” an item.
+ 
+ */
+
 @objc(DKReaction)
 public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     

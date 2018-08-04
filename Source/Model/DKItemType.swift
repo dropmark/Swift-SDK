@@ -27,7 +27,7 @@ import Foundation
 
 /**
  
- The general item representations handled by Dropmark. DKItemTypes are expressed as strings, and are thus be comparable and printable. DKItemTypes, Universal Type Identifers, MIMEs, and file extensions are tightly integrated in the Dropmark SDK.
+ The general item representations handled by Dropmark. Item types are expressed as strings, and are thus comparable and printable. Item types, Universal Type Identifers, MIMEs, and file extensions are tightly integrated in the Dropmark SDK.
  
  */
 

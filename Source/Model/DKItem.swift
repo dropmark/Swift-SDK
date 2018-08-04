@@ -25,6 +25,12 @@
 
 import Foundation
 
+/**
+ 
+ Items belong to a collection, can optionally belong to another item (a stack), and have many comments and reactions.
+ 
+*/
+
 @objc(DKItem)
 public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     

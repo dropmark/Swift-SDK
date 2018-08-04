@@ -25,6 +25,12 @@
 
 import Foundation
 
+/**
+ 
+ Comments can be added to individual items.
+ 
+ */
+
 @objc(DKComment)
 public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     

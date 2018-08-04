@@ -25,6 +25,14 @@
 
 import Foundation
 
+/**
+ 
+ Represents a user on Dropmark. Can be the current user, collaborators, or users external to your team.
+ 
+ Note: Only when a user is retrieved from the `/auth` Dropmark API endpoint will a `token` be returned
+ 
+ */
+
 @objc(DKUser)
 public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     

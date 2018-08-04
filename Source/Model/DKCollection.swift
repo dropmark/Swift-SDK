@@ -25,6 +25,12 @@
 
 import Foundation
 
+/**
+ 
+ Collections are the main way things are organized in Dropmark. A collection has one owner, but has many items and users (AKA collaborators).
+ 
+ */
+
 @objc(DKCollection)
 public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     

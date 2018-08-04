@@ -27,6 +27,12 @@ import Foundation
 import Alamofire
 import PromiseKit
 
+/**
+ 
+ Use the paging generator to load consecutive pages of content from a listable API endpoint. Includes utilities for UITableView, UICollectionView, and NSTableView.
+ 
+ */
+
 public class DKPagingGenerator<T> {
     
     public var next: ((_ page: Int) -> Promise<[T]>)!
@@ -87,11 +93,12 @@ public class DKPagingGenerator<T> {
     
 }
 
-// Infinite scroll utilities
+// MARK: Infinite scroll utilities
 
 public extension DKPagingGenerator {
     
-    #if os(iOS)
+#if os(iOS) || os(tvOS)
+    
     public func shouldGetNextPage(at indexPath: IndexPath, for collectionView: UICollectionView) -> Bool {
         if let cellCount = collectionView.dataSource?.collectionView(collectionView, numberOfItemsInSection: indexPath.section) {
             return shouldGetNextPage(at: indexPath, for: cellCount)
@@ -105,7 +112,8 @@ public extension DKPagingGenerator {
         }
         return false
     }
-    #endif
+    
+#endif
     
     #if os(macOS)
 //    public func shouldGetNextPage(at indexPath: IndexPath, for collectionView: NSCollectionView) -> Bool {

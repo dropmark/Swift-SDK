@@ -36,13 +36,9 @@ public enum DKRouter: URLRequestConvertible {
         return token!
     }
     
-    public static let pageSize = 24
-    
     public static var user: DKUser?
     
-    public static func authenticateWith(user: DKUser) {
-        self.user = user
-    }
+    public static var pageSize = 24
     
     // Activity
     case activity(parameters: Parameters?)
@@ -397,13 +393,13 @@ public enum DKRouter: URLRequestConvertible {
         switch self {
             
         case .authenticate, .createUser:
-            DKRouter.authenticateURLRequest(&urlRequest)
+            DKRouter.authenticateDropmarkRequest(&urlRequest)
             
         default:
             guard let user = DKRouter.user else {
                 throw NetworkError.badCredentials
             }
-            DKRouter.authenticateURLRequest(&urlRequest, withUser: user)
+            DKRouter.authenticateDropmarkRequest(&urlRequest, withUser: user)
 
         }
         
@@ -603,7 +599,7 @@ public enum DKRouter: URLRequestConvertible {
      
      */
     
-    public static func authenticateURLRequest(_ urlRequest: inout URLRequest, withUser user: DKUser? = nil) {
+    public static func authenticateDropmarkRequest(_ urlRequest: inout URLRequest, withUser user: DKUser? = nil) {
         
         // Set API token
         urlRequest.setValue("\(DKRouter.apiToken)", forHTTPHeaderField: "X-API-Key")

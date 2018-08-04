@@ -54,11 +54,13 @@ class LoginViewController: UIViewController {
         
         // If a user already exists in our keychain, skip login
         guard let existingUser = DKKeychain.user else { return }
-        DKRouter.authenticateWith(user: existingUser) // Authenticate requests for the current app session
+        
+        DKRouter.user = existingUser // Authenticate requests for the current app session
+        
         performSegue(withIdentifier: showDashboardSegue, sender: self)
         
     }
-
+    
     @IBAction func didPressLoginButton(_ sender: Any) {
         
         guard let email = emailTextField.text, let password = passwordTextField.text else {
@@ -73,7 +75,7 @@ class LoginViewController: UIViewController {
         }.done {
             
             DKKeychain.user = $0 // Securely store the user for future app sessions
-            DKRouter.authenticateWith(user: $0) // Authenticate requests for the current app session
+            DKRouter.user = $0 // Authenticate requests for the current app session
             
             self.passwordTextField.text = nil
             self.emailTextField.text = nil
