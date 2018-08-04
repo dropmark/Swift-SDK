@@ -1,5 +1,5 @@
 //
-//  Serializers.swift
+//  DKResponseListAny.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -96,7 +96,7 @@ public extension DataRequest {
         let responseSerializer = DataResponseSerializer<[Any]> { request, response, data, error in
             
             if let error = error {
-                if let serverError = ServerError(response: response, data: data) {
+                if let serverError = DKServerError(response: response, data: data) {
                     return .failure(serverError)
                 } else {
                     return .failure(error)
@@ -107,11 +107,11 @@ public extension DataRequest {
             let result = jsonSerializer.serializeResponse(request, response, data, nil)
             
             guard case let .success(jsonObject) = result else {
-                return .failure(SerializationError.invalidJSON)
+                return .failure(DKSerializationError.invalidJSON)
             }
             
             guard let response = response else {
-                return .failure(SerializationError.unableToFormObject)
+                return .failure(DKSerializationError.unableToFormObject)
             }
             
             return .success(DKResponseListAny.list(from: response, withRepresentation: jsonObject))

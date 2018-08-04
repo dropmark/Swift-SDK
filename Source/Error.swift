@@ -1,5 +1,5 @@
 //
-//  DKErrors.swift
+//  Error.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -26,28 +26,47 @@
 import Foundation
 
 extension Error {
-    var code: Int { return (self as NSError).code }
-    var domain: String { return (self as NSError).domain }
+    public var code: Int { return (self as NSError).code }
+    public var domain: String { return (self as NSError).domain }
 }
 
-public enum PaginationError: Error {
+public enum DKPaginationError: Error {
     case didReachEnd
     case isFetchingPage
 }
 
-public enum SerializationError: Error {
+public enum DKSerializationError: Error {
+    case invalidJSON
+    case unableToFormObject
+}
+
+public enum DKRouterError: Error {
+    case missingUser
+    case missingUserToken
+}
+
+public struct DKServerError: Error {
+    
+    public init?(response: HTTPURLResponse?, data: Data?) {
+        
+        guard let statusCode = response?.statusCode else {
+            return nil
+        }
+        
+        self.statusCode = statusCode
+        
+        if
+            let data = data,
+            let jsonObject = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers),
+            let jsonDict = jsonObject as? [String:AnyObject],
+            let message = jsonDict["message"] as? String
+        {
+            self.message = message
+        }
+        
+    }
+    
+    public var statusCode: Int
+    public var message: String?
     
 }
-
-public enum NetworkError: Error {
-    case network(statusCode: Int, message: String, error: Error)
-    case jsonSerialization(error: Error)
-    case objectSerialization(reason: String)
-    case unableToRetrieveData
-    case badCredentials
-    case badPermissions
-    case userCancelled
-    case offline
-}
-
-public struct 

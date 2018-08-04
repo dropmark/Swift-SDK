@@ -58,9 +58,9 @@ public extension DataRequest {
         }
     }
     
-    public func responseResults() -> Promise<[Any]> {
+    public func responseListAny() -> Promise<[Any]> {
         return Promise<[Any]> { seal in
-            self.responseResults { (response: DataResponse<[Any]>) in
+            self.responseListAny { (response: DataResponse<[Any]>) in
                 seal.resolve(response.result.error, response.result.value)
             }
         }

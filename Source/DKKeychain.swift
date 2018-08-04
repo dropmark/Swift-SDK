@@ -24,7 +24,6 @@
 
 
 import Foundation
-import PromiseKit
 import KeychainSwift
 
 public struct DKKeychain {
@@ -46,7 +45,7 @@ public struct DKKeychain {
         set {
             if let newValue = newValue {
                 let userData = NSKeyedArchiver.archivedData(withRootObject: newValue)
-                KeychainSwift().set(userData, forKey: userKey, withAccess: KeychainSwiftAccessOptions.accessibleAlways)
+                KeychainSwift().set(userData, forKey: userKey, withAccess: .accessibleAlways)
             } else {
                 KeychainSwift().delete(userKey)
             }
