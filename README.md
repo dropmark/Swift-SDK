@@ -1,10 +1,13 @@
-Dropmark Swift SDK (beta)
-=======================
+<p align="center" >
+    <img src="https://raw.githubusercontent.com/dropmark/Swift-SDK/master/Images/header.png" alt="Dropmark Swift SDK" title="Dropmark Swift SDK" width="506" height:"192"
+</p>
 
 [![Version](https://img.shields.io/cocoapods/v/DropmarkSDK.svg?style=flat)](https://cocoapods.org/pods/DropmarkSDK)
 [![License](https://img.shields.io/cocoapods/l/DropmarkSDK.svg?style=flat)](https://cocoapods.org/pods/DropmarkSDK)
 [![Platform](https://img.shields.io/cocoapods/p/DropmarkSDK.svg?style=flat)](https://cocoapods.org/pods/DropmarkSDK)
 [![Twitter](https://img.shields.io/badge/twitter-%40oakstudios-blue.svg)](http://twitter.com/oakstudios)
+
+### **The Dropmark Swift SDK is currently in beta. The API may change drastically during this development period.**
 
 ## Introduction
 `DropmarkSDK` provides the common model and network controllers for Dropmark's iOS, macOS, and tvOS products.
@@ -39,21 +42,6 @@ To include the library as a dependency in another CocoaPod, reference the follow
 s.dependency 'DropmarkSDK', '~> 0.2'
 ```
 
-## Types
-
-Dropmark supports the following item types:
-
-1. Image
-2. Video
-3. Audio
-4. Link
-5. Text
-6. Color
-7. Stack
-8. Other
-
-Image, Video, Audio, and Other contain files, and are convertible from Apple UTIs. Link, Text, and Color types contain their data in a string. Stack items are special, and behave as a parent to other items.
-
 ## Migration
 
 ### Version 0.2.0
@@ -65,14 +53,14 @@ A new naming scheme was introduced for object classes, prefixing each class name
 
 ## Credits
 
-Created by [Alex Givens](http://alexgivens.com) for [Oak](https://oak.is).
+Created by [Oak](https://oak.is).
 
 `DromparkSDK` relies on the following 3rd party libraries:
 
-•  [`UTIKit`](https://github.com/cockscomb/UTIKit)
-•  [`Alamofire`](https://github.com/Alamofire/Alamofire)
-•  [`PromiseKit`](https://github.com/mxcl/PromiseKit)
-•  [`KeychainSwift`](https://github.com/evgenyneu/keychain-swift)
+    • [`Alamofire`](https://github.com/Alamofire/Alamofire)
+    • [`PromiseKit`](https://github.com/mxcl/PromiseKit)
+    • [`UTIKit`](https://github.com/cockscomb/UTIKit)
+    • [`KeychainSwift`](https://github.com/evgenyneu/keychain-swift)
 
 ## License
 
