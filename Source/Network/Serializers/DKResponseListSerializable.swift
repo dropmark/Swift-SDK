@@ -26,6 +26,12 @@
 import Foundation
 import Alamofire
 
+/**
+ 
+ When applied to classes in Dropmark's model, a class conforming to `DKResponseListSerializable` can be serialized from JSON into an array of objects.
+ 
+ */
+
 public protocol DKResponseListSerializable {
     
     static func list(from response: HTTPURLResponse, withRepresentation representation: Any) -> [Self]

@@ -26,6 +26,12 @@
 import Foundation
 import Alamofire
 
+/**
+ 
+ Similar to `DKResponseListSerializable`, the `DKResponseListAny` is a serializer that generates an array of objects of any type. This is useful, for example, when handling results from Dropmark's `/activity` endpoint, which returns a variety of object types.
+ 
+ */
+
 public struct DKResponseListAny {
     
     enum ObjectType: String {

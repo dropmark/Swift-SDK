@@ -26,6 +26,12 @@
 import Foundation
 import Alamofire
 
+/**
+ 
+ When applied to classes in Dropmark's model, a class conforming to `DKResponseObjectSerializable` can serialize JSON into an object instance.
+ 
+ */
+
 public protocol DKResponseObjectSerializable {
     init?(response: HTTPURLResponse, representation: Any)
 }

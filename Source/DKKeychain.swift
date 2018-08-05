@@ -45,7 +45,7 @@ public struct DKKeychain {
         set {
             if let newValue = newValue {
                 let userData = NSKeyedArchiver.archivedData(withRootObject: newValue)
-                KeychainSwift().set(userData, forKey: userKey, withAccess: .accessibleAlways)
+                KeychainSwift().set(userData, forKey: userKey, withAccess: .accessibleAfterFirstUnlock)
             } else {
                 KeychainSwift().delete(userKey)
             }

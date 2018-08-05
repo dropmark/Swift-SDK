@@ -569,10 +569,10 @@ public enum DKRouter: URLRequestConvertible {
             urlRequest = try URLEncoding.queryString.encode(urlRequest, with: queryParameters)
             
         case .listContacts:
-            let queryParamters: Parameters = [
+            let queryParameters: Parameters = [
                 "per_page": 1000
             ]
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParamters)
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParameters)
         case .getEmailAvailability(let email):
             let queryParameters: Parameters = [
                 "email": email
