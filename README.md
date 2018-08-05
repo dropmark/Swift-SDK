@@ -17,8 +17,8 @@
 To run the example project:
 
 1. Clone the repo
-2. Run `pod install` from the `/example` directory
-3. In the `/example` directory, copy the `keys-example.plist` file, rename the new file `keys.plist`, hten add your Dropmark token to the file. 
+2. Run `pod install` from the `/Example` directory
+3. In the `/Example` directory, copy the `keys-example.plist` file, rename the new file `keys.plist`, then add your Dropmark token to the file. 
 
 Be sure to open the examples using the .workspace file.
 
