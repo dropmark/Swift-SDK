@@ -14,15 +14,14 @@
 		A506952D2114B0D8003639E5 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506952C2114B0D8003639E5 /* NavigationViewController.swift */; };
 		A52C420021160D1100BA2054 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C41FF21160D1100BA2054 /* UIAlertController+Extensions.swift */; };
 		A52C420121160D1100BA2054 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C41FF21160D1100BA2054 /* UIAlertController+Extensions.swift */; };
-		A52FC3CC20BF57E200A6E2B7 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3BF20BF57E200A6E2B7 /* DashboardViewController.swift */; };
+		A52FC3CC20BF57E200A6E2B7 /* CollectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3BF20BF57E200A6E2B7 /* CollectionListViewController.swift */; };
 		A52FC3CD20BF57E200A6E2B7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3C020BF57E200A6E2B7 /* LaunchScreen.xib */; };
 		A52FC3CE20BF57E200A6E2B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3C120BF57E200A6E2B7 /* Main.storyboard */; };
 		A52FC3D020BF57E200A6E2B7 /* iOS Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3C520BF57E200A6E2B7 /* iOS Images.xcassets */; };
 		A52FC3D220BF57E200A6E2B7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C720BF57E200A6E2B7 /* LoginViewController.swift */; };
-		A52FC3D320BF57E200A6E2B7 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C820BF57E200A6E2B7 /* StackViewController.swift */; };
 		A52FC3D420BF57E200A6E2B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C920BF57E200A6E2B7 /* AppDelegate.swift */; };
 		A52FC3D520BF57E200A6E2B7 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3CA20BF57E200A6E2B7 /* ItemViewController.swift */; };
-		A52FC3D620BF57E200A6E2B7 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3CB20BF57E200A6E2B7 /* CollectionViewController.swift */; };
+		A52FC3D620BF57E200A6E2B7 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3CB20BF57E200A6E2B7 /* ItemListViewController.swift */; };
 		A52FC3D920BF586B00A6E2B7 /* RequestGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3D720BF586B00A6E2B7 /* RequestGenerator.swift */; };
 		A52FC3DA20BF586B00A6E2B7 /* RequestGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3D720BF586B00A6E2B7 /* RequestGenerator.swift */; };
 		A52FC3DB20BF586B00A6E2B7 /* RequestGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3D720BF586B00A6E2B7 /* RequestGenerator.swift */; };
@@ -35,10 +34,11 @@
 		A53760F02116424500114013 /* tvOS Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3F020BF5C9400A6E2B7 /* tvOS Assets.xcassets */; };
 		A53E7DA7211506B8002CD0B9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C720BF57E200A6E2B7 /* LoginViewController.swift */; };
 		A53E7DA821150ABA002CD0B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C920BF57E200A6E2B7 /* AppDelegate.swift */; };
-		A53E7DA921150AD3002CD0B9 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3BF20BF57E200A6E2B7 /* DashboardViewController.swift */; };
-		A53E7DAA21150ADE002CD0B9 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3CB20BF57E200A6E2B7 /* CollectionViewController.swift */; };
-		A53E7DAB21150AE0002CD0B9 /* StackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C820BF57E200A6E2B7 /* StackViewController.swift */; };
+		A53E7DA921150AD3002CD0B9 /* CollectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3BF20BF57E200A6E2B7 /* CollectionListViewController.swift */; };
+		A53E7DAA21150ADE002CD0B9 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3CB20BF57E200A6E2B7 /* ItemListViewController.swift */; };
 		A53E7DB0211523E4002CD0B9 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3CA20BF57E200A6E2B7 /* ItemViewController.swift */; };
+		A54E5B2921176E3000F93F1C /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E5B2821176E3000F93F1C /* UIStoryboard+Extensions.swift */; };
+		A54E5B2A21176E3000F93F1C /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E5B2821176E3000F93F1C /* UIStoryboard+Extensions.swift */; };
 		A5B57F9C20B9C74700B766D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B57F9B20B9C74700B766D6 /* AppDelegate.swift */; };
 		A5B57F9E20B9C74700B766D6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B57F9D20B9C74700B766D6 /* LoginViewController.swift */; };
 		F31A4221E36D40925F1179C0 /* Pods_tvOS_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C720F496829D377779BFBE /* Pods_tvOS_Demo.framework */; };
@@ -70,16 +70,15 @@
 		948C593ECC1D4DB79124392C /* Pods-DropmarkSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DropmarkSDK_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DropmarkSDK_Tests/Pods-DropmarkSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A506952C2114B0D8003639E5 /* NavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		A52C41FF21160D1100BA2054 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
-		A52FC3BF20BF57E200A6E2B7 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		A52FC3BF20BF57E200A6E2B7 /* CollectionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionListViewController.swift; sourceTree = "<group>"; };
 		A52FC3C020BF57E200A6E2B7 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		A52FC3C120BF57E200A6E2B7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A52FC3C520BF57E200A6E2B7 /* iOS Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "iOS Images.xcassets"; sourceTree = "<group>"; };
 		A52FC3C620BF57E200A6E2B7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A52FC3C720BF57E200A6E2B7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		A52FC3C820BF57E200A6E2B7 /* StackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackViewController.swift; sourceTree = "<group>"; };
 		A52FC3C920BF57E200A6E2B7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A52FC3CA20BF57E200A6E2B7 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
-		A52FC3CB20BF57E200A6E2B7 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		A52FC3CB20BF57E200A6E2B7 /* ItemListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		A52FC3D720BF586B00A6E2B7 /* RequestGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestGenerator.swift; path = Shared/RequestGenerator.swift; sourceTree = "<group>"; };
 		A52FC3DF20BF588500A6E2B7 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		A52FC3E420BF5C1D00A6E2B7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -89,6 +88,7 @@
 		A52FC3ED20BF5C8900A6E2B7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A52FC3F020BF5C9400A6E2B7 /* tvOS Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "tvOS Assets.xcassets"; sourceTree = "<group>"; };
 		A52FC3F120BF5C9400A6E2B7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A54E5B2821176E3000F93F1C /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 		A57B6E6120BCAF6100595C3E /* tvOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tvOS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B57F9920B9C74700B766D6 /* Dropmark SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dropmark SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B57F9B20B9C74700B766D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -213,9 +213,8 @@
 			children = (
 				A52FC3C920BF57E200A6E2B7 /* AppDelegate.swift */,
 				A52FC3C720BF57E200A6E2B7 /* LoginViewController.swift */,
-				A52FC3BF20BF57E200A6E2B7 /* DashboardViewController.swift */,
-				A52FC3CB20BF57E200A6E2B7 /* CollectionViewController.swift */,
-				A52FC3C820BF57E200A6E2B7 /* StackViewController.swift */,
+				A52FC3BF20BF57E200A6E2B7 /* CollectionListViewController.swift */,
+				A52FC3CB20BF57E200A6E2B7 /* ItemListViewController.swift */,
 				A52FC3CA20BF57E200A6E2B7 /* ItemViewController.swift */,
 				A53E7DAE2115208C002CD0B9 /* iOS Demo */,
 				A53E7DAF211520A9002CD0B9 /* tvOS Demo */,
@@ -228,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				A52C41FF21160D1100BA2054 /* UIAlertController+Extensions.swift */,
+				A54E5B2821176E3000F93F1C /* UIStoryboard+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -616,10 +616,10 @@
 				A52FC3D920BF586B00A6E2B7 /* RequestGenerator.swift in Sources */,
 				A52FC3D420BF57E200A6E2B7 /* AppDelegate.swift in Sources */,
 				A52FC3D220BF57E200A6E2B7 /* LoginViewController.swift in Sources */,
-				A52FC3D620BF57E200A6E2B7 /* CollectionViewController.swift in Sources */,
-				A52FC3D320BF57E200A6E2B7 /* StackViewController.swift in Sources */,
+				A52FC3D620BF57E200A6E2B7 /* ItemListViewController.swift in Sources */,
+				A54E5B2921176E3000F93F1C /* UIStoryboard+Extensions.swift in Sources */,
 				A52C420021160D1100BA2054 /* UIAlertController+Extensions.swift in Sources */,
-				A52FC3CC20BF57E200A6E2B7 /* DashboardViewController.swift in Sources */,
+				A52FC3CC20BF57E200A6E2B7 /* CollectionListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,12 +635,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A53E7DAA21150ADE002CD0B9 /* CollectionViewController.swift in Sources */,
+				A53E7DAA21150ADE002CD0B9 /* ItemListViewController.swift in Sources */,
 				A53E7DB0211523E4002CD0B9 /* ItemViewController.swift in Sources */,
 				A53E7DA7211506B8002CD0B9 /* LoginViewController.swift in Sources */,
 				A52FC3DB20BF586B00A6E2B7 /* RequestGenerator.swift in Sources */,
-				A53E7DA921150AD3002CD0B9 /* DashboardViewController.swift in Sources */,
-				A53E7DAB21150AE0002CD0B9 /* StackViewController.swift in Sources */,
+				A53E7DA921150AD3002CD0B9 /* CollectionListViewController.swift in Sources */,
+				A54E5B2A21176E3000F93F1C /* UIStoryboard+Extensions.swift in Sources */,
 				A52C420121160D1100BA2054 /* UIAlertController+Extensions.swift in Sources */,
 				A53E7DA821150ABA002CD0B9 /* AppDelegate.swift in Sources */,
 			);

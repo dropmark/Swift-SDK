@@ -76,7 +76,7 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
     public var sortBy : SortBy?
     public var sortOrder : SortOrder?
     public var viewMode : ViewMode?
-    public var thumbnail : String?
+    public var thumbnail : URL?
     public var labels : Bool?
     public var highlighted : Bool?
     public var archived : Bool?
@@ -122,7 +122,9 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
         if let viewModeString = representation["view_mode"] as? String {
             viewMode = ViewMode(rawValue: viewModeString)
         }
-        thumbnail = representation["thumbnail"] as? String
+        if let urlString = representation["thumbnail"] as? String {
+            thumbnail = URL(string: urlString)
+        }
         labels = representation["labels"] as? Bool
         highlighted = representation["highlighted"] as? Bool
         archived = representation["archived"] as? Bool
@@ -181,7 +183,7 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
         if let viewModeString = aDecoder.decodeObject(forKey: "view_mode") as? String {
             viewMode = ViewMode(rawValue: viewModeString)
         }
-        thumbnail = aDecoder.decodeObject(forKey: "thumbnail") as? String
+        thumbnail = aDecoder.decodeObject(forKey: "thumbnail") as? URL
         labels = aDecoder.decodeObject(forKey: "labels") as? Bool
         highlighted = aDecoder.decodeObject(forKey: "highlighted") as? Bool
         archived = aDecoder.decodeObject(forKey: "archived") as? Bool

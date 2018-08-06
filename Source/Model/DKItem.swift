@@ -44,7 +44,7 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     public var content : Any?
     public var link : String?
     public var preview : String?
-    public var thumbnail : String?
+    public var thumbnail : URL?
     public var shareable : Bool?
     public var size : NSNumber?
     public var sort : NSNumber?
@@ -91,7 +91,9 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         content = representation["content"]
         link = representation["link"] as? String
         preview = representation["preview"] as? String
-        thumbnail = representation["thumbnail"] as? String
+        if let urlString = representation["thumbnail"] as? String {
+            thumbnail = URL(string: urlString)
+        }
         shareable = representation["shareable"] as? Bool
         size = representation["size"] as? NSNumber
         sort = representation["sort"] as? NSNumber
@@ -133,9 +135,11 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
             user.avatar = representation["user_avatar"] as? String
             self.user = user
         }
+        
         if let reactionsRepresentation = representation["reactions"] as? [AnyObject] {
             reactions = reactionsRepresentation.map({ DKReaction(response:response, representation: $0)! })
         }
+        
         if let commentsRepresentation = representation["comments"] as? [AnyObject] {
             let originalComments = commentsRepresentation.map({ DKComment(response:response, representation: $0)! })
             comments = originalComments.sorted(by: { $0.createdAt < $1.createdAt })
@@ -156,7 +160,7 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         content = aDecoder.decodeObject(forKey: "content")
         link = aDecoder.decodeObject(forKey: "link") as? String
         preview = aDecoder.decodeObject(forKey: "preview") as? String
-        thumbnail = aDecoder.decodeObject(forKey: "thumbnail") as? String
+        thumbnail = aDecoder.decodeObject(forKey: "thumbnail") as? URL
         shareable = aDecoder.decodeObject(forKey: "shareable") as? Bool
         size = aDecoder.decodeObject(forKey: "size") as? NSNumber
         sort = aDecoder.decodeObject(forKey: "sort") as? NSNumber

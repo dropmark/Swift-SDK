@@ -51,9 +51,8 @@ class ItemViewController: UIViewController {
         
         title = item.name
         
-        if let urlString = item.thumbnails?.large, let url = URL(string: urlString) { // Load thumbnail
-            imageView.af_setImage(withURL: url)
-            
+        if let thumbnailURL = item.thumbnails?.cropped { // Load thumbnail
+            imageView.af_setImage(withURL: thumbnailURL)
         } else if item.type == .text, let text = item.content as? String { // Show text view for text items
             textView.text = text
             textView.isHidden = false

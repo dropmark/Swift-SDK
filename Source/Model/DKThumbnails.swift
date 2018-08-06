@@ -34,13 +34,13 @@ import Foundation
 @objc(DKThumbnails)
 public class DKThumbnails: NSObject, NSCoding {
     
-    public var mini: String?
-    public var small: String?
-    public var cropped: String?
-    public var uncropped: String?
-    public var large: String?
-    public var croppedAnimated: String?
-    public var uncroppedAnimated: String?
+    public var mini: URL?
+    public var small: URL?
+    public var cropped: URL?
+    public var uncropped: URL?
+    public var large: URL?
+    public var croppedAnimated: URL?
+    public var uncroppedAnimated: URL?
     
     // Init from Alamofire
     public init?(response: HTTPURLResponse, representation: Any) {
@@ -49,26 +49,46 @@ public class DKThumbnails: NSObject, NSCoding {
             let representation = representation as? [String: Any]
         else { return nil }
         
-        mini = representation["mini"] as? String
-        small = representation["small"] as? String
-        cropped = representation["cropped"] as? String
-        uncropped = representation["uncropped"] as? String
-        large = representation["large"] as? String
-        croppedAnimated = representation["cropped_animated"] as? String
-        uncroppedAnimated = representation["uncropped_animated"] as? String
+        if let urlString = representation["mini"] as? String  {
+            mini = URL(string: urlString)
+        }
         
+        if let urlString = representation["small"] as? String  {
+            small = URL(string: urlString)
+        }
+        
+        if let urlString = representation["cropped"] as? String  {
+            cropped = URL(string: urlString)
+        }
+        
+        if let urlString = representation["uncropped"] as? String  {
+            uncropped = URL(string: urlString)
+        }
+        
+        if let urlString = representation["large"] as? String  {
+            large = URL(string: urlString)
+        }
+        
+        if let urlString = representation["cropped_animated"] as? String  {
+            croppedAnimated = URL(string: urlString)
+        }
+        
+        if let urlString = representation["uncropped_animated"] as? String  {
+            uncroppedAnimated = URL(string: urlString)
+        }
+                
     }
 
     // Init from NSUserDefaults
     public required init(coder aDecoder: NSCoder) {
         
-        mini = aDecoder.decodeObject(forKey: "mini") as? String
-        small = aDecoder.decodeObject(forKey: "small") as? String
-        cropped = aDecoder.decodeObject(forKey: "cropped") as? String
-        uncropped = aDecoder.decodeObject(forKey: "uncropped") as? String
-        large = aDecoder.decodeObject(forKey: "large") as? String
-        croppedAnimated = aDecoder.decodeObject(forKey: "cropped_animated") as? String
-        uncroppedAnimated = aDecoder.decodeObject(forKey: "uncropped_animated") as? String
+        mini = aDecoder.decodeObject(forKey: "mini") as? URL
+        small = aDecoder.decodeObject(forKey: "small") as? URL
+        cropped = aDecoder.decodeObject(forKey: "cropped") as? URL
+        uncropped = aDecoder.decodeObject(forKey: "uncropped") as? URL
+        large = aDecoder.decodeObject(forKey: "large") as? URL
+        croppedAnimated = aDecoder.decodeObject(forKey: "cropped_animated") as? URL
+        uncroppedAnimated = aDecoder.decodeObject(forKey: "uncropped_animated") as? URL
         
     }
     

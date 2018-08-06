@@ -29,8 +29,6 @@ import DropmarkSDK
 
 class LoginViewController: UIViewController {
     
-    let showDashboardSegue = "showDashboardViewController"
-
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -53,11 +51,11 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         // If a user already exists in our keychain, skip login
-        guard let existingUser = DKKeychain.user else { return }
-        
-        DKRouter.user = existingUser // Authenticate requests for the current app session
-        
-        performSegue(withIdentifier: showDashboardSegue, sender: self)
+        if let existingUser = DKKeychain.user {
+            DKRouter.user = existingUser // Authenticate requests for the current app session
+            let collectionListViewController = UIStoryboard.collectionListViewController
+            navigationController?.pushViewController(collectionListViewController, animated: false)
+        }
         
     }
     
@@ -89,7 +87,8 @@ class LoginViewController: UIViewController {
             self.passwordTextField.text = nil
             self.emailTextField.text = nil
             
-            self.performSegue(withIdentifier: self.showDashboardSegue, sender: self)
+            let collectionListViewController = UIStoryboard.collectionListViewController
+            self.navigationController?.pushViewController(collectionListViewController, animated: true)
             
         }.ensure {
             

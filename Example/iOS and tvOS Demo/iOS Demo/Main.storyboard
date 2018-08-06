@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Dropmark-->
+        <!--Login-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController title="Dropmark" id="vXZ-lx-hvc" customClass="LoginViewController" customModule="iOS_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Dropmark" id="vXZ-lx-hvc" userLabel="Login" customClass="LoginViewController" customModule="iOS_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -98,27 +98,31 @@
                         <outlet property="emailTextField" destination="4K1-Ze-ksJ" id="rae-SC-3TQ"/>
                         <outlet property="loginButton" destination="bY0-hF-48R" id="OPo-iK-Ovo"/>
                         <outlet property="passwordTextField" destination="4l0-La-5ZW" id="pi6-7U-rIU"/>
-                        <segue destination="gDf-vk-5OA" kind="show" identifier="showDashboardViewController" id="xoO-wF-Bez"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="36" y="134"/>
+            <point key="canvasLocation" x="-66" y="134"/>
         </scene>
-        <!--Dashboard-->
+        <!--Collection List-->
         <scene sceneID="WII-5P-Ai1">
             <objects>
-                <tableViewController title="Dashboard" id="gDf-vk-5OA" customClass="DashboardViewController" customModule="iOS_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CollectionListViewControllerIdentifier" title="Collections" id="gDf-vk-5OA" userLabel="Collection List" customClass="CollectionListViewController" customModule="iOS_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eNU-mv-aZF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="KTt-N9-eAs">
+                            <rect key="frame" x="0.0" y="72" width="375" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="com.dropmark.cell.collection" textLabel="ivT-mo-j3k" detailTextLabel="GHe-Ez-foZ" style="IBUITableViewCellStyleSubtitle" id="mGS-aE-Mnr">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="com.dropmark.cell.collection" textLabel="ivT-mo-j3k" detailTextLabel="GHe-Ez-foZ" style="IBUITableViewCellStyleSubtitle" id="mGS-aE-Mnr">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mGS-aE-Mnr" id="9Cq-GU-YW5">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ivT-mo-j3k">
@@ -137,9 +141,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="Ow3-62-jB4" kind="show" identifier="showCollectionViewControllerFromDashboardViewController" id="Ofv-in-tMd"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -150,16 +151,21 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0am-Nl-cLp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="980" y="134"/>
+            <point key="canvasLocation" x="791" y="134"/>
         </scene>
-        <!--Collection-->
+        <!--Item List-->
         <scene sceneID="7fH-gH-CPs">
             <objects>
-                <tableViewController title="Collection" id="Ow3-62-jB4" customClass="CollectionViewController" customModule="iOS_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ItemListViewControllerIdentifier" title="Items" id="Ow3-62-jB4" userLabel="Item List" customClass="ItemListViewController" customModule="iOS_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Igz-Cp-jWK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="V29-N4-1zt">
+                            <rect key="frame" x="0.0" y="72" width="375" height="1"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="com.dropmark.cell.item" textLabel="DXj-3I-zHW" detailTextLabel="NRw-lg-zp5" style="IBUITableViewCellStyleSubtitle" id="P3C-ye-cX2">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -191,66 +197,15 @@
                             <outlet property="delegate" destination="Ow3-62-jB4" id="F3B-xx-KB5"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <segue destination="xEG-hN-jLa" kind="show" identifier="showItemViewControllerFromCollectionViewController" id="HiK-Jf-G5y"/>
-                        <segue destination="Sx9-y5-ZZu" kind="show" identifier="showStackViewControllerFromCollectionViewController" id="GA3-DM-K1y"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kuW-dS-3b6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1945" y="134"/>
-        </scene>
-        <!--Stack-->
-        <scene sceneID="wH1-R0-dtL">
-            <objects>
-                <tableViewController title="Stack" id="Sx9-y5-ZZu" customClass="StackViewController" customModule="iOS_Demo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ev5-5a-4rF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="com.dropmark.cell.item" textLabel="Q8e-Pi-rvk" detailTextLabel="NOH-ci-06U" style="IBUITableViewCellStyleSubtitle" id="nUp-Vf-Uaw">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nUp-Vf-Uaw" id="qgb-2F-lod">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q8e-Pi-rvk">
-                                            <rect key="frame" x="16" y="5" width="33.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NOH-ci-06U">
-                                            <rect key="frame" x="16" y="25.5" width="44" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="xEG-hN-jLa" kind="show" identifier="showItemViewControllerFromStackViewController" id="gE8-gH-SwI"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="Sx9-y5-ZZu" id="uIi-at-DID"/>
-                            <outlet property="delegate" destination="Sx9-y5-ZZu" id="hn8-pl-F00"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GLM-Sm-Rvo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2926" y="-443"/>
+            <point key="canvasLocation" x="1658" y="134"/>
         </scene>
         <!--Item-->
         <scene sceneID="JwE-0C-azl">
             <objects>
-                <viewController title="Item" id="xEG-hN-jLa" customClass="ItemViewController" customModule="iOS_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ItemViewControllerIdentifier" title="Item" id="xEG-hN-jLa" customClass="ItemViewController" customModule="iOS_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y6r-vV-etL"/>
                         <viewControllerLayoutGuide type="bottom" id="oMD-yE-4RL"/>
@@ -260,21 +215,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8hZ-fb-2VF">
-                                <rect key="frame" x="16" y="80" width="343" height="343"/>
+                                <rect key="frame" x="16" y="36" width="343" height="343"/>
                                 <color key="backgroundColor" red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="0.050000000000000003" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8hZ-fb-2VF" secondAttribute="height" multiplier="1:1" id="mYW-NS-1wX"/>
                                 </constraints>
                             </imageView>
                             <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7L9-gM-xwb">
-                                <rect key="frame" x="16" y="80" width="343" height="343"/>
+                                <rect key="frame" x="16" y="36" width="343" height="343"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cot-Yr-ioy">
-                                <rect key="frame" x="16" y="455" width="343" height="29"/>
+                                <rect key="frame" x="16" y="411" width="343" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Dropmark Link"/>
                                 <connections>
@@ -282,7 +237,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V33-Oy-WnB">
-                                <rect key="frame" x="16" y="500" width="343" height="29"/>
+                                <rect key="frame" x="16" y="456" width="343" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Source Link"/>
                                 <connections>
@@ -316,7 +271,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Pu-ID-SzO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3830" y="134"/>
+            <point key="canvasLocation" x="2535" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hr7-IH-TPy">
@@ -335,7 +290,4 @@
             <point key="canvasLocation" x="-959" y="134"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="gE8-gH-SwI"/>
-    </inferredMetricsTieBreakers>
 </document>

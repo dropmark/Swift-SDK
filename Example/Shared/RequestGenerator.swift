@@ -31,39 +31,39 @@ import DropmarkSDK
 class RequestGenerator {
     
     static func authenticate(email: String, password: String) -> Promise<DKUser> {
+        
         let parameters: Parameters = [
             "email": email,
             "password": password
         ]
+        
         return request(DKRouter.authenticate(parameters: parameters)).validate().responseObject()
-    }
-    
-    static func listCollections() -> Promise<[DKCollection]> {
-        return request(DKRouter.listCollections(queryParameters: nil)).validate().responseList()
-    }
-    
-    static func listItemsIn(collection: DKCollection) -> Promise<[DKItem]> {
-        
-        var queryParameters = Parameters()
-        
-        // Remove stack children from the listing
-        queryParameters["parent_id"] = ""
-        
-        // Create request
-        let itemsRequest = request(DKRouter.listItemsInCollection(id: collection.id, queryParameters: queryParameters)).validate()
-        
-        return itemsRequest.responseList()
         
     }
     
-    static func listItemsIn(collection: DKCollection, stack: DKItem) -> Promise<[DKItem]> {
+    static func listCollections(page: Int) -> Promise<[DKCollection]> {
         
-        var queryParameters = Parameters()
+        let parameters: Parameters = [
+            "page": page
+        ]
         
-        // Retrieve items within the parent stack
-        queryParameters["parent_id"] = stack.id
+        return request(DKRouter.listCollections(queryParameters: parameters)).validate().responseList()
         
-        let itemsRequest = request(DKRouter.listItemsInCollection(id: collection.id, queryParameters: queryParameters)).validate()
+    }
+    
+    static func listItems(collection: DKCollection, stack: DKItem?, page: Int) -> Promise<[DKItem]> {
+        
+        var parameters: Parameters = [
+            "page": page
+        ]
+        
+        if let stack = stack {
+            parameters["parent_id"] = stack.id
+        } else {
+            parameters["parent_id"] = ""
+        }
+        
+        let itemsRequest = request(DKRouter.listItemsInCollection(id: collection.id, queryParameters: parameters)).validate()
         
         return itemsRequest.responseList()
         
