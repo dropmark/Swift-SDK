@@ -51,8 +51,6 @@ class ItemListViewController: UITableViewController {
             title = collection.name
         }
         
-        
-        
 #if os(iOS)
         
         refreshControl = UIRefreshControl()

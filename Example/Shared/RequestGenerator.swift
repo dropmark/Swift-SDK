@@ -37,7 +37,9 @@ class RequestGenerator {
             "password": password
         ]
         
-        return request(DKRouter.authenticate(parameters: parameters)).validate().responseObject()
+        let authRequest = request(DKRouter.authenticate(parameters: parameters)).validate()
+        
+        return authRequest.responseObject()
         
     }
     
@@ -47,7 +49,9 @@ class RequestGenerator {
             "page": page
         ]
         
-        return request(DKRouter.listCollections(queryParameters: parameters)).validate().responseList()
+        let collectionsRequest = request(DKRouter.listCollections(queryParameters: parameters)).validate()
+        
+        return collectionsRequest.responseList()
         
     }
     

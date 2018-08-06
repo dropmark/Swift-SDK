@@ -24,14 +24,11 @@
 
 
 import Cocoa
-import Alamofire
 import PromiseKit
 import DropmarkSDK
 
 class LoginViewController: NSViewController {
     
-    let showNavigatorSegueIdentifier = "ShowNavigatorController"
-
     @IBOutlet weak var emailTextField: NSTextField!
     @IBOutlet weak var passwordTextField: NSSecureTextField!
     @IBOutlet weak var loginButton: NSButton!
@@ -58,15 +55,11 @@ class LoginViewController: NSViewController {
         super.viewDidAppear()
         
         if let existingUser = DKKeychain.user {
-            showOKAlertWith(text: "Already logged in as \(existingUser.name!)!")
+            DKRouter.user = existingUser // Authenticate requests for the current app session
+            let collectionListViewController = NSStoryboard.collectionListViewController
+            presentViewControllerAsSheet(collectionListViewController)
         }
         
-    }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
     }
 
     @IBAction func didPressLoginButton(_ sender: Any) {
@@ -83,8 +76,8 @@ class LoginViewController: NSViewController {
             DKKeychain.user = $0 // Securely store the user for future app sessions
             DKRouter.user = $0 // Authenticate requests for the current app session
             
-            let identifer = NSStoryboardSegue.Identifier.init(self.showNavigatorSegueIdentifier)
-            self.performSegue(withIdentifier: identifer, sender: nil)
+            let collectionListViewController = NSStoryboard.collectionListViewController
+            self.presentViewControllerAsSheet(collectionListViewController)
             
             self.passwordTextField.stringValue = ""
             self.emailTextField.stringValue = ""
@@ -92,18 +85,9 @@ class LoginViewController: NSViewController {
         }.ensure {
             self.isLoading = false
         }.catch { error in
-            self.showOKAlertWith(text: error.localizedDescription)
+            NSAlert.showAlert(for: error)
         }
         
-    }
-    
-    @discardableResult
-    func showOKAlertWith(text: String) -> Bool {
-        let alert = NSAlert()
-        alert.messageText = text
-        alert.alertStyle = .warning
-        alert.addButton(withTitle: "OK")
-        return alert.runModal() == .alertFirstButtonReturn
     }
     
 }
