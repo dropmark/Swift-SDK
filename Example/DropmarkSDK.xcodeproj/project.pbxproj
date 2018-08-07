@@ -41,6 +41,8 @@
 		A54E5B2A21176E3000F93F1C /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E5B2821176E3000F93F1C /* UIStoryboard+Extensions.swift */; };
 		A54E5B2C21189EAF00F93F1C /* NSStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E5B2B21189EAF00F93F1C /* NSStoryboard+Extensions.swift */; };
 		A54E5B2F2118A60B00F93F1C /* NSAlert+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E5B2E2118A60B00F93F1C /* NSAlert+Extensions.swift */; };
+		A54E5B3121190FD400F93F1C /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E5B3021190FD400F93F1C /* ItemListViewController.swift */; };
+		A54E5B332119152800F93F1C /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E5B322119152800F93F1C /* ItemViewController.swift */; };
 		A5B57F9C20B9C74700B766D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B57F9B20B9C74700B766D6 /* AppDelegate.swift */; };
 		A5B57F9E20B9C74700B766D6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B57F9D20B9C74700B766D6 /* LoginViewController.swift */; };
 		F31A4221E36D40925F1179C0 /* Pods_tvOS_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C720F496829D377779BFBE /* Pods_tvOS_Demo.framework */; };
@@ -93,6 +95,8 @@
 		A54E5B2821176E3000F93F1C /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 		A54E5B2B21189EAF00F93F1C /* NSStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 		A54E5B2E2118A60B00F93F1C /* NSAlert+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAlert+Extensions.swift"; sourceTree = "<group>"; };
+		A54E5B3021190FD400F93F1C /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
+		A54E5B322119152800F93F1C /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		A57B6E6120BCAF6100595C3E /* tvOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tvOS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B57F9920B9C74700B766D6 /* Dropmark SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dropmark SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B57F9B20B9C74700B766D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -283,6 +287,8 @@
 				A5B57F9B20B9C74700B766D6 /* AppDelegate.swift */,
 				A5B57F9D20B9C74700B766D6 /* LoginViewController.swift */,
 				A506952C2114B0D8003639E5 /* CollectionListViewController.swift */,
+				A54E5B3021190FD400F93F1C /* ItemListViewController.swift */,
+				A54E5B322119152800F93F1C /* ItemViewController.swift */,
 				A54E5B2D21189F0C00F93F1C /* Extensions */,
 				A52FC3E620BF5C3300A6E2B7 /* Supporting Files */,
 			);
@@ -665,6 +671,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A506952D2114B0D8003639E5 /* CollectionListViewController.swift in Sources */,
+				A54E5B332119152800F93F1C /* ItemViewController.swift in Sources */,
+				A54E5B3121190FD400F93F1C /* ItemListViewController.swift in Sources */,
 				A52FC3DA20BF586B00A6E2B7 /* RequestGenerator.swift in Sources */,
 				A54E5B2C21189EAF00F93F1C /* NSStoryboard+Extensions.swift in Sources */,
 				A54E5B2F2118A60B00F93F1C /* NSAlert+Extensions.swift in Sources */,

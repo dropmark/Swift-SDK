@@ -1,5 +1,5 @@
 //
-//  CollectionListViewController.swift
+//  ItemListViewController.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -30,12 +30,15 @@ import AlamofireImage
 import PromiseKit
 import DropmarkSDK
 
-class CollectionListViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
+class ItemListViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     
-    let collectionCell = "com.dropmark.cell.collection"
+    let itemCell = "com.dropmark.cell.collection"
     
-    let paging = DKPagingGenerator<DKCollection>(startPage: 1)
-    var collections = [DKCollection]() {
+    var collection: DKCollection!
+    var stack: DKItem?
+    
+    let paging = DKPagingGenerator<DKItem>(startPage: 1)
+    var items = [DKItem]() {
         didSet {
             tableView.reloadData()
         }
@@ -46,19 +49,25 @@ class CollectionListViewController: NSViewController, NSTableViewDelegate, NSTab
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        paging.next = { page in
-            return RequestGenerator.listCollections(page: page)
+        if let stackName = stack?.name {
+            title = stackName
+        } else {
+            title = collection.name
         }
         
-        getNextPageOfCollections().catch { error in
+        paging.next = { page in
+            return RequestGenerator.listItems(collection: self.collection, stack: self.stack, page: page)
+        }
+        
+        getNextPageOfItems().catch { error in
             NSAlert.showAlert(for: error)
         }
         
     }
     
-    @discardableResult func getNextPageOfCollections() -> Promise<Void> {
+    @discardableResult func getNextPageOfItems() -> Promise<Void> {
         return paging.getNext().done {
-            self.collections.insert(contentsOf: $0, at: self.collections.endIndex)
+            self.items.insert(contentsOf: $0, at: self.items.endIndex)
         }
     }
     
@@ -66,24 +75,26 @@ class CollectionListViewController: NSViewController, NSTableViewDelegate, NSTab
     
     @discardableResult func refresh() -> Promise<Void> {
         paging.reset()
-        collections.removeAll()
-        return getNextPageOfCollections()
+        items.removeAll()
+        return getNextPageOfItems()
     }
     
     // MARK: NSTableViewDelegate
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
-        let identifier = NSUserInterfaceItemIdentifier(rawValue: collectionCell)
+        let identifier = NSUserInterfaceItemIdentifier(rawValue: itemCell)
         guard let cell = tableView.makeView(withIdentifier: identifier, owner: nil) as? NSTableCellView else {
             fatalError("Unable to generate a NSTableViewCell")
         }
         
-        let collection = collections[row]
+        let item = items[row]
         
-        cell.textField?.stringValue = collection.name
+        if let itemName = item.name {
+            cell.textField?.stringValue = itemName
+        }
         
-        if let thumbnailURL = collection.thumbnails?.cropped {
+        if let thumbnailURL = item.thumbnails?.cropped {
             Alamofire.request(thumbnailURL).responseImage { response in
                 if let image = response.result.value {
                     cell.imageView?.image = image
@@ -98,7 +109,7 @@ class CollectionListViewController: NSViewController, NSTableViewDelegate, NSTab
     // MARK: NSTableViewDataSource
     
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return collections.count
+        return items.count
     }
     
 }
