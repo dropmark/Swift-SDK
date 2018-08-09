@@ -25,11 +25,7 @@
 
 import Foundation
 
-/**
- 
- Tags are added to items and are a great way to organize items across many collections.
- 
- */
+/// Tags are added to items and are a great way to organize items across many collections.
 
 @objc(DKTag)
 public final class DKTag: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
@@ -37,11 +33,22 @@ public final class DKTag: NSObject, NSCoding, DKResponseObjectSerializable, DKRe
     public var name: String!
     public var itemsTotalCount: NSNumber?
     
+    
+    /**
+     
+     Initialize a tag using a name string.
+     
+     - Parameters:
+        - name: The unique string to identify a tag
+ 
+     */
+    
     public init(name: String) {
         self.name = name
     }
     
-    // Init from Alamofire
+    // MARK: DKResponseObjectSerializable
+    
     public init?(response: HTTPURLResponse, representation: Any) {
         
         guard
@@ -53,6 +60,8 @@ public final class DKTag: NSObject, NSCoding, DKResponseObjectSerializable, DKRe
         itemsTotalCount = representation["items_total_count"] as? NSNumber
         
     }
+    
+    // MARK: NSUserDefaults
     
     // Init from NSUserDefaults
     public required init(coder aDecoder: NSCoder) {

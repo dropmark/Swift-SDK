@@ -25,11 +25,7 @@
 
 import Foundation
 
-/**
-
- Represents the available thumbnails for a collection or item.
- 
-*/
+/// Represents the available thumbnails for a collection or item.
 
 @objc(DKThumbnails)
 public class DKThumbnails: NSObject, NSCoding {
@@ -42,7 +38,7 @@ public class DKThumbnails: NSObject, NSCoding {
     public var croppedAnimated: URL?
     public var uncroppedAnimated: URL?
     
-    // Init from Alamofire
+    // Init from network response
     public init?(response: HTTPURLResponse, representation: Any) {
         
         guard

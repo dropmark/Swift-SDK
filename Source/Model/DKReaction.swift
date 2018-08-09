@@ -25,11 +25,7 @@
 
 import Foundation
 
-/**
- 
- Reactions are essentially a way for a user to “Like” an item.
- 
- */
+/// Reactions are essentially a way for a user to “Like” an item.
 
 @objc(DKReaction)
 public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
@@ -43,7 +39,8 @@ public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable,
     public var updatedAt : Date?
     public var user: DKUser?
     
-    // Init from Alamofire
+    // MARK: DKResponseObjectSerializable
+    
     public init?(response: HTTPURLResponse, representation: Any) {
         
         guard
@@ -82,6 +79,8 @@ public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable,
             self.user = user
         }
     }
+    
+    // MARK: NSUserDefaults
     
     // Init from NSUserDefaults
     public required init(coder aDecoder: NSCoder) {

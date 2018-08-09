@@ -47,7 +47,7 @@ class CollectionListViewController: NSViewController, NSTableViewDelegate, NSTab
         super.viewDidLoad()
         
         paging.next = { page in
-            return RequestGenerator.listCollections(page: page)
+            return PromiseGenerator.listCollections(page: page)
         }
         
         getNextPageOfCollections().catch { error in

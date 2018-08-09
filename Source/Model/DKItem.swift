@@ -25,11 +25,7 @@
 
 import Foundation
 
-/**
- 
- Items belong to a collection, can optionally belong to another item (a stack), and have many comments and reactions.
- 
-*/
+/// Items belong to a collection, can optionally belong to another item (a stack), and have many comments and reactions.
 
 @objc(DKItem)
 public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
@@ -68,7 +64,8 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     public var reactions : [DKReaction]?
     public var comments : [DKComment]?
     
-    // Init from Alamofire
+    // MARK: DKResponseObjectSerializable
+    
     public init?(response: HTTPURLResponse, representation: Any) {
         
         guard
@@ -146,6 +143,8 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         }
         
     }
+    
+    // MARK: NSUserDefaults
     
     // Init from NSUserDefaults
     public required init(coder aDecoder: NSCoder) {

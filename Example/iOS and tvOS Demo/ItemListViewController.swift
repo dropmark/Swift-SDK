@@ -30,12 +30,16 @@ import DropmarkSDK
 
 class ItemListViewController: UITableViewController {
     
-    let itemCell = "com.dropmark.cell.item"
+    let itemCellIdentifier = "com.dropmark.cell.item"
     
+    /// Parent collection of the item list
     var collection: DKCollection!
+    
+    /// Parent stack of the item list
     var stack: DKItem?
     
     var paging = DKPagingGenerator<DKItem>(startPage: 1)
+    
     var items = [DKItem]() {
         didSet {
             tableView.reloadData()
@@ -59,7 +63,7 @@ class ItemListViewController: UITableViewController {
 #endif
         
         paging.next = { page in
-            return RequestGenerator.listItems(collection: self.collection, stack: self.stack, page: page)
+            return PromiseGenerator.listItems(collection: self.collection, stack: self.stack, page: page)
         }
         
         getNextPageOfItems().catch { error in
@@ -108,25 +112,35 @@ class ItemListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: itemCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: itemCellIdentifier, for: indexPath)
         
         let item = items[indexPath.row]
         
+        // Title
         cell.textLabel?.text = item.name
         
         switch item.type {
             
         case .stack:
+            
+            // Subtitle
             let itemCount = item.itemsTotalCount ?? 0
             cell.detailTextLabel?.text = "Stack - \(itemCount) items"
+            
+            // Accessory
             cell.accessoryType = .disclosureIndicator
             
         default:
+            
+            // Subtitle
             cell.detailTextLabel?.text = item.type.rawValue.capitalized
+            
+            // Accessory
             cell.accessoryType = .none
             
         }
         
+        // Image
         cell.imageView?.image = #imageLiteral(resourceName: "Thumbnail Placeholder")
         if let thumbnailURL = item.thumbnails?.cropped {
             cell.imageView?.af_setImage(withURL: thumbnailURL)

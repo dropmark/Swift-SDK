@@ -27,14 +27,13 @@ import Foundation
 import Alamofire
 import PromiseKit
 
-/**
- 
- Use the paging generator to load consecutive pages of content from a listable API endpoint. Includes utilities to check for new content in UICollectionView, UITableView, NSCollectionView, and NSTableView.
- 
- */
+/// Use this class to load consecutive pages of content from a listable API endpoint. Includes utilities to check for new content while scrolling in a UICollectionView, UITableView, NSCollectionView, or NSTableView.
 
 public class DKPagingGenerator<T> {
     
+    /**
+ 
+     */
     public var next: ((_ page: Int) -> Promise<[T]>)!
     
     public var page: Int

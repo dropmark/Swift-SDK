@@ -30,11 +30,7 @@ import MobileCoreServices
 
 public extension UTI {
     
-    /**
-     
-     Convert an Apple UTI to a Dropmark Item Type.
-     
-     */
+    /// Derive a Dropmark item type from a Universal Type Identifier.
     
     public var itemType: DKItemType? {
         

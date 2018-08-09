@@ -25,27 +25,33 @@
 
 import Foundation
 
-/**
- 
- Collections are the main way things are organized in Dropmark. A collection has one owner, but has many items and users (AKA collaborators).
- 
- */
+/// Collections are the main way things are organized in Dropmark. A collection has one owner, but has many items and users (AKA collaborators).
 
 @objc(DKCollection)
 public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
+    /// Privacy of a collection (and it's items) are determined by the `Kind`
     public enum Kind : String {
+        
+        /// A collection (and it's items) is only accessible by the owner and team members
         case `private`
+        
+        /// A collection (and it's items) is available through a direct link, but is not indexed for public search
         case `public`
+        
+        /// A collection (and it's items) is publicly available and indexed for search
         case global
         
+        /// An array containing all `Kind` cases
         static var allValues: [DKCollection.Kind] = [
             .private,
             .public,
             .global
         ]
+        
     }
     
+    /// Sorting methods for child items. Note: This variable is maintained by the Dropmark API, and may differ from local sorting methods.
     public enum SortBy : String {
         case createdAt = "created_at"
         case updatedAt = "updated_at"
@@ -56,11 +62,13 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
         case null
     }
     
+    /// Render items in an ascending or descending fashion, as dictated by the `sortBy` variable.
     public enum SortOrder : String {
         case ascending = "asc"
         case descending = "desc"
     }
     
+    /// Different styles of presentation of items, as maintained by the Dropmark API
     public enum ViewMode : String {
         case tile
         case shelf
@@ -94,7 +102,8 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
     public var users: [DKUser]? // Collaborators
     public var items: [DKItem]?
     
-    // Init from Alamofire
+    // MARK: DKResponseObjectSerializable
+    
     public required init?(response: HTTPURLResponse, representation: Any) {
         
         guard
@@ -165,7 +174,10 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
         }
     }
     
+    // MARK: NSUserDefaults
+    
     // Init from NSUserDefaults
+    
     public required init(coder aDecoder: NSCoder) {
         
         id = aDecoder.decodeObject(forKey: "id") as! NSNumber

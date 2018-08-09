@@ -26,14 +26,21 @@
 import Foundation
 import Alamofire
 
-/**
- 
- When applied to classes in Dropmark's model, a class conforming to `DKResponseObjectSerializable` can serialize JSON into an object instance.
- 
- */
-
+/// When applied to classes in Dropmark's model, a class conforming to `DKResponseObjectSerializable` can serialize JSON into an object instance.
 public protocol DKResponseObjectSerializable {
+    
+    /**
+     
+     Serializes a new instance from the provided network response and key-value representation. The representation is validated for the required parameters, then fills in optional parameters as necessary.
+     
+     - Parameters:
+        - response: A network response assocated with serialization
+        - representation: A key-value object representing parameters and child objects.
+     
+     */
+    
     init?(response: HTTPURLResponse, representation: Any)
+    
 }
 
 public extension DataRequest {
@@ -64,8 +71,8 @@ public extension DataRequest {
             guard
                 let response = response,
                 let responseObject = T(response: response, representation: jsonObject)
-                else {
-                    return .failure(DKSerializationError.unableToFormObject)
+            else {
+                return .failure(DKSerializationError.unableToFormObject)
             }
             
             return .success(responseObject)

@@ -22,9 +22,9 @@
 		A52FC3D420BF57E200A6E2B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3C920BF57E200A6E2B7 /* AppDelegate.swift */; };
 		A52FC3D520BF57E200A6E2B7 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3CA20BF57E200A6E2B7 /* ItemViewController.swift */; };
 		A52FC3D620BF57E200A6E2B7 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3CB20BF57E200A6E2B7 /* ItemListViewController.swift */; };
-		A52FC3D920BF586B00A6E2B7 /* RequestGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3D720BF586B00A6E2B7 /* RequestGenerator.swift */; };
-		A52FC3DA20BF586B00A6E2B7 /* RequestGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3D720BF586B00A6E2B7 /* RequestGenerator.swift */; };
-		A52FC3DB20BF586B00A6E2B7 /* RequestGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3D720BF586B00A6E2B7 /* RequestGenerator.swift */; };
+		A52FC3D920BF586B00A6E2B7 /* PromiseGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3D720BF586B00A6E2B7 /* PromiseGenerator.swift */; };
+		A52FC3DA20BF586B00A6E2B7 /* PromiseGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3D720BF586B00A6E2B7 /* PromiseGenerator.swift */; };
+		A52FC3DB20BF586B00A6E2B7 /* PromiseGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3D720BF586B00A6E2B7 /* PromiseGenerator.swift */; };
 		A52FC3E020BF588500A6E2B7 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3DF20BF588500A6E2B7 /* keys.plist */; };
 		A52FC3E120BF588500A6E2B7 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3DF20BF588500A6E2B7 /* keys.plist */; };
 		A52FC3E220BF588500A6E2B7 /* keys.plist in Resources */ = {isa = PBXBuildFile; fileRef = A52FC3DF20BF588500A6E2B7 /* keys.plist */; };
@@ -83,7 +83,7 @@
 		A52FC3C920BF57E200A6E2B7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A52FC3CA20BF57E200A6E2B7 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		A52FC3CB20BF57E200A6E2B7 /* ItemListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
-		A52FC3D720BF586B00A6E2B7 /* RequestGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RequestGenerator.swift; path = Shared/RequestGenerator.swift; sourceTree = "<group>"; };
+		A52FC3D720BF586B00A6E2B7 /* PromiseGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PromiseGenerator.swift; path = Shared/PromiseGenerator.swift; sourceTree = "<group>"; };
 		A52FC3DF20BF588500A6E2B7 /* keys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = keys.plist; sourceTree = "<group>"; };
 		A52FC3E420BF5C1D00A6E2B7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A52FC3E720BF5C3300A6E2B7 /* Dropmark SDK for Mac.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "Dropmark SDK for Mac.entitlements"; sourceTree = "<group>"; };
@@ -164,11 +164,10 @@
 			isa = PBXGroup;
 			children = (
 				A52FC3DF20BF588500A6E2B7 /* keys.plist */,
-				A52FC3D720BF586B00A6E2B7 /* RequestGenerator.swift */,
+				A52FC3D720BF586B00A6E2B7 /* PromiseGenerator.swift */,
 				A52FC3BE20BF57E200A6E2B7 /* iOS and tvOS Demo */,
 				A5B57F9A20B9C74700B766D6 /* macOS Demo */,
 				607FACE81AFB9204008FA782 /* Tests */,
-				607FACD11AFB9204008FA782 /* Products */,
 				086B5A6AC3BA1513028D714B /* Pods */,
 				978CEBA42B9D2FAA4A28CF26 /* Frameworks */,
 			);
@@ -183,11 +182,13 @@
 				A57B6E6120BCAF6100595C3E /* tvOS Demo.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				607FACD11AFB9204008FA782 /* Products */,
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
@@ -633,7 +634,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A52FC3D520BF57E200A6E2B7 /* ItemViewController.swift in Sources */,
-				A52FC3D920BF586B00A6E2B7 /* RequestGenerator.swift in Sources */,
+				A52FC3D920BF586B00A6E2B7 /* PromiseGenerator.swift in Sources */,
 				A52FC3D420BF57E200A6E2B7 /* AppDelegate.swift in Sources */,
 				A52FC3D220BF57E200A6E2B7 /* LoginViewController.swift in Sources */,
 				A52FC3D620BF57E200A6E2B7 /* ItemListViewController.swift in Sources */,
@@ -658,7 +659,7 @@
 				A53E7DAA21150ADE002CD0B9 /* ItemListViewController.swift in Sources */,
 				A53E7DB0211523E4002CD0B9 /* ItemViewController.swift in Sources */,
 				A53E7DA7211506B8002CD0B9 /* LoginViewController.swift in Sources */,
-				A52FC3DB20BF586B00A6E2B7 /* RequestGenerator.swift in Sources */,
+				A52FC3DB20BF586B00A6E2B7 /* PromiseGenerator.swift in Sources */,
 				A53E7DA921150AD3002CD0B9 /* CollectionListViewController.swift in Sources */,
 				A54E5B2A21176E3000F93F1C /* UIStoryboard+Extensions.swift in Sources */,
 				A52C420121160D1100BA2054 /* UIAlertController+Extensions.swift in Sources */,
@@ -673,7 +674,7 @@
 				A506952D2114B0D8003639E5 /* CollectionListViewController.swift in Sources */,
 				A54E5B332119152800F93F1C /* ItemViewController.swift in Sources */,
 				A54E5B3121190FD400F93F1C /* ItemListViewController.swift in Sources */,
-				A52FC3DA20BF586B00A6E2B7 /* RequestGenerator.swift in Sources */,
+				A52FC3DA20BF586B00A6E2B7 /* PromiseGenerator.swift in Sources */,
 				A54E5B2C21189EAF00F93F1C /* NSStoryboard+Extensions.swift in Sources */,
 				A54E5B2F2118A60B00F93F1C /* NSAlert+Extensions.swift in Sources */,
 				A5B57F9E20B9C74700B766D6 /* LoginViewController.swift in Sources */,

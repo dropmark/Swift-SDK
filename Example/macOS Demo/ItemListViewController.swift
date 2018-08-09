@@ -32,7 +32,7 @@ import DropmarkSDK
 
 class ItemListViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     
-    let itemCell = "com.dropmark.cell.collection"
+    let itemCell = "com.dropmark.cell.item"
     
     var collection: DKCollection!
     var stack: DKItem?
@@ -56,7 +56,7 @@ class ItemListViewController: NSViewController, NSTableViewDelegate, NSTableView
         }
         
         paging.next = { page in
-            return RequestGenerator.listItems(collection: self.collection, stack: self.stack, page: page)
+            return PromiseGenerator.listItems(collection: self.collection, stack: self.stack, page: page)
         }
         
         getNextPageOfItems().catch { error in

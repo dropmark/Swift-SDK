@@ -27,11 +27,11 @@ import Foundation
 
 /**
  
- Teams are similar to a user account, they have their own username, dashboard and subscription, but a team can be managed by multiple users.
+ Teams are similar to a user account – they have their own username, dashboard and subscription, but a team can be managed by multiple users.
  
  A user associated with a team can be a manager or a user. Managers have more privledges than a normal user and some API endpoints are limited to managers only.
  
- Teams can be added to a collection as a collaborator by username or user_id (use the team id for this).
+ Teams can be added to a collection as a collaborator by `username` or `user_id` (use the team `id` for this).
  
  */
 
@@ -77,11 +77,21 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     public var users: [DKUser]?
     public var avatar: String?
     
+    /**
+     
+     Initialize a local instance with an ID
+     
+     - Parameters:
+        - id: The unique ID number to identify this team
+     
+     */
+    
     public init?(id: NSNumber) {
         self.id = id
     }
     
-    // Init from Alamofire
+    // MARK: DKResponseObjectSerializable
+    
     public init?(response: HTTPURLResponse, representation: Any) {
         
         guard
@@ -123,6 +133,8 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
             avatar = representation["user_avatar"] as? String
         }
     }
+    
+    // MARK: NSUserDefaults
     
     // Init from NSUserDefaults
     public required init(coder aDecoder: NSCoder) {

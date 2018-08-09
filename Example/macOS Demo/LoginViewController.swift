@@ -70,7 +70,7 @@ class LoginViewController: NSViewController {
         isLoading = true
         
         firstly {
-            RequestGenerator.authenticate(email: email, password: password)
+            PromiseGenerator.authenticate(email: email, password: password)
         }.done {
             
             DKKeychain.user = $0 // Securely store the user for future app sessions

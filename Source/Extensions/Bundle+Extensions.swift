@@ -27,6 +27,8 @@ import Foundation
 
 public extension Bundle {
     
+    /// Private utility to extract keys from a keys.plist file
+    
     class func keyForID(_ identifier: String) -> String? {
         if
             let path = Bundle.main.path(forResource: "keys", ofType: "plist"),

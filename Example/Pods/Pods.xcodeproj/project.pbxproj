@@ -734,6 +734,10 @@
 		A24DAC7FD59EFB1676E95D695D5FA406 /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C9A214CCBE65B36BEFDA339C0ED2E8 /* NSTask+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSTask+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSTask+AnyPromise.h"; sourceTree = "<group>"; };
 		A39AF77689EAB2B46FE1587AEEAD6363 /* Pods_tvOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvOS_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A501073E211CB92A001018FA /* iOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = "iOS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A501073F211CB92A001018FA /* DropmarkSDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = DropmarkSDK_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5010740211CB92A001018FA /* Dropmark SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = "Dropmark SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5010741211CB92A001018FA /* tvOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = "tvOS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52C41F72116098500BA2054 /* DKResponseObjectSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKResponseObjectSerializable.swift; sourceTree = "<group>"; };
 		A52C41FB211609E200BA2054 /* DKResponseListSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKResponseListSerializable.swift; sourceTree = "<group>"; };
 		A5FA561EE528B67776E6B5700A345A81 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1298,6 +1302,18 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		A5010742211CB92A001018FA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A501073E211CB92A001018FA /* iOS Demo.app */,
+				A501073F211CB92A001018FA /* DropmarkSDK_Tests.xctest */,
+				A5010740211CB92A001018FA /* Dropmark SDK.app */,
+				A5010741211CB92A001018FA /* tvOS Demo.app */,
+			);
+			name = Products;
+			path = Example/Tests/..;
+			sourceTree = "<group>";
+		};
 		A52C4202211614AC00BA2054 /* Serializers */ = {
 			isa = PBXGroup;
 			children = (
@@ -1379,6 +1395,7 @@
 				22B91D3205DD6F6273AED68AC3D20704 /* DKKeychain.swift */,
 				C42DA7A0CB04DADECF7482AE5652E1EB /* Extensions */,
 				F8C123928CFC7725BA0B0CF9CCC94231 /* Model */,
+				A5010742211CB92A001018FA /* Products */,
 				F0C955E4EC906E5F23CD6CFC28548B7E /* Network */,
 				BE9E4E194BDA241C12F2DC2BF8EBE1F4 /* Pod */,
 				1A62D33E081A984897A91762B87DE563 /* Support Files */,

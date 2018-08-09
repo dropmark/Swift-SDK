@@ -25,11 +25,7 @@
 
 import Foundation
 
-/**
- 
- Comments can be added to individual items.
- 
- */
+/// Comments can be added to individual items.
 
 @objc(DKComment)
 public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
@@ -48,7 +44,8 @@ public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, 
     public var shortURL : String?
     public var user: DKUser?
     
-    // Init from Alamofire
+    // MARK: DKResponseObjectSerializable
+    
     public init?(response: HTTPURLResponse, representation: Any) {
         
         guard
@@ -94,6 +91,8 @@ public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, 
         }
         
     }
+    
+    // MARK: NSUserDefaults
     
     // Init from NSUserDefaults
     public required init(coder aDecoder: NSCoder) {

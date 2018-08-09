@@ -1,5 +1,5 @@
 //
-//  RequestGenerator.swift
+//  PromiseGenerator.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -28,7 +28,21 @@ import Alamofire
 import PromiseKit
 import DropmarkSDK
 
-class RequestGenerator {
+/// Create network requests and assign them to promises. When the promise is executed, response data is serialized into JSON, then into the appropriate type. Customize this generator for your app to for legible promise chains.
+
+struct PromiseGenerator {
+    
+    /**
+     
+     Authenticate and retrieve a user object.
+ 
+     - Parameters:
+        - email: The email associated with the user's account
+        - password: The password associated with the user's account
+     
+     - Returns: A promise resulting in a Dropmark user object if successful.
+     
+     */
     
     static func authenticate(email: String, password: String) -> Promise<DKUser> {
         
@@ -39,9 +53,22 @@ class RequestGenerator {
         
         let authRequest = request(DKRouter.authenticate(parameters: parameters)).validate()
         
-        return authRequest.responseObject()
+        return authRequest.promiseObject()
         
     }
+    
+    /**
+     
+     Get a list of collections associated with the current user.
+     
+     - Parameters:
+        - page: Dropmark's API paginates list responses. Specify the page, along with page size in `DKRouter`, to specify what content to retreive in the list.
+     
+     - Returns: A promise resulting in a list of Dropmark collections if successful.
+     
+     - Note: Lists may be filtered according to various query parameters specified by the Dropmark API. Check out the API documentation for a full list of available query paramters.
+     
+     */
     
     static func listCollections(page: Int) -> Promise<[DKCollection]> {
         
@@ -51,9 +78,24 @@ class RequestGenerator {
         
         let collectionsRequest = request(DKRouter.listCollections(queryParameters: parameters)).validate()
         
-        return collectionsRequest.responseList()
+        return collectionsRequest.promiseList()
         
     }
+    
+    /**
+     
+     Get a list of items contained within a specified collection, and optionally a specified stack.
+     
+     - Parameters:
+        - collection: The parent collection of the desired items.
+        - stack: The parent stack of the desired items.
+        - page: Dropmark's API paginates list responses. Specify the page, along with page size in `DKRouter`, to specify what content to retreive in the list.
+     
+     - Returns: A promise resulting in a list of Dropmark items if successful.
+     
+     - Note: Lists may be filtered according to various query parameters specified by the Dropmark API. Check out the API documentation for a full list of available query paramters.
+     
+     */
     
     static func listItems(collection: DKCollection, stack: DKItem?, page: Int) -> Promise<[DKItem]> {
         
@@ -69,7 +111,7 @@ class RequestGenerator {
         
         let itemsRequest = request(DKRouter.listItemsInCollection(id: collection.id, queryParameters: parameters)).validate()
         
-        return itemsRequest.responseList()
+        return itemsRequest.promiseList()
         
     }
     

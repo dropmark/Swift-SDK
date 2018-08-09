@@ -52,9 +52,13 @@ class LoginViewController: UIViewController {
         
         // If a user already exists in our keychain, skip login
         if let existingUser = DKKeychain.user {
-            DKRouter.user = existingUser // Authenticate requests for the current app session
+            
+            // Authenticate requests for the current app session
+            DKRouter.user = existingUser
+            
             let collectionListViewController = UIStoryboard.collectionListViewController
             navigationController?.pushViewController(collectionListViewController, animated: false)
+            
         }
         
     }
@@ -77,7 +81,7 @@ class LoginViewController: UIViewController {
         
         firstly {
             
-            RequestGenerator.authenticate(email: email, password: password)
+            PromiseGenerator.authenticate(email: email, password: password)
             
         }.done {
             

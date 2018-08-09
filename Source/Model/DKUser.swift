@@ -29,7 +29,7 @@ import Foundation
  
  Represents a user on Dropmark. Can be the current user, collaborators, or users external to your team.
  
- Note: Only when a user is retrieved from the `/auth` Dropmark API endpoint will a `token` be returned
+    - Note: Only when a user is retrieved from the `/auth` API endpoint will a `token` be returned
  
  */
 
@@ -74,13 +74,25 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     public var createdAt : Date?
     public var avatar: String?
     public var teams: [DKTeam]?
+    
+    /// Used to authenticate requests on behalf of the user. **Note**: A token value only returns from the `/auth` API endpoint
     public var token: String?
+    
+    /**
+     
+     Initialize a local instance with an ID
+     
+     - Parameters:
+        - id: The unique ID number to identify this user
+     
+     */
     
     public init?(id: NSNumber) {
         self.id = id
     }
     
-    // Init from Alamofire
+    // MARK: DKResponseObjectSerializable
+    
     public required init?(response: HTTPURLResponse, representation: Any) {
         
         guard
@@ -122,6 +134,8 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         token = representation["token"] as? String
 
     }
+    
+    // MARK: NSUserDefaults
     
     // Init from NSUserDefaults
     public required init(coder aDecoder: NSCoder) {
@@ -194,6 +208,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         }
         return description
     }
+    
 }
 
 // MARK: Equatable

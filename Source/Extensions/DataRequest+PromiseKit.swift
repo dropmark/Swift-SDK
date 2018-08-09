@@ -29,8 +29,9 @@ import PromiseKit
 
 public extension DataRequest {
     
-    /// Generate a promise without any return objects
-    public func responseGeneric() -> Promise<Void> {
+    /// Generate a generic `Promise` from a `DataRequest`
+    
+    public func promise() -> Promise<Void> {
         return Promise<Void> { seal in
             self.response { response in
                 if let error = response.error {
@@ -42,7 +43,9 @@ public extension DataRequest {
         }
     }
     
-    public func responseObject<T: DKResponseObjectSerializable>() -> Promise<T> {
+    /// Generate a `Promise` from a `DataRequest`, returning an object of the inferred type.
+    
+    public func promiseObject<T: DKResponseObjectSerializable>() -> Promise<T> {
         return Promise<T> { seal in
             self.responseObject { (response: DataResponse<T>) in
                 seal.resolve(response.result.error, response.result.value)
@@ -50,7 +53,9 @@ public extension DataRequest {
         }
     }
     
-    public func responseList<T: DKResponseListSerializable>() -> Promise<[T]> {
+    /// Generate a `Promise` from a `DataRequest`, returning a list of objects of the inferred type.
+    
+    public func promiseList<T: DKResponseListSerializable>() -> Promise<[T]> {
         return Promise<[T]> { seal in
             self.responseList { (response: DataResponse<[T]>) in
                 seal.resolve(response.result.error, response.result.value)
@@ -58,7 +63,9 @@ public extension DataRequest {
         }
     }
     
-    public func responseListAny() -> Promise<[Any]> {
+    /// Generate a `Promise` from a `DataRequest`, returning a list of objects of any type.
+    
+    public func promiseListAny() -> Promise<[Any]> {
         return Promise<[Any]> { seal in
             self.responseListAny { (response: DataResponse<[Any]>) in
                 seal.resolve(response.result.error, response.result.value)

@@ -30,9 +30,10 @@ import DropmarkSDK
 
 class CollectionListViewController: UITableViewController {
     
-    let collectionCell = "com.dropmark.cell.collection"
+    let collectionCellIdentifier = "com.dropmark.cell.collection"
     
     let paging = DKPagingGenerator<DKCollection>(startPage: 1)
+    
     var collections = [DKCollection]() {
         didSet {
             tableView.reloadData()
@@ -53,7 +54,7 @@ class CollectionListViewController: UITableViewController {
 #endif
         
         paging.next = { page in
-            return RequestGenerator.listCollections(page: page)
+            return PromiseGenerator.listCollections(page: page)
         }
         
         getNextPageOfCollections().catch { error in
@@ -64,9 +65,14 @@ class CollectionListViewController: UITableViewController {
     }
     
     @objc func didPressLogoutButton() {
+        
+        // Rudimentary logout function. Be sure to clean up all
+        // identifying information from memory and disk if necessary.
         DKKeychain.user = nil
         DKRouter.user = nil
+        
         navigationController?.popToRootViewController(animated: true)
+        
     }
     
     @discardableResult func getNextPageOfCollections() -> Promise<Void> {
@@ -108,14 +114,18 @@ class CollectionListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: collectionCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: collectionCellIdentifier, for: indexPath)
         
         let collection = collections[indexPath.row]
         
+        // Title
         cell.textLabel?.text = collection.name
+        
+        // Subtitle
         let itemCount = collection.itemsTotalCount ?? 0
         cell.detailTextLabel?.text = "\(itemCount) items"
         
+        // Image
         cell.imageView?.image = #imageLiteral(resourceName: "Thumbnail Placeholder")
         if let thumbnailURL = collection.thumbnails?.cropped {
             cell.imageView?.af_setImage(withURL: thumbnailURL)
@@ -128,8 +138,6 @@ class CollectionListViewController: UITableViewController {
     // MARK: Delegate
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        cell.imageView?.contentMode = .scaleAspectFit
         
         // If the user scrolled to the end
         if paging.shouldGetNextPage(at: indexPath, for: tableView) {

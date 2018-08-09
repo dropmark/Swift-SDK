@@ -37,7 +37,7 @@ public final class DKInvite: NSObject, DKResponseObjectSerializable, DKResponseL
     public var thumbnails : DKThumbnails?
     public var user: DKUser?
     
-    // Init from Alamofire
+    // Init from network response
     public required init?(response: HTTPURLResponse, representation: Any) {
         
         guard

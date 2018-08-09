@@ -25,28 +25,31 @@
 
 import Foundation
 
-/**
- 
- The general item representations handled by Dropmark. Item types are expressed as strings, and are thus comparable and printable. Item types, Universal Type Identifers, MIMEs, and file extensions are tightly integrated in the Dropmark SDK.
- 
- */
+/// High-level item representations handled by Dropmark. Item types are expressed as strings, and are thus comparable and printable. Item types, Universal Type Identifers, MIMEs, and file extensions are tightly integrated in the Dropmark SDK.
 
 public enum DKItemType: String {
     
     /// Represents a data file such as a JPEG, PNG, or HEIC image.
     case image
+    
     /// Represents a data file such as a MPEG, MP4, or MOV video.
     case video
+    
     /// Represents a data file such as a MP3, AAC, or WAV audio file.
     case audio
+    
     /// Represents a string conforming to a URL scheme.
     case link
+    
     /// Represents a string formatted with markdown
     case text
+    
     /// Represents a hex color string.
     case color
+    
     /// Special case item that behaves as a parent to other items.
     case stack
+    
     /// An item not conforming to any of the other item types. Oftentimes this is a data file in a proprietary format, such as a Sketch or Photoshop file.
     case other = "file"
     
@@ -54,11 +57,10 @@ public enum DKItemType: String {
      
      Derive a Dropmark item type from a file's MIME type (such as "image/jpeg").
      
-     - parameters:
-     - mimeType: The MIME type of the item's associated file
+     - Parameters:
+        - mimeType: The MIME type of the item's associated file
      
-     - returns:
-     A Dropmark Item Type
+     - Returns: A Dropmark item type
      
      */
     
@@ -73,11 +75,10 @@ public enum DKItemType: String {
      
      Derive a Dropmark item type from a filename extension (like "jpg").
      
-     - parameters:
-     - filenameExtension: The filename extension of the item's associated file
+     - Parameters:
+        - filenameExtension: The filename extension of the item's associated file
      
-     - returns:
-     A Dropmark Item Type
+     - Returns: A Dropmark item type
      
      */
     

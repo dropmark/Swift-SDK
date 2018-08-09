@@ -27,6 +27,8 @@ import Foundation
 
 extension String {
     
+    /// Private utility to derive a Date from a timestamp string
+    
     var date: Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
