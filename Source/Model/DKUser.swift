@@ -22,7 +22,6 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 
 /**
@@ -32,7 +31,6 @@ import Foundation
     - Note: Only when a user is retrieved from the `/auth` API endpoint will a `token` be returned
  
  */
-
 @objc(DKUser)
 public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
@@ -219,6 +217,18 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     }
     
 }
+
+/**
+ 
+ Returns whether the two users are equal.
+ 
+ - Parameters:
+     - lhs: The left-hand side value to compare.
+     - rhs: The right-hand side value to compare.
+ 
+ - Returns: `true` if the two values are equal, `false` otherwise.
+ 
+ */
 
 public func ==(lhs: DKUser?, rhs: DKUser?) -> Bool {
     return lhs?.id == rhs?.id

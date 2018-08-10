@@ -22,11 +22,9 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 
 /// Reactions are essentially a way for a user to “Like” an item.
-
 @objc(DKReaction)
 public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
@@ -112,6 +110,18 @@ public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable,
     }
     
 }
+
+/**
+ 
+ Returns whether the two reactions are equal.
+ 
+ - Parameters:
+     - lhs: The left-hand side value to compare.
+     - rhs: The right-hand side value to compare.
+ 
+ - Returns: `true` if the two values are equal, `false` otherwise.
+ 
+ */
 
 func ==(lhs: DKReaction?, rhs: DKReaction?) -> Bool {
     return lhs?.id == rhs?.id

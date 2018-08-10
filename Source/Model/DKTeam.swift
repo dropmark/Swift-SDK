@@ -22,7 +22,6 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 
 /**
@@ -34,26 +33,49 @@ import Foundation
  Teams can be added to a collection as a collaborator by `username` or `user_id` (use the team `id` for this).
  
  */
-
 @objc(DKTeam)
 public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
+    /// A team's ability to act on the Dropmark platform
     public enum Status: String {
+        
+        /// A team holds full action privileges on Dropmark
         case active
+        
+        /// A team cannot act on Dropmark
         case inactive
+        
     }
     
+    /// The plan tier the team is currently subscribed to
     public enum Plan: String {
+        
+        /// Basic functionality
         case free
+        
+        /// All personal Dropmark features
         case pro
+        
+        /// All personal Dropmark features, plus those to test
         case proBeta = "pro_beta"
+        
+        /// All personal Dropmark features, paid on a monthly basis
         case proMonthly = "pro_monthly"
+        
+        /// All personal and team Dropmark features
         case team
+        
     }
     
+    /// The current user (as identified by the token supplied in the GET request) status within the team
     public enum UserKind: String {
+        
+        /// The current user manages this team
         case manager
+        
+        /// The current user is a collaborator on this team
         case user
+        
     }
     
     public var id : NSNumber!
@@ -207,6 +229,18 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     }
     
 }
+
+/**
+ 
+ Returns whether the two teams are equal.
+ 
+ - Parameters:
+     - lhs: The left-hand side value to compare.
+     - rhs: The right-hand side value to compare.
+ 
+ - Returns: `true` if the two values are equal, `false` otherwise.
+ 
+ */
 
 func ==(lhs: DKTeam?, rhs: DKTeam?) -> Bool {
     return lhs?.id == rhs?.id

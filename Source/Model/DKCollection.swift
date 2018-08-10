@@ -22,11 +22,9 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 
 /// Collections are the main way things are organized in Dropmark. A collection has one owner, but has many items and users (AKA collaborators).
-
 @objc(DKCollection)
 public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
@@ -53,27 +51,56 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
     
     /// Sorting methods for child items. Note: This variable is maintained by the Dropmark API, and may differ from local sorting methods.
     public enum SortBy : String {
+        
+        /// Sort by the date the collection was created
         case createdAt = "created_at"
+        
+        /// Sort by the date the collection was last updated
         case updatedAt = "updated_at"
+        
+        /// Sort alphabetically by name
         case name
+        
+        /// Sort by the `kind` type
         case `type`
+        
+        /// Sort by the number of items contained by the collection
         case size
+        
+        /// Sort by the number of reactions contained in the collection
         case reactions
+        
+        /// Manual sorting
         case null
+        
     }
     
     /// Render items in an ascending or descending fashion, as dictated by the `sortBy` variable.
     public enum SortOrder : String {
+        
+        /// Sort in an ascending fashion
         case ascending = "asc"
+        
+        /// Sort in a descending fashion
         case descending = "desc"
+        
     }
     
     /// Different styles of presentation of items, as maintained by the Dropmark API
     public enum ViewMode : String {
+        
+        /// Render items as a grid of tiles
         case tile
+        
+        /// Render items as a shelf
         case shelf
+        
+        /// Render items in a mason-style flow layout
         case flow
+        
+        /// Render items in a vertical list
         case list
+        
     }
     
     public var id : NSNumber!
@@ -260,6 +287,18 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
     }
     
 }
+
+/**
+ 
+ Returns whether the two collections are equal.
+ 
+ - Parameters:
+     - lhs: The left-hand side value to compare.
+     - rhs: The right-hand side value to compare.
+ 
+ - Returns: `true` if the two values are equal, `false` otherwise.
+ 
+ */
 
 public func ==(lhs: DKCollection?, rhs: DKCollection?) -> Bool {
     return lhs?.id == rhs?.id

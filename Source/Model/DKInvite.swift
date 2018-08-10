@@ -79,6 +79,18 @@ public final class DKInvite: NSObject, DKResponseObjectSerializable, DKResponseL
     
 }
 
+/**
+ 
+ Returns whether the two invites are equal.
+ 
+ - Parameters:
+     - lhs: The left-hand side value to compare.
+     - rhs: The right-hand side value to compare.
+ 
+ - Returns: `true` if the two values are equal, `false` otherwise.
+ 
+ */
+
 public func ==(lhs: DKInvite?, rhs: DKInvite?) -> Bool {
     return lhs?.id == rhs?.id
 }

@@ -22,14 +22,12 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 import Alamofire
 import PromiseKit
 import DropmarkSDK
 
 /// Create network requests and assign them to promises. When the promise is executed, response data is serialized into JSON, then into the appropriate type. Customize this generator for your app to for legible promise chains.
-
 struct PromiseGenerator {
     
     /**

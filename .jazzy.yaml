@@ -2,6 +2,11 @@ author: Oak LLC
 author_url: http://oak.is/
 github_url: https://github.com/dropmark/Swift-SDK
 root_url: https://dropmark.github.io/Swift-SDK/
-module: DropmarkSDK
 output: docs
 theme: fullwidth
+clean:
+module: DropmarkSDK
+exclude:
+  - "Source/Vendor/*"
+  - "Source/Extensions/Bundle+Extensions.swift"
+xcodebuild_arguments: ["-workspace","Example/DropmarkSDK.xcworkspace","-scheme","iOS Demo","-sdk","iphonesimulator"]

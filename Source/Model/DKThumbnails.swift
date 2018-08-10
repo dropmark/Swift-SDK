@@ -22,11 +22,9 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 
 /// Represents the available thumbnails for a collection or item.
-
 @objc(DKThumbnails)
 public class DKThumbnails: NSObject, NSCoding {
     

@@ -22,11 +22,9 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 
 /// Items belong to a collection, can optionally belong to another item (a stack), and have many comments and reactions.
-
 @objc(DKItem)
 public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
@@ -229,6 +227,18 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     }
     
 }
+
+/**
+ 
+ Returns whether the two items are equal.
+ 
+ - Parameters:
+     - lhs: The left-hand side value to compare.
+     - rhs: The right-hand side value to compare.
+ 
+ - Returns: `true` if the two values are equal, `false` otherwise.
+ 
+ */
 
 public func ==(lhs: DKItem?, rhs: DKItem?) -> Bool {
     return lhs?.id == rhs?.id

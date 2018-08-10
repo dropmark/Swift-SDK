@@ -22,7 +22,6 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 #if os(iOS) || os(tvOS)
 import MobileCoreServices

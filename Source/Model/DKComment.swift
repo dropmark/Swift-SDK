@@ -22,11 +22,9 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 
 /// Comments can be added to individual items.
-
 @objc(DKComment)
 public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
@@ -133,6 +131,18 @@ public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, 
     }
     
 }
+
+/**
+ 
+ Returns whether the two comments are equal.
+ 
+ - Parameters:
+     - lhs: The left-hand side value to compare.
+     - rhs: The right-hand side value to compare.
+ 
+ - Returns: `true` if the two values are equal, `false` otherwise.
+ 
+ */
 
 public func ==(lhs: DKComment?, rhs: DKComment?) -> Bool {
     return lhs?.id == rhs?.id

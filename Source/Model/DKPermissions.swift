@@ -22,11 +22,9 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 
 /// In a collection, the permissions represent what actions the current user can and cannot perform.
-
 @objc(DKPermissions)
 public class DKPermissions: NSObject, NSCoding {
     

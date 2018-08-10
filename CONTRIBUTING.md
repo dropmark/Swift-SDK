@@ -22,11 +22,11 @@ This also allows maintainers to focus on improving the project for others.
 
 ## Reporting Security Issues
 
-The Alamofire Software Foundation takes security seriously.
+We take security seriously at Oak.
 If you discover a security issue, please bring it to our attention right away!
 
 Please **DO NOT** file a public issue,
-instead send your report privately to <security@alamofire.org>.
+instead send your report privately to <support@dropmark.com>.
 This will help ensure that any vulnerabilities that _are_ found
 can be [disclosed responsibly](https://en.wikipedia.org/wiki/Responsible_disclosure)
 to any affected parties.
@@ -84,8 +84,6 @@ The Code of Conduct governs how we behave in public or in private
 whenever the project will be judged by our actions.
 We expect it to be honored by everyone who contributes to this project.
 
-See [CONDUCT.md](https://github.com/Alamofire/Foundation/blob/master/CONDUCT.md) for details.
-
 ---
 
-*Some of the ideas and wording for the statements above were based on work by the [Docker](https://github.com/docker/docker/blob/master/CONTRIBUTING.md) and [Linux](https://elinux.org/Developer_Certificate_Of_Origin) communities. We commend them for their efforts to facilitate collaboration in their projects.*
+*Some of the ideas and wording for the statements above were based on work by the [Docker](https://github.com/docker/docker/blob/master/CONTRIBUTING.md), [Linux](https://elinux.org/Developer_Certificate_Of_Origin), and [Alamofire](https://github.com/Alamofire/Foundation) communities. We commend them for their efforts to facilitate collaboration in their projects.*
