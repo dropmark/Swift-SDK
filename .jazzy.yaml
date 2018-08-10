@@ -3,7 +3,7 @@ author_url: http://oak.is/
 github_url: https://github.com/dropmark/Swift-SDK
 root_url: https://dropmark.github.io/Swift-SDK/
 output: docs
-theme: fullwidth
+theme: apple
 clean:
 module: DropmarkSDK
 exclude:
