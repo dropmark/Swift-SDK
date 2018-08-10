@@ -24,12 +24,11 @@
 
 
 import Cocoa
-import Alamofire
 import PromiseKit
 import DropmarkSDK
 
 class LoginViewController: NSViewController {
-
+    
     @IBOutlet weak var emailTextField: NSTextField!
     @IBOutlet weak var passwordTextField: NSSecureTextField!
     @IBOutlet weak var loginButton: NSButton!
@@ -56,15 +55,11 @@ class LoginViewController: NSViewController {
         super.viewDidAppear()
         
         if let existingUser = DKKeychain.user {
-            showOKAlertWith(text: "Already logged in as \(existingUser.name!)!")
+            DKRouter.user = existingUser // Authenticate requests for the current app session
+            let collectionListViewController = NSStoryboard.collectionListViewController
+            presentViewControllerAsSheet(collectionListViewController)
         }
         
-    }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
     }
 
     @IBAction func didPressLoginButton(_ sender: Any) {
@@ -75,32 +70,24 @@ class LoginViewController: NSViewController {
         isLoading = true
         
         firstly {
-            RequestGenerator.authenticate(email: email, password: password)
+            PromiseGenerator.authenticate(email: email, password: password)
         }.done {
             
-            DKKeychain.store(user: $0) // Securely store the user for future app sessions
-            Router.authenticateWith(user: $0) // Authenticate requests for the current app session
+            DKKeychain.user = $0 // Securely store the user for future app sessions
+            DKRouter.user = $0 // Authenticate requests for the current app session
             
-            self.showOKAlertWith(text: "Successfully logged in as \($0.name!)!")
+            let collectionListViewController = NSStoryboard.collectionListViewController
+            self.presentViewControllerAsSheet(collectionListViewController)
             
-//            self.passwordTextField.stringValue = ""
-//            self.emailTextField.stringValue = ""
+            self.passwordTextField.stringValue = ""
+            self.emailTextField.stringValue = ""
             
         }.ensure {
             self.isLoading = false
         }.catch { error in
-            self.showOKAlertWith(text: error.localizedDescription)
+            NSAlert.showAlert(for: error)
         }
         
-    }
-    
-    @discardableResult
-    func showOKAlertWith(text: String) -> Bool {
-        let alert = NSAlert()
-        alert.messageText = text
-        alert.alertStyle = .warning
-        alert.addButton(withTitle: "OK")
-        return alert.runModal() == .alertFirstButtonReturn
     }
     
 }

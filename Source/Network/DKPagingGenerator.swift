@@ -1,5 +1,5 @@
 //
-//  PagingGenerator.swift
+//  DKPagingGenerator.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -22,17 +22,20 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 import Alamofire
 import PromiseKit
 
+/// Use this class to load consecutive pages of content from a listable API endpoint. Includes utilities to check for new content while scrolling in a UICollectionView, UITableView, NSCollectionView, or NSTableView.
 public class DKPagingGenerator<T> {
     
+    /**
+ 
+     */
     public var next: ((_ page: Int) -> Promise<[T]>)!
     
     public var page: Int
-    public var pageSize: Int = 24
+    public var pageSize: Int = DKRouter.pageSize
     private var startPage: Int = 1
     public var didReachEnd: Bool = false
     public var isFetchingPage: Bool = false
@@ -51,12 +54,12 @@ public class DKPagingGenerator<T> {
         return Promise { seal in
             
             guard didReachEnd == false else {
-                seal.reject(PaginationError.didReachEnd)
+                seal.reject(DKPaginationError.didReachEnd)
                 return
             }
             
             guard isFetchingPage == false else {
-                seal.reject(PaginationError.isFetchingPage)
+                seal.reject(DKPaginationError.isFetchingPage)
                 return
             }
             
@@ -87,51 +90,54 @@ public class DKPagingGenerator<T> {
     
 }
 
-// Infinite scroll utilities
+// MARK: Infinite scroll utilities
 
 public extension DKPagingGenerator {
     
-    #if os(iOS)
+#if os(iOS) || os(tvOS)
+    
     public func shouldGetNextPage(at indexPath: IndexPath, for collectionView: UICollectionView) -> Bool {
         if let cellCount = collectionView.dataSource?.collectionView(collectionView, numberOfItemsInSection: indexPath.section) {
-            return shouldGetNextPage(at: indexPath, for: cellCount)
+            return shouldGetNextPage(at: indexPath.item, for: cellCount)
         }
         return false
     }
     
     public func shouldGetNextPage(at indexPath: IndexPath, for tableView: UITableView) -> Bool {
         if let cellCount = tableView.dataSource?.tableView(tableView, numberOfRowsInSection: indexPath.section) {
-            return shouldGetNextPage(at: indexPath, for: cellCount)
+            return shouldGetNextPage(at: indexPath.row, for: cellCount)
         }
         return false
     }
-    #endif
     
-    #if os(macOS)
-//    public func shouldGetNextPage(at indexPath: IndexPath, for collectionView: NSCollectionView) -> Bool {
-//        if let cellCount = collectionView.dataSource?.collectionView(collectionView, numberOfItemsInSection: indexPath.section) {
-//            return shouldGetNextPage(at: indexPath, for: cellCount)
-//        }
-//        return false
-//    }
-//
-//    public func shouldGetNextPage(at indexPath: IndexPath, for tableView: UITableView) -> Bool {
-//        if let cellCount = tableView.dataSource?.tableView(tableView, numberOfRowsInSection: indexPath.section) {
-//            return shouldGetNextPage(at: indexPath, for: cellCount)
-//        }
-//        return false
-//    }
-    #endif
+#elseif os(macOS)
     
-    private func shouldGetNextPage(at indexPath: IndexPath, for cellCount: Int) -> Bool {
+    public func shouldGetNextPage(at indexPath: IndexPath, for collectionView: NSCollectionView) -> Bool {
+        if let cellCount = collectionView.dataSource?.collectionView(collectionView, numberOfItemsInSection: indexPath.section) {
+            return shouldGetNextPage(at: indexPath.item, for: cellCount)
+        }
+        return false
+    }
+
+    public func shouldGetNextPage(at row: Int, for tableView: NSTableView) -> Bool {
+        if let cellCount = tableView.dataSource?.numberOfRows?(in: tableView) {
+            return shouldGetNextPage(at: row, for: cellCount)
+        }
+        return false
+    }
+    
+#endif
+    
+    private func shouldGetNextPage(at index: Int, for cellCount: Int) -> Bool {
         
         if
             cellCount > 0, // If at least 1 item is loaded ...
-            indexPath.item >= cellCount - 1, // ... and the user scrolled to the last cell ...
+            index >= cellCount - 1, // ... and the user scrolled to the last cell ...
             didReachEnd == false // ... and there are still items to fetch.
         {
             return true
         }
+        
         return false
         
     }

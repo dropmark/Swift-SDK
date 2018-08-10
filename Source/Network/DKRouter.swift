@@ -1,5 +1,5 @@
 //
-//  Router.swift
+//  DKRouter.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -22,7 +22,6 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 import Alamofire
 
@@ -36,13 +35,9 @@ public enum DKRouter: URLRequestConvertible {
         return token!
     }
     
-    public static let pageSize = 24
-    
     public static var user: DKUser?
     
-    public static func authenticateWith(user: DKUser) {
-        self.user = user
-    }
+    public static var pageSize = 24
     
     // Activity
     case activity(parameters: Parameters?)
@@ -397,14 +392,12 @@ public enum DKRouter: URLRequestConvertible {
         switch self {
             
         case .authenticate, .createUser:
-            DKRouter.authenticateURLRequest(&urlRequest)
+            DKRouter.authenticateDropmarkRequest(&urlRequest)
             
         default:
-            guard let user = DKRouter.user else {
-                throw NetworkError.badCredentials
-            }
-            DKRouter.authenticateURLRequest(&urlRequest, withUser: user)
-
+            DKRouter.authenticateDropmarkRequest(&urlRequest)
+            try DKRouter.credentialRequest(&urlRequest, with: DKRouter.user)
+            
         }
         
         switch self {
@@ -575,10 +568,10 @@ public enum DKRouter: URLRequestConvertible {
             urlRequest = try URLEncoding.queryString.encode(urlRequest, with: queryParameters)
             
         case .listContacts:
-            let queryParamters: Parameters = [
+            let queryParameters: Parameters = [
                 "per_page": 1000
             ]
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParamters)
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParameters)
         case .getEmailAvailability(let email):
             let queryParameters: Parameters = [
                 "email": email
@@ -599,24 +592,34 @@ public enum DKRouter: URLRequestConvertible {
     
     /**
      
-     Pass in a URL Request to add token authentication, and optionally authenticate a user.
+     Pass in a URL Request to add token authentication
      
      */
     
-    public static func authenticateURLRequest(_ urlRequest: inout URLRequest, withUser user: DKUser? = nil) {
-        
-        // Set API token
+    public static func authenticateDropmarkRequest(_ urlRequest: inout URLRequest) {
         urlRequest.setValue("\(DKRouter.apiToken)", forHTTPHeaderField: "X-API-Key")
+    }
+    
+    /**
+     
+     Pass in a URL Request and user to credential the request.
+     
+     */
+    
+    public static func credentialRequest(_ urlRequest: inout URLRequest, with user: DKUser?) throws {
         
-        // Set user credentials, if necessary
-        if let userID = user?.id, let userToken = user?.token {
-            
-            let plainString = "\(userID):\(userToken)" as NSString
-            let plainData = plainString.data(using: String.Encoding.utf8.rawValue)
-            let base64String = plainData?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
-            urlRequest.setValue("Basic \(base64String!)", forHTTPHeaderField: "Authorization")
-            
+        guard let user = user else {
+            throw DKRouterError.missingUser
         }
+        
+        guard let userToken = user.token else {
+            throw DKRouterError.missingUserToken
+        }
+        
+        let plainString = "\(user.id!):\(userToken)" as NSString
+        let plainData = plainString.data(using: String.Encoding.utf8.rawValue)
+        let base64String = plainData?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
+        urlRequest.setValue("Basic \(base64String!)", forHTTPHeaderField: "Authorization")
         
     }
     

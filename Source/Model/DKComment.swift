@@ -1,5 +1,5 @@
 //
-//  Comment.swift
+//  DKComment.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -22,9 +22,9 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 
+/// Comments can be added to individual items.
 @objc(DKComment)
 public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
@@ -42,7 +42,8 @@ public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, 
     public var shortURL : String?
     public var user: DKUser?
     
-    // Init from Alamofire
+    // MARK: DKResponseObjectSerializable
+    
     public init?(response: HTTPURLResponse, representation: Any) {
         
         guard
@@ -60,9 +61,11 @@ public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, 
         collectionURL = representation["collection_url"] as? String
         self.body = body
         createdAt = createdAtString.date
+        
         if let updatedAtString = representation["updated_at"] as? String {
             updatedAt = updatedAtString.date
         }
+        
         annotation = representation["annotation"] as? String
         URL = representation["url"] as? String
         shortURL = representation["short_url"] as? String
@@ -89,7 +92,8 @@ public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, 
         
     }
     
-    // Init from NSUserDefaults
+    // MARK: NSCoding
+    
     public required init(coder aDecoder: NSCoder) {
         
         id = aDecoder.decodeObject(forKey: "id") as! NSNumber
@@ -108,7 +112,6 @@ public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, 
         
     }
     
-    // Save to NSUserDefaults
     public func encode(with aCoder: NSCoder) {
         
         aCoder.encode(id, forKey: "id")
@@ -129,19 +132,17 @@ public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, 
     
 }
 
-// MARK: Equatable
-
-public func ==(lhs: DKComment, rhs: DKComment) -> Bool {
-    return lhs.id == rhs.id
-}
-
-public func ==(lhs: DKComment?, rhs: DKComment) -> Bool {
-    return lhs?.id == rhs.id
-}
-
-public func ==(lhs: DKComment, rhs: DKComment?) -> Bool {
-    return lhs.id == rhs?.id
-}
+/**
+ 
+ Returns whether the two comments are equal.
+ 
+ - Parameters:
+     - lhs: The left-hand side value to compare.
+     - rhs: The right-hand side value to compare.
+ 
+ - Returns: `true` if the two values are equal, `false` otherwise.
+ 
+ */
 
 public func ==(lhs: DKComment?, rhs: DKComment?) -> Bool {
     return lhs?.id == rhs?.id

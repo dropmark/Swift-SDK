@@ -1,5 +1,5 @@
 //
-//  Reaction.swift
+//  DKReaction.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -22,9 +22,9 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 
+/// Reactions are essentially a way for a user to “Like” an item.
 @objc(DKReaction)
 public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
@@ -37,7 +37,8 @@ public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable,
     public var updatedAt : Date?
     public var user: DKUser?
     
-    // Init from Alamofire
+    // MARK: DKResponseObjectSerializable
+    
     public init?(response: HTTPURLResponse, representation: Any) {
         
         guard
@@ -53,9 +54,11 @@ public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable,
         collectionID = representation["collection_id"] as? NSNumber
         collectionName = representation["collection_name"] as? String
         createdAt = createdAtString.date
+        
         if let updatedAtString = representation["updated_at"] as? String {
             updatedAt = updatedAtString.date
         }
+        
         if let userID = representation["user_id"] as? NSNumber, let user = DKUser(id: userID) {
             user.username = representation["username"] as? String
             if let name = representation["user_name"] as? String {
@@ -75,9 +78,11 @@ public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable,
             }
             self.user = user
         }
+        
     }
     
-    // Init from NSUserDefaults
+    // MARK: NSCoding
+    
     public required init(coder aDecoder: NSCoder) {
         
         id = aDecoder.decodeObject(forKey: "id") as! NSNumber
@@ -91,7 +96,6 @@ public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable,
         
     }
     
-    // Save to NSUserDefaults
     public func encode(with aCoder: NSCoder) {
         
         aCoder.encode(id, forKey: "id")
@@ -107,19 +111,17 @@ public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable,
     
 }
 
-// MARK: Equatable
-
-func ==(lhs: DKReaction, rhs: DKReaction) -> Bool {
-    return lhs.id == rhs.id
-}
-
-func ==(lhs: DKReaction?, rhs: DKReaction) -> Bool {
-    return lhs?.id == rhs.id
-}
-
-func ==(lhs: DKReaction, rhs: DKReaction?) -> Bool {
-    return lhs.id == rhs?.id
-}
+/**
+ 
+ Returns whether the two reactions are equal.
+ 
+ - Parameters:
+     - lhs: The left-hand side value to compare.
+     - rhs: The right-hand side value to compare.
+ 
+ - Returns: `true` if the two values are equal, `false` otherwise.
+ 
+ */
 
 func ==(lhs: DKReaction?, rhs: DKReaction?) -> Bool {
     return lhs?.id == rhs?.id

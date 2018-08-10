@@ -1,5 +1,5 @@
 //
-//  Item.swift
+//  DKItem.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -22,9 +22,9 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 
+/// Items belong to a collection, can optionally belong to another item (a stack), and have many comments and reactions.
 @objc(DKItem)
 public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
@@ -38,7 +38,7 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     public var content : Any?
     public var link : String?
     public var preview : String?
-    public var thumbnail : String?
+    public var thumbnail : URL?
     public var shareable : Bool?
     public var size : NSNumber?
     public var sort : NSNumber?
@@ -62,7 +62,8 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     public var reactions : [DKReaction]?
     public var comments : [DKComment]?
     
-    // Init from Alamofire
+    // MARK: DKResponseObjectSerializable
+    
     public init?(response: HTTPURLResponse, representation: Any) {
         
         guard
@@ -85,7 +86,11 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         content = representation["content"]
         link = representation["link"] as? String
         preview = representation["preview"] as? String
-        thumbnail = representation["thumbnail"] as? String
+        
+        if let urlString = representation["thumbnail"] as? String {
+            thumbnail = URL(string: urlString)
+        }
+        
         shareable = representation["shareable"] as? Bool
         size = representation["size"] as? NSNumber
         sort = representation["sort"] as? NSNumber
@@ -94,28 +99,36 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         latitude = representation["latitude"] as? NSNumber
         longitude = representation["longitude"] as? NSNumber
         createdAt = createdAtString.date
+        
         if let updatedAtString = representation["updated_at"] as? String {
             updatedAt = updatedAtString.date
         }
+        
         if let deletedAtString = representation["deleted_at"] as? String {
             deletedAt = deletedAtString.date
         }
+        
         reactionsTotalCount = representation["reactions_total_count"] as? NSNumber
         self.url = url
         self.shortURL = shortURL
         isURL = representation["is_url"] as? Bool
+        
         if let thumbnailsRepresentation = representation["thumbnails"]  {
             thumbnails = DKThumbnails(response: response, representation: thumbnailsRepresentation)
         }
+        
         if let metadataDict = representation["metadata"] as? [String: AnyObject] {
             metadata = metadataDict
         }
+        
         if let itemsRepresentation = representation["items"] as? [AnyObject] {
             items = itemsRepresentation.map({ DKItem(response:response, representation: $0)! })
         }
+        
         if let tagsRepresentation = representation["tags"] as? [AnyObject] {
             tags = tagsRepresentation.map({ DKTag(response:response, representation: $0)! })
         }
+        
         itemsTotalCount = representation["items_total_count"] as? NSNumber
         
         if let userID = representation["user_id"] as? NSNumber, let user = DKUser(id: userID) {
@@ -127,9 +140,11 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
             user.avatar = representation["user_avatar"] as? String
             self.user = user
         }
+        
         if let reactionsRepresentation = representation["reactions"] as? [AnyObject] {
             reactions = reactionsRepresentation.map({ DKReaction(response:response, representation: $0)! })
         }
+        
         if let commentsRepresentation = representation["comments"] as? [AnyObject] {
             let originalComments = commentsRepresentation.map({ DKComment(response:response, representation: $0)! })
             comments = originalComments.sorted(by: { $0.createdAt < $1.createdAt })
@@ -137,7 +152,8 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         
     }
     
-    // Init from NSUserDefaults
+    // MARK: NSCoding
+    
     public required init(coder aDecoder: NSCoder) {
         
         id = aDecoder.decodeObject(forKey: "id") as! NSNumber
@@ -150,7 +166,7 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         content = aDecoder.decodeObject(forKey: "content")
         link = aDecoder.decodeObject(forKey: "link") as? String
         preview = aDecoder.decodeObject(forKey: "preview") as? String
-        thumbnail = aDecoder.decodeObject(forKey: "thumbnail") as? String
+        thumbnail = aDecoder.decodeObject(forKey: "thumbnail") as? URL
         shareable = aDecoder.decodeObject(forKey: "shareable") as? Bool
         size = aDecoder.decodeObject(forKey: "size") as? NSNumber
         sort = aDecoder.decodeObject(forKey: "sort") as? NSNumber
@@ -175,7 +191,6 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         
     }
     
-    // Save to NSUserDefaults
     public func encode(with aCoder: NSCoder) {
         
         aCoder.encode(id, forKey: "id")
@@ -213,19 +228,17 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     
 }
 
-// MARK: Equatable
-
-public func ==(lhs: DKItem, rhs: DKItem) -> Bool {
-    return lhs.id == rhs.id
-}
-
-public func ==(lhs: DKItem?, rhs: DKItem) -> Bool {
-    return lhs?.id == rhs.id
-}
-
-public func ==(lhs: DKItem, rhs: DKItem?) -> Bool {
-    return lhs.id == rhs?.id
-}
+/**
+ 
+ Returns whether the two items are equal.
+ 
+ - Parameters:
+     - lhs: The left-hand side value to compare.
+     - rhs: The right-hand side value to compare.
+ 
+ - Returns: `true` if the two values are equal, `false` otherwise.
+ 
+ */
 
 public func ==(lhs: DKItem?, rhs: DKItem?) -> Bool {
     return lhs?.id == rhs?.id

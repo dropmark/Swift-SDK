@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="XfG-lQ-9wD">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -674,7 +675,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="macOS_Demo" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Dropmark_SDK" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -701,10 +702,10 @@
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--Dropmark-->
+        <!--Login-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController title="Dropmark" id="XfG-lQ-9wD" customClass="LoginViewController" customModule="macOS_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Dropmark" id="XfG-lQ-9wD" userLabel="Login" customClass="LoginViewController" customModule="Dropmark_SDK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -798,6 +799,97 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="719"/>
+        </scene>
+        <!--Collections-->
+        <scene sceneID="ohy-Yf-5Ld">
+            <objects>
+                <viewController title="Collections" storyboardIdentifier="CollectionListViewControllerIdentifier" id="iPg-HP-Uf4" customClass="CollectionListViewController" customModule="Dropmark_SDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="3ti-DJ-NTe">
+                        <rect key="frame" x="0.0" y="0.0" width="598" height="622"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0e-CK-jMp">
+                                <rect key="frame" x="0.0" y="0.0" width="598" height="622"/>
+                                <clipView key="contentView" id="mKB-4n-NNG">
+                                    <rect key="frame" x="1" y="0.0" width="596" height="621"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" headerView="GGY-aw-DTR" viewBased="YES" id="EaQ-wy-xa6">
+                                            <rect key="frame" x="0.0" y="0.0" width="596" height="598"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn identifier="" width="192" minWidth="40" maxWidth="1000" id="tH2-9i-9YQ">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Dashboard">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="RNk-es-7aH">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView identifier="com.dropmark.cell.collection" id="jao-Ca-uw5">
+                                                            <rect key="frame" x="1" y="1" width="192" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cdj-aa-1NH">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="192" height="17"/>
+                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="3Vl-B1-M8O">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <connections>
+                                                                <outlet property="textField" destination="Cdj-aa-1NH" id="yPE-W0-sDS"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                            </tableColumns>
+                                            <connections>
+                                                <outlet property="dataSource" destination="iPg-HP-Uf4" id="HXq-dZ-IO8"/>
+                                                <outlet property="delegate" destination="iPg-HP-Uf4" id="IuK-5H-dIg"/>
+                                            </connections>
+                                        </tableView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="VEB-QZ-WJe">
+                                    <rect key="frame" x="1" y="605" width="596" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="B1z-Dm-inD">
+                                    <rect key="frame" x="224" y="17" width="15" height="102"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <tableHeaderView key="headerView" id="GGY-aw-DTR">
+                                    <rect key="frame" x="0.0" y="0.0" width="596" height="23"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableHeaderView>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="i0e-CK-jMp" firstAttribute="top" secondItem="3ti-DJ-NTe" secondAttribute="top" id="7pQ-ll-mmO"/>
+                            <constraint firstItem="i0e-CK-jMp" firstAttribute="leading" secondItem="3ti-DJ-NTe" secondAttribute="leading" id="aTz-PE-MWQ"/>
+                            <constraint firstAttribute="bottom" secondItem="i0e-CK-jMp" secondAttribute="bottom" id="aWI-ZX-evn"/>
+                            <constraint firstAttribute="trailing" secondItem="i0e-CK-jMp" secondAttribute="trailing" id="zzd-64-hEx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="EaQ-wy-xa6" id="RVh-us-fcm"/>
+                    </connections>
+                </viewController>
+                <customObject id="euZ-M5-CKN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="794" y="719"/>
         </scene>
     </scenes>
 </document>

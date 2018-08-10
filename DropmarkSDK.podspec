@@ -2,8 +2,9 @@
 # valid spec before submitting.
 
 Pod::Spec.new do |s|
+    
   s.name             = 'DropmarkSDK'
-  s.version          = '0.2.0'
+  s.version          = '0.3.0'
   s.summary          = 'Network and model controllers for Dropmark, written in Swift.'
 
   s.homepage         = 'https://github.com/dropmark/Swift-SDK'
@@ -15,7 +16,7 @@ Pod::Spec.new do |s|
   s.swift_version           = '4.0'
   
   s.ios.deployment_target   = '10.0'
-  s.osx.deployment_target   = '10.10'
+  s.osx.deployment_target   = '10.11'
   s.tvos.deployment_target  = '11.0'
 
   s.source_files = 'Source/**/*'

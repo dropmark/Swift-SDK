@@ -1,5 +1,5 @@
 //
-//  Permissions.swift
+//  DKPermissions.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -22,9 +22,9 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 
+/// In a collection, the permissions represent what actions the current user can and cannot perform.
 @objc(DKPermissions)
 public class DKPermissions: NSObject, NSCoding {
     
@@ -34,7 +34,7 @@ public class DKPermissions: NSObject, NSCoding {
     public var leave: Bool?
     public var delete: Bool?
     
-    // Init from Alamofire
+    // Init from network response
     public init?(response: HTTPURLResponse, representation: Any) {
         
         guard
@@ -49,7 +49,8 @@ public class DKPermissions: NSObject, NSCoding {
         
     }
     
-    // Init from NSUserDefaults
+    // MARK: NSCoding
+    
     public required init(coder aDecoder: NSCoder) {
         
         admin = aDecoder.decodeObject(forKey: "admin") as? Bool
@@ -60,7 +61,6 @@ public class DKPermissions: NSObject, NSCoding {
         
     }
     
-    // Save to NSUserDefaults
     public func encode(with aCoder: NSCoder) {
         
         aCoder.encode(admin, forKey: "admin")

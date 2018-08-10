@@ -1,5 +1,5 @@
 //
-//  Keychain.swift
+//  DKKeychain.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -22,32 +22,16 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
-import PromiseKit
 import KeychainSwift
 
-private let userKey = "com.dropmark.user"
-
-public class DKKeychain {
+/// Dropmark-specific wrapper for `KeychainSwift`, providing encryption, decryption, and removal of an authenticated user object in the device keychain.
+public struct DKKeychain {
     
-    public static var accessGroup: String {
-        set {
-            _accessGroup = newValue
-        }
-        get {
-            assert(_accessGroup != nil, "accessGroup required to store and manage the Keychain.")
-            return _accessGroup!
-        }
-    }
+    private static let userKey = "com.dropmark.user"
     
-    private static var _accessGroup: String?
-
-}
-
-public extension DKKeychain {
-    
-    public class var user: DKUser? {
+    /// The user stored in the device keychain. Use this variable to securely access user crendetials and data between app sessions.
+    public static var user: DKUser? {
         
         get {
             if
@@ -62,7 +46,7 @@ public extension DKKeychain {
         set {
             if let newValue = newValue {
                 let userData = NSKeyedArchiver.archivedData(withRootObject: newValue)
-                KeychainSwift().set(userData, forKey: userKey, withAccess: KeychainSwiftAccessOptions.accessibleAlways)
+                KeychainSwift().set(userData, forKey: userKey, withAccess: .accessibleAfterFirstUnlock)
             } else {
                 KeychainSwift().delete(userKey)
             }

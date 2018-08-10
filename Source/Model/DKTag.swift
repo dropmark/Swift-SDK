@@ -1,5 +1,5 @@
 //
-//  Tag.swift
+//  DKTag.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -22,20 +22,30 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 
+/// Tags are added to items and are a great way to organize items across many collections.
 @objc(DKTag)
 public final class DKTag: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
     public var name: String!
     public var itemsTotalCount: NSNumber?
     
+    /**
+     
+     Initialize a tag using a name string.
+     
+     - Parameters:
+        - name: The unique string to identify a tag
+ 
+     */
+    
     public init(name: String) {
         self.name = name
     }
     
-    // Init from Alamofire
+    // MARK: DKResponseObjectSerializable
+    
     public init?(response: HTTPURLResponse, representation: Any) {
         
         guard
@@ -48,7 +58,8 @@ public final class DKTag: NSObject, NSCoding, DKResponseObjectSerializable, DKRe
         
     }
     
-    // Init from NSUserDefaults
+    // MARK: NSCoding
+    
     public required init(coder aDecoder: NSCoder) {
         
         name = aDecoder.decodeObject(forKey: "name") as! String
@@ -56,7 +67,6 @@ public final class DKTag: NSObject, NSCoding, DKResponseObjectSerializable, DKRe
         
     }
     
-    // Save to NSUserDefaults
     public func encode(with aCoder: NSCoder) {
         
         aCoder.encode(name, forKey: "name")

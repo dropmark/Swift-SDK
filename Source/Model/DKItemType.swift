@@ -1,5 +1,5 @@
 //
-//  ItemType.swift
+//  DKItemType.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -22,85 +22,68 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 
+/// High-level item representations handled by Dropmark. Item types are expressed as strings, and are thus comparable and printable. Item types, Universal Type Identifers, MIMEs, and file extensions are tightly integrated in the Dropmark SDK.
 public enum DKItemType: String {
     
+    /// Represents a data file such as a JPEG, PNG, or HEIC image.
     case image
+    
+    /// Represents a data file such as a MPEG, MP4, or MOV video.
     case video
+    
+    /// Represents a data file such as a MP3, AAC, or WAV audio file.
     case audio
+    
+    /// Represents a string conforming to a URL scheme.
     case link
+    
+    /// Represents a string formatted with markdown
     case text
+    
+    /// Represents a hex color string.
     case color
+    
+    /// Special case item that behaves as a parent to other items.
     case stack
-    case other
+    
+    /// An item not conforming to any of the other item types. Oftentimes this is a data file in a proprietary format, such as a Sketch or Photoshop file.
+    case other = "file"
     
     /**
      
-     Derive a Dropmark Item Type from a file's MIME type (like "image/jpeg").
+     Derive a Dropmark item type from a file's MIME type (such as "image/jpeg").
      
-     - returns:
-     A new item type
+     - Parameters:
+        - mimeType: The MIME type of the item's associated file
      
-     - parameters:
-     - mimeType: The MIME type of the item's associated file
+     - Returns: A Dropmark item type
      
      */
     
-    public init?(fromMimeType mimeType: String?) {
+    public init?(mimeType: String) {
         
-        guard
-            let mimeType = mimeType,
-            let uti = UTI(mimeType: mimeType),
-            let itemType = uti.itemType
-            else { return nil }
-        
+        guard let itemType = UTI(mimeType: mimeType)?.itemType else { return nil }
         self = itemType
         
     }
     
     /**
      
-     Derive a Dropmark Item Type from a filename extension (like "jpg").
+     Derive a Dropmark item type from a filename extension (like "jpg").
      
-     - returns:
-     A new item type
+     - Parameters:
+        - filenameExtension: The filename extension of the item's associated file
      
-     - parameters:
-     - filenameExtension: The filename extension of the item's associated file
+     - Returns: A Dropmark item type
      
      */
     
-    public init?(fromFilenameExtension filenameExtension: String?) {
+    public init?(filenameExtension: String) {
         
-        guard
-            let filenameExtension = filenameExtension,
-            let uti = UTI(filenameExtension: filenameExtension),
-            let itemType = uti.itemType
-            else { return nil }
-        
+        guard let itemType = UTI(filenameExtension: filenameExtension)?.itemType else { return nil }
         self = itemType
-        
-    }
-    
-    /**
-     
-     Capitalized title associated with the item type.
-     
-     */
-    
-    public var title: String {
-        
-        switch self {
-            
-        case .other:
-            return "File"
-            
-        default:
-            return rawValue.capitalized
-            
-        }
         
     }
     

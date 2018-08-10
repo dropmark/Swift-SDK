@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  DKUser.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -22,9 +22,15 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 
+/**
+ 
+ Represents a user on Dropmark. Can be the current user, collaborators, or users external to your team.
+ 
+    - Note: Only when a user is retrieved from the `/auth` API endpoint will a `token` be returned
+ 
+ */
 @objc(DKUser)
 public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
@@ -65,14 +71,28 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     public var status : Status = .active
     public var createdAt : Date?
     public var avatar: String?
+    
+    /// A list of all teams of which the user is a member.
     public var teams: [DKTeam]?
+    
+    /// Used to authenticate requests on behalf of the user. **Note**: A token value only returns from the `/auth` API endpoint
     public var token: String?
+    
+    /**
+     
+     Initialize a local instance with an ID
+     
+     - Parameters:
+        - id: The unique ID number to identify this user
+     
+     */
     
     public init?(id: NSNumber) {
         self.id = id
     }
     
-    // Init from Alamofire
+    // MARK: DKResponseObjectSerializable
+    
     public required init?(response: HTTPURLResponse, representation: Any) {
         
         guard
@@ -89,33 +109,43 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         sortOrder = representation["sort_order"] as? String
         viewMode = representation["view_mode"] as? String
         labels = representation["labels"] as? Bool
+        
         if let planString = representation["plan"] as? String, let plan = Plan(rawValue: planString) {
             self.plan = plan
         }
+        
         planIsActive = representation["plan_active"] as? Bool
         planQuantity = representation["plan_quantity"] as? NSNumber
         billingEmail = representation["billing_email"] as? String
+        
         if let kindString = representation["kind"] as? String, let kind = Kind(rawValue: kindString) {
             self.kind = kind
         }
+        
         if let statusString = representation["status"] as? String, let status = Status(rawValue: statusString) {
             self.status = status
         }
+        
         if let createdAtString = representation["created_at"] as? String {
             createdAt = createdAtString.date
         }
+        
         avatar = representation["avatar"] as? String
+        
         if avatar == nil {
             avatar = representation["user_avatar"] as? String
         }
+        
         if let teamsRepresentation = representation["teams"] as? [Any] {
             teams = teamsRepresentation.map({ DKTeam(response:response, representation: $0)! })
         }
+        
         token = representation["token"] as? String
 
     }
     
-    // Init from NSUserDefaults
+    // MARK: NSCoder
+    
     public required init(coder aDecoder: NSCoder) {
         
         id = aDecoder.decodeObject(forKey: "id") as! NSNumber
@@ -143,7 +173,6 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         
     }
     
-    // Save to NSUserDefaults
     public func encode(with aCoder: NSCoder) {
         
         aCoder.encode(id, forKey: "id")
@@ -186,23 +215,21 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         }
         return description
     }
+    
 }
 
-// MARK: Equatable
-
-public func ==(lhs: DKUser, rhs: DKUser) -> Bool {
-    return lhs.id == rhs.id
-}
-
-public func ==(lhs: DKUser?, rhs: DKUser) -> Bool {
-    return lhs?.id == rhs.id
-}
-
-public func ==(lhs: DKUser, rhs: DKUser?) -> Bool {
-    return lhs.id == rhs?.id
-}
+/**
+ 
+ Returns whether the two users are equal.
+ 
+ - Parameters:
+     - lhs: The left-hand side value to compare.
+     - rhs: The right-hand side value to compare.
+ 
+ - Returns: `true` if the two values are equal, `false` otherwise.
+ 
+ */
 
 public func ==(lhs: DKUser?, rhs: DKUser?) -> Bool {
     return lhs?.id == rhs?.id
 }
-
