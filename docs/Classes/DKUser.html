@@ -14,7 +14,7 @@
     <a title="DKUser Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">DropmarkSDK Docs</a> (27% documented)</p>
+        <p><a href="../index.html">DropmarkSDK Docs</a> (62% documented)</p>
         <p class="header-right"><a href="https://github.com/dropmark/Swift-SDK"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Fdropmark%2Egithub%2Eio%2FSwift%2DSDK%2Fdocsets%2FDropmarkSDK%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -75,10 +75,10 @@
                 <a href="../Classes/DKTeam/Status.html">– Status</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/DKTeam/Plan.html">– Plan</a>
+                <a href="../Classes/DKTeam/UserKind.html">– UserKind</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/DKTeam/UserKind.html">– UserKind</a>
+                <a href="../Classes/DKTeam/Usage.html">– Usage</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/DKThumbnails.html">DKThumbnails</a>
@@ -88,9 +88,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/DKUser/Kind.html">– Kind</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/DKUser/Plan.html">– Plan</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/DKUser/Status.html">– Status</a>
@@ -105,6 +102,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/DKPaginationError.html">DKPaginationError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DKPlan.html">DKPlan</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/DKRouter.html">DKRouter</a>
@@ -210,7 +210,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>When listing collaborators within a collection, a <code>Kind</code> represents a user&rsquo;s role within the collection</p>
 
                         <a href="../Classes/DKUser/Kind.html" class="slightly-smaller">See more</a>
                       </div>
@@ -219,34 +219,6 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Kind</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:11DropmarkSDK6DKUserC4PlanO"></a>
-                    <a name="//apple_ref/swift/Enum/Plan" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKUserC4PlanO">Plan</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                        <a href="../Classes/DKUser/Plan.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Plan</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -266,7 +238,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>A user&rsquo;s ability to act on the Dropmark platform</p>
 
                         <a href="../Classes/DKUser/Status.html" class="slightly-smaller">See more</a>
                       </div>
@@ -284,9 +256,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKUserC2idSQySo8NSNumberCGvp"></a>
+                    <a name="/s:11DropmarkSDK6DKUserC2idSo8NSNumberCvp"></a>
                     <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKUserC2idSQySo8NSNumberCGvp">id</a>
+                    <a class="token" href="#/s:11DropmarkSDK6DKUserC2idSo8NSNumberCvp">id</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -301,7 +273,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="o">!</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span></code></pre>
 
                         </div>
                       </div>
@@ -527,9 +499,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKUserC4planAC4PlanOvp"></a>
+                    <a name="/s:11DropmarkSDK6DKUserC4planAA6DKPlanOvp"></a>
                     <a name="//apple_ref/swift/Property/plan" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKUserC4planAC4PlanOvp">plan</a>
+                    <a class="token" href="#/s:11DropmarkSDK6DKUserC4planAA6DKPlanOvp">plan</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -544,7 +516,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">plan</span><span class="p">:</span> <span class="kt">DKUser</span><span class="o">.</span><span class="kt"><a href="../Classes/DKUser/Plan.html">Plan</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">plan</span><span class="p">:</span> <span class="kt"><a href="../Enums/DKPlan.html">DKPlan</a></span></code></pre>
 
                         </div>
                       </div>
@@ -716,9 +688,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKUserC6avatarSSSgvp"></a>
+                    <a name="/s:11DropmarkSDK6DKUserC6avatar10Foundation3URLVSgvp"></a>
                     <a name="//apple_ref/swift/Property/avatar" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKUserC6avatarSSSgvp">avatar</a>
+                    <a class="token" href="#/s:11DropmarkSDK6DKUserC6avatar10Foundation3URLVSgvp">avatar</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -733,7 +705,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">avatar</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">avatar</span><span class="p">:</span> <span class="kt">URL</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -797,9 +769,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKUserCACSgSo8NSNumberC2id_tcfc"></a>
+                    <a name="/s:11DropmarkSDK6DKUserCACSo8NSNumberC2id_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(id:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKUserCACSgSo8NSNumberC2id_tcfc">init(id:)</a>
+                    <a class="token" href="#/s:11DropmarkSDK6DKUserCACSo8NSNumberC2id_tcfc">init(id:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -814,7 +786,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -901,16 +873,43 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Returns an object initialized from data in a given unarchiver.</p>
+
+<ul>
+<li><p>Discussion: You typically return <code>self</code> from <code>init(coder:)</code>. If you have an advanced need that requires substituting a different object after decoding, you can do so in <code>awakeAfter(using:)</code>.</p></li>
+</ul>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">required</span> <span class="nf">init</span><span class="p">(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>coder</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An unarchiver object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>self</code>, initialized using the data in <code>coder</code>.</p>
                       </div>
                     </section>
                   </div>
@@ -928,7 +927,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Encodes the receiver using a given archiver.</p>
 
                       </div>
                       <div class="declaration">
@@ -938,6 +937,25 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">with</span> <span class="nv">aCoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>encoder</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An archiver object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

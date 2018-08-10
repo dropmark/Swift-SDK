@@ -14,7 +14,7 @@
     <a title="DKTeam Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">DropmarkSDK Docs</a> (27% documented)</p>
+        <p><a href="../index.html">DropmarkSDK Docs</a> (62% documented)</p>
         <p class="header-right"><a href="https://github.com/dropmark/Swift-SDK"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Fdropmark%2Egithub%2Eio%2FSwift%2DSDK%2Fdocsets%2FDropmarkSDK%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -75,10 +75,10 @@
                 <a href="../Classes/DKTeam/Status.html">– Status</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/DKTeam/Plan.html">– Plan</a>
+                <a href="../Classes/DKTeam/UserKind.html">– UserKind</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/DKTeam/UserKind.html">– UserKind</a>
+                <a href="../Classes/DKTeam/Usage.html">– Usage</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/DKThumbnails.html">DKThumbnails</a>
@@ -88,9 +88,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/DKUser/Kind.html">– Kind</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/DKUser/Plan.html">– Plan</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/DKUser/Status.html">– Status</a>
@@ -105,6 +102,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/DKPaginationError.html">DKPaginationError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DKPlan.html">DKPlan</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/DKRouter.html">DKRouter</a>
@@ -227,34 +227,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKTeamC4PlanO"></a>
-                    <a name="//apple_ref/swift/Enum/Plan" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKTeamC4PlanO">Plan</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The plan tier the team is currently subscribed to</p>
-
-                        <a href="../Classes/DKTeam/Plan.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Plan</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/s:11DropmarkSDK6DKTeamC8UserKindO"></a>
                     <a name="//apple_ref/swift/Enum/UserKind" class="dashAnchor"></a>
                     <a class="token" href="#/s:11DropmarkSDK6DKTeamC8UserKindO">UserKind</a>
@@ -283,9 +255,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKTeamC2idSQySo8NSNumberCGvp"></a>
-                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKTeamC2idSQySo8NSNumberCGvp">id</a>
+                    <a name="/s:11DropmarkSDK6DKTeamC5UsageV"></a>
+                    <a name="//apple_ref/swift/Struct/Usage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK6DKTeamC5UsageV">Usage</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -293,14 +265,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Encapsulates the data usage metrics for a team</p>
 
+                        <a href="../Classes/DKTeam/Usage.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="o">!</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Usage</span></code></pre>
 
                         </div>
                       </div>
@@ -310,9 +283,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKTeamC4nameSQySSGvp"></a>
-                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKTeamC4nameSQySSGvp">name</a>
+                    <a name="/s:11DropmarkSDK6DKTeamC2idSo8NSNumberCvp"></a>
+                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK6DKTeamC2idSo8NSNumberCvp">id</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -320,14 +293,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The unique identifier of the team</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="o">!</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK6DKTeamC4nameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK6DKTeamC4nameSSvp">name</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The name of a team</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -347,7 +347,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The primmary email associated with the team</p>
 
                       </div>
                       <div class="declaration">
@@ -374,7 +374,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The unique username for the team</p>
 
                       </div>
                       <div class="declaration">
@@ -526,9 +526,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKTeamC4planAC4PlanOvp"></a>
+                    <a name="/s:11DropmarkSDK6DKTeamC4planAA6DKPlanOvp"></a>
                     <a name="//apple_ref/swift/Property/plan" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKTeamC4planAC4PlanOvp">plan</a>
+                    <a class="token" href="#/s:11DropmarkSDK6DKTeamC4planAA6DKPlanOvp">plan</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -536,14 +536,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The membership tier of the team</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">plan</span><span class="p">:</span> <span class="kt">DKTeam</span><span class="o">.</span><span class="kt"><a href="../Classes/DKTeam/Plan.html">Plan</a></span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">plan</span><span class="p">:</span> <span class="kt"><a href="../Enums/DKPlan.html">DKPlan</a></span></code></pre>
 
                         </div>
                       </div>
@@ -563,7 +563,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p><code>true</code> if a paid membership is still active</p>
 
                       </div>
                       <div class="declaration">
@@ -617,7 +617,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The primary email address associate with the teams billing account</p>
 
                       </div>
                       <div class="declaration">
@@ -644,7 +644,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The active/inactive status of the team</p>
 
                       </div>
                       <div class="declaration">
@@ -671,7 +671,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The date the team was created</p>
 
                       </div>
                       <div class="declaration">
@@ -698,7 +698,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>A unique key used to assemble a Dropmark feed URL. Learn more about Dropmark feeds <a href="https://www.dropmark.com/api/topics/feeds/">here</a>.</p>
 
                       </div>
                       <div class="declaration">
@@ -715,9 +715,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKTeamC5usages10DictionaryVySSyXlGSgvp"></a>
+                    <a name="/s:11DropmarkSDK6DKTeamC5usageAC5UsageVSgvp"></a>
                     <a name="//apple_ref/swift/Property/usage" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKTeamC5usages10DictionaryVySSyXlGSgvp">usage</a>
+                    <a class="token" href="#/s:11DropmarkSDK6DKTeamC5usageAC5UsageVSgvp">usage</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -725,14 +725,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The usage metrics of data for a team</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">usage</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">AnyObject</span><span class="p">]?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">usage</span><span class="p">:</span> <span class="kt">DKTeam</span><span class="o">.</span><span class="kt"><a href="../Classes/DKTeam/Usage.html">Usage</a></span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -752,7 +752,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The role of the current user (as identified by the token supplied in the GET request) within the team</p>
 
                       </div>
                       <div class="declaration">
@@ -779,7 +779,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>All collaborators within the team</p>
 
                       </div>
                       <div class="declaration">
@@ -796,9 +796,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKTeamC6avatarSSSgvp"></a>
+                    <a name="/s:11DropmarkSDK6DKTeamC6avatar10Foundation3URLVSgvp"></a>
                     <a name="//apple_ref/swift/Property/avatar" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKTeamC6avatarSSSgvp">avatar</a>
+                    <a class="token" href="#/s:11DropmarkSDK6DKTeamC6avatar10Foundation3URLVSgvp">avatar</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -806,62 +806,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The URL of the team&rsquo;s avatar image</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">avatar</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">avatar</span><span class="p">:</span> <span class="kt">URL</span><span class="p">?</span></code></pre>
 
                         </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:11DropmarkSDK6DKTeamCACSgSo8NSNumberC2id_tcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(id:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKTeamCACSgSo8NSNumberC2id_tcfc">init(id:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Initialize a local instance with an ID</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>id</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The unique ID number to identify this team</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>
@@ -927,16 +881,43 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Returns an object initialized from data in a given unarchiver.</p>
+
+<ul>
+<li><p>Discussion: You typically return <code>self</code> from <code>init(coder:)</code>. If you have an advanced need that requires substituting a different object after decoding, you can do so in <code>awakeAfter(using:)</code>.</p></li>
+</ul>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">required</span> <span class="nf">init</span><span class="p">(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>coder</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An unarchiver object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>self</code>, initialized using the data in <code>coder</code>.</p>
                       </div>
                     </section>
                   </div>
@@ -954,7 +935,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Encodes the receiver using a given archiver.</p>
 
                       </div>
                       <div class="declaration">
@@ -964,6 +945,25 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">with</span> <span class="nv">aCoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>encoder</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An archiver object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

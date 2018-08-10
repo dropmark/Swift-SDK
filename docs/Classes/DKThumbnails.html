@@ -14,7 +14,7 @@
     <a title="DKThumbnails Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">DropmarkSDK Docs</a> (27% documented)</p>
+        <p><a href="../index.html">DropmarkSDK Docs</a> (62% documented)</p>
         <p class="header-right"><a href="https://github.com/dropmark/Swift-SDK"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Fdropmark%2Egithub%2Eio%2FSwift%2DSDK%2Fdocsets%2FDropmarkSDK%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -75,10 +75,10 @@
                 <a href="../Classes/DKTeam/Status.html">– Status</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/DKTeam/Plan.html">– Plan</a>
+                <a href="../Classes/DKTeam/UserKind.html">– UserKind</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/DKTeam/UserKind.html">– UserKind</a>
+                <a href="../Classes/DKTeam/Usage.html">– Usage</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/DKThumbnails.html">DKThumbnails</a>
@@ -88,9 +88,6 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/DKUser/Kind.html">– Kind</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Classes/DKUser/Plan.html">– Plan</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Classes/DKUser/Status.html">– Status</a>
@@ -105,6 +102,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/DKPaginationError.html">DKPaginationError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DKPlan.html">DKPlan</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/DKRouter.html">DKRouter</a>
@@ -432,7 +432,11 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Returns an object initialized from data in a given unarchiver.</p>
+
+<ul>
+<li><p>Discussion: You typically return <code>self</code> from <code>init(coder:)</code>. If you have an advanced need that requires substituting a different object after decoding, you can do so in <code>awakeAfter(using:)</code>.</p></li>
+</ul>
 
                       </div>
                       <div class="declaration">
@@ -442,6 +446,29 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">required</span> <span class="nf">init</span><span class="p">(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>coder</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An unarchiver object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>self</code>, initialized using the data in <code>coder</code>.</p>
                       </div>
                     </section>
                   </div>
@@ -459,7 +486,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Encodes the receiver using a given archiver.</p>
 
                       </div>
                       <div class="declaration">
@@ -469,6 +496,25 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">encode</span><span class="p">(</span><span class="n">with</span> <span class="nv">aCoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>encoder</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An archiver object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

@@ -65,296 +65,44 @@
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 106,
-      "symbol": "DKCollection.id",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 107,
-      "symbol": "DKCollection.name",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 108,
-      "symbol": "DKCollection.descriptionText",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 109,
-      "symbol": "DKCollection.kind",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 110,
+      "line": 119,
       "symbol": "DKCollection.sort",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 111,
-      "symbol": "DKCollection.sortBy",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 112,
-      "symbol": "DKCollection.sortOrder",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 113,
-      "symbol": "DKCollection.viewMode",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 114,
-      "symbol": "DKCollection.thumbnail",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 115,
+      "line": 134,
       "symbol": "DKCollection.labels",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 116,
-      "symbol": "DKCollection.highlighted",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 117,
-      "symbol": "DKCollection.archived",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 118,
-      "symbol": "DKCollection.lastAccessedAt",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 119,
-      "symbol": "DKCollection.createdAt",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 120,
-      "symbol": "DKCollection.updatedAt",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 121,
-      "symbol": "DKCollection.itemsTotalCount",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 122,
+      "line": 155,
       "symbol": "DKCollection.customDomain",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 123,
-      "symbol": "DKCollection.usersTotalCount",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 124,
-      "symbol": "DKCollection.url",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 125,
-      "symbol": "DKCollection.shortURL",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 126,
-      "symbol": "DKCollection.thumbnails",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 127,
-      "symbol": "DKCollection.permissions",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 128,
-      "symbol": "DKCollection.user",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 129,
-      "symbol": "DKCollection.users",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 130,
-      "symbol": "DKCollection.items",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 223,
-      "symbol": "DKCollection.init(coder:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 262,
-      "symbol": "DKCollection.encode(with:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKComment.swift",
-      "line": 31,
-      "symbol": "DKComment.id",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKComment.swift",
-      "line": 32,
-      "symbol": "DKComment.itemID",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKComment.swift",
-      "line": 33,
-      "symbol": "DKComment.itemName",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKComment.swift",
-      "line": 34,
-      "symbol": "DKComment.collectionID",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKComment.swift",
-      "line": 35,
-      "symbol": "DKComment.collectionName",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKComment.swift",
-      "line": 36,
-      "symbol": "DKComment.collectionURL",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKComment.swift",
-      "line": 37,
-      "symbol": "DKComment.body",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKComment.swift",
-      "line": 38,
-      "symbol": "DKComment.createdAt",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKComment.swift",
-      "line": 39,
-      "symbol": "DKComment.updatedAt",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKComment.swift",
-      "line": 40,
+      "line": 59,
       "symbol": "DKComment.annotation",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKComment.swift",
-      "line": 41,
-      "symbol": "DKComment.URL",
+      "line": 62,
+      "symbol": "DKComment.url",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKComment.swift",
-      "line": 42,
+      "line": 65,
       "symbol": "DKComment.shortURL",
       "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKComment.swift",
-      "line": 43,
-      "symbol": "DKComment.user",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKComment.swift",
-      "line": 97,
-      "symbol": "DKComment.init(coder:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKComment.swift",
-      "line": 115,
-      "symbol": "DKComment.encode(with:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -436,429 +184,23 @@
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 31,
-      "symbol": "DKItem.id",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 32,
-      "symbol": "DKItem.collectionID",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 33,
-      "symbol": "DKItem.collectionName",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 34,
-      "symbol": "DKItem.parentID",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 35,
-      "symbol": "DKItem.parentName",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 36,
-      "symbol": "DKItem.name",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 37,
-      "symbol": "DKItem.descriptionText",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 38,
-      "symbol": "DKItem.content",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 39,
-      "symbol": "DKItem.link",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 40,
+      "line": 60,
       "symbol": "DKItem.preview",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 41,
-      "symbol": "DKItem.thumbnail",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 42,
-      "symbol": "DKItem.shareable",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 43,
-      "symbol": "DKItem.size",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 44,
+      "line": 72,
       "symbol": "DKItem.sort",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 45,
-      "symbol": "DKItem.type",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 46,
-      "symbol": "DKItem.mime",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKPermissions.swift",
       "line": 47,
-      "symbol": "DKItem.latitude",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 48,
-      "symbol": "DKItem.longitude",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 49,
-      "symbol": "DKItem.createdAt",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 50,
-      "symbol": "DKItem.updatedAt",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 51,
-      "symbol": "DKItem.deletedAt",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 52,
-      "symbol": "DKItem.reactionsTotalCount",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 53,
-      "symbol": "DKItem.url",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 54,
-      "symbol": "DKItem.shortURL",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 55,
-      "symbol": "DKItem.thumbnails",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 56,
-      "symbol": "DKItem.isURL",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 57,
-      "symbol": "DKItem.tags",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 58,
-      "symbol": "DKItem.metadata",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 59,
-      "symbol": "DKItem.items",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 60,
-      "symbol": "DKItem.itemsTotalCount",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 61,
-      "symbol": "DKItem.user",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 62,
-      "symbol": "DKItem.reactions",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 63,
-      "symbol": "DKItem.comments",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 157,
-      "symbol": "DKItem.init(coder:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKItem.swift",
-      "line": 194,
-      "symbol": "DKItem.encode(with:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKPermissions.swift",
-      "line": 31,
-      "symbol": "DKPermissions.admin",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKPermissions.swift",
-      "line": 32,
-      "symbol": "DKPermissions.edit",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKPermissions.swift",
-      "line": 33,
-      "symbol": "DKPermissions.share",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKPermissions.swift",
-      "line": 34,
-      "symbol": "DKPermissions.leave",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKPermissions.swift",
-      "line": 35,
-      "symbol": "DKPermissions.delete",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKPermissions.swift",
-      "line": 38,
       "symbol": "DKPermissions.init(response:representation:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKPermissions.swift",
-      "line": 54,
-      "symbol": "DKPermissions.init(coder:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKPermissions.swift",
-      "line": 64,
-      "symbol": "DKPermissions.encode(with:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKReaction.swift",
-      "line": 31,
-      "symbol": "DKReaction.id",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKReaction.swift",
-      "line": 32,
-      "symbol": "DKReaction.itemID",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKReaction.swift",
-      "line": 33,
-      "symbol": "DKReaction.itemName",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKReaction.swift",
-      "line": 34,
-      "symbol": "DKReaction.collectionID",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKReaction.swift",
-      "line": 35,
-      "symbol": "DKReaction.collectionName",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKReaction.swift",
-      "line": 36,
-      "symbol": "DKReaction.createdAt",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKReaction.swift",
-      "line": 37,
-      "symbol": "DKReaction.updatedAt",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKReaction.swift",
-      "line": 38,
-      "symbol": "DKReaction.user",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKReaction.swift",
-      "line": 86,
-      "symbol": "DKReaction.init(coder:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKReaction.swift",
-      "line": 99,
-      "symbol": "DKReaction.encode(with:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTag.swift",
-      "line": 31,
-      "symbol": "DKTag.name",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTag.swift",
-      "line": 32,
-      "symbol": "DKTag.itemsTotalCount",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTag.swift",
-      "line": 63,
-      "symbol": "DKTag.init(coder:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTag.swift",
-      "line": 70,
-      "symbol": "DKTag.encode(with:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 81,
-      "symbol": "DKTeam.id",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 82,
-      "symbol": "DKTeam.name",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 83,
-      "symbol": "DKTeam.email",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 84,
-      "symbol": "DKTeam.username",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
@@ -870,121 +212,37 @@
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 86,
+      "line": 88,
       "symbol": "DKTeam.sortBy",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 87,
+      "line": 91,
       "symbol": "DKTeam.sortOrder",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 88,
+      "line": 94,
       "symbol": "DKTeam.viewMode",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 89,
+      "line": 97,
       "symbol": "DKTeam.labels",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 90,
-      "symbol": "DKTeam.plan",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 91,
-      "symbol": "DKTeam.planIsActive",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 92,
+      "line": 106,
       "symbol": "DKTeam.planQuantity",
       "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 93,
-      "symbol": "DKTeam.billingEmail",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 94,
-      "symbol": "DKTeam.status",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 95,
-      "symbol": "DKTeam.createdAt",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 96,
-      "symbol": "DKTeam.feedKey",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 97,
-      "symbol": "DKTeam.usage",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 98,
-      "symbol": "DKTeam.userKind",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 99,
-      "symbol": "DKTeam.users",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 100,
-      "symbol": "DKTeam.avatar",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 171,
-      "symbol": "DKTeam.init(coder:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 207,
-      "symbol": "DKTeam.encode(with:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -1044,253 +302,127 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKThumbnails.swift",
-      "line": 78,
-      "symbol": "DKThumbnails.init(coder:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKThumbnails.swift",
-      "line": 90,
-      "symbol": "DKThumbnails.encode(with:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 37,
-      "symbol": "DKUser.Kind",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 38,
-      "symbol": "DKUser.Kind.owner",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 39,
-      "symbol": "DKUser.Kind.creator",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 40,
-      "symbol": "DKUser.Kind.manager",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 41,
-      "symbol": "DKUser.Kind.user",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 44,
-      "symbol": "DKUser.Plan",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 45,
-      "symbol": "DKUser.Plan.free",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 46,
-      "symbol": "DKUser.Plan.pro",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 47,
-      "symbol": "DKUser.Plan.proBeta",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 48,
-      "symbol": "DKUser.Plan.proMonthly",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 49,
-      "symbol": "DKUser.Plan.team",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 52,
-      "symbol": "DKUser.Status",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 53,
-      "symbol": "DKUser.Status.active",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 54,
-      "symbol": "DKUser.Status.inactive",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 57,
+      "line": 65,
       "symbol": "DKUser.id",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 58,
+      "line": 66,
       "symbol": "DKUser.name",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 59,
+      "line": 67,
       "symbol": "DKUser.email",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 60,
+      "line": 68,
       "symbol": "DKUser.username",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 61,
+      "line": 69,
       "symbol": "DKUser.customDomain",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 62,
+      "line": 70,
       "symbol": "DKUser.sortBy",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 63,
+      "line": 71,
       "symbol": "DKUser.sortOrder",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 64,
+      "line": 72,
       "symbol": "DKUser.viewMode",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 65,
+      "line": 73,
       "symbol": "DKUser.labels",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 66,
+      "line": 74,
       "symbol": "DKUser.plan",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 67,
+      "line": 75,
       "symbol": "DKUser.planIsActive",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 68,
+      "line": 76,
       "symbol": "DKUser.planQuantity",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 69,
+      "line": 77,
       "symbol": "DKUser.billingEmail",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 70,
+      "line": 78,
       "symbol": "DKUser.kind",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 71,
+      "line": 79,
       "symbol": "DKUser.status",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 72,
+      "line": 80,
       "symbol": "DKUser.createdAt",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 73,
+      "line": 81,
       "symbol": "DKUser.avatar",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 149,
-      "symbol": "DKUser.init(coder:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 176,
-      "symbol": "DKUser.encode(with:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 199,
+      "line": 247,
       "symbol": "DKUser.description",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
