@@ -229,3 +229,7 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     }
     
 }
+
+public func ==(lhs: DKItem?, rhs: DKItem?) -> Bool {
+    return lhs?.id == rhs?.id
+}

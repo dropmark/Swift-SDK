@@ -78,3 +78,7 @@ public final class DKInvite: NSObject, DKResponseObjectSerializable, DKResponseL
     }
     
 }
+
+public func ==(lhs: DKInvite?, rhs: DKInvite?) -> Bool {
+    return lhs?.id == rhs?.id
+}

@@ -104,7 +104,11 @@ class ItemListViewController: UITableViewController {
     
 #endif
     
-    // MARK: Data Source
+}
+
+// MARK: - UITableViewDataSource
+
+extension ItemListViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
@@ -150,7 +154,11 @@ class ItemListViewController: UITableViewController {
         
     }
     
-    // MARK: Delegate
+}
+
+// MARK: - UITableViewDelegate
+
+extension ItemListViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         

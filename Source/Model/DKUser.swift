@@ -219,3 +219,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     }
     
 }
+
+public func ==(lhs: DKUser?, rhs: DKUser?) -> Bool {
+    return lhs?.id == rhs?.id
+}

@@ -105,8 +105,12 @@ class CollectionListViewController: UITableViewController {
     }
     
 #endif
-    
-    // MARK: Data Source
+
+}
+
+// MARK: - UITableViewDataSource
+
+extension CollectionListViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return collections.count
@@ -135,7 +139,11 @@ class CollectionListViewController: UITableViewController {
         
     }
     
-    // MARK: Delegate
+}
+
+// MARK: - UITableViewDelegate
+
+extension CollectionListViewController {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         

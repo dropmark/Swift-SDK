@@ -133,3 +133,7 @@ public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, 
     }
     
 }
+
+public func ==(lhs: DKComment?, rhs: DKComment?) -> Bool {
+    return lhs?.id == rhs?.id
+}

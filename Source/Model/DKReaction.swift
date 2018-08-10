@@ -112,3 +112,7 @@ public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable,
     }
     
 }
+
+func ==(lhs: DKReaction?, rhs: DKReaction?) -> Bool {
+    return lhs?.id == rhs?.id
+}

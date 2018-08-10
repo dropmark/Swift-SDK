@@ -260,3 +260,7 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
     }
     
 }
+
+public func ==(lhs: DKCollection?, rhs: DKCollection?) -> Bool {
+    return lhs?.id == rhs?.id
+}

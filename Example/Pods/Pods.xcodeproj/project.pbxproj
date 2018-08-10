@@ -236,9 +236,6 @@
 		A28D36C5FAF3A011E12EF28EFB3A07A0 /* PromiseKit-tvOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CDFEB89795B3F4CFC2BCD623CEED473 /* PromiseKit-tvOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A385FB346FB7E93959819F190811FC80 /* Pods-DropmarkSDK_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC916BD432EB83A3B666D19121BA72A /* Pods-DropmarkSDK_Tests-dummy.m */; };
 		A4759C9FD9E88DC0199A8478B74F1B2B /* Pods-iOS Demo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9003F73BB9E2CD7CBB8A850D689AFC0B /* Pods-iOS Demo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A5010744211D0F9A001018FA /* Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5010743211D0F9A001018FA /* Equatable.swift */; };
-		A5010745211D0F9A001018FA /* Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5010743211D0F9A001018FA /* Equatable.swift */; };
-		A5010746211D0F9A001018FA /* Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5010743211D0F9A001018FA /* Equatable.swift */; };
 		A501074C211D38E9001018FA /* DKServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A501074B211D38E9001018FA /* DKServerError.swift */; };
 		A501074D211D38E9001018FA /* DKServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A501074B211D38E9001018FA /* DKServerError.swift */; };
 		A501074E211D38E9001018FA /* DKServerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A501074B211D38E9001018FA /* DKServerError.swift */; };
@@ -740,7 +737,6 @@
 		A24DAC7FD59EFB1676E95D695D5FA406 /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2C9A214CCBE65B36BEFDA339C0ED2E8 /* NSTask+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSTask+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSTask+AnyPromise.h"; sourceTree = "<group>"; };
 		A39AF77689EAB2B46FE1587AEEAD6363 /* Pods_tvOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvOS_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5010743211D0F9A001018FA /* Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equatable.swift; sourceTree = "<group>"; };
 		A501074B211D38E9001018FA /* DKServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKServerError.swift; sourceTree = "<group>"; };
 		A52C41F72116098500BA2054 /* DKResponseObjectSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKResponseObjectSerializable.swift; sourceTree = "<group>"; };
 		A52C41FB211609E200BA2054 /* DKResponseListSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKResponseListSerializable.swift; sourceTree = "<group>"; };
@@ -1528,7 +1524,6 @@
 				4E8CA8D14E2F7199DE132ADB2D4D5E67 /* DKTeam.swift */,
 				58DF9F95A26F8B20B57EAB1FE34433F3 /* DKThumbnails.swift */,
 				315F5EB03DB4947F351C2E59CF33C64D /* DKUser.swift */,
-				A5010743211D0F9A001018FA /* Equatable.swift */,
 			);
 			name = Model;
 			path = Source/Model;
@@ -2157,7 +2152,6 @@
 				1BC1970C15597BDC1AF057CB177064CE /* DKPagingGenerator.swift in Sources */,
 				33C54E819B90CE23FD6BD291EE7E5F01 /* DKPermissions.swift in Sources */,
 				0921C37926F00C0C9D1770239526D8A6 /* DKReaction.swift in Sources */,
-				A5010746211D0F9A001018FA /* Equatable.swift in Sources */,
 				918BFBBC23F049019C96373702E9D03D /* DKRouter.swift in Sources */,
 				93A85EAB3FEA4D531D898F961E9D240F /* DKTag.swift in Sources */,
 				AC1BBA1F8646F54A46DEDA505A41EFDD /* DKTeam.swift in Sources */,
@@ -2324,7 +2318,6 @@
 				BF640474F4F26A86B056902EF5A20649 /* DKPagingGenerator.swift in Sources */,
 				8CFE59053BD963824D252FDE70228F84 /* DKPermissions.swift in Sources */,
 				20D0C63CED308210A85A76F41EDC6FF9 /* DKReaction.swift in Sources */,
-				A5010745211D0F9A001018FA /* Equatable.swift in Sources */,
 				85BC789F670E856ED07615C1E9A3A60B /* DKRouter.swift in Sources */,
 				42EEB458CA4C42372EE6DC7D32884ED7 /* DKTag.swift in Sources */,
 				DB68F42F67BE41772C0FF9527A782F31 /* DKTeam.swift in Sources */,
@@ -2489,7 +2482,6 @@
 				AAE5F9F9D75E02C5E57054AAA40B112E /* DKPagingGenerator.swift in Sources */,
 				B8139F6336A13DF87D460EEED8BFB603 /* DKPermissions.swift in Sources */,
 				379603AF1D48AEE09E29B3D0B5016590 /* DKReaction.swift in Sources */,
-				A5010744211D0F9A001018FA /* Equatable.swift in Sources */,
 				F548F0A5DBBC91258C2DD363573B1C2D /* DKRouter.swift in Sources */,
 				0CD3407E6DDE8B953C9C31D5E9618A87 /* DKTag.swift in Sources */,
 				6A32091F9981BFBDE77D4415A1B7C2EC /* DKTeam.swift in Sources */,

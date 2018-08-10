@@ -22,7 +22,6 @@
 //  THE SOFTWARE.
 //
 
-
 import Foundation
 
 /// An error returned from the Dropmark API

@@ -63,8 +63,8 @@
 		23E6FAD0B85FDA1973260366 /* Pods_DropmarkSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DropmarkSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C720F496829D377779BFBE /* Pods_tvOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvOS_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F4DD828505A6DC4446EBA0C /* Pods-iOS Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Demo/Pods-iOS Demo.debug.xcconfig"; sourceTree = "<group>"; };
-		607FACD01AFB9204008FA782 /* iOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		607FACE51AFB9204008FA782 /* DropmarkSDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DropmarkSDK_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD01AFB9204008FA782 /* iOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "iOS Demo.app"; path = "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Example/build/Debug-iphoneos/iOS Demo.app"; sourceTree = "<absolute>"; };
+		607FACE51AFB9204008FA782 /* DropmarkSDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = DropmarkSDK_Tests.xctest; path = "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Example/build/Debug-iphoneos/DropmarkSDK_Tests.xctest"; sourceTree = "<absolute>"; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6CE42FC29A5FB1E32865F5DB /* Pods_Dropmark_SDK_for_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dropmark_SDK_for_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,8 +97,8 @@
 		A54E5B2E2118A60B00F93F1C /* NSAlert+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAlert+Extensions.swift"; sourceTree = "<group>"; };
 		A54E5B3021190FD400F93F1C /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		A54E5B322119152800F93F1C /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
-		A57B6E6120BCAF6100595C3E /* tvOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tvOS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5B57F9920B9C74700B766D6 /* Dropmark SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dropmark SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A57B6E6120BCAF6100595C3E /* tvOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "tvOS Demo.app"; path = "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Example/build/Debug-appletvos/tvOS Demo.app"; sourceTree = "<absolute>"; };
+		A5B57F9920B9C74700B766D6 /* Dropmark SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Dropmark SDK.app"; path = "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Example/build/Debug/Dropmark SDK.app"; sourceTree = "<absolute>"; };
 		A5B57F9B20B9C74700B766D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B57F9D20B9C74700B766D6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AC39C05CFA66FBC558EF4250 /* Pods_Dropmark_SDK_for_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dropmark_SDK_for_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,22 +173,9 @@
 			);
 			sourceTree = "<group>";
 		};
-		607FACD11AFB9204008FA782 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				607FACD01AFB9204008FA782 /* iOS Demo.app */,
-				607FACE51AFB9204008FA782 /* DropmarkSDK_Tests.xctest */,
-				A5B57F9920B9C74700B766D6 /* Dropmark SDK.app */,
-				A57B6E6120BCAF6100595C3E /* tvOS Demo.app */,
-			);
-			name = Products;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD11AFB9204008FA782 /* Products */,
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
@@ -422,7 +409,7 @@
 				Base,
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
-			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
+			productRefGroup = 607FACC71AFB9204008FA782;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (

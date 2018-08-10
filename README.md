@@ -1,5 +1,5 @@
 <p align="center" >
-    <img src="https://raw.githubusercontent.com/dropmark/Swift-SDK/master/Images/header.png" alt="Dropmark Swift SDK" title="Dropmark Swift SDK" width="506" height:"192"
+    <img src="https://raw.githubusercontent.com/dropmark/Swift-SDK/master/DropmarkSwiftSDK.png" alt="Dropmark Swift SDK" title="Dropmark Swift SDK" width="506" height="192"
 </p>
 
 [![Version](https://img.shields.io/cocoapods/v/DropmarkSDK.svg?style=flat)](https://cocoapods.org/pods/DropmarkSDK)

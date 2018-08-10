@@ -207,3 +207,7 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     }
     
 }
+
+func ==(lhs: DKTeam?, rhs: DKTeam?) -> Bool {
+    return lhs?.id == rhs?.id
+}
