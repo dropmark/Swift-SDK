@@ -63,7 +63,6 @@
 		23E6FAD0B85FDA1973260366 /* Pods_DropmarkSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DropmarkSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31C720F496829D377779BFBE /* Pods_tvOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvOS_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F4DD828505A6DC4446EBA0C /* Pods-iOS Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Demo/Pods-iOS Demo.debug.xcconfig"; sourceTree = "<group>"; };
-		607FACD01AFB9204008FA782 /* iOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "iOS Demo.app"; path = "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Example/build/Debug-iphoneos/iOS Demo.app"; sourceTree = "<absolute>"; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6CE42FC29A5FB1E32865F5DB /* Pods_Dropmark_SDK_for_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dropmark_SDK_for_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,8 +96,9 @@
 		A54E5B3021190FD400F93F1C /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		A54E5B322119152800F93F1C /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		A557EA27211DE9E80022B6E5 /* DropmarkSDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DropmarkSDK_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A57B6E6120BCAF6100595C3E /* tvOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "tvOS Demo.app"; path = "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Example/build/Debug-appletvos/tvOS Demo.app"; sourceTree = "<absolute>"; };
-		A5B57F9920B9C74700B766D6 /* Dropmark SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Dropmark SDK.app"; path = "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Example/build/Debug/Dropmark SDK.app"; sourceTree = "<absolute>"; };
+		A557EA28211E098C0022B6E5 /* Dropmark SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dropmark SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A557EA29211E09910022B6E5 /* tvOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tvOS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A557EA2A211E09960022B6E5 /* iOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5B57F9B20B9C74700B766D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5B57F9D20B9C74700B766D6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AC39C05CFA66FBC558EF4250 /* Pods_Dropmark_SDK_for_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dropmark_SDK_for_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +171,9 @@
 				086B5A6AC3BA1513028D714B /* Pods */,
 				978CEBA42B9D2FAA4A28CF26 /* Frameworks */,
 				A557EA27211DE9E80022B6E5 /* DropmarkSDK_Tests.xctest */,
+				A557EA28211E098C0022B6E5 /* Dropmark SDK.app */,
+				A557EA29211E09910022B6E5 /* tvOS Demo.app */,
+				A557EA2A211E09960022B6E5 /* iOS Demo.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -303,7 +306,7 @@
 			);
 			name = "iOS Demo";
 			productName = DropmarkSDK;
-			productReference = 607FACD01AFB9204008FA782 /* iOS Demo.app */;
+			productReference = A557EA2A211E09960022B6E5 /* iOS Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		607FACE41AFB9204008FA782 /* DropmarkSDK_Tests */ = {
@@ -341,7 +344,7 @@
 			);
 			name = "tvOS Demo";
 			productName = "Dropmark SDK for tvOS";
-			productReference = A57B6E6120BCAF6100595C3E /* tvOS Demo.app */;
+			productReference = A557EA29211E09910022B6E5 /* tvOS Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A5B57F9820B9C74700B766D6 /* macOS Demo */ = {
@@ -360,7 +363,7 @@
 			);
 			name = "macOS Demo";
 			productName = "Dropmark SDK for Mac";
-			productReference = A5B57F9920B9C74700B766D6 /* Dropmark SDK.app */;
+			productReference = A557EA28211E098C0022B6E5 /* Dropmark SDK.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -796,7 +799,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.drompark-sdk.ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.dropmark-sdk.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -814,7 +817,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.drompark-sdk.ios";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.dropmark-sdk.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -873,7 +876,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "iOS and tvOS Demo/tvOS Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.drompark-sdk.tvos";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.dropmark-sdk.tvos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -899,7 +902,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "iOS and tvOS Demo/tvOS Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.drompark-sdk.tvos";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.dropmark-sdk.tvos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				SWIFT_VERSION = 4.0;
@@ -931,7 +934,7 @@
 				INFOPLIST_FILE = "macOS Demo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.drompark-sdk.macos";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.dropmark-sdk.macos";
 				PRODUCT_NAME = "Dropmark SDK";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -961,7 +964,7 @@
 				INFOPLIST_FILE = "macOS Demo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.drompark-sdk.macos";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.dropmark-sdk.macos";
 				PRODUCT_NAME = "Dropmark SDK";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 4.0;
