@@ -75,6 +75,19 @@ public class DKThumbnails: NSObject, NSCoding {
 
     // MARK: NSCoding
     
+    /**
+     
+     Returns an object initialized from data in a given unarchiver.
+     
+     - Parameters:
+        - coder: An unarchiver object.
+     
+     - Returns: `self`, initialized using the data in `coder`.
+     
+     - Discussion: You typically return `self` from `init(coder:)`. If you have an advanced need that requires substituting a different object after decoding, you can do so in `awakeAfter(using:)`.
+     
+     */
+    
     public required init(coder aDecoder: NSCoder) {
         
         mini = aDecoder.decodeObject(forKey: "mini") as? URL
@@ -86,6 +99,15 @@ public class DKThumbnails: NSObject, NSCoding {
         uncroppedAnimated = aDecoder.decodeObject(forKey: "uncropped_animated") as? URL
         
     }
+    
+    /**
+     
+     Encodes the receiver using a given archiver.
+     
+     - Parameters:
+        - encoder: An archiver object.
+     
+     */
     
     public func encode(with aCoder: NSCoder) {
 

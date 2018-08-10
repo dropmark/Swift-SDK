@@ -28,13 +28,28 @@ import Foundation
 @objc(DKReaction)
 public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
-    public var id : NSNumber!
-    public var itemID : NSNumber!
+    /// The unique identifier of the reaction
+    public var id : NSNumber
+    
+    /// The unique identifier for the associated item
+    public var itemID : NSNumber
+    
+    /// The name of the associated item
     public var itemName: String?
+    
+    /// The unique identifier of the parent collection
     public var collectionID : NSNumber?
+    
+    /// The name of the parent collection
     public var collectionName: String?
-    public var createdAt : Date!
+    
+    /// The date the reaction was created
+    public var createdAt : Date
+    
+    /// The date the reaction was last updated
     public var updatedAt : Date?
+    
+    /// The creator of the reaction
     public var user: DKUser?
     
     // MARK: DKResponseObjectSerializable
@@ -45,7 +60,8 @@ public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable,
             let representation = representation as? [String: Any],
             let id = representation["id"] as? NSNumber,
             let itemID = representation["item_id"] as? NSNumber,
-            let createdAtString = representation["created_at"] as? String
+            let createdAtString = representation["created_at"] as? String,
+            let createdAt = createdAtString.date
         else { return nil }
         
         self.id = id
@@ -53,48 +69,83 @@ public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable,
         itemName = representation["item_name"] as? String
         collectionID = representation["collection_id"] as? NSNumber
         collectionName = representation["collection_name"] as? String
-        createdAt = createdAtString.date
+        self.createdAt = createdAt
         
         if let updatedAtString = representation["updated_at"] as? String {
             updatedAt = updatedAtString.date
         }
         
-        if let userID = representation["user_id"] as? NSNumber, let user = DKUser(id: userID) {
+        if let userID = representation["user_id"] as? NSNumber {
+            
+            let user = DKUser(id: userID)
             user.username = representation["username"] as? String
+            
             if let name = representation["user_name"] as? String {
                 user.name = name
             } else if let name = representation["name"] as? String {
                 user.name = name
             }
+            
             if let email = representation["user_email"] as? String {
                 user.email = email
             } else if let email = representation["email"] as? String {
                 user.email = email
             }
-            if let avatar = representation["user_avatar"] as? String {
+            
+            if let avatarString = representation["user_avatar"] as? String, let avatar = URL(string: avatarString) {
                 user.avatar = avatar
-            } else if let avatar = representation["avatar"] as? String {
+            } else if let avatarString = representation["avatar"] as? String, let avatar = URL(string: avatarString) {
                 user.avatar = avatar
             }
+            
             self.user = user
+            
         }
         
     }
     
     // MARK: NSCoding
     
-    public required init(coder aDecoder: NSCoder) {
+    /**
+     
+     Returns an object initialized from data in a given unarchiver.
+     
+     - Parameters:
+        - coder: An unarchiver object.
+     
+     - Returns: `self`, initialized using the data in `coder`.
+     
+     - Discussion: You typically return `self` from `init(coder:)`. If you have an advanced need that requires substituting a different object after decoding, you can do so in `awakeAfter(using:)`.
+     
+     */
+    
+    public required init?(coder aDecoder: NSCoder) {
         
-        id = aDecoder.decodeObject(forKey: "id") as! NSNumber
-        itemID = aDecoder.decodeObject(forKey: "item_id") as! NSNumber
+        guard
+            let id = aDecoder.decodeObject(forKey: "id") as? NSNumber,
+            let itemID = aDecoder.decodeObject(forKey: "item_id") as? NSNumber,
+            let createdAt = aDecoder.decodeObject(forKey: "created_at") as? Date
+        else { return nil }
+        
+        self.id = id
+        self.itemID = itemID
         itemName = aDecoder.decodeObject(forKey: "item_name") as? String
         collectionID = aDecoder.decodeObject(forKey: "collection_id") as? NSNumber
         collectionName = aDecoder.decodeObject(forKey: "collection_name") as? String
-        createdAt = aDecoder.decodeObject(forKey: "created_at") as! Date
+        self.createdAt = createdAt
         updatedAt = aDecoder.decodeObject(forKey: "updated_at") as? Date
         user = aDecoder.decodeObject(forKey: "user") as? DKUser
         
     }
+    
+    /**
+     
+     Encodes the receiver using a given archiver.
+     
+     - Parameters:
+        - encoder: An archiver object.
+     
+     */
     
     public func encode(with aCoder: NSCoder) {
         

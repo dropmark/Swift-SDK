@@ -34,27 +34,35 @@ import Foundation
 @objc(DKUser)
 public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
+    /// When listing collaborators within a collection, a `Kind` represents a user's role within the collection
     public enum Kind: String {
+        
+        /// THe owner of the collection can add, update, and delete collaborators, as well as alter the collection
         case owner
+        
+        /// The creator originally created the collection, however ownership can be transferred thereafter
         case creator
+        
+        /// A role assigned to users to administer the collection
         case manager
+        
+        /// A read-only member of a collection
         case user
+        
     }
     
-    public enum Plan: String {
-        case free
-        case pro
-        case proBeta = "pro_beta"
-        case proMonthly = "pro_monthly"
-        case team
-    }
-    
+    /// A user's ability to act on the Dropmark platform
     public enum Status: String {
+        
+        /// A user retains the ability to act within Dropmark
         case active
+        
+        /// A user cannot act on Dropmark
         case inactive
+        
     }
     
-    public var id : NSNumber!
+    public var id : NSNumber
     public var name : String?
     public var email : String?
     public var username : String?
@@ -63,14 +71,14 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     public var sortOrder : String?
     public var viewMode : String?
     public var labels : Bool?
-    public var plan : Plan = .free
+    public var plan : DKPlan = .free
     public var planIsActive : Bool?
     public var planQuantity : NSNumber?
     public var billingEmail : String?
     public var kind: Kind?
     public var status : Status = .active
     public var createdAt : Date?
-    public var avatar: String?
+    public var avatar: URL?
     
     /// A list of all teams of which the user is a member.
     public var teams: [DKTeam]?
@@ -87,7 +95,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
      
      */
     
-    public init?(id: NSNumber) {
+    public init(id: NSNumber) {
         self.id = id
     }
     
@@ -110,7 +118,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         viewMode = representation["view_mode"] as? String
         labels = representation["labels"] as? Bool
         
-        if let planString = representation["plan"] as? String, let plan = Plan(rawValue: planString) {
+        if let planString = representation["plan"] as? String, let plan = DKPlan(rawValue: planString) {
             self.plan = plan
         }
         
@@ -130,14 +138,24 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
             createdAt = createdAtString.date
         }
         
-        avatar = representation["avatar"] as? String
-        
-        if avatar == nil {
-            avatar = representation["user_avatar"] as? String
+        if let avatarString = representation["avatar"] as? String {
+            avatar =  URL(string: avatarString)
+        } else if let avatarString = representation["user_avatar"] as? String {
+            avatar =  URL(string: avatarString)
         }
         
-        if let teamsRepresentation = representation["teams"] as? [Any] {
-            teams = teamsRepresentation.map({ DKTeam(response:response, representation: $0)! })
+        if let teamRepresentations = representation["teams"] as? [Any] {
+            
+            var teams = [DKTeam]()
+            
+            for teamRepresentation in teamRepresentations {
+                if let team = DKTeam(response: response, representation: teamRepresentation) {
+                    teams.append(team)
+                }
+            }
+            
+            self.teams = teams
+            
         }
         
         token = representation["token"] as? String
@@ -146,9 +164,26 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     
     // MARK: NSCoder
     
-    public required init(coder aDecoder: NSCoder) {
+    /**
+     
+     Returns an object initialized from data in a given unarchiver.
+     
+     - Parameters:
+        - coder: An unarchiver object.
+     
+     - Returns: `self`, initialized using the data in `coder`.
+     
+     - Discussion: You typically return `self` from `init(coder:)`. If you have an advanced need that requires substituting a different object after decoding, you can do so in `awakeAfter(using:)`.
+     
+     */
+    
+    public required init?(coder aDecoder: NSCoder) {
         
-        id = aDecoder.decodeObject(forKey: "id") as! NSNumber
+        guard
+            let id = aDecoder.decodeObject(forKey: "id") as? NSNumber
+        else { return nil}
+        
+        self.id = id
         name = aDecoder.decodeObject(forKey: "name") as? String
         email = aDecoder.decodeObject(forKey: "email") as? String
         username = aDecoder.decodeObject(forKey: "username") as? String
@@ -157,21 +192,34 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         sortOrder = aDecoder.decodeObject(forKey: "sort_order") as? String
         viewMode = aDecoder.decodeObject(forKey: "view_mode") as? String
         labels = aDecoder.decodeObject(forKey: "labels") as? Bool
-        if let planString = aDecoder.decodeObject(forKey: "plan") as? String {
-            self.plan = Plan(rawValue: planString) ?? .free
+        
+        if let planString = aDecoder.decodeObject(forKey: "plan") as? String, let plan = DKPlan(rawValue: planString) {
+            self.plan = plan
         }
+        
         planIsActive = aDecoder.decodeObject(forKey: "plan_active") as? Bool
         planQuantity = aDecoder.decodeObject(forKey: "plan_quantity") as? NSNumber
         billingEmail = aDecoder.decodeObject(forKey: "billing_email") as? String
-        if let statusString = aDecoder.decodeObject(forKey: "status") as? String {
-            status = Status(rawValue: statusString) ?? .active
+        
+        if let statusString = aDecoder.decodeObject(forKey: "status") as? String, let status = Status(rawValue: statusString) {
+            self.status = status
         }
+        
         createdAt = aDecoder.decodeObject(forKey: "created_at") as? Date
-        avatar = aDecoder.decodeObject(forKey: "avatar") as? String
+        avatar = aDecoder.decodeObject(forKey: "avatar") as? URL
         teams = aDecoder.decodeObject(forKey: "teams") as? [DKTeam]
         token = aDecoder.decodeObject(forKey: "token") as? String
         
     }
+    
+    /**
+     
+     Encodes the receiver using a given archiver.
+     
+     - Parameters:
+        - encoder: An archiver object.
+     
+     */
     
     public func encode(with aCoder: NSCoder) {
         

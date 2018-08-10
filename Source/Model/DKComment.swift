@@ -28,18 +28,43 @@ import Foundation
 @objc(DKComment)
 public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
-    public var id : NSNumber!
+    /// The unique identifier of the comment
+    public var id : NSNumber
+    
+    /// The unique identifier for the associated item
     public var itemID: NSNumber?
+    
+    /// The name of the associated item
     public var itemName: String?
+    
+    /// The unique identifier of the parent collection
     public var collectionID : NSNumber?
+    
+    /// The name of the parent collection
     public var collectionName : String?
-    public var collectionURL : String?
-    public var body : String!
-    public var createdAt : Date!
+    
+    /// The Dropmark link of the parent collection
+    public var collectionURL : URL?
+    
+    /// The body text of the comment. This string may contain Markdown-formatted text, including references to images.
+    public var body : String
+    
+    /// The date the comment was created
+    public var createdAt : Date
+    
+    /// The date the the comment was last updated
     public var updatedAt : Date?
+    
+    
     public var annotation : String?
-    public var URL : String?
-    public var shortURL : String?
+    
+    
+    public var url : URL?
+    
+    
+    public var shortURL : URL?
+    
+    /// The creator of the comment
     public var user: DKUser?
     
     // MARK: DKResponseObjectSerializable
@@ -50,7 +75,8 @@ public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, 
             let representation = representation as? [String: Any],
             let id = representation["id"] as? NSNumber,
             let body = representation["body"] as? String,
-            let createdAtString = representation["created_at"] as? String
+            let createdAtString = representation["created_at"] as? String,
+            let createdAt = createdAtString.date
         else { return nil }
         
         self.id = id
@@ -58,59 +84,104 @@ public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, 
         itemName = representation["item_name"] as? String
         collectionID = representation["collection_id"] as? NSNumber
         collectionName = representation["collection_name"] as? String
-        collectionURL = representation["collection_url"] as? String
+        
+        if let collectionURLString = representation["collection_url"] as? String {
+            self.collectionURL = URL(string: collectionURLString)
+        }
+
         self.body = body
-        createdAt = createdAtString.date
+        self.createdAt = createdAt
         
         if let updatedAtString = representation["updated_at"] as? String {
             updatedAt = updatedAtString.date
         }
         
         annotation = representation["annotation"] as? String
-        URL = representation["url"] as? String
-        shortURL = representation["short_url"] as? String
         
-        if let userID = representation["user_id"] as? NSNumber, let user = DKUser(id: userID) {
+        if let urlString = representation["url"] as? String {
+            self.url = URL(string: urlString)
+        }
+        
+        if let shortURLStrig = representation["short_url"] as? String {
+            self.shortURL = URL(string: shortURLStrig)
+        }
+        
+        if let userID = representation["user_id"] as? NSNumber {
+            
+            let user = DKUser(id: userID)
             user.username = representation["username"] as? String
+            
             if let name = representation["user_name"] as? String {
                 user.name = name
             } else if let name = representation["name"] as? String {
                 user.name = name
             }
+            
             if let email = representation["user_email"] as? String {
                 user.email = email
             } else if let email = representation["email"] as? String {
                 user.email = email
             }
-            if let avatar = representation["user_avatar"] as? String {
+            
+            if let avatarString = representation["user_avatar"] as? String, let avatar = URL(string: avatarString) {
                 user.avatar = avatar
-            } else if let avatar = representation["avatar"] as? String {
+            } else if let avatarString = representation["avatar"] as? String, let avatar = URL(string: avatarString) {
                 user.avatar = avatar
             }
+            
             self.user = user
+            
         }
         
     }
     
     // MARK: NSCoding
     
-    public required init(coder aDecoder: NSCoder) {
+    /**
+     
+     Returns an object initialized from data in a given unarchiver.
+     
+     - Parameters:
+        - coder: An unarchiver object.
+     
+     - Returns: `self`, initialized using the data in `coder`.
+     
+     - Discussion: You typically return `self` from `init(coder:)`. If you have an advanced need that requires substituting a different object after decoding, you can do so in `awakeAfter(using:)`.
+     
+     */
+    
+    public required init?(coder aDecoder: NSCoder) {
         
-        id = aDecoder.decodeObject(forKey: "id") as! NSNumber
+        guard
+            let id = aDecoder.decodeObject(forKey: "id") as? NSNumber,
+            let body = aDecoder.decodeObject(forKey: "body") as? String,
+            let createdAt = aDecoder.decodeObject(forKey: "created_at") as? Date
+        else { return nil }
+        
+        self.id = id
         itemID = aDecoder.decodeObject(forKey: "item_id") as? NSNumber
         itemName = aDecoder.decodeObject(forKey: "item_name") as? String
         collectionID = aDecoder.decodeObject(forKey: "collection_id") as? NSNumber
         collectionName = aDecoder.decodeObject(forKey: "collection_name") as? String
-        collectionURL = aDecoder.decodeObject(forKey: "collection_url") as? String
-        body = aDecoder.decodeObject(forKey: "body") as! String
-        createdAt = aDecoder.decodeObject(forKey: "created_at") as! Date
+        collectionURL = aDecoder.decodeObject(forKey: "collection_url") as? URL
+        self.body = body
+        self.createdAt = createdAt
         updatedAt = aDecoder.decodeObject(forKey: "updated_at") as? Date
         annotation = aDecoder.decodeObject(forKey: "annotation") as? String
-        URL = aDecoder.decodeObject(forKey: "url") as? String
-        shortURL = aDecoder.decodeObject(forKey: "short_url") as? String
+        url = aDecoder.decodeObject(forKey: "url") as? URL
+        shortURL = aDecoder.decodeObject(forKey: "short_url") as? URL
         user = aDecoder.decodeObject(forKey: "user") as? DKUser
         
     }
+    
+    /**
+     
+     Encodes the receiver using a given archiver.
+     
+     - Parameters:
+        - encoder: An archiver object.
+     
+     */
     
     public func encode(with aCoder: NSCoder) {
         
@@ -124,7 +195,7 @@ public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, 
         aCoder.encode(createdAt, forKey: "created_at")
         aCoder.encode(updatedAt, forKey: "updated_at")
         aCoder.encode(annotation, forKey: "annnotation")
-        aCoder.encode(URL, forKey: "url")
+        aCoder.encode(url, forKey: "url")
         aCoder.encode(shortURL, forKey: "short_url")
         aCoder.encode(user, forKey: "user")
         

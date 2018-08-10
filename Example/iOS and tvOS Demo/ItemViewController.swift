@@ -64,13 +64,13 @@ class ItemViewController: UIViewController {
         
 #if os(iOS)
         
-        dropmarkLinkButton.setTitle(item.url, for: .normal)
-        sourceLinkButton.setTitle(item.link, for: .normal)
+        dropmarkLinkButton.setTitle(item.url.absoluteString, for: .normal)
+        sourceLinkButton.setTitle(item.link?.absoluteString, for: .normal)
         
 #elseif os(tvOS)
         
-        dromparkLinkLabel.text = item.url
-        sourceLinkLabel.text = item.link
+        dromparkLinkLabel.text = item.url.absoluteString
+        sourceLinkLabel.text = item.link?.absoluteString
         
 #endif
         
@@ -79,14 +79,12 @@ class ItemViewController: UIViewController {
 #if os(iOS)
     
     @IBAction func didPressDropmarkLinkButton(_ sender: Any) {
-        if let urlString = item.url, let url = URL(string: urlString) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
+        UIApplication.shared.open(item.url, options: [:], completionHandler: nil)
     }
     
     @IBAction func didPressSourceLinkButton(_ sender: Any) {
-        if let urlString = item.link, let url = URL(string: urlString) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        if let link = item.link {
+            UIApplication.shared.open(link, options: [:], completionHandler: nil)
         }
     }
 

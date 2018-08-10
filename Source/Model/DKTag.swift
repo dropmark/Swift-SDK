@@ -28,7 +28,10 @@ import Foundation
 @objc(DKTag)
 public final class DKTag: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
-    public var name: String!
+    /// The name of the tag. Possibly contains a "#" character
+    public var name: String
+    
+    /// The total number of items the tag is applied to
     public var itemsTotalCount: NSNumber?
     
     /**
@@ -60,12 +63,38 @@ public final class DKTag: NSObject, NSCoding, DKResponseObjectSerializable, DKRe
     
     // MARK: NSCoding
     
-    public required init(coder aDecoder: NSCoder) {
+    /**
+     
+     Returns an object initialized from data in a given unarchiver.
+     
+     - Parameters:
+        - coder: An unarchiver object.
+     
+     - Returns: `self`, initialized using the data in `coder`.
+     
+     - Discussion: You typically return `self` from `init(coder:)`. If you have an advanced need that requires substituting a different object after decoding, you can do so in `awakeAfter(using:)`.
+     
+     */
+    
+    public required init?(coder aDecoder: NSCoder) {
         
-        name = aDecoder.decodeObject(forKey: "name") as! String
+        guard
+            let name = aDecoder.decodeObject(forKey: "name") as? String
+        else { return nil }
+        
+        self.name = name
         itemsTotalCount = aDecoder.decodeObject(forKey: "items_total_count") as? NSNumber
         
     }
+    
+    /**
+     
+     Encodes the receiver using a given archiver.
+     
+     - Parameters:
+        - encoder: An archiver object.
+     
+     */
     
     public func encode(with aCoder: NSCoder) {
         

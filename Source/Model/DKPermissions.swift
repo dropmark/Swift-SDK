@@ -28,10 +28,19 @@ import Foundation
 @objc(DKPermissions)
 public class DKPermissions: NSObject, NSCoding {
     
+    /// `true` if the user holds administrator status over the collection
     public var admin: Bool?
+    
+    /// `true` if the user can edit the collection's items and metadata
     public var edit: Bool?
+    
+    /// `true` if the user can share the collection with the public
     public var share: Bool?
+    
+    /// `true` if the user can leave the collection
     public var leave: Bool?
+    
+    /// `true if the user can delete the collection
     public var delete: Bool?
     
     // Init from network response
@@ -51,6 +60,19 @@ public class DKPermissions: NSObject, NSCoding {
     
     // MARK: NSCoding
     
+    /**
+     
+     Returns an object initialized from data in a given unarchiver.
+     
+     - Parameters:
+        - coder: An unarchiver object.
+     
+     - Returns: `self`, initialized using the data in `coder`.
+     
+     - Discussion: You typically return `self` from `init(coder:)`. If you have an advanced need that requires substituting a different object after decoding, you can do so in `awakeAfter(using:)`.
+     
+     */
+    
     public required init(coder aDecoder: NSCoder) {
         
         admin = aDecoder.decodeObject(forKey: "admin") as? Bool
@@ -60,6 +82,15 @@ public class DKPermissions: NSObject, NSCoding {
         delete = aDecoder.decodeObject(forKey: "delete") as? Bool
         
     }
+    
+    /**
+     
+     Encodes the receiver using a given archiver.
+     
+     - Parameters:
+        - encoder: An archiver object.
+     
+     */
     
     public func encode(with aCoder: NSCoder) {
         

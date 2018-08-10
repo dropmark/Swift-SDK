@@ -39,31 +39,11 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     /// A team's ability to act on the Dropmark platform
     public enum Status: String {
         
-        /// A team holds full action privileges on Dropmark
+        /// A team retains the ability to act within Dropmark
         case active
         
         /// A team cannot act on Dropmark
         case inactive
-        
-    }
-    
-    /// The plan tier the team is currently subscribed to
-    public enum Plan: String {
-        
-        /// Basic functionality
-        case free
-        
-        /// All personal Dropmark features
-        case pro
-        
-        /// All personal Dropmark features, plus those to test
-        case proBeta = "pro_beta"
-        
-        /// All personal Dropmark features, paid on a monthly basis
-        case proMonthly = "pro_monthly"
-        
-        /// All personal and team Dropmark features
-        case team
         
     }
     
@@ -78,39 +58,76 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         
     }
     
-    public var id : NSNumber!
-    public var name : String!
-    public var email : String?
-    public var username : String?
-    public var customDomain : String?
-    public var sortBy : String?
-    public var sortOrder : String?
-    public var viewMode : String?
-    public var labels : Bool?
-    public var plan : Plan = .free
-    public var planIsActive : Bool?
-    public var planQuantity : NSNumber?
-    public var billingEmail : String?
-    public var status : Status = .active
-    public var createdAt : Date?
-    public var feedKey : String?
-    public var usage : [String: AnyObject]?
-    public var userKind : UserKind?
-    public var users: [DKUser]?
-    public var avatar: String?
-    
-    /**
-     
-     Initialize a local instance with an ID
-     
-     - Parameters:
-        - id: The unique ID number to identify this team
-     
-     */
-    
-    public init?(id: NSNumber) {
-        self.id = id
+    /// Encapsulates the data usage metrics for a team
+    public struct Usage {
+        
+        /// The total amount of available data, in bytes
+        public var quota: NSNumber
+        
+        /// The amount of data used by the team, in bytes
+        public var usage: NSNumber
+        
     }
+    
+    /// The unique identifier of the team
+    public var id : NSNumber
+    
+    /// The name of a team
+    public var name : String
+    
+    /// The primmary email associated with the team
+    public var email : String?
+    
+    /// The unique username for the team
+    public var username : String?
+    
+    
+    public var customDomain : String?
+    
+    
+    public var sortBy : String?
+    
+    
+    public var sortOrder : String?
+    
+    
+    public var viewMode : String?
+    
+    
+    public var labels : Bool?
+    
+    /// The membership tier of the team
+    public var plan : DKPlan = .free
+    
+    /// `true` if a paid membership is still active
+    public var planIsActive : Bool?
+    
+    
+    public var planQuantity : NSNumber?
+    
+    /// The primary email address associate with the teams billing account
+    public var billingEmail : String?
+    
+    /// The active/inactive status of the team
+    public var status : Status = .active
+    
+    /// The date the team was created
+    public var createdAt : Date?
+    
+    /// A unique key used to assemble a Dropmark feed URL. Learn more about Dropmark feeds [here](https://www.dropmark.com/api/topics/feeds/).
+    public var feedKey : String?
+    
+    /// The usage metrics of data for a team
+    public var usage : Usage?
+    
+    /// The role of the current user (as identified by the token supplied in the GET request) within the team
+    public var userKind : UserKind?
+    
+    /// All collaborators within the team
+    public var users: [DKUser]?
+    
+    /// The URL of the team's avatar image
+    public var avatar: URL?
     
     // MARK: DKResponseObjectSerializable
     
@@ -132,7 +149,7 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         viewMode = representation["view_mode"] as? String
         labels = representation["labels"] as? Bool
         
-        if let planString = representation["user_plan"] as? String, let plan = Plan(rawValue: planString) {
+        if let planString = representation["user_plan"] as? String, let plan = DKPlan(rawValue: planString) {
             self.plan = plan
         }
         
@@ -154,24 +171,52 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
             userKind = UserKind(rawValue: userKindString)
         }
         
-        if let usersRepresentation = representation["users"] as? [AnyObject] {
-            users = usersRepresentation.map({ DKUser(response:response, representation: $0)! })
+        if let userRepresentations = representation["users"] as? [Any] {
+            
+            var users = [DKUser]()
+            
+            for userRepresentation in userRepresentations {
+                if let user = DKUser(response: response, representation: userRepresentation) {
+                    users.append(user)
+                }
+            }
+            
+            self.users = users
+            
         }
         
-        avatar = representation["avatar"] as? String
-        
-        if avatar == nil {
-            avatar = representation["user_avatar"] as? String
+        if let avatarString = representation["avatar"] as? String {
+            avatar =  URL(string: avatarString)
+        } else if let avatarString = representation["user_avatar"] as? String {
+            avatar =  URL(string: avatarString)
         }
-        
+
     }
     
     // MARK: NSCoding
     
-    public required init(coder aDecoder: NSCoder) {
+    /**
+     
+     Returns an object initialized from data in a given unarchiver.
+     
+     - Parameters:
+        - coder: An unarchiver object.
+     
+     - Returns: `self`, initialized using the data in `coder`.
+     
+     - Discussion: You typically return `self` from `init(coder:)`. If you have an advanced need that requires substituting a different object after decoding, you can do so in `awakeAfter(using:)`.
+     
+     */
+    
+    public required init?(coder aDecoder: NSCoder) {
         
-        id = aDecoder.decodeObject(forKey: "id") as! NSNumber
-        name = aDecoder.decodeObject(forKey: "name") as! String
+        guard
+            let id = aDecoder.decodeObject(forKey: "id") as? NSNumber,
+            let name = aDecoder.decodeObject(forKey: "name") as? String
+        else { return nil }
+        
+        self.id = id
+        self.name = name
         email = aDecoder.decodeObject(forKey: "email") as? String
         username = aDecoder.decodeObject(forKey: "username") as? String
         customDomain = aDecoder.decodeObject(forKey: "custom_domain") as? String
@@ -181,7 +226,7 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         labels = aDecoder.decodeObject(forKey: "labels") as? Bool
         
         if let planString = aDecoder.decodeObject(forKey: "plan") as? String {
-            plan = Plan(rawValue: planString) ?? .free
+            plan = DKPlan(rawValue: planString) ?? .free
         }
         
         planIsActive = aDecoder.decodeObject(forKey: "plan_active") as? Bool
@@ -200,9 +245,18 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         }
         
         users = aDecoder.decodeObject(forKey: "users") as? [DKUser]
-        avatar = aDecoder.decodeObject(forKey: "avatar") as? String
+        avatar = aDecoder.decodeObject(forKey: "avatar") as? URL
         
     }
+    
+    /**
+     
+     Encodes the receiver using a given archiver.
+     
+     - Parameters:
+        - encoder: An archiver object.
+     
+     */
     
     public func encode(with aCoder: NSCoder) {
         

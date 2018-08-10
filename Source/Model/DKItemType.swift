@@ -39,7 +39,7 @@ public enum DKItemType: String {
     /// Represents a string conforming to a URL scheme.
     case link
     
-    /// Represents a string formatted with markdown
+    /// Represents a string (potentially formatted with Markdown)
     case text
     
     /// Represents a hex color string.

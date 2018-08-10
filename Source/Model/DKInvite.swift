@@ -64,12 +64,19 @@ public final class DKInvite: NSObject, DKResponseObjectSerializable, DKResponseL
             updatedAt = updatedAtString.date
         }
         
-        if let userID = representation["user_id"] as? NSNumber, let user = DKUser(id: userID) {
+        if let userID = representation["user_id"] as? NSNumber {
+            
+            let user = DKUser(id: userID)
             user.name = representation["user_name"] as? String
             user.username = representation["username"] as? String
             user.email = representation["user_email"] as? String
-            user.avatar = representation["user_avatar"] as? String
+            
+            if let avatarString = representation["user_avatar"] as? String, let avatar = URL(string: avatarString) {
+                user.avatar = avatar
+            }
+            
             self.user = user
+            
         }
         
         self.url = url
