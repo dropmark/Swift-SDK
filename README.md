@@ -7,22 +7,23 @@
 [![Platform](https://img.shields.io/cocoapods/p/DropmarkSDK.svg?style=flat)](https://cocoapods.org/pods/DropmarkSDK)
 [![Twitter](https://img.shields.io/badge/twitter-%40oakstudios-blue.svg)](http://twitter.com/oakstudios)
 
-### **The Dropmark Swift SDK is currently in beta. The API may change drastically during this development period.**
+`DropmarkSDK` is a Swift interface for the [Dropmark API](https://www.dropmark.com/api/topics/introduction/). 
 
-`DropmarkSDK` provides the common model and network controllers for Dropmark's iOS, macOS, and tvOS products.
-
-DropmarkSDK offers a full suite of  with the Dropmark API. 
+**The Dropmark Swift SDK is currently in beta. The API may change drastically during this development period.**
 
 ## Features
 
-- [x] Full networking suite, built around Alamofire
-- [x] Model classes for all available Dropmark API objects
+- [x] Full networking suite for API endpoints, built around [Alamofire](https://github.com/Alamofire/Alamofire)
+- [x] Model classes for all API objects
 - [x] Serializers to translate response data into model objects
-- [x] Chainable promises, built around PromiseKit
+- [x] Chainable promises, built around [PromiseKit](https://github.com/mxcl/PromiseKit)
 - [x] Authentication and secure credential storage
-- [x] Pagination functions, with utilities for infinite scrolling in list views
+- [x] Pagination utilities, with utilities for infinite scrolling in list views
+- [x] Example for iOS
+- [x] Example for tvOS
+- [ ] Example for macOS
 - [ ] Comprehensive Unit and Integration Test Coverage
-- [ ] [Complete Documentation](https://dropmark.github.io/SwiftSDK)
+- [ ] [Complete Documentation](https://dropmark.github.io/Dropmark-Swift-SDK)
 
 ## Requirements
 
@@ -32,13 +33,13 @@ DropmarkSDK offers a full suite of  with the Dropmark API.
 
 ## Example
 
-Included in this repo is a suite of demo projects for iOS, tvOS, and macOS. To run the example projects:
+Included are demo projects for iOS, tvOS, and macOS. To run the example projects:
 
 1. Clone the repo
 2. Run `pod install` from the `/Example` directory
 3. In the `/Example` directory, copy the `keys-example.plist` file, rename the new file `keys.plist`, then add your Dropmark token to the file. 
 
-Be sure to open the examples using the `.workspace` file.
+Be sure to open the examples using the `DropmarkSDK.workspace` file.
 
 ## Installation
 
@@ -69,7 +70,7 @@ If you believe you have identified a security vulnerability with `Dropmark SDK` 
 
 ## Credits
 
-Created by [Oak](https://oak.is).
+Created by [Oak](https://oak.is) for [Dropmark](https://www.dropmark.com).
 
 `DromparkSDK` relies on the following 3rd party libraries:
 
