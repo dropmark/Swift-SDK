@@ -27,13 +27,11 @@ import Foundation
 import KeychainSwift
 
 /// Dropmark-specific wrapper for `KeychainSwift`, providing encryption, decryption, and removal of an authenticated user object in the device keychain.
-
 public struct DKKeychain {
     
     private static let userKey = "com.dropmark.user"
     
     /// The user stored in the device keychain. Use this variable to securely access user crendetials and data between app sessions.
-    
     public static var user: DKUser? {
         
         get {

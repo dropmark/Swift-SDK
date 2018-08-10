@@ -63,9 +63,11 @@ public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, 
         collectionURL = representation["collection_url"] as? String
         self.body = body
         createdAt = createdAtString.date
+        
         if let updatedAtString = representation["updated_at"] as? String {
             updatedAt = updatedAtString.date
         }
+        
         annotation = representation["annotation"] as? String
         URL = representation["url"] as? String
         shortURL = representation["short_url"] as? String
@@ -92,9 +94,8 @@ public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, 
         
     }
     
-    // MARK: NSUserDefaults
+    // MARK: NSCoding
     
-    // Init from NSUserDefaults
     public required init(coder aDecoder: NSCoder) {
         
         id = aDecoder.decodeObject(forKey: "id") as! NSNumber
@@ -113,7 +114,6 @@ public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, 
         
     }
     
-    // Save to NSUserDefaults
     public func encode(with aCoder: NSCoder) {
         
         aCoder.encode(id, forKey: "id")
@@ -132,22 +132,4 @@ public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, 
         
     }
     
-}
-
-// MARK: Equatable
-
-public func ==(lhs: DKComment, rhs: DKComment) -> Bool {
-    return lhs.id == rhs.id
-}
-
-public func ==(lhs: DKComment?, rhs: DKComment) -> Bool {
-    return lhs?.id == rhs.id
-}
-
-public func ==(lhs: DKComment, rhs: DKComment?) -> Bool {
-    return lhs.id == rhs?.id
-}
-
-public func ==(lhs: DKComment?, rhs: DKComment?) -> Bool {
-    return lhs?.id == rhs?.id
 }

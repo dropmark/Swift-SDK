@@ -25,11 +25,6 @@
 
 import Foundation
 
-extension Error {
-    public var code: Int { return (self as NSError).code }
-    public var domain: String { return (self as NSError).domain }
-}
-
 public enum DKPaginationError: Error {
     case didReachEnd
     case isFetchingPage
@@ -43,30 +38,4 @@ public enum DKSerializationError: Error {
 public enum DKRouterError: Error {
     case missingUser
     case missingUserToken
-}
-
-public struct DKServerError: Error {
-    
-    public init?(response: HTTPURLResponse?, data: Data?) {
-        
-        guard let statusCode = response?.statusCode else {
-            return nil
-        }
-        
-        self.statusCode = statusCode
-        
-        if
-            let data = data,
-            let jsonObject = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers),
-            let jsonDict = jsonObject as? [String:AnyObject],
-            let message = jsonDict["message"] as? String
-        {
-            self.message = message
-        }
-        
-    }
-    
-    public var statusCode: Int
-    public var message: String?
-    
 }

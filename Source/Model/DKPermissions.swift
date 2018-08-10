@@ -51,7 +51,8 @@ public class DKPermissions: NSObject, NSCoding {
         
     }
     
-    // Init from NSUserDefaults
+    // MARK: NSCoding
+    
     public required init(coder aDecoder: NSCoder) {
         
         admin = aDecoder.decodeObject(forKey: "admin") as? Bool
@@ -62,7 +63,6 @@ public class DKPermissions: NSObject, NSCoding {
         
     }
     
-    // Save to NSUserDefaults
     public func encode(with aCoder: NSCoder) {
         
         aCoder.encode(admin, forKey: "admin")

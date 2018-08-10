@@ -109,34 +109,43 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         sortOrder = representation["sort_order"] as? String
         viewMode = representation["view_mode"] as? String
         labels = representation["labels"] as? Bool
+        
         if let planString = representation["user_plan"] as? String, let plan = Plan(rawValue: planString) {
             self.plan = plan
         }
+        
         planIsActive = representation["plan_active"] as? Bool
         planQuantity = representation["plan_quantity"] as? NSNumber
         billingEmail = representation["billing_email"] as? String
+        
         if let statusString = representation["status"] as? String, let status = Status(rawValue: statusString) {
             self.status = status
         }
+        
         if let createdAtString = representation["created_at"] as? String {
             createdAt = createdAtString.date
         }
+        
         feedKey = representation["feed_key"] as? String
+        
         if let userKindString = representation["user_kind"] as? String {
             userKind = UserKind(rawValue: userKindString)
         }
+        
         if let usersRepresentation = representation["users"] as? [AnyObject] {
             users = usersRepresentation.map({ DKUser(response:response, representation: $0)! })
         }
+        
         avatar = representation["avatar"] as? String
+        
         if avatar == nil {
             avatar = representation["user_avatar"] as? String
         }
+        
     }
     
-    // MARK: NSUserDefaults
+    // MARK: NSCoding
     
-    // Init from NSUserDefaults
     public required init(coder aDecoder: NSCoder) {
         
         id = aDecoder.decodeObject(forKey: "id") as! NSNumber
@@ -148,25 +157,31 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         sortOrder = aDecoder.decodeObject(forKey: "sort_order") as? String
         viewMode = aDecoder.decodeObject(forKey: "view_mode") as? String
         labels = aDecoder.decodeObject(forKey: "labels") as? Bool
+        
         if let planString = aDecoder.decodeObject(forKey: "plan") as? String {
             plan = Plan(rawValue: planString) ?? .free
         }
+        
         planIsActive = aDecoder.decodeObject(forKey: "plan_active") as? Bool
         planQuantity = aDecoder.decodeObject(forKey: "plan_quantity") as? NSNumber
         billingEmail = aDecoder.decodeObject(forKey: "billing_email") as? String
+        
         if let statusString = aDecoder.decodeObject(forKey: "status") as? String {
             status = Status(rawValue: statusString) ?? .active
         }
+        
         createdAt = aDecoder.decodeObject(forKey: "created_at") as? Date
         feedKey = aDecoder.decodeObject(forKey: "feed_key") as? String
+        
         if let userKindString = aDecoder.decodeObject(forKey: "user_kind") as? String {
             userKind = UserKind(rawValue: userKindString)
         }
+        
         users = aDecoder.decodeObject(forKey: "users") as? [DKUser]
         avatar = aDecoder.decodeObject(forKey: "avatar") as? String
+        
     }
     
-    // Save to NSUserDefaults
     public func encode(with aCoder: NSCoder) {
         
         aCoder.encode(id, forKey: "id")
@@ -190,26 +205,5 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         aCoder.encode(avatar, forKey: "avatar")
         
     }
-}
-
-// MARK: Equatable
-
-public func ==(lhs: DKTeam, rhs: DKTeam) -> Bool {
-    return lhs.id == rhs.id
-}
-
-public func !=(lhs: DKTeam, rhs: DKTeam) -> Bool {
-    return lhs.id != rhs.id
-}
-
-public func ==(lhs: DKTeam?, rhs: DKTeam) -> Bool {
-    return lhs?.id == rhs.id
-}
-
-public func ==(lhs: DKTeam, rhs: DKTeam?) -> Bool {
-    return lhs.id == rhs?.id
-}
-
-func ==(lhs: DKTeam?, rhs: DKTeam?) -> Bool {
-    return lhs?.id == rhs?.id
+    
 }

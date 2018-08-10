@@ -73,6 +73,8 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     public var status : Status = .active
     public var createdAt : Date?
     public var avatar: String?
+    
+    /// A list of all teams of which the user is a member.
     public var teams: [DKTeam]?
     
     /// Used to authenticate requests on behalf of the user. **Note**: A token value only returns from the `/auth` API endpoint
@@ -109,35 +111,43 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         sortOrder = representation["sort_order"] as? String
         viewMode = representation["view_mode"] as? String
         labels = representation["labels"] as? Bool
+        
         if let planString = representation["plan"] as? String, let plan = Plan(rawValue: planString) {
             self.plan = plan
         }
+        
         planIsActive = representation["plan_active"] as? Bool
         planQuantity = representation["plan_quantity"] as? NSNumber
         billingEmail = representation["billing_email"] as? String
+        
         if let kindString = representation["kind"] as? String, let kind = Kind(rawValue: kindString) {
             self.kind = kind
         }
+        
         if let statusString = representation["status"] as? String, let status = Status(rawValue: statusString) {
             self.status = status
         }
+        
         if let createdAtString = representation["created_at"] as? String {
             createdAt = createdAtString.date
         }
+        
         avatar = representation["avatar"] as? String
+        
         if avatar == nil {
             avatar = representation["user_avatar"] as? String
         }
+        
         if let teamsRepresentation = representation["teams"] as? [Any] {
             teams = teamsRepresentation.map({ DKTeam(response:response, representation: $0)! })
         }
+        
         token = representation["token"] as? String
 
     }
     
-    // MARK: NSUserDefaults
+    // MARK: NSCoder
     
-    // Init from NSUserDefaults
     public required init(coder aDecoder: NSCoder) {
         
         id = aDecoder.decodeObject(forKey: "id") as! NSNumber
@@ -165,7 +175,6 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         
     }
     
-    // Save to NSUserDefaults
     public func encode(with aCoder: NSCoder) {
         
         aCoder.encode(id, forKey: "id")
@@ -210,22 +219,3 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     }
     
 }
-
-// MARK: Equatable
-
-public func ==(lhs: DKUser, rhs: DKUser) -> Bool {
-    return lhs.id == rhs.id
-}
-
-public func ==(lhs: DKUser?, rhs: DKUser) -> Bool {
-    return lhs?.id == rhs.id
-}
-
-public func ==(lhs: DKUser, rhs: DKUser?) -> Bool {
-    return lhs.id == rhs?.id
-}
-
-public func ==(lhs: DKUser?, rhs: DKUser?) -> Bool {
-    return lhs?.id == rhs?.id
-}
-

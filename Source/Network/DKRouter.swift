@@ -617,7 +617,7 @@ public enum DKRouter: URLRequestConvertible {
             throw DKRouterError.missingUserToken
         }
         
-        let plainString = "\(user.id!):\(userToken)" as NSString
+        let plainString = "\(user.id):\(userToken)" as NSString
         let plainData = plainString.data(using: String.Encoding.utf8.rawValue)
         let base64String = plainData?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
         urlRequest.setValue("Basic \(base64String!)", forHTTPHeaderField: "Authorization")

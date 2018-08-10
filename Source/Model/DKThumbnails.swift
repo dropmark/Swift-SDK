@@ -75,7 +75,8 @@ public class DKThumbnails: NSObject, NSCoding {
                 
     }
 
-    // Init from NSUserDefaults
+    // MARK: NSCoding
+    
     public required init(coder aDecoder: NSCoder) {
         
         mini = aDecoder.decodeObject(forKey: "mini") as? URL
@@ -88,7 +89,6 @@ public class DKThumbnails: NSObject, NSCoding {
         
     }
     
-    // Save to NSUserDefaults
     public func encode(with aCoder: NSCoder) {
 
         aCoder.encode(mini, forKey: "mini")

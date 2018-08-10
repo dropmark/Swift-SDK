@@ -88,9 +88,11 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         content = representation["content"]
         link = representation["link"] as? String
         preview = representation["preview"] as? String
+        
         if let urlString = representation["thumbnail"] as? String {
             thumbnail = URL(string: urlString)
         }
+        
         shareable = representation["shareable"] as? Bool
         size = representation["size"] as? NSNumber
         sort = representation["sort"] as? NSNumber
@@ -99,28 +101,36 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         latitude = representation["latitude"] as? NSNumber
         longitude = representation["longitude"] as? NSNumber
         createdAt = createdAtString.date
+        
         if let updatedAtString = representation["updated_at"] as? String {
             updatedAt = updatedAtString.date
         }
+        
         if let deletedAtString = representation["deleted_at"] as? String {
             deletedAt = deletedAtString.date
         }
+        
         reactionsTotalCount = representation["reactions_total_count"] as? NSNumber
         self.url = url
         self.shortURL = shortURL
         isURL = representation["is_url"] as? Bool
+        
         if let thumbnailsRepresentation = representation["thumbnails"]  {
             thumbnails = DKThumbnails(response: response, representation: thumbnailsRepresentation)
         }
+        
         if let metadataDict = representation["metadata"] as? [String: AnyObject] {
             metadata = metadataDict
         }
+        
         if let itemsRepresentation = representation["items"] as? [AnyObject] {
             items = itemsRepresentation.map({ DKItem(response:response, representation: $0)! })
         }
+        
         if let tagsRepresentation = representation["tags"] as? [AnyObject] {
             tags = tagsRepresentation.map({ DKTag(response:response, representation: $0)! })
         }
+        
         itemsTotalCount = representation["items_total_count"] as? NSNumber
         
         if let userID = representation["user_id"] as? NSNumber, let user = DKUser(id: userID) {
@@ -144,9 +154,8 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         
     }
     
-    // MARK: NSUserDefaults
+    // MARK: NSCoding
     
-    // Init from NSUserDefaults
     public required init(coder aDecoder: NSCoder) {
         
         id = aDecoder.decodeObject(forKey: "id") as! NSNumber
@@ -184,7 +193,6 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         
     }
     
-    // Save to NSUserDefaults
     public func encode(with aCoder: NSCoder) {
         
         aCoder.encode(id, forKey: "id")
@@ -220,22 +228,4 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         
     }
     
-}
-
-// MARK: Equatable
-
-public func ==(lhs: DKItem, rhs: DKItem) -> Bool {
-    return lhs.id == rhs.id
-}
-
-public func ==(lhs: DKItem?, rhs: DKItem) -> Bool {
-    return lhs?.id == rhs.id
-}
-
-public func ==(lhs: DKItem, rhs: DKItem?) -> Bool {
-    return lhs.id == rhs?.id
-}
-
-public func ==(lhs: DKItem?, rhs: DKItem?) -> Bool {
-    return lhs?.id == rhs?.id
 }

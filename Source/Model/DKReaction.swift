@@ -56,9 +56,11 @@ public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable,
         collectionID = representation["collection_id"] as? NSNumber
         collectionName = representation["collection_name"] as? String
         createdAt = createdAtString.date
+        
         if let updatedAtString = representation["updated_at"] as? String {
             updatedAt = updatedAtString.date
         }
+        
         if let userID = representation["user_id"] as? NSNumber, let user = DKUser(id: userID) {
             user.username = representation["username"] as? String
             if let name = representation["user_name"] as? String {
@@ -78,11 +80,11 @@ public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable,
             }
             self.user = user
         }
+        
     }
     
-    // MARK: NSUserDefaults
+    // MARK: NSCoding
     
-    // Init from NSUserDefaults
     public required init(coder aDecoder: NSCoder) {
         
         id = aDecoder.decodeObject(forKey: "id") as! NSNumber
@@ -96,7 +98,6 @@ public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable,
         
     }
     
-    // Save to NSUserDefaults
     public func encode(with aCoder: NSCoder) {
         
         aCoder.encode(id, forKey: "id")
@@ -110,22 +111,4 @@ public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable,
         
     }
     
-}
-
-// MARK: Equatable
-
-func ==(lhs: DKReaction, rhs: DKReaction) -> Bool {
-    return lhs.id == rhs.id
-}
-
-func ==(lhs: DKReaction?, rhs: DKReaction) -> Bool {
-    return lhs?.id == rhs.id
-}
-
-func ==(lhs: DKReaction, rhs: DKReaction?) -> Bool {
-    return lhs.id == rhs?.id
-}
-
-func ==(lhs: DKReaction?, rhs: DKReaction?) -> Bool {
-    return lhs?.id == rhs?.id
 }

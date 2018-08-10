@@ -30,7 +30,6 @@ import PromiseKit
 public extension DataRequest {
     
     /// Generate a generic `Promise` from a `DataRequest`
-    
     public func promise() -> Promise<Void> {
         return Promise<Void> { seal in
             self.response { response in
@@ -44,7 +43,6 @@ public extension DataRequest {
     }
     
     /// Generate a `Promise` from a `DataRequest`, returning an object of the inferred type.
-    
     public func promiseObject<T: DKResponseObjectSerializable>() -> Promise<T> {
         return Promise<T> { seal in
             self.responseObject { (response: DataResponse<T>) in
@@ -54,7 +52,6 @@ public extension DataRequest {
     }
     
     /// Generate a `Promise` from a `DataRequest`, returning a list of objects of the inferred type.
-    
     public func promiseList<T: DKResponseListSerializable>() -> Promise<[T]> {
         return Promise<[T]> { seal in
             self.responseList { (response: DataResponse<[T]>) in
@@ -64,7 +61,6 @@ public extension DataRequest {
     }
     
     /// Generate a `Promise` from a `DataRequest`, returning a list of objects of any type.
-    
     public func promiseListAny() -> Promise<[Any]> {
         return Promise<[Any]> { seal in
             self.responseListAny { (response: DataResponse<[Any]>) in

@@ -33,7 +33,6 @@ public final class DKTag: NSObject, NSCoding, DKResponseObjectSerializable, DKRe
     public var name: String!
     public var itemsTotalCount: NSNumber?
     
-    
     /**
      
      Initialize a tag using a name string.
@@ -61,9 +60,8 @@ public final class DKTag: NSObject, NSCoding, DKResponseObjectSerializable, DKRe
         
     }
     
-    // MARK: NSUserDefaults
+    // MARK: NSCoding
     
-    // Init from NSUserDefaults
     public required init(coder aDecoder: NSCoder) {
         
         name = aDecoder.decodeObject(forKey: "name") as! String
@@ -71,7 +69,6 @@ public final class DKTag: NSObject, NSCoding, DKResponseObjectSerializable, DKRe
         
     }
     
-    // Save to NSUserDefaults
     public func encode(with aCoder: NSCoder) {
         
         aCoder.encode(name, forKey: "name")

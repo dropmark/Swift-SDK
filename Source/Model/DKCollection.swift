@@ -118,43 +118,57 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
         self.id = id
         self.name = name
         descriptionText = representation["description"] as? String
+        
         if let kindString = representation["type"] as? String {
             kind = Kind(rawValue: kindString)
         }
+        
         self.sort = representation["sort"] as? NSNumber
+        
         if let sortByString = representation["sort_by"] as? String {
             sortBy = SortBy(rawValue: sortByString)
         }
+        
         if let sortOrderString = representation["sort_order"] as? String {
             sortOrder = SortOrder(rawValue: sortOrderString)
         }
+        
         if let viewModeString = representation["view_mode"] as? String {
             viewMode = ViewMode(rawValue: viewModeString)
         }
+        
         if let urlString = representation["thumbnail"] as? String {
             thumbnail = URL(string: urlString)
         }
+        
         labels = representation["labels"] as? Bool
         highlighted = representation["highlighted"] as? Bool
         archived = representation["archived"] as? Bool
+        
         if let lastAccessedAtString = representation["last_accessed_at"] as? String {
             lastAccessedAt = lastAccessedAtString.date
         }
+        
         self.createdAt = createdAtString.date
+        
         if let updatedAtString = representation["updated_at"] as? String {
             self.updatedAt = updatedAtString.date
         }
+        
         itemsTotalCount = representation["items_total_count"] as? NSNumber
         customDomain = representation["custom_domain"] as? String
         usersTotalCount = representation["users_total_count"] as? NSNumber
         self.url = url
         self.shortURL = shortURL
+        
         if let thumbnailsRepresentation = representation["thumbnails"]  {
             thumbnails = DKThumbnails(response: response, representation: thumbnailsRepresentation)
         }
+        
         if let permissionsRepresentation = representation["permissions"]  {
             permissions = DKPermissions(response: response, representation: permissionsRepresentation)
         }
+        
         if let userID = representation["user_id"] as? NSNumber, let user = DKUser(id: userID) {
             user.name = representation["user_name"] as? String
             user.username = representation["username"] as? String
@@ -166,17 +180,18 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
             user.planIsActive = representation["user_plan_active"] as? Bool
             self.user = user
         }
+        
         if let usersRepresentation = representation["users"] as? [Any] {
             users = usersRepresentation.map({ DKUser(response:response, representation: $0)! })
         }
+        
         if let itemsRepresentation = representation["items"] as? [Any] {
             items = itemsRepresentation.map({ DKItem(response:response, representation: $0)! })
         }
+        
     }
     
-    // MARK: NSUserDefaults
-    
-    // Init from NSUserDefaults
+    // MARK: NSCoding
     
     public required init(coder aDecoder: NSCoder) {
         
@@ -186,15 +201,19 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
         let kindString = aDecoder.decodeObject(forKey: "type") as! String
         kind = Kind(rawValue: kindString)
         sort = aDecoder.decodeObject(forKey: "sort") as? NSNumber
+        
         if let sortByString = aDecoder.decodeObject(forKey: "sort_by") as? String {
             sortBy = SortBy(rawValue: sortByString)
         }
+        
         if let sortOrderString = aDecoder.decodeObject(forKey: "sort_order") as? String {
             sortOrder = SortOrder(rawValue: sortOrderString)
         }
+        
         if let viewModeString = aDecoder.decodeObject(forKey: "view_mode") as? String {
             viewMode = ViewMode(rawValue: viewModeString)
         }
+        
         thumbnail = aDecoder.decodeObject(forKey: "thumbnail") as? URL
         labels = aDecoder.decodeObject(forKey: "labels") as? Bool
         highlighted = aDecoder.decodeObject(forKey: "highlighted") as? Bool
@@ -213,7 +232,6 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
         
     }
     
-    // Save to NSUserDefaults
     public func encode(with aCoder: NSCoder) {
         
         aCoder.encode(id, forKey: "id")
@@ -242,22 +260,3 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
     }
     
 }
-
-// MARK: Equatable
-
-public func ==(lhs: DKCollection, rhs: DKCollection) -> Bool {
-    return lhs.id == rhs.id
-}
-
-public func ==(lhs: DKCollection?, rhs: DKCollection) -> Bool {
-    return lhs?.id == rhs.id
-}
-
-public func ==(lhs: DKCollection, rhs: DKCollection?) -> Bool {
-    return lhs.id == rhs?.id
-}
-
-public func ==(lhs: DKCollection?, rhs: DKCollection?) -> Bool {
-    return lhs?.id == rhs?.id
-}
-

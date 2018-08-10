@@ -52,14 +52,18 @@ public final class DKInvite: NSObject, DKResponseObjectSerializable, DKResponseL
         self.id = id
         self.name = name
         thumbnail = representation["thumbnail"] as? String
+        
         if let thumbnailsRepresentation = representation["thumbnails"]  {
             thumbnails = DKThumbnails(response: response, representation: thumbnailsRepresentation)
         }
+        
         descriptionText = representation["description"] as? String
         createdAt = createdAtString.date
+        
         if let updatedAtString = representation["updated_at"] as? String {
             updatedAt = updatedAtString.date
         }
+        
         if let userID = representation["user_id"] as? NSNumber, let user = DKUser(id: userID) {
             user.name = representation["user_name"] as? String
             user.username = representation["username"] as? String
@@ -67,27 +71,10 @@ public final class DKInvite: NSObject, DKResponseObjectSerializable, DKResponseL
             user.avatar = representation["user_avatar"] as? String
             self.user = user
         }
+        
         self.url = url
         self.shortURL = shortURL
         
     }
     
-}
-
-// MARK: Equatable
-
-public func ==(lhs: DKInvite, rhs: DKInvite) -> Bool {
-    return lhs.id == rhs.id
-}
-
-public func ==(lhs: DKInvite?, rhs: DKInvite) -> Bool {
-    return lhs?.id == rhs.id
-}
-
-public func ==(lhs: DKInvite, rhs: DKInvite?) -> Bool {
-    return lhs.id == rhs?.id
-}
-
-public func ==(lhs: DKInvite?, rhs: DKInvite?) -> Bool {
-    return lhs?.id == rhs?.id
 }
