@@ -28,12 +28,25 @@ import Foundation
 @objc(DKThumbnails)
 public class DKThumbnails: NSObject, NSCoding {
     
+    /// URL for a mini thumbnail image, preserving the content's aspect ratio
     public var mini: URL?
+    
+    /// URL for a small thumbnail image, preserving the content's aspect ratio
     public var small: URL?
+    
+    /// URL for a cropped thumbnail image, using a square aspect ratio
     public var cropped: URL?
+    
+    /// URL for an uncropped thumbnail image, preserving the content's aspect ratio
     public var uncropped: URL?
+    
+    /// URL for a large thumbnail image, preserving the content's aspect ratio
     public var large: URL?
+    
+    /// For GIF animations, a URL for a cropped thumbnail animation using a square aspect ratio.
     public var croppedAnimated: URL?
+    
+    /// For GIF animations, a URL for an uncropped thumbnail animation preserving the content's aspect ratio
     public var uncroppedAnimated: URL?
     
     // Init from network response

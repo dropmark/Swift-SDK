@@ -62,22 +62,55 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         
     }
     
+    /// The unique identifier of the user
     public var id : NSNumber
+    
+    /// The name of the user
     public var name : String?
+    
+    /// The primary email of the user
     public var email : String?
+    
+    /// The unique username of the user
     public var username : String?
+    
+    
     public var customDomain : String?
+    
+    
     public var sortBy : String?
+    
+    
     public var sortOrder : String?
+    
+    
     public var viewMode : String?
+    
+    
     public var labels : Bool?
+    
+    /// The membership tier of the user
     public var plan : DKPlan = .free
+    
+    /// `true` if a paid membership is still active
     public var planIsActive : Bool?
+    
+    
     public var planQuantity : NSNumber?
+    
+    /// The primary email address associate with the teams billing account
     public var billingEmail : String?
+    
+    /// A user's role within a collection
     public var kind: Kind?
+    
+    /// The active/inactive status of the user
     public var status : Status = .active
+    
+    /// The date the user created their account
     public var createdAt : Date?
+    
+    /// The URL of the user's avatar image
     public var avatar: URL?
     
     /// A list of all teams of which the user is a member.
