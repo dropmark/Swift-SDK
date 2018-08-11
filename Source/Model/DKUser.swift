@@ -37,7 +37,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     /// When listing collaborators within a collection, a `Kind` represents a user's role within the collection
     public enum Kind: String {
         
-        /// THe owner of the collection can add, update, and delete collaborators, as well as alter the collection
+        /// The owner of the collection can add, update, and delete collaborators, as well as alter the collection
         case owner
         
         /// The creator originally created the collection, however ownership can be transferred thereafter
