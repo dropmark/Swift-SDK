@@ -57,6 +57,9 @@ import DropmarkSDK
 
 ## Migration
 
+### Version 0.3.0
+Large modifications to `DKRouter` enum, and associated Promise generation.
+
 ### Version 0.2.0
 A new naming scheme was introduced for object classes, prefixing each class name with "DK".
 
