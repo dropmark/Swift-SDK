@@ -35,6 +35,7 @@ public enum DKSerializationError: Error {
 }
 
 public enum DKRouterError: Error {
+    case missingAPIToken
     case missingUser
     case missingUserToken
 }

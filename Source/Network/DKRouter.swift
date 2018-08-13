@@ -29,11 +29,18 @@ public enum DKRouter: URLRequestConvertible {
     
     public static let baseURLString = "https://api.dropmark.com/v1"
     
-    public static var apiToken: String {
-        let token = Bundle.keyForID("DropmarkAPIToken")
-        assert(token != nil, "Dropmark API token was not loaded from keys.plist")
-        return token!
+    public static var apiToken: String? {
+        get {
+            if let manualToken = _apiToken {
+                return manualToken
+            }
+            return Bundle.keyForID("DropmarkAPIToken")
+        }
+        set {
+            _apiToken = newValue
+        }
     }
+    private static var _apiToken: String?
     
     public static var user: DKUser?
     
@@ -389,14 +396,15 @@ public enum DKRouter: URLRequestConvertible {
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         urlRequest.httpMethod = method.rawValue
         
+        try DKRouter.authenticateAPIRequest(&urlRequest)
+
         switch self {
             
         case .authenticate, .createUser:
-            DKRouter.authenticateDropmarkRequest(&urlRequest)
+            break
             
         default:
-            DKRouter.authenticateDropmarkRequest(&urlRequest)
-            try DKRouter.credentialRequest(&urlRequest, with: DKRouter.user)
+            try DKRouter.authorizeUserRequest(&urlRequest)
             
         }
         
@@ -588,27 +596,43 @@ public enum DKRouter: URLRequestConvertible {
         return urlRequest
     }
     
-    // MARK: Authentication Utlity
+    // MARK: Authentication
     
     /**
      
-     Pass in a URL Request to add token authentication
+     To access API resources, an API token is required in the header of all requests. To authenticate with this function, first set the `DKRouter.apiToken` variable. Then pass a reference to a request through.
+     
+     - Parameters:
+        - urlRequest: A reference to a `URLRequest`
+     
+     - Throws: Returns an error if no API token is found
      
      */
     
-    public static func authenticateDropmarkRequest(_ urlRequest: inout URLRequest) {
-        urlRequest.setValue("\(DKRouter.apiToken)", forHTTPHeaderField: "X-API-Key")
+    public static func authenticateAPIRequest(_ urlRequest: inout URLRequest) throws {
+        
+        guard let apiToken = DKRouter.apiToken else {
+            throw DKRouterError.missingAPIToken
+        }
+        
+        urlRequest.setValue(apiToken, forHTTPHeaderField: "X-API-Key")
+        
     }
     
     /**
      
-     Pass in a URL Request and user to credential the request.
+     To authorize requests on behalf of a user, the user's private token must be encoded and supplied in the `Authorization` header. To authorize a user's request for the duration of the app session, set an authenticated user to `DKRouter.user`.
+     
+     - Parameters:
+        - urlRequest: A reference to a `URLRequest`
+     
+     - Throws: Returns errors if no user or user token are found
      
      */
     
-    public static func credentialRequest(_ urlRequest: inout URLRequest, with user: DKUser?) throws {
+    public static func authorizeUserRequest(_ urlRequest: inout URLRequest) throws {
         
-        guard let user = user else {
+        guard let user = DKRouter.user else {
             throw DKRouterError.missingUser
         }
         
