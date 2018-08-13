@@ -36,7 +36,7 @@ extension UIAlertController {
         if let serverError = error as? DKServerError {
             
             title = "Server Error (\(serverError.statusCode))"
-            message = serverError.message ?? "No message"
+            message = serverError.message
             
         } else {
             

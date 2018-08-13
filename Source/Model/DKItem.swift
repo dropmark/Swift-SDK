@@ -303,10 +303,8 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
             let id = aDecoder.decodeObject(forKey: "id") as? NSNumber,
             let collectionID = aDecoder.decodeObject(forKey: "collection_id") as? NSNumber,
             let createdAt = aDecoder.decodeObject(forKey: "created_at") as? Date,
-            let urlString = aDecoder.decodeObject(forKey: "url") as? String,
-            let url = URL(string: urlString),
-            let shortURLString = aDecoder.decodeObject(forKey: "short_url") as? String,
-            let shortURL = URL(string: shortURLString)
+            let url = aDecoder.decodeObject(forKey: "url") as? URL,
+            let shortURL = aDecoder.decodeObject(forKey: "short_url") as? URL
         else { return nil }
         
         self.id = id
