@@ -49,7 +49,7 @@ public enum DKItemType: String {
     case stack
     
     /// An item not conforming to any of the other item types. Oftentimes this is a data file in a proprietary format, such as a Sketch or Photoshop file.
-    case other = "file"
+    case other
     
     /**
      
@@ -84,6 +84,21 @@ public enum DKItemType: String {
         
         guard let itemType = UTI(filenameExtension: filenameExtension)?.itemType else { return nil }
         self = itemType
+        
+    }
+    
+    /// String useful for displaying an item type on screen. Returns a capitalized version of the case value, except for `.other`, which returns "File"
+    var displayTitle: String {
+        
+        switch self {
+            
+        case .other:
+            return "File"
+            
+        default:
+            return rawValue.capitalized
+            
+        }
         
     }
     
