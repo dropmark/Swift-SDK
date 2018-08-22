@@ -53,9 +53,7 @@ class CollectionListViewController: UITableViewController {
         
 #endif
         
-        paging.next = { page in
-            return PromiseGenerator.listCollections(page: page)
-        }
+        paging.next = { PromiseGenerator.listCollections(page: $0) }
         
         getNextPageOfCollections().catch { error in
             let alert = UIAlertController(error: error, preferredStyle: .alert)

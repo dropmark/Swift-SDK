@@ -62,9 +62,7 @@ class ItemListViewController: UITableViewController {
         
 #endif
         
-        paging.next = { page in
-            return PromiseGenerator.listItems(collection: self.collection, stack: self.stack, page: page)
-        }
+        paging.next = { PromiseGenerator.listItems(collection: self.collection, stack: self.stack, page: $0) }
         
         getNextPageOfItems().catch { error in
             let alert = UIAlertController(error: error, preferredStyle: .alert)
