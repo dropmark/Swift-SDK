@@ -49,16 +49,19 @@ class LoginViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailTextField.nextKeyView = passwordTextField
     }
     
     override func viewDidAppear() {
         super.viewDidAppear()
         
-        if let existingUser = DKKeychain.user {
-            DKRouter.user = existingUser // Authenticate requests for the current app session
-            let collectionListViewController = NSStoryboard.collectionListViewController
-            presentViewControllerAsSheet(collectionListViewController)
-        }
+//        if let existingUser = DKKeychain.user {
+//            DKRouter.user = existingUser // Authenticate requests for the current app session
+//            performSegue(withIdentifier: NSStoryboardSegue.Identifier.showMainViewController, sender: nil)
+//        }
+        
+        emailTextField.stringValue = "mail@alexgivens.com"
+        passwordTextField.stringValue = "123456"
         
     }
 
@@ -67,25 +70,36 @@ class LoginViewController: NSViewController {
         let email = emailTextField.stringValue
         let password = passwordTextField.stringValue
         
+        guard email.count > 0, password.count > 0 else {
+            let message = "Missing Field\nPlease enter an email and password for your Dropmark account."
+            NSAlert.showOKAlert(message: message)
+            return
+        }
+        
         isLoading = true
         
         firstly {
+            
             PromiseGenerator.authenticate(email: email, password: password)
+        
         }.done {
             
             DKKeychain.user = $0 // Securely store the user for future app sessions
             DKRouter.user = $0 // Authenticate requests for the current app session
             
-            let collectionListViewController = NSStoryboard.collectionListViewController
-            self.presentViewControllerAsSheet(collectionListViewController)
+            self.performSegue(withIdentifier: NSStoryboardSegue.Identifier.showMainViewController, sender: nil)
             
             self.passwordTextField.stringValue = ""
             self.emailTextField.stringValue = ""
             
         }.ensure {
+            
             self.isLoading = false
+            
         }.catch { error in
-            NSAlert.showAlert(for: error)
+            
+            NSAlert.showOKAlert(error: error)
+                
         }
         
     }
