@@ -21,7 +21,7 @@
 - [x] Pagination utilities, with utilities for infinite scrolling in list views
 - [x] Example for iOS
 - [x] Example for tvOS
-- [ ] Example for macOS
+- [x] Example for macOS
 - [ ] Comprehensive Unit and Integration Test Coverage
 - [ ] [Complete Documentation](https://dropmark.github.io/Swift-SDK)
 
