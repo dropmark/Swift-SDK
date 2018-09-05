@@ -37,8 +37,21 @@ enum PagingError: Error {
 
 class MainViewController: NSViewController {
     
-    var selectedCollection: DKCollection?
-    var selectedStack: DKItem?
+    @IBOutlet weak var selectedCollectionLabel: NSTextField!
+    var selectedCollection: DKCollection? {
+        didSet {
+            selectedCollectionLabel.stringValue = selectedCollection?.name ?? ""
+        }
+    }
+    
+    @IBOutlet weak var selectedStackLabel: NSTextField!
+    var selectedStack: DKItem? {
+        didSet {
+            selectedStackLabel.stringValue = selectedStack?.name ?? ""
+        }
+    }
+    
+    @IBOutlet weak var progressIndicator: NSProgressIndicator!
     
     @IBOutlet weak var collectionsTableView: NSTableView!
     let collectionsPaging = DKPagingGenerator<DKCollection>(startPage: 1)
@@ -67,6 +80,9 @@ class MainViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        selectedCollectionLabel.stringValue = ""
+        selectedStackLabel.stringValue = ""
+                
         collectionsPaging.next = { PromiseGenerator.listCollections(page: $0) }
         
         primaryItemsPaging.next = { page in
@@ -93,20 +109,29 @@ class MainViewController: NSViewController {
     }
     
     @discardableResult func getNextPageOfCollections() -> Promise<Void> {
+        progressIndicator.startAnimation(nil)
         return collectionsPaging.getNext().done {
             self.collections.insert(contentsOf: $0, at: self.collections.endIndex)
+        }.ensure {
+            self.progressIndicator.stopAnimation(nil)
         }
     }
     
     @discardableResult func getNextPageOfPrimaryItems() -> Promise<Void> {
+        progressIndicator.startAnimation(nil)
         return primaryItemsPaging.getNext().done {
             self.primaryItems.insert(contentsOf: $0, at: self.primaryItems.endIndex)
+        }.ensure {
+            self.progressIndicator.stopAnimation(nil)
         }
     }
     
     @discardableResult func getNextPageOfSecondaryItems() -> Promise<Void> {
+        progressIndicator.startAnimation(nil)
         return secondaryItemsPaging.getNext().done {
             self.secondaryItems.insert(contentsOf: $0, at: self.secondaryItems.endIndex)
+        }.ensure {
+            self.progressIndicator.stopAnimation(nil)
         }
     }
     
@@ -156,19 +181,25 @@ extension MainViewController: NSTableViewDelegate {
         if tableView == collectionsTableView {
             
             if collectionsPaging.shouldGetNextPage(at: row, for: tableView) {
-                getNextPageOfCollections()
+                getNextPageOfCollections().catch { error in
+                    NSAlert.showOKAlert(error: error)
+                }
             }
             
         } else if tableView == primaryItemsTableView {
             
             if primaryItemsPaging.shouldGetNextPage(at: row, for: tableView) {
-                getNextPageOfPrimaryItems()
+                getNextPageOfPrimaryItems().catch { error in
+                    NSAlert.showOKAlert(error: error)
+                }
             }
             
         } else if tableView == secondaryItemsTableView {
             
             if secondaryItemsPaging.shouldGetNextPage(at: row, for: tableView) {
-                getNextPageOfSecondaryItems()
+                getNextPageOfSecondaryItems().catch { error in
+                    NSAlert.showOKAlert(error: error)
+                }
             }
             
         }
@@ -182,7 +213,9 @@ extension MainViewController: NSTableViewDelegate {
             resetPrimaryItems()
             resetSecondaryItems()
             selectedCollection = collections[row]
-            getNextPageOfPrimaryItems()
+            getNextPageOfPrimaryItems().catch { error in
+                NSAlert.showOKAlert(error: error)
+            }
             
         } else if tableView == primaryItemsTableView {
             
@@ -190,10 +223,10 @@ extension MainViewController: NSTableViewDelegate {
             let item = primaryItems[row]
             if item.type == .stack {
                 selectedStack = item
-                getNextPageOfSecondaryItems()
+                getNextPageOfSecondaryItems().catch { error in
+                    NSAlert.showOKAlert(error: error)
+                }
             }
-            
-        } else if tableView == secondaryItemsTableView {
             
         }
         
@@ -206,15 +239,23 @@ extension MainViewController: NSTableViewDelegate {
 extension MainViewController: NSTableViewDataSource {
     
     func numberOfRows(in tableView: NSTableView) -> Int {
+        
         if tableView == collectionsTableView {
+            
             return collections.count
+            
         } else if tableView == primaryItemsTableView {
+            
             return primaryItems.count
+            
         } else if tableView == secondaryItemsTableView {
+            
             return secondaryItems.count
-        } else {
-            return 0
+            
         }
+        
+        return 0
+        
     }
     
     func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {

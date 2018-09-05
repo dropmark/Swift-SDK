@@ -55,13 +55,15 @@ class LoginViewController: NSViewController {
     override func viewDidAppear() {
         super.viewDidAppear()
         
-//        if let existingUser = DKKeychain.user {
-//            DKRouter.user = existingUser // Authenticate requests for the current app session
-//            performSegue(withIdentifier: NSStoryboardSegue.Identifier.showMainViewController, sender: nil)
-//        }
-        
-        emailTextField.stringValue = "mail@alexgivens.com"
-        passwordTextField.stringValue = "123456"
+        if let existingUser = DKKeychain.user {
+            DKRouter.user = existingUser // Authenticate requests for the current app session
+            
+            // Add a slight delay due to rendering issue with view layers
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.performSegue(withIdentifier: NSStoryboardSegue.Identifier.showMainViewController, sender: nil)
+            }
+            
+        }
         
     }
 
