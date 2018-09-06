@@ -27,7 +27,7 @@ import Alamofire
 
 public enum DKRouter: URLRequestConvertible {
     
-    public static let baseURLString = "https://api.dropmark.com/v1"
+    public static var baseURLString = "https://api.dropmark.com/v1"
     
     public static var apiToken: String? {
         get {
