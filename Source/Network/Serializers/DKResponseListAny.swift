@@ -36,6 +36,16 @@ public struct DKResponseListAny {
         case invite
     }
     
+    /**
+     
+     Serializes a list of new objects (of DKCollection, DKItem, DKReaction, DKComment, or DKInvite types) from the provided network response and key-value representation. The representation is validated for the required list.
+     
+     - Parameters:
+        - response: A network response assocated with serialization
+        - representation: A key-value object representing a list of objects.
+     
+     */
+    
     public static func list(from response: HTTPURLResponse, withRepresentation representation: Any) -> [Any] {
         
         var list: [Any] = []
