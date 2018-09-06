@@ -52,13 +52,20 @@
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Error.swift",
       "line": 38,
-      "symbol": "DKRouterError.missingUser",
+      "symbol": "DKRouterError.missingAPIToken",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Error.swift",
       "line": 39,
+      "symbol": "DKRouterError.missingUser",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Error.swift",
+      "line": 40,
       "symbol": "DKRouterError.missingUserToken",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
@@ -387,364 +394,364 @@
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 38,
+      "line": 45,
       "symbol": "DKRouter.user",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 40,
+      "line": 47,
       "symbol": "DKRouter.pageSize",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 43,
+      "line": 50,
       "symbol": "DKRouter.activity",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 46,
+      "line": 53,
       "symbol": "DKRouter.authenticate",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 49,
+      "line": 56,
       "symbol": "DKRouter.listCollections",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 50,
+      "line": 57,
       "symbol": "DKRouter.createCollection",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 51,
+      "line": 58,
       "symbol": "DKRouter.getCollection",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 52,
+      "line": 59,
       "symbol": "DKRouter.updateCollection",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 53,
+      "line": 60,
       "symbol": "DKRouter.deleteCollection",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 55,
+      "line": 62,
       "symbol": "DKRouter.getCollectionsCount",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 56,
+      "line": 63,
       "symbol": "DKRouter.getItemsCountForCollection",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 58,
+      "line": 65,
       "symbol": "DKRouter.listCollaboratorsInCollection",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 59,
+      "line": 66,
       "symbol": "DKRouter.addCollaboratorToCollection",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 60,
+      "line": 67,
       "symbol": "DKRouter.removeCollaboratorFromCollection",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 63,
+      "line": 70,
       "symbol": "DKRouter.listCommentsForItem",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 64,
+      "line": 71,
       "symbol": "DKRouter.createCommentForItem",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 65,
+      "line": 72,
       "symbol": "DKRouter.updateComment",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 66,
+      "line": 73,
       "symbol": "DKRouter.deleteComment",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 69,
+      "line": 76,
       "symbol": "DKRouter.listEmails",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 70,
+      "line": 77,
       "symbol": "DKRouter.createEmail",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 71,
+      "line": 78,
       "symbol": "DKRouter.deleteEmail",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 74,
+      "line": 81,
       "symbol": "DKRouter.listItems",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 75,
+      "line": 82,
       "symbol": "DKRouter.listItemsInCollection",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 76,
+      "line": 83,
       "symbol": "DKRouter.createItemInCollection",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 77,
+      "line": 84,
       "symbol": "DKRouter.updateItemsInCollection",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 78,
+      "line": 85,
       "symbol": "DKRouter.updateItems",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 79,
+      "line": 86,
       "symbol": "DKRouter.getItem",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 80,
+      "line": 87,
       "symbol": "DKRouter.updateItem",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 81,
+      "line": 88,
       "symbol": "DKRouter.deleteItem",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 82,
+      "line": 89,
       "symbol": "DKRouter.deleteItemsInCollection",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 83,
+      "line": 90,
       "symbol": "DKRouter.copyItems",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 86,
+      "line": 93,
       "symbol": "DKRouter.listReactionsForItem",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 87,
+      "line": 94,
       "symbol": "DKRouter.createReactionForItem",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 88,
+      "line": 95,
       "symbol": "DKRouter.deleteReaction",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 91,
+      "line": 98,
       "symbol": "DKRouter.search",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 94,
+      "line": 101,
       "symbol": "DKRouter.listTags",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 95,
+      "line": 102,
       "symbol": "DKRouter.listTagsForItem",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 96,
+      "line": 103,
       "symbol": "DKRouter.createTagForItem",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 97,
+      "line": 104,
       "symbol": "DKRouter.deleteTag",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 100,
+      "line": 107,
       "symbol": "DKRouter.listTeams",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 101,
+      "line": 108,
       "symbol": "DKRouter.getTeam",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 102,
+      "line": 109,
       "symbol": "DKRouter.updateTeam",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 104,
+      "line": 111,
       "symbol": "DKRouter.listUsersInTeam",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 105,
+      "line": 112,
       "symbol": "DKRouter.createUserInTeam",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 106,
+      "line": 113,
       "symbol": "DKRouter.updateUserInTeam",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 107,
+      "line": 114,
       "symbol": "DKRouter.deleteUserInTeam",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 110,
+      "line": 117,
       "symbol": "DKRouter.createUser",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 111,
+      "line": 118,
       "symbol": "DKRouter.getUser",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 112,
+      "line": 119,
       "symbol": "DKRouter.updateUser",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 114,
+      "line": 121,
       "symbol": "DKRouter.listContacts",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 115,
+      "line": 122,
       "symbol": "DKRouter.getEmailAvailability",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 116,
+      "line": 123,
       "symbol": "DKRouter.getUsernameAvailability",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"

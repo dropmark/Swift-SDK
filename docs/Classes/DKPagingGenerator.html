@@ -14,7 +14,7 @@
     <a title="DKPagingGenerator Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">DropmarkSDK Docs</a> (67% documented)</p>
+        <p><a href="../index.html">DropmarkSDK Docs</a> (72% documented)</p>
         <p class="header-right"><a href="https://github.com/dropmark/Swift-SDK"><img src="../img/gh.png"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Fdropmark%2Egithub%2Eio%2FSwift%2DSDK%2Fdocsets%2FDropmarkSDK%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
       </div>
@@ -98,22 +98,16 @@
             <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Enums/DKItemType.html">DKItemType</a>
+                <a href="../Enums/DKError.html">DKError</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Enums/DKPaginationError.html">DKPaginationError</a>
+                <a href="../Enums/DKItemType.html">DKItemType</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/DKPlan.html">DKPlan</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Enums/DKRouter.html">DKRouter</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Enums/DKRouterError.html">DKRouterError</a>
-              </li>
-              <li class="nav-group-task">
-                <a href="../Enums/DKSerializationError.html">DKSerializationError</a>
               </li>
             </ul>
           </li>
@@ -185,7 +179,7 @@
 
                 </div>
               </div>
-            <p>Use this class to load consecutive pages of content from a listable API endpoint. Includes utilities to check for new content while scrolling in a UICollectionView, UITableView, NSCollectionView, or NSTableView.</p>
+            <p>Use this class to load consecutive <q>pages</q> of content from a listable API endpoint. Includes utilities to check for new content while scrolling in a UICollectionView, UITableView, NSCollectionView, or NSTableView.</p>
 
           </section>
           <section class="section task-group-section">
@@ -204,7 +198,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Required - Set this closure to process a single page of results, and return your request packaged in a PromiseKit promise. A single page is requested and returned in the promise format, it is up to the developer to maintain requests for cancellation purposes. By calling <code><a href="../Classes/DKPagingGenerator.html#/s:11DropmarkSDK17DKPagingGeneratorC7getNext10PromiseKit0G0CySayxGGyF">getNext()</a></code>, this closure will be used.</p>
+
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
@@ -230,7 +225,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The current page</p>
 
                       </div>
                       <div class="declaration">
@@ -257,7 +252,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The number of items in a single page request. This integer is used to calculate when a list endpoint reaches the end.</p>
 
                       </div>
                       <div class="declaration">
@@ -284,7 +279,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Test if pagination loaded all objects from the list.</p>
 
                       </div>
                       <div class="declaration">
@@ -311,7 +306,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Test if pagination is in the process of retrieving a page.</p>
 
                       </div>
                       <div class="declaration">
@@ -338,7 +333,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Initialize a pagination object, beginning with the specified <code>startPage</code>. <code>DKPaginationGenerator</code> retrieves items of a generic Type, so a placeholder Type is required to specify what kinds of objects will be paginated and returned.</p>
 
                       </div>
                       <div class="declaration">
@@ -348,6 +343,25 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">startPage</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>startPage</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An integer specifying which page to begin paginating from</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -365,7 +379,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Get the next page of results as outlined in the <code><a href="../Classes/DKPagingGenerator.html#/s:11DropmarkSDK17DKPagingGeneratorC4nextSQy10PromiseKit0F0CySayxGGSicGvp">next</a></code> closure.</p>
 
                       </div>
                       <div class="declaration">
@@ -392,7 +406,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Reset pagination back to the original <code>startPage</code></p>
 
                       </div>
                       <div class="declaration">
@@ -430,7 +444,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Trigger utility to determine if a user scrolled to the end of a <code>UICollectionView</code>. We recommend using this function in your <code>UICollectionViewDelegate</code> <code>collectionView(_:willDisplay:forItemAt:)</code> method to determine if you should call your <code><a href="../Classes/DKPagingGenerator.html#/s:11DropmarkSDK17DKPagingGeneratorC7getNext10PromiseKit0G0CySayxGGyF">getNext()</a></code> promise.</p>
 
                       </div>
                       <div class="declaration">
@@ -440,6 +454,37 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">shouldGetNextPage</span><span class="p">(</span><span class="n">at</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">,</span> <span class="k">for</span> <span class="nv">collectionView</span><span class="p">:</span> <span class="kt">UICollectionView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>indexPath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The indexPath at which to check if pagination should be triggered</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>collectionView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The UICollectionView to check for pagination</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -457,7 +502,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Trigger utility to determine if a user scrolled to the end of a <code>UITableView</code>. We recommend using this function in your <code>UITableViewDelegate</code> <code>tableView(_:willDisplay:forRowAt:)</code> method to determine if you should call your <code><a href="../Classes/DKPagingGenerator.html#/s:11DropmarkSDK17DKPagingGeneratorC7getNext10PromiseKit0G0CySayxGGyF">getNext()</a></code> promise.</p>
 
                       </div>
                       <div class="declaration">
@@ -467,6 +512,37 @@
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">shouldGetNextPage</span><span class="p">(</span><span class="n">at</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">,</span> <span class="k">for</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>indexPath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The indexPath at which to check if pagination should be triggered</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>tableView</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The UITableView to check for pagination</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -484,7 +560,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        
+                        <p>Trigger utility to determine if a user scrolled to the end of a <code>NSCollectionView</code>. We recommend using this function in your <code>UICollectionViewDelegate</code> <code>collectionView(_:willDisplay:forRepresentedObjectAt:)</code> method to determine if you should call your <code><a href="../Classes/DKPagingGenerator.html#/s:11DropmarkSDK17DKPagingGeneratorC7getNext10PromiseKit0G0CySayxGGyF">getNext()</a></code> promise.</p>
+
                       </div>
                     </section>
                   </div>
@@ -494,7 +571,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="http://oak.is/" target="_blank" rel="external">Oak LLC</a>. All rights reserved. (Last updated: 2018-08-13)</p>
+          <p>&copy; 2018 <a class="link" href="http://oak.is/" target="_blank" rel="external">Oak LLC</a>. All rights reserved. (Last updated: 2018-09-06)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
