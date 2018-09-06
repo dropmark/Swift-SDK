@@ -1,5 +1,5 @@
 //
-//  Error.swift
+//  DKError.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -24,18 +24,13 @@
 
 import Foundation
 
-public enum DKPaginationError: Error {
-    case didReachEnd
-    case isFetchingPage
-}
-
-public enum DKSerializationError: Error {
-    case invalidJSON
-    case unableToFormObject
-}
-
-public enum DKRouterError: Error {
+public enum DKError: Error {
+    
+    case paginationDidReachEnd
+    case paginationIsFetchingPage
+    case unableToSerializeJSON
+    case unableToSerializeItem
     case missingAPIToken
-    case missingUser
-    case missingUserToken
+    case missingUserCredentials
+    
 }

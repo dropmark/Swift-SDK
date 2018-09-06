@@ -107,11 +107,11 @@ public extension DataRequest {
             let result = jsonSerializer.serializeResponse(request, response, data, nil)
             
             guard case let .success(jsonObject) = result else {
-                return .failure(DKSerializationError.invalidJSON)
+                return .failure(DKError.unableToSerializeJSON)
             }
             
             guard let response = response else {
-                return .failure(DKSerializationError.unableToFormObject)
+                return .failure(DKError.unableToSerializeItem)
             }
             
             return .success(DKResponseListAny.list(from: response, withRepresentation: jsonObject))

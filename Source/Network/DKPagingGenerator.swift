@@ -54,12 +54,12 @@ public class DKPagingGenerator<T> {
         return Promise { seal in
             
             guard didReachEnd == false else {
-                seal.reject(DKPaginationError.didReachEnd)
+                seal.reject(DKError.paginationDidReachEnd)
                 return
             }
             
             guard isFetchingPage == false else {
-                seal.reject(DKPaginationError.isFetchingPage)
+                seal.reject(DKError.paginationIsFetchingPage)
                 return
             }
             

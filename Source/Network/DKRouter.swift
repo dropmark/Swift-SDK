@@ -33,8 +33,11 @@ public enum DKRouter: URLRequestConvertible {
         get {
             if let manualToken = _apiToken {
                 return manualToken
+            } else if let bundleToken = Bundle.keyForID("DropmarkAPIToken") {
+                return bundleToken
             }
-            return Bundle.keyForID("DropmarkAPIToken")
+            print("Dropmark API Token was not found.")
+            return nil
         }
         set {
             _apiToken = newValue
@@ -612,7 +615,7 @@ public enum DKRouter: URLRequestConvertible {
     public static func authenticateAPIRequest(_ urlRequest: inout URLRequest) throws {
         
         guard let apiToken = DKRouter.apiToken else {
-            throw DKRouterError.missingAPIToken
+            throw DKError.missingAPIToken
         }
         
         urlRequest.setValue(apiToken, forHTTPHeaderField: "X-API-Key")
@@ -633,11 +636,13 @@ public enum DKRouter: URLRequestConvertible {
     public static func authorizeUserRequest(_ urlRequest: inout URLRequest) throws {
         
         guard let user = DKRouter.user else {
-            throw DKRouterError.missingUser
+            print("DKRouter user object was not set. Be sure to assign a user to access credentialed API endpoints.")
+            throw DKError.missingUserCredentials
         }
         
         guard let userToken = user.token else {
-            throw DKRouterError.missingUserToken
+            print("DKRouter user object did not contain a token. Remember - only the user object returned from the /auth endpoint contains a token.")
+            throw DKError.missingUserCredentials
         }
         
         let plainString = "\(user.id):\(userToken)" as NSString
