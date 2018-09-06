@@ -49,7 +49,18 @@ public class DKThumbnails: NSObject, NSCoding {
     /// For GIF animations, a URL for an uncropped thumbnail animation preserving the content's aspect ratio
     public var uncroppedAnimated: URL?
     
-    // Init from network response
+    // MARK: DKResponseObjectSerializable
+    
+    /**
+     
+     Serializes a new instance from the provided network response and key-value representation. The representation is validated for the required parameters, then fills in optional parameters as necessary.
+     
+     - Parameters:
+        - response: A network response assocated with serialization
+        - representation: A key-value object representing parameters and child objects.
+     
+     */
+    
     public init?(response: HTTPURLResponse, representation: Any) {
         
         guard

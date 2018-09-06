@@ -26,20 +26,37 @@ import Foundation
 import Alamofire
 import PromiseKit
 
-/// Use this class to load consecutive pages of content from a listable API endpoint. Includes utilities to check for new content while scrolling in a UICollectionView, UITableView, NSCollectionView, or NSTableView.
+/// Use this class to load consecutive "pages" of content from a listable API endpoint. Includes utilities to check for new content while scrolling in a UICollectionView, UITableView, NSCollectionView, or NSTableView.
 public class DKPagingGenerator<T> {
     
     /**
- 
+     Required - Set this closure to process a single page of results, and return your request packaged in a PromiseKit promise. A single page is requested and returned in the promise format, it is up to the developer to maintain requests for cancellation purposes. By calling `getNext()`, this closure will be used.
      */
     public var next: ((_ page: Int) -> Promise<[T]>)!
     
+    /// The current page
     public var page: Int
+    
+    /// The number of items in a single page request. This integer is used to calculate when a list endpoint reaches the end.
     public var pageSize: Int = DKRouter.pageSize
+    
+    /// The first page to start paginating from. Defaults to 1.
     private var startPage: Int = 1
+    
+    /// Test if pagination loaded all objects from the list.
     public var didReachEnd: Bool = false
+    
+    /// Test if pagination is in the process of retrieving a page.
     public var isFetchingPage: Bool = false
     
+    /**
+     
+     Initialize a pagination object, beginning with the specified `startPage`. `DKPaginationGenerator` retrieves items of a generic Type, so a placeholder Type is required to specify what kinds of objects will be paginated and returned.
+     
+     - Parameters:
+         - startPage: An integer specifying which page to begin paginating from
+ 
+     */
     public init(startPage: Int) {
         self.startPage = startPage
         self.page = startPage
@@ -49,6 +66,7 @@ public class DKPagingGenerator<T> {
         next = nil
     }
     
+    /// Get the next page of results as outlined in the `next` closure.
     public func getNext() -> Promise<[T]> {
         
         return Promise { seal in
@@ -83,6 +101,7 @@ public class DKPagingGenerator<T> {
         
     }
     
+    /// Reset pagination back to the original `startPage`
     public func reset() {
         didReachEnd = false
         page = startPage
@@ -96,6 +115,15 @@ public extension DKPagingGenerator {
     
 #if os(iOS) || os(tvOS)
     
+    /**
+     
+     Trigger utility to determine if a user scrolled to the end of a `UICollectionView`. We recommend using this function in your `UICollectionViewDelegate` `collectionView(_:willDisplay:forItemAt:)` method to determine if you should call your `getNext()` promise.
+     
+     - Parameters:
+         - indexPath: The indexPath at which to check if pagination should be triggered
+         - collectionView: The UICollectionView to check for pagination
+     
+     */
     public func shouldGetNextPage(at indexPath: IndexPath, for collectionView: UICollectionView) -> Bool {
         if let cellCount = collectionView.dataSource?.collectionView(collectionView, numberOfItemsInSection: indexPath.section) {
             return shouldGetNextPage(at: indexPath.item, for: cellCount)
@@ -103,6 +131,15 @@ public extension DKPagingGenerator {
         return false
     }
     
+    /**
+     
+     Trigger utility to determine if a user scrolled to the end of a `UITableView`. We recommend using this function in your `UITableViewDelegate` `tableView(_:willDisplay:forRowAt:)` method to determine if you should call your `getNext()` promise.
+     
+     - Parameters:
+        - indexPath: The indexPath at which to check if pagination should be triggered
+        - tableView: The UITableView to check for pagination
+     
+     */
     public func shouldGetNextPage(at indexPath: IndexPath, for tableView: UITableView) -> Bool {
         if let cellCount = tableView.dataSource?.tableView(tableView, numberOfRowsInSection: indexPath.section) {
             return shouldGetNextPage(at: indexPath.row, for: cellCount)
@@ -112,6 +149,15 @@ public extension DKPagingGenerator {
     
 #elseif os(macOS)
     
+    /**
+     
+     Trigger utility to determine if a user scrolled to the end of a `NSCollectionView`. We recommend using this function in your `UICollectionViewDelegate` `collectionView(_:willDisplay:forRepresentedObjectAt:)` method to determine if you should call your `getNext()` promise.
+     
+     - Parameters:
+        - indexPath: The indexPath at which to check if pagination should be triggered
+        - collectionView: The UITableView to check for pagination
+     
+     */
     public func shouldGetNextPage(at indexPath: IndexPath, for collectionView: NSCollectionView) -> Bool {
         if let cellCount = collectionView.dataSource?.collectionView(collectionView, numberOfItemsInSection: indexPath.section) {
             return shouldGetNextPage(at: indexPath.item, for: cellCount)
@@ -119,6 +165,15 @@ public extension DKPagingGenerator {
         return false
     }
 
+    /**
+     
+     Trigger utility to determine if a user scrolled to the end of a `NSTableView`. We recommend using this function in your `NSTableViewDelegate` `tableView(_:willDisplayCell:for:row:)` method to determine if you should call your `getNext()` promise.
+     
+     - Parameters:
+        - indexPath: The indexPath at which to check if pagination should be triggered
+        - tableView: The NSTableView to check for pagination
+     
+     */
     public func shouldGetNextPage(at row: Int, for tableView: NSTableView) -> Bool {
         if let cellCount = tableView.dataSource?.numberOfRows?(in: tableView) {
             return shouldGetNextPage(at: row, for: cellCount)
@@ -128,6 +183,15 @@ public extension DKPagingGenerator {
     
 #endif
     
+    /**
+     
+     Private utility to determing if an index in a list view should trigger the next page.
+     
+     - Parameters:
+         - index: The index at which to check if pagination should trigger
+         - cellCount: The total number of cells in the list view
+     
+     */
     private func shouldGetNextPage(at index: Int, for cellCount: Int) -> Bool {
         
         if

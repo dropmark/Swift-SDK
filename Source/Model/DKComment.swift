@@ -29,7 +29,7 @@ import Foundation
 public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
     /// The unique identifier of the comment
-    public var id : NSNumber
+    public var id: NSNumber
     
     /// The unique identifier for the associated item
     public var itemID: NSNumber?
@@ -38,31 +38,31 @@ public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, 
     public var itemName: String?
     
     /// The unique identifier of the parent collection
-    public var collectionID : NSNumber?
+    public var collectionID: NSNumber?
     
     /// The name of the parent collection
-    public var collectionName : String?
+    public var collectionName: String?
     
     /// The Dropmark link of the parent collection
-    public var collectionURL : URL?
+    public var collectionURL: URL?
     
     /// The body text of the comment. This string may contain Markdown-formatted text, including references to images.
-    public var body : String
+    public var body: String
     
     /// The date the comment was created
-    public var createdAt : Date
+    public var createdAt: Date
     
     /// The date the the comment was last updated
-    public var updatedAt : Date?
+    public var updatedAt: Date?
     
     
-    public var annotation : String?
+    public var annotation: String?
     
     
-    public var url : URL?
+    public var url: URL?
     
     
-    public var shortURL : URL?
+    public var shortURL: URL?
     
     /// The creator of the comment
     public var user: DKUser?
