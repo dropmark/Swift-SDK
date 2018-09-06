@@ -11,7 +11,9 @@
 		474B8CB31553F52B4E064409 /* Pods_macOS_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0183385C8B2CDD2D4E9469FA /* Pods_macOS_Demo.framework */; };
 		4987F2319753824F5F773446 /* Pods_iOS_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88DB797774C8FBBDF7649FCE /* Pods_iOS_Demo.framework */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		A506952D2114B0D8003639E5 /* CollectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506952C2114B0D8003639E5 /* CollectionListViewController.swift */; };
+		A506952D2114B0D8003639E5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A506952C2114B0D8003639E5 /* MainViewController.swift */; };
+		A51A5FB421400CA60064D0D6 /* CrossfadeStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51A5FB321400CA60064D0D6 /* CrossfadeStoryboardSegue.swift */; };
+		A51A5FB621400F590064D0D6 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51A5FB521400F590064D0D6 /* ContainerViewController.swift */; };
 		A52C420021160D1100BA2054 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C41FF21160D1100BA2054 /* UIAlertController+Extensions.swift */; };
 		A52C420121160D1100BA2054 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C41FF21160D1100BA2054 /* UIAlertController+Extensions.swift */; };
 		A52FC3CC20BF57E200A6E2B7 /* CollectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FC3BF20BF57E200A6E2B7 /* CollectionListViewController.swift */; };
@@ -41,8 +43,6 @@
 		A54E5B2A21176E3000F93F1C /* UIStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E5B2821176E3000F93F1C /* UIStoryboard+Extensions.swift */; };
 		A54E5B2C21189EAF00F93F1C /* NSStoryboard+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E5B2B21189EAF00F93F1C /* NSStoryboard+Extensions.swift */; };
 		A54E5B2F2118A60B00F93F1C /* NSAlert+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E5B2E2118A60B00F93F1C /* NSAlert+Extensions.swift */; };
-		A54E5B3121190FD400F93F1C /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E5B3021190FD400F93F1C /* ItemListViewController.swift */; };
-		A54E5B332119152800F93F1C /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54E5B322119152800F93F1C /* ItemViewController.swift */; };
 		A5B57F9C20B9C74700B766D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B57F9B20B9C74700B766D6 /* AppDelegate.swift */; };
 		A5B57F9E20B9C74700B766D6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5B57F9D20B9C74700B766D6 /* LoginViewController.swift */; };
 		F31A4221E36D40925F1179C0 /* Pods_tvOS_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C720F496829D377779BFBE /* Pods_tvOS_Demo.framework */; };
@@ -70,7 +70,9 @@
 		7CC8559AD692CB3EF7BB6DC8 /* Pods-iOS Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOS Demo/Pods-iOS Demo.release.xcconfig"; sourceTree = "<group>"; };
 		88DB797774C8FBBDF7649FCE /* Pods_iOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		948C593ECC1D4DB79124392C /* Pods-DropmarkSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DropmarkSDK_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DropmarkSDK_Tests/Pods-DropmarkSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		A506952C2114B0D8003639E5 /* CollectionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListViewController.swift; sourceTree = "<group>"; };
+		A506952C2114B0D8003639E5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A51A5FB321400CA60064D0D6 /* CrossfadeStoryboardSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossfadeStoryboardSegue.swift; sourceTree = "<group>"; };
+		A51A5FB521400F590064D0D6 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		A52C41FF21160D1100BA2054 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 		A52FC3BF20BF57E200A6E2B7 /* CollectionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionListViewController.swift; sourceTree = "<group>"; };
 		A52FC3C020BF57E200A6E2B7 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -93,8 +95,6 @@
 		A54E5B2821176E3000F93F1C /* UIStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 		A54E5B2B21189EAF00F93F1C /* NSStoryboard+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSStoryboard+Extensions.swift"; sourceTree = "<group>"; };
 		A54E5B2E2118A60B00F93F1C /* NSAlert+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAlert+Extensions.swift"; sourceTree = "<group>"; };
-		A54E5B3021190FD400F93F1C /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
-		A54E5B322119152800F93F1C /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		A557EA27211DE9E80022B6E5 /* DropmarkSDK_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DropmarkSDK_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A557EA28211E098C0022B6E5 /* Dropmark SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dropmark SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A557EA29211E09910022B6E5 /* tvOS Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tvOS Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -277,10 +277,10 @@
 			children = (
 				A52FC3E420BF5C1D00A6E2B7 /* Main.storyboard */,
 				A5B57F9B20B9C74700B766D6 /* AppDelegate.swift */,
+				A51A5FB521400F590064D0D6 /* ContainerViewController.swift */,
 				A5B57F9D20B9C74700B766D6 /* LoginViewController.swift */,
-				A506952C2114B0D8003639E5 /* CollectionListViewController.swift */,
-				A54E5B3021190FD400F93F1C /* ItemListViewController.swift */,
-				A54E5B322119152800F93F1C /* ItemViewController.swift */,
+				A506952C2114B0D8003639E5 /* MainViewController.swift */,
+				A51A5FB321400CA60064D0D6 /* CrossfadeStoryboardSegue.swift */,
 				A54E5B2D21189F0C00F93F1C /* Extensions */,
 				A52FC3E620BF5C3300A6E2B7 /* Supporting Files */,
 			);
@@ -378,7 +378,7 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = WGR9T9JH4L;
+						DevelopmentTeam = B34U9MBMKJ;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
@@ -389,12 +389,12 @@
 					};
 					A57B6E6020BCAF6100595C3E = {
 						CreatedOnToolsVersion = 9.3.1;
-						DevelopmentTeam = WGR9T9JH4L;
+						DevelopmentTeam = B34U9MBMKJ;
 						ProvisioningStyle = Automatic;
 					};
 					A5B57F9820B9C74700B766D6 = {
 						CreatedOnToolsVersion = 9.3.1;
-						DevelopmentTeam = WGR9T9JH4L;
+						DevelopmentTeam = B34U9MBMKJ;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
@@ -662,13 +662,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A506952D2114B0D8003639E5 /* CollectionListViewController.swift in Sources */,
-				A54E5B332119152800F93F1C /* ItemViewController.swift in Sources */,
-				A54E5B3121190FD400F93F1C /* ItemListViewController.swift in Sources */,
+				A506952D2114B0D8003639E5 /* MainViewController.swift in Sources */,
+				A51A5FB621400F590064D0D6 /* ContainerViewController.swift in Sources */,
 				A52FC3DA20BF586B00A6E2B7 /* PromiseGenerator.swift in Sources */,
 				A54E5B2C21189EAF00F93F1C /* NSStoryboard+Extensions.swift in Sources */,
 				A54E5B2F2118A60B00F93F1C /* NSAlert+Extensions.swift in Sources */,
 				A5B57F9E20B9C74700B766D6 /* LoginViewController.swift in Sources */,
+				A51A5FB421400CA60064D0D6 /* CrossfadeStoryboardSegue.swift in Sources */,
 				A5B57F9C20B9C74700B766D6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -794,7 +794,7 @@
 			baseConfigurationReference = 4F4DD828505A6DC4446EBA0C /* Pods-iOS Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WGR9T9JH4L;
+				DEVELOPMENT_TEAM = B34U9MBMKJ;
 				INFOPLIST_FILE = "iOS and tvOS Demo/iOS Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -812,7 +812,7 @@
 			baseConfigurationReference = 7CC8559AD692CB3EF7BB6DC8 /* Pods-iOS Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = WGR9T9JH4L;
+				DEVELOPMENT_TEAM = B34U9MBMKJ;
 				INFOPLIST_FILE = "iOS and tvOS Demo/iOS Demo/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -872,7 +872,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = WGR9T9JH4L;
+				DEVELOPMENT_TEAM = B34U9MBMKJ;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "iOS and tvOS Demo/tvOS Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -898,7 +898,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = WGR9T9JH4L;
+				DEVELOPMENT_TEAM = B34U9MBMKJ;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "iOS and tvOS Demo/tvOS Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -929,7 +929,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = WGR9T9JH4L;
+				DEVELOPMENT_TEAM = B34U9MBMKJ;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "macOS Demo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
@@ -959,7 +959,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = WGR9T9JH4L;
+				DEVELOPMENT_TEAM = B34U9MBMKJ;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "macOS Demo/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";

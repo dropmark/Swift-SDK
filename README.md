@@ -9,8 +9,6 @@
 
 **DropmarkSDK** is a Swift interface for the [**Dropmark API**](https://www.dropmark.com/api/topics/introduction/). 
 
-**The Dropmark Swift SDK is currently in beta. The API may change drastically during this development period.**
-
 ## Features
 
 - [x] Full networking suite for API endpoints, built around [**Alamofire**](https://github.com/Alamofire/Alamofire)
@@ -21,9 +19,9 @@
 - [x] Pagination utilities, with utilities for infinite scrolling in list views
 - [x] Example for iOS
 - [x] Example for tvOS
-- [ ] Example for macOS
+- [x] Example for macOS
 - [ ] Comprehensive Unit and Integration Test Coverage
-- [ ] [Complete Documentation](https://dropmark.github.io/Swift-SDK)
+- [x] [Complete Documentation](https://dropmark.github.io/Swift-SDK)
 
 ## Requirements
 
@@ -46,7 +44,7 @@ Be sure to open the examples using the `DropmarkSDK.workspace` file.
 Install the library in your app through [**CocoaPods**](http://cocoapods.org). Add the following line to your *Podfile*, then run `pod install`.
 
 ```ruby
-pod 'DropmarkSDK', '~> 0.3'
+pod 'DropmarkSDK', '~> 1.0'
 ```
 
 Be sure to import the library when needed.
@@ -56,6 +54,9 @@ import DropmarkSDK
 ```
 
 ## Migration
+
+### Version 1.0.0
+All errors are now consolidated as `DKError`.  Search results are serialized by the `DKResponseListAny` struct.
 
 ### Version 0.3.0
 Large modifications to `DKRouter` enum, and associated Promise generation.

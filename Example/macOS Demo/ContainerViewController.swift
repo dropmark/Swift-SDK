@@ -1,5 +1,5 @@
 //
-//  ItemViewController.swift
+//  ContainerViewController.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -23,12 +23,17 @@
 //
 
 import Cocoa
-import DropmarkSDK
 
-class ItemViewController: NSViewController {
+class ContainerViewController: NSViewController {
     
-    var item: DKItem!
-    
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let loginViewController = NSStoryboard.loginViewController
+        insertChildViewController(loginViewController, at: 0)
+        view.addSubview(loginViewController.view)
+        view.frame = loginViewController.view.frame
+        
+    }
     
 }

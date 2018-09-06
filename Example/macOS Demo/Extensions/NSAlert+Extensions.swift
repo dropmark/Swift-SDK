@@ -27,33 +27,33 @@ import DropmarkSDK
 
 extension NSAlert {
     
-    class func showAlert(for error: Error) {
-        let alert = NSAlert(error: error)
+    class func showOKAlert(message: String) {
+        let alert = NSAlert()
+        alert.messageText = message
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "OK")
         _ = alert.runModal() == .alertFirstButtonReturn
     }
     
-    convenience init(error: Error) {
-        self.init()
+    class func showOKAlert(error: Error) {
         
         if let serverError = error as? DKServerError {
             
-            var text = "Server Error (\(serverError.statusCode))"
+            var message = "Server Error (\(serverError.statusCode))"
             
             if let serverErrorMessage = serverError.message {
-                text += "\n"
-                text += serverErrorMessage
+                message += "\n"
+                message += serverErrorMessage
             }
             
-            self.messageText = text
+            showOKAlert(message: message)
             
         } else {
             
-            self.messageText = "Error\n\(error.localizedDescription)"
+            let message = "Error\n\(error.localizedDescription)"
+            showOKAlert(message: message)
             
         }
-        
-        self.alertStyle = .warning
-        self.addButton(withTitle: "OK")
         
     }
     

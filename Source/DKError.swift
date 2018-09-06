@@ -1,5 +1,5 @@
 //
-//  Error.swift
+//  DKError.swift
 //
 //  Copyright © 2018 Oak, LLC (https://oak.is)
 //
@@ -24,18 +24,25 @@
 
 import Foundation
 
-public enum DKPaginationError: Error {
-    case didReachEnd
-    case isFetchingPage
-}
-
-public enum DKSerializationError: Error {
-    case invalidJSON
-    case unableToFormObject
-}
-
-public enum DKRouterError: Error {
+/// Errors associated with points of failure in the SDK
+public enum DKError: Error {
+    
+    /// The pagination object reached the end of the object list
+    case paginationDidReachEnd
+    
+    /// The pagination object is currently in the process of getting a new page of objects
+    case paginationIsFetchingPage
+    
+    /// The incoming JSON is in an unexpected format
+    case unableToSerializeJSON
+    
+    /// An error occurred while trying to create an object from the network response
+    case unableToSerializeItem
+    
+    /// An API `token` is missing from the `DKRouter.user` property
     case missingAPIToken
-    case missingUser
-    case missingUserToken
+    
+    /// A user object is not present at `DKRouter.user`
+    case missingUserCredentials
+    
 }

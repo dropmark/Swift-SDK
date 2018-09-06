@@ -163,7 +163,7 @@
 		6D67C997AE87B74524A06487B06A0BAA /* DKItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C45C35016F53C159BDBBADFEFE1B73 /* DKItem.swift */; };
 		6EE5A82B0F0154792143B506847E3CCB /* UIView+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = C6727378DC6473E9A96C84F6B4957647 /* UIView+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		703932EF779A74C0FAE64785346A0A3E /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014D2D3022B5593C18CBB787101D5ACD /* Alamofire.swift */; };
-		7200AE6174B202AAF306150D6E766BD2 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D71B51063046C11AB06BD4084EF5DB2 /* Error.swift */; };
+		7200AE6174B202AAF306150D6E766BD2 /* DKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D71B51063046C11AB06BD4084EF5DB2 /* DKError.swift */; };
 		721F2B3DE2BB699EA69FCEDE586139F9 /* Guarantee.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D3D502630A23856CD5098618C8C617 /* Guarantee.swift */; };
 		726A7B4796E3373859DC9CE737060962 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA4C31C48286EA6C0314B3BD5F26A35 /* DispatchQueue+Alamofire.swift */; };
 		728CDA72764E8961F05097E6C419FFD8 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E70001FB80C30312F5F48485E927507 /* Error.swift */; };
@@ -242,6 +242,9 @@
 		A50EC2EE211E511000F3796E /* DKPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50EC2ED211E511000F3796E /* DKPlan.swift */; };
 		A50EC2EF211E511000F3796E /* DKPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50EC2ED211E511000F3796E /* DKPlan.swift */; };
 		A50EC2F0211E511000F3796E /* DKPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50EC2ED211E511000F3796E /* DKPlan.swift */; };
+		A51A5FBE2141C1640064D0D6 /* Dictionary+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51A5FBD2141C1640064D0D6 /* Dictionary+Parameters.swift */; };
+		A51A5FBF2141C1640064D0D6 /* Dictionary+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51A5FBD2141C1640064D0D6 /* Dictionary+Parameters.swift */; };
+		A51A5FC02141C1640064D0D6 /* Dictionary+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51A5FBD2141C1640064D0D6 /* Dictionary+Parameters.swift */; };
 		A51D91E8432BDA1A4998E510AA1A65D3 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF09E5852F9A3AB904DF5DDBFC81122E /* Request.swift */; };
 		A52C41F82116098500BA2054 /* DKResponseObjectSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C41F72116098500BA2054 /* DKResponseObjectSerializable.swift */; };
 		A52C41F92116098500BA2054 /* DKResponseObjectSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52C41F72116098500BA2054 /* DKResponseObjectSerializable.swift */; };
@@ -333,9 +336,9 @@
 		E2BD7D683F1B0670591D6CEAE35F7C92 /* NSObject+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E8EEE8BF5962AE1EDC19C1C0D4B274 /* NSObject+Promise.swift */; };
 		E3ACFBF3657A40E1B0C5E9ECF147F7B7 /* UTIKit+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70390E9EDB53D4394ADBE12718F71FC4 /* UTIKit+Extensions.swift */; };
 		E546952384846241A09F0C5F26C72C4B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E43EDBB6B0C7D1715A602BDE8087029 /* Alamofire.framework */; };
-		E739B0AD15FAAD3484E2AD441F740CC0 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D71B51063046C11AB06BD4084EF5DB2 /* Error.swift */; };
+		E739B0AD15FAAD3484E2AD441F740CC0 /* DKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D71B51063046C11AB06BD4084EF5DB2 /* DKError.swift */; };
 		E810BD7FC7113C29A20E1C25223ECCA0 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF43C496204BD5492C38B701BEBE41 /* AFError.swift */; };
-		E849735C2B0BEFA742588EE2EBDCEA42 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D71B51063046C11AB06BD4084EF5DB2 /* Error.swift */; };
+		E849735C2B0BEFA742588EE2EBDCEA42 /* DKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D71B51063046C11AB06BD4084EF5DB2 /* DKError.swift */; };
 		E990A58A1EC865EEB0E7E0BEE85FD82F /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9B56705D7CAB26CA149873627946FE2 /* Box.swift */; };
 		E9FF923F475D3705F8434AF1AC605603 /* NSURLSession+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F72F2C7DF93BDC2F65BA9E54AA4277 /* NSURLSession+Promise.swift */; };
 		EA045F03099684C8E6EC16FD2D34B160 /* DKThumbnails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58DF9F95A26F8B20B57EAB1FE34433F3 /* DKThumbnails.swift */; };
@@ -586,7 +589,7 @@
 		0BD18681DFB891BB9C7AB84C5262D224 /* Pods-iOS Demo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Demo-resources.sh"; sourceTree = "<group>"; };
 		0C21DFF0EFA4D23FB4AD9C2B0D6DBE87 /* Alamofire-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-iOS-umbrella.h"; sourceTree = "<group>"; };
 		0C44CDF141B3640C754612A9CFD535AD /* DKRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKRouter.swift; sourceTree = "<group>"; };
-		0D71B51063046C11AB06BD4084EF5DB2 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Source/Error.swift; sourceTree = "<group>"; };
+		0D71B51063046C11AB06BD4084EF5DB2 /* DKError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKError.swift; path = Source/DKError.swift; sourceTree = "<group>"; };
 		0D83FC6A920150F9EEE2C2893F71E2FA /* KeychainSwift-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KeychainSwift-iOS-prefix.pch"; sourceTree = "<group>"; };
 		0F36B6C33322E4ED850BA9C28720DD31 /* firstly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = firstly.swift; path = Sources/firstly.swift; sourceTree = "<group>"; };
 		11B72176666E34C0ECE87FECB92C73CF /* Alamofire-macOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Alamofire-macOS.xcconfig"; path = "../Alamofire-macOS/Alamofire-macOS.xcconfig"; sourceTree = "<group>"; };
@@ -742,6 +745,7 @@
 		A39AF77689EAB2B46FE1587AEEAD6363 /* Pods_tvOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvOS_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A501074B211D38E9001018FA /* DKServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKServerError.swift; sourceTree = "<group>"; };
 		A50EC2ED211E511000F3796E /* DKPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKPlan.swift; sourceTree = "<group>"; };
+		A51A5FBD2141C1640064D0D6 /* Dictionary+Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Parameters.swift"; sourceTree = "<group>"; };
 		A52C41F72116098500BA2054 /* DKResponseObjectSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKResponseObjectSerializable.swift; sourceTree = "<group>"; };
 		A52C41FB211609E200BA2054 /* DKResponseListSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKResponseListSerializable.swift; sourceTree = "<group>"; };
 		A5FA561EE528B67776E6B5700A345A81 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1375,6 +1379,7 @@
 				E87CCDD72D85DA78F6DBA2471B6F88AD /* DataRequest+PromiseKit.swift */,
 				B8D179EFB8CF23B94E9403E35E81AB5A /* String+Extensions.swift */,
 				70390E9EDB53D4394ADBE12718F71FC4 /* UTIKit+Extensions.swift */,
+				A51A5FBD2141C1640064D0D6 /* Dictionary+Parameters.swift */,
 			);
 			name = Extensions;
 			path = Source/Extensions;
@@ -1383,7 +1388,7 @@
 		D6289C8875C9D2D374656AD1297DDD89 /* DropmarkSDK */ = {
 			isa = PBXGroup;
 			children = (
-				0D71B51063046C11AB06BD4084EF5DB2 /* Error.swift */,
+				0D71B51063046C11AB06BD4084EF5DB2 /* DKError.swift */,
 				22B91D3205DD6F6273AED68AC3D20704 /* DKKeychain.swift */,
 				C42DA7A0CB04DADECF7482AE5652E1EB /* Extensions */,
 				F8C123928CFC7725BA0B0CF9CCC94231 /* Model */,
@@ -2149,7 +2154,7 @@
 				833332000904746D4A186FCF339CC1E1 /* DataRequest+PromiseKit.swift in Sources */,
 				E1CF93478C86DF93DE5AB993E56AEADD /* DKCollection.swift in Sources */,
 				08482FC599B8B9051504DC4DE8F41989 /* DKComment.swift in Sources */,
-				E849735C2B0BEFA742588EE2EBDCEA42 /* Error.swift in Sources */,
+				E849735C2B0BEFA742588EE2EBDCEA42 /* DKError.swift in Sources */,
 				F950A5643621A413D8275A147B33A76A /* DKInvite.swift in Sources */,
 				A50EC2F0211E511000F3796E /* DKPlan.swift in Sources */,
 				6D67C997AE87B74524A06487B06A0BAA /* DKItem.swift in Sources */,
@@ -2158,6 +2163,7 @@
 				1BC1970C15597BDC1AF057CB177064CE /* DKPagingGenerator.swift in Sources */,
 				33C54E819B90CE23FD6BD291EE7E5F01 /* DKPermissions.swift in Sources */,
 				0921C37926F00C0C9D1770239526D8A6 /* DKReaction.swift in Sources */,
+				A51A5FC02141C1640064D0D6 /* Dictionary+Parameters.swift in Sources */,
 				918BFBBC23F049019C96373702E9D03D /* DKRouter.swift in Sources */,
 				93A85EAB3FEA4D531D898F961E9D240F /* DKTag.swift in Sources */,
 				AC1BBA1F8646F54A46DEDA505A41EFDD /* DKTeam.swift in Sources */,
@@ -2316,7 +2322,7 @@
 				23EA6A51856F5A1A6DA2AAC9F0AF0E94 /* DataRequest+PromiseKit.swift in Sources */,
 				2F28C8A6E0CA44685789DFAB622E0346 /* DKCollection.swift in Sources */,
 				547C5B0D61BEE2877792936D2F3CA8A3 /* DKComment.swift in Sources */,
-				7200AE6174B202AAF306150D6E766BD2 /* Error.swift in Sources */,
+				7200AE6174B202AAF306150D6E766BD2 /* DKError.swift in Sources */,
 				802913C3D99C53EC54054F9947872868 /* DKInvite.swift in Sources */,
 				A50EC2EF211E511000F3796E /* DKPlan.swift in Sources */,
 				0C8005BB854AA4DA09D8417DA4542F56 /* DKItem.swift in Sources */,
@@ -2325,6 +2331,7 @@
 				BF640474F4F26A86B056902EF5A20649 /* DKPagingGenerator.swift in Sources */,
 				8CFE59053BD963824D252FDE70228F84 /* DKPermissions.swift in Sources */,
 				20D0C63CED308210A85A76F41EDC6FF9 /* DKReaction.swift in Sources */,
+				A51A5FBF2141C1640064D0D6 /* Dictionary+Parameters.swift in Sources */,
 				85BC789F670E856ED07615C1E9A3A60B /* DKRouter.swift in Sources */,
 				42EEB458CA4C42372EE6DC7D32884ED7 /* DKTag.swift in Sources */,
 				DB68F42F67BE41772C0FF9527A782F31 /* DKTeam.swift in Sources */,
@@ -2481,7 +2488,7 @@
 				3874410EA90D99846F71B5ED799BFF76 /* DataRequest+PromiseKit.swift in Sources */,
 				322778C8CF91EE5AD9A71ADA3D3D0CBD /* DKCollection.swift in Sources */,
 				760371392864BE75A42FAECC3BE3314D /* DKComment.swift in Sources */,
-				E739B0AD15FAAD3484E2AD441F740CC0 /* Error.swift in Sources */,
+				E739B0AD15FAAD3484E2AD441F740CC0 /* DKError.swift in Sources */,
 				56E0E6F9410BFA9F8654FBD447165B9F /* DKInvite.swift in Sources */,
 				A50EC2EE211E511000F3796E /* DKPlan.swift in Sources */,
 				1796BF93E5ACB08A9A47E772A0B57D0F /* DKItem.swift in Sources */,
@@ -2490,6 +2497,7 @@
 				AAE5F9F9D75E02C5E57054AAA40B112E /* DKPagingGenerator.swift in Sources */,
 				B8139F6336A13DF87D460EEED8BFB603 /* DKPermissions.swift in Sources */,
 				379603AF1D48AEE09E29B3D0B5016590 /* DKReaction.swift in Sources */,
+				A51A5FBE2141C1640064D0D6 /* Dictionary+Parameters.swift in Sources */,
 				F548F0A5DBBC91258C2DD363573B1C2D /* DKRouter.swift in Sources */,
 				0CD3407E6DDE8B953C9C31D5E9618A87 /* DKTag.swift in Sources */,
 				6A32091F9981BFBDE77D4415A1B7C2EC /* DKTeam.swift in Sources */,

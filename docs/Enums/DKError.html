@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DKPlan Enumeration Reference</title>
+    <title>DKError Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/DKPlan" class="dashAnchor"></a>
-    <a title="DKPlan Enumeration Reference"></a>
+    <a name="//apple_ref/swift/Enum/DKError" class="dashAnchor"></a>
+    <a title="DKError Enumeration Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">DropmarkSDK Docs</a> (91% documented)</p>
@@ -23,7 +23,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">DropmarkSDK Reference</a>
         <img id="carat" src="../img/carat.png" />
-        DKPlan Enumeration Reference
+        DKError Enumeration Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -172,14 +172,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>DKPlan</h1>
+            <h1>DKError</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">DKPlan</span> <span class="p">:</span> <span class="kt">String</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">DKError</span> <span class="p">:</span> <span class="kt">Error</span></code></pre>
 
                 </div>
               </div>
-            <p>Dropmark subscription tiers</p>
+            <p>Errors associated with points of failure in the SDK</p>
 
           </section>
           <section class="section task-group-section">
@@ -188,9 +188,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKPlanO4freeA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/free" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKPlanO4freeA2CmF">free</a>
+                    <a name="/s:11DropmarkSDK7DKErrorO21paginationDidReachEndA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/paginationDidReachEnd" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK7DKErrorO21paginationDidReachEndA2CmF">paginationDidReachEnd</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -198,14 +198,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Basic functionality</p>
+                        <p>The pagination object reached the end of the object list</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">free</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">paginationDidReachEnd</span></code></pre>
 
                         </div>
                       </div>
@@ -215,9 +215,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKPlanO3proA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/pro" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKPlanO3proA2CmF">pro</a>
+                    <a name="/s:11DropmarkSDK7DKErrorO24paginationIsFetchingPageA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/paginationIsFetchingPage" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK7DKErrorO24paginationIsFetchingPageA2CmF">paginationIsFetchingPage</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -225,14 +225,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>All personal Dropmark features</p>
+                        <p>The pagination object is currently in the process of getting a new page of objects</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">pro</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">paginationIsFetchingPage</span></code></pre>
 
                         </div>
                       </div>
@@ -242,9 +242,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKPlanO7proBetaA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/proBeta" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKPlanO7proBetaA2CmF">proBeta</a>
+                    <a name="/s:11DropmarkSDK7DKErrorO21unableToSerializeJSONA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/unableToSerializeJSON" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK7DKErrorO21unableToSerializeJSONA2CmF">unableToSerializeJSON</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -252,14 +252,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>All personal Dropmark features, plus beta features</p>
+                        <p>The incoming JSON is in an unexpected format</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">proBeta</span> <span class="o">=</span> <span class="s">"pro_beta"</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">unableToSerializeJSON</span></code></pre>
 
                         </div>
                       </div>
@@ -269,9 +269,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKPlanO10proMonthlyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/proMonthly" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKPlanO10proMonthlyA2CmF">proMonthly</a>
+                    <a name="/s:11DropmarkSDK7DKErrorO21unableToSerializeItemA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/unableToSerializeItem" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK7DKErrorO21unableToSerializeItemA2CmF">unableToSerializeItem</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -279,14 +279,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>All personal Dropmark features, paid on a monthly basis</p>
+                        <p>An error occurred while trying to create an object from the network response</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">proMonthly</span> <span class="o">=</span> <span class="s">"pro_monthly"</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">unableToSerializeItem</span></code></pre>
 
                         </div>
                       </div>
@@ -296,9 +296,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKPlanO4teamA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/team" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKPlanO4teamA2CmF">team</a>
+                    <a name="/s:11DropmarkSDK7DKErrorO15missingAPITokenA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/missingAPIToken" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK7DKErrorO15missingAPITokenA2CmF">missingAPIToken</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -306,14 +306,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>All personal and team Dropmark features</p>
+                        <p>An API <code>token</code> is missing from the <code><a href="../Enums/DKRouter.html#/s:11DropmarkSDK8DKRouterO4userAA6DKUserCSgvpZ">DKRouter.user</a></code> property</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">team</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">missingAPIToken</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK7DKErrorO22missingUserCredentialsA2CmF"></a>
+                    <a name="//apple_ref/swift/Element/missingUserCredentials" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK7DKErrorO22missingUserCredentialsA2CmF">missingUserCredentials</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A user object is not present at <code><a href="../Enums/DKRouter.html#/s:11DropmarkSDK8DKRouterO4userAA6DKUserCSgvpZ">DKRouter.user</a></code></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">missingUserCredentials</span></code></pre>
 
                         </div>
                       </div>

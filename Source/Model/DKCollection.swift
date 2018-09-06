@@ -180,6 +180,16 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
     
     // MARK: DKResponseObjectSerializable
     
+    /**
+     
+     Serializes a new instance from the provided network response and key-value representation. The representation is validated for the required parameters, then fills in optional parameters as necessary.
+     
+     - Parameters:
+        - response: A network response assocated with serialization
+        - representation: A key-value object representing parameters and child objects.
+     
+     */
+    
     public required init?(response: HTTPURLResponse, representation: Any) {
         
         guard
