@@ -27,8 +27,10 @@ import Alamofire
 
 public enum DKRouter: URLRequestConvertible {
     
+    /// The domain and path for all endpoints on the Dropmark API. Defaults to "https://api.dropmark.com/v1", and may be modified for different API versions.
     public static var baseURLString = "https://api.dropmark.com/v1"
     
+    /// The token used to authenticate all requests with the Dropmark API. Set this token as soon as the app starts to ensure generated requests are properly authenticated. The variable can be set manually, or optionally set by a `keys.plist` file belonging to the target.
     public static var apiToken: String? {
         get {
             if let manualToken = _apiToken {
@@ -45,84 +47,182 @@ public enum DKRouter: URLRequestConvertible {
     }
     private static var _apiToken: String?
     
+    /// The user used to authenticate all requests during lifetime of the router. Note: This object requires a `token` value to work correctly, which only comes from the `/auth` API endpoint.
     public static var user: DKUser?
     
+    /// The number of objects to list per page request. Defaults to 24
     public static var pageSize = 24
     
-    // Activity
+    // MARK: Activity
+    
+    /// Get a list of the most recently updated items across a user's teams and personal accounts. Returns a `DKItem` list.
     case activity(parameters: Parameters?)
     
-    // Authentication
+    // MARK: Authentication
+    
+    /// Pass in an email and password, and get a user object containing the `token` necessary to authenticate requests on behalf of the user.  Returns a `DKUser` object.
     case authenticate(parameters: Parameters?)
     
-    // Collections
+    // MARK: Collections
+    
+    /// Get a list of collections. Returns a `DKCollection` list.
     case listCollections(queryParameters: Parameters?)
+    
+    /// Create a collection. Returns a `DKCollection` object.
     case createCollection(bodyParameters: Parameters?)
+    
+    /// Get a single collection. Returns a `DKCollection` object.
     case getCollection(id: NSNumber)
+    
+    /// Update a single collection. Returns a `DKCollection` object.
     case updateCollection(id: NSNumber, bodyParameters: Parameters?)
+    
+    /// Delete a single collection. Returns only a 200 response.
     case deleteCollection(id: NSNumber)
     
+    /// Get the total number of collections available to the user. Returns an integer.
     case getCollectionsCount
+    
+    /// Get the total number of items in a collection. Returns an integer.
     case getItemsCountForCollection(id: NSNumber)
     
+    /// Get a list of users with permission to access the collection. Returns a `DKUser` list.
     case listCollaboratorsInCollection(id: NSNumber)
+    
+    /// Give a user access to a collection (only works if the current user has permission)
     case addCollaboratorToCollection(id: NSNumber, bodyParameters: Parameters?)
+    
+    /// Remove a user's access to a collection (only works if the current user has permission). Returns only a 200 response.
     case removeCollaboratorFromCollection(userID: NSNumber, collectionID: NSNumber)
     
-    // Comments
+    // MARK: Comments
+    
+    /// Get a list of comments associated with an item. Returns a `DKComment` list.
     case listCommentsForItem(itemID: NSNumber)
+    
+    /// Add a comment to an item. Returns a `DKComment` object.
     case createCommentForItem(itemID: NSNumber, bodyParameters: Parameters?)
+    
+    /// Update a comment. Returns a `DKComment` object.
     case updateComment(id: NSNumber, bodyParameters: Parameters?)
+    
+    /// Delete a comment. Returns only a 200 response.
     case deleteComment(id: NSNumber)
     
-    // Emails
+    // MARK: Emails
+    
+    /// Get a list of emails associated with the current user. Returns a `String` list.
     case listEmails
+    
+    /// Add an email for the current user
     case createEmail(email: String)
+    
+    /// Delete an email for the current user
     case deleteEmail(id: NSNumber)
     
-    // Items
+    // MARK: Items
+    
+    /// Get a list of all items matching the query parameters. Returns a `DKItem` list.
     case listItems(queryParameters: Parameters?)
+    
+    /// Get a list of all child items in a collection (adding a `parent_id` will filter in a stack). Returns a `DKItem` list.
     case listItemsInCollection(id: NSNumber, queryParameters: Parameters?)
+    
+    /// Create a new item in a parent collection. Returns a `DKItem` object.
     case createItemInCollection(id: NSNumber, bodyParameters: Parameters?)
+    
+    /// Update multiple items within a collection. Returns a `DKItem` list.
     case updateItemsInCollection(id: NSNumber, bodyParameters: Parameters?)
+    
+    /// Update multiple items. Returns a `DKItem` list.
     case updateItems(bodyParameters: Parameters?)
+    
+    /// Get a single item. Returns a `DKItem` object.
     case getItem(id: NSNumber, queryParameters: Parameters?)
+    
+    /// Update a single item. Returns a `DKItem` object.
     case updateItem(id: NSNumber, bodyParameters: Parameters?)
+    
+    /// Delete a single item. Returns only a 200 response.
     case deleteItem(id: NSNumber, bodyParameters: Parameters?)
+    
+    /// Delete multiple items within a parent collection. Returns only a 200 response.
     case deleteItemsInCollection(id: NSNumber, bodyParameters: Parameters?)
+    
+    /// Duplicate an item(s) within a parent collection. Returns a `DKItem` list.
     case copyItems(bodyParameters: Parameters?)
     
-    // Reactions
+    // MARK: Reactions
+    
+    /// Get a list of reactions associated with an item. Returns a `DKReaction` list.
     case listReactionsForItem(itemID: NSNumber)
+    
+    /// Create a reaction for an item. Returns a `DKReaction` object.
     case createReactionForItem(itemID: NSNumber)
+    
+    /// Delete a reaction. Returns only a 200 response.
     case deleteReaction(id: NSNumber)
     
-    // Search
+    // MARK: Search
+    
+    /// Run a search for collections, items, comments, reactions, and invites using the `q` parameter. Note: Be sure to use the `DKResponseListAny` serializer to accept varying object types. Returns a list containing 'DKCollection', 'DKItem', 'DKComment', 'DKReaction', and 'DKInvite' objects.
     case search(queryParameters: Parameters?)
     
-    // Tags
+    // MARK: Tags
+    
+    /// Get a list of tags associated with the current user. Returns a `DKTag` list.
     case listTags
+    
+    /// Get a list of tags applied to the specified item. Returns a `DKTag` list.
     case listTagsForItem(itemID: NSNumber)
+    
+    /// Create a new tag and apply it to the specified item. Returns a `DKTag` object.
     case createTagForItem(itemID: NSNumber, name: String)
+    
+    /// Delete a tag. Returns only a 200 response.
     case deleteTag(id: NSNumber)
     
-    // Teams
+    // MARK: Teams
+    
+    /// Get a list of teams the current user belongs to. Returns a `DKTeam` list.
     case listTeams(queryParameters: Parameters?)
+    
+    /// Get a specified team, if visible to the current user. Returns a `DKTeam` object.
     case getTeam(id: NSNumber)
+    
+    /// Update a team. Returns a `DKTeam` object.
     case updateTeam(teamid: NSNumber, bodyParameters: Parameters?)
     
+    /// List all users belonging to the specified team. Returns a `DKUser` list.
     case listUsersInTeam(teamID: NSNumber)
+    
+    /// Add a user to a team. Returns a `DKUser` object.
     case createUserInTeam(teamID: NSNumber, bodyParameters: Parameters?)
+    
+    /// Update a user within a team. Returns a `DKUser` object.
     case updateUserInTeam(teamID: NSNumber, userID: NSNumber, bodyParameters: Parameters?)
+    
+    /// Remove a user from a team. Returns only a 200 response.
     case deleteUserInTeam(teamID: NSNumber, userID: NSNumber)
     
-    // Users
+    // MARK: Users
+    
+    /// Create a user (aka register a new account). Returns a `DKUser` object.
     case createUser(bodyParameters: Parameters)
+    
+    /// Get the user object for the current user. NOTE: The user object returned by this endpoint will not contain a 'token' for authentication. Returns a `DKUser` object.
     case getUser(queryParameters: Parameters?)
+    
+    /// Update information for the current user. Returns a `DKUser` object.
     case updateUser(bodyParameters: Parameters?)
     
+    /// Get a list of users associated with the current user
     case listContacts
+    
+    /// Check if an email is available for registration. Returns a `Bool` value.
     case getEmailAvailability(email: String)
+    
+    /// Check if a username is available for registration. Returns a `Bool` value.
     case getUsernameAvailability(username: String)
     
     
@@ -394,13 +494,13 @@ public enum DKRouter: URLRequestConvertible {
     // MARK: URLRequestConvertible
     
     /**
-    
+
     Returns a URL request or throws if an `Error` was encountered.
-    
-    - Throws: An `Error` if the underlying `URLRequest` is `nil`.
-    - Returns: A URL request.
- 
-     */
+
+        - Throws: An `Error` if the underlying `URLRequest` is `nil`.
+        - Returns: A URL request.
+
+    */
     
     public func asURLRequest() throws -> URLRequest {
         
