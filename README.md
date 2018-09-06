@@ -23,7 +23,7 @@
 - [x] Example for tvOS
 - [x] Example for macOS
 - [ ] Comprehensive Unit and Integration Test Coverage
-- [ ] [Complete Documentation](https://dropmark.github.io/Swift-SDK)
+- [x] [Complete Documentation](https://dropmark.github.io/Swift-SDK)
 
 ## Requirements
 
