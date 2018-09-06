@@ -393,6 +393,15 @@ public enum DKRouter: URLRequestConvertible {
     
     // MARK: URLRequestConvertible
     
+    /**
+    
+    Returns a URL request or throws if an `Error` was encountered.
+    
+    - Throws: An `Error` if the underlying `URLRequest` is `nil`.
+    - Returns: A URL request.
+ 
+     */
+    
     public func asURLRequest() throws -> URLRequest {
         
         let url = try DKRouter.baseURLString.asURL()

@@ -22,7 +22,6 @@
 //  THE SOFTWARE.
 //
 
-
 import Cocoa
 import PromiseKit
 import DropmarkSDK

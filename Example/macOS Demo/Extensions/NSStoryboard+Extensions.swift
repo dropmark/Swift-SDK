@@ -31,9 +31,9 @@ extension NSStoryboardSegue.Identifier {
 
 extension NSStoryboard {
     
-    static let containerViewControllerIdentifier            = "ContainerViewControllerIdentifier"
-    static let loginViewControllerIdentifier                = "LoginViewControllerIdentifier"
-    static let mainViewControllerIdentifier                 = "MainViewControllerIdentifier"
+    static let containerViewControllerIdentifier    = "ContainerViewControllerIdentifier"
+    static let loginViewControllerIdentifier        = "LoginViewControllerIdentifier"
+    static let mainViewControllerIdentifier         = "MainViewControllerIdentifier"
     
     private class var main: NSStoryboard {
         let name = NSStoryboard.Name.init("Main")
