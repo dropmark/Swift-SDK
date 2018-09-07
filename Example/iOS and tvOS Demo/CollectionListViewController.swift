@@ -55,7 +55,7 @@ class CollectionListViewController: UITableViewController {
         paging.next = { PromiseGenerator.listCollections(page: $0) }
         
         getNextPageOfCollections().catch { error in
-            let alert = UIAlertController(error: error, preferredStyle: .alert)
+            let alert = UIAlertController(error: error)
             self.present(alert, animated: true)
         }
         
@@ -95,7 +95,7 @@ class CollectionListViewController: UITableViewController {
         }.ensure {
             refreshControl.endRefreshing()
         }.catch { error in
-            let alert = UIAlertController(error: error, preferredStyle: .alert)
+            let alert = UIAlertController(error: error)
             self.present(alert, animated: true)
         }
         
@@ -149,7 +149,7 @@ extension CollectionListViewController {
             
             // Get the next page of collections
             getNextPageOfCollections().catch { error in
-                let alert = UIAlertController(error: error, preferredStyle: .alert)
+                let alert = UIAlertController(error: error)
                 self.present(alert, animated: true)
             }
             

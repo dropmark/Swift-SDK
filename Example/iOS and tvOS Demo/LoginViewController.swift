@@ -70,8 +70,7 @@ class LoginViewController: UIViewController {
         else {
             let title = "Missing field"
             let message = "Please enter an email and password for your Dropmark account."
-            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default))
+            let alert = UIAlertController(title: title, message: message)
             self.present(alert, animated: true)
             return
         }
@@ -99,7 +98,7 @@ class LoginViewController: UIViewController {
             
         }.catch { error in
             
-            let alert = UIAlertController(error: error, preferredStyle: .alert)
+            let alert = UIAlertController(error: error)
             self.present(alert, animated: true)
             
         }

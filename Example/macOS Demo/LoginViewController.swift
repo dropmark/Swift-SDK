@@ -54,8 +54,11 @@ class LoginViewController: NSViewController {
     override func viewDidAppear() {
         super.viewDidAppear()
         
+        // If a user already exists in our keychain, skip login
         if let existingUser = DKKeychain.user {
-            DKRouter.user = existingUser // Authenticate requests for the current app session
+            
+            // Authenticate requests for the current app session
+            DKRouter.user = existingUser
             
             // Add a slight delay due to rendering issue with view layers
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {

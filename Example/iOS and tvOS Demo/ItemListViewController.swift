@@ -64,7 +64,7 @@ class ItemListViewController: UITableViewController {
         paging.next = { PromiseGenerator.listItems(collection: self.collection, stack: self.stack, page: $0) }
         
         getNextPageOfItems().catch { error in
-            let alert = UIAlertController(error: error, preferredStyle: .alert)
+            let alert = UIAlertController(error: error)
             self.present(alert, animated: true)
         }
         
@@ -93,7 +93,7 @@ class ItemListViewController: UITableViewController {
         }.ensure {
             refreshControl.endRefreshing()
         }.catch { error in
-            let alert = UIAlertController(error: error, preferredStyle: .alert)
+            let alert = UIAlertController(error: error)
             self.present(alert, animated: true)
         }
         
@@ -185,7 +185,7 @@ extension ItemListViewController {
             
             // Get the next page of collections
             getNextPageOfItems().catch { error in
-                let alert = UIAlertController(error: error, preferredStyle: .alert)
+                let alert = UIAlertController(error: error)
                 self.present(alert, animated: true)
             }
             

@@ -383,7 +383,7 @@
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = WGR9T9JH4L;
+						DevelopmentTeam = B34U9MBMKJ;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -829,7 +829,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EA669FF00620E79A8942E4D1 /* Pods-DropmarkSDK_Tests.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = WGR9T9JH4L;
+				DEVELOPMENT_TEAM = B34U9MBMKJ;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -848,7 +848,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 948C593ECC1D4DB79124392C /* Pods-DropmarkSDK_Tests.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = WGR9T9JH4L;
+				DEVELOPMENT_TEAM = B34U9MBMKJ;
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
