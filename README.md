@@ -55,6 +55,9 @@ import DropmarkSDK
 
 ## Migration
 
+### Version 1.1.0
+Extensions in `DataRequest+PromiseKit` make use of `CancellablePromiseKit` now. `DKPaginationGenerator` also reflects cancellability.
+
 ### Version 1.0.0
 All errors are now consolidated as `DKError`.  Search results are serialized by the `DKResponseListAny` struct.
 
@@ -76,12 +79,13 @@ If you believe you have identified a security vulnerability with **DropmarkSDK**
 
 Created by [Oak](https://oak.is) for [Dropmark](https://www.dropmark.com).
 
-**DropmarkSDK** relies on the following 3rd party libraries:
+**DropmarkSDK** relies on the following open source libraries:
 
+- [`KeychainSwift`](https://github.com/evgenyneu/keychain-swift)
 - [`Alamofire`](https://github.com/Alamofire/Alamofire)
 - [`PromiseKit`](https://github.com/mxcl/PromiseKit)
+- [`CancellablePromiseKit`](https://github.com/johannesd/CancellablePromiseKit)
 - [`UTIKit`](https://github.com/cockscomb/UTIKit)
-- [`KeychainSwift`](https://github.com/evgenyneu/keychain-swift)
 
 ## License
 
