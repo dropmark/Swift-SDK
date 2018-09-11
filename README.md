@@ -44,7 +44,7 @@ Be sure to open the examples using the `DropmarkSDK.workspace` file.
 Install the library in your app through [**CocoaPods**](http://cocoapods.org). Add the following line to your *Podfile*, then run `pod install`.
 
 ```ruby
-pod 'DropmarkSDK', '~> 1.0'
+pod 'DropmarkSDK', '~> 1.1'
 ```
 
 Be sure to import the library when needed.
