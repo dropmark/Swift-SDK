@@ -28,44 +28,71 @@ import PromiseKit
 
 public extension DataRequest {
     
-    /// Generate a generic `Promise` from a `DataRequest`
-    public func promise() -> Promise<Void> {
-        return Promise<Void> { seal in
+    /// Generate a generic `CancellablePromise` from a `DataRequest`
+    public func promise() -> CancellablePromise<Void> {
+        return CancellablePromise<Void>( resolver: { resolver in
             self.response { response in
                 if let error = response.error {
-                    seal.reject(error)
+                    resolver.reject(error)
                 } else {
-                    seal.fulfill(())
+                    resolver.fulfill(())
                 }
             }
-        }
+            return {
+                self.cancel()
+            }
+        })
     }
     
-    /// Generate a `Promise` from a `DataRequest`, returning an object of the inferred type.
-    public func promiseObject<T: DKResponseObjectSerializable>() -> Promise<T> {
-        return Promise<T> { seal in
+    /// Generate a `CancellablePromise` from a `DataRequest`, returning an object of the inferred type.
+    public func promiseObject<T: DKResponseObjectSerializable>() -> CancellablePromise<T> {
+        return CancellablePromise<T> ( resolver: { resolver in
             self.responseObject { (response: DataResponse<T>) in
-                seal.resolve(response.result.error, response.result.value)
+                switch response.result {
+                case .success(let object):
+                    resolver.fulfill(object)
+                case .failure(let error):
+                    resolver.reject(error)
+                }
             }
-        }
+            return {
+                self.cancel()
+            }
+        })
     }
     
-    /// Generate a `Promise` from a `DataRequest`, returning a list of objects of the inferred type.
-    public func promiseList<T: DKResponseListSerializable>() -> Promise<[T]> {
-        return Promise<[T]> { seal in
+    /// Generate a `CancellablePromise` from a `DataRequest`, returning a list of objects of the inferred type.
+    public func promiseList<T: DKResponseListSerializable>() -> CancellablePromise<[T]> {
+        return CancellablePromise<[T]> ( resolver: { resolver in
             self.responseList { (response: DataResponse<[T]>) in
-                seal.resolve(response.result.error, response.result.value)
+                switch response.result {
+                case .success(let objects):
+                    resolver.fulfill(objects)
+                case .failure(let error):
+                    resolver.reject(error)
+                }
             }
-        }
+            return {
+                self.cancel()
+            }
+        })
     }
     
-    /// Generate a `Promise` from a `DataRequest`, returning a list of objects of any type.
-    public func promiseListAny() -> Promise<[Any]> {
-        return Promise<[Any]> { seal in
+    /// Generate a `CancellablePromise` from a `DataRequest`, returning a list of objects of any type.
+    public func promiseListAny() -> CancellablePromise<[Any]> {
+        return CancellablePromise<[Any]> ( resolver: { resolver in
             self.responseListAny { (response: DataResponse<[Any]>) in
-                seal.resolve(response.result.error, response.result.value)
+                switch response.result {
+                case .success(let objects):
+                    resolver.fulfill(objects)
+                case .failure(let error):
+                    resolver.reject(error)
+                }
             }
-        }
+            return {
+                self.cancel()
+            }
+        })
     }
     
 }

@@ -86,17 +86,17 @@ class MainViewController: NSViewController {
         
         primaryItemsPaging.next = { page in
             guard let collection = self.selectedCollection else {
-                return Promise(error: PagingError.noCollectionProvided)
+                return Promise(error: PagingError.noCollectionProvided).asCancellable()
             }
             return PromiseGenerator.listItems(collection: collection, stack: nil, page: page)
         }
         
         secondaryItemsPaging.next = { page in
             guard let collection = self.selectedCollection else {
-                return Promise(error: PagingError.noCollectionProvided)
+                return Promise(error: PagingError.noCollectionProvided).asCancellable()
             }
             guard let stack = self.selectedStack else {
-                return Promise(error: PagingError.noStackProvided)
+                return Promise(error: PagingError.noStackProvided).asCancellable()
             }
             return PromiseGenerator.listItems(collection: collection, stack: stack, page: page)
         }

@@ -30,9 +30,9 @@ import PromiseKit
 public class DKPagingGenerator<T> {
     
     /**
-     Required - Set this closure to process a single page of results, and return your request packaged in a PromiseKit promise. A single page is requested and returned in the promise format, it is up to the developer to maintain requests for cancellation purposes. By calling `getNext()`, this closure will be used.
+     Required - Set this closure to process a single page of results, and return your request packaged in a CancellablePromiseKit promise. A single page is requested and returned in the promise format. By calling `getNext()`, this closure will be used.
      */
-    public var next: ((_ page: Int) -> Promise<[T]>)!
+    public var next: ((_ page: Int) -> CancellablePromise<[T]>)!
     
     /// The current page
     public var page: Int
@@ -47,7 +47,12 @@ public class DKPagingGenerator<T> {
     public var didReachEnd: Bool = false
     
     /// Test if pagination is in the process of retrieving a page.
-    public var isFetchingPage: Bool = false
+//    public var isFetchingPage: Bool = false
+    public var isFetchingPage: Bool {
+        return currentChain?.isPending ?? false
+    }
+    
+    internal var currentChain: CancellablePromise<[T]>?
     
     /**
      
@@ -67,42 +72,35 @@ public class DKPagingGenerator<T> {
     }
     
     /// Get the next page of results as outlined in the `next` closure.
-    public func getNext() -> Promise<[T]> {
+    public func getNext() -> CancellablePromise<[T]> {
         
-        return Promise { seal in
-            
-            guard didReachEnd == false else {
-                seal.reject(DKError.paginationDidReachEnd)
-                return
-            }
-            
-            guard isFetchingPage == false else {
-                seal.reject(DKError.paginationIsFetchingPage)
-                return
-            }
-            
-            isFetchingPage = true
-            
-            firstly {
-                self.next(page)
-            }.done { [weak self] objects in
-                self?.page += 1
-                if let pageSize = self?.pageSize, objects.count < pageSize {
-                    self?.didReachEnd = true
-                }
-                seal.fulfill(objects)
-            }.ensure { [weak self] in
-                self?.isFetchingPage = false
-            }.catch { error in
-                seal.reject(error)
-            }
-            
+        guard didReachEnd == false else {
+            let emptyArray = [T]()
+            return Promise.value(emptyArray).asCancellable()
         }
+        
+        let chain: CancellablePromise<[T]> = next(page).then { [weak self] objects in
+            self?.page += 1
+            if let pageSize = self?.pageSize, objects.count < pageSize {
+                self?.didReachEnd = true
+            }
+            return Promise.value(objects).asCancellable()
+        }
+        
+        currentChain = chain
+        
+        return chain
         
     }
     
-    /// Reset pagination back to the original `startPage`
+    /// Cancel the current pagination request, if one exists
+    func cancel() {
+        currentChain?.cancel()
+    }
+    
+    /// Cancel the current pagination request, if one exists, then reset pagination back to the original `startPage`
     public func reset() {
+        cancel()
         didReachEnd = false
         page = startPage
     }

@@ -14,7 +14,6 @@
 		05421123C174709415D647698E753C94 /* AnyPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0B4AF22501E7B9FEA3EAB47C71C682 /* AnyPromise.swift */; };
 		058640372546CD2896B2B6E331A736B3 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BDF43C496204BD5492C38B701BEBE41 /* AFError.swift */; };
 		059403BF0A7A04BCAC54B5B4609C663C /* PMKFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C0EA621EA883E8E23ED6B34A8826A5D /* PMKFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05B30561396DF540A4BCD7049C3A54CB /* UTIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27927DE989BAFE1D5776ADF5CA63FAE2 /* UTIKit.swift */; };
 		06CA0F4543AC50E6D20523DFEE7C5FBE /* Pods-macOS Demo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C5AA6B3962E51C83A99C7BC520CAEFC0 /* Pods-macOS Demo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07DD390AA830B70DD7AE3B4CF0D4BA0F /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D4380F4424F7AE97A01978B082AB6C /* ImageCache.swift */; };
 		08482FC599B8B9051504DC4DE8F41989 /* DKComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E186733F7317B5E75D84A3C6CC377BD /* DKComment.swift */; };
@@ -26,7 +25,6 @@
 		0CD3407E6DDE8B953C9C31D5E9618A87 /* DKTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E7D2B7DDA543BD2430633AB8082F85 /* DKTag.swift */; };
 		0E5A474FE4BD0F9BD33EE5D307334C7B /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A881330B90AEE567D8BF2F5358679 /* Promise.swift */; };
 		111A7D9E9B34096D0B36001155BEC00B /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7391212EDBFF724CDF8B2A9E62ACC40F /* Resolver.swift */; };
-		12EC541537E3D7982112A5FCE598F292 /* UTIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27927DE989BAFE1D5776ADF5CA63FAE2 /* UTIKit.swift */; };
 		150C667C2EA702562BA413E6B3CE89D5 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7391212EDBFF724CDF8B2A9E62ACC40F /* Resolver.swift */; };
 		1663CCE81564B397756FB5616307C95E /* TegKeychainConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB64D242FE55F7A53AB42816468F37E /* TegKeychainConstants.swift */; };
 		16B315BDE1759DF3F688C8FA1C9B12C1 /* NSURLSession+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = D1370E01C422AB6DCAD03FE2C7FBE0EE /* NSURLSession+AnyPromise.m */; };
@@ -49,7 +47,6 @@
 		2009AA318B6385B5867C7FD1E18E4079 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014D2D3022B5593C18CBB787101D5ACD /* Alamofire.swift */; };
 		20D0C63CED308210A85A76F41EDC6FF9 /* DKReaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370FA5F878E851FC7D65AA1BA6005EFB /* DKReaction.swift */; };
 		21249A38AB71D4D8B4CF4112F9D3073B /* DKResponseListAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015E77C10F2EF4530C1A621F20E27B9B /* DKResponseListAny.swift */; };
-		217523277A5C01BF24487E87503F0F1F /* UTIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27927DE989BAFE1D5776ADF5CA63FAE2 /* UTIKit.swift */; };
 		217E1D20C2C65A8F01AE9C782E2398D8 /* Pods-iOS Demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BDB853125802B584FD618D4F251A913 /* Pods-iOS Demo-dummy.m */; };
 		225D6C81BD55800F8EADC92B676EC88A /* ImageFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F5957EAD62BFE6CE9DA550E77E22B5 /* ImageFilter.swift */; };
 		2331DE1BECCA95770F9EA025E8B68D4F /* after.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD784AEF7A478A5D63F938439F263A2 /* after.m */; };
@@ -242,6 +239,30 @@
 		A50EC2EE211E511000F3796E /* DKPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50EC2ED211E511000F3796E /* DKPlan.swift */; };
 		A50EC2EF211E511000F3796E /* DKPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50EC2ED211E511000F3796E /* DKPlan.swift */; };
 		A50EC2F0211E511000F3796E /* DKPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50EC2ED211E511000F3796E /* DKPlan.swift */; };
+		A515D12C21484E0300D4F1A2 /* when.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12321484E0300D4F1A2 /* when.swift */; };
+		A515D12D21484E0300D4F1A2 /* when.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12321484E0300D4F1A2 /* when.swift */; };
+		A515D12E21484E0300D4F1A2 /* when.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12321484E0300D4F1A2 /* when.swift */; };
+		A515D12F21484E0300D4F1A2 /* race.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12421484E0300D4F1A2 /* race.swift */; };
+		A515D13021484E0300D4F1A2 /* race.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12421484E0300D4F1A2 /* race.swift */; };
+		A515D13121484E0300D4F1A2 /* race.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12421484E0300D4F1A2 /* race.swift */; };
+		A515D13221484E0300D4F1A2 /* CancellablePromiseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12521484E0300D4F1A2 /* CancellablePromiseError.swift */; };
+		A515D13321484E0300D4F1A2 /* CancellablePromiseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12521484E0300D4F1A2 /* CancellablePromiseError.swift */; };
+		A515D13421484E0300D4F1A2 /* CancellablePromiseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12521484E0300D4F1A2 /* CancellablePromiseError.swift */; };
+		A515D13521484E0300D4F1A2 /* then.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12621484E0300D4F1A2 /* then.swift */; };
+		A515D13621484E0300D4F1A2 /* then.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12621484E0300D4F1A2 /* then.swift */; };
+		A515D13721484E0300D4F1A2 /* then.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12621484E0300D4F1A2 /* then.swift */; };
+		A515D13821484E0300D4F1A2 /* map.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12721484E0300D4F1A2 /* map.swift */; };
+		A515D13921484E0300D4F1A2 /* map.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12721484E0300D4F1A2 /* map.swift */; };
+		A515D13A21484E0300D4F1A2 /* map.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12721484E0300D4F1A2 /* map.swift */; };
+		A515D13B21484E0300D4F1A2 /* CancellablePromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12821484E0300D4F1A2 /* CancellablePromise.swift */; };
+		A515D13C21484E0300D4F1A2 /* CancellablePromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12821484E0300D4F1A2 /* CancellablePromise.swift */; };
+		A515D13D21484E0300D4F1A2 /* CancellablePromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12821484E0300D4F1A2 /* CancellablePromise.swift */; };
+		A515D13E21484E0300D4F1A2 /* Promise+CancellablePromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12921484E0300D4F1A2 /* Promise+CancellablePromise.swift */; };
+		A515D13F21484E0300D4F1A2 /* Promise+CancellablePromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12921484E0300D4F1A2 /* Promise+CancellablePromise.swift */; };
+		A515D14021484E0300D4F1A2 /* Promise+CancellablePromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12921484E0300D4F1A2 /* Promise+CancellablePromise.swift */; };
+		A515D14121484E0300D4F1A2 /* UTIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12B21484E0300D4F1A2 /* UTIKit.swift */; };
+		A515D14221484E0300D4F1A2 /* UTIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12B21484E0300D4F1A2 /* UTIKit.swift */; };
+		A515D14321484E0300D4F1A2 /* UTIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A515D12B21484E0300D4F1A2 /* UTIKit.swift */; };
 		A51A5FBE2141C1640064D0D6 /* Dictionary+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51A5FBD2141C1640064D0D6 /* Dictionary+Parameters.swift */; };
 		A51A5FBF2141C1640064D0D6 /* Dictionary+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51A5FBD2141C1640064D0D6 /* Dictionary+Parameters.swift */; };
 		A51A5FC02141C1640064D0D6 /* Dictionary+Parameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51A5FBD2141C1640064D0D6 /* Dictionary+Parameters.swift */; };
@@ -622,7 +643,6 @@
 		2467799A26F15CC83A073BA654D3816C /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Sources/Configuration.swift; sourceTree = "<group>"; };
 		270589B656D66A53C069DD5136DD4FBD /* KeychainSwift-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "KeychainSwift-tvOS-prefix.pch"; path = "../KeychainSwift-tvOS/KeychainSwift-tvOS-prefix.pch"; sourceTree = "<group>"; };
 		276B0257441EF2661678E3917C93209E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../PromiseKit.root-CorePromise-Foundation/Info.plist"; sourceTree = "<group>"; };
-		27927DE989BAFE1D5776ADF5CA63FAE2 /* UTIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UTIKit.swift; sourceTree = "<group>"; };
 		279DD6FAD1C554AEC99962816BC088BD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../AlamofireImage-tvOS/Info.plist"; sourceTree = "<group>"; };
 		28CEDDAD58EE16E46C05A45EA5590C53 /* UIView+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+AnyPromise.m"; path = "Extensions/UIKit/Sources/UIView+AnyPromise.m"; sourceTree = "<group>"; };
 		2B1D21DF92BA42C2392E62C318D0C8AC /* UIViewController+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+AnyPromise.h"; path = "Extensions/UIKit/Sources/UIViewController+AnyPromise.h"; sourceTree = "<group>"; };
@@ -745,6 +765,14 @@
 		A39AF77689EAB2B46FE1587AEEAD6363 /* Pods_tvOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvOS_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A501074B211D38E9001018FA /* DKServerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKServerError.swift; sourceTree = "<group>"; };
 		A50EC2ED211E511000F3796E /* DKPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKPlan.swift; sourceTree = "<group>"; };
+		A515D12321484E0300D4F1A2 /* when.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = when.swift; sourceTree = "<group>"; };
+		A515D12421484E0300D4F1A2 /* race.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = race.swift; sourceTree = "<group>"; };
+		A515D12521484E0300D4F1A2 /* CancellablePromiseError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancellablePromiseError.swift; sourceTree = "<group>"; };
+		A515D12621484E0300D4F1A2 /* then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = then.swift; sourceTree = "<group>"; };
+		A515D12721484E0300D4F1A2 /* map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = map.swift; sourceTree = "<group>"; };
+		A515D12821484E0300D4F1A2 /* CancellablePromise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancellablePromise.swift; sourceTree = "<group>"; };
+		A515D12921484E0300D4F1A2 /* Promise+CancellablePromise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Promise+CancellablePromise.swift"; sourceTree = "<group>"; };
+		A515D12B21484E0300D4F1A2 /* UTIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UTIKit.swift; sourceTree = "<group>"; };
 		A51A5FBD2141C1640064D0D6 /* Dictionary+Parameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Parameters.swift"; sourceTree = "<group>"; };
 		A52C41F72116098500BA2054 /* DKResponseObjectSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKResponseObjectSerializable.swift; sourceTree = "<group>"; };
 		A52C41FB211609E200BA2054 /* DKResponseListSerializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKResponseListSerializable.swift; sourceTree = "<group>"; };
@@ -1075,7 +1103,8 @@
 		1AA25F0754912390FBACF51E77B8C535 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				27927DE989BAFE1D5776ADF5CA63FAE2 /* UTIKit.swift */,
+				A515D12221484E0300D4F1A2 /* CancellablePromiseKit */,
+				A515D12A21484E0300D4F1A2 /* UTIKit */,
 			);
 			name = Vendor;
 			path = Source/Vendor;
@@ -1308,6 +1337,28 @@
 				2601AED89DFC95E875D1C1DF7AA65856 /* Pods-tvOS Demo */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		A515D12221484E0300D4F1A2 /* CancellablePromiseKit */ = {
+			isa = PBXGroup;
+			children = (
+				A515D12321484E0300D4F1A2 /* when.swift */,
+				A515D12421484E0300D4F1A2 /* race.swift */,
+				A515D12521484E0300D4F1A2 /* CancellablePromiseError.swift */,
+				A515D12621484E0300D4F1A2 /* then.swift */,
+				A515D12721484E0300D4F1A2 /* map.swift */,
+				A515D12821484E0300D4F1A2 /* CancellablePromise.swift */,
+				A515D12921484E0300D4F1A2 /* Promise+CancellablePromise.swift */,
+			);
+			path = CancellablePromiseKit;
+			sourceTree = "<group>";
+		};
+		A515D12A21484E0300D4F1A2 /* UTIKit */ = {
+			isa = PBXGroup;
+			children = (
+				A515D12B21484E0300D4F1A2 /* UTIKit.swift */,
+			);
+			path = UTIKit;
 			sourceTree = "<group>";
 		};
 		A52C4202211614AC00BA2054 /* Serializers */ = {
@@ -2153,10 +2204,15 @@
 				86EA90C42A43FBF1EDCFE36BA452714F /* Bundle+Extensions.swift in Sources */,
 				833332000904746D4A186FCF339CC1E1 /* DataRequest+PromiseKit.swift in Sources */,
 				E1CF93478C86DF93DE5AB993E56AEADD /* DKCollection.swift in Sources */,
+				A515D13121484E0300D4F1A2 /* race.swift in Sources */,
+				A515D14021484E0300D4F1A2 /* Promise+CancellablePromise.swift in Sources */,
 				08482FC599B8B9051504DC4DE8F41989 /* DKComment.swift in Sources */,
+				A515D13421484E0300D4F1A2 /* CancellablePromiseError.swift in Sources */,
 				E849735C2B0BEFA742588EE2EBDCEA42 /* DKError.swift in Sources */,
 				F950A5643621A413D8275A147B33A76A /* DKInvite.swift in Sources */,
 				A50EC2F0211E511000F3796E /* DKPlan.swift in Sources */,
+				A515D14321484E0300D4F1A2 /* UTIKit.swift in Sources */,
+				A515D13721484E0300D4F1A2 /* then.swift in Sources */,
 				6D67C997AE87B74524A06487B06A0BAA /* DKItem.swift in Sources */,
 				7E7B49BD22475EC8DE747CAD4B7B258F /* DKItemType.swift in Sources */,
 				B611F909562856D05848E38A153448E6 /* DKKeychain.swift in Sources */,
@@ -2170,12 +2226,14 @@
 				6709A143877996CB067BB76006C44BDB /* DKThumbnails.swift in Sources */,
 				2C539E73EF9FCEDC89CD4C992812FCEC /* DKUser.swift in Sources */,
 				929C44461B948E5793D606FB44BD150B /* DropmarkSDK-tvOS-dummy.m in Sources */,
+				A515D13D21484E0300D4F1A2 /* CancellablePromise.swift in Sources */,
 				462A389E86C97EB347FA14C1C17BF873 /* DKResponseListAny.swift in Sources */,
 				6B986B5DB503BCBABF6C76B1B69CF50E /* String+Extensions.swift in Sources */,
 				A501074E211D38E9001018FA /* DKServerError.swift in Sources */,
+				A515D12E21484E0300D4F1A2 /* when.swift in Sources */,
 				A52C41FA2116098500BA2054 /* DKResponseObjectSerializable.swift in Sources */,
 				04BEFD782BCFBE480C447B073C1BD170 /* UTIKit+Extensions.swift in Sources */,
-				05B30561396DF540A4BCD7049C3A54CB /* UTIKit.swift in Sources */,
+				A515D13A21484E0300D4F1A2 /* map.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2321,10 +2379,15 @@
 				945B7EDE069CAFAFDCF341F47395E1BA /* Bundle+Extensions.swift in Sources */,
 				23EA6A51856F5A1A6DA2AAC9F0AF0E94 /* DataRequest+PromiseKit.swift in Sources */,
 				2F28C8A6E0CA44685789DFAB622E0346 /* DKCollection.swift in Sources */,
+				A515D13021484E0300D4F1A2 /* race.swift in Sources */,
+				A515D13F21484E0300D4F1A2 /* Promise+CancellablePromise.swift in Sources */,
 				547C5B0D61BEE2877792936D2F3CA8A3 /* DKComment.swift in Sources */,
+				A515D13321484E0300D4F1A2 /* CancellablePromiseError.swift in Sources */,
 				7200AE6174B202AAF306150D6E766BD2 /* DKError.swift in Sources */,
 				802913C3D99C53EC54054F9947872868 /* DKInvite.swift in Sources */,
 				A50EC2EF211E511000F3796E /* DKPlan.swift in Sources */,
+				A515D14221484E0300D4F1A2 /* UTIKit.swift in Sources */,
+				A515D13621484E0300D4F1A2 /* then.swift in Sources */,
 				0C8005BB854AA4DA09D8417DA4542F56 /* DKItem.swift in Sources */,
 				5F4BF052F631497106283B42AF615FDE /* DKItemType.swift in Sources */,
 				96FB4347E0C620E51791FF09F613A402 /* DKKeychain.swift in Sources */,
@@ -2338,12 +2401,14 @@
 				42A3857AA001396CDE4ED3DB933BBD5C /* DKThumbnails.swift in Sources */,
 				C16AB1C6F216E6445933327969F7DFAA /* DKUser.swift in Sources */,
 				D7E1597CE0377D1A386DE7B6D18347C7 /* DropmarkSDK-macOS-dummy.m in Sources */,
+				A515D13C21484E0300D4F1A2 /* CancellablePromise.swift in Sources */,
 				270B42D1317DF2F65650A3616BDBBB21 /* DKResponseListAny.swift in Sources */,
 				9B30BA23F58C46454CAFA6A7DCC06F9E /* String+Extensions.swift in Sources */,
 				A501074D211D38E9001018FA /* DKServerError.swift in Sources */,
+				A515D12D21484E0300D4F1A2 /* when.swift in Sources */,
 				A52C41F92116098500BA2054 /* DKResponseObjectSerializable.swift in Sources */,
 				E3ACFBF3657A40E1B0C5E9ECF147F7B7 /* UTIKit+Extensions.swift in Sources */,
-				12EC541537E3D7982112A5FCE598F292 /* UTIKit.swift in Sources */,
+				A515D13921484E0300D4F1A2 /* map.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2487,10 +2552,15 @@
 				B2F0DE1B33DB64A3057C6B173E8F34CA /* Bundle+Extensions.swift in Sources */,
 				3874410EA90D99846F71B5ED799BFF76 /* DataRequest+PromiseKit.swift in Sources */,
 				322778C8CF91EE5AD9A71ADA3D3D0CBD /* DKCollection.swift in Sources */,
+				A515D12F21484E0300D4F1A2 /* race.swift in Sources */,
+				A515D13E21484E0300D4F1A2 /* Promise+CancellablePromise.swift in Sources */,
 				760371392864BE75A42FAECC3BE3314D /* DKComment.swift in Sources */,
+				A515D13221484E0300D4F1A2 /* CancellablePromiseError.swift in Sources */,
 				E739B0AD15FAAD3484E2AD441F740CC0 /* DKError.swift in Sources */,
 				56E0E6F9410BFA9F8654FBD447165B9F /* DKInvite.swift in Sources */,
 				A50EC2EE211E511000F3796E /* DKPlan.swift in Sources */,
+				A515D14121484E0300D4F1A2 /* UTIKit.swift in Sources */,
+				A515D13521484E0300D4F1A2 /* then.swift in Sources */,
 				1796BF93E5ACB08A9A47E772A0B57D0F /* DKItem.swift in Sources */,
 				46F16790371CCF3B75BDAC50F452C699 /* DKItemType.swift in Sources */,
 				7B1DC834AAEA9A754239BA70A1C07339 /* DKKeychain.swift in Sources */,
@@ -2504,12 +2574,14 @@
 				EA045F03099684C8E6EC16FD2D34B160 /* DKThumbnails.swift in Sources */,
 				DE297CC9FE3874F3CD34F922E8DD0BF6 /* DKUser.swift in Sources */,
 				F615247C1006B58EDAE5683A60F309CC /* DropmarkSDK-iOS-dummy.m in Sources */,
+				A515D13B21484E0300D4F1A2 /* CancellablePromise.swift in Sources */,
 				21249A38AB71D4D8B4CF4112F9D3073B /* DKResponseListAny.swift in Sources */,
 				DA64D57FCFEE0A0413B32445E1B3BEA9 /* String+Extensions.swift in Sources */,
 				A501074C211D38E9001018FA /* DKServerError.swift in Sources */,
+				A515D12C21484E0300D4F1A2 /* when.swift in Sources */,
 				A52C41F82116098500BA2054 /* DKResponseObjectSerializable.swift in Sources */,
 				B9EB75CCF5B2EB6585816E1B54DE94BF /* UTIKit+Extensions.swift in Sources */,
-				217523277A5C01BF24487E87503F0F1F /* UTIKit.swift in Sources */,
+				A515D13821484E0300D4F1A2 /* map.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

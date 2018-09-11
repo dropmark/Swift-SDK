@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target   = '10.11'
   s.tvos.deployment_target  = '11.0'
 
-  s.source_files = 'Source/**/*'
+  s.source_files = 'Source/**/*.swift'
   
   s.dependency 'Alamofire', '~> 4.7'
   s.dependency 'PromiseKit', '~> 6.0'
