@@ -42,7 +42,7 @@ struct PromiseGenerator {
      
      */
     
-    static func authenticate(email: String, password: String) -> Promise<DKUser> {
+    static func authenticate(email: String, password: String) -> CancellablePromise<DKUser> {
         
         let parameters: Parameters = [
             "email": email,
@@ -68,7 +68,7 @@ struct PromiseGenerator {
      
      */
     
-    static func listCollections(page: Int) -> Promise<[DKCollection]> {
+    static func listCollections(page: Int) -> CancellablePromise<[DKCollection]> {
         
         let parameters: Parameters = [
             "page": page
@@ -95,7 +95,7 @@ struct PromiseGenerator {
      
      */
     
-    static func listItems(collection: DKCollection, stack: DKItem?, page: Int) -> Promise<[DKItem]> {
+    static func listItems(collection: DKCollection, stack: DKItem?, page: Int) -> CancellablePromise<[DKItem]> {
         
         var parameters: Parameters = [
             "page": page

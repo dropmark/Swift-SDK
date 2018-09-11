@@ -27,26 +27,24 @@ import DropmarkSDK
 
 extension UIAlertController {
     
-    convenience init(error: Error, preferredStyle: UIAlertControllerStyle) {
-        
-        var title: String?
-        var message: String?
+    convenience init(title: String?, message: String?) {
+        self.init(title: title, message: message, preferredStyle: .alert)
+        self.addAction(UIAlertAction(title: "OK", style: .default))
+    }
+    
+    convenience init(error: Error) {
         
         if let serverError = error as? DKServerError {
             
-            title = "Server Error (\(serverError.statusCode))"
-            message = serverError.message
+            let title = "Server Error (\(serverError.statusCode))"
+            let message = serverError.message
+            self.init(title: title, message: message)
             
         } else {
             
-            title = "Error"
-            message = error.localizedDescription
+            self.init(title: "Error", message: error.localizedDescription)
             
         }
-        
-        self.init(title: title, message: message, preferredStyle: preferredStyle)
-        
-        addAction(UIAlertAction(title: "OK", style: .default))
         
     }
     
