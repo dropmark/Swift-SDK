@@ -26,8 +26,8 @@
 ## Requirements
 
 - iOS 10.0+ / macOS 10.10+ / tvOS 11.0+
-- Xcode 9.0+
-- Swift 4.0+
+- Xcode 10.0+
+- Swift 4.2+
 
 ## Example
 
@@ -44,7 +44,7 @@ Be sure to open the examples using the `DropmarkSDK.workspace` file.
 Install the library in your app through [**CocoaPods**](http://cocoapods.org). Add the following line to your *Podfile*, then run `pod install`.
 
 ```ruby
-pod 'DropmarkSDK', '~> 1.1'
+pod 'DropmarkSDK', '~> 1.2'
 ```
 
 Be sure to import the library when needed.
@@ -54,6 +54,9 @@ import DropmarkSDK
 ```
 
 ## Migration
+
+### Version 1.2.0
+Update to Xcode 10 and Swift 4.2 compatibility
 
 ### Version 1.1.0
 Extensions in `DataRequest+PromiseKit` make use of `CancellablePromiseKit` now. `DKPaginationGenerator` also reflects cancellability.
