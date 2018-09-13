@@ -30,7 +30,7 @@ class ContainerViewController: NSViewController {
         super.viewDidLoad()
         
         let loginViewController = NSStoryboard.loginViewController
-        insertChildViewController(loginViewController, at: 0)
+        insertChild(loginViewController, at: 0)
         view.addSubview(loginViewController.view)
         view.frame = loginViewController.view.frame
         

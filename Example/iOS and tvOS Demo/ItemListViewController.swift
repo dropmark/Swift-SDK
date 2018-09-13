@@ -23,7 +23,7 @@
 //
 
 import UIKit
-import AlamofireImage
+import Alamofire
 import PromiseKit
 import DropmarkSDK
 
@@ -144,7 +144,10 @@ extension ItemListViewController {
         // Image
         cell.imageView?.image = #imageLiteral(resourceName: "Thumbnail Placeholder")
         if let thumbnailURL = item.thumbnails?.cropped {
-            cell.imageView?.af_setImage(withURL: thumbnailURL)
+            Alamofire.request(thumbnailURL).responseData { response in
+                guard let data = response.data, let image = UIImage(data: data) else { return }
+                cell.imageView?.image = image
+            }
         }
         
         return cell

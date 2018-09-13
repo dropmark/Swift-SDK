@@ -25,7 +25,6 @@
 import Cocoa
 import AppKit
 import Alamofire
-import AlamofireImage
 import PromiseKit
 import DropmarkSDK
 

@@ -23,8 +23,8 @@
 //
 
 import UIKit
+import Alamofire
 import PromiseKit
-import AlamofireImage
 import DropmarkSDK
 
 class CollectionListViewController: UITableViewController {
@@ -129,7 +129,10 @@ extension CollectionListViewController {
         // Image
         cell.imageView?.image = #imageLiteral(resourceName: "Thumbnail Placeholder")
         if let thumbnailURL = collection.thumbnails?.cropped {
-            cell.imageView?.af_setImage(withURL: thumbnailURL)
+            Alamofire.request(thumbnailURL).responseData { response in
+                guard let data = response.data, let image = UIImage(data: data) else { return }
+                cell.imageView?.image = image
+            }
         }
         
         return cell

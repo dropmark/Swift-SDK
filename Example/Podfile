@@ -3,7 +3,6 @@ use_frameworks!
 target 'iOS Demo' do
   platform :ios, '10.0'
   pod 'DropmarkSDK', :path => '../'
-  pod 'AlamofireImage', '~> 3.3'
 
   target 'DropmarkSDK_Tests' do
     inherit! :search_paths
@@ -14,11 +13,9 @@ end
 target 'macOS Demo' do
     platform :osx, '10.11'
     pod 'DropmarkSDK', :path => '../'
-    pod 'AlamofireImage', '~> 3.3'
 end
 
 target 'tvOS Demo' do
     platform :tvos, '11.0'
     pod 'DropmarkSDK', :path => '../'
-    pod 'AlamofireImage', '~> 3.3'
 end

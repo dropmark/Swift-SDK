@@ -23,7 +23,7 @@
 //
 
 import UIKit
-import AlamofireImage
+import Alamofire
 import DropmarkSDK
 
 class ItemViewController: UIViewController {
@@ -52,7 +52,10 @@ class ItemViewController: UIViewController {
         
         if let thumbnailURL = item.thumbnails?.cropped { // Load thumbnail
             
-            imageView.af_setImage(withURL: thumbnailURL)
+            Alamofire.request(thumbnailURL).responseData { response in
+                guard let data = response.data, let image = UIImage(data: data) else { return }
+                self.imageView.image = image
+            }
             
         } else if item.type == .text, let text = item.content as? String { // Show text view for text items
             
@@ -78,12 +81,12 @@ class ItemViewController: UIViewController {
 #if os(iOS)
     
     @IBAction func didPressDropmarkLinkButton(_ sender: Any) {
-        UIApplication.shared.open(item.url, options: [:], completionHandler: nil)
+        UIApplication.shared.open(item.url)
     }
     
     @IBAction func didPressSourceLinkButton(_ sender: Any) {
         if let link = item.link {
-            UIApplication.shared.open(link, options: [:], completionHandler: nil)
+            UIApplication.shared.open(link)
         }
     }
 

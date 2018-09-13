@@ -1,30 +1,26 @@
 PODS:
   - Alamofire (4.7.3)
-  - AlamofireImage (3.3.1):
-    - Alamofire (~> 4.5)
-  - DropmarkSDK (0.3.0):
+  - DropmarkSDK (1.1.0):
     - Alamofire (~> 4.7)
     - KeychainSwift (~> 11.0)
-    - PromiseKit (~> 6.0)
+    - PromiseKit (~> 6.4)
   - KeychainSwift (11.0.0)
-  - PromiseKit (6.3.4):
-    - PromiseKit/CorePromise (= 6.3.4)
-    - PromiseKit/Foundation (= 6.3.4)
-    - PromiseKit/UIKit (= 6.3.4)
-  - PromiseKit/CorePromise (6.3.4)
-  - PromiseKit/Foundation (6.3.4):
+  - PromiseKit (6.4.0):
+    - PromiseKit/CorePromise (= 6.4.0)
+    - PromiseKit/Foundation (= 6.4.0)
+    - PromiseKit/UIKit (= 6.4.0)
+  - PromiseKit/CorePromise (6.4.0)
+  - PromiseKit/Foundation (6.4.0):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.3.4):
+  - PromiseKit/UIKit (6.4.0):
     - PromiseKit/CorePromise
 
 DEPENDENCIES:
-  - AlamofireImage (~> 3.3)
   - DropmarkSDK (from `../`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - AlamofireImage
     - KeychainSwift
     - PromiseKit
 
@@ -34,11 +30,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
-  DropmarkSDK: 13c6d19a9af2bfc698864ce1e33b3a49c543abbb
+  DropmarkSDK: a96e25559bdb458686b7585a47a0dcf05f2f939d
   KeychainSwift: bea6bd9f98af7b8d7ca4aa79fe105c00fab532db
-  PromiseKit: e1425568123ec844a944c93f2bcb29d511d39cf5
+  PromiseKit: ae3616f45d7bb9bf4ff1e91abc9b7a8c48a340e0
 
-PODFILE CHECKSUM: e42d3905f4322b83dc55440358754007ed876726
+PODFILE CHECKSUM: dd0c3d14ef5d779c50692aa0281efa9b05aa6fa6
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.1
