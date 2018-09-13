@@ -379,7 +379,7 @@
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = B34U9MBMKJ;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1000;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -473,9 +473,8 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-macOS Demo/Pods-macOS Demo-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-macOS Demo/Pods-macOS Demo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-macOS/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage-macOS/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/DropmarkSDK-macOS/DropmarkSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift-macOS/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit.root-CorePromise-Foundation/PromiseKit.framework",
@@ -483,14 +482,13 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropmarkSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-macOS Demo/Pods-macOS Demo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-macOS Demo/Pods-macOS Demo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		66CB99F7D9C96EF628BFE6A3 /* [CP] Check Pods Manifest.lock */ = {
@@ -535,9 +533,8 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-iOS Demo/Pods-iOS Demo-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-iOS Demo/Pods-iOS Demo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage-iOS/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/DropmarkSDK-iOS/DropmarkSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift-iOS/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit-iOS/PromiseKit.framework",
@@ -545,14 +542,13 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropmarkSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOS Demo/Pods-iOS Demo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-iOS Demo/Pods-iOS Demo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C04F881318BE604B676A5C71 /* [CP] Check Pods Manifest.lock */ = {
@@ -597,9 +593,8 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-tvOS Demo/Pods-tvOS Demo-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-tvOS Demo/Pods-tvOS Demo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-tvOS/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage-tvOS/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/DropmarkSDK-tvOS/DropmarkSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainSwift-tvOS/KeychainSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit-tvOS/PromiseKit.framework",
@@ -607,14 +602,13 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropmarkSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tvOS Demo/Pods-tvOS Demo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-tvOS Demo/Pods-tvOS Demo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -801,8 +795,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.dropmark-sdk.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -819,8 +812,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oak.dropmark-sdk.ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

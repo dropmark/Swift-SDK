@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.source_files = 'Source/**/*.swift'
   
   s.dependency 'Alamofire', '~> 4.7'
-  s.dependency 'PromiseKit', '~> 6.0'
+  s.dependency 'PromiseKit', '~> 6.4'
   s.dependency 'KeychainSwift', '~> 11.0'
   
 end
