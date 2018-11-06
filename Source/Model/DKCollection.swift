@@ -29,7 +29,7 @@ import Foundation
 public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
     /// Privacy of a collection (and it's items) are determined by the `Kind`
-    public enum Kind : String {
+    public enum Kind : String, CaseIterable {
         
         /// A collection (and it's items) is only accessible by the owner and team members
         case `private`
@@ -39,13 +39,6 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
         
         /// A collection (and it's items) is publicly available and indexed for search
         case global
-        
-        /// An array containing all `Kind` cases
-        static var allValues: [DKCollection.Kind] = [
-            .private,
-            .public,
-            .global
-        ]
         
     }
     
