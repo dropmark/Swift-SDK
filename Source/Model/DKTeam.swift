@@ -37,7 +37,7 @@ import Foundation
 public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
     /// A team's ability to act on the Dropmark platform
-    public enum Status: String {
+    public enum Status: String, CaseIterable {
         
         /// A team retains the ability to act within Dropmark
         case active
@@ -48,7 +48,7 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     }
     
     /// The current user (as identified by the token supplied in the GET request) status within the team
-    public enum UserKind: String {
+    public enum UserKind: String, CaseIterable {
         
         /// The current user manages this team
         case manager

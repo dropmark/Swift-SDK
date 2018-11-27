@@ -35,7 +35,7 @@ import Foundation
 public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
     
     /// When listing collaborators within a collection, a `Kind` represents a user's role within the collection
-    public enum Kind: String {
+    public enum Kind: String, CaseIterable {
         
         /// The owner of the collection can add, update, and delete collaborators, as well as alter the collection
         case owner
@@ -52,7 +52,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     }
     
     /// A user's ability to act on the Dropmark platform
-    public enum Status: String {
+    public enum Status: String, CaseIterable {
         
         /// A user retains the ability to act within Dropmark
         case active

@@ -25,7 +25,7 @@
 import Foundation
 
 /// Dropmark subscription tiers
-public enum DKPlan: String {
+public enum DKPlan: String, CaseIterable {
     
     /// Basic functionality
     case free

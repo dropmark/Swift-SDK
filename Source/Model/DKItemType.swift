@@ -25,7 +25,7 @@
 import Foundation
 
 /// High-level item representations handled by Dropmark. Item types are expressed as strings, and are thus comparable and printable. Item types, Universal Type Identifers, MIMEs, and file extensions are tightly integrated in the Dropmark SDK.
-public enum DKItemType: String {
+public enum DKItemType: String, CaseIterable {
     
     /// Represents a data file such as a JPEG, PNG, or HEIC image.
     case image
