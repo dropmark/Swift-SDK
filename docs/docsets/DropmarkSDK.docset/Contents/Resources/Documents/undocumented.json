@@ -1,55 +1,6 @@
 {
   "warnings": [
     {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/DKError.swift",
-      "line": 27,
-      "symbol": "DKError",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/DKError.swift",
-      "line": 29,
-      "symbol": "DKError.paginationDidReachEnd",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/DKError.swift",
-      "line": 30,
-      "symbol": "DKError.paginationIsFetchingPage",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/DKError.swift",
-      "line": 31,
-      "symbol": "DKError.unableToSerializeJSON",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/DKError.swift",
-      "line": 32,
-      "symbol": "DKError.unableToSerializeItem",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/DKError.swift",
-      "line": 33,
-      "symbol": "DKError.missingAPIToken",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/DKError.swift",
-      "line": 34,
-      "symbol": "DKError.missingUserCredentials",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
       "line": 119,
       "symbol": "DKCollection.sort",
@@ -233,35 +184,14 @@
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/Serializers/DKResponseListAny.swift",
-      "line": 39,
-      "symbol": "DKResponseListAny.list(from:withRepresentation:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/Serializers/DKResponseListAny.swift",
-      "line": 92,
+      "line": 102,
       "symbol": "DataRequest.responseListAny(queue:completionHandler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/Serializers/DKResponseListSerializable.swift",
-      "line": 31,
-      "symbol": "DKResponseListSerializable.list(from:withRepresentation:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/Serializers/DKResponseListSerializable.swift",
-      "line": 37,
-      "symbol": "DKResponseListSerializable.list(from:withRepresentation:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/Serializers/DKResponseListSerializable.swift",
-      "line": 58,
+      "line": 68,
       "symbol": "DataRequest.responseList(queue:completionHandler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"

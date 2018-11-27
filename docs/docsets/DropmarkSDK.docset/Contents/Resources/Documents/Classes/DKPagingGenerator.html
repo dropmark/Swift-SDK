@@ -126,19 +126,19 @@
             <a href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:11DropmarkSDK2eeoiSbAA12DKCollectionCSg_AEtF">==(_:_:)</a>
+                <a href="../Functions.html#/s:11DropmarkSDK2eeoiySbAA12DKCollectionCSg_AEtF">==(_:_:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:11DropmarkSDK2eeoiSbAA6DKItemCSg_AEtF">==(_:_:)</a>
+                <a href="../Functions.html#/s:11DropmarkSDK2eeoiySbAA6DKItemCSg_AEtF">==(_:_:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:11DropmarkSDK2eeoiSbAA6DKUserCSg_AEtF">==(_:_:)</a>
+                <a href="../Functions.html#/s:11DropmarkSDK2eeoiySbAA6DKUserCSg_AEtF">==(_:_:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:11DropmarkSDK2eeoiSbAA8DKInviteCSg_AEtF">==(_:_:)</a>
+                <a href="../Functions.html#/s:11DropmarkSDK2eeoiySbAA8DKInviteCSg_AEtF">==(_:_:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:11DropmarkSDK2eeoiSbAA9DKCommentCSg_AEtF">==(_:_:)</a>
+                <a href="../Functions.html#/s:11DropmarkSDK2eeoiySbAA9DKCommentCSg_AEtF">==(_:_:)</a>
               </li>
             </ul>
           </li>
@@ -188,9 +188,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK17DKPagingGeneratorC4nextSQy10PromiseKit0F0CySayxGGSicGvp"></a>
+                    <a name="/s:11DropmarkSDK17DKPagingGeneratorC4nextAA18CancellablePromiseCySayxGGSicSgvp"></a>
                     <a name="//apple_ref/swift/Property/next" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK17DKPagingGeneratorC4nextSQy10PromiseKit0F0CySayxGGSicGvp">next</a>
+                    <a class="token" href="#/s:11DropmarkSDK17DKPagingGeneratorC4nextAA18CancellablePromiseCySayxGGSicSgvp">next</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -198,14 +198,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Required - Set this closure to process a single page of results, and return your request packaged in a PromiseKit promise. A single page is requested and returned in the promise format, it is up to the developer to maintain requests for cancellation purposes. By calling <code><a href="../Classes/DKPagingGenerator.html#/s:11DropmarkSDK17DKPagingGeneratorC7getNext10PromiseKit0G0CySayxGGyF">getNext()</a></code>, this closure will be used.</p>
+                        <p>Required - Set this closure to process a single page of results, and return your request packaged in a CancellablePromiseKit promise. A single page is requested and returned in the promise format. By calling <code><a href="../Classes/DKPagingGenerator.html#/s:11DropmarkSDK17DKPagingGeneratorC7getNextAA18CancellablePromiseCySayxGGyF">getNext()</a></code>, this closure will be used.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">next</span><span class="p">:</span> <span class="p">((</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">T</span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span><span class="o">!</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">next</span><span class="p">:</span> <span class="p">((</span><span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">T</span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span><span class="o">!</span></code></pre>
 
                         </div>
                       </div>
@@ -306,14 +306,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Test if pagination is in the process of retrieving a page.</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isFetchingPage</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isFetchingPage</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -323,9 +323,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK17DKPagingGeneratorCACyxGSi9startPage_tcfc"></a>
+                    <a name="/s:11DropmarkSDK17DKPagingGeneratorC9startPageACyxGSi_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(startPage:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK17DKPagingGeneratorCACyxGSi9startPage_tcfc">init(startPage:)</a>
+                    <a class="token" href="#/s:11DropmarkSDK17DKPagingGeneratorC9startPageACyxGSi_tcfc">init(startPage:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -369,9 +369,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK17DKPagingGeneratorC7getNext10PromiseKit0G0CySayxGGyF"></a>
+                    <a name="/s:11DropmarkSDK17DKPagingGeneratorC7getNextAA18CancellablePromiseCySayxGGyF"></a>
                     <a name="//apple_ref/swift/Method/getNext()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK17DKPagingGeneratorC7getNext10PromiseKit0G0CySayxGGyF">getNext()</a>
+                    <a class="token" href="#/s:11DropmarkSDK17DKPagingGeneratorC7getNextAA18CancellablePromiseCySayxGGyF">getNext()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -379,14 +379,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Get the next page of results as outlined in the <code><a href="../Classes/DKPagingGenerator.html#/s:11DropmarkSDK17DKPagingGeneratorC4nextSQy10PromiseKit0F0CySayxGGSicGvp">next</a></code> closure.</p>
+                        <p>Get the next page of results as outlined in the <code><a href="../Classes/DKPagingGenerator.html#/s:11DropmarkSDK17DKPagingGeneratorC4nextAA18CancellablePromiseCySayxGGSicSgvp">next</a></code> closure.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getNext</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Promise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">T</span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getNext</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">T</span><span class="p">]</span><span class="o">&gt;</span></code></pre>
 
                         </div>
                       </div>
@@ -406,7 +406,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Reset pagination back to the original <code>startPage</code></p>
+                        <p>Cancel the current pagination request, if one exists, then reset pagination back to the original <code>startPage</code></p>
 
                       </div>
                       <div class="declaration">
@@ -434,9 +434,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK17DKPagingGeneratorC17shouldGetNextPageSb10Foundation9IndexPathV2at_So16UICollectionViewC3fortF"></a>
+                    <a name="/s:11DropmarkSDK17DKPagingGeneratorC17shouldGetNextPage2at3forSb10Foundation9IndexPathV_So16UICollectionViewCtF"></a>
                     <a name="//apple_ref/swift/Method/shouldGetNextPage(at:for:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK17DKPagingGeneratorC17shouldGetNextPageSb10Foundation9IndexPathV2at_So16UICollectionViewC3fortF">shouldGetNextPage(at:for:)</a>
+                    <a class="token" href="#/s:11DropmarkSDK17DKPagingGeneratorC17shouldGetNextPage2at3forSb10Foundation9IndexPathV_So16UICollectionViewCtF">shouldGetNextPage(at:for:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -444,7 +444,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Trigger utility to determine if a user scrolled to the end of a <code>UICollectionView</code>. We recommend using this function in your <code>UICollectionViewDelegate</code> <code>collectionView(_:willDisplay:forItemAt:)</code> method to determine if you should call your <code><a href="../Classes/DKPagingGenerator.html#/s:11DropmarkSDK17DKPagingGeneratorC7getNext10PromiseKit0G0CySayxGGyF">getNext()</a></code> promise.</p>
+                        <p>Trigger utility to determine if a user scrolled to the end of a <code>UICollectionView</code>. We recommend using this function in your <code>UICollectionViewDelegate</code> <code>collectionView(_:willDisplay:forItemAt:)</code> method to determine if you should call your <code><a href="../Classes/DKPagingGenerator.html#/s:11DropmarkSDK17DKPagingGeneratorC7getNextAA18CancellablePromiseCySayxGGyF">getNext()</a></code> promise.</p>
 
                       </div>
                       <div class="declaration">
@@ -492,9 +492,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK17DKPagingGeneratorC17shouldGetNextPageSb10Foundation9IndexPathV2at_So11UITableViewC3fortF"></a>
+                    <a name="/s:11DropmarkSDK17DKPagingGeneratorC17shouldGetNextPage2at3forSb10Foundation9IndexPathV_So11UITableViewCtF"></a>
                     <a name="//apple_ref/swift/Method/shouldGetNextPage(at:for:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK17DKPagingGeneratorC17shouldGetNextPageSb10Foundation9IndexPathV2at_So11UITableViewC3fortF">shouldGetNextPage(at:for:)</a>
+                    <a class="token" href="#/s:11DropmarkSDK17DKPagingGeneratorC17shouldGetNextPage2at3forSb10Foundation9IndexPathV_So11UITableViewCtF">shouldGetNextPage(at:for:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -502,7 +502,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Trigger utility to determine if a user scrolled to the end of a <code>UITableView</code>. We recommend using this function in your <code>UITableViewDelegate</code> <code>tableView(_:willDisplay:forRowAt:)</code> method to determine if you should call your <code><a href="../Classes/DKPagingGenerator.html#/s:11DropmarkSDK17DKPagingGeneratorC7getNext10PromiseKit0G0CySayxGGyF">getNext()</a></code> promise.</p>
+                        <p>Trigger utility to determine if a user scrolled to the end of a <code>UITableView</code>. We recommend using this function in your <code>UITableViewDelegate</code> <code>tableView(_:willDisplay:forRowAt:)</code> method to determine if you should call your <code><a href="../Classes/DKPagingGenerator.html#/s:11DropmarkSDK17DKPagingGeneratorC7getNextAA18CancellablePromiseCySayxGGyF">getNext()</a></code> promise.</p>
 
                       </div>
                       <div class="declaration">
@@ -560,7 +560,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Trigger utility to determine if a user scrolled to the end of a <code>NSCollectionView</code>. We recommend using this function in your <code>UICollectionViewDelegate</code> <code>collectionView(_:willDisplay:forRepresentedObjectAt:)</code> method to determine if you should call your <code><a href="../Classes/DKPagingGenerator.html#/s:11DropmarkSDK17DKPagingGeneratorC7getNext10PromiseKit0G0CySayxGGyF">getNext()</a></code> promise.</p>
+                        <p>Trigger utility to determine if a user scrolled to the end of a <code>NSCollectionView</code>. We recommend using this function in your <code>UICollectionViewDelegate</code> <code>collectionView(_:willDisplay:forRepresentedObjectAt:)</code> method to determine if you should call your <code><a href="../Classes/DKPagingGenerator.html#/s:11DropmarkSDK17DKPagingGeneratorC7getNextAA18CancellablePromiseCySayxGGyF">getNext()</a></code> promise.</p>
 
                       </div>
                     </section>
@@ -571,7 +571,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2018 <a class="link" href="http://oak.is/" target="_blank" rel="external">Oak LLC</a>. All rights reserved. (Last updated: 2018-09-06)</p>
+          <p>&copy; 2018 <a class="link" href="http://oak.is/" target="_blank" rel="external">Oak LLC</a>. All rights reserved. (Last updated: 2018-11-27)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
