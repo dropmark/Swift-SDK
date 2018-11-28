@@ -88,7 +88,7 @@ public enum DKItemType: String, CaseIterable {
     }
     
     /// String useful for displaying an item type on screen. Returns a capitalized version of the case value, except for `.other`, which returns "File"
-    var displayTitle: String {
+    public var displayTitle: String {
         
         switch self {
             
