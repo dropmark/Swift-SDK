@@ -142,13 +142,13 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
     public var updatedAt : Date?
     
     /// A count of all items contained within a collection
-    public var itemsTotalCount : NSNumber?
+    public var itemsTotalCount : NSNumber = 0
     
     
     public var customDomain : String?
     
     /// The total number of users and teams with access to this collection
-    public var usersTotalCount : NSNumber?
+    public var usersTotalCount : NSNumber = 0
     
     /// A link to the collection on Dropmark
     public var url : URL
@@ -163,7 +163,7 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
     public var permissions : DKPermissions?
     
     /// The creator of the collection
-    public var user: DKUser?
+    public var user: DKUser
     
     /// The collaborators associated with the collection
     public var users: [DKUser]?
@@ -194,7 +194,8 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
             let urlString = representation["url"] as? String,
             let url = URL(string: urlString),
             let shortURLString = representation["short_url"] as? String,
-            let shortURL = URL(string: shortURLString)
+            let shortURL = URL(string: shortURLString),
+            let userID = representation["user_id"] as? NSNumber
         else { return nil }
         
         self.id = id
@@ -237,9 +238,15 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
             self.updatedAt = updatedAtString.date
         }
         
-        itemsTotalCount = representation["items_total_count"] as? NSNumber
+        if let itemsTotalCount = representation["items_total_count"] as? NSNumber {
+            self.itemsTotalCount = itemsTotalCount
+        }
         customDomain = representation["custom_domain"] as? String
-        usersTotalCount = representation["users_total_count"] as? NSNumber
+        
+        if let usersTotalCount = representation["users_total_count"] as? NSNumber {
+            self.usersTotalCount = usersTotalCount
+        }
+        
         self.url = url
         self.shortURL = shortURL
         
@@ -251,52 +258,32 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
             permissions = DKPermissions(response: response, representation: permissionsRepresentation)
         }
         
-        if let userID = representation["user_id"] as? NSNumber {
-            
-            let user = DKUser(id: userID)
-            user.name = representation["user_name"] as? String
-            user.username = representation["username"] as? String
-            user.email = representation["user_email"] as? String
-            
-            if let avatarString = representation["user_avatar"] as? String, let avatar = URL(string: avatarString) {
-                user.avatar = avatar
-            }
-            
-            if let planString = representation["user_plan"] as? String, let plan = DKPlan(rawValue: planString) {
-                user.plan = plan
-            }
-            
-            user.planIsActive = representation["user_plan_active"] as? Bool
-            self.user = user
-            
+        // Begin User
+        
+        let user = DKUser(id: userID)
+        user.name = representation["user_name"] as? String
+        user.username = representation["username"] as? String
+        user.email = representation["user_email"] as? String
+        
+        if let avatarString = representation["user_avatar"] as? String, let avatar = URL(string: avatarString) {
+            user.avatar = avatar
         }
         
+        if let planString = representation["user_plan"] as? String, let plan = DKPlan(rawValue: planString) {
+            user.plan = plan
+        }
+        
+        user.planIsActive = representation["user_plan_active"] as? Bool
+        self.user = user
+        
+        // End User
+        
         if let userRepresentations = representation["users"] as? [Any] {
-            
-            var users = [DKUser]()
-            
-            for userRepresentation in userRepresentations {
-                if let user = DKUser(response: response, representation: userRepresentation) {
-                    users.append(user)
-                }
-            }
-            
-            self.users = users
-            
+            users = userRepresentations.compactMap{ DKUser(response: response, representation: $0) }
         }
         
         if let itemRepresentations = representation["items"] as? [Any] {
-            
-            var items = [DKItem]()
-            
-            for itemRepresentation in itemRepresentations {
-                if let item = DKItem(response: response, representation: itemRepresentation) {
-                    items.append(item)
-                }
-            }
-            
-            self.items = items
-            
+            items = itemRepresentations.compactMap{ DKItem(response: response, representation: $0) }
         }
         
     }
@@ -323,7 +310,8 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
             let name = aDecoder.decodeObject(forKey: "name") as? String,
             let createdAt = aDecoder.decodeObject(forKey: "created_at") as? Date,
             let url = aDecoder.decodeObject(forKey: "url") as? URL,
-            let shortURL = aDecoder.decodeObject(forKey: "short_url") as? URL
+            let shortURL = aDecoder.decodeObject(forKey: "short_url") as? URL,
+            let user = aDecoder.decodeObject(forKey: "user") as? DKUser
         else { return nil }
         
         self.id = id
@@ -355,14 +343,23 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
         self.createdAt = createdAt
         lastAccessedAt = aDecoder.decodeObject(forKey: "last_accessed_at") as? Date
         updatedAt = aDecoder.decodeObject(forKey: "updated_at") as? Date
-        itemsTotalCount = aDecoder.decodeObject(forKey: "items_total_count") as? NSNumber
+        
+        if let itemsTotalCount = aDecoder.decodeObject(forKey: "items_total_count") as? NSNumber {
+            self.itemsTotalCount = itemsTotalCount
+        }
+        
         customDomain = aDecoder.decodeObject(forKey: "custom_domain") as? String
-        usersTotalCount = aDecoder.decodeObject(forKey: "users_total_count") as? NSNumber
+        
+        if let usersTotalCount = aDecoder.decodeObject(forKey: "users_total_count") as? NSNumber {
+            self.usersTotalCount = usersTotalCount
+        }
+        
         self.url = url
         self.shortURL = shortURL
         thumbnails = aDecoder.decodeObject(forKey: "thumbnails") as? DKThumbnails
         permissions = aDecoder.decodeObject(forKey: "permissions") as? DKPermissions
-        user = aDecoder.decodeObject(forKey: "user") as? DKUser
+        
+        self.user = user
         
     }
     

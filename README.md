@@ -44,7 +44,7 @@ Be sure to open the examples using the `DropmarkSDK.workspace` file.
 Install the library in your app through [**CocoaPods**](http://cocoapods.org). Add the following line to your *Podfile*, then run `pod install`.
 
 ```ruby
-pod 'DropmarkSDK', '~> 1.3'
+pod 'DropmarkSDK', '~> 1.4'
 ```
 
 Be sure to import the library when needed.
@@ -54,6 +54,9 @@ import DropmarkSDK
 ```
 
 ## Migration
+
+### Version 1.4.0
+For `DKItem` make `reactionsTotalCount`, `tags`, `reactions`, `comments`, and `user` variables non-optional. For `DKCollection` make `itemsTotalCount`, `usersTotalCount`, and `user` variables non-optional.
 
 ### Version 1.3.0
 Further support for Swift 4.2, particularly with `KeychainSwift`
