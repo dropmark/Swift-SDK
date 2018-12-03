@@ -126,7 +126,8 @@ extension ItemListViewController {
             
             // Subtitle
             let itemCount = item.itemsTotalCount ?? 0
-            cell.detailTextLabel?.text = "Stack - \(itemCount) items"
+            let s = itemCount == 1 ? "" : "s"
+            cell.detailTextLabel?.text = "Stack - \(itemCount) item\(s)"
             
             // Accessory
             cell.accessoryType = .disclosureIndicator

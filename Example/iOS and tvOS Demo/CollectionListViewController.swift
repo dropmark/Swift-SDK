@@ -123,8 +123,9 @@ extension CollectionListViewController {
         cell.textLabel?.text = collection.name
         
         // Subtitle
-        let itemCount = collection.itemsTotalCount ?? 0
-        cell.detailTextLabel?.text = "\(itemCount) items"
+        let itemCount = collection.itemsTotalCount
+        let s = itemCount == 1 ? "" : "s"
+        cell.detailTextLabel?.text = "\(itemCount) item\(s)"
         
         // Image
         cell.imageView?.image = #imageLiteral(resourceName: "Thumbnail Placeholder")
