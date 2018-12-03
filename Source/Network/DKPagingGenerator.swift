@@ -47,7 +47,6 @@ public class DKPagingGenerator<T> {
     public var didReachEnd: Bool = false
     
     /// Test if pagination is in the process of retrieving a page.
-//    public var isFetchingPage: Bool = false
     public var isFetchingPage: Bool {
         return currentChain?.isPending ?? false
     }
