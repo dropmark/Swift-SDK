@@ -182,17 +182,7 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         }
         
         if let userRepresentations = representation["users"] as? [Any] {
-            
-            var users = [DKUser]()
-            
-            for userRepresentation in userRepresentations {
-                if let user = DKUser(response: response, representation: userRepresentation) {
-                    users.append(user)
-                }
-            }
-            
-            self.users = users
-            
+            users = userRepresentations.compactMap{ DKUser(response: response, representation: $0) }
         }
         
         if let avatarString = representation["avatar"] as? String {

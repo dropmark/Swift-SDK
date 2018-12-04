@@ -30,6 +30,11 @@ public enum DKRouter: URLRequestConvertible {
     /// The domain and path for all endpoints on the Dropmark API. Defaults to "https://api.dropmark.com/v1", and may be modified for different API versions.
     public static var baseURLString = "https://api.dropmark.com/v1"
     
+    /// The user used to authenticate all requests during lifetime of the router. Note: This object requires a `token` value to work correctly, which only comes from the `/auth` API endpoint.
+    public static var user: DKUser?
+    
+    public static var userToken: String?
+    
     /// The token used to authenticate all requests with the Dropmark API. Set this token as soon as the app starts to ensure generated requests are properly authenticated. The variable can be set manually, or optionally set by a `keys.plist` file belonging to the target.
     public static var apiToken: String? {
         get {
@@ -46,9 +51,6 @@ public enum DKRouter: URLRequestConvertible {
         }
     }
     private static var _apiToken: String?
-    
-    /// The user used to authenticate all requests during lifetime of the router. Note: This object requires a `token` value to work correctly, which only comes from the `/auth` API endpoint.
-    public static var user: DKUser?
     
     /// The number of objects to list per page request. Defaults to 24
     public static var pageSize = 24
