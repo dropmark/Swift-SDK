@@ -48,22 +48,7 @@ public enum DKRouter: URLRequestConvertible {
     private static var _apiToken: String?
     
     /// The user used to authenticate all requests during lifetime of the router. Note: This object requires a `token` value to work correctly, which only comes from the `/auth` API endpoint.
-    public static var user: DKUser {
-        get {
-            guard let user = _user else {
-                fatalError("Error: User object not found. Be sure to assign a user to this variable before making requests.")
-            }
-            return user
-        }
-        set {
-            guard newValue.token != nil else {
-                fatalError("Error: Attempt to store a user object without a token value. Network requests cannot be made with this user object. Reference the DKUser token variable to learn more.")
-            }
-            _user = newValue
-        }
-    }
-    
-    private static var _user: DKUser?
+    public static var user: DKUser?
     
     /// The number of objects to list per page request. Defaults to 24
     public static var pageSize = 24
