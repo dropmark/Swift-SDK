@@ -29,8 +29,9 @@ import KeychainSwift
 public struct DKKeychain {
     
     private static let userKey = "com.dropmark.user"
+    private static let userTokenKey = "com.dropmark.userToken"
     
-    /// The user stored in the device keychain. Use this variable to securely access user crendetials and data between app sessions.
+    /// The user stored in the device keychain. Use this variable to securely retrieve the representation of the current user.
     public static var user: DKUser? {
         
         get {
@@ -52,6 +53,42 @@ public struct DKKeychain {
             }
         }
         
+    }
+    
+    /// The user token stored in the device keychain. Use this variable to securely retrieve the token for network requests on behalf of the user.
+    public static var userToken: String? {
+        
+        get {
+            if
+                let userTokenData = KeychainSwift().getData(userTokenKey),
+                let userToken = NSKeyedUnarchiver.unarchiveObject(with: userTokenData) as? String
+            {
+                return userToken
+            }
+            return nil
+        }
+        
+        set {
+            if let newValue = newValue {
+                let userTokenData = NSKeyedArchiver.archivedData(withRootObject: newValue)
+                KeychainSwift().set(userTokenData, forKey: userTokenKey, withAccess: .accessibleAfterFirstUnlock)
+            } else {
+                KeychainSwift().delete(userTokenKey)
+            }
+        }
+        
+    }
+    
+    /// Convenience function to store the user and user's token
+    public static func store(user: DKUser, userToken: String) {
+        DKKeychain.user = user
+        DKKeychain.userToken = userToken
+    }
+    
+    /// Convenience function to clear all stored variables in the keychain
+    public static func clear() {
+        DKKeychain.user = nil
+        DKKeychain.userToken = nil
     }
     
 }

@@ -134,8 +134,8 @@ class MainViewController: NSViewController {
     }
     
     @IBAction func didClickLogoutButton(_ sender: Any) {
-        DKKeychain.user = nil
-        DKRouter.user = nil
+        DKKeychain.clear()
+        DKSession.clear()
         performSegue(withIdentifier: NSStoryboardSegue.Identifier.showLoginViewController, sender: nil)
     }
     

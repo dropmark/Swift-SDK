@@ -42,7 +42,10 @@ public enum DKError: Error {
     /// An API `token` is missing from the `DKRouter.user` property
     case missingAPIToken
     
-    /// A user object is not present at `DKRouter.user`
-    case missingUserCredentials
+    /// A user object is needed but not present
+    case missingUser
+    
+    /// A user token is needed but not present
+    case missingUserToken
     
 }

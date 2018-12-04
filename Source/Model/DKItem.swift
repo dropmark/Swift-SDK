@@ -215,17 +215,7 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         }
         
         if let itemRepresentations = representation["items"] as? [Any] {
-            
-            var items = [DKItem]()
-            
-            for itemRepresentation in itemRepresentations {
-                if let item = DKItem(response: response, representation: itemRepresentation) {
-                    items.append(item)
-                }
-            }
-            
-            self.items = items
-            
+            items = itemRepresentations.compactMap{ DKItem(response: response, representation: $0) }
         }
         
         if let tagRepresentations = representation["tags"] as? [Any] {
