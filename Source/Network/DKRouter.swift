@@ -25,32 +25,11 @@
 import Foundation
 import Alamofire
 
+/// Route network traffic across all supported API endpoints for Dropmark
 public enum DKRouter: URLRequestConvertible {
     
     /// The domain and path for all endpoints on the Dropmark API. Defaults to "https://api.dropmark.com/v1", and may be modified for different API versions.
     public static var baseURLString = "https://api.dropmark.com/v1"
-    
-    /// The user used to authenticate all requests during lifetime of the router. Note: This object requires a `token` value to work correctly, which only comes from the `/auth` API endpoint.
-    public static var user: DKUser?
-    
-    public static var userToken: String?
-    
-    /// The token used to authenticate all requests with the Dropmark API. Set this token as soon as the app starts to ensure generated requests are properly authenticated. The variable can be set manually, or optionally set by a `keys.plist` file belonging to the target.
-    public static var apiToken: String? {
-        get {
-            if let manualToken = _apiToken {
-                return manualToken
-            } else if let bundleToken = Bundle.keyForID("DropmarkAPIToken") {
-                return bundleToken
-            }
-            print("Dropmark API Token was not found.")
-            return nil
-        }
-        set {
-            _apiToken = newValue
-        }
-    }
-    private static var _apiToken: String?
     
     /// The number of objects to list per page request. Defaults to 24
     public static var pageSize = 24
@@ -725,7 +704,7 @@ public enum DKRouter: URLRequestConvertible {
     
     public static func authenticateAPIRequest(_ urlRequest: inout URLRequest) throws {
         
-        guard let apiToken = DKRouter.apiToken else {
+        guard let apiToken = DKSession.apiToken else {
             throw DKError.missingAPIToken
         }
         
@@ -746,14 +725,14 @@ public enum DKRouter: URLRequestConvertible {
     
     public static func authorizeUserRequest(_ urlRequest: inout URLRequest) throws {
         
-        guard let user = DKRouter.user else {
-            print("DKRouter user object was not set. Be sure to assign a user to access credentialed API endpoints.")
-            throw DKError.missingUserCredentials
+        guard let user = DKSession.user else {
+            print("DKSession user object was not set. Be sure to assign a user to access credentialed API endpoints.")
+            throw DKError.missingUser
         }
         
-        guard let userToken = user.token else {
-            print("DKRouter user object did not contain a token. Remember - only the user object returned from the /auth endpoint contains a token.")
-            throw DKError.missingUserCredentials
+        guard let userToken = DKSession.userToken else {
+            print("DKSession user token was not set. Remember - only the user object returned from the /auth endpoint contains a token.")
+            throw DKError.missingUserToken
         }
         
         let plainString = "\(user.id):\(userToken)" as NSString

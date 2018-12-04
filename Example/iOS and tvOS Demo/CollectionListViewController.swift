@@ -65,8 +65,8 @@ class CollectionListViewController: UITableViewController {
         
         // Rudimentary logout function. Be sure to clean up all
         // identifying information from memory and disk if necessary.
-        DKKeychain.user = nil
-        DKRouter.user = nil
+        DKKeychain.clear()
+        DKSession.clear()
         
         navigationController?.popToRootViewController(animated: true)
         

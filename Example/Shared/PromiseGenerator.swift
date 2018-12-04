@@ -32,26 +32,50 @@ struct PromiseGenerator {
     
     /**
      
-     Authenticate and retrieve a user object.
+     Authenticate a user's credentials to recieve a user object and associated token.
  
      - Parameters:
         - email: The email associated with the user's account
         - password: The password associated with the user's account
      
-     - Returns: A promise resulting in a Dropmark user object if successful.
+     - Returns: A promise resulting in a tuple if successful. The tuple will contain the Dropmark user object and user token.
      
      */
     
-    static func authenticate(email: String, password: String) -> CancellablePromise<DKUser> {
+    static func authenticate(email: String, password: String) -> CancellablePromise<(DKUser, String)> {
         
-        let parameters: Parameters = [
-            "email": email,
-            "password": password
-        ]
-        
-        let authRequest = request(DKRouter.authenticate(parameters: parameters)).validate()
-        
-        return authRequest.promiseObject()
+        return CancellablePromise<(DKUser, String)> ( resolver: { resolver in
+            
+            let parameters: Parameters = [
+                "email": email,
+                "password": password
+            ]
+            
+            let authRequest = request(DKRouter.authenticate(parameters: parameters)).validate()
+            
+            authRequest.responseObject { (response: DataResponse<DKUser>) in
+                
+                switch response.result {
+                case .success(let user):
+                    
+                    guard let token = user.token else {
+                        resolver.reject(DKError.missingUserToken)
+                        return
+                    }
+                    
+                    resolver.fulfill((user, token))
+                    
+                case .failure(let error):
+                    resolver.reject(error)
+                }
+                
+            }
+
+            return {
+                authRequest.cancel()
+            }
+            
+        })
         
     }
     
