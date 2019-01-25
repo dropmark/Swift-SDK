@@ -2,21 +2,21 @@
   "warnings": [
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 119,
+      "line": 112,
       "symbol": "DKCollection.sort",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 134,
+      "line": 127,
       "symbol": "DKCollection.labels",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
-      "line": 155,
+      "line": 148,
       "symbol": "DKCollection.customDomain",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
@@ -176,6 +176,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPagingGenerator.swift",
+      "line": 51,
+      "symbol": "DKPagingGenerator.isFetchingPage",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
       "line": 28,
       "symbol": "DKRouter",
@@ -204,7 +211,7 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Vendor/UTIKit.swift",
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Vendor/UTIKit/UTIKit.swift",
       "line": null,
       "symbol": "UTI",
       "symbol_kind": "source.lang.swift.decl.extension",
