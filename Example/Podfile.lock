@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.8.0)
-  - DropmarkSDK (1.5.3):
+  - DropmarkSDK (1.5.4):
     - Alamofire (~> 4.8)
     - KeychainSwift (~> 13.0)
     - PromiseKit (~> 6.5)
@@ -30,7 +30,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
-  DropmarkSDK: da9592760c9dbe151869febadedac468020efb7d
+  DropmarkSDK: 1ba89974c6d67f88cb9a1e80bfbf6a8e58a6d333
   KeychainSwift: 23d6c16cbc33f20fafa30c3d783241b4b87d998c
   PromiseKit: c609029bdd801f792551a504c695c7d3098b42cd
 
