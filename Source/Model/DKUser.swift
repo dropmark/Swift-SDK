@@ -174,13 +174,16 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         planIsActive = representation["plan_active"] as? Bool
         planQuantity = representation["plan_quantity"] as? NSNumber
         
-        if
-            let usage = representation["usage"] as? [String: Any],
-            let storageQuota = usage["quota"] as? NSNumber,
-            let storageUsed = usage["used"] as? NSNumber
-        {
-            self.storageQuota = storageQuota
-            self.storageUsed = storageUsed
+        if let usage = representation["usage"] as? [String: Any] {
+            
+            if let storageQuota = usage["quota"] as? NSNumber {
+                self.storageQuota = storageQuota
+            }
+            
+            if let storageUsed = usage["used"] as? NSNumber {
+                self.storageUsed = storageUsed
+            }
+            
         }
         
         billingEmail = representation["billing_email"] as? String
@@ -248,6 +251,15 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         
         planIsActive = aDecoder.decodeObject(forKey: "plan_active") as? Bool
         planQuantity = aDecoder.decodeObject(forKey: "plan_quantity") as? NSNumber
+        
+        if let storageQuota = aDecoder.decodeObject(forKey: "storageQuota") as? NSNumber {
+            self.storageQuota = storageQuota
+        }
+        
+        if let storageUsed = aDecoder.decodeObject(forKey: "storageUsed") as? NSNumber {
+            self.storageUsed = storageUsed
+        }
+        
         billingEmail = aDecoder.decodeObject(forKey: "billing_email") as? String
         
         if let statusString = aDecoder.decodeObject(forKey: "status") as? String, let status = Status(rawValue: statusString) {
@@ -284,6 +296,8 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         aCoder.encode(plan.rawValue, forKey: "plan")
         aCoder.encode(planIsActive, forKey: "plan_active")
         aCoder.encode(planQuantity, forKey: "plan_quantity")
+        aCoder.encode(storageQuota, forKey: "storageQuota")
+        aCoder.encode(storageUsage, forKey: "storageUsage")
         aCoder.encode(billingEmail, forKey: "billing_email")
         aCoder.encode(status.rawValue, forKey: "status")
         aCoder.encode(createdAt, forKey: "created_at")
