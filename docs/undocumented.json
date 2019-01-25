@@ -170,23 +170,9 @@
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 290,
+      "line": 296,
       "symbol": "DKUser.description",
       "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPagingGenerator.swift",
-      "line": 51,
-      "symbol": "DKPagingGenerator.isFetchingPage",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKRouter.swift",
-      "line": 28,
-      "symbol": "DKRouter",
-      "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {

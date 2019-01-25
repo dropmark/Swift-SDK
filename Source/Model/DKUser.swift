@@ -98,6 +98,12 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     
     public var planQuantity : NSNumber?
     
+    /// The total amount of storage available for the current user (in bytes)
+    public var storageQuota: NSNumber = 0
+    
+    /// The amount of storage used by the current user (in bytes)
+    public var storageUsed: NSNumber = 0
+    
     /// The primary email address associate with the teams billing account
     public var billingEmail : String?
     
@@ -167,6 +173,16 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         
         planIsActive = representation["plan_active"] as? Bool
         planQuantity = representation["plan_quantity"] as? NSNumber
+        
+        if
+            let usage = representation["usage"] as? [String: Any],
+            let storageQuota = usage["quota"] as? NSNumber,
+            let storageUsed = usage["used"] as? NSNumber
+        {
+            self.storageQuota = storageQuota
+            self.storageUsed = storageUsed
+        }
+        
         billingEmail = representation["billing_email"] as? String
         
         if let kindString = representation["kind"] as? String, let kind = Kind(rawValue: kindString) {
