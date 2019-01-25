@@ -297,7 +297,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         aCoder.encode(planIsActive, forKey: "plan_active")
         aCoder.encode(planQuantity, forKey: "plan_quantity")
         aCoder.encode(storageQuota, forKey: "storageQuota")
-        aCoder.encode(storageUsage, forKey: "storageUsage")
+        aCoder.encode(storageUsed, forKey: "storageUsed")
         aCoder.encode(billingEmail, forKey: "billing_email")
         aCoder.encode(status.rawValue, forKey: "status")
         aCoder.encode(createdAt, forKey: "created_at")
