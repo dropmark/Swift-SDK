@@ -35,6 +35,16 @@ public extension UTI {
         
         switch self {
             
+        case UTI(kUTTypeText as String):
+            return .text
+            
+        case UTI(kUTTypeURL as String):
+            if self == UTI(kUTTypeFileURL as String) { // If the URL is a file URL
+                return .other
+            } else { // Else if the URL is a domain location
+                return .link
+            }
+            
         case UTI(kUTTypeImage as String):
             return .image
             
