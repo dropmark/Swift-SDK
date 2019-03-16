@@ -28,14 +28,6 @@ import Alamofire
 /// Similar to `DKResponseListSerializable`, the `DKResponseListAny` is a serializer that generates an array of objects of any type. This extension is useful when handling results from Dropmark's `/activity` endpoint, which returns a variety of object types.
 public struct DKResponseListAny {
     
-    enum ObjectType: String {
-        case collection
-        case item
-        case reaction
-        case comment
-        case invite
-    }
-    
     /**
      
      Serializes a list of new objects (of DKCollection, DKItem, DKReaction, DKComment, or DKInvite types) from the provided network response and key-value representation. The representation is validated for the required list.
@@ -54,37 +46,25 @@ public struct DKResponseListAny {
             
         for objectRepresentation in listRepresentation {
             
-            guard
-                let objectTypeRawValue = objectRepresentation["type"] as? String,
-                let objectType = ObjectType(rawValue: objectTypeRawValue)
-            else { continue }
-            
-            switch objectType {
+            if let item = DKItem(response: response, representation: objectRepresentation) {
                 
-            case .collection:
-                if let collection = DKCollection(response: response, representation: objectRepresentation) {
-                    list.append(collection)
-                }
+                list.append(item)
                 
-            case .item:
-                if let item = DKItem(response: response, representation: objectRepresentation) {
-                    list.append(item)
-                }
+            } else if let collection = DKCollection(response: response, representation: objectRepresentation) {
                 
-            case .reaction:
-                if let reaction = DKReaction(response: response, representation: objectRepresentation) {
-                    list.append(reaction)
-                }
+                list.append(collection)
                 
-            case .comment:
-                if let comment = DKComment(response: response, representation: objectRepresentation) {
-                    list.append(comment)
-                }
+            }  else if let comment = DKComment(response: response, representation: objectRepresentation) {
                 
-            case .invite:
-                if let invite = DKInvite(response: response, representation: objectRepresentation) {
-                    list.append(invite)
-                }
+                list.append(comment)
+                
+            } else if let reaction = DKReaction(response: response, representation: objectRepresentation) {
+                
+                list.append(reaction)
+                
+            } else if let invite = DKInvite(response: response, representation: objectRepresentation) {
+                
+                list.append(invite)
                 
             }
             
