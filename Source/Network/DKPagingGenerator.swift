@@ -182,7 +182,7 @@ public extension DKPagingGenerator {
     
     /**
      
-     Private utility to determing if an index in a list view should trigger the next page.
+     Private utility to determine if an index in a list view should trigger the next page.
      
      - Parameters:
          - index: The index at which to check if pagination should trigger
