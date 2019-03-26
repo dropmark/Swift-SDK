@@ -79,7 +79,7 @@ public struct DKResponseListAny {
 public extension DataRequest {
     
     @discardableResult
-    public func responseListAny(
+    func responseListAny(
         queue: DispatchQueue? = nil,
         completionHandler: @escaping (DataResponse<[Any]>) -> Void) -> Self
     {

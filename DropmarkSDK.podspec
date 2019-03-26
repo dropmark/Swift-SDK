@@ -4,7 +4,7 @@
 Pod::Spec.new do |s|
     
   s.name             = 'DropmarkSDK'
-  s.version          = '1.5.6'
+  s.version          = '2.0.0'
   s.summary          = 'Network and model controllers for Dropmark, written in Swift.'
 
   s.homepage         = 'https://github.com/dropmark/Swift-SDK'
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/dropmark/Swift-SDK.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/oakstudios'
   
-  s.swift_version           = '4.2'
+  s.swift_version           = '5.0'
   
   s.ios.deployment_target   = '10.0'
   s.osx.deployment_target   = '10.11'

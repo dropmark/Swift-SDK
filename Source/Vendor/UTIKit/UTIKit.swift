@@ -255,78 +255,10 @@ public func ~=(pattern: UTI, value: UTI) -> Bool {
     return UTTypeConformsTo(value.utiString as CFString, pattern.utiString as CFString)
 }
 
-// MARK: - Deprecated
-
-public extension UTI {
-    
-    @available(*, unavailable, renamed: "utiString")
-    public var UTIString: String {
-        return utiString
-    }
-    
-    @available(*, unavailable, renamed: "init(filenameExtension:conformingTo:)")
-    public init?(filenameExtension: String, conformingToUTI: UTI? = nil) {
-        self.init(filenameExtension: filenameExtension, conformingTo: conformingToUTI)
-    }
-    
-    @available(*, unavailable, renamed: "init(mimeType:conformingTo:)")
-    public init?(MIMEType: String, conformingToUTI: UTI? = nil) {
-        self.init(mimeType: MIMEType, conformingTo: conformingToUTI)
-    }
-    
-    @available(*, unavailable, renamed: "UTIs(fromFilenameExtension:conformingTo:)")
-    public static func UTIsFromFilenameExtension(_ filenameExtension: String, conformingToUTI: UTI? = nil) -> [UTI] {
-        return UTIs(fromFilenameExtension: filenameExtension, conformingTo: conformingToUTI)
-    }
-    
-    @available(*, unavailable, renamed: "UTIs(fromMimeType:conformingTo:)")
-    public static func UTIsFromMIMEType(_ MIMEType: String, conformingToUTI: UTI? = nil) -> [UTI] {
-        return UTIs(fromMimeType: MIMEType, conformingTo: conformingToUTI)
-    }
-    
-    #if os(macOS)
-    @available(*, unavailable, renamed: "init(pasteBoardType:conformingTo:)")
-    public init?(pasteBoardType: String, conformingToUTI: UTI? = nil) {
-        self.init(pasteBoardType: pasteBoardType, conformingTo: conformingToUTI)
-    }
-    
-    @available(*, unavailable, renamed: "init(OSType:conformingTo:)")
-    public init?(OSType: String, conformingToUTI: UTI? = nil) {
-        self.init(OSType: OSType, conformingTo: conformingToUTI)
-    }
-    
-    @available(*, unavailable, renamed: "UTIs(fromPasteBoardType:conformingTo:)")
-    public static func UTIsFromPasteBoardType(pasteBoardType: String, conformingToUTI: UTI? = nil) -> [UTI] {
-        return UTIs(fromPasteBoardType: pasteBoardType, conformingTo: conformingToUTI)
-    }
-    
-    @available(*, unavailable, renamed: "UTIs(fromOSType:conformingTo:)")
-    public static func UTIsFromOSType(OSType: String, conformingToUTI: UTI? = nil) -> [UTI] {
-        return UTIs(fromOTType: OSType, conformingTo: conformingToUTI)
-    }
-    #endif
-    
-    @available(*, unavailable, renamed: "mimeType")
-    public var MIMEType: String? {
-        return mimeType
-    }
-    
-    @available(*, unavailable, renamed: "mimeTypes")
-    public var MIMETypes: [String] {
-        return mimeTypes
-    }
-    
-    @available(*, unavailable, renamed: "iconFileUrl")
-    public var iconFileURL: URL? {
-        return iconFileUrl
-    }
-    
-}
-
 public extension UTI.Declaration {
     
     @available(*, unavailable, renamed: "referenceUrl")
-    public var referenceURL: URL? {
+    var referenceURL: URL? {
         return referenceUrl
     }
     

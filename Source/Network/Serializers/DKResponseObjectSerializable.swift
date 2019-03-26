@@ -45,7 +45,7 @@ public protocol DKResponseObjectSerializable {
 public extension DataRequest {
     
     @discardableResult
-    public func responseObject<T: DKResponseObjectSerializable>(
+    func responseObject<T: DKResponseObjectSerializable>(
         queue: DispatchQueue? = nil,
         completionHandler: @escaping (DataResponse<T>) -> Void)
         -> Self

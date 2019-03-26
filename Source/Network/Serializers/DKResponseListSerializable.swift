@@ -44,7 +44,7 @@ public protocol DKResponseListSerializable {
 
 public extension DKResponseListSerializable where Self: DKResponseObjectSerializable {
     
-    public static func list(from response: HTTPURLResponse, withRepresentation representation: Any) -> [Self] {
+    static func list(from response: HTTPURLResponse, withRepresentation representation: Any) -> [Self] {
         
         var list: [Self] = []
         
@@ -65,7 +65,7 @@ public extension DKResponseListSerializable where Self: DKResponseObjectSerializ
 public extension DataRequest {
     
     @discardableResult
-    public func responseList<T: DKResponseListSerializable>(
+    func responseList<T: DKResponseListSerializable>(
         queue: DispatchQueue? = nil,
         completionHandler: @escaping (DataResponse<[T]>) -> Void) -> Self
     {

@@ -121,7 +121,7 @@ public extension DKPagingGenerator {
          - collectionView: The UICollectionView to check for pagination
      
      */
-    public func shouldGetNextPage(at indexPath: IndexPath, for collectionView: UICollectionView) -> Bool {
+    func shouldGetNextPage(at indexPath: IndexPath, for collectionView: UICollectionView) -> Bool {
         if let cellCount = collectionView.dataSource?.collectionView(collectionView, numberOfItemsInSection: indexPath.section) {
             return shouldGetNextPage(at: indexPath.item, for: cellCount)
         }
@@ -137,7 +137,7 @@ public extension DKPagingGenerator {
         - tableView: The UITableView to check for pagination
      
      */
-    public func shouldGetNextPage(at indexPath: IndexPath, for tableView: UITableView) -> Bool {
+    func shouldGetNextPage(at indexPath: IndexPath, for tableView: UITableView) -> Bool {
         if let cellCount = tableView.dataSource?.tableView(tableView, numberOfRowsInSection: indexPath.section) {
             return shouldGetNextPage(at: indexPath.row, for: cellCount)
         }
@@ -155,7 +155,7 @@ public extension DKPagingGenerator {
         - collectionView: The UITableView to check for pagination
      
      */
-    public func shouldGetNextPage(at indexPath: IndexPath, for collectionView: NSCollectionView) -> Bool {
+    func shouldGetNextPage(at indexPath: IndexPath, for collectionView: NSCollectionView) -> Bool {
         if let cellCount = collectionView.dataSource?.collectionView(collectionView, numberOfItemsInSection: indexPath.section) {
             return shouldGetNextPage(at: indexPath.item, for: cellCount)
         }
@@ -171,7 +171,7 @@ public extension DKPagingGenerator {
         - tableView: The NSTableView to check for pagination
      
      */
-    public func shouldGetNextPage(at row: Int, for tableView: NSTableView) -> Bool {
+    func shouldGetNextPage(at row: Int, for tableView: NSTableView) -> Bool {
         if let cellCount = tableView.dataSource?.numberOfRows?(in: tableView) {
             return shouldGetNextPage(at: row, for: cellCount)
         }
@@ -182,7 +182,7 @@ public extension DKPagingGenerator {
     
     /**
      
-     Private utility to determing if an index in a list view should trigger the next page.
+     Private utility to determine if an index in a list view should trigger the next page.
      
      - Parameters:
          - index: The index at which to check if pagination should trigger
