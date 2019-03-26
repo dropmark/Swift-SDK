@@ -29,7 +29,7 @@ import PromiseKit
 public extension DataRequest {
     
     /// Generate a generic `CancellablePromise` from a `DataRequest`
-    public func promise() -> CancellablePromise<Void> {
+    func promise() -> CancellablePromise<Void> {
         return CancellablePromise<Void>( resolver: { resolver in
             self.response { response in
                 if let error = response.error {
@@ -45,7 +45,7 @@ public extension DataRequest {
     }
     
     /// Generate a `CancellablePromise` from a `DataRequest`, returning an object of the inferred type.
-    public func promiseObject<T: DKResponseObjectSerializable>() -> CancellablePromise<T> {
+    func promiseObject<T: DKResponseObjectSerializable>() -> CancellablePromise<T> {
         return CancellablePromise<T> ( resolver: { resolver in
             self.responseObject { (response: DataResponse<T>) in
                 switch response.result {
@@ -62,7 +62,7 @@ public extension DataRequest {
     }
     
     /// Generate a `CancellablePromise` from a `DataRequest`, returning a list of objects of the inferred type.
-    public func promiseList<T: DKResponseListSerializable>() -> CancellablePromise<[T]> {
+    func promiseList<T: DKResponseListSerializable>() -> CancellablePromise<[T]> {
         return CancellablePromise<[T]> ( resolver: { resolver in
             self.responseList { (response: DataResponse<[T]>) in
                 switch response.result {
@@ -79,7 +79,7 @@ public extension DataRequest {
     }
     
     /// Generate a `CancellablePromise` from a `DataRequest`, returning a list of objects of any type.
-    public func promiseListAny() -> CancellablePromise<[Any]> {
+    func promiseListAny() -> CancellablePromise<[Any]> {
         return CancellablePromise<[Any]> ( resolver: { resolver in
             self.responseListAny { (response: DataResponse<[Any]>) in
                 switch response.result {

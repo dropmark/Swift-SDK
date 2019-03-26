@@ -31,7 +31,7 @@ public extension UTI {
     
     /// Derive a Dropmark item type from a Universal Type Identifier.
     
-    public var itemType: DKItemType? {
+    var itemType: DKItemType? {
         
         switch self {
             

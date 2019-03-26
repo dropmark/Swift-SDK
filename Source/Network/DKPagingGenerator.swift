@@ -121,7 +121,7 @@ public extension DKPagingGenerator {
          - collectionView: The UICollectionView to check for pagination
      
      */
-    public func shouldGetNextPage(at indexPath: IndexPath, for collectionView: UICollectionView) -> Bool {
+    func shouldGetNextPage(at indexPath: IndexPath, for collectionView: UICollectionView) -> Bool {
         if let cellCount = collectionView.dataSource?.collectionView(collectionView, numberOfItemsInSection: indexPath.section) {
             return shouldGetNextPage(at: indexPath.item, for: cellCount)
         }
@@ -137,7 +137,7 @@ public extension DKPagingGenerator {
         - tableView: The UITableView to check for pagination
      
      */
-    public func shouldGetNextPage(at indexPath: IndexPath, for tableView: UITableView) -> Bool {
+    func shouldGetNextPage(at indexPath: IndexPath, for tableView: UITableView) -> Bool {
         if let cellCount = tableView.dataSource?.tableView(tableView, numberOfRowsInSection: indexPath.section) {
             return shouldGetNextPage(at: indexPath.row, for: cellCount)
         }
