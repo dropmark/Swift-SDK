@@ -26,8 +26,8 @@
 ## Requirements
 
 - iOS 10.0+ / macOS 10.10+ / tvOS 11.0+
-- Xcode 10.0+
-- Swift 4.2+
+- Xcode 10.2+
+- Swift 5.0+
 
 ## Example
 
@@ -44,7 +44,7 @@ Be sure to open the examples using the `DropmarkSDK.workspace` file.
 Install the library in your app through [**CocoaPods**](http://cocoapods.org). Add the following line to your *Podfile*, then run `pod install`.
 
 ```ruby
-pod 'DropmarkSDK', '~> 1.5'
+pod 'DropmarkSDK', '~> 2.0'
 ```
 
 Be sure to import the library when needed.
@@ -54,6 +54,9 @@ import DropmarkSDK
 ```
 
 ## Migration
+
+### Version 2.0.0
+Xcode 10.2 and Swift 5 are now required.
 
 ### Version 1.5.0
 `DKSession` was added to store a user object and token separately, so object updates are compartmentalized.
