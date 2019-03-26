@@ -170,14 +170,21 @@
     },
     {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 296,
+      "line": 310,
       "symbol": "DKUser.description",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPagingGenerator.swift",
+      "line": 69,
+      "symbol": "DKPagingGenerator.deinit",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/Serializers/DKResponseListAny.swift",
-      "line": 102,
+      "line": 82,
       "symbol": "DataRequest.responseListAny(queue:completionHandler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
