@@ -35,21 +35,21 @@ extension UIStoryboard {
     }
     
     class var collectionListViewController: CollectionListViewController {
-        guard let collectionListViewController = UIStoryboard.main.instantiateViewController(withIdentifier: collectionListViewControllerIdentifier) as? CollectionListViewController else {
+        guard let collectionListViewController = main.instantiateViewController(withIdentifier: collectionListViewControllerIdentifier) as? CollectionListViewController else {
             fatalError("Unable to instantiate a CollectionListViewController.")
         }
         return collectionListViewController
     }
     
     class var itemListViewController: ItemListViewController {
-        guard let itemListViewController = UIStoryboard.main.instantiateViewController(withIdentifier: itemListViewControllerIdentifier) as? ItemListViewController else {
+        guard let itemListViewController = main.instantiateViewController(withIdentifier: itemListViewControllerIdentifier) as? ItemListViewController else {
             fatalError("Unable to instantiate an ItemListViewController.")
         }
         return itemListViewController
     }
     
     class var itemViewController: ItemViewController {
-        guard let itemViewController = UIStoryboard.main.instantiateViewController(withIdentifier: itemViewControllerIdentifier) as? ItemViewController else {
+        guard let itemViewController = main.instantiateViewController(withIdentifier: itemViewControllerIdentifier) as? ItemViewController else {
             fatalError("Unable to instantiate an ItemViewController.")
         }
         return itemViewController

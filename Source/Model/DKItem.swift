@@ -144,7 +144,7 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
             let id = representation["id"] as? NSNumber,
             let collectionID = representation["collection_id"] as? NSNumber,
             let createdAtString = representation["created_at"] as? String,
-            let createdAt = createdAtString.date,
+            let createdAt = DKDateFormatter().date(from: createdAtString),
             let urlString = representation["url"] as? String,
             let url = URL(string: urlString),
             let shortURLString = representation["short_url"] as? String,
@@ -191,11 +191,11 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         self.createdAt = createdAt
         
         if let updatedAtString = representation["updated_at"] as? String {
-            updatedAt = updatedAtString.date
+            updatedAt = DKDateFormatter().date(from: updatedAtString)
         }
         
         if let deletedAtString = representation["deleted_at"] as? String {
-            deletedAt = deletedAtString.date
+            deletedAt = DKDateFormatter().date(from: deletedAtString)
         }
         
         if let reactionsTotalCount = representation["reactions_total_count"] as? NSNumber {

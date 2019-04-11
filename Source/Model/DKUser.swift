@@ -197,7 +197,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         }
         
         if let createdAtString = representation["created_at"] as? String {
-            createdAt = createdAtString.date
+            createdAt = DKDateFormatter().date(from: createdAtString)
         }
         
         if let avatarString = representation["avatar"] as? String {

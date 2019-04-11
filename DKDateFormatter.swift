@@ -1,7 +1,7 @@
 //
-//  String+Extensions.swift
+//  DKDateFormatter+Extensions.swift
 //
-//  Copyright © 2018 Oak, LLC (https://oak.is)
+//  Copyright © 2019 Oak, LLC (https://oak.is)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -24,15 +24,22 @@
 
 import Foundation
 
-extension String {
+class DKDateFormatter: DateFormatter {
     
-    /// Private utility to derive a Date from a timestamp string
-    var date: Date? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.timeZone = TimeZone(identifier: "UTC")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-        return dateFormatter.date(from: self)
+    override init() {
+        super.init()
+        initialize()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        initialize()
+    }
+    
+    private func initialize() {
+        self.locale = Locale(identifier: "en_US_POSIX")
+        self.timeZone = TimeZone(identifier: "UTC")
+        self.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
     }
     
 }
