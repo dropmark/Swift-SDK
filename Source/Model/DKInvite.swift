@@ -76,7 +76,7 @@ public final class DKInvite: NSObject, DKResponseObjectSerializable, DKResponseL
             let url = representation["url"] as? String,
             let shortURL = representation["short_url"] as? String,
             let createdAtString = representation["created_at"] as? String,
-            let createdAt = createdAtString.date
+            let createdAt = DKDateFormatter().date(from: createdAtString)
         else { return nil }
         
         self.id = id
@@ -91,7 +91,7 @@ public final class DKInvite: NSObject, DKResponseObjectSerializable, DKResponseL
         self.createdAt = createdAt
         
         if let updatedAtString = representation["updated_at"] as? String {
-            updatedAt = updatedAtString.date
+            updatedAt = DKDateFormatter().date(from: updatedAtString)
         }
         
         if let userID = representation["user_id"] as? NSNumber {

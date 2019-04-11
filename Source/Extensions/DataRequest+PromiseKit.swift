@@ -30,7 +30,13 @@ public extension DataRequest {
     
     /// Generate a generic `CancellablePromise` from a `DataRequest`
     func promise() -> CancellablePromise<Void> {
-        return CancellablePromise<Void>( resolver: { resolver in
+        return CancellablePromise<Void>( resolver: { [weak self] resolver in
+            
+            guard let self = self else {
+                resolver.reject(DKError.requestIsNil)
+                return { }
+            }
+            
             self.response { response in
                 if let error = response.error {
                     resolver.reject(error)
@@ -38,15 +44,23 @@ public extension DataRequest {
                     resolver.fulfill(())
                 }
             }
-            return {
-                self.cancel()
+            
+            return { [weak self] in
+                self?.cancel()
             }
+            
         })
     }
     
     /// Generate a `CancellablePromise` from a `DataRequest`, returning an object of the inferred type.
     func promiseObject<T: DKResponseObjectSerializable>() -> CancellablePromise<T> {
-        return CancellablePromise<T> ( resolver: { resolver in
+        return CancellablePromise<T> ( resolver: { [weak self] resolver in
+            
+            guard let self = self else {
+                resolver.reject(DKError.requestIsNil)
+                return { }
+            }
+            
             self.responseObject { (response: DataResponse<T>) in
                 switch response.result {
                 case .success(let object):
@@ -55,15 +69,23 @@ public extension DataRequest {
                     resolver.reject(error)
                 }
             }
-            return {
-                self.cancel()
+            
+            return { [weak self] in
+                self?.cancel()
             }
+            
         })
     }
     
     /// Generate a `CancellablePromise` from a `DataRequest`, returning a list of objects of the inferred type.
     func promiseList<T: DKResponseListSerializable>() -> CancellablePromise<[T]> {
-        return CancellablePromise<[T]> ( resolver: { resolver in
+        return CancellablePromise<[T]> ( resolver: { [weak self] resolver in
+            
+            guard let self = self else {
+                resolver.reject(DKError.requestIsNil)
+                return { }
+            }
+            
             self.responseList { (response: DataResponse<[T]>) in
                 switch response.result {
                 case .success(let objects):
@@ -72,15 +94,23 @@ public extension DataRequest {
                     resolver.reject(error)
                 }
             }
-            return {
-                self.cancel()
+            
+            return { [weak self] in
+                self?.cancel()
             }
+            
         })
     }
     
     /// Generate a `CancellablePromise` from a `DataRequest`, returning a list of objects of any type.
     func promiseListAny() -> CancellablePromise<[Any]> {
-        return CancellablePromise<[Any]> ( resolver: { resolver in
+        return CancellablePromise<[Any]> ( resolver: { [weak self] resolver in
+           
+            guard let self = self else {
+                resolver.reject(DKError.requestIsNil)
+                return { }
+            }
+            
             self.responseListAny { (response: DataResponse<[Any]>) in
                 switch response.result {
                 case .success(let objects):
@@ -89,9 +119,11 @@ public extension DataRequest {
                     resolver.reject(error)
                 }
             }
-            return {
-                self.cancel()
+            
+            return { [weak self] in
+                self?.cancel()
             }
+            
         })
     }
     

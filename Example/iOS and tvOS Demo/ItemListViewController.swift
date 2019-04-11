@@ -32,10 +32,10 @@ class ItemListViewController: UITableViewController {
     let itemCellIdentifier = "com.dropmark.cell.item"
     
     /// Parent collection of the item list
-    var collection: DKCollection!
+    weak var collection: DKCollection!
     
     /// Parent stack of the item list
-    var stack: DKItem?
+    weak var stack: DKItem?
     
     var paging = DKPagingGenerator<DKItem>(startPage: 1)
     
@@ -51,7 +51,7 @@ class ItemListViewController: UITableViewController {
         if let stackName = stack?.name {
             title = stackName
         } else {
-            title = collection.name
+            title = collection?.name
         }
         
 #if os(iOS)
@@ -61,17 +61,20 @@ class ItemListViewController: UITableViewController {
         
 #endif
         
-        paging.next = { PromiseGenerator.listItems(collection: self.collection, stack: self.stack, page: $0) }
+        paging.next = { [unowned self] in
+            PromiseGenerator.listItems(collection: self.collection, stack: self.stack, page: $0)
+        }
         
-        getNextPageOfItems().catch { error in
+        getNextPageOfItems().catch { [weak self] error in
             let alert = UIAlertController(error: error)
-            self.present(alert, animated: true)
+            self?.present(alert, animated: true)
         }
         
     }
     
     @discardableResult func getNextPageOfItems() -> Promise<Void> {
-        return paging.getNext().done {
+        return paging.getNext().done { [weak self] in
+            guard let self = self else { return }
             self.items.insert(contentsOf: $0, at: self.items.endIndex)
         }
     }
@@ -92,9 +95,9 @@ class ItemListViewController: UITableViewController {
             refresh()
         }.ensure {
             refreshControl.endRefreshing()
-        }.catch { error in
+        }.catch { [weak self] error in
             let alert = UIAlertController(error: error)
-            self.present(alert, animated: true)
+            self?.present(alert, animated: true)
         }
         
     }
@@ -145,9 +148,13 @@ extension ItemListViewController {
         // Image
         cell.imageView?.image = #imageLiteral(resourceName: "Thumbnail Placeholder")
         if let thumbnailURL = item.thumbnails?.cropped {
-            Alamofire.request(thumbnailURL).responseData { response in
-                guard let data = response.data, let image = UIImage(data: data) else { return }
-                cell.imageView?.image = image
+            Alamofire.request(thumbnailURL).responseData { [weak cell] response in
+                guard
+                    let data = response.data,
+                    let image = UIImage(data: data),
+                    response.response?.url == thumbnailURL
+                else { return }
+                cell?.imageView?.image = image
             }
         }
         

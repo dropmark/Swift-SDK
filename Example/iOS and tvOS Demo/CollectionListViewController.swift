@@ -54,9 +54,9 @@ class CollectionListViewController: UITableViewController {
         
         paging.next = { PromiseGenerator.listCollections(page: $0) }
         
-        getNextPageOfCollections().catch { error in
+        getNextPageOfCollections().catch { [weak self] error in
             let alert = UIAlertController(error: error)
-            self.present(alert, animated: true)
+            self?.present(alert, animated: true)
         }
         
     }
@@ -73,7 +73,7 @@ class CollectionListViewController: UITableViewController {
     }
     
     @discardableResult func getNextPageOfCollections() -> Promise<Void> {
-        return paging.getNext().done {
+        return paging.getNext().done { [unowned self] in
             self.collections.insert(contentsOf: $0, at: self.collections.endIndex)
         }
     }
@@ -94,9 +94,9 @@ class CollectionListViewController: UITableViewController {
             refresh()
         }.ensure {
             refreshControl.endRefreshing()
-        }.catch { error in
+        }.catch { [weak self] error in
             let alert = UIAlertController(error: error)
-            self.present(alert, animated: true)
+            self?.present(alert, animated: true)
         }
         
     }
@@ -130,9 +130,13 @@ extension CollectionListViewController {
         // Image
         cell.imageView?.image = #imageLiteral(resourceName: "Thumbnail Placeholder")
         if let thumbnailURL = collection.thumbnails?.cropped {
-            Alamofire.request(thumbnailURL).responseData { response in
-                guard let data = response.data, let image = UIImage(data: data) else { return }
-                cell.imageView?.image = image
+            Alamofire.request(thumbnailURL).responseData { [weak cell] response in
+                guard
+                    let data = response.data,
+                    let image = UIImage(data: data),
+                    response.response?.url == thumbnailURL
+                    else { return }
+                cell?.imageView?.image = image
             }
         }
         
@@ -152,9 +156,9 @@ extension CollectionListViewController {
         if paging.shouldGetNextPage(at: indexPath, for: tableView) {
             
             // Get the next page of collections
-            getNextPageOfCollections().catch { error in
+            getNextPageOfCollections().catch { [weak self] error in
                 let alert = UIAlertController(error: error)
-                self.present(alert, animated: true)
+                self?.present(alert, animated: true)
             }
             
         }

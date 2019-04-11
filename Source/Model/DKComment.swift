@@ -86,7 +86,7 @@ public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, 
             let id = representation["id"] as? NSNumber,
             let body = representation["body"] as? String,
             let createdAtString = representation["created_at"] as? String,
-            let createdAt = createdAtString.date
+            let createdAt = DKDateFormatter().date(from: createdAtString)
         else { return nil }
         
         self.id = id
@@ -103,7 +103,7 @@ public final class DKComment: NSObject, NSCoding, DKResponseObjectSerializable, 
         self.createdAt = createdAt
         
         if let updatedAtString = representation["updated_at"] as? String {
-            updatedAt = updatedAtString.date
+            updatedAt = DKDateFormatter().date(from: updatedAtString)
         }
         
         annotation = representation["annotation"] as? String

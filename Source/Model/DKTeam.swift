@@ -172,7 +172,7 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         }
         
         if let createdAtString = representation["created_at"] as? String {
-            createdAt = createdAtString.date
+            createdAt = DKDateFormatter().date(from: createdAtString)
         }
         
         feedKey = representation["feed_key"] as? String

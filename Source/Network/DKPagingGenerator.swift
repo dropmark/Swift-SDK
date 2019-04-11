@@ -67,6 +67,7 @@ public class DKPagingGenerator<T> {
     }
     
     deinit {
+        currentChain = nil
         next = nil
     }
     

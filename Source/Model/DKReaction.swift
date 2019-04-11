@@ -71,7 +71,7 @@ public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable,
             let id = representation["id"] as? NSNumber,
             let itemID = representation["item_id"] as? NSNumber,
             let createdAtString = representation["created_at"] as? String,
-            let createdAt = createdAtString.date
+            let createdAt = DKDateFormatter().date(from: createdAtString)
         else { return nil }
         
         self.id = id
@@ -82,7 +82,7 @@ public final class DKReaction: NSObject, NSCoding, DKResponseObjectSerializable,
         self.createdAt = createdAt
         
         if let updatedAtString = representation["updated_at"] as? String {
-            updatedAt = updatedAtString.date
+            updatedAt = DKDateFormatter().date(from: updatedAtString)
         }
         
         if let userID = representation["user_id"] as? NSNumber {

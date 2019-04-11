@@ -190,7 +190,7 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
             let id = representation["id"] as? NSNumber,
             let name = representation["name"] as? String,
             let createdAtString = representation["created_at"] as? String,
-            let createdAt = createdAtString.date,
+            let createdAt = DKDateFormatter().date(from: createdAtString),
             let urlString = representation["url"] as? String,
             let url = URL(string: urlString),
             let shortURLString = representation["short_url"] as? String,
@@ -229,13 +229,13 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
         archived = representation["archived"] as? Bool
         
         if let lastAccessedAtString = representation["last_accessed_at"] as? String {
-            lastAccessedAt = lastAccessedAtString.date
+            lastAccessedAt = DKDateFormatter().date(from: lastAccessedAtString)
         }
         
         self.createdAt = createdAt
         
         if let updatedAtString = representation["updated_at"] as? String {
-            self.updatedAt = updatedAtString.date
+            self.updatedAt = DKDateFormatter().date(from: updatedAtString)
         }
         
         if let itemsTotalCount = representation["items_total_count"] as? NSNumber {
