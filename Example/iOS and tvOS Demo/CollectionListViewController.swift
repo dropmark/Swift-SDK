@@ -130,9 +130,13 @@ extension CollectionListViewController {
         // Image
         cell.imageView?.image = #imageLiteral(resourceName: "Thumbnail Placeholder")
         if let thumbnailURL = collection.thumbnails?.cropped {
-            Alamofire.request(thumbnailURL).responseData { response in
-                guard let data = response.data, let image = UIImage(data: data) else { return }
-                cell.imageView?.image = image
+            Alamofire.request(thumbnailURL).responseData { [weak cell] response in
+                guard
+                    let data = response.data,
+                    let image = UIImage(data: data),
+                    response.response?.url == thumbnailURL
+                    else { return }
+                cell?.imageView?.image = image
             }
         }
         

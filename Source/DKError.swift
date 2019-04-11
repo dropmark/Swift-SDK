@@ -48,4 +48,7 @@ public enum DKError: Error {
     /// A user token is needed but not present
     case missingUserToken
     
+    /// Request was deallocated from memory before a response could be returned
+    case requestIsNil
+    
 }
