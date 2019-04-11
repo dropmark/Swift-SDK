@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DKSession Structure Reference</title>
+    <title>DKDateFormatter Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/DKSession" class="dashAnchor"></a>
-    <a title="DKSession Structure Reference"></a>
+    <a name="//apple_ref/swift/Class/DKDateFormatter" class="dashAnchor"></a>
+    <a title="DKDateFormatter Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">DropmarkSDK Docs</a> (91% documented)</p>
@@ -23,7 +23,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">DropmarkSDK Reference</a>
         <img id="carat" src="../img/carat.png" />
-        DKSession Structure Reference
+        DKDateFormatter Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -178,14 +178,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>DKSession</h1>
+            <h1>DKDateFormatter</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">DKSession</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">DKDateFormatter</span> <span class="p">:</span> <span class="kt">DateFormatter</span></code></pre>
 
                 </div>
               </div>
-            <p>Memory-based storage for credentials within the current app session. Must be reconfigured every time the app leaves memory.</p>
+            <p>Custom date formatter corresponds with the Dropmark API formatted date strings</p>
 
           </section>
           <section class="section task-group-section">
@@ -194,9 +194,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK9DKSessionV4userAA6DKUserCSgvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/user" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK9DKSessionV4userAA6DKUserCSgvpZ">user</a>
+                    <a name="/c:@M@DropmarkSDK@objc(cs)DKDateFormatter(im)init"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@DropmarkSDK@objc(cs)DKDateFormatter(im)init">init()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -204,122 +204,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The user used to authenticate all network requests during lifetime of the app session.</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">user</span><span class="p">:</span> <span class="kt"><a href="../Classes/DKUser.html">DKUser</a></span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:11DropmarkSDK9DKSessionV9userTokenSSSgvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/userToken" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK9DKSessionV9userTokenSSSgvpZ">userToken</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The token used to authenticate all network requests on behalf of a user. You can retrieve a token from the token variable of a DKUser returned by the <code>/auth</code> API endpoint.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">userToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:11DropmarkSDK9DKSessionV8apiTokenSSSgvpZ"></a>
-                    <a name="//apple_ref/swift/Variable/apiToken" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK9DKSessionV8apiTokenSSSgvpZ">apiToken</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>The token used to authenticate all requests with the Dropmark API. Set this token as soon as the app starts to ensure generated requests are properly authenticated. The variable can be set manually, or optionally set by a <code>keys.plist</code> file belonging to the target.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">apiToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:11DropmarkSDK9DKSessionV5store4user0E5TokenyAA6DKUserC_SStFZ"></a>
-                    <a name="//apple_ref/swift/Method/store(user:userToken:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK9DKSessionV5store4user0E5TokenyAA6DKUserC_SStFZ">store(user:userToken:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Convenience function to store the user and user&rsquo;s token</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">store</span><span class="p">(</span><span class="nv">user</span><span class="p">:</span> <span class="kt"><a href="../Classes/DKUser.html">DKUser</a></span><span class="p">,</span> <span class="nv">userToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:11DropmarkSDK9DKSessionV5clearyyFZ"></a>
-                    <a name="//apple_ref/swift/Method/clear()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK9DKSessionV5clearyyFZ">clear()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Convenience function to clear all variables in the session</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">clear</span><span class="p">()</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">override</span> <span class="nf">init</span><span class="p">()</span></code></pre>
 
                         </div>
                       </div>

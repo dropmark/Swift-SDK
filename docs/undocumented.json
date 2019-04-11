@@ -1,6 +1,13 @@
 {
   "warnings": [
     {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/DKDateFormatter.swift",
+      "line": 30,
+      "symbol": "DKDateFormatter.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
       "line": 112,
       "symbol": "DKCollection.sort",
