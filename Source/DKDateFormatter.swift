@@ -25,9 +25,9 @@
 import Foundation
 
 /// Custom date formatter corresponds with the Dropmark API formatted date strings
-class DKDateFormatter: DateFormatter {
+public class DKDateFormatter: DateFormatter {
     
-    override init() {
+    public override init() {
         super.init()
         initialize()
     }
