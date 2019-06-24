@@ -51,18 +51,18 @@ public func when<T>(fulfilled cancellablePromises: [CancellablePromise<T>]) -> C
  Parameter cancellablePromises: The promises to wait for
  Parameter autoCancel: Specifies if the provided promises should be cancelled when the returned promise is cancelled
  */
-public func when<T>(resolved cancellablePromises: [CancellablePromise<T>], autoCancel: Bool) -> CancellablePromise<[Result<T>]> {
-    return CancellablePromise { (cancelPromise) -> Promise<[Result<T>]> in
-        let guarantee = when(resolved: cancellablePromises.map{ $0.asPromise() })
-        let promise = guarantee.mapValues({ v in return v })
-        return when(promise, while: cancelPromise).ensure {
-            if autoCancel {
-                cancelAll(in: cancellablePromises)
-            }
-        }
-    }
-}
+//public func when<T>(resolved cancellablePromises: [CancellablePromise<T>], autoCancel: Bool) -> CancellablePromise<[Result<T>]> {
+//    return CancellablePromise { (cancelPromise) -> Promise<[Result<T>]> in
+//        let guarantee = when(resolved: cancellablePromises.map{ $0.asPromise() })
+//        let promise: Guarantee<[Result<T>]> = guarantee.mapValues({ v in return v })
+//        return when(promise, while: cancelPromise).ensure {
+//            if autoCancel {
+//                cancelAll(in: cancellablePromises)
+//            }
+//        }
+//    }
+//}
 
-public func when<T>(resolved cancellablePromises: [CancellablePromise<T>]) -> CancellablePromise<[Result<T>]> {
-    return when(resolved: cancellablePromises, autoCancel: false)
-}
+//public func when<T>(resolved cancellablePromises: [CancellablePromise<T>]) -> CancellablePromise<[Result<T>]> {
+//    return when(resolved: cancellablePromises, autoCancel: false)
+//}
