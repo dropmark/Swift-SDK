@@ -621,12 +621,12 @@ public enum DKRouter: URLRequestConvertible {
         // Tags
         case .listTags:
             let queryParamters: Parameters = [
-                "per_page": DKRouter.pageSize
+                "per_page": 1000
             ]
             urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParamters)
         case .listTagsForItem:
             let queryParamters: Parameters = [
-                "per_page": DKRouter.pageSize
+                "per_page": 1000
             ]
             urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParamters)
         case .createTagForItem(_, let name):
