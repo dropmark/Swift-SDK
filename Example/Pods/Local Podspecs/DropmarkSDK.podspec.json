@@ -30,7 +30,7 @@
       "~> 6.9"
     ],
     "KeychainSwift": [
-      "~> 16.0"
+      "~> 17.0"
     ]
   },
   "swift_version": "5.0"
