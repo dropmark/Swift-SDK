@@ -69,10 +69,10 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     public var name : String?
     
     /// The primary email of the user
-    public var email : String?
+    @objc public var email : String?
     
     /// The unique username of the user
-    public var username : String?
+    @objc public var username : String?
     
     
     public var customDomain : String?
@@ -150,7 +150,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
      
      */
     
-    public required init?(response: HTTPURLResponse, representation: Any) {
+    @objc public required init?(response: HTTPURLResponse, representation: Any) {
         
         guard
             let representation = representation as? [String: Any],
