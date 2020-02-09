@@ -26,13 +26,13 @@ import Foundation
 import KeychainSwift
 
 /// Dropmark-specific wrapper for `KeychainSwift`, providing encryption, decryption, and removal of an authenticated user object in the device keychain.
-public struct DKKeychain {
+@objc public class DKKeychain: NSObject {
     
     private static let userKey = "com.dropmark.user"
     private static let userTokenKey = "com.dropmark.userToken"
     
     /// The user stored in the device keychain. Use this variable to securely retrieve the representation of the current user.
-    public static var user: DKUser? {
+    @objc public static var user: DKUser? {
         
         get {
             if
@@ -56,7 +56,7 @@ public struct DKKeychain {
     }
     
     /// The user token stored in the device keychain. Use this variable to securely retrieve the token for network requests on behalf of the user.
-    public static var userToken: String? {
+    @objc public static var userToken: String? {
         
         get {
             if
@@ -80,13 +80,13 @@ public struct DKKeychain {
     }
     
     /// Convenience function to store the user and user's token
-    public static func store(user: DKUser, userToken: String) {
+    @objc public static func store(user: DKUser, userToken: String) {
         DKKeychain.user = user
         DKKeychain.userToken = userToken
     }
     
     /// Convenience function to clear all stored variables in the keychain
-    public static func clear() {
+    @objc public static func clear() {
         DKKeychain.user = nil
         DKKeychain.userToken = nil
     }
