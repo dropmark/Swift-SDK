@@ -63,7 +63,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     }
     
     /// The unique identifier of the user
-    public var id : NSNumber
+    @objc public var id : NSNumber
     
     /// The name of the user
     public var name : String?
@@ -123,7 +123,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     public var teams: [DKTeam]?
     
     /// Used to authenticate requests on behalf of the user. **Note**: A token value only returns from the `/auth` API endpoint
-    public var token: String?
+    @objc public var token: String?
     
     /**
      
@@ -310,19 +310,13 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     public override var description: String {
         var description = "User (\(self.id)):"
         if let name = self.name {
-            description += " "
-            description += name
-            description += ","
+            description += " \(name),"
         }
         if let email = self.email {
-            description += " "
-            description += email
-            description += ","
+            description += " \(email),"
         }
         if let username = self.username {
-            description += " "
-            description += username
-            description += ","
+            description += " \(username)"
         }
         return description
     }
