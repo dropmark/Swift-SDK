@@ -63,7 +63,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     }
     
     /// The unique identifier of the user
-    public var id : NSNumber
+    @objc public var id : NSNumber
     
     /// The name of the user
     public var name : String?
@@ -123,7 +123,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     public var teams: [DKTeam]?
     
     /// Used to authenticate requests on behalf of the user. **Note**: A token value only returns from the `/auth` API endpoint
-    public var token: String?
+    @objc public var token: String?
     
     /**
      
