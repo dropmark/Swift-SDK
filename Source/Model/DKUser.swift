@@ -310,19 +310,13 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     public override var description: String {
         var description = "User (\(self.id)):"
         if let name = self.name {
-            description += " "
-            description += name
-            description += ","
+            description += " \(name),"
         }
         if let email = self.email {
-            description += " "
-            description += email
-            description += ","
+            description += " \(email),"
         }
         if let username = self.username {
-            description += " "
-            description += username
-            description += ","
+            description += " \(username)"
         }
         return description
     }
