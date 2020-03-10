@@ -8,6 +8,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/DKDateFormatter.swift",
+      "line": 35,
+      "symbol": "DKDateFormatter.init(coder:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
       "line": 112,
       "symbol": "DKCollection.sort",
@@ -183,13 +190,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPagingGenerator.swift",
-      "line": 69,
-      "symbol": "DKPagingGenerator.deinit",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/Serializers/DKResponseListAny.swift",
       "line": 82,
       "symbol": "DataRequest.responseListAny(queue:completionHandler:)",
@@ -208,13 +208,6 @@
       "line": 48,
       "symbol": "DataRequest.responseObject(queue:completionHandler:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Vendor/UTIKit/UTIKit.swift",
-      "line": null,
-      "symbol": "UTI",
-      "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     }
   ],

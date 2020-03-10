@@ -1,7 +1,7 @@
 //
 //  CollectionListViewController.swift
 //
-//  Copyright © 2018 Oak, LLC (https://oak.is)
+//  Copyright © 2020 Oak, LLC (https://oak.is)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -63,10 +63,9 @@ class CollectionListViewController: UITableViewController {
     
     @objc func didPressLogoutButton() {
         
-        // Rudimentary logout function. Be sure to clean up all
-        // identifying information from memory and disk if necessary.
-        DKKeychain.clear()
-        DKSession.clear()
+        // Rudimentary logout function. Be sure to clean up all identifying information from memory and disk if necessary.
+        DKKeychain.user = nil
+        DKSession.user = nil
         
         navigationController?.popToRootViewController(animated: true)
         

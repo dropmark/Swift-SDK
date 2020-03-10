@@ -1,7 +1,7 @@
 //
 //  LoginViewController.swift
 //
-//  Copyright © 2018 Oak, LLC (https://oak.is)
+//  Copyright © 2020 Oak, LLC (https://oak.is)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -49,14 +49,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // If a user and token already exist in our keychain, skip login
-        if
-            let user = DKKeychain.user,
-            let userToken = DKKeychain.userToken
-        {
+        // If a user already exist in our keychain, skip login
+        if let user = DKKeychain.user {
             
             // Authenticate requests for the current app session
-            DKSession.store(user: user, userToken: userToken)
+            DKSession.user = user
             
             let collectionListViewController = UIStoryboard.collectionListViewController
             navigationController?.pushViewController(collectionListViewController, animated: false)
@@ -86,8 +83,8 @@ class LoginViewController: UIViewController {
             
         }.done {
             
-            DKKeychain.store(user: $0, userToken: $1) // Securely store the user and token for future app sessions
-            DKSession.store(user: $0, userToken: $1) // Retain the user and token for the current app session
+            DKKeychain.user = $0 // Securely store the user for future app sessions
+            DKSession.user = $0 // Retain the user for the current app session
             
             self.passwordTextField.text = nil
             self.emailTextField.text = nil

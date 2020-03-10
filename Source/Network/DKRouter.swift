@@ -1,7 +1,7 @@
 //
 //  DKRouter.swift
 //
-//  Copyright © 2018 Oak, LLC (https://oak.is)
+//  Copyright © 2020 Oak, LLC (https://oak.is)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -730,8 +730,8 @@ public enum DKRouter: URLRequestConvertible {
             throw DKError.missingUser
         }
         
-        guard let userToken = DKSession.userToken else {
-            print("DKSession user token was not set. Remember - only the user object returned from the /auth endpoint contains a token.")
+        guard let userToken = user.token else {
+            print("DKSession user object does not contain a token. Remember - only the user object returned from the /auth endpoint contains a token.")
             throw DKError.missingUserToken
         }
         

@@ -1,7 +1,7 @@
 //
 //  PromiseGenerator.swift
 //
-//  Copyright © 2018 Oak, LLC (https://oak.is)
+//  Copyright © 2020 Oak, LLC (https://oak.is)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -42,40 +42,14 @@ struct PromiseGenerator {
      
      */
     
-    static func authenticate(email: String, password: String) -> CancellablePromise<(DKUser, String)> {
+    static func authenticate(email: String, password: String) -> CancellablePromise<DKUser> {
         
-        return CancellablePromise<(DKUser, String)> ( resolver: { resolver in
-            
-            let parameters: Parameters = [
-                "email": email,
-                "password": password
-            ]
-            
-            let authRequest = request(DKRouter.authenticate(parameters: parameters)).validate()
-            
-            authRequest.responseObject { (response: DataResponse<DKUser>) in
-                
-                switch response.result {
-                case .success(let user):
-                    
-                    guard let token = user.token else {
-                        resolver.reject(DKError.missingUserToken)
-                        return
-                    }
-                    
-                    resolver.fulfill((user, token))
-                    
-                case .failure(let error):
-                    resolver.reject(error)
-                }
-                
-            }
-
-            return {
-                authRequest.cancel()
-            }
-            
-        })
+        let parameters: Parameters = [
+            "email": email,
+            "password": password
+        ]
+        
+        return request(DKRouter.authenticate(parameters: parameters)).validate().promiseObject()
         
     }
     
