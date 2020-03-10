@@ -163,13 +163,11 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-macOS/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DropmarkSDK-macOS/DropmarkSDK.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/KeychainSwift-macOS/KeychainSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromiseKit.root-CorePromise-Foundation/PromiseKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire-macOS/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/DropmarkSDK-macOS/DropmarkSDK.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/KeychainSwift-macOS/KeychainSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/PromiseKit.root-CorePromise-Foundation/PromiseKit.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
