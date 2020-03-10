@@ -134,9 +134,13 @@ class MainViewController: NSViewController {
     }
     
     @IBAction func didClickLogoutButton(_ sender: Any) {
-        DKKeychain.clear()
-        DKSession.clear()
+        
+        // Rudimentary logout function. Be sure to clean up all identifying information from memory and disk if necessary.
+        DKKeychain.user = nil
+        DKSession.user = nil
+        
         performSegue(withIdentifier: NSStoryboardSegue.Identifier.showLoginViewController, sender: nil)
+        
     }
     
     @IBAction func didClickRefreshButton(_ sender: Any) {

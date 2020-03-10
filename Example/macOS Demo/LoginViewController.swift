@@ -51,14 +51,11 @@ class LoginViewController: NSViewController {
         
         emailTextField.nextKeyView = passwordTextField
         
-        // If a user and token already exist in our keychain, skip login
-        if
-            let user = DKKeychain.user,
-            let userToken = DKKeychain.userToken
-        {
+        // If a user already exist in our keychain, skip login
+        if let user = DKKeychain.user {
             
             // Authenticate requests for the current app session
-            DKSession.store(user: user, userToken: userToken)
+            DKSession.user = user
             
             // Add a slight delay due to rendering issue with view layers
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -88,8 +85,8 @@ class LoginViewController: NSViewController {
         
         }.done {
             
-            DKKeychain.store(user: $0, userToken: $1) // Securely store the user and token for future app sessions
-            DKSession.store(user: $0, userToken: $1) // Retain the user and token for the current app session
+            DKKeychain.user = $0 // Securely store the user for future app sessions
+            DKSession.user = $0 // Retain the user for the current app session
             
             self.performSegue(withIdentifier: NSStoryboardSegue.Identifier.showMainViewController, sender: nil)
             

@@ -27,13 +27,10 @@ import Foundation
 /// Memory-based storage for credentials within the current app session. Must be reconfigured every time the app leaves memory.
 public struct DKSession {
     
-    /// The user used to authenticate all network requests during lifetime of the app session.
+    /// The user object used to authenticate all network requests during lifetime of the app session. This object must contain a `token` to authenticate the network requests. A user with the `token` variable is only returned by the `/auth` API endpoint.
     public static var user: DKUser?
     
-    /// The token used to authenticate all network requests on behalf of a user. You can retrieve a token from the token variable of a DKUser returned by the `/auth` API endpoint.
-    public static var userToken: String?
-    
-    /// The token used to authenticate all requests with the Dropmark API. Set this token as soon as the app starts to ensure generated requests are properly authenticated. The variable can be set manually, or optionally set by a `keys.plist` file belonging to the target.
+    /// The token used to authenticate all requests with the Dropmark API. Set this token as soon as the app starts to ensure generated requests are properly authenticated. The variable can be set manually on app launch, or optionally set by a `keys.plist` file belonging to the target.
     public static var apiToken: String? {
         get {
             if let manualToken = _apiToken {
@@ -50,17 +47,5 @@ public struct DKSession {
     }
     
     private static var _apiToken: String?
-    
-    /// Convenience function to store the user and user's token
-    public static func store(user: DKUser, userToken: String) {
-        DKSession.user = user
-        DKSession.userToken = userToken
-    }
-    
-    /// Convenience function to clear all variables in the session
-    public static func clear() {
-        DKSession.user = nil
-        DKSession.userToken = nil
-    }
     
 }

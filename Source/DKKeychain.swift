@@ -23,72 +23,82 @@
 //
 
 import Foundation
-import KeychainSwift
 
-/// Dropmark-specific wrapper for `KeychainSwift`, providing encryption, decryption, and removal of an authenticated user object in the device keychain.
+/// Provides encryption, decryption, and removal of an authenticated user object in the device keychain.
 @objc public class DKKeychain: NSObject {
     
-    private static let userKey = "com.dropmark.user"
-    private static let userTokenKey = "com.dropmark.userToken"
+    /// Assigns a string to the `kSecAttrAccessGroup` value in the Keychain query. Recommended if you need to share user credentials between multiple app targets.
+    @objc public static var accessGroup: String?
     
-    /// The user stored in the device keychain. Use this variable to securely retrieve the representation of the current user.
+    /// Assigns a string to the `kSecAttrService` value in the Keychain query. Used to identify what the Keychain entry is used for.
+    @objc public static var service = "com.dropmark.user"
+    
+    /// Assigns a string to the `kSecAttrAccount` value in the Keychain query. Used primarily as a key to get the user data from Keychain.
+    @objc public static var userKey = "com.dropmark.user"
+    
+    /// A common set of query parameters used to set, retrieve, and delete
+    @objc public static var baseQuery: [String: Any] {
+        var query = [
+            kSecClass: kSecClassGenericPassword,
+            kSecAttrService: service,
+            kSecAttrAccount: userKey,
+            kSecAttrSynchronizable: true as CFBoolean
+        ] as [String: Any]
+        if let accessGroup = self.accessGroup {
+            query[kSecAttrAccessGroup as String] = accessGroup
+        }
+        return query
+    }
+    
+    /// The user is stored in the device keychain. Use this variable to securely retrieve the representation of the credentialed user. Note: If the user obect does not contain a `token`, the user will not be stored.
     @objc public static var user: DKUser? {
         
         get {
-            if
-                let userData = KeychainSwift().getData(userKey),
+            var query = baseQuery
+            query[kSecMatchLimit as String] = kSecMatchLimitOne
+            query[kSecReturnAttributes as String] = true
+            query[kSecReturnData as String] = true
+            var item: CFTypeRef?
+            let status = SecItemCopyMatching(query as CFDictionary, &item)
+            printStatus(status)
+            guard
+                status == errSecSuccess,
+                let existingItem = item as? [String : Any],
+                let userData = existingItem[kSecValueData as String] as? Data,
                 let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? DKUser
-            {
-                return user
+            else {
+                return nil
             }
-            return nil
+            return user
         }
         
         set {
             if let newValue = newValue {
-                let userData = NSKeyedArchiver.archivedData(withRootObject: newValue)
-                KeychainSwift().set(userData, forKey: userKey, withAccess: .accessibleAfterFirstUnlock)
+                guard newValue.token != nil else {
+                    print("Attempting to store a user object without a token! Only the user object returned by the `/auth` API endpoint can operate as a user credential.")
+                    return
+                }
+                let data = NSKeyedArchiver.archivedData(withRootObject: newValue) as CFData
+                var attributes = baseQuery
+                attributes[kSecValueData as String] = data
+                let status = SecItemAdd(attributes as CFDictionary, nil)
+                printStatus(status)
             } else {
-                KeychainSwift().delete(userKey)
+                let status = SecItemDelete(baseQuery as CFDictionary)
+                printStatus(status)
             }
         }
         
     }
     
-    /// The user token stored in the device keychain. Use this variable to securely retrieve the token for network requests on behalf of the user.
-    @objc public static var userToken: String? {
-        
-        get {
-            if
-                let userTokenData = KeychainSwift().getData(userTokenKey),
-                let userToken = NSKeyedUnarchiver.unarchiveObject(with: userTokenData) as? String
-            {
-                return userToken
-            }
-            return nil
+    private static func printStatus(_ status: OSStatus) {
+        if #available(iOS 11.3, tvOS 11.3, *) {
+            let statusMessage = SecCopyErrorMessageString(status, nil) as String? ?? "Unknown error"
+            print("DKKeychain: \(statusMessage)")
+        } else {
+            print("DKKeychain OSStatus: \(status)")
         }
-        
-        set {
-            if let newValue = newValue {
-                let userTokenData = NSKeyedArchiver.archivedData(withRootObject: newValue)
-                KeychainSwift().set(userTokenData, forKey: userTokenKey, withAccess: .accessibleAfterFirstUnlock)
-            } else {
-                KeychainSwift().delete(userTokenKey)
-            }
-        }
-        
-    }
-    
-    /// Convenience function to store the user and user's token
-    @objc public static func store(user: DKUser, userToken: String) {
-        DKKeychain.user = user
-        DKKeychain.userToken = userToken
-    }
-    
-    /// Convenience function to clear all stored variables in the keychain
-    @objc public static func clear() {
-        DKKeychain.user = nil
-        DKKeychain.userToken = nil
     }
     
 }
+
