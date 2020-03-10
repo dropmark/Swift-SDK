@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DKPlan Enumeration Reference</title>
+    <title>DKKeychain Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Enum/DKPlan" class="dashAnchor"></a>
-    <a title="DKPlan Enumeration Reference"></a>
+    <a name="//apple_ref/swift/Class/DKKeychain" class="dashAnchor"></a>
+    <a title="DKKeychain Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">DropmarkSDK Docs</a> (91% documented)</p>
@@ -23,7 +23,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">DropmarkSDK Reference</a>
         <img id="carat" src="../img/carat.png" />
-        DKPlan Enumeration Reference
+        DKKeychain Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -175,14 +175,15 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>DKPlan</h1>
+            <h1>DKKeychain</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">DKPlan</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CaseIterable</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="kt">DKKeychain</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
 
                 </div>
               </div>
-            <p>Dropmark subscription tiers</p>
+            <p>Provides encryption, decryption, and removal of an authenticated user object in the device keychain.</p>
 
           </section>
           <section class="section task-group-section">
@@ -191,9 +192,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKPlanO4freeyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/free" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKPlanO4freeyA2CmF">free</a>
+                    <a name="/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)accessGroup"></a>
+                    <a name="//apple_ref/swift/Variable/accessGroup" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)accessGroup">accessGroup</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -201,14 +202,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Basic functionality</p>
+                        <p>Assigns a string to the <code>kSecAttrAccessGroup</code> value in the Keychain query. Recommended if you need to share user credentials between multiple app targets.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">free</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">accessGroup</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -218,9 +220,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKPlanO3proyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/pro" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKPlanO3proyA2CmF">pro</a>
+                    <a name="/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)service"></a>
+                    <a name="//apple_ref/swift/Variable/service" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)service">service</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -228,14 +230,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>All personal Dropmark features</p>
+                        <p>Assigns a string to the <code>kSecAttrService</code> value in the Keychain query. Used to identify what the Keychain entry is used for.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">pro</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">service</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -245,9 +248,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKPlanO7proBetayA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/proBeta" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKPlanO7proBetayA2CmF">proBeta</a>
+                    <a name="/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)userKey"></a>
+                    <a name="//apple_ref/swift/Variable/userKey" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)userKey">userKey</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -255,14 +258,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>All personal Dropmark features, plus beta features</p>
+                        <p>Assigns a string to the <code>kSecAttrAccount</code> value in the Keychain query. Used primarily as a key to get the user data from Keychain.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">proBeta</span> <span class="o">=</span> <span class="s">"pro_beta"</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">userKey</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -272,9 +276,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKPlanO10proMonthlyyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/proMonthly" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKPlanO10proMonthlyyA2CmF">proMonthly</a>
+                    <a name="/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)baseQuery"></a>
+                    <a name="//apple_ref/swift/Variable/baseQuery" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)baseQuery">baseQuery</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -282,14 +286,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>All personal Dropmark features, paid on a monthly basis</p>
+                        <p>A common set of query parameters used to set, retrieve, and delete</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">proMonthly</span> <span class="o">=</span> <span class="s">"pro_monthly"</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">baseQuery</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -299,9 +304,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKPlanO4teamyA2CmF"></a>
-                    <a name="//apple_ref/swift/Element/team" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKPlanO4teamyA2CmF">team</a>
+                    <a name="/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)user"></a>
+                    <a name="//apple_ref/swift/Variable/user" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)user">user</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -309,14 +314,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>All personal and team Dropmark features</p>
+                        <p>The user is stored in the device keychain. Use this variable to securely retrieve the representation of the credentialed user. Note: If the user obect does not contain a <code>token</code>, the user will not be stored.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">team</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@objc</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">user</span><span class="p">:</span> <span class="kt"><a href="../Classes/DKUser.html">DKUser</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>

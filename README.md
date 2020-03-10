@@ -7,7 +7,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/DropmarkSDK.svg?style=flat)](https://cocoapods.org/pods/DropmarkSDK)
 [![Twitter](https://img.shields.io/badge/twitter-%40oakstudios-blue.svg)](http://twitter.com/oakstudios)
 
-**DropmarkSDK** is a Swift interface for the [**Dropmark API**](https://www.dropmark.com/api/topics/introduction/). 
+**DropmarkSDK** is a Swift interface for the [**Dropmark API**](https://www.dropmark.com/api/topics/introduction/).
 
 ## Features
 
@@ -25,9 +25,15 @@
 
 ## Requirements
 
-- iOS 10.0+ / macOS 10.10+ / tvOS 11.0+
+- iOS 10.0+ / macOS 10.12+ / tvOS 11.0+
 - Xcode 10.2+
 - Swift 5.0+
+
+## Migration Guides
+
+- [DropmarkSDK 3.0 Migration Guide](https://github.com/dropmark/Swift-SDK/blob/master/Documentation/DropmarkSDK%203.0%20Migration%20Guide.md)
+- [DropmarkSDK 2.0 Migration Guide](https://github.com/dropmark/Swift-SDK/blob/master/Documentation/DropmarkSDK%202.0%20Migration%20Guide.md)
+- [DropmarkSDK 1.0 Migration Guide](https://github.com/dropmark/Swift-SDK/blob/master/Documentation/DropmarkSDK%201.0%20Migration%20Guide.md)
 
 ## Example
 
@@ -35,7 +41,7 @@ Included are demo projects for iOS, tvOS, and macOS. To run the example projects
 
 1. Clone the repo
 2. Run `pod install` from the `/Example` directory
-3. In the `/Example` directory, copy the `keys-example.plist` file, rename the new file `keys.plist`, then add your Dropmark token to the file. 
+3. In the `/Example` directory, copy the `keys-example.plist` file, rename the new file `keys.plist`, then add your Dropmark token to the file.
 
 Be sure to open the examples using the `DropmarkSDK.workspace` file.
 
@@ -44,7 +50,7 @@ Be sure to open the examples using the `DropmarkSDK.workspace` file.
 Install the library in your app through [**CocoaPods**](http://cocoapods.org). Add the following line to your *Podfile*, then run `pod install`.
 
 ```ruby
-pod 'DropmarkSDK', '~> 2.0'
+pod 'DropmarkSDK', '~> 3.0'
 ```
 
 Be sure to import the library when needed.
@@ -52,39 +58,6 @@ Be sure to import the library when needed.
 ```swift
 import DropmarkSDK
 ```
-
-## Migration
-
-### Version 2.0.0
-Xcode 10.2 and Swift 5 are now required.
-
-### Version 1.5.0
-`DKSession` was added to store a user object and token separately, so object updates are compartmentalized.
-
-### Version 1.4.0
-For `DKItem` make `reactionsTotalCount`, `tags`, `reactions`, `comments`, and `user` variables non-optional. For `DKCollection` make `itemsTotalCount`, `usersTotalCount`, and `user` variables non-optional.
-
-### Version 1.3.0
-Further support for Swift 4.2, particularly with `KeychainSwift`
-
-### Version 1.2.0
-Update to Xcode 10 and Swift 4.2 compatibility
-
-### Version 1.1.0
-Extensions in `DataRequest+PromiseKit` make use of `CancellablePromiseKit` now. `DKPaginationGenerator` also reflects cancellability.
-
-### Version 1.0.0
-All errors are now consolidated as `DKError`.  Search results are serialized by the `DKResponseListAny` struct.
-
-### Version 0.3.0
-Large modifications to `DKRouter` enum, and associated Promise generation.
-
-### Version 0.2.0
-A new naming scheme was introduced for object classes, prefixing each class name with "DK".
-
-### Version 0.1.1
-
-**DropmarkSDK** supports iOS 10.0, macOS 10.10, tvOS 11.0, Swift 4, and Xcode 9.0.
 
 ## Security Disclosure
 
@@ -96,7 +69,6 @@ Created by [Oak](https://oak.is) for [Dropmark](https://www.dropmark.com).
 
 **DropmarkSDK** relies on the following open source libraries:
 
-- [`KeychainSwift`](https://github.com/evgenyneu/keychain-swift)
 - [`Alamofire`](https://github.com/Alamofire/Alamofire)
 - [`PromiseKit`](https://github.com/mxcl/PromiseKit)
 - [`CancellablePromiseKit`](https://github.com/johannesd/CancellablePromiseKit)
@@ -106,4 +78,4 @@ Created by [Oak](https://oak.is) for [Dropmark](https://www.dropmark.com).
 
 The MIT License (MIT)
 
-Copyright (c) 2018 Oak, LLC [https://oak.is](https://oak.is)
+Copyright (c) 2020 Oak, LLC [https://oak.is](https://oak.is)

@@ -59,6 +59,9 @@
                 <a href="Classes/DKItem.html">DKItem</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/DKKeychain.html">DKKeychain</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/DKPagingGenerator.html">DKPagingGenerator</a>
               </li>
               <li class="nav-group-task">
@@ -119,9 +122,6 @@
               <li class="nav-group-task">
                 <a href="Extensions/DataRequest.html">DataRequest</a>
               </li>
-              <li class="nav-group-task">
-                <a href="Extensions/UTI.html">UTI</a>
-              </li>
             </ul>
           </li>
           <li class="nav-group-name">
@@ -159,9 +159,6 @@
             <a href="Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Structs/DKKeychain.html">DKKeychain</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="Structs/DKResponseListAny.html">DKResponseListAny</a>
               </li>
               <li class="nav-group-task">
@@ -187,7 +184,7 @@
 <a href="https://cocoapods.org/pods/DropmarkSDK"><img src="https://img.shields.io/cocoapods/p/DropmarkSDK.svg?style=flat" alt="Platform"></a>
 <a href="http://twitter.com/oakstudios"><img src="https://img.shields.io/badge/twitter-%40oakstudios-blue.svg" alt="Twitter"></a></p>
 
-<p><strong>DropmarkSDK</strong> is a Swift interface for the <a href="https://www.dropmark.com/api/topics/introduction/"><strong>Dropmark API</strong></a>. </p>
+<p><strong>DropmarkSDK</strong> is a Swift interface for the <a href="https://www.dropmark.com/api/topics/introduction/"><strong>Dropmark API</strong></a>.</p>
 <h2 id='features' class='heading'>Features</h2>
 
 <ul>
@@ -206,9 +203,16 @@
 <h2 id='requirements' class='heading'>Requirements</h2>
 
 <ul>
-<li>iOS 10.0+ / macOS 10.10+ / tvOS 11.0+</li>
+<li>iOS 10.0+ / macOS 10.12+ / tvOS 11.0+</li>
 <li>Xcode 10.2+</li>
 <li>Swift 5.0+</li>
+</ul>
+<h2 id='migration-guides' class='heading'>Migration Guides</h2>
+
+<ul>
+<li><a href="https://github.com/dropmark/Swift-SDK/blob/master/Documentation/DropmarkSDK%203.0%20Migration%20Guide.md">DropmarkSDK 3.0 Migration Guide</a></li>
+<li><a href="https://github.com/dropmark/Swift-SDK/blob/master/Documentation/DropmarkSDK%202.0%20Migration%20Guide.md">DropmarkSDK 2.0 Migration Guide</a></li>
+<li><a href="https://github.com/dropmark/Swift-SDK/blob/master/Documentation/DropmarkSDK%201.0%20Migration%20Guide.md">DropmarkSDK 1.0 Migration Guide</a></li>
 </ul>
 <h2 id='example' class='heading'>Example</h2>
 
@@ -224,43 +228,12 @@
 <h2 id='installation' class='heading'>Installation</h2>
 
 <p>Install the library in your app through <a href="http://cocoapods.org"><strong>CocoaPods</strong></a>. Add the following line to your <em>Podfile</em>, then run <code>pod install</code>.</p>
-<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'DropmarkSDK'</span><span class="p">,</span> <span class="s1">'~&gt; 2.0'</span>
+<pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'DropmarkSDK'</span><span class="p">,</span> <span class="s1">'~&gt; 3.0'</span>
 </code></pre>
 
 <p>Be sure to import the library when needed.</p>
 <pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">DropmarkSDK</span>
 </code></pre>
-<h2 id='migration' class='heading'>Migration</h2>
-<h3 id='version-2-0-0' class='heading'>Version 2.0.0</h3>
-
-<p>Xcode 10.2 and Swift 5 are now required.</p>
-<h3 id='version-1-5-0' class='heading'>Version 1.5.0</h3>
-
-<p><code><a href="Structs/DKSession.html">DKSession</a></code> was added to store a user object and token separately, so object updates are compartmentalized.</p>
-<h3 id='version-1-4-0' class='heading'>Version 1.4.0</h3>
-
-<p>For <code><a href="Classes/DKItem.html">DKItem</a></code> make <code>reactionsTotalCount</code>, <code>tags</code>, <code>reactions</code>, <code>comments</code>, and <code>user</code> variables non-optional. For <code><a href="Classes/DKCollection.html">DKCollection</a></code> make <code>itemsTotalCount</code>, <code>usersTotalCount</code>, and <code>user</code> variables non-optional.</p>
-<h3 id='version-1-3-0' class='heading'>Version 1.3.0</h3>
-
-<p>Further support for Swift 4.2, particularly with <code>KeychainSwift</code></p>
-<h3 id='version-1-2-0' class='heading'>Version 1.2.0</h3>
-
-<p>Update to Xcode 10 and Swift 4.2 compatibility</p>
-<h3 id='version-1-1-0' class='heading'>Version 1.1.0</h3>
-
-<p>Extensions in <code>DataRequest+PromiseKit</code> make use of <code>CancellablePromiseKit</code> now. <code>DKPaginationGenerator</code> also reflects cancellability.</p>
-<h3 id='version-1-0-0' class='heading'>Version 1.0.0</h3>
-
-<p>All errors are now consolidated as <code><a href="Enums/DKError.html">DKError</a></code>.  Search results are serialized by the <code><a href="Structs/DKResponseListAny.html">DKResponseListAny</a></code> struct.</p>
-<h3 id='version-0-3-0' class='heading'>Version 0.3.0</h3>
-
-<p>Large modifications to <code><a href="Enums/DKRouter.html">DKRouter</a></code> enum, and associated Promise generation.</p>
-<h3 id='version-0-2-0' class='heading'>Version 0.2.0</h3>
-
-<p>A new naming scheme was introduced for object classes, prefixing each class name with <q>DK</q>.</p>
-<h3 id='version-0-1-1' class='heading'>Version 0.1.1</h3>
-
-<p><strong>DropmarkSDK</strong> supports iOS 10.0, macOS 10.10, tvOS 11.0, Swift 4, and Xcode 9.0.</p>
 <h2 id='security-disclosure' class='heading'>Security Disclosure</h2>
 
 <p>If you believe you have identified a security vulnerability with <strong>DropmarkSDK</strong> or the <a href="https://www.dropmark.com/api/topics/introduction/"><strong>Dropmark API</strong></a>, you should report it as soon as possible via email to <a href="mailto:support@dropmark.com">support@dropmark.com</a>. Please do not post it to a public issue tracker.</p>
@@ -271,7 +244,6 @@
 <p><strong>DropmarkSDK</strong> relies on the following open source libraries:</p>
 
 <ul>
-<li><a href="https://github.com/evgenyneu/keychain-swift"><code>KeychainSwift</code></a></li>
 <li><a href="https://github.com/Alamofire/Alamofire"><code>Alamofire</code></a></li>
 <li><a href="https://github.com/mxcl/PromiseKit"><code>PromiseKit</code></a></li>
 <li><a href="https://github.com/johannesd/CancellablePromiseKit"><code>CancellablePromiseKit</code></a></li>
@@ -281,13 +253,13 @@
 
 <p>The MIT License (MIT)</p>
 
-<p>Copyright &copy; 2018 Oak, LLC <a href="https://oak.is">https://oak.is</a></p>
+<p>Copyright &copy; 2020 Oak, LLC <a href="https://oak.is">https://oak.is</a></p>
 
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2019 <a class="link" href="http://oak.is/" target="_blank" rel="external">Oak LLC</a>. All rights reserved. (Last updated: 2019-04-11)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2020 <a class="link" href="http://oak.is/" target="_blank" rel="external">Oak LLC</a>. All rights reserved. (Last updated: 2020-03-10)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>
