@@ -1,7 +1,7 @@
 //
 //  DKDateFormatter+Extensions.swift
 //
-//  Copyright © 2019 Oak, LLC (https://oak.is)
+//  Copyright © 2020 Oak, LLC (https://oak.is)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
