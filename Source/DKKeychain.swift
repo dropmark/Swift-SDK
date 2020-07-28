@@ -41,8 +41,7 @@ import Foundation
         var query = [
             kSecClass: kSecClassGenericPassword,
             kSecAttrService: service,
-            kSecAttrAccount: userKey,
-            kSecAttrSynchronizable: true as CFBoolean
+            kSecAttrAccount: userKey
         ] as [String: Any]
         if let accessGroup = self.accessGroup {
             query[kSecAttrAccessGroup as String] = accessGroup
