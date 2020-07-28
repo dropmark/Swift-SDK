@@ -441,7 +441,7 @@ public enum DKRouter: URLRequestConvertible {
             return "/teams"
         case .getTeam(let id):
             return "/teams/\(id)"
-        case .updateTeam(let id):
+        case .updateTeam(let id, _):
             return "/teams/\(id)"
             
         case .listUsersInTeam(let teamID):
