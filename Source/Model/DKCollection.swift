@@ -142,13 +142,13 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
     public var updatedAt : Date?
     
     /// A count of all items contained within a collection
-    public var itemsTotalCount : NSNumber = 0
+    public var itemsTotalCount : NSNumber?
     
     
     public var customDomain : String?
     
     /// The total number of users and teams with access to this collection
-    public var usersTotalCount : NSNumber = 0
+    public var usersTotalCount : NSNumber?
     
     /// A link to the collection on Dropmark
     public var url : URL
