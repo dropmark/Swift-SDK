@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (4.9.1)
-  - DropmarkSDK (2.0.6):
+  - DropmarkSDK (3.0.3):
     - Alamofire (~> 4.0)
     - PromiseKit (~> 6.13)
   - PromiseKit (6.13.1):
@@ -27,9 +27,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  DropmarkSDK: dc796080f9f1cebc820b6e293665edd0b1468502
+  DropmarkSDK: 6c87c2df2e28b8615617a11a81ac6875bb571149
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
 
 PODFILE CHECKSUM: 884d7f7361c87c8accc7e20d30511be80913cfff
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.10.1
