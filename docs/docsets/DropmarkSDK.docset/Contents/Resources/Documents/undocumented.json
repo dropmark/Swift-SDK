@@ -15,6 +15,69 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Extensions/Dictionary+Parameters.swift",
+      "line": 30,
+      "symbol": "Dictionary.listParams()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Extensions/Dictionary+Parameters.swift",
+      "line": 36,
+      "symbol": "Dictionary.collectionParams()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Extensions/Dictionary+Parameters.swift",
+      "line": 42,
+      "symbol": "Dictionary.itemParams()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Extensions/Dictionary+Parameters.swift",
+      "line": 48,
+      "symbol": "Dictionary.userParams()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Extensions/Dictionary+Parameters.swift",
+      "line": 54,
+      "symbol": "Dictionary.addListParams()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Extensions/Dictionary+Parameters.swift",
+      "line": 58,
+      "symbol": "Dictionary.addCollectionParams()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Extensions/Dictionary+Parameters.swift",
+      "line": 64,
+      "symbol": "Dictionary.addItemParams()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Extensions/Dictionary+Parameters.swift",
+      "line": 69,
+      "symbol": "Dictionary.addUserParams()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Extensions/Dictionary+Parameters.swift",
+      "line": 73,
+      "symbol": "Dictionary.add(key:value:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
       "line": 112,
       "symbol": "DKCollection.sort",
