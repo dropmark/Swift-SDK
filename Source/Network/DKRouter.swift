@@ -206,6 +206,11 @@ public enum DKRouter: URLRequestConvertible {
     /// Check if a username is available for registration. Returns a `Bool` value.
     case getUsernameAvailability(username: String)
     
+    // MARK: Uploads
+    
+    /// Use this endpoint to get an upload signature for direct uploads to Amazon S3
+    case uploads(bodyParameters: Parameters?)
+    
     
     var method: HTTPMethod {
         switch self {
@@ -335,6 +340,10 @@ public enum DKRouter: URLRequestConvertible {
             return .get
         case .getUsernameAvailability:
             return .get
+            
+        // Uploads
+        case .uploads:
+            return .post
             
         }
     }
@@ -467,6 +476,10 @@ public enum DKRouter: URLRequestConvertible {
             return "/users/email"
         case .getUsernameAvailability:
             return "/users/username"
+            
+        // Uploads
+        case .uploads:
+            return "/uploads"
             
         }
     }
@@ -683,6 +696,10 @@ public enum DKRouter: URLRequestConvertible {
                 "username": username
             ]
             urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParameters)
+            
+        // Uploads
+        case .uploads(let bodyParameters):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
             
         }
         
