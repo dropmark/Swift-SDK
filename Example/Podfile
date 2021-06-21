@@ -16,6 +16,6 @@ target 'macOS Demo' do
 end
 
 target 'tvOS Demo' do
-    platform :tvos, '11.0'
+    platform :tvos, '13.0'
     pod 'DropmarkSDK', :path => '../'
 end
