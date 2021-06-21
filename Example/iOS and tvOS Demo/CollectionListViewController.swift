@@ -122,7 +122,7 @@ extension CollectionListViewController {
         cell.textLabel?.text = collection.name
         
         // Subtitle
-        let itemCount = collection.itemsTotalCount
+        let itemCount = collection.itemsTotalCount ?? 0
         let s = itemCount == 1 ? "" : "s"
         cell.detailTextLabel?.text = "\(itemCount) item\(s)"
         
