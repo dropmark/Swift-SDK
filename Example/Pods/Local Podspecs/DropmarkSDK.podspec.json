@@ -1,6 +1,6 @@
 {
   "name": "DropmarkSDK",
-  "version": "3.0.3",
+  "version": "3.1.0",
   "summary": "Network and model controllers for Dropmark, written in Swift.",
   "homepage": "https://github.com/dropmark/Swift-SDK",
   "license": {
@@ -12,12 +12,12 @@
   },
   "source": {
     "git": "https://github.com/dropmark/Swift-SDK.git",
-    "tag": "3.0.3"
+    "tag": "3.1.0"
   },
   "social_media_url": "https://twitter.com/oakstudios",
   "swift_versions": "5.0",
   "platforms": {
-    "ios": "10.0",
+    "ios": "13.0",
     "osx": "10.12",
     "tvos": "11.0"
   },
@@ -27,7 +27,7 @@
       "~> 4.0"
     ],
     "PromiseKit": [
-      "~> 6.13"
+      "~> 6.15"
     ]
   },
   "swift_version": "5.0"
