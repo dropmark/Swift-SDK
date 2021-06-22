@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DataRequest Extension Reference</title>
+    <title>DKUploadSignature Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,8 +13,8 @@
     <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Extension/DataRequest" class="dashAnchor"></a>
-    <a title="DataRequest Extension Reference"></a>
+    <a name="//apple_ref/swift/Struct/DKUploadSignature" class="dashAnchor"></a>
+    <a title="DKUploadSignature Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">DropmarkSDK 3.2.0 Docs</a> (78% documented)</p>
@@ -31,7 +31,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">DropmarkSDK Reference</a>
         <img id="carat" src="../img/carat.png" />
-        DataRequest Extension Reference
+        DKUploadSignature Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -192,15 +192,16 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>DataRequest</h1>
+            <h1>DKUploadSignature</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">extension</span> <span class="kt">DataRequest</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">DKUploadSignature</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
 
                 </div>
               </div>
-            
+            <p>Undocumented</p>
+
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -208,117 +209,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Alamofire11DataRequestC11DropmarkSDKE7promiseAD18CancellablePromiseCyytGyF"></a>
-                    <a name="//apple_ref/swift/Method/promise()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Alamofire11DataRequestC11DropmarkSDKE7promiseAD18CancellablePromiseCyytGyF">promise()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Generate a generic <code>CancellablePromise</code> from a <code>DataRequest</code></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">promise</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:9Alamofire11DataRequestC11DropmarkSDKE13promiseObjectAD18CancellablePromiseCyxGyAD010DKResponseG12SerializableRzlF"></a>
-                    <a name="//apple_ref/swift/Method/promiseObject()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Alamofire11DataRequestC11DropmarkSDKE13promiseObjectAD18CancellablePromiseCyxGyAD010DKResponseG12SerializableRzlF">promiseObject()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Generate a <code>CancellablePromise</code> from a <code>DataRequest</code>, returning an object of the inferred type.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">promiseObject</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DKResponseObjectSerializable.html">DKResponseObjectSerializable</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:9Alamofire11DataRequestC11DropmarkSDKE11promiseListAD18CancellablePromiseCySayxGGyAD010DKResponseG12SerializableRzlF"></a>
-                    <a name="//apple_ref/swift/Method/promiseList()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Alamofire11DataRequestC11DropmarkSDKE11promiseListAD18CancellablePromiseCySayxGGyAD010DKResponseG12SerializableRzlF">promiseList()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Generate a <code>CancellablePromise</code> from a <code>DataRequest</code>, returning a list of objects of the inferred type.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="n">promiseList</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">T</span><span class="p">]</span><span class="o">&gt;</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/DKResponseListSerializable.html">DKResponseListSerializable</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:9Alamofire11DataRequestC11DropmarkSDKE14promiseListAnyAD18CancellablePromiseCySayypGGyF"></a>
-                    <a name="//apple_ref/swift/Method/promiseListAny()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Alamofire11DataRequestC11DropmarkSDKE14promiseListAnyAD18CancellablePromiseCySayypGGyF">promiseListAny()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Generate a <code>CancellablePromise</code> from a <code>DataRequest</code>, returning a list of objects of any type.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">promiseListAny</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Any</span><span class="p">]</span><span class="o">&gt;</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:9Alamofire11DataRequestC11DropmarkSDKE15responseListAny5queue17completionHandlerACXDSo012OS_dispatch_I0CSg_yAA0B8ResponseVySayypGGctF"></a>
-                    <a name="//apple_ref/swift/Method/responseListAny(queue:completionHandler:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Alamofire11DataRequestC11DropmarkSDKE15responseListAny5queue17completionHandlerACXDSo012OS_dispatch_I0CSg_yAA0B8ResponseVySayypGGctF">responseListAny(queue:<wbr>completionHandler:<wbr>)</a>
+                    <a name="/s:11DropmarkSDK17DKUploadSignatureV2idSivp"></a>
+                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK17DKUploadSignatureV2idSivp">id</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -333,10 +226,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
-<span class="kd">func</span> <span class="nf">responseListAny</span><span class="p">(</span>
-    <span class="nv">queue</span><span class="p">:</span> <span class="kt">DispatchQueue</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-    <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">DataResponse</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Any</span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -346,9 +236,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Alamofire11DataRequestC11DropmarkSDKE12responseList5queue17completionHandlerACXDSo012OS_dispatch_H0CSg_yAA0B8ResponseVySayxGGctAD010DKResponseG12SerializableRzlF"></a>
-                    <a name="//apple_ref/swift/Method/responseList(queue:completionHandler:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Alamofire11DataRequestC11DropmarkSDKE12responseList5queue17completionHandlerACXDSo012OS_dispatch_H0CSg_yAA0B8ResponseVySayxGGctAD010DKResponseG12SerializableRzlF">responseList(queue:<wbr>completionHandler:<wbr>)</a>
+                    <a name="/s:11DropmarkSDK17DKUploadSignatureV3urlSSvp"></a>
+                    <a name="//apple_ref/swift/Property/url" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK17DKUploadSignatureV3urlSSvp">url</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -363,10 +253,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
-<span class="kd">func</span> <span class="n">responseList</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DKResponseListSerializable.html">DKResponseListSerializable</a></span><span class="o">&gt;</span><span class="p">(</span>
-    <span class="nv">queue</span><span class="p">:</span> <span class="kt">DispatchQueue</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-    <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">DataResponse</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">T</span><span class="p">]</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -376,9 +263,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:9Alamofire11DataRequestC11DropmarkSDKE14responseObject5queue17completionHandlerACXDSo012OS_dispatch_H0CSg_yAA0B8ResponseVyxGctAD010DKResponseG12SerializableRzlF"></a>
-                    <a name="//apple_ref/swift/Method/responseObject(queue:completionHandler:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:9Alamofire11DataRequestC11DropmarkSDKE14responseObject5queue17completionHandlerACXDSo012OS_dispatch_H0CSg_yAA0B8ResponseVyxGctAD010DKResponseG12SerializableRzlF">responseObject(queue:<wbr>completionHandler:<wbr>)</a>
+                    <a name="/s:11DropmarkSDK17DKUploadSignatureV10parametersAC10ParametersVvp"></a>
+                    <a name="//apple_ref/swift/Property/parameters" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK17DKUploadSignatureV10parametersAC10ParametersVvp">parameters</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -393,11 +280,35 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
-<span class="kd">func</span> <span class="n">responseObject</span><span class="o">&lt;</span><span class="kt">T</span><span class="p">:</span> <span class="kt"><a href="../Protocols/DKResponseObjectSerializable.html">DKResponseObjectSerializable</a></span><span class="o">&gt;</span><span class="p">(</span>
-    <span class="nv">queue</span><span class="p">:</span> <span class="kt">DispatchQueue</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
-    <span class="nv">completionHandler</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">DataResponse</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span>
-    <span class="o">-&gt;</span> <span class="k">Self</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt"><a href="../Structs/DKUploadSignature/Parameters.html">Parameters</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK17DKUploadSignatureV10ParametersV"></a>
+                    <a name="//apple_ref/swift/Struct/Parameters" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK17DKUploadSignatureV10ParametersV">Parameters</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="../Structs/DKUploadSignature/Parameters.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Parameters</span> <span class="p">:</span> <span class="kt">Codable</span></code></pre>
 
                         </div>
                       </div>

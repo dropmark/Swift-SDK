@@ -1,0 +1,1615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DKPromise Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/DKPromise" class="dashAnchor"></a>
+    <a title="DKPromise Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">DropmarkSDK 3.2.0 Docs</a> (78% documented)</p>
+        <p class="header-right"><a href="https://github.com/dropmark/Swift-SDK"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fdropmark.github.io%2FSwift-SDK%2Fdocsets%2FDropmarkSDK.xml"><img src="../img/dash.png"/>Install in Dash</a></p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">DropmarkSDK Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        DKPromise Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/DKCollection.html">DKCollection</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKCollection/Kind.html">– Kind</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKCollection/SortBy.html">– SortBy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKCollection/SortOrder.html">– SortOrder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKCollection/ViewMode.html">– ViewMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKComment.html">DKComment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKDateFormatter.html">DKDateFormatter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKInvite.html">DKInvite</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKItem.html">DKItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKKeychain.html">DKKeychain</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKPagingGenerator.html">DKPagingGenerator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKPermissions.html">DKPermissions</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKReaction.html">DKReaction</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKTag.html">DKTag</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKTeam.html">DKTeam</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKTeam/Status.html">– Status</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKTeam/UserKind.html">– UserKind</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKTeam/Usage.html">– Usage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKThumbnails.html">DKThumbnails</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKUser.html">DKUser</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKUser/Kind.html">– Kind</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DKUser/Status.html">– Status</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/DKError.html">DKError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DKItemType.html">DKItemType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DKPlan.html">DKPlan</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DKRouter.html">DKRouter</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/DataRequest.html">DataRequest</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:11DropmarkSDK2eeoiySbAA12DKCollectionCSg_AEtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:11DropmarkSDK2eeoiySbAA6DKItemCSg_AEtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:11DropmarkSDK2eeoiySbAA6DKUserCSg_AEtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:11DropmarkSDK2eeoiySbAA8DKInviteCSg_AEtF">==(_:_:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:11DropmarkSDK2eeoiySbAA9DKCommentCSg_AEtF">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/DKResponseListSerializable.html">DKResponseListSerializable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DKResponseObjectSerializable.html">DKResponseObjectSerializable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/DKPromise.html">DKPromise</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DKResponseListAny.html">DKResponseListAny</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DKServerError.html">DKServerError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DKSession.html">DKSession</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DKUploadSignature.html">DKUploadSignature</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DKUploadSignature/Parameters.html">– Parameters</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>DKPromise</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">DKPromise</span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Activity"></a>
+                <a name="//apple_ref/swift/Section/Activity" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Activity"></a>
+                  <h3 class="section-name"><p>Activity</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV8activity10parametersAA18CancellablePromiseCySayAA6DKItemCGGSDySSypGSg_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/activity(parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV8activity10parametersAA18CancellablePromiseCySayAA6DKItemCGGSDySSypGSg_tFZ">activity(parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">activity</span><span class="p">(</span><span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Classes/DKItem.html">DKItem</a></span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Authentication"></a>
+                <a name="//apple_ref/swift/Section/Authentication" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Authentication"></a>
+                  <h3 class="section-name"><p>Authentication</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV12authenticate10parametersAA18CancellablePromiseCyAA6DKUserCGSDySSypG_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/authenticate(parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV12authenticate10parametersAA18CancellablePromiseCyAA6DKUserCGSDySSypG_tFZ">authenticate(parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">authenticate</span><span class="p">(</span><span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/DKUser.html">DKUser</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Collections"></a>
+                <a name="//apple_ref/swift/Section/Collections" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Collections"></a>
+                  <h3 class="section-name"><p>Collections</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV15listCollections10parametersAA18CancellablePromiseCySayAA12DKCollectionCGGSDySSypGSg_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/listCollections(parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV15listCollections10parametersAA18CancellablePromiseCySayAA12DKCollectionCGGSDySSypGSg_tFZ">listCollections(parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">listCollections</span><span class="p">(</span><span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Classes/DKCollection.html">DKCollection</a></span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV16createCollection10parametersAA18CancellablePromiseCyAA12DKCollectionCGSDySSypGSg_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/createCollection(parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV16createCollection10parametersAA18CancellablePromiseCyAA12DKCollectionCGSDySSypGSg_tFZ">createCollection(parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">createCollection</span><span class="p">(</span><span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/DKCollection.html">DKCollection</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV13getCollection2idAA18CancellablePromiseCyAA12DKCollectionCGSo8NSNumberC_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/getCollection(id:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV13getCollection2idAA18CancellablePromiseCyAA12DKCollectionCGSo8NSNumberC_tFZ">getCollection(id:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">getCollection</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/DKCollection.html">DKCollection</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV16updateCollection2id10parametersAA18CancellablePromiseCyAA12DKCollectionCGSo8NSNumberC_SDySSypGtFZ"></a>
+                    <a name="//apple_ref/swift/Method/updateCollection(id:parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV16updateCollection2id10parametersAA18CancellablePromiseCyAA12DKCollectionCGSo8NSNumberC_SDySSypGtFZ">updateCollection(id:<wbr>parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">updateCollection</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/DKCollection.html">DKCollection</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV16deleteCollection2idAA18CancellablePromiseCyytGSo8NSNumberC_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/deleteCollection(id:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV16deleteCollection2idAA18CancellablePromiseCyytGSo8NSNumberC_tFZ">deleteCollection(id:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">deleteCollection</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV29listCollaboratorsInCollection2idAA18CancellablePromiseCySayAA6DKUserCGGSo8NSNumberC_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/listCollaboratorsInCollection(id:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV29listCollaboratorsInCollection2idAA18CancellablePromiseCySayAA6DKUserCGGSo8NSNumberC_tFZ">listCollaboratorsInCollection(id:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">listCollaboratorsInCollection</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Classes/DKUser.html">DKUser</a></span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV27addCollaboratorToCollection2id10parametersAA18CancellablePromiseCyytGSo8NSNumberC_SDySSypGtFZ"></a>
+                    <a name="//apple_ref/swift/Method/addCollaboratorToCollection(id:parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV27addCollaboratorToCollection2id10parametersAA18CancellablePromiseCyytGSo8NSNumberC_SDySSypGtFZ">addCollaboratorToCollection(id:<wbr>parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">addCollaboratorToCollection</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV32removeCollaboratorFromCollection6userID010collectionI0AA18CancellablePromiseCyytGSo8NSNumberC_AKtFZ"></a>
+                    <a name="//apple_ref/swift/Method/removeCollaboratorFromCollection(userID:collectionID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV32removeCollaboratorFromCollection6userID010collectionI0AA18CancellablePromiseCyytGSo8NSNumberC_AKtFZ">removeCollaboratorFromCollection(userID:<wbr>collectionID:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">removeCollaboratorFromCollection</span><span class="p">(</span><span class="nv">userID</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">,</span> <span class="nv">collectionID</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Comments"></a>
+                <a name="//apple_ref/swift/Section/Comments" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Comments"></a>
+                  <h3 class="section-name"><p>Comments</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV19listCommentsForItem6itemIDAA18CancellablePromiseCySayAA9DKCommentCGGSo8NSNumberC_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/listCommentsForItem(itemID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV19listCommentsForItem6itemIDAA18CancellablePromiseCySayAA9DKCommentCGGSo8NSNumberC_tFZ">listCommentsForItem(itemID:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">listCommentsForItem</span><span class="p">(</span><span class="nv">itemID</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Classes/DKComment.html">DKComment</a></span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV20createCommentForItem6itemID10parametersAA18CancellablePromiseCyAA9DKCommentCGSo8NSNumberC_SDySSypGtFZ"></a>
+                    <a name="//apple_ref/swift/Method/createCommentForItem(itemID:parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV20createCommentForItem6itemID10parametersAA18CancellablePromiseCyAA9DKCommentCGSo8NSNumberC_SDySSypGtFZ">createCommentForItem(itemID:<wbr>parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">createCommentForItem</span><span class="p">(</span><span class="nv">itemID</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/DKComment.html">DKComment</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV13updateComment2id10parametersAA18CancellablePromiseCyAA9DKCommentCGSo8NSNumberC_SDySSypGtFZ"></a>
+                    <a name="//apple_ref/swift/Method/updateComment(id:parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV13updateComment2id10parametersAA18CancellablePromiseCyAA9DKCommentCGSo8NSNumberC_SDySSypGtFZ">updateComment(id:<wbr>parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">updateComment</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/DKComment.html">DKComment</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV13deleteComment2idAA18CancellablePromiseCyytGSo8NSNumberC_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/deleteComment(id:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV13deleteComment2idAA18CancellablePromiseCyytGSo8NSNumberC_tFZ">deleteComment(id:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">deleteComment</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Emails"></a>
+                <a name="//apple_ref/swift/Section/Emails" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Emails"></a>
+                  <h3 class="section-name"><p>Emails</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV11createEmail5emailAA18CancellablePromiseCyytGSS_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/createEmail(email:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV11createEmail5emailAA18CancellablePromiseCyytGSS_tFZ">createEmail(email:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">createEmail</span><span class="p">(</span><span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV11deleteEmail2idAA18CancellablePromiseCyytGSo8NSNumberC_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/deleteEmail(id:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV11deleteEmail2idAA18CancellablePromiseCyytGSo8NSNumberC_tFZ">deleteEmail(id:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">deleteEmail</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Items"></a>
+                <a name="//apple_ref/swift/Section/Items" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Items"></a>
+                  <h3 class="section-name"><p>Items</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV9listItems10parametersAA18CancellablePromiseCySayAA6DKItemCGGSDySSypG_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/listItems(parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV9listItems10parametersAA18CancellablePromiseCySayAA6DKItemCGGSDySSypG_tFZ">listItems(parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">listItems</span><span class="p">(</span><span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Classes/DKItem.html">DKItem</a></span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV21listItemsInCollection2id10parametersAA18CancellablePromiseCySayAA6DKItemCGGSo8NSNumberC_SDySSypGtFZ"></a>
+                    <a name="//apple_ref/swift/Method/listItemsInCollection(id:parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV21listItemsInCollection2id10parametersAA18CancellablePromiseCySayAA6DKItemCGGSo8NSNumberC_SDySSypGtFZ">listItemsInCollection(id:<wbr>parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">listItemsInCollection</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Classes/DKItem.html">DKItem</a></span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV22createItemInCollection2id10parametersAA18CancellablePromiseCyAA6DKItemCGSo8NSNumberC_SDySSypGtFZ"></a>
+                    <a name="//apple_ref/swift/Method/createItemInCollection(id:parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV22createItemInCollection2id10parametersAA18CancellablePromiseCyAA6DKItemCGSo8NSNumberC_SDySSypGtFZ">createItemInCollection(id:<wbr>parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">createItemInCollection</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/DKItem.html">DKItem</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV23updateItemsInCollection2id10parametersAA18CancellablePromiseCySayAA6DKItemCGGSo8NSNumberC_SDySSypGtFZ"></a>
+                    <a name="//apple_ref/swift/Method/updateItemsInCollection(id:parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV23updateItemsInCollection2id10parametersAA18CancellablePromiseCySayAA6DKItemCGGSo8NSNumberC_SDySSypGtFZ">updateItemsInCollection(id:<wbr>parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">updateItemsInCollection</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Classes/DKItem.html">DKItem</a></span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV11updateItems10parametersAA18CancellablePromiseCySayAA6DKItemCGGSDySSypG_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/updateItems(parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV11updateItems10parametersAA18CancellablePromiseCySayAA6DKItemCGGSDySSypG_tFZ">updateItems(parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">updateItems</span><span class="p">(</span><span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Classes/DKItem.html">DKItem</a></span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV7getItem2id10parametersAA18CancellablePromiseCyAA6DKItemCGSo8NSNumberC_SDySSypGSgtFZ"></a>
+                    <a name="//apple_ref/swift/Method/getItem(id:parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV7getItem2id10parametersAA18CancellablePromiseCyAA6DKItemCGSo8NSNumberC_SDySSypGSgtFZ">getItem(id:<wbr>parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">getItem</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/DKItem.html">DKItem</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV10updateItem2id10parametersAA18CancellablePromiseCyAA6DKItemCGSo8NSNumberC_SDySSypGtFZ"></a>
+                    <a name="//apple_ref/swift/Method/updateItem(id:parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV10updateItem2id10parametersAA18CancellablePromiseCyAA6DKItemCGSo8NSNumberC_SDySSypGtFZ">updateItem(id:<wbr>parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">updateItem</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/DKItem.html">DKItem</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV10deleteItem2id10parametersAA18CancellablePromiseCyytGSo8NSNumberC_SDySSypGSgtFZ"></a>
+                    <a name="//apple_ref/swift/Method/deleteItem(id:parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV10deleteItem2id10parametersAA18CancellablePromiseCyytGSo8NSNumberC_SDySSypGSgtFZ">deleteItem(id:<wbr>parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">deleteItem</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV23deleteItemsInCollection2id10parametersAA18CancellablePromiseCyytGSo8NSNumberC_SDySSypGtFZ"></a>
+                    <a name="//apple_ref/swift/Method/deleteItemsInCollection(id:parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV23deleteItemsInCollection2id10parametersAA18CancellablePromiseCyytGSo8NSNumberC_SDySSypGtFZ">deleteItemsInCollection(id:<wbr>parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">deleteItemsInCollection</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV9copyItems10parametersAA18CancellablePromiseCySayAA6DKItemCGGSDySSypG_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/copyItems(parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV9copyItems10parametersAA18CancellablePromiseCySayAA6DKItemCGGSDySSypG_tFZ">copyItems(parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">copyItems</span><span class="p">(</span><span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Classes/DKItem.html">DKItem</a></span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Reactions"></a>
+                <a name="//apple_ref/swift/Section/Reactions" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Reactions"></a>
+                  <h3 class="section-name"><p>Reactions</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV20listReactionsForItem2idAA18CancellablePromiseCySayAA10DKReactionCGGSo8NSNumberC_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/listReactionsForItem(id:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV20listReactionsForItem2idAA18CancellablePromiseCySayAA10DKReactionCGGSo8NSNumberC_tFZ">listReactionsForItem(id:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">listReactionsForItem</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Classes/DKReaction.html">DKReaction</a></span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV21createReactionForItem2idAA18CancellablePromiseCyAA10DKReactionCGSo8NSNumberC_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/createReactionForItem(id:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV21createReactionForItem2idAA18CancellablePromiseCyAA10DKReactionCGSo8NSNumberC_tFZ">createReactionForItem(id:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">createReactionForItem</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/DKReaction.html">DKReaction</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV14deleteReaction2idAA18CancellablePromiseCyytGSo8NSNumberC_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/deleteReaction(id:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV14deleteReaction2idAA18CancellablePromiseCyytGSo8NSNumberC_tFZ">deleteReaction(id:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">deleteReaction</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Search"></a>
+                <a name="//apple_ref/swift/Section/Search" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Search"></a>
+                  <h3 class="section-name"><p>Search</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV6search10parametersAA18CancellablePromiseCySayypGGSDySSypG_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/search(parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV6search10parametersAA18CancellablePromiseCySayypGGSDySSypG_tFZ">search(parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">search</span><span class="p">(</span><span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt">Any</span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Tags"></a>
+                <a name="//apple_ref/swift/Section/Tags" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Tags"></a>
+                  <h3 class="section-name"><p>Tags</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV8listTagsAA18CancellablePromiseCySayAA5DKTagCGGyFZ"></a>
+                    <a name="//apple_ref/swift/Method/listTags()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV8listTagsAA18CancellablePromiseCySayAA5DKTagCGGyFZ">listTags()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">listTags</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Classes/DKTag.html">DKTag</a></span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV15listTagsForItem2idAA18CancellablePromiseCySayAA5DKTagCGGSo8NSNumberC_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/listTagsForItem(id:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV15listTagsForItem2idAA18CancellablePromiseCySayAA5DKTagCGGSo8NSNumberC_tFZ">listTagsForItem(id:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">listTagsForItem</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Classes/DKTag.html">DKTag</a></span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV16createTagForItem2id4nameAA18CancellablePromiseCyAA5DKTagCGSo8NSNumberC_SStFZ"></a>
+                    <a name="//apple_ref/swift/Method/createTagForItem(id:name:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV16createTagForItem2id4nameAA18CancellablePromiseCyAA5DKTagCGSo8NSNumberC_SStFZ">createTagForItem(id:<wbr>name:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">createTagForItem</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">,</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/DKTag.html">DKTag</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV9deleteTag2idAA18CancellablePromiseCyytGSo8NSNumberC_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/deleteTag(id:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV9deleteTag2idAA18CancellablePromiseCyytGSo8NSNumberC_tFZ">deleteTag(id:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">deleteTag</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Teams"></a>
+                <a name="//apple_ref/swift/Section/Teams" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Teams"></a>
+                  <h3 class="section-name"><p>Teams</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV9listTeams10parametersAA18CancellablePromiseCySayAA6DKTeamCGGSDySSypGSg_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/listTeams(parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV9listTeams10parametersAA18CancellablePromiseCySayAA6DKTeamCGGSDySSypGSg_tFZ">listTeams(parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">listTeams</span><span class="p">(</span><span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Classes/DKTeam.html">DKTeam</a></span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV7getTeam2idAA18CancellablePromiseCyAA6DKTeamCGSo8NSNumberC_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/getTeam(id:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV7getTeam2idAA18CancellablePromiseCyAA6DKTeamCGSo8NSNumberC_tFZ">getTeam(id:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">getTeam</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/DKTeam.html">DKTeam</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV10updateTeam2id10parametersAA18CancellablePromiseCyAA6DKTeamCGSo8NSNumberC_SDySSypGtFZ"></a>
+                    <a name="//apple_ref/swift/Method/updateTeam(id:parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV10updateTeam2id10parametersAA18CancellablePromiseCyAA6DKTeamCGSo8NSNumberC_SDySSypGtFZ">updateTeam(id:<wbr>parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">updateTeam</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/DKTeam.html">DKTeam</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV15listUsersInTeam2idAA18CancellablePromiseCySayAA6DKUserCGGSo8NSNumberC_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/listUsersInTeam(id:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV15listUsersInTeam2idAA18CancellablePromiseCySayAA6DKUserCGGSo8NSNumberC_tFZ">listUsersInTeam(id:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">listUsersInTeam</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Classes/DKUser.html">DKUser</a></span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV16createUserInTeam2id10parametersAA18CancellablePromiseCyAA6DKUserCGSo8NSNumberC_SDySSypGtFZ"></a>
+                    <a name="//apple_ref/swift/Method/createUserInTeam(id:parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV16createUserInTeam2id10parametersAA18CancellablePromiseCyAA6DKUserCGSo8NSNumberC_SDySSypGtFZ">createUserInTeam(id:<wbr>parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">createUserInTeam</span><span class="p">(</span><span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/DKUser.html">DKUser</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV16updateUserInTeam6teamID04userI010parametersAA18CancellablePromiseCyAA6DKUserCGSo8NSNumberC_ANSDySSypGtFZ"></a>
+                    <a name="//apple_ref/swift/Method/updateUserInTeam(teamID:userID:parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV16updateUserInTeam6teamID04userI010parametersAA18CancellablePromiseCyAA6DKUserCGSo8NSNumberC_ANSDySSypGtFZ">updateUserInTeam(teamID:<wbr>userID:<wbr>parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">updateUserInTeam</span><span class="p">(</span><span class="nv">teamID</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">,</span> <span class="nv">userID</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">,</span> <span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/DKUser.html">DKUser</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV16deleteUserInTeam6teamID04userI0AA18CancellablePromiseCyytGSo8NSNumberC_AKtFZ"></a>
+                    <a name="//apple_ref/swift/Method/deleteUserInTeam(teamID:userID:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV16deleteUserInTeam6teamID04userI0AA18CancellablePromiseCyytGSo8NSNumberC_AKtFZ">deleteUserInTeam(teamID:<wbr>userID:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">deleteUserInTeam</span><span class="p">(</span><span class="nv">teamID</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">,</span> <span class="nv">userID</span><span class="p">:</span> <span class="kt">NSNumber</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Users"></a>
+                <a name="//apple_ref/swift/Section/Users" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Users"></a>
+                  <h3 class="section-name"><p>Users</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV10createUser10parametersAA18CancellablePromiseCyAA6DKUserCGSDySSypG_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/createUser(parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV10createUser10parametersAA18CancellablePromiseCyAA6DKUserCGSDySSypG_tFZ">createUser(parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">createUser</span><span class="p">(</span><span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/DKUser.html">DKUser</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV7getUser10parametersAA18CancellablePromiseCyAA6DKUserCGSDySSypGSg_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/getUser(parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV7getUser10parametersAA18CancellablePromiseCyAA6DKUserCGSDySSypGSg_tFZ">getUser(parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">getUser</span><span class="p">(</span><span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/DKUser.html">DKUser</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV10updateUser10parametersAA18CancellablePromiseCyAA6DKUserCGSDySSypG_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/updateUser(parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV10updateUser10parametersAA18CancellablePromiseCyAA6DKUserCGSDySSypG_tFZ">updateUser(parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">updateUser</span><span class="p">(</span><span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt"><a href="../Classes/DKUser.html">DKUser</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV12listContactsAA18CancellablePromiseCySayAA6DKUserCGGyFZ"></a>
+                    <a name="//apple_ref/swift/Method/listContacts()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV12listContactsAA18CancellablePromiseCySayAA6DKUserCGGyFZ">listContacts()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">listContacts</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="p">[</span><span class="kt"><a href="../Classes/DKUser.html">DKUser</a></span><span class="p">]</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Uploads"></a>
+                <a name="//apple_ref/swift/Section/Uploads" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Uploads"></a>
+                  <h3 class="section-name"><p>Uploads</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKPromiseV21createUploadSignature10parametersAA18CancellablePromiseCyAA08DKUploadF0VGSDySSypG_tFZ"></a>
+                    <a name="//apple_ref/swift/Method/createUploadSignature(parameters:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKPromiseV21createUploadSignature10parametersAA18CancellablePromiseCyAA08DKUploadF0VGSDySSypG_tFZ">createUploadSignature(parameters:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">createUploadSignature</span><span class="p">(</span><span class="nv">parameters</span><span class="p">:</span> <span class="kt">Parameters</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">CancellablePromise</span><span class="o">&lt;</span><span class="kt"><a href="../Structs/DKUploadSignature.html">DKUploadSignature</a></span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="http://oak.is/" target="_blank" rel="external">Oak LLC</a>. All rights reserved. (Last updated: 2021-06-22)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
