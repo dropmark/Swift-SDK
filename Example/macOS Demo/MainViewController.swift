@@ -81,23 +81,31 @@ class MainViewController: NSViewController {
         selectedCollectionLabel.stringValue = ""
         selectedStackLabel.stringValue = ""
                 
-        collectionsPaging.next = { PromiseGenerator.listCollections(page: $0) }
+        collectionsPaging.next = { DKPromise.listCollections(parameters: ["page": $0]) }
         
-        primaryItemsPaging.next = { page in
-            guard let collection = self.selectedCollection else {
+        primaryItemsPaging.next = { [weak self] page in
+            guard let collectionID = self?.selectedCollection?.id else {
                 return Promise(error: PagingError.noCollectionProvided).asCancellable()
             }
-            return PromiseGenerator.listItems(collection: collection, stack: nil, page: page)
+            let parameters: Parameters = [
+                "page": page,
+                "parent_id": ""
+            ]
+            return DKPromise.listItemsInCollection(id: collectionID, parameters: parameters)
         }
         
-        secondaryItemsPaging.next = { page in
-            guard let collection = self.selectedCollection else {
+        secondaryItemsPaging.next = { [weak self] page in
+            guard let collectionID = self?.selectedCollection?.id else {
                 return Promise(error: PagingError.noCollectionProvided).asCancellable()
             }
-            guard let stack = self.selectedStack else {
+            guard let stackID = self?.selectedStack?.id else {
                 return Promise(error: PagingError.noStackProvided).asCancellable()
             }
-            return PromiseGenerator.listItems(collection: collection, stack: stack, page: page)
+            let parameters: Parameters = [
+                "page": page,
+                "parent_id": stackID.stringValue
+            ]
+            return DKPromise.listItemsInCollection(id: collectionID, parameters: parameters)
         }
         
         getNextPageOfCollections().catch { error in

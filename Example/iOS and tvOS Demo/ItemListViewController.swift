@@ -61,8 +61,12 @@ class ItemListViewController: UITableViewController {
         
 #endif
         
-        paging.next = { [unowned self] in
-            PromiseGenerator.listItems(collection: self.collection, stack: self.stack, page: $0)
+        paging.next = { [unowned self] page in
+            let parameters: Parameters = [
+                "page": page,
+                "parent_id": self.stack?.id ?? ""
+            ]
+            return DKPromise.listItemsInCollection(id: self.collection.id, parameters: parameters)
         }
         
         getNextPageOfItems().catch { [weak self] error in

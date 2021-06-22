@@ -52,7 +52,7 @@ class CollectionListViewController: UITableViewController {
         
 #endif
         
-        paging.next = { PromiseGenerator.listCollections(page: $0) }
+        paging.next = { DKPromise.listCollections(parameters: ["page": $0]) }
         
         getNextPageOfCollections().catch { [weak self] error in
             let alert = UIAlertController(error: error)

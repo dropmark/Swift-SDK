@@ -81,7 +81,7 @@ class LoginViewController: NSViewController {
         
         firstly {
             
-            PromiseGenerator.authenticate(email: email, password: password)
+            DKPromise.authenticate(parameters: ["email": email, "password": password])
         
         }.done {
             

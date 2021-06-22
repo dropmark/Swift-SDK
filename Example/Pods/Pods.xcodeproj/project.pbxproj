@@ -233,6 +233,12 @@
 		A3EC7C957564F0D1A93AF66CF4FFF098 /* DKComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C92E68BEFEAFF2DBE210FBC44E5647F /* DKComment.swift */; };
 		A3FCA092ACEE616A03BC7257841F08DB /* DKResponseObjectSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BF00607BEDC1E42DD323B83CA609C7 /* DKResponseObjectSerializable.swift */; };
 		A48A1AEE1D6DB7C38B072E7CB69D6774 /* DKItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D0F1A529967ED3577F419513B6A8C3 /* DKItem.swift */; };
+		A5A108812681A6A90078C23A /* DKPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A108802681A6A90078C23A /* DKPromise.swift */; };
+		A5A108822681A6A90078C23A /* DKPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A108802681A6A90078C23A /* DKPromise.swift */; };
+		A5A108832681A6A90078C23A /* DKPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A108802681A6A90078C23A /* DKPromise.swift */; };
+		A5A108852681BD830078C23A /* DKUploadSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A108842681BD830078C23A /* DKUploadSignature.swift */; };
+		A5A108862681BD830078C23A /* DKUploadSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A108842681BD830078C23A /* DKUploadSignature.swift */; };
+		A5A108872681BD830078C23A /* DKUploadSignature.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A108842681BD830078C23A /* DKUploadSignature.swift */; };
 		A5B796A3CCD23B147DA0EB408214DF76 /* DKResponseListAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6241A8B91F7AAC0B69726B576EA078 /* DKResponseListAny.swift */; };
 		A63551129AFA24115703CD1170790F88 /* Promise+CancellablePromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CE5F6C0AB73F4BE6BDECABEB615746F /* Promise+CancellablePromise.swift */; };
 		A69A026AD910F2306B4C9ACB8674F1C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F7FB352DF83C76D029D11356970AB8B /* Foundation.framework */; };
@@ -457,107 +463,107 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		003372FD096AD1FEFDA584DAC4ADDF7D /* typeahead.jquery.js */ = {isa = PBXFileReference; includeInIndex = 1; name = typeahead.jquery.js; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/js/typeahead.jquery.js; sourceTree = "<group>"; };
+		003372FD096AD1FEFDA584DAC4ADDF7D /* typeahead.jquery.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = typeahead.jquery.js; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/js/typeahead.jquery.js; sourceTree = "<group>"; };
 		00CB49D98F60F412AC8BFCC804AFCBFC /* Box.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Box.swift; path = Sources/Box.swift; sourceTree = "<group>"; };
 		030B1D8D9D04A880191C050CAC1FA340 /* gh.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = gh.png; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/img/gh.png; sourceTree = "<group>"; };
-		03246E490FD8F8BA01661F68123D9008 /* Plan.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Plan.html; path = docs/Classes/DKUser/Plan.html; sourceTree = "<group>"; };
+		03246E490FD8F8BA01661F68123D9008 /* Plan.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Plan.html; path = docs/Classes/DKUser/Plan.html; sourceTree = "<group>"; };
 		03278AC7FFA90230C38098506CD2EA7F /* NSTask+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSTask+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSTask+AnyPromise.m"; sourceTree = "<group>"; };
 		0469862D77F23C8D920EC3674D3EF026 /* Pods-DropmarkSDK_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-DropmarkSDK_Tests.modulemap"; sourceTree = "<group>"; };
-		053A53BC595B8308BE74FBEE7A4A7F7C /* UserKind.html */ = {isa = PBXFileReference; includeInIndex = 1; name = UserKind.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKTeam/UserKind.html; sourceTree = "<group>"; };
+		053A53BC595B8308BE74FBEE7A4A7F7C /* UserKind.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = UserKind.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKTeam/UserKind.html; sourceTree = "<group>"; };
 		063BD1532C84B001124331EE2ED88286 /* Alamofire-macOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Alamofire-macOS-prefix.pch"; path = "../Alamofire-macOS/Alamofire-macOS-prefix.pch"; sourceTree = "<group>"; };
 		063FD8BA46C300A155CD3F9221EECF19 /* Pods-iOS Demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-iOS Demo-dummy.m"; sourceTree = "<group>"; };
 		072D46DEF11A241976DFBB08BE2BF8AD /* DKPermissions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKPermissions.swift; sourceTree = "<group>"; };
 		07A9AA8F34853ED2FA637BF42A504204 /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
 		084B9036732E56669CB097488D225CB3 /* AnyPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyPromise.swift; path = Sources/AnyPromise.swift; sourceTree = "<group>"; };
-		086F64E08816CAB9CC9027B64DA2258D /* UTI.html */ = {isa = PBXFileReference; includeInIndex = 1; name = UTI.html; path = docs/Structs/UTI.html; sourceTree = "<group>"; };
+		086F64E08816CAB9CC9027B64DA2258D /* UTI.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = UTI.html; path = docs/Structs/UTI.html; sourceTree = "<group>"; };
 		0943E8DEA05ACF7B79DAEE124ECC2FFE /* Pods-iOS Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Demo.release.xcconfig"; sourceTree = "<group>"; };
 		0993C822146A427F220E7AEB5DE69893 /* Alamofire-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "Alamofire-macOS.modulemap"; path = "../Alamofire-macOS/Alamofire-macOS.modulemap"; sourceTree = "<group>"; };
 		09BF00607BEDC1E42DD323B83CA609C7 /* DKResponseObjectSerializable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKResponseObjectSerializable.swift; sourceTree = "<group>"; };
 		0BDB6D98675F364460D94DCEBA370359 /* DataRequest+PromiseKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DataRequest+PromiseKit.swift"; sourceTree = "<group>"; };
 		0CC4BF2DD19C1823EA07656D97BF0BA0 /* afterlife.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = afterlife.swift; path = Extensions/Foundation/Sources/afterlife.swift; sourceTree = "<group>"; };
-		0CC701C1B1C67797909DD3C4FAAA5F38 /* DKPagingGenerator.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKPagingGenerator.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKPagingGenerator.html; sourceTree = "<group>"; };
-		0CCE9CB82B4F89C8E07ADCACFD3DB134 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = "Alamofire-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DBB054B5B1E4B2DA47DAF7FF7E3EE47 /* Status.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Status.html; path = docs/Classes/DKTeam/Status.html; sourceTree = "<group>"; };
+		0CC701C1B1C67797909DD3C4FAAA5F38 /* DKPagingGenerator.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKPagingGenerator.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKPagingGenerator.html; sourceTree = "<group>"; };
+		0CCE9CB82B4F89C8E07ADCACFD3DB134 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DBB054B5B1E4B2DA47DAF7FF7E3EE47 /* Status.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Status.html; path = docs/Classes/DKTeam/Status.html; sourceTree = "<group>"; };
 		0DDED4BE616FF65E5331653684386F7E /* Pods-macOS Demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-macOS Demo-acknowledgements.plist"; sourceTree = "<group>"; };
 		0E7C744A2D229D010FC59286A72D8392 /* Alamofire-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-iOS-dummy.m"; sourceTree = "<group>"; };
-		0F48399153F4E7C438B13D1C67317BC5 /* DKTeam.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKTeam.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKTeam.html; sourceTree = "<group>"; };
-		0F5B68DB4B994ABB13493E3DD684DB5B /* DKResponseListAny.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKResponseListAny.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Structs/DKResponseListAny.html; sourceTree = "<group>"; };
+		0F48399153F4E7C438B13D1C67317BC5 /* DKTeam.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKTeam.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKTeam.html; sourceTree = "<group>"; };
+		0F5B68DB4B994ABB13493E3DD684DB5B /* DKResponseListAny.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKResponseListAny.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Structs/DKResponseListAny.html; sourceTree = "<group>"; };
 		0F998E04211D2AD1497CCCBD61AB6227 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = docs/docsets/DropmarkSDK.docset/Contents/Info.plist; sourceTree = "<group>"; };
 		0FF852CE095D8E90E1DFC81B95D084CC /* Pods-tvOS Demo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-tvOS Demo.modulemap"; sourceTree = "<group>"; };
 		10247CE009510011CBFEDC7787620D4A /* after.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = after.m; path = Sources/after.m; sourceTree = "<group>"; };
 		121F38D293BDB7501C41E102A5E01AE4 /* DKError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKError.swift; path = Source/DKError.swift; sourceTree = "<group>"; };
-		131AB04D4F8A726E6E27170DB8FE3ADD /* ViewMode.html */ = {isa = PBXFileReference; includeInIndex = 1; name = ViewMode.html; path = docs/Classes/DKCollection/ViewMode.html; sourceTree = "<group>"; };
+		131AB04D4F8A726E6E27170DB8FE3ADD /* ViewMode.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = ViewMode.html; path = docs/Classes/DKCollection/ViewMode.html; sourceTree = "<group>"; };
 		135F9E5F5F7E1B5F52D3EC23074B97BC /* Alamofire-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Alamofire-tvOS.debug.xcconfig"; path = "../Alamofire-tvOS/Alamofire-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		15562A60BA8BE4F4E0DFB1C9DDDC0E34 /* Pods_DropmarkSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DropmarkSDK_Tests.framework; path = "Pods-DropmarkSDK_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15562A60BA8BE4F4E0DFB1C9DDDC0E34 /* Pods_DropmarkSDK_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DropmarkSDK_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17DCAFE9191DD1F99BA4C7352ABE169B /* Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Promise.swift; path = Sources/Promise.swift; sourceTree = "<group>"; };
-		18775112DEA14063DE1D6F8546CAF1D9 /* Usage.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Usage.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKTeam/Usage.html; sourceTree = "<group>"; };
+		18775112DEA14063DE1D6F8546CAF1D9 /* Usage.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Usage.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKTeam/Usage.html; sourceTree = "<group>"; };
 		18D44F3BE4FC5393FA668D5A63C19AEF /* PromiseKit.root-CorePromise-Foundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "PromiseKit.root-CorePromise-Foundation.release.xcconfig"; path = "../PromiseKit.root-CorePromise-Foundation/PromiseKit.root-CorePromise-Foundation.release.xcconfig"; sourceTree = "<group>"; };
 		1A47CF9417BEDE5A9580D4DEEE99A834 /* Pods-iOS Demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Demo-acknowledgements.plist"; sourceTree = "<group>"; };
-		1B7814A95D45A6409AC8DB53898A87E7 /* jazzy.js */ = {isa = PBXFileReference; includeInIndex = 1; name = jazzy.js; path = docs/js/jazzy.js; sourceTree = "<group>"; };
+		1B7814A95D45A6409AC8DB53898A87E7 /* jazzy.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = jazzy.js; path = docs/js/jazzy.js; sourceTree = "<group>"; };
 		1CF217B08B137334450578C210B49D51 /* PromiseKit.root-CorePromise-Foundation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PromiseKit.root-CorePromise-Foundation-umbrella.h"; path = "../PromiseKit.root-CorePromise-Foundation/PromiseKit.root-CorePromise-Foundation-umbrella.h"; sourceTree = "<group>"; };
 		1ED6EE02DFE62FECDCD1C69D215F1DB6 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
 		1F11FEC117159AB0A595AA0FB1D9AF95 /* Alamofire-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Alamofire-tvOS-dummy.m"; path = "../Alamofire-tvOS/Alamofire-tvOS-dummy.m"; sourceTree = "<group>"; };
-		1F45A3C2055601194CF30A75DFFC0B3C /* Functions.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Functions.html; path = docs/Functions.html; sourceTree = "<group>"; };
-		1F54F93DB1D9FB3BEEDEE47E8ACBEEA2 /* Dictionary.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Dictionary.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Extensions/Dictionary.html; sourceTree = "<group>"; };
+		1F45A3C2055601194CF30A75DFFC0B3C /* Functions.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Functions.html; path = docs/Functions.html; sourceTree = "<group>"; };
+		1F54F93DB1D9FB3BEEDEE47E8ACBEEA2 /* Dictionary.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Dictionary.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Extensions/Dictionary.html; sourceTree = "<group>"; };
 		1F6A408CE4E535388C92A159C7D6B054 /* DropmarkSDK-tvOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "DropmarkSDK-tvOS-Info.plist"; path = "../DropmarkSDK-tvOS/DropmarkSDK-tvOS-Info.plist"; sourceTree = "<group>"; };
-		1FAC90AE9198E6B7D57C83DECF36746E /* Enums.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Enums.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Enums.html; sourceTree = "<group>"; };
+		1FAC90AE9198E6B7D57C83DECF36746E /* Enums.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Enums.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Enums.html; sourceTree = "<group>"; };
 		1FD65780F268B25D78B3F88574884447 /* Pods-tvOS Demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tvOS Demo-acknowledgements.plist"; sourceTree = "<group>"; };
-		208B5A9A4ED42E27DFD06AF3921ABFF0 /* DropmarkSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DropmarkSDK.framework; path = "DropmarkSDK-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		208B5A9A4ED42E27DFD06AF3921ABFF0 /* DropmarkSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DropmarkSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2150F0E15DD063038510D214999F0360 /* spinner.gif */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.gif; name = spinner.gif; path = docs/img/spinner.gif; sourceTree = "<group>"; };
 		219791ECD75110F2BD2CFAEBE0083BF7 /* race.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = race.m; path = Sources/race.m; sourceTree = "<group>"; };
-		21F350D0AF84D1C610A35719A6F592DB /* Pods_tvOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_tvOS_Demo.framework; path = "Pods-tvOS Demo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2270BCA1B88396FA8AB55B24B85483FB /* typeahead.jquery.js */ = {isa = PBXFileReference; includeInIndex = 1; name = typeahead.jquery.js; path = docs/js/typeahead.jquery.js; sourceTree = "<group>"; };
+		21F350D0AF84D1C610A35719A6F592DB /* Pods_tvOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tvOS_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2270BCA1B88396FA8AB55B24B85483FB /* typeahead.jquery.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = typeahead.jquery.js; path = docs/js/typeahead.jquery.js; sourceTree = "<group>"; };
 		2535954B77283B91C52CED7A67684484 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		253AEDA86D22765456B4579EBE419ED3 /* DKThumbnails.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKThumbnails.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKThumbnails.html; sourceTree = "<group>"; };
-		254D4FF8C19DC14EEFDFAF98C5D5E8FA /* Extensions.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Extensions.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Extensions.html; sourceTree = "<group>"; };
+		253AEDA86D22765456B4579EBE419ED3 /* DKThumbnails.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKThumbnails.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKThumbnails.html; sourceTree = "<group>"; };
+		254D4FF8C19DC14EEFDFAF98C5D5E8FA /* Extensions.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Extensions.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Extensions.html; sourceTree = "<group>"; };
 		258BA70F1F73CFB8B1F58020799CF744 /* fwd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = fwd.h; path = Sources/fwd.h; sourceTree = "<group>"; };
 		2746BA7BA49065668B90AA32DC5A2EDF /* DKResponseListSerializable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKResponseListSerializable.swift; sourceTree = "<group>"; };
-		2849146739C3DBCFC0867F4D7AF2C4C1 /* jquery.min.js */ = {isa = PBXFileReference; includeInIndex = 1; name = jquery.min.js; path = docs/js/jquery.min.js; sourceTree = "<group>"; };
-		29449E6131763B6604E011E191D9C80A /* DKReaction.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKReaction.html; path = docs/Classes/DKReaction.html; sourceTree = "<group>"; };
-		294C722669ECB3AFF2301AD2FB7BFB82 /* DKKeychain.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKKeychain.html; path = docs/Classes/DKKeychain.html; sourceTree = "<group>"; };
-		2A1869E04025D2A2FCAE847ED57E3713 /* DKTag.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKTag.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKTag.html; sourceTree = "<group>"; };
-		2AB97C88A493E68223987DB84D5B48B5 /* jazzy.css */ = {isa = PBXFileReference; includeInIndex = 1; name = jazzy.css; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/css/jazzy.css; sourceTree = "<group>"; };
+		2849146739C3DBCFC0867F4D7AF2C4C1 /* jquery.min.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = jquery.min.js; path = docs/js/jquery.min.js; sourceTree = "<group>"; };
+		29449E6131763B6604E011E191D9C80A /* DKReaction.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKReaction.html; path = docs/Classes/DKReaction.html; sourceTree = "<group>"; };
+		294C722669ECB3AFF2301AD2FB7BFB82 /* DKKeychain.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKKeychain.html; path = docs/Classes/DKKeychain.html; sourceTree = "<group>"; };
+		2A1869E04025D2A2FCAE847ED57E3713 /* DKTag.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKTag.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKTag.html; sourceTree = "<group>"; };
+		2AB97C88A493E68223987DB84D5B48B5 /* jazzy.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = jazzy.css; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/css/jazzy.css; sourceTree = "<group>"; };
 		2B41A2A882A0CF8952025F52DEF5C27C /* DKPlan.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKPlan.swift; sourceTree = "<group>"; };
 		2BC9213287712865237DC5826670AD22 /* NSTask+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSTask+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSTask+AnyPromise.h"; sourceTree = "<group>"; };
 		2BF75D5744D7413DBE7A9AC8D4CA1EC0 /* PMKFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKFoundation.h; path = Extensions/Foundation/Sources/PMKFoundation.h; sourceTree = "<group>"; };
 		2CE5932C7A1D435A66415183CD6D6929 /* Pods-tvOS Demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-tvOS Demo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2D6732BB06EF899D365D63406242EBF5 /* DropmarkSDK-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "DropmarkSDK-iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		2DAD0FC1EB2628C0DE0C714E40F0486D /* DKServerError.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKServerError.html; path = docs/Structs/DKServerError.html; sourceTree = "<group>"; };
+		2DAD0FC1EB2628C0DE0C714E40F0486D /* DKServerError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKServerError.html; path = docs/Structs/DKServerError.html; sourceTree = "<group>"; };
 		2E4E7B62BA40CE511EF6928027BB6887 /* PromiseKit-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PromiseKit-tvOS-umbrella.h"; path = "../PromiseKit-tvOS/PromiseKit-tvOS-umbrella.h"; sourceTree = "<group>"; };
-		2E6C91ECD68812685FBE867BCA9A9515 /* Enums.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Enums.html; path = docs/Enums.html; sourceTree = "<group>"; };
+		2E6C91ECD68812685FBE867BCA9A9515 /* Enums.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Enums.html; path = docs/Enums.html; sourceTree = "<group>"; };
 		2EDE22C85F784D15AA5D76BFBB619ABD /* DropmarkSDK-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropmarkSDK-iOS-prefix.pch"; sourceTree = "<group>"; };
 		2F96BD04333AA7892258C74CBC017923 /* after.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = after.swift; path = Sources/after.swift; sourceTree = "<group>"; };
-		2FB9C1D8D8373B972EBCDBCFA34CE171 /* Status.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Status.html; path = docs/Classes/DKUser/Status.html; sourceTree = "<group>"; };
+		2FB9C1D8D8373B972EBCDBCFA34CE171 /* Status.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Status.html; path = docs/Classes/DKUser/Status.html; sourceTree = "<group>"; };
 		2FE2CF933F11D7A6DC5B36DE98E6780E /* Alamofire-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-iOS-prefix.pch"; sourceTree = "<group>"; };
 		303C12DDB2A73D22D74D88A057FA606A /* CancellablePromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CancellablePromise.swift; sourceTree = "<group>"; };
 		30B23CA08BDE29099D9CC2606A1D2A63 /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
-		317321C1889DF482CA2543BDE2073583 /* DKReaction.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKReaction.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKReaction.html; sourceTree = "<group>"; };
+		317321C1889DF482CA2543BDE2073583 /* DKReaction.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKReaction.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKReaction.html; sourceTree = "<group>"; };
 		31AFEA5E7B1199B5EB58839BD693114F /* Pods-macOS Demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-macOS Demo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		31C1F9D972224FDBFD6C403F93C868EF /* UIView+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+AnyPromise.h"; path = "Extensions/UIKit/Sources/UIView+AnyPromise.h"; sourceTree = "<group>"; };
 		33C9C0FE4CB7A42FE782763753491BF6 /* spinner.gif */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.gif; name = spinner.gif; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/img/spinner.gif; sourceTree = "<group>"; };
-		33E98B72EF4760F1ABF143A606A25B27 /* Plan.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Plan.html; path = docs/Classes/DKTeam/Plan.html; sourceTree = "<group>"; };
-		34331465ADE7A68E7B48EDB87F554B19 /* Structs.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Structs.html; path = docs/Structs.html; sourceTree = "<group>"; };
+		33E98B72EF4760F1ABF143A606A25B27 /* Plan.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Plan.html; path = docs/Classes/DKTeam/Plan.html; sourceTree = "<group>"; };
+		34331465ADE7A68E7B48EDB87F554B19 /* Structs.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Structs.html; path = docs/Structs.html; sourceTree = "<group>"; };
 		34673BCAC10CEBD247E4A925011D480D /* PromiseKit-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PromiseKit-tvOS-prefix.pch"; path = "../PromiseKit-tvOS/PromiseKit-tvOS-prefix.pch"; sourceTree = "<group>"; };
-		3560E38A389A19070236ADCF93E385F3 /* DKSerializationError.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKSerializationError.html; path = docs/Enums/DKSerializationError.html; sourceTree = "<group>"; };
+		3560E38A389A19070236ADCF93E385F3 /* DKSerializationError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKSerializationError.html; path = docs/Enums/DKSerializationError.html; sourceTree = "<group>"; };
 		36079889777F142F41FD2E24C2B8B1D9 /* CancellablePromiseError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CancellablePromiseError.swift; sourceTree = "<group>"; };
 		3647A282D00886202BC20BBCCC0D60B7 /* Pods-macOS Demo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-macOS Demo-Info.plist"; sourceTree = "<group>"; };
 		365FF77DF1C385037DE66CDB357B1431 /* DropmarkSDK-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "DropmarkSDK-tvOS.release.xcconfig"; path = "../DropmarkSDK-tvOS/DropmarkSDK-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		36B8B069009E16A70A8EDEED4FC76415 /* docSet.dsidx */ = {isa = PBXFileReference; includeInIndex = 1; name = docSet.dsidx; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/docSet.dsidx; sourceTree = "<group>"; };
-		36F315DDED79017EBE932E32517884F4 /* DKPaginationError.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKPaginationError.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Enums/DKPaginationError.html; sourceTree = "<group>"; };
-		3718FDBCA714DCC24B5A3CDC55C517CC /* jazzy.search.js */ = {isa = PBXFileReference; includeInIndex = 1; name = jazzy.search.js; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/js/jazzy.search.js; sourceTree = "<group>"; };
-		387E413B19E5C9990356CFD6AC70A030 /* DKError.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKError.html; path = docs/Enums/DKError.html; sourceTree = "<group>"; };
+		36B8B069009E16A70A8EDEED4FC76415 /* docSet.dsidx */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = docSet.dsidx; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/docSet.dsidx; sourceTree = "<group>"; };
+		36F315DDED79017EBE932E32517884F4 /* DKPaginationError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKPaginationError.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Enums/DKPaginationError.html; sourceTree = "<group>"; };
+		3718FDBCA714DCC24B5A3CDC55C517CC /* jazzy.search.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = jazzy.search.js; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/js/jazzy.search.js; sourceTree = "<group>"; };
+		387E413B19E5C9990356CFD6AC70A030 /* DKError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKError.html; path = docs/Enums/DKError.html; sourceTree = "<group>"; };
 		38AE1B632443862019301F09CB2CCDA6 /* Pods-DropmarkSDK_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DropmarkSDK_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		39AE8F24FC25141977A2219C3F2B16A2 /* DKUser.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKUser.html; path = docs/Classes/DKUser.html; sourceTree = "<group>"; };
+		39AE8F24FC25141977A2219C3F2B16A2 /* DKUser.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKUser.html; path = docs/Classes/DKUser.html; sourceTree = "<group>"; };
 		39DC89EB0C43C45C3965B04C1589C3DD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3B5DB27F6D86A4DBCC9D5E80D8068426 /* Pods-tvOS Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tvOS Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		3B80F1624936B3ADE170D97D759FBCD4 /* DropmarkSDK-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "DropmarkSDK-macOS.release.xcconfig"; path = "../DropmarkSDK-macOS/DropmarkSDK-macOS.release.xcconfig"; sourceTree = "<group>"; };
-		3B96C55264EFAB3D6AFB7626DEF7BB53 /* badge.svg */ = {isa = PBXFileReference; includeInIndex = 1; name = badge.svg; path = docs/badge.svg; sourceTree = "<group>"; };
+		3B96C55264EFAB3D6AFB7626DEF7BB53 /* badge.svg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = badge.svg; path = docs/badge.svg; sourceTree = "<group>"; };
 		3BC381A4171BF9D66B470F7F48451467 /* Pods-macOS Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-macOS Demo.release.xcconfig"; sourceTree = "<group>"; };
 		3C169A962AB1AFF51A86BAB806FCA84C /* dash.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = dash.png; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/img/dash.png; sourceTree = "<group>"; };
 		3CE5F6C0AB73F4BE6BDECABEB615746F /* Promise+CancellablePromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Promise+CancellablePromise.swift"; sourceTree = "<group>"; };
-		3DD2748BA4688D54262A02E391F562A9 /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; name = index.html; path = docs/index.html; sourceTree = "<group>"; };
-		3EBB2CDA986498C914FD21F5F38A743F /* Declaration.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Declaration.html; path = docs/Structs/UTI/Declaration.html; sourceTree = "<group>"; };
-		3F068CA47CB941483AFDD1C25F4CC6A7 /* lunr.min.js */ = {isa = PBXFileReference; includeInIndex = 1; name = lunr.min.js; path = docs/js/lunr.min.js; sourceTree = "<group>"; };
+		3DD2748BA4688D54262A02E391F562A9 /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = index.html; path = docs/index.html; sourceTree = "<group>"; };
+		3EBB2CDA986498C914FD21F5F38A743F /* Declaration.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Declaration.html; path = docs/Structs/UTI/Declaration.html; sourceTree = "<group>"; };
+		3F068CA47CB941483AFDD1C25F4CC6A7 /* lunr.min.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = lunr.min.js; path = docs/js/lunr.min.js; sourceTree = "<group>"; };
 		3F5443A621D09D222D2E6A93AE9001FE /* DropmarkSDK-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "DropmarkSDK-tvOS-dummy.m"; path = "../DropmarkSDK-tvOS/DropmarkSDK-tvOS-dummy.m"; sourceTree = "<group>"; };
 		3F699EBDE87380854487C2D5CD319FB7 /* Pods-iOS Demo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-iOS Demo-frameworks.sh"; sourceTree = "<group>"; };
 		3F815BEF58BA8F7AA050BF7E10F50ED6 /* PromiseKit-tvOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "PromiseKit-tvOS-Info.plist"; path = "../PromiseKit-tvOS/PromiseKit-tvOS-Info.plist"; sourceTree = "<group>"; };
@@ -565,10 +571,10 @@
 		414FEAAB3941F2ECA61F496662D1FA6B /* Pods-macOS Demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-macOS Demo-dummy.m"; sourceTree = "<group>"; };
 		417823A9371A758684485C438B66EE55 /* Pods-iOS Demo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-iOS Demo.modulemap"; sourceTree = "<group>"; };
 		41792DF7A35D366A0B172C673CD655D8 /* hang.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = hang.m; path = Sources/hang.m; sourceTree = "<group>"; };
-		424E63B5460FCD71EF81795828BEDAF8 /* Dictionary.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Dictionary.html; path = docs/Extensions/Dictionary.html; sourceTree = "<group>"; };
+		424E63B5460FCD71EF81795828BEDAF8 /* Dictionary.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Dictionary.html; path = docs/Extensions/Dictionary.html; sourceTree = "<group>"; };
 		435F79ABCEF0159969B83B51EFE1B4B0 /* Deprecations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecations.swift; path = Sources/Deprecations.swift; sourceTree = "<group>"; };
-		43731B4C1E7992441CA46EFC940CBF19 /* DKServerError.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKServerError.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Structs/DKServerError.html; sourceTree = "<group>"; };
-		43CE3EE87CBB7FCC330B040DEF6E1680 /* jazzy.css */ = {isa = PBXFileReference; includeInIndex = 1; name = jazzy.css; path = docs/css/jazzy.css; sourceTree = "<group>"; };
+		43731B4C1E7992441CA46EFC940CBF19 /* DKServerError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKServerError.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Structs/DKServerError.html; sourceTree = "<group>"; };
+		43CE3EE87CBB7FCC330B040DEF6E1680 /* jazzy.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = jazzy.css; path = docs/css/jazzy.css; sourceTree = "<group>"; };
 		44D6C3FE2E0E358571FDDB19B4CC6E85 /* Pods-iOS Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-iOS Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		45D877629DBF7F9580D796F15C2DA468 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		462949B207B4490E717EEB3BA7E6CAF8 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
@@ -580,11 +586,11 @@
 		4878361B31779311C6CCD8D5ED14F579 /* DropmarkSDK-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "DropmarkSDK-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		48CEF9E8BC15A1C7219BC5092C7B3C55 /* UIViewController+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+AnyPromise.h"; path = "Extensions/UIKit/Sources/UIViewController+AnyPromise.h"; sourceTree = "<group>"; };
 		4D5932AB782B68DC3BCA431F108A6596 /* Pods-macOS Demo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-macOS Demo-frameworks.sh"; sourceTree = "<group>"; };
-		4DCE1C85BF45456E68821B77DAEA26B1 /* DropmarkSDK.xml */ = {isa = PBXFileReference; includeInIndex = 1; name = DropmarkSDK.xml; path = docs/docsets/DropmarkSDK.xml; sourceTree = "<group>"; };
-		4E2E50A7D7B22DAEF87FE1C3947A9EA9 /* UTI.html */ = {isa = PBXFileReference; includeInIndex = 1; name = UTI.html; path = docs/Extensions/UTI.html; sourceTree = "<group>"; };
+		4DCE1C85BF45456E68821B77DAEA26B1 /* DropmarkSDK.xml */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = DropmarkSDK.xml; path = docs/docsets/DropmarkSDK.xml; sourceTree = "<group>"; };
+		4E2E50A7D7B22DAEF87FE1C3947A9EA9 /* UTI.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = UTI.html; path = docs/Extensions/UTI.html; sourceTree = "<group>"; };
 		4E6241A8B91F7AAC0B69726B576EA078 /* DKResponseListAny.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKResponseListAny.swift; sourceTree = "<group>"; };
-		4EE12D58FADE66C67D20363F9E2B23ED /* DKPlan.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKPlan.html; path = docs/Enums/DKPlan.html; sourceTree = "<group>"; };
-		4F80DFC55BBD55166CA6C4FEDBFC749A /* DKItem.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKItem.html; path = docs/Classes/DKItem.html; sourceTree = "<group>"; };
+		4EE12D58FADE66C67D20363F9E2B23ED /* DKPlan.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKPlan.html; path = docs/Enums/DKPlan.html; sourceTree = "<group>"; };
+		4F80DFC55BBD55166CA6C4FEDBFC749A /* DKItem.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKItem.html; path = docs/Classes/DKItem.html; sourceTree = "<group>"; };
 		50FC593DEC6071A539304B6FD7F31208 /* Pods-DropmarkSDK_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DropmarkSDK_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		5180BB19BBF47747F4F98FF07D8DBDD4 /* DKKeychain.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKKeychain.swift; path = Source/DKKeychain.swift; sourceTree = "<group>"; };
 		522B696FB0EA5C8B69EAE9D94A89915B /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
@@ -592,71 +598,71 @@
 		5327FC35980275660A66BBE6ED5D8AB6 /* DKReaction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKReaction.swift; sourceTree = "<group>"; };
 		53BC473234E067B6C9F47D0320687BF8 /* Alamofire-macOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "Alamofire-macOS-Info.plist"; path = "../Alamofire-macOS/Alamofire-macOS-Info.plist"; sourceTree = "<group>"; };
 		53BF6CDCBEB969D9D3297F204E5FA750 /* UTIKit+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UTIKit+Extensions.swift"; sourceTree = "<group>"; };
-		545B266C24A4CDAEC67AB42C131D5A2E /* Plan.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Plan.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKUser/Plan.html; sourceTree = "<group>"; };
-		5481CE46D30AC5DDB94028EDFFE79583 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PromiseKit.framework; path = "PromiseKit.root-CorePromise-Foundation.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		545B266C24A4CDAEC67AB42C131D5A2E /* Plan.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Plan.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKUser/Plan.html; sourceTree = "<group>"; };
+		5481CE46D30AC5DDB94028EDFFE79583 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		54C8E640346BAAF0AD7F6665AB5BC637 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
-		54F13CBB0D94BD552600CDE55EFDF151 /* DKCollection.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKCollection.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKCollection.html; sourceTree = "<group>"; };
-		57B07DA78F0EC063B750B60E1D7D671A /* DKResponseObjectSerializable.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKResponseObjectSerializable.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Protocols/DKResponseObjectSerializable.html; sourceTree = "<group>"; };
-		585AC07B969193676424E9EBDD85FBC7 /* DKInvite.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKInvite.html; path = docs/Classes/DKInvite.html; sourceTree = "<group>"; };
+		54F13CBB0D94BD552600CDE55EFDF151 /* DKCollection.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKCollection.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKCollection.html; sourceTree = "<group>"; };
+		57B07DA78F0EC063B750B60E1D7D671A /* DKResponseObjectSerializable.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKResponseObjectSerializable.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Protocols/DKResponseObjectSerializable.html; sourceTree = "<group>"; };
+		585AC07B969193676424E9EBDD85FBC7 /* DKInvite.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKInvite.html; path = docs/Classes/DKInvite.html; sourceTree = "<group>"; };
 		5943D9E4870F5B59DF5074A0771249EB /* Pods-DropmarkSDK_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DropmarkSDK_Tests-Info.plist"; sourceTree = "<group>"; };
 		59D090F3D3DCDA2DA1F98EA620DA804F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		5A29BDE9696663EAAC7E09C61594EAA1 /* Pods-DropmarkSDK_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DropmarkSDK_Tests-dummy.m"; sourceTree = "<group>"; };
-		5A2F0EBFC3599AEF95EA12D04DB05EE4 /* Error.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Error.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Extensions/Error.html; sourceTree = "<group>"; };
+		5A2F0EBFC3599AEF95EA12D04DB05EE4 /* Error.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Error.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Extensions/Error.html; sourceTree = "<group>"; };
 		5A875E8EF021CECB18A34E876A140394 /* NSNotificationCenter+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSNotificationCenter+Promise.swift"; path = "Extensions/Foundation/Sources/NSNotificationCenter+Promise.swift"; sourceTree = "<group>"; };
 		5BA3E3B8FA2C91B90870D5BF6944CEFD /* Alamofire-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "Alamofire-tvOS.modulemap"; path = "../Alamofire-tvOS/Alamofire-tvOS.modulemap"; sourceTree = "<group>"; };
 		5C1DED13933A72D047D1A020F6681C37 /* Pods-tvOS Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-tvOS Demo.release.xcconfig"; sourceTree = "<group>"; };
-		5C4BE40476091B2618B656B9662E3134 /* search.json */ = {isa = PBXFileReference; includeInIndex = 1; name = search.json; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/search.json; sourceTree = "<group>"; };
+		5C4BE40476091B2618B656B9662E3134 /* search.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = search.json; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/search.json; sourceTree = "<group>"; };
 		5C92E68BEFEAFF2DBE210FBC44E5647F /* DKComment.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKComment.swift; sourceTree = "<group>"; };
-		5CC20625B97ED5F2DA7B3824D8F5234A /* DropmarkSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = DropmarkSDK.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5CC20625B97ED5F2DA7B3824D8F5234A /* DropmarkSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = DropmarkSDK.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5CCB89A5B4165D04961B06FAEC49F508 /* DKRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKRouter.swift; sourceTree = "<group>"; };
 		5CFEEAD2132F802F389E0FE46F6C33B6 /* Alamofire-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-iOS-umbrella.h"; sourceTree = "<group>"; };
 		5DE843E62BC453320A4929D86981B00E /* Alamofire-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Alamofire-macOS.debug.xcconfig"; path = "../Alamofire-macOS/Alamofire-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 		5E67CF62C12F9ACECF7CD2DF0C1A28A0 /* dash.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = dash.png; path = docs/img/dash.png; sourceTree = "<group>"; };
 		5E83255AB956DD82A6F4C24D851B356D /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Sources/Error.swift; sourceTree = "<group>"; };
-		5ED6E3F43C8BFFDFCDA3EEC6E3D5B143 /* Kind.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Kind.html; path = docs/Classes/DKCollection/Kind.html; sourceTree = "<group>"; };
+		5ED6E3F43C8BFFDFCDA3EEC6E3D5B143 /* Kind.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Kind.html; path = docs/Classes/DKCollection/Kind.html; sourceTree = "<group>"; };
 		5FC3A4DE17B4A5260F3AC5599826E498 /* race.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = race.swift; sourceTree = "<group>"; };
 		60E0FC3C79523992D38CCE64A054F808 /* UIView+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Promise.swift"; path = "Extensions/UIKit/Sources/UIView+Promise.swift"; sourceTree = "<group>"; };
-		62BCEBB1619B89342D2488A6DE977EF7 /* highlight.css */ = {isa = PBXFileReference; includeInIndex = 1; name = highlight.css; path = docs/css/highlight.css; sourceTree = "<group>"; };
+		62BCEBB1619B89342D2488A6DE977EF7 /* highlight.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = highlight.css; path = docs/css/highlight.css; sourceTree = "<group>"; };
 		6423EB3283F529E6EBB4ECD2F3BF6474 /* DKTag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKTag.swift; sourceTree = "<group>"; };
 		64881CE33B40EFDA3EAE57EBABD41D78 /* DKItemType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKItemType.swift; sourceTree = "<group>"; };
-		64BF340869FDB85B10904377A6794551 /* Classes.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Classes.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes.html; sourceTree = "<group>"; };
-		6545095B31E5B598A897CA9239EFAC77 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		655FF3496DEAE7BCD9C2491A9FC6A642 /* Kind.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Kind.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKUser/Kind.html; sourceTree = "<group>"; };
-		67BF3793A17A4C3208100C1198855B43 /* DKComment.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKComment.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKComment.html; sourceTree = "<group>"; };
-		684EF7D9054DEBC0B8E84E9E987C580B /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PromiseKit.framework; path = "PromiseKit-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		64BF340869FDB85B10904377A6794551 /* Classes.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Classes.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes.html; sourceTree = "<group>"; };
+		6545095B31E5B598A897CA9239EFAC77 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		655FF3496DEAE7BCD9C2491A9FC6A642 /* Kind.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Kind.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKUser/Kind.html; sourceTree = "<group>"; };
+		67BF3793A17A4C3208100C1198855B43 /* DKComment.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKComment.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKComment.html; sourceTree = "<group>"; };
+		684EF7D9054DEBC0B8E84E9E987C580B /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6920C2ADB3299B70F3EC5A8EDD7E8310 /* DKServerError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKServerError.swift; sourceTree = "<group>"; };
 		6A1A1ED3C4CE43906893CCDE5D75E384 /* DropmarkSDK-macOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "DropmarkSDK-macOS-Info.plist"; path = "../DropmarkSDK-macOS/DropmarkSDK-macOS-Info.plist"; sourceTree = "<group>"; };
 		6A50A0ACC7C887B6FBA276E67AE104E1 /* Alamofire-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Alamofire-iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		6AA43FF296F9C3A708D58C0DBED23B82 /* UTI.html */ = {isa = PBXFileReference; includeInIndex = 1; name = UTI.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Structs/UTI.html; sourceTree = "<group>"; };
+		6AA43FF296F9C3A708D58C0DBED23B82 /* UTI.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = UTI.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Structs/UTI.html; sourceTree = "<group>"; };
 		6B39477CD5B1F16A13EA8845DE3C0510 /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
-		6BB02DC65CB6FF5AAE5634F67E00ACDD /* DKPaginationError.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKPaginationError.html; path = docs/Enums/DKPaginationError.html; sourceTree = "<group>"; };
+		6BB02DC65CB6FF5AAE5634F67E00ACDD /* DKPaginationError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKPaginationError.html; path = docs/Enums/DKPaginationError.html; sourceTree = "<group>"; };
 		6BDD48493EC8FEB23BADE71B6369D6C1 /* PromiseKit-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "PromiseKit-iOS-Info.plist"; sourceTree = "<group>"; };
-		6E4BE3B94F9B60B9920E9A99C4FB657A /* ViewMode.html */ = {isa = PBXFileReference; includeInIndex = 1; name = ViewMode.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKCollection/ViewMode.html; sourceTree = "<group>"; };
-		6EF922EB266D4C7D022188A9E74C24AD /* jquery.min.js */ = {isa = PBXFileReference; includeInIndex = 1; name = jquery.min.js; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/js/jquery.min.js; sourceTree = "<group>"; };
-		6FD386368B8FB87FC08F5973DBE70678 /* DKResponseListSerializable.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKResponseListSerializable.html; path = docs/Protocols/DKResponseListSerializable.html; sourceTree = "<group>"; };
-		705B1EB8F06DE19B8E03A3CEC1A85E7D /* undocumented.json */ = {isa = PBXFileReference; includeInIndex = 1; name = undocumented.json; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/undocumented.json; sourceTree = "<group>"; };
+		6E4BE3B94F9B60B9920E9A99C4FB657A /* ViewMode.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = ViewMode.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKCollection/ViewMode.html; sourceTree = "<group>"; };
+		6EF922EB266D4C7D022188A9E74C24AD /* jquery.min.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = jquery.min.js; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/js/jquery.min.js; sourceTree = "<group>"; };
+		6FD386368B8FB87FC08F5973DBE70678 /* DKResponseListSerializable.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKResponseListSerializable.html; path = docs/Protocols/DKResponseListSerializable.html; sourceTree = "<group>"; };
+		705B1EB8F06DE19B8E03A3CEC1A85E7D /* undocumented.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = undocumented.json; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/undocumented.json; sourceTree = "<group>"; };
 		7151398822695336FBA479F0EE42E07D /* Pods-DropmarkSDK_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DropmarkSDK_Tests-umbrella.h"; sourceTree = "<group>"; };
 		715962AD127EA02038B986C96636B11C /* Alamofire-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Alamofire-tvOS-umbrella.h"; path = "../Alamofire-tvOS/Alamofire-tvOS-umbrella.h"; sourceTree = "<group>"; };
 		71A972BD4926F0BFE74391DF4081B8B6 /* Pods-tvOS Demo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-tvOS Demo-Info.plist"; sourceTree = "<group>"; };
 		72825C6BFBC3F7F10BCD2E493CA16EC2 /* firstly.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = firstly.swift; path = Sources/firstly.swift; sourceTree = "<group>"; };
-		7449CE0FBB3340F4A270612F564575BF /* DKDateFormatter.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKDateFormatter.html; path = docs/Classes/DKDateFormatter.html; sourceTree = "<group>"; };
+		7449CE0FBB3340F4A270612F564575BF /* DKDateFormatter.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKDateFormatter.html; path = docs/Classes/DKDateFormatter.html; sourceTree = "<group>"; };
 		7496AD091890A999150CF1270ABB88F3 /* NSURLSession+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLSession+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSURLSession+AnyPromise.m"; sourceTree = "<group>"; };
 		75F08FF1DA963A077A6FE135D14FAC7B /* PromiseKit.root-CorePromise-Foundation-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "PromiseKit.root-CorePromise-Foundation-Info.plist"; path = "../PromiseKit.root-CorePromise-Foundation/PromiseKit.root-CorePromise-Foundation-Info.plist"; sourceTree = "<group>"; };
-		776CDF52075E9802DBA83D4ECD8AE691 /* DKPagingGenerator.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKPagingGenerator.html; path = docs/Classes/DKPagingGenerator.html; sourceTree = "<group>"; };
+		776CDF52075E9802DBA83D4ECD8AE691 /* DKPagingGenerator.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKPagingGenerator.html; path = docs/Classes/DKPagingGenerator.html; sourceTree = "<group>"; };
 		795E7BCCE52AB2BA35BDCE038CF30E4C /* PromiseKit-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PromiseKit-iOS-prefix.pch"; sourceTree = "<group>"; };
 		796B6FA961E8ACCB8CC7143F14488D16 /* UTIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UTIKit.swift; sourceTree = "<group>"; };
 		7C30DB833AB5E11DBD13A08423758363 /* hang.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = hang.swift; path = Sources/hang.swift; sourceTree = "<group>"; };
-		7D384ECFAAE59EC3AEF8237E0B853438 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = "Alamofire-tvOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D384ECFAAE59EC3AEF8237E0B853438 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F54EBD0206D632C568D41C7F3CECCBF /* Alamofire-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Alamofire-tvOS.release.xcconfig"; path = "../Alamofire-tvOS/Alamofire-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		8287F69D820F7EFE9D85BF7959583B9F /* DKSerializationError.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKSerializationError.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Enums/DKSerializationError.html; sourceTree = "<group>"; };
-		83110FD3D793B3921B98E4ACF73FC9ED /* Status.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Status.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKTeam/Status.html; sourceTree = "<group>"; };
+		8287F69D820F7EFE9D85BF7959583B9F /* DKSerializationError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKSerializationError.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Enums/DKSerializationError.html; sourceTree = "<group>"; };
+		83110FD3D793B3921B98E4ACF73FC9ED /* Status.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Status.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKTeam/Status.html; sourceTree = "<group>"; };
 		840F0454299B520011D30D12BB1FF88B /* Pods-macOS Demo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-macOS Demo.modulemap"; sourceTree = "<group>"; };
-		848CFDD525FAAAEA05FD90F50AEFC2F9 /* UserKind.html */ = {isa = PBXFileReference; includeInIndex = 1; name = UserKind.html; path = docs/Classes/DKTeam/UserKind.html; sourceTree = "<group>"; };
-		86A9A473D8C481E51F5C41784A8262E4 /* SortOrder.html */ = {isa = PBXFileReference; includeInIndex = 1; name = SortOrder.html; path = docs/Classes/DKCollection/SortOrder.html; sourceTree = "<group>"; };
+		848CFDD525FAAAEA05FD90F50AEFC2F9 /* UserKind.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = UserKind.html; path = docs/Classes/DKTeam/UserKind.html; sourceTree = "<group>"; };
+		86A9A473D8C481E51F5C41784A8262E4 /* SortOrder.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = SortOrder.html; path = docs/Classes/DKCollection/SortOrder.html; sourceTree = "<group>"; };
 		86AB52F1A743CBA193089A2430B4B094 /* dispatch_promise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = dispatch_promise.m; path = Sources/dispatch_promise.m; sourceTree = "<group>"; };
-		890B1160092D98929BFE4399BE65EB6D /* DKKeychain.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKKeychain.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Structs/DKKeychain.html; sourceTree = "<group>"; };
+		890B1160092D98929BFE4399BE65EB6D /* DKKeychain.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKKeychain.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Structs/DKKeychain.html; sourceTree = "<group>"; };
 		89790C28061A8CF00D1338645E417C81 /* DKPagingGenerator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKPagingGenerator.swift; sourceTree = "<group>"; };
-		89B2FEE22476D970853A34434B3C7F1C /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; name = index.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/index.html; sourceTree = "<group>"; };
+		89B2FEE22476D970853A34434B3C7F1C /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = index.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/index.html; sourceTree = "<group>"; };
 		8AA93360CDE5F7E02E857541D7877F4F /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		8C8DCBB9FE142333E5104D965EB1350B /* PromiseKit-tvOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "PromiseKit-tvOS.modulemap"; path = "../PromiseKit-tvOS/PromiseKit-tvOS.modulemap"; sourceTree = "<group>"; };
 		8D34C051F106B7A575D1F80B2AD5F1EE /* Alamofire-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-iOS-Info.plist"; sourceTree = "<group>"; };
@@ -668,148 +674,150 @@
 		8F7FB352DF83C76D029D11356970AB8B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		8FA89AED6AD90B63B00FB5F9C498A0DE /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		8FBC24B42969352354E08112BA382673 /* Pods-iOS Demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-iOS Demo-acknowledgements.markdown"; sourceTree = "<group>"; };
-		905DCA388C53A9FB8783B6A27B535C59 /* Functions.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Functions.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Functions.html; sourceTree = "<group>"; };
+		905DCA388C53A9FB8783B6A27B535C59 /* Functions.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Functions.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Functions.html; sourceTree = "<group>"; };
 		90F6DE297E8A75405DE32C6B83620BA9 /* Alamofire-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Alamofire-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		95864E3B5E3C0923B43E1BB8DA4498BB /* UIViewPropertyAnimator+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewPropertyAnimator+Promise.swift"; path = "Extensions/UIKit/Sources/UIViewPropertyAnimator+Promise.swift"; sourceTree = "<group>"; };
-		95A3EF440EB17B8C29A80D5F7005EB4D /* DKItemType.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKItemType.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Enums/DKItemType.html; sourceTree = "<group>"; };
+		95A3EF440EB17B8C29A80D5F7005EB4D /* DKItemType.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKItemType.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Enums/DKItemType.html; sourceTree = "<group>"; };
 		95A78DEDC0DC4756EF26F4A6261DE3E0 /* when.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = when.swift; path = Sources/when.swift; sourceTree = "<group>"; };
-		966AA42878212207687E9A2A4DBCD618 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = "Alamofire-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		966AA42878212207687E9A2A4DBCD618 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		96970D81C144D322F29BD7449A8E3F91 /* DropmarkSDK-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "DropmarkSDK-tvOS.debug.xcconfig"; path = "../DropmarkSDK-tvOS/DropmarkSDK-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		96CE52100CB5F9FD070C48195BCA2859 /* DKCollection.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKCollection.html; path = docs/Classes/DKCollection.html; sourceTree = "<group>"; };
-		97E08CC7A4CC8FB088F2A9FD2ADD7EED /* DKComment.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKComment.html; path = docs/Classes/DKComment.html; sourceTree = "<group>"; };
+		96CE52100CB5F9FD070C48195BCA2859 /* DKCollection.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKCollection.html; path = docs/Classes/DKCollection.html; sourceTree = "<group>"; };
+		97E08CC7A4CC8FB088F2A9FD2ADD7EED /* DKComment.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKComment.html; path = docs/Classes/DKComment.html; sourceTree = "<group>"; };
 		9826A764FCA326D399C06EB47D15ABB3 /* DropmarkSDK-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "DropmarkSDK-macOS-dummy.m"; path = "../DropmarkSDK-macOS/DropmarkSDK-macOS-dummy.m"; sourceTree = "<group>"; };
 		988AC444453FB18670A18052D4774E3C /* PMKUIKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKUIKit.h; path = Extensions/UIKit/Sources/PMKUIKit.h; sourceTree = "<group>"; };
-		98D087A4B017215343D1CD5952E44942 /* DKUser.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKUser.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKUser.html; sourceTree = "<group>"; };
-		99D96D111CDEAB6A9DB7B7EA2784E872 /* Pods_iOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_iOS_Demo.framework; path = "Pods-iOS Demo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		98D087A4B017215343D1CD5952E44942 /* DKUser.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKUser.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKUser.html; sourceTree = "<group>"; };
+		99D96D111CDEAB6A9DB7B7EA2784E872 /* Pods_iOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B6DE703C2735E911839EC0047539E3F /* Resolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Resolver.swift; path = Sources/Resolver.swift; sourceTree = "<group>"; };
 		9D0E9E2D0AA4FF9FA18419A74BCEE047 /* map.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = map.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DF0717BE586412D1349384D5020D03C /* Pods-iOS Demo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-iOS Demo-umbrella.h"; sourceTree = "<group>"; };
 		9E8E5C49F6C4781BA5E636CE7FA17F2A /* DKDateFormatter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKDateFormatter.swift; path = Source/DKDateFormatter.swift; sourceTree = "<group>"; };
-		9E93E4565D0AEA97BE774DF0E4BBBB9E /* Bundle.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Bundle.html; path = docs/Extensions/Bundle.html; sourceTree = "<group>"; };
-		9F50E3A3AF3B148911E0B8F26BB06C68 /* Structs.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Structs.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Structs.html; sourceTree = "<group>"; };
+		9E93E4565D0AEA97BE774DF0E4BBBB9E /* Bundle.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Bundle.html; path = docs/Extensions/Bundle.html; sourceTree = "<group>"; };
+		9F50E3A3AF3B148911E0B8F26BB06C68 /* Structs.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Structs.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Structs.html; sourceTree = "<group>"; };
 		9FD1589BD6DE2E791B24B98243E73BEF /* LogEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogEvent.swift; path = Sources/LogEvent.swift; sourceTree = "<group>"; };
 		A01A32A992810C1C0FCAE54DB3B4B253 /* Pods-iOS Demo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Demo-Info.plist"; sourceTree = "<group>"; };
 		A0F42B7B84EF8334C6E1E5B7F269607C /* then.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = then.swift; sourceTree = "<group>"; };
 		A215AC715CFE041EF4805361DECAFE11 /* PromiseKit-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PromiseKit-iOS-umbrella.h"; sourceTree = "<group>"; };
 		A22BB62FD3B8D3ABDC4F54E92584D4E7 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		A3742CB9B82041D5464F1F51C129E0EB /* DKItemType.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKItemType.html; path = docs/Enums/DKItemType.html; sourceTree = "<group>"; };
+		A3742CB9B82041D5464F1F51C129E0EB /* DKItemType.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKItemType.html; path = docs/Enums/DKItemType.html; sourceTree = "<group>"; };
 		A3EFB7DBDE5E604E6D9088C0EFF46851 /* Pods-tvOS Demo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-tvOS Demo-frameworks.sh"; sourceTree = "<group>"; };
 		A41286457133D0327781DAE780184543 /* NSNotificationCenter+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNotificationCenter+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSNotificationCenter+AnyPromise.m"; sourceTree = "<group>"; };
 		A55DFFE585A793CC1801377BFD6D1A2E /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
+		A5A108802681A6A90078C23A /* DKPromise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKPromise.swift; sourceTree = "<group>"; };
+		A5A108842681BD830078C23A /* DKUploadSignature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKUploadSignature.swift; sourceTree = "<group>"; };
 		A6AB00080EA397177E65E5795A2CA12F /* Alamofire-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Alamofire-macOS.release.xcconfig"; path = "../Alamofire-macOS/Alamofire-macOS.release.xcconfig"; sourceTree = "<group>"; };
-		A6C723088F7489D3530C9FA879218D2E /* Extensions.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Extensions.html; path = docs/Extensions.html; sourceTree = "<group>"; };
+		A6C723088F7489D3530C9FA879218D2E /* Extensions.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Extensions.html; path = docs/Extensions.html; sourceTree = "<group>"; };
 		A6F74619610D2A8E7661220137CD2CE6 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		A741CD23176D78B93F04CD78A73E2F76 /* DropmarkSDK-tvOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DropmarkSDK-tvOS-umbrella.h"; path = "../DropmarkSDK-tvOS/DropmarkSDK-tvOS-umbrella.h"; sourceTree = "<group>"; };
 		A7432687125CF2F2F6328494265161AB /* Pods-DropmarkSDK_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DropmarkSDK_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		AA2CDE8BA4FD9D880989FDFD24FC45EC /* Pods_macOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_macOS_Demo.framework; path = "Pods-macOS Demo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA2CDE8BA4FD9D880989FDFD24FC45EC /* Pods_macOS_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_macOS_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2EB3A569DC84C259B2A181846CD2A3 /* AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AnyPromise.m; path = Sources/AnyPromise.m; sourceTree = "<group>"; };
 		ABC0A18D515C14C0FAAEF3548EB188D7 /* Alamofire-tvOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "Alamofire-tvOS-Info.plist"; path = "../Alamofire-tvOS/Alamofire-tvOS-Info.plist"; sourceTree = "<group>"; };
 		ABC4A9B9429E21D794102DFB176E10F9 /* DropmarkSDK-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "DropmarkSDK-iOS.modulemap"; sourceTree = "<group>"; };
 		ABD2510D3C53B34632D2D825876AFAC4 /* when.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = when.m; path = Sources/when.m; sourceTree = "<group>"; };
-		ACD95B34977425FE44DB33B4303BAE46 /* DropmarkSDK.tgz */ = {isa = PBXFileReference; includeInIndex = 1; name = DropmarkSDK.tgz; path = docs/docsets/DropmarkSDK.tgz; sourceTree = "<group>"; };
-		ADC9E9DC826C56C8F1E6906A1BB3C250 /* SortBy.html */ = {isa = PBXFileReference; includeInIndex = 1; name = SortBy.html; path = docs/Classes/DKCollection/SortBy.html; sourceTree = "<group>"; };
+		ACD95B34977425FE44DB33B4303BAE46 /* DropmarkSDK.tgz */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = DropmarkSDK.tgz; path = docs/docsets/DropmarkSDK.tgz; sourceTree = "<group>"; };
+		ADC9E9DC826C56C8F1E6906A1BB3C250 /* SortBy.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = SortBy.html; path = docs/Classes/DKCollection/SortBy.html; sourceTree = "<group>"; };
 		B057B470E0B5552C4FD9F1DCAE201770 /* carat.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = carat.png; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/img/carat.png; sourceTree = "<group>"; };
 		B072179F94CB60388DAE07BA89803E14 /* Alamofire-macOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "Alamofire-macOS-dummy.m"; path = "../Alamofire-macOS/Alamofire-macOS-dummy.m"; sourceTree = "<group>"; };
-		B107B98E4B8D3F9827770822949689DF /* Protocols.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Protocols.html; path = docs/Protocols.html; sourceTree = "<group>"; };
-		B2C276F438D3DCAA18EE99ADE055A5F8 /* DKSession.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKSession.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Structs/DKSession.html; sourceTree = "<group>"; };
-		B41BCE1CF501BD1A94E8D0D486BBDC17 /* DKKeychain.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKKeychain.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKKeychain.html; sourceTree = "<group>"; };
+		B107B98E4B8D3F9827770822949689DF /* Protocols.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Protocols.html; path = docs/Protocols.html; sourceTree = "<group>"; };
+		B2C276F438D3DCAA18EE99ADE055A5F8 /* DKSession.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKSession.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Structs/DKSession.html; sourceTree = "<group>"; };
+		B41BCE1CF501BD1A94E8D0D486BBDC17 /* DKKeychain.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKKeychain.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKKeychain.html; sourceTree = "<group>"; };
 		B4F48BCB51519906121D089D06D151D6 /* DropmarkSDK-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DropmarkSDK-iOS-Info.plist"; sourceTree = "<group>"; };
-		B5F5D4E08360920CAE7535240C35B0F6 /* DKRouterError.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKRouterError.html; path = docs/Enums/DKRouterError.html; sourceTree = "<group>"; };
+		B5F5D4E08360920CAE7535240C35B0F6 /* DKRouterError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKRouterError.html; path = docs/Enums/DKRouterError.html; sourceTree = "<group>"; };
 		B7F18A1F90D39095A9025921AF27043A /* PromiseKit-tvOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "PromiseKit-tvOS-dummy.m"; path = "../PromiseKit-tvOS/PromiseKit-tvOS-dummy.m"; sourceTree = "<group>"; };
 		B84BD1687F04E3E5B1BD03FFC8C673E8 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
-		B8B1CA5A0F1DBA3803D291D38975E6C3 /* DKRouter.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKRouter.html; path = docs/Enums/DKRouter.html; sourceTree = "<group>"; };
+		B8B1CA5A0F1DBA3803D291D38975E6C3 /* DKRouter.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKRouter.html; path = docs/Enums/DKRouter.html; sourceTree = "<group>"; };
 		B8F3D234D226F03BD3730826A8596DCE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		B932C2BDCDB95BCDC2D04813015AFC5C /* PromiseKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PromiseKit.h; path = Sources/PromiseKit.h; sourceTree = "<group>"; };
 		B97CEE0CC95A7EC9233957215F8CC1F7 /* DKUser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKUser.swift; sourceTree = "<group>"; };
-		BA09E1D8485A7D82EE7724ADE08D60AE /* Kind.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Kind.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKCollection/Kind.html; sourceTree = "<group>"; };
-		BCE4E28627201DE9FB87A6177AD0634D /* DKTag.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKTag.html; path = docs/Classes/DKTag.html; sourceTree = "<group>"; };
-		BCF89382A9FEFF230018494E2996AE91 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		BA09E1D8485A7D82EE7724ADE08D60AE /* Kind.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Kind.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKCollection/Kind.html; sourceTree = "<group>"; };
+		BCE4E28627201DE9FB87A6177AD0634D /* DKTag.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKTag.html; path = docs/Classes/DKTag.html; sourceTree = "<group>"; };
+		BCF89382A9FEFF230018494E2996AE91 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BDBA766FAF5FC77C53CD13D171E8C27D /* CustomStringConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomStringConvertible.swift; path = Sources/CustomStringConvertible.swift; sourceTree = "<group>"; };
 		BE3DA47222B722AEA05BAC61014BD57C /* Process+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Process+Promise.swift"; path = "Extensions/Foundation/Sources/Process+Promise.swift"; sourceTree = "<group>"; };
 		BE6B1623174E064DFE832009F0B3D8E6 /* PromiseKit.root-CorePromise-Foundation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PromiseKit.root-CorePromise-Foundation-prefix.pch"; path = "../PromiseKit.root-CorePromise-Foundation/PromiseKit.root-CorePromise-Foundation-prefix.pch"; sourceTree = "<group>"; };
 		BEE39D3FF3F3577C56B6E2DB55B3D064 /* DKSession.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKSession.swift; path = Source/DKSession.swift; sourceTree = "<group>"; };
-		BFDF730781C59C67E81937DE2B18A1E6 /* DropmarkSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DropmarkSDK.framework; path = "DropmarkSDK-macOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFDF730781C59C67E81937DE2B18A1E6 /* DropmarkSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DropmarkSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C07F6DE6219FD47B56E04C6FDF39D12C /* Alamofire-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Alamofire-tvOS-prefix.pch"; path = "../Alamofire-tvOS/Alamofire-tvOS-prefix.pch"; sourceTree = "<group>"; };
-		C089CDFC800E9B7A842E8A4B3C57C5EB /* DKRouter.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKRouter.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Enums/DKRouter.html; sourceTree = "<group>"; };
-		C125CC649EC0DC2858B4D73D8DBE07DF /* DKPermissions.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKPermissions.html; path = docs/Classes/DKPermissions.html; sourceTree = "<group>"; };
+		C089CDFC800E9B7A842E8A4B3C57C5EB /* DKRouter.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKRouter.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Enums/DKRouter.html; sourceTree = "<group>"; };
+		C125CC649EC0DC2858B4D73D8DBE07DF /* DKPermissions.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKPermissions.html; path = docs/Classes/DKPermissions.html; sourceTree = "<group>"; };
 		C1D0F1A529967ED3577F419513B6A8C3 /* DKItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKItem.swift; sourceTree = "<group>"; };
-		C425F6CFB9E6D67732D346607BE3C182 /* DKInvite.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKInvite.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKInvite.html; sourceTree = "<group>"; };
-		C443F089566D14AD6653AFB04572647E /* SortOrder.html */ = {isa = PBXFileReference; includeInIndex = 1; name = SortOrder.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKCollection/SortOrder.html; sourceTree = "<group>"; };
-		C574649C946B807C13F0374E7168BF76 /* DKResponseListAny.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKResponseListAny.html; path = docs/Structs/DKResponseListAny.html; sourceTree = "<group>"; };
+		C425F6CFB9E6D67732D346607BE3C182 /* DKInvite.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKInvite.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKInvite.html; sourceTree = "<group>"; };
+		C443F089566D14AD6653AFB04572647E /* SortOrder.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = SortOrder.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKCollection/SortOrder.html; sourceTree = "<group>"; };
+		C574649C946B807C13F0374E7168BF76 /* DKResponseListAny.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKResponseListAny.html; path = docs/Structs/DKResponseListAny.html; sourceTree = "<group>"; };
 		C57A54E04BADE482A0E5A6E88D2D24EE /* race.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = race.swift; path = Sources/race.swift; sourceTree = "<group>"; };
 		C612DF9C8F9894E9B6F28BF07483ED78 /* UIViewController+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+AnyPromise.m"; path = "Extensions/UIKit/Sources/UIViewController+AnyPromise.m"; sourceTree = "<group>"; };
 		C6850F7DC0C95DE6B63EBE6EDEDF407C /* DropmarkSDK-macOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "DropmarkSDK-macOS.modulemap"; path = "../DropmarkSDK-macOS/DropmarkSDK-macOS.modulemap"; sourceTree = "<group>"; };
 		C6E25658B859756A7A817BD71709C609 /* DropmarkSDK-macOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DropmarkSDK-macOS-prefix.pch"; path = "../DropmarkSDK-macOS/DropmarkSDK-macOS-prefix.pch"; sourceTree = "<group>"; };
-		C7E908E16C15E66ED89786C8FEA10963 /* Bundle.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Bundle.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Extensions/Bundle.html; sourceTree = "<group>"; };
-		C80FF2503D1766472A0F5E2239216420 /* jazzy.search.js */ = {isa = PBXFileReference; includeInIndex = 1; name = jazzy.search.js; path = docs/js/jazzy.search.js; sourceTree = "<group>"; };
+		C7E908E16C15E66ED89786C8FEA10963 /* Bundle.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Bundle.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Extensions/Bundle.html; sourceTree = "<group>"; };
+		C80FF2503D1766472A0F5E2239216420 /* jazzy.search.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = jazzy.search.js; path = docs/js/jazzy.search.js; sourceTree = "<group>"; };
 		C822B64318135963DC4F8032091139EF /* Guarantee.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Guarantee.swift; path = Sources/Guarantee.swift; sourceTree = "<group>"; };
 		C9E180FD148C27B991349A0AF01FFB22 /* when.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = when.swift; sourceTree = "<group>"; };
-		CA232A734C3C091221788FA5967084A0 /* Declaration.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Declaration.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Structs/UTI/Declaration.html; sourceTree = "<group>"; };
-		CA29CE30AC030F9DF9D704A980FE7D78 /* DropmarkSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DropmarkSDK.framework; path = "DropmarkSDK-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA232A734C3C091221788FA5967084A0 /* Declaration.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Declaration.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Structs/UTI/Declaration.html; sourceTree = "<group>"; };
+		CA29CE30AC030F9DF9D704A980FE7D78 /* DropmarkSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DropmarkSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CACE24C2407073A8A9E59744D1853E6D /* DKTeam.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKTeam.swift; sourceTree = "<group>"; };
 		CACF8461EC54CAF1C31BECA8961E89E7 /* join.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = join.m; path = Sources/join.m; sourceTree = "<group>"; };
-		CB14AF00C16FEDF81F9C8456498B29DF /* Classes.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Classes.html; path = docs/Classes.html; sourceTree = "<group>"; };
-		CBCCFC8942B9A7995C4EC08715A03CDF /* badge.svg */ = {isa = PBXFileReference; includeInIndex = 1; name = badge.svg; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/badge.svg; sourceTree = "<group>"; };
+		CB14AF00C16FEDF81F9C8456498B29DF /* Classes.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Classes.html; path = docs/Classes.html; sourceTree = "<group>"; };
+		CBCCFC8942B9A7995C4EC08715A03CDF /* badge.svg */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = badge.svg; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/badge.svg; sourceTree = "<group>"; };
 		CBD0D6BDD5F05275C95E98C2F855B6CC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		CE56DF4AC1CF9CCE342BC3FCD7080668 /* PromiseKit-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "PromiseKit-tvOS.release.xcconfig"; path = "../PromiseKit-tvOS/PromiseKit-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		CE9D4425F636C8E8AABE5864373580E7 /* Pods-DropmarkSDK_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DropmarkSDK_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		CF9214A5D5BB65843987386D8B94D1FD /* DKRouterError.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKRouterError.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Enums/DKRouterError.html; sourceTree = "<group>"; };
-		D22C41DD22F201B61F2F1BFE8C234B9B /* DKKeychain.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKKeychain.html; path = docs/Structs/DKKeychain.html; sourceTree = "<group>"; };
-		D3CC5C8018330AD6CAAB3622DF567391 /* DKPermissions.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKPermissions.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKPermissions.html; sourceTree = "<group>"; };
+		CF9214A5D5BB65843987386D8B94D1FD /* DKRouterError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKRouterError.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Enums/DKRouterError.html; sourceTree = "<group>"; };
+		D22C41DD22F201B61F2F1BFE8C234B9B /* DKKeychain.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKKeychain.html; path = docs/Structs/DKKeychain.html; sourceTree = "<group>"; };
+		D3CC5C8018330AD6CAAB3622DF567391 /* DKPermissions.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKPermissions.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKPermissions.html; sourceTree = "<group>"; };
 		D3EBF24B6F472144CEE9D1D32D965ECF /* AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AnyPromise.h; path = Sources/AnyPromise.h; sourceTree = "<group>"; };
-		D46084B0752A6F21598BDB5B4B718631 /* DKTeam.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKTeam.html; path = docs/Classes/DKTeam.html; sourceTree = "<group>"; };
+		D46084B0752A6F21598BDB5B4B718631 /* DKTeam.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKTeam.html; path = docs/Classes/DKTeam.html; sourceTree = "<group>"; };
 		D6893D47AB191E2402CC4E47C65A736A /* Alamofire-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Alamofire-macOS-umbrella.h"; path = "../Alamofire-macOS/Alamofire-macOS-umbrella.h"; sourceTree = "<group>"; };
-		D7286E262C6C02E7165764E6018B039C /* DataRequest.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DataRequest.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Extensions/DataRequest.html; sourceTree = "<group>"; };
+		D7286E262C6C02E7165764E6018B039C /* DataRequest.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DataRequest.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Extensions/DataRequest.html; sourceTree = "<group>"; };
 		D79A1DCC81C2D6E16BE11D97F96A52DB /* Pods-macOS Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-macOS Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		D7FE6C0782E48B779577A9D82EF9DF2E /* NSURLSession+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSURLSession+Promise.swift"; path = "Extensions/Foundation/Sources/NSURLSession+Promise.swift"; sourceTree = "<group>"; };
 		D8032C00708EFF032FCF168F076A3D75 /* Dictionary+Parameters.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Dictionary+Parameters.swift"; sourceTree = "<group>"; };
-		D8840EBA512685ADEB4EC321AEAF7901 /* DataRequest.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DataRequest.html; path = docs/Extensions/DataRequest.html; sourceTree = "<group>"; };
+		D8840EBA512685ADEB4EC321AEAF7901 /* DataRequest.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DataRequest.html; path = docs/Extensions/DataRequest.html; sourceTree = "<group>"; };
 		D8A00A059F89FC56BACDFF39AE34B012 /* Pods-macOS Demo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-macOS Demo-umbrella.h"; sourceTree = "<group>"; };
 		D915C4ACF3EEDD3B364C05C7B314E7EC /* Alamofire-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Alamofire-iOS.modulemap"; sourceTree = "<group>"; };
 		D98D97D8DCD564052BD989E8A278D362 /* PromiseKit.root-CorePromise-Foundation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "PromiseKit.root-CorePromise-Foundation.debug.xcconfig"; path = "../PromiseKit.root-CorePromise-Foundation/PromiseKit.root-CorePromise-Foundation.debug.xcconfig"; sourceTree = "<group>"; };
-		DA2CEC8869211D1EE6B0963FAF81172A /* jazzy.js */ = {isa = PBXFileReference; includeInIndex = 1; name = jazzy.js; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/js/jazzy.js; sourceTree = "<group>"; };
-		DAA6FA267AA0F0F729B4B360DC6E776A /* DKDateFormatter.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKDateFormatter.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKDateFormatter.html; sourceTree = "<group>"; };
+		DA2CEC8869211D1EE6B0963FAF81172A /* jazzy.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = jazzy.js; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/js/jazzy.js; sourceTree = "<group>"; };
+		DAA6FA267AA0F0F729B4B360DC6E776A /* DKDateFormatter.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKDateFormatter.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKDateFormatter.html; sourceTree = "<group>"; };
 		DAD50BA849416A25F4E7827489715ED5 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		DC5B164FBEFC0DFD5BE42D6056C743D3 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
-		DCAC28CBAB5EE180C4E159349492125B /* DKResponseObjectSerializable.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKResponseObjectSerializable.html; path = docs/Protocols/DKResponseObjectSerializable.html; sourceTree = "<group>"; };
+		DCAC28CBAB5EE180C4E159349492125B /* DKResponseObjectSerializable.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKResponseObjectSerializable.html; path = docs/Protocols/DKResponseObjectSerializable.html; sourceTree = "<group>"; };
 		DF273AEE67D3A477D891055F024A88AE /* NSObject+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSObject+Promise.swift"; path = "Extensions/Foundation/Sources/NSObject+Promise.swift"; sourceTree = "<group>"; };
-		DF673B51CDEEE60DD1EF886C6DBAA34E /* DKItem.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKItem.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKItem.html; sourceTree = "<group>"; };
+		DF673B51CDEEE60DD1EF886C6DBAA34E /* DKItem.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKItem.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKItem.html; sourceTree = "<group>"; };
 		E03B3AEAF055748B09EB89497E678BE4 /* Pods-tvOS Demo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-tvOS Demo-umbrella.h"; sourceTree = "<group>"; };
-		E076F937F0F0F46AF8B9E58C86E527EF /* DKThumbnails.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKThumbnails.html; path = docs/Classes/DKThumbnails.html; sourceTree = "<group>"; };
+		E076F937F0F0F46AF8B9E58C86E527EF /* DKThumbnails.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKThumbnails.html; path = docs/Classes/DKThumbnails.html; sourceTree = "<group>"; };
 		E08C44F6501645729968F6B260C26B62 /* gh.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = gh.png; path = docs/img/gh.png; sourceTree = "<group>"; };
 		E091BAC5D657A3BE3A181A598816EB0E /* PromiseKit.root-CorePromise-Foundation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = "PromiseKit.root-CorePromise-Foundation.modulemap"; path = "../PromiseKit.root-CorePromise-Foundation/PromiseKit.root-CorePromise-Foundation.modulemap"; sourceTree = "<group>"; };
 		E1641C7C9BBB16A87EFBD2F4EC86445E /* Configuration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Configuration.swift; path = Sources/Configuration.swift; sourceTree = "<group>"; };
 		E1A35B78FC26F6FF6F642E32D67C8C3E /* DropmarkSDK-tvOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DropmarkSDK-tvOS-prefix.pch"; path = "../DropmarkSDK-tvOS/DropmarkSDK-tvOS-prefix.pch"; sourceTree = "<group>"; };
-		E23A5DF75BC28560F86650018149A4E2 /* Error.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Error.html; path = docs/Extensions/Error.html; sourceTree = "<group>"; };
-		E30289C9D0F8920CD461CB29A5208D97 /* highlight.css */ = {isa = PBXFileReference; includeInIndex = 1; name = highlight.css; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/css/highlight.css; sourceTree = "<group>"; };
+		E23A5DF75BC28560F86650018149A4E2 /* Error.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Error.html; path = docs/Extensions/Error.html; sourceTree = "<group>"; };
+		E30289C9D0F8920CD461CB29A5208D97 /* highlight.css */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.css; name = highlight.css; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/css/highlight.css; sourceTree = "<group>"; };
 		E31B17760378CAF390F5F47B187191E5 /* PromiseKit-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "PromiseKit-iOS.modulemap"; sourceTree = "<group>"; };
-		E3A30C8D3AE4188CA1D22E1D93659C98 /* DKError.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKError.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Enums/DKError.html; sourceTree = "<group>"; };
-		E55369AD2505A8FC701519E433BACBA3 /* search.json */ = {isa = PBXFileReference; includeInIndex = 1; name = search.json; path = docs/search.json; sourceTree = "<group>"; };
-		E79617C893857C63BCC62D7D8DB6E944 /* DKPlan.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKPlan.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Enums/DKPlan.html; sourceTree = "<group>"; };
-		EA3BCDB6D94E64CFBC1AC85D810F965E /* lunr.min.js */ = {isa = PBXFileReference; includeInIndex = 1; name = lunr.min.js; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/js/lunr.min.js; sourceTree = "<group>"; };
+		E3A30C8D3AE4188CA1D22E1D93659C98 /* DKError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKError.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Enums/DKError.html; sourceTree = "<group>"; };
+		E55369AD2505A8FC701519E433BACBA3 /* search.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = search.json; path = docs/search.json; sourceTree = "<group>"; };
+		E79617C893857C63BCC62D7D8DB6E944 /* DKPlan.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKPlan.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Enums/DKPlan.html; sourceTree = "<group>"; };
+		EA3BCDB6D94E64CFBC1AC85D810F965E /* lunr.min.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = lunr.min.js; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/js/lunr.min.js; sourceTree = "<group>"; };
 		EAA73077227F9B52FC18D20395D54A30 /* NSNotificationCenter+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSNotificationCenter+AnyPromise.h"; sourceTree = "<group>"; };
 		EAC54C7FBF020CA3A2C5B98A0A1A9415 /* PromiseKit-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "PromiseKit-tvOS.debug.xcconfig"; path = "../PromiseKit-tvOS/PromiseKit-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		EBB5C49FBCD6BFAED29B7E8C206E1725 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
-		ED906ADC3AF8F1CF78B6BBFAB0CA46A8 /* Kind.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Kind.html; path = docs/Classes/DKUser/Kind.html; sourceTree = "<group>"; };
+		ED906ADC3AF8F1CF78B6BBFAB0CA46A8 /* Kind.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Kind.html; path = docs/Classes/DKUser/Kind.html; sourceTree = "<group>"; };
 		EDB11F94BEB1515F261AE2F44F3FB796 /* UIView+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+AnyPromise.m"; path = "Extensions/UIKit/Sources/UIView+AnyPromise.m"; sourceTree = "<group>"; };
 		EEE0BD205A630E153F14E6089BB4F87D /* DKCollection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKCollection.swift; sourceTree = "<group>"; };
 		EFADD273E27BB38E9DFA376B68173A68 /* PromiseKit.root-CorePromise-Foundation-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "PromiseKit.root-CorePromise-Foundation-dummy.m"; path = "../PromiseKit.root-CorePromise-Foundation/PromiseKit.root-CorePromise-Foundation-dummy.m"; sourceTree = "<group>"; };
-		F2CCF0ACFC4C1DC6CF8788D24FAF454B /* SortBy.html */ = {isa = PBXFileReference; includeInIndex = 1; name = SortBy.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKCollection/SortBy.html; sourceTree = "<group>"; };
-		F2FB4CFBAB34334497CE4F3A7FB06B60 /* Usage.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Usage.html; path = docs/Classes/DKTeam/Usage.html; sourceTree = "<group>"; };
-		F3DDF98D8E136744668E122AABEAC157 /* Status.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Status.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKUser/Status.html; sourceTree = "<group>"; };
-		F56288AD52C8ECF16BF400E8617A8399 /* UTI.html */ = {isa = PBXFileReference; includeInIndex = 1; name = UTI.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Extensions/UTI.html; sourceTree = "<group>"; };
-		F578ED180D86526AAD67FF462CCFAD06 /* DKSession.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKSession.html; path = docs/Structs/DKSession.html; sourceTree = "<group>"; };
+		F2CCF0ACFC4C1DC6CF8788D24FAF454B /* SortBy.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = SortBy.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKCollection/SortBy.html; sourceTree = "<group>"; };
+		F2FB4CFBAB34334497CE4F3A7FB06B60 /* Usage.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Usage.html; path = docs/Classes/DKTeam/Usage.html; sourceTree = "<group>"; };
+		F3DDF98D8E136744668E122AABEAC157 /* Status.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Status.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKUser/Status.html; sourceTree = "<group>"; };
+		F56288AD52C8ECF16BF400E8617A8399 /* UTI.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = UTI.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Extensions/UTI.html; sourceTree = "<group>"; };
+		F578ED180D86526AAD67FF462CCFAD06 /* DKSession.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKSession.html; path = docs/Structs/DKSession.html; sourceTree = "<group>"; };
 		F5B1E08121F3D6EC61E2AA78F0947449 /* DropmarkSDK-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropmarkSDK-iOS-umbrella.h"; sourceTree = "<group>"; };
 		F6D5DC2B558498F4D1FD25F62CB2C37E /* DropmarkSDK-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DropmarkSDK-macOS-umbrella.h"; path = "../DropmarkSDK-macOS/DropmarkSDK-macOS-umbrella.h"; sourceTree = "<group>"; };
 		F6D948FA21AD1318D3FE83C7D022CBC2 /* Thenable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Thenable.swift; path = Sources/Thenable.swift; sourceTree = "<group>"; };
-		F7E74759E4F01B6FAC7B01F111CE15C4 /* Protocols.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Protocols.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Protocols.html; sourceTree = "<group>"; };
-		FA5A8C32150453E47D94FD906E2ABF9E /* Plan.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Plan.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKTeam/Plan.html; sourceTree = "<group>"; };
+		F7E74759E4F01B6FAC7B01F111CE15C4 /* Protocols.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Protocols.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Protocols.html; sourceTree = "<group>"; };
+		FA5A8C32150453E47D94FD906E2ABF9E /* Plan.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Plan.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKTeam/Plan.html; sourceTree = "<group>"; };
 		FA77BD2F4412988879D0ADDCDBE56F4B /* Pods-tvOS Demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-tvOS Demo-dummy.m"; sourceTree = "<group>"; };
-		FB14220429492B89942D87C5BD56F547 /* DKResponseListSerializable.html */ = {isa = PBXFileReference; includeInIndex = 1; name = DKResponseListSerializable.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Protocols/DKResponseListSerializable.html; sourceTree = "<group>"; };
+		FB14220429492B89942D87C5BD56F547 /* DKResponseListSerializable.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKResponseListSerializable.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Protocols/DKResponseListSerializable.html; sourceTree = "<group>"; };
 		FC3120DE8038CD13488D9D2BA90B558E /* DropmarkSDK-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DropmarkSDK-iOS-dummy.m"; sourceTree = "<group>"; };
-		FC6DC15EAC97229A99CB0498943EBEA9 /* undocumented.json */ = {isa = PBXFileReference; includeInIndex = 1; name = undocumented.json; path = docs/undocumented.json; sourceTree = "<group>"; };
-		FE400BA4422849FB1DE5D215E87DE61B /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PromiseKit.framework; path = "PromiseKit-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC6DC15EAC97229A99CB0498943EBEA9 /* undocumented.json */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.json; name = undocumented.json; path = docs/undocumented.json; sourceTree = "<group>"; };
+		FE400BA4422849FB1DE5D215E87DE61B /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF3F4213774307F8B4C33D306DD6A09 /* DropmarkSDK-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "DropmarkSDK-macOS.debug.xcconfig"; path = "../DropmarkSDK-macOS/DropmarkSDK-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -964,6 +972,7 @@
 				CACE24C2407073A8A9E59744D1853E6D /* DKTeam.swift */,
 				468A2521B7E88F48276D7A625ECB1D5D /* DKThumbnails.swift */,
 				B97CEE0CC95A7EC9233957215F8CC1F7 /* DKUser.swift */,
+				A5A108842681BD830078C23A /* DKUploadSignature.swift */,
 			);
 			name = Model;
 			path = Source/Model;
@@ -1006,7 +1015,6 @@
 				1A6199857BE3D4A557A94FC3ACD4FF7B /* Support Files */,
 				81E14435BF5B4AA99ADDBF7216BCA291 /* UIKit */,
 			);
-			name = PromiseKit;
 			path = PromiseKit;
 			sourceTree = "<group>";
 		};
@@ -1045,7 +1053,6 @@
 				A0F42B7B84EF8334C6E1E5B7F269607C /* then.swift */,
 				C9E180FD148C27B991349A0AF01FFB22 /* when.swift */,
 			);
-			name = CancellablePromiseKit;
 			path = CancellablePromiseKit;
 			sourceTree = "<group>";
 		};
@@ -1102,7 +1109,6 @@
 				2746BA7BA49065668B90AA32DC5A2EDF /* DKResponseListSerializable.swift */,
 				09BF00607BEDC1E42DD323B83CA609C7 /* DKResponseObjectSerializable.swift */,
 			);
-			name = Serializers;
 			path = Serializers;
 			sourceTree = "<group>";
 		};
@@ -1206,7 +1212,6 @@
 			children = (
 				796B6FA961E8ACCB8CC7143F14488D16 /* UTIKit.swift */,
 			);
-			name = UTIKit;
 			path = UTIKit;
 			sourceTree = "<group>";
 		};
@@ -1385,7 +1390,6 @@
 				46A64A1149344E67463CE7012AC62A1F /* Validation.swift */,
 				C506558101C09E53980494B683008684 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -1531,6 +1535,7 @@
 			isa = PBXGroup;
 			children = (
 				89790C28061A8CF00D1338645E417C81 /* DKPagingGenerator.swift */,
+				A5A108802681A6A90078C23A /* DKPromise.swift */,
 				5CCB89A5B4165D04961B06FAEC49F508 /* DKRouter.swift */,
 				6920C2ADB3299B70F3EC5A8EDD7E8310 /* DKServerError.swift */,
 				7171B65ADD013A92FFE2C21D549E4D3A /* Serializers */,
@@ -2071,6 +2076,7 @@
 				A35AAA9E06659CB16F9989609EFE32EE /* Dictionary+Parameters.swift in Sources */,
 				7DA0049FB406E2F0FE264639C908FFE7 /* DKCollection.swift in Sources */,
 				A3EC7C957564F0D1A93AF66CF4FFF098 /* DKComment.swift in Sources */,
+				A5A108812681A6A90078C23A /* DKPromise.swift in Sources */,
 				4314E644648C5C0A16641C8505E78B1E /* DKDateFormatter.swift in Sources */,
 				9AB3E45C8EC40BF684FC500288EC1102 /* DKError.swift in Sources */,
 				01989CC24634A20F93582757E8762251 /* DKInvite.swift in Sources */,
@@ -2095,6 +2101,7 @@
 				A9C218362140A98E209FF42A0600245C /* map.swift in Sources */,
 				18356685345D3A15D9C934B16A8B6417 /* Promise+CancellablePromise.swift in Sources */,
 				F01C1CC6E535C9808818CD094779C8B4 /* race.swift in Sources */,
+				A5A108852681BD830078C23A /* DKUploadSignature.swift in Sources */,
 				982A0B48A83B2E8989872D6ECD5E97CB /* then.swift in Sources */,
 				38DBA80AD63B169ADF3773942F9FE2A4 /* UTIKit+Extensions.swift in Sources */,
 				465A2CCCDC1431E636103E22849ABDC6 /* UTIKit.swift in Sources */,
@@ -2255,6 +2262,7 @@
 				0EC8BC5C4F8E0C2717B9FB1AA7D05D1A /* Dictionary+Parameters.swift in Sources */,
 				93C89F0DE639D6680C336668E2CE84B0 /* DKCollection.swift in Sources */,
 				8EAB473480D02AF4FBB43BCE1AA9D1B0 /* DKComment.swift in Sources */,
+				A5A108822681A6A90078C23A /* DKPromise.swift in Sources */,
 				0C7C6378E85E4004CDC0B213B9333577 /* DKDateFormatter.swift in Sources */,
 				9556298B419968FC53F8C11ADB389D40 /* DKError.swift in Sources */,
 				5BB3801DE1CEA18420A99CBC150695E5 /* DKInvite.swift in Sources */,
@@ -2279,6 +2287,7 @@
 				4A23A6D50DB1E7BF9F616B22EC7C909B /* map.swift in Sources */,
 				A63551129AFA24115703CD1170790F88 /* Promise+CancellablePromise.swift in Sources */,
 				F4C52BDA2F57AB78FE786D12F897FCF1 /* race.swift in Sources */,
+				A5A108862681BD830078C23A /* DKUploadSignature.swift in Sources */,
 				B9D73EF116A195881ECC82324433381D /* then.swift in Sources */,
 				B02975B03220482532F6E0B27C0D0AA8 /* UTIKit+Extensions.swift in Sources */,
 				4EB7DCC02D8FB83A784E4B2289DDAC73 /* UTIKit.swift in Sources */,
@@ -2365,6 +2374,7 @@
 				6923B02B0244DBF95723F11EF40F3E55 /* Dictionary+Parameters.swift in Sources */,
 				50322007E9029215181418C9CE507009 /* DKCollection.swift in Sources */,
 				20A6FB0CD7EF80AB068251781BCE29E8 /* DKComment.swift in Sources */,
+				A5A108832681A6A90078C23A /* DKPromise.swift in Sources */,
 				E7C5AEF0F65B58272BD4E3759BAE3C3D /* DKDateFormatter.swift in Sources */,
 				C1FA49E3BED13FA70E8451109334D16F /* DKError.swift in Sources */,
 				0BFFBF4B41209F73C1A2C80F7A8DC513 /* DKInvite.swift in Sources */,
@@ -2389,6 +2399,7 @@
 				A7740920A02E3C1F04A7D605AD299A64 /* map.swift in Sources */,
 				01F533B99A295DD4072B560C5199E2B0 /* Promise+CancellablePromise.swift in Sources */,
 				401B421147A5A8C806C5302A9A2054EA /* race.swift in Sources */,
+				A5A108872681BD830078C23A /* DKUploadSignature.swift in Sources */,
 				0D4F935B3D779A3BD0603C2DE11E797B /* then.swift in Sources */,
 				D67C57E06FE2355E5742C9DD54B26910 /* UTIKit+Extensions.swift in Sources */,
 				507D7C82F0BC2F8E4229BB3B17DD3645 /* UTIKit.swift in Sources */,
@@ -3199,8 +3210,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 				TVOS_DEPLOYMENT_TARGET = 13.0;

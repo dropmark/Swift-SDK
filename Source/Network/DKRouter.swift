@@ -42,7 +42,7 @@ public enum DKRouter: URLRequestConvertible {
     // MARK: Authentication
     
     /// Pass in an email and password, and get a user object containing the `token` necessary to authenticate requests on behalf of the user.  Returns a `DKUser` object.
-    case authenticate(parameters: Parameters?)
+    case authenticate(parameters: Parameters)
     
     // MARK: Collections
     
@@ -56,7 +56,7 @@ public enum DKRouter: URLRequestConvertible {
     case getCollection(id: NSNumber)
     
     /// Update a single collection. Returns a `DKCollection` object.
-    case updateCollection(id: NSNumber, bodyParameters: Parameters?)
+    case updateCollection(id: NSNumber, bodyParameters: Parameters)
     
     /// Delete a single collection. Returns only a 200 response.
     case deleteCollection(id: NSNumber)
@@ -71,7 +71,7 @@ public enum DKRouter: URLRequestConvertible {
     case listCollaboratorsInCollection(id: NSNumber)
     
     /// Give a user access to a collection (only works if the current user has permission)
-    case addCollaboratorToCollection(id: NSNumber, bodyParameters: Parameters?)
+    case addCollaboratorToCollection(id: NSNumber, bodyParameters: Parameters)
     
     /// Remove a user's access to a collection (only works if the current user has permission). Returns only a 200 response.
     case removeCollaboratorFromCollection(userID: NSNumber, collectionID: NSNumber)
@@ -82,10 +82,10 @@ public enum DKRouter: URLRequestConvertible {
     case listCommentsForItem(itemID: NSNumber)
     
     /// Add a comment to an item. Returns a `DKComment` object.
-    case createCommentForItem(itemID: NSNumber, bodyParameters: Parameters?)
+    case createCommentForItem(itemID: NSNumber, bodyParameters: Parameters)
     
     /// Update a comment. Returns a `DKComment` object.
-    case updateComment(id: NSNumber, bodyParameters: Parameters?)
+    case updateComment(id: NSNumber, bodyParameters: Parameters)
     
     /// Delete a comment. Returns only a 200 response.
     case deleteComment(id: NSNumber)
@@ -110,13 +110,13 @@ public enum DKRouter: URLRequestConvertible {
     case listItemsInCollection(id: NSNumber, queryParameters: Parameters?)
     
     /// Create a new item in a parent collection. Returns a `DKItem` object.
-    case createItemInCollection(id: NSNumber, bodyParameters: Parameters?)
+    case createItemInCollection(id: NSNumber, bodyParameters: Parameters)
     
     /// Update multiple items within a collection. Returns a `DKItem` list.
-    case updateItemsInCollection(id: NSNumber, bodyParameters: Parameters?)
+    case updateItemsInCollection(id: NSNumber, bodyParameters: Parameters)
     
     /// Update multiple items. Returns a `DKItem` list.
-    case updateItems(bodyParameters: Parameters?)
+    case updateItems(bodyParameters: Parameters)
     
     /// Get a single item. Returns a `DKItem` object.
     case getItem(id: NSNumber, queryParameters: Parameters?)
@@ -128,10 +128,10 @@ public enum DKRouter: URLRequestConvertible {
     case deleteItem(id: NSNumber, bodyParameters: Parameters?)
     
     /// Delete multiple items within a parent collection. Returns only a 200 response.
-    case deleteItemsInCollection(id: NSNumber, bodyParameters: Parameters?)
+    case deleteItemsInCollection(id: NSNumber, bodyParameters: Parameters)
     
     /// Duplicate an item(s) within a parent collection. Returns a `DKItem` list.
-    case copyItems(bodyParameters: Parameters?)
+    case copyItems(bodyParameters: Parameters)
     
     // MARK: Reactions
     
@@ -172,16 +172,16 @@ public enum DKRouter: URLRequestConvertible {
     case getTeam(id: NSNumber)
     
     /// Update a team. Returns a `DKTeam` object.
-    case updateTeam(teamid: NSNumber, bodyParameters: Parameters?)
+    case updateTeam(id: NSNumber, bodyParameters: Parameters)
     
     /// List all users belonging to the specified team. Returns a `DKUser` list.
-    case listUsersInTeam(teamID: NSNumber)
+    case listUsersInTeam(id: NSNumber)
     
     /// Add a user to a team. Returns a `DKUser` object.
-    case createUserInTeam(teamID: NSNumber, bodyParameters: Parameters?)
+    case createUserInTeam(id: NSNumber, bodyParameters: Parameters)
     
     /// Update a user within a team. Returns a `DKUser` object.
-    case updateUserInTeam(teamID: NSNumber, userID: NSNumber, bodyParameters: Parameters?)
+    case updateUserInTeam(teamID: NSNumber, userID: NSNumber, bodyParameters: Parameters)
     
     /// Remove a user from a team. Returns only a 200 response.
     case deleteUserInTeam(teamID: NSNumber, userID: NSNumber)
@@ -195,7 +195,7 @@ public enum DKRouter: URLRequestConvertible {
     case getUser(queryParameters: Parameters?)
     
     /// Update information for the current user. Returns a `DKUser` object.
-    case updateUser(bodyParameters: Parameters?)
+    case updateUser(bodyParameters: Parameters)
     
     /// Get a list of users associated with the current user
     case listContacts
@@ -209,7 +209,7 @@ public enum DKRouter: URLRequestConvertible {
     // MARK: Uploads
     
     /// Use this endpoint to get an upload signature for direct uploads to Amazon S3
-    case uploads(bodyParameters: Parameters?)
+    case createUploadSignature(bodyParameters: Parameters)
     
     
     var method: HTTPMethod {
@@ -342,7 +342,7 @@ public enum DKRouter: URLRequestConvertible {
             return .get
             
         // Uploads
-        case .uploads:
+        case .createUploadSignature:
             return .post
             
         }
@@ -478,7 +478,7 @@ public enum DKRouter: URLRequestConvertible {
             return "/users/username"
             
         // Uploads
-        case .uploads:
+        case .createUploadSignature:
             return "/uploads"
             
         }
@@ -698,7 +698,7 @@ public enum DKRouter: URLRequestConvertible {
             urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParameters)
             
         // Uploads
-        case .uploads(let bodyParameters):
+        case .createUploadSignature(let bodyParameters):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
             
         }

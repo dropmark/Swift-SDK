@@ -51,4 +51,7 @@ public enum DKError: Error {
     /// Request was deallocated from memory before a response could be returned
     case requestIsNil
     
+    /// Request found itself deallocated
+    case deallocated
+    
 }
