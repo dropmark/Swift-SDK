@@ -28,7 +28,7 @@ import CoreLocation
 /// Items belong to a collection, can optionally belong to another item (a stack), and have many comments and reactions.
 @objc(DKItem)
 public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
-    
+        
     /// The unique identifier of the item
     public var id : NSNumber
     
@@ -124,6 +124,12 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     
     /// The comments the item recieved
     public var comments = [DKComment]()
+    
+    /// The effective file path for an item on Dropmark's servers
+    public var directory: DKDirectory {
+        return DKDirectory(collectionID: collectionID, stackID: parentID)
+    }
+    
     
     // MARK: DKResponseObjectSerializable
     
