@@ -141,6 +141,90 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUploadSignature.swift",
+      "line": 10,
+      "symbol": "DKUploadSignature",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUploadSignature.swift",
+      "line": 12,
+      "symbol": "DKUploadSignature.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUploadSignature.swift",
+      "line": 13,
+      "symbol": "DKUploadSignature.url",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUploadSignature.swift",
+      "line": 14,
+      "symbol": "DKUploadSignature.parameters",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUploadSignature.swift",
+      "line": 22,
+      "symbol": "DKUploadSignature.Parameters",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUploadSignature.swift",
+      "line": 24,
+      "symbol": "DKUploadSignature.Parameters.policy",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUploadSignature.swift",
+      "line": 25,
+      "symbol": "DKUploadSignature.Parameters.contentType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUploadSignature.swift",
+      "line": 26,
+      "symbol": "DKUploadSignature.Parameters.signature",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUploadSignature.swift",
+      "line": 27,
+      "symbol": "DKUploadSignature.Parameters.acl",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUploadSignature.swift",
+      "line": 28,
+      "symbol": "DKUploadSignature.Parameters.awsAccessKeyID",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUploadSignature.swift",
+      "line": 29,
+      "symbol": "DKUploadSignature.Parameters.key",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUploadSignature.swift",
+      "line": 30,
+      "symbol": "DKUploadSignature.Parameters.successActionStatus",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
       "line": 78,
       "symbol": "DKUser.customDomain",
@@ -187,6 +271,335 @@
       "line": 338,
       "symbol": "DKUser.description",
       "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 12,
+      "symbol": "DKPromise",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 16,
+      "symbol": "DKPromise.activity(parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 22,
+      "symbol": "DKPromise.authenticate(parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 28,
+      "symbol": "DKPromise.listCollections(parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 32,
+      "symbol": "DKPromise.createCollection(parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 36,
+      "symbol": "DKPromise.getCollection(id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 40,
+      "symbol": "DKPromise.updateCollection(id:parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 44,
+      "symbol": "DKPromise.deleteCollection(id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 56,
+      "symbol": "DKPromise.listCollaboratorsInCollection(id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 60,
+      "symbol": "DKPromise.addCollaboratorToCollection(id:parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 64,
+      "symbol": "DKPromise.removeCollaboratorFromCollection(userID:collectionID:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 70,
+      "symbol": "DKPromise.listCommentsForItem(itemID:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 74,
+      "symbol": "DKPromise.createCommentForItem(itemID:parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 78,
+      "symbol": "DKPromise.updateComment(id:parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 82,
+      "symbol": "DKPromise.deleteComment(id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 92,
+      "symbol": "DKPromise.createEmail(email:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 96,
+      "symbol": "DKPromise.deleteEmail(id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 102,
+      "symbol": "DKPromise.listItems(parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 106,
+      "symbol": "DKPromise.listItemsInCollection(id:parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 110,
+      "symbol": "DKPromise.createItemInCollection(id:parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 114,
+      "symbol": "DKPromise.updateItemsInCollection(id:parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 118,
+      "symbol": "DKPromise.updateItems(parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 122,
+      "symbol": "DKPromise.getItem(id:parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 126,
+      "symbol": "DKPromise.updateItem(id:parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 130,
+      "symbol": "DKPromise.deleteItem(id:parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 134,
+      "symbol": "DKPromise.deleteItemsInCollection(id:parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 138,
+      "symbol": "DKPromise.copyItems(parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 144,
+      "symbol": "DKPromise.listReactionsForItem(id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 148,
+      "symbol": "DKPromise.createReactionForItem(id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 152,
+      "symbol": "DKPromise.deleteReaction(id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 158,
+      "symbol": "DKPromise.search(parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 164,
+      "symbol": "DKPromise.listTags()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 168,
+      "symbol": "DKPromise.listTagsForItem(id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 172,
+      "symbol": "DKPromise.createTagForItem(id:name:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 176,
+      "symbol": "DKPromise.deleteTag(id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 182,
+      "symbol": "DKPromise.listTeams(parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 186,
+      "symbol": "DKPromise.getTeam(id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 190,
+      "symbol": "DKPromise.updateTeam(id:parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 194,
+      "symbol": "DKPromise.listUsersInTeam(id:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 198,
+      "symbol": "DKPromise.createUserInTeam(id:parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 202,
+      "symbol": "DKPromise.updateUserInTeam(teamID:userID:parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 206,
+      "symbol": "DKPromise.deleteUserInTeam(teamID:userID:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 212,
+      "symbol": "DKPromise.createUser(parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 216,
+      "symbol": "DKPromise.getUser(parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 220,
+      "symbol": "DKPromise.updateUser(parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 224,
+      "symbol": "DKPromise.listContacts()",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexandergivens/Developer/Dropmark/SwiftSDK/Source/Network/DKPromise.swift",
+      "line": 238,
+      "symbol": "DKPromise.createUploadSignature(parameters:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
