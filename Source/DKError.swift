@@ -54,4 +54,7 @@ public enum DKError: Error {
     /// Request found itself deallocated
     case deallocated
     
+    /// User explicitly cancelled the operation
+    case userCancelled
+    
 }
