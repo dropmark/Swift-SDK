@@ -66,7 +66,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     @objc public var id : NSNumber
     
     /// The name of the user
-    public var name : String?
+    public var name : String
     
     /// The primary email of the user
     @objc public var email : String?
@@ -154,11 +154,12 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         
         guard
             let representation = representation as? [String: Any],
-            let id = representation["id"] as? NSNumber
+            let id = representation["id"] as? NSNumber,
+            let name = representation["name"] as? String
         else { return nil }
         
         self.id = id
-        name = representation["name"] as? String
+        self.name = name
         email = representation["email"] as? String
         username = representation["username"] as? String
         customDomain = representation["custom_domain"] as? String
