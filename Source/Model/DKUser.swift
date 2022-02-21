@@ -32,7 +32,7 @@ import Foundation
  
  */
 @objc(DKUser)
-public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
+public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable, DKAccount {
     
     /// When listing collaborators within a collection, a `Kind` represents a user's role within the collection
     public enum Kind: String, CaseIterable {

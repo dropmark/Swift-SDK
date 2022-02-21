@@ -34,7 +34,7 @@ import Foundation
  
  */
 @objc(DKTeam)
-public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
+public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable, DKAccount {
     
     /// A team's ability to act on the Dropmark platform
     public enum Status: String, CaseIterable {
