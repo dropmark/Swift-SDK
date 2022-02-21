@@ -134,8 +134,9 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
      
      */
     
-    public init(id: NSNumber) {
+    public init(id: NSNumber, name: String = "") {
         self.id = id
+        self.name = name
     }
     
     // MARK: DKResponseObjectSerializable
@@ -256,11 +257,12 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     public required init?(coder aDecoder: NSCoder) {
             
         guard
-            let id = aDecoder.decodeObject(forKey: NSCoderKeys.id) as? NSNumber
+            let id = aDecoder.decodeObject(forKey: NSCoderKeys.id) as? NSNumber,
+            let name = aDecoder.decodeObject(forKey: NSCoderKeys.name) as? String
         else { return nil}
         
         self.id = id
-        name = aDecoder.decodeObject(forKey: NSCoderKeys.name) as? String
+        self.name = name
         email = aDecoder.decodeObject(forKey: NSCoderKeys.email) as? String
         username = aDecoder.decodeObject(forKey: NSCoderKeys.username) as? String
         customDomain = aDecoder.decodeObject(forKey: NSCoderKeys.customDomain) as? String
@@ -337,10 +339,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     // MARK: Utility
     
     public override var description: String {
-        var description = "User (\(self.id)):"
-        if let name = self.name {
-            description += " \(name),"
-        }
+        var description = "User (\(self.id)): \(self.name),"
         if let email = self.email {
             description += " \(email),"
         }

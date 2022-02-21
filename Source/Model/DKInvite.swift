@@ -94,10 +94,13 @@ public final class DKInvite: NSObject, DKResponseObjectSerializable, DKResponseL
             updatedAt = DKDateFormatter().date(from: updatedAtString)
         }
         
-        if let userID = representation["user_id"] as? NSNumber {
+        if
+            let userID = representation["user_id"] as? NSNumber,
+            let userName = representation["user_name"] as? String
+        {
             
             let user = DKUser(id: userID)
-            user.name = representation["user_name"] as? String
+            user.name = userName
             user.username = representation["username"] as? String
             user.email = representation["user_email"] as? String
             

@@ -195,7 +195,8 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
             let url = URL(string: urlString),
             let shortURLString = representation["short_url"] as? String,
             let shortURL = URL(string: shortURLString),
-            let userID = representation["user_id"] as? NSNumber
+            let userID = representation["user_id"] as? NSNumber,
+            let userName = representation["user_name"] as? String
         else { return nil }
         
         self.id = id
@@ -261,7 +262,7 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
         // Begin User
         
         let user = DKUser(id: userID)
-        user.name = representation["user_name"] as? String
+        user.name = userName
         user.username = representation["username"] as? String
         user.email = representation["user_email"] as? String
         
