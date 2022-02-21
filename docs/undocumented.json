@@ -289,7 +289,7 @@
     },
     {
       "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 338,
+      "line": 341,
       "symbol": "DKUser.description",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
