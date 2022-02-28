@@ -34,6 +34,30 @@ import Foundation
 @objc(DKUser)
 public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable, DKAccount {
     
+    private struct Key {
+        static let id = "id"
+        static let name = "name"
+        static let email = "email"
+        static let username = "username"
+        static let customDomain = "custom_domain"
+        static let sortBy = "sort_by"
+        static let sortOrder = "sort_order"
+        static let viewMode = "view_mode"
+        static let labels = "labels"
+        static let plan = "plan"
+        static let planActive = "plan_active"
+        static let planQuantity = "plan_quantity"
+        static let storageQuota = "storageQuota"
+        static let storageUsed = "storageUsed"
+        static let billingEmail = "billing_email"
+        static let kind = "kind"
+        static let status = "status"
+        static let createdAt = "created_at"
+        static let avatar = "avatar"
+        static let teams = "teams"
+        static let token = "token"
+    }
+    
     /// When listing collaborators within a collection, a `Kind` represents a user's role within the collection
     public enum Kind: String, CaseIterable {
         
@@ -155,26 +179,26 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         
         guard
             let representation = representation as? [String: Any],
-            let id = representation["id"] as? NSNumber,
-            let name = representation["name"] as? String
+            let id = representation[Key.id] as? NSNumber,
+            let name = representation[Key.name] as? String
         else { return nil }
         
         self.id = id
         self.name = name
-        email = representation["email"] as? String
-        username = representation["username"] as? String
-        customDomain = representation["custom_domain"] as? String
-        sortBy = representation["sort_by"] as? String
-        sortOrder = representation["sort_order"] as? String
-        viewMode = representation["view_mode"] as? String
-        labels = representation["labels"] as? Bool
+        email = representation[Key.email] as? String
+        username = representation[Key.username] as? String
+        customDomain = representation[Key.customDomain] as? String
+        sortBy = representation[Key.sortBy] as? String
+        sortOrder = representation[Key.sortOrder] as? String
+        viewMode = representation[Key.viewMode] as? String
+        labels = representation[Key.labels] as? Bool
         
-        if let planString = representation["plan"] as? String, let plan = DKPlan(rawValue: planString) {
+        if let planString = representation[Key.plan] as? String, let plan = DKPlan(rawValue: planString) {
             self.plan = plan
         }
         
-        planIsActive = representation["plan_active"] as? Bool
-        planQuantity = representation["plan_quantity"] as? NSNumber
+        planIsActive = representation[Key.planActive] as? Bool
+        planQuantity = representation[Key.planQuantity] as? NSNumber
         
         if let usage = representation["usage"] as? [String: Any] {
             
@@ -188,58 +212,58 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
             
         }
         
-        billingEmail = representation["billing_email"] as? String
+        billingEmail = representation[Key.billingEmail] as? String
         
-        if let kindString = representation["kind"] as? String, let kind = Kind(rawValue: kindString) {
+        if let kindString = representation[Key.kind] as? String, let kind = Kind(rawValue: kindString) {
             self.kind = kind
         }
         
-        if let statusString = representation["status"] as? String, let status = Status(rawValue: statusString) {
+        if let statusString = representation[Key.status] as? String, let status = Status(rawValue: statusString) {
             self.status = status
         }
         
-        if let createdAtString = representation["created_at"] as? String {
+        if let createdAtString = representation[Key.createdAt] as? String {
             createdAt = DKDateFormatter().date(from: createdAtString)
         }
         
-        if let avatarString = representation["avatar"] as? String {
+        if let avatarString = representation[Key.avatar] as? String {
             avatar =  URL(string: avatarString)
         } else if let avatarString = representation["user_avatar"] as? String {
             avatar =  URL(string: avatarString)
         }
         
-        if let teamRepresentations = representation["teams"] as? [Any] {
+        if let teamRepresentations = representation[Key.teams] as? [Any] {
             teams = teamRepresentations.compactMap{ DKTeam(response: response, representation: $0) }
         }
         
-        token = representation["token"] as? String
+        token = representation[Key.token] as? String
 
     }
     
     // MARK: NSCoding
-        
-    private struct NSCoderKeys {
-        static let id = "id"
-        static let name = "name"
-        static let email = "email"
-        static let username = "username"
-        static let customDomain = "custom_domain"
-        static let sortBy = "sort_by"
-        static let sortOrder = "sort_order"
-        static let viewMode = "view_mode"
-        static let labels = "labels"
-        static let plan = "plan"
-        static let planActive = "plan_active"
-        static let planQuantity = "plan_quantity"
-        static let storageQuota = "storageQuota"
-        static let storageUsed = "storageUsed"
-        static let billingEmail = "billing_email"
-        static let status = "status"
-        static let createdAt = "created_at"
-        static let avatar = "avatar"
-        static let teams = "teams"
-        static let token = "token"
-    }
+    
+//    private struct Key {
+//        static let id = "id"
+//        static let name = "name"
+//        static let email = "email"
+//        static let username = "username"
+//        static let customDomain = "custom_domain"
+//        static let sortBy = "sort_by"
+//        static let sortOrder = "sort_order"
+//        static let viewMode = "view_mode"
+//        static let labels = "labels"
+//        static let plan = "plan"
+//        static let planActive = "plan_active"
+//        static let planQuantity = "plan_quantity"
+//        static let storageQuota = "storageQuota"
+//        static let storageUsed = "storageUsed"
+//        static let billingEmail = "billing_email"
+//        static let status = "status"
+//        static let createdAt = "created_at"
+//        static let avatar = "avatar"
+//        static let teams = "teams"
+//        static let token = "token"
+//    }
     
     /**
      
@@ -257,48 +281,48 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     public required init?(coder aDecoder: NSCoder) {
             
         guard
-            let id = aDecoder.decodeObject(forKey: NSCoderKeys.id) as? NSNumber,
-            let name = aDecoder.decodeObject(forKey: NSCoderKeys.name) as? String
+            let id = aDecoder.decodeObject(forKey: Key.id) as? NSNumber,
+            let name = aDecoder.decodeObject(forKey: Key.name) as? String
         else { return nil}
         
         self.id = id
         self.name = name
-        email = aDecoder.decodeObject(forKey: NSCoderKeys.email) as? String
-        username = aDecoder.decodeObject(forKey: NSCoderKeys.username) as? String
-        customDomain = aDecoder.decodeObject(forKey: NSCoderKeys.customDomain) as? String
-        sortBy = aDecoder.decodeObject(forKey: NSCoderKeys.sortBy) as? String
-        sortOrder = aDecoder.decodeObject(forKey: NSCoderKeys.sortOrder) as? String
-        viewMode = aDecoder.decodeObject(forKey: NSCoderKeys.viewMode) as? String
-        labels = aDecoder.decodeObject(forKey: NSCoderKeys.labels) as? Bool
+        email = aDecoder.decodeObject(forKey: Key.email) as? String
+        username = aDecoder.decodeObject(forKey: Key.username) as? String
+        customDomain = aDecoder.decodeObject(forKey: Key.customDomain) as? String
+        sortBy = aDecoder.decodeObject(forKey: Key.sortBy) as? String
+        sortOrder = aDecoder.decodeObject(forKey: Key.sortOrder) as? String
+        viewMode = aDecoder.decodeObject(forKey: Key.viewMode) as? String
+        labels = aDecoder.decodeObject(forKey: Key.labels) as? Bool
         
         if
-            let planString = aDecoder.decodeObject(forKey: NSCoderKeys.plan) as? String,
+            let planString = aDecoder.decodeObject(forKey: Key.plan) as? String,
             let plan = DKPlan(rawValue: planString)
         {
             self.plan = plan
         }
         
-        planIsActive = aDecoder.decodeObject(forKey: NSCoderKeys.planActive) as? Bool
-        planQuantity = aDecoder.decodeObject(forKey: NSCoderKeys.planQuantity) as? NSNumber
+        planIsActive = aDecoder.decodeObject(forKey: Key.planActive) as? Bool
+        planQuantity = aDecoder.decodeObject(forKey: Key.planQuantity) as? NSNumber
         
-        if let storageQuota = aDecoder.decodeObject(forKey: NSCoderKeys.storageQuota) as? NSNumber {
+        if let storageQuota = aDecoder.decodeObject(forKey: Key.storageQuota) as? NSNumber {
             self.storageQuota = storageQuota
         }
         
-        if let storageUsed = aDecoder.decodeObject(forKey: NSCoderKeys.storageUsed) as? NSNumber {
+        if let storageUsed = aDecoder.decodeObject(forKey: Key.storageUsed) as? NSNumber {
             self.storageUsed = storageUsed
         }
         
-        billingEmail = aDecoder.decodeObject(forKey: NSCoderKeys.billingEmail) as? String
+        billingEmail = aDecoder.decodeObject(forKey: Key.billingEmail) as? String
         
-        if let statusString = aDecoder.decodeObject(forKey: NSCoderKeys.status) as? String, let status = Status(rawValue: statusString) {
+        if let statusString = aDecoder.decodeObject(forKey: Key.status) as? String, let status = Status(rawValue: statusString) {
             self.status = status
         }
         
-        createdAt = aDecoder.decodeObject(forKey: NSCoderKeys.createdAt) as? Date
-        avatar = aDecoder.decodeObject(forKey: NSCoderKeys.avatar) as? URL
-        teams = aDecoder.decodeObject(forKey: NSCoderKeys.teams) as? [DKTeam]
-        token = aDecoder.decodeObject(forKey: NSCoderKeys.token) as? String
+        createdAt = aDecoder.decodeObject(forKey: Key.createdAt) as? Date
+        avatar = aDecoder.decodeObject(forKey: Key.avatar) as? URL
+        teams = aDecoder.decodeObject(forKey: Key.teams) as? [DKTeam]
+        token = aDecoder.decodeObject(forKey: Key.token) as? String
         
     }
     
@@ -313,26 +337,26 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     
     public func encode(with aCoder: NSCoder) {
         
-        aCoder.encode(id, forKey: NSCoderKeys.id)
-        aCoder.encode(name, forKey: NSCoderKeys.name)
-        aCoder.encode(email, forKey: NSCoderKeys.email)
-        aCoder.encode(username, forKey: NSCoderKeys.username)
-        aCoder.encode(customDomain, forKey: NSCoderKeys.customDomain)
-        aCoder.encode(sortBy, forKey: NSCoderKeys.sortBy)
-        aCoder.encode(sortOrder, forKey: NSCoderKeys.sortOrder)
-        aCoder.encode(viewMode, forKey: NSCoderKeys.viewMode)
-        aCoder.encode(labels, forKey: NSCoderKeys.labels)
-        aCoder.encode(plan.rawValue, forKey: NSCoderKeys.plan)
-        aCoder.encode(planIsActive, forKey: NSCoderKeys.planActive)
-        aCoder.encode(planQuantity, forKey: NSCoderKeys.planQuantity)
-        aCoder.encode(storageQuota, forKey: NSCoderKeys.storageQuota)
-        aCoder.encode(storageUsed, forKey: NSCoderKeys.storageUsed)
-        aCoder.encode(billingEmail, forKey: NSCoderKeys.billingEmail)
-        aCoder.encode(status.rawValue, forKey: NSCoderKeys.status)
-        aCoder.encode(createdAt, forKey: NSCoderKeys.createdAt)
-        aCoder.encode(avatar, forKey: NSCoderKeys.avatar)
-        aCoder.encode(teams, forKey: NSCoderKeys.teams)
-        aCoder.encode(token, forKey: NSCoderKeys.token)
+        aCoder.encode(id, forKey: Key.id)
+        aCoder.encode(name, forKey: Key.name)
+        aCoder.encode(email, forKey: Key.email)
+        aCoder.encode(username, forKey: Key.username)
+        aCoder.encode(customDomain, forKey: Key.customDomain)
+        aCoder.encode(sortBy, forKey: Key.sortBy)
+        aCoder.encode(sortOrder, forKey: Key.sortOrder)
+        aCoder.encode(viewMode, forKey: Key.viewMode)
+        aCoder.encode(labels, forKey: Key.labels)
+        aCoder.encode(plan.rawValue, forKey: Key.plan)
+        aCoder.encode(planIsActive, forKey: Key.planActive)
+        aCoder.encode(planQuantity, forKey: Key.planQuantity)
+        aCoder.encode(storageQuota, forKey: Key.storageQuota)
+        aCoder.encode(storageUsed, forKey: Key.storageUsed)
+        aCoder.encode(billingEmail, forKey: Key.billingEmail)
+        aCoder.encode(status.rawValue, forKey: Key.status)
+        aCoder.encode(createdAt, forKey: Key.createdAt)
+        aCoder.encode(avatar, forKey: Key.avatar)
+        aCoder.encode(teams, forKey: Key.teams)
+        aCoder.encode(token, forKey: Key.token)
         
     }
     

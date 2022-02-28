@@ -25,11 +25,29 @@
 import Foundation
 
 /// Use this protocol for interchangeable usage of DKUsers and DKTeams
-protocol DKAccount {
+public protocol DKAccount {
     
     var id: NSNumber { get set }
     var name: String { get set }
+    var email: String? { get set }
+    var username: String? { get set }
+    var customDomain: String? { get set }
     var avatar: URL? { get set }
-    var plan: DKPlan  { get set }
+    var plan: DKPlan { get set }
+    var planIsActive: Bool? { get set }
+    
+}
+
+extension DKAccount {
+    
+    var displayName: String {
+        if
+            let user = DKSession.user,
+            user.id == self.id
+        {
+            return "Personal"
+        }
+        return name
+    }
     
 }
