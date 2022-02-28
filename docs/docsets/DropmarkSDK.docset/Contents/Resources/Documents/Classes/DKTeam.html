@@ -17,7 +17,7 @@
     <a title="DKTeam Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">DropmarkSDK 3.3.1 Docs</a> (78% documented)</p>
+        <p><a href="../index.html">DropmarkSDK 3.3.3 Docs</a> (76% documented)</p>
         <p class="header-right"><a href="https://github.com/dropmark/Swift-SDK"><img src="../img/gh.png" alt="GitHub"/>View on GitHub</a></p>
         <p class="header-right"><a href="dash-feed://https%3A%2F%2Fdropmark.github.io%2FSwift-SDK%2Fdocsets%2FDropmarkSDK.xml"><img src="../img/dash.png" alt="Dash"/>Install in Dash</a></p>
         <div class="header-right">
@@ -95,9 +95,6 @@
                 <a href="../Classes/DKTeam/UserKind.html">– UserKind</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Classes/DKTeam/Usage.html">– Usage</a>
-              </li>
-              <li class="nav-group-task">
                 <a href="../Classes/DKThumbnails.html">DKThumbnails</a>
               </li>
               <li class="nav-group-task">
@@ -166,6 +163,9 @@
             <a href="../Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Protocols/DKAccount.html">DKAccount</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Protocols/DKResponseListSerializable.html">DKResponseListSerializable</a>
               </li>
               <li class="nav-group-task">
@@ -206,7 +206,7 @@
                 <div class="language">
                   
                   <pre class="highlight swift"><code><span class="kd">@objc</span><span class="p">(</span><span class="kt">DKTeam</span><span class="p">)</span>
-<span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">DKTeam</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCoding</span><span class="p">,</span> <span class="kt"><a href="../Protocols/DKResponseObjectSerializable.html">DKResponseObjectSerializable</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/DKResponseListSerializable.html">DKResponseListSerializable</a></span><span class="p">,</span> <span class="kt">DKAccount</span></code></pre>
+<span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">DKTeam</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">NSCoding</span><span class="p">,</span> <span class="kt"><a href="../Protocols/DKResponseObjectSerializable.html">DKResponseObjectSerializable</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/DKResponseListSerializable.html">DKResponseListSerializable</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/DKAccount.html">DKAccount</a></span></code></pre>
 
                 </div>
               </div>
@@ -270,34 +270,6 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">UserKind</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CaseIterable</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:11DropmarkSDK6DKTeamC5UsageV"></a>
-                    <a name="//apple_ref/swift/Struct/Usage" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKTeamC5UsageV">Usage</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Encapsulates the data usage metrics for a team</p>
-
-                        <a href="../Classes/DKTeam/Usage.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Usage</span></code></pre>
 
                         </div>
                       </div>
@@ -739,9 +711,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:11DropmarkSDK6DKTeamC5usageAC5UsageVSgvp"></a>
-                    <a name="//apple_ref/swift/Property/usage" class="dashAnchor"></a>
-                    <a class="token" href="#/s:11DropmarkSDK6DKTeamC5usageAC5UsageVSgvp">usage</a>
+                    <a name="/s:11DropmarkSDK6DKTeamC12storageQuotaSo8NSNumberCvp"></a>
+                    <a name="//apple_ref/swift/Property/storageQuota" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK6DKTeamC12storageQuotaSo8NSNumberCvp">storageQuota</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -749,14 +721,41 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The usage metrics of data for a team</p>
+                        <p>The total amount of storage available for the current team (in bytes)</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">usage</span><span class="p">:</span> <span class="kt"><a href="../Classes/DKTeam/Usage.html">Usage</a></span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">storageQuota</span><span class="p">:</span> <span class="kt">NSNumber</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK6DKTeamC11storageUsedSo8NSNumberCvp"></a>
+                    <a name="//apple_ref/swift/Property/storageUsed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK6DKTeamC11storageUsedSo8NSNumberCvp">storageUsed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The amount of storage used by the current team (in bytes)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">storageUsed</span><span class="p">:</span> <span class="kt">NSNumber</span></code></pre>
 
                         </div>
                       </div>
@@ -1033,7 +1032,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2022 <a class="link" href="http://oak.is/" target="_blank" rel="external noopener">Oak LLC</a>. All rights reserved. (Last updated: 2022-02-21)</p>
+          <p>&copy; 2022 <a class="link" href="http://oak.is/" target="_blank" rel="external noopener">Oak LLC</a>. All rights reserved. (Last updated: 2022-02-28)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.1</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>

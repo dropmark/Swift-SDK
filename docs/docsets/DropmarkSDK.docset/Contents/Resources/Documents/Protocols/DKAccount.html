@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>DKKeychain Class Reference</title>
+    <title>DKAccount Protocol Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,8 +13,8 @@
     <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/DKKeychain" class="dashAnchor"></a>
-    <a title="DKKeychain Class Reference"></a>
+    <a name="//apple_ref/swift/Protocol/DKAccount" class="dashAnchor"></a>
+    <a title="DKAccount Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">DropmarkSDK 3.3.3 Docs</a> (76% documented)</p>
@@ -31,7 +31,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">DropmarkSDK Reference</a>
         <img id="carat" src="../img/carat.png" alt=""/>
-        DKKeychain Class Reference
+        DKAccount Protocol Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -201,16 +201,15 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>DKKeychain</h1>
+            <h1>DKAccount</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="kt">DKKeychain</span> <span class="p">:</span> <span class="kt">NSObject</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">DKAccount</span></code></pre>
 
                 </div>
               </div>
-            <p>Provides encryption, decryption, and removal of an authenticated user object in the device keychain.</p>
+            <p>Use this protocol for interchangeable usage of DKUsers and DKTeams</p>
 
           </section>
           <section class="section task-group-section">
@@ -219,9 +218,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)accessGroup"></a>
-                    <a name="//apple_ref/swift/Variable/accessGroup" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)accessGroup">accessGroup</a>
+                    <a name="/s:11DropmarkSDK9DKAccountP2idSo8NSNumberCvp"></a>
+                    <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKAccountP2idSo8NSNumberCvp">id</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -229,15 +228,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Assigns a string to the <code>kSecAttrAccessGroup</code> value in the Keychain query. Recommended if you need to share user credentials between multiple app targets.</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">accessGroup</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">id</span><span class="p">:</span> <span class="kt">NSNumber</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -247,9 +245,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)service"></a>
-                    <a name="//apple_ref/swift/Variable/service" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)service">service</a>
+                    <a name="/s:11DropmarkSDK9DKAccountP4nameSSvp"></a>
+                    <a name="//apple_ref/swift/Property/name" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKAccountP4nameSSvp">name</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -257,15 +255,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Assigns a string to the <code>kSecAttrService</code> value in the Keychain query. Used to identify what the Keychain entry is used for.</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">service</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -275,9 +272,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)userKey"></a>
-                    <a name="//apple_ref/swift/Variable/userKey" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)userKey">userKey</a>
+                    <a name="/s:11DropmarkSDK9DKAccountP5emailSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/email" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKAccountP5emailSSSgvp">email</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -285,15 +282,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Assigns a string to the <code>kSecAttrAccount</code> value in the Keychain query. Used primarily as a key to get the user data from Keychain.</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">userKey</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">email</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -303,9 +299,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)baseQuery"></a>
-                    <a name="//apple_ref/swift/Variable/baseQuery" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)baseQuery">baseQuery</a>
+                    <a name="/s:11DropmarkSDK9DKAccountP8usernameSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/username" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKAccountP8usernameSSSgvp">username</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -313,15 +309,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A common set of query parameters used to set, retrieve, and delete</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">baseQuery</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">username</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -331,9 +326,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)user"></a>
-                    <a name="//apple_ref/swift/Variable/user" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@DropmarkSDK@objc(cs)DKKeychain(cpy)user">user</a>
+                    <a name="/s:11DropmarkSDK9DKAccountP12customDomainSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/customDomain" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKAccountP12customDomainSSSgvp">customDomain</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -341,15 +336,176 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The user is stored in the device keychain. Use this variable to securely retrieve the representation of the credentialed user. Note: If the user obect does not contain a <code>token</code>, the user will not be stored.</p>
+                        <p>Undocumented</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">@objc</span>
-<span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">user</span><span class="p">:</span> <span class="kt"><a href="../Classes/DKUser.html">DKUser</a></span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">customDomain</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKAccountP6avatar10Foundation3URLVSgvp"></a>
+                    <a name="//apple_ref/swift/Property/avatar" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKAccountP6avatar10Foundation3URLVSgvp">avatar</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">avatar</span><span class="p">:</span> <span class="kt">URL</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKAccountP4planAA6DKPlanOvp"></a>
+                    <a name="//apple_ref/swift/Property/plan" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKAccountP4planAA6DKPlanOvp">plan</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">plan</span><span class="p">:</span> <span class="kt"><a href="../Enums/DKPlan.html">DKPlan</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKAccountP12planIsActiveSbSgvp"></a>
+                    <a name="//apple_ref/swift/Property/planIsActive" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKAccountP12planIsActiveSbSgvp">planIsActive</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">planIsActive</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKAccountP12storageQuotaSo8NSNumberCvp"></a>
+                    <a name="//apple_ref/swift/Property/storageQuota" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKAccountP12storageQuotaSo8NSNumberCvp">storageQuota</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">storageQuota</span><span class="p">:</span> <span class="kt">NSNumber</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKAccountP11storageUsedSo8NSNumberCvp"></a>
+                    <a name="//apple_ref/swift/Property/storageUsed" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKAccountP11storageUsedSo8NSNumberCvp">storageUsed</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">storageUsed</span><span class="p">:</span> <span class="kt">NSNumber</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:11DropmarkSDK9DKAccountP12billingEmailSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/billingEmail" class="dashAnchor"></a>
+                    <a class="token" href="#/s:11DropmarkSDK9DKAccountP12billingEmailSSSgvp">billingEmail</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">billingEmail</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>

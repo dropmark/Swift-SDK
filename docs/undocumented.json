@@ -15,6 +15,83 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKAccount.swift",
+      "line": 30,
+      "symbol": "DKAccount.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKAccount.swift",
+      "line": 31,
+      "symbol": "DKAccount.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKAccount.swift",
+      "line": 32,
+      "symbol": "DKAccount.email",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKAccount.swift",
+      "line": 33,
+      "symbol": "DKAccount.username",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKAccount.swift",
+      "line": 34,
+      "symbol": "DKAccount.customDomain",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKAccount.swift",
+      "line": 35,
+      "symbol": "DKAccount.avatar",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKAccount.swift",
+      "line": 36,
+      "symbol": "DKAccount.plan",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKAccount.swift",
+      "line": 37,
+      "symbol": "DKAccount.planIsActive",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKAccount.swift",
+      "line": 38,
+      "symbol": "DKAccount.storageQuota",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKAccount.swift",
+      "line": 39,
+      "symbol": "DKAccount.storageUsed",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKAccount.swift",
+      "line": 40,
+      "symbol": "DKAccount.billingEmail",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKCollection.swift",
       "line": 112,
       "symbol": "DKCollection.sort",
@@ -121,42 +198,42 @@
     },
     {
       "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 85,
+      "line": 74,
       "symbol": "DKTeam.customDomain",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 88,
+      "line": 77,
       "symbol": "DKTeam.sortBy",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 91,
+      "line": 80,
       "symbol": "DKTeam.sortOrder",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 94,
+      "line": 83,
       "symbol": "DKTeam.viewMode",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 97,
+      "line": 86,
       "symbol": "DKTeam.labels",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKTeam.swift",
-      "line": 106,
+      "line": 95,
       "symbol": "DKTeam.planQuantity",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
@@ -247,49 +324,49 @@
     },
     {
       "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 78,
+      "line": 102,
       "symbol": "DKUser.customDomain",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 81,
+      "line": 105,
       "symbol": "DKUser.sortBy",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 84,
+      "line": 108,
       "symbol": "DKUser.sortOrder",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 87,
+      "line": 111,
       "symbol": "DKUser.viewMode",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 90,
+      "line": 114,
       "symbol": "DKUser.labels",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 99,
+      "line": 123,
       "symbol": "DKUser.planQuantity",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/alexgivens/Developer/Dropmark/SwiftSDK/Source/Model/DKUser.swift",
-      "line": 341,
+      "line": 342,
       "symbol": "DKUser.description",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
