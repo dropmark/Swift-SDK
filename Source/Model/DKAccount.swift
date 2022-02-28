@@ -35,6 +35,8 @@ public protocol DKAccount {
     var avatar: URL? { get set }
     var plan: DKPlan { get set }
     var planIsActive: Bool? { get set }
+    var storageQuota: NSNumber { get set }
+    var storageUsed: NSNumber { get set }
     
 }
 
@@ -48,6 +50,23 @@ extension DKAccount {
             return "Personal"
         }
         return name
+    }
+    
+    var storageProgress: Progress {
+        
+        let progress = Progress(totalUnitCount: storageQuota.int64Value)
+        progress.completedUnitCount = storageUsed.int64Value
+        
+        let used = ByteCountFormatter.string(fromByteCount: storageUsed.int64Value, countStyle: .memory)
+        let quota = ByteCountFormatter.string(fromByteCount: storageQuota.int64Value, countStyle: .memory)
+        let percent = storageUsed.floatValue/storageQuota.floatValue * 100
+        // Trims the percent to two decimal places
+        let percentTrimmed = round(100.0 * percent) / 100.0
+        
+        progress.localizedDescription = "\(used) of \(quota) (\(percentTrimmed)%)"
+        
+        return progress
+        
     }
     
 }

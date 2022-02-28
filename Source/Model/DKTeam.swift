@@ -58,17 +58,6 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         
     }
     
-    /// Encapsulates the data usage metrics for a team
-    public struct Usage {
-        
-        /// The total amount of available data, in bytes
-        public var quota: NSNumber
-        
-        /// The amount of data used by the team, in bytes
-        public var usage: NSNumber
-        
-    }
-    
     /// The unique identifier of the team
     public var id : NSNumber
     
@@ -117,8 +106,11 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     /// A unique key used to assemble a Dropmark feed URL. Learn more about Dropmark feeds [here](https://www.dropmark.com/api/topics/feeds/).
     public var feedKey : String?
     
-    /// The usage metrics of data for a team
-    public var usage : Usage?
+    /// The total amount of storage available for the current team (in bytes)
+    public var storageQuota: NSNumber = 0
+    
+    /// The amount of storage used by the current team (in bytes)
+    public var storageUsed: NSNumber = 0
     
     /// The role of the current user (as identified by the token supplied in the GET request) within the team
     public var userKind : UserKind?
@@ -165,6 +157,19 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         
         planIsActive = representation["plan_active"] as? Bool
         planQuantity = representation["plan_quantity"] as? NSNumber
+        
+        if let usage = representation["usage"] as? [String: Any] {
+            
+            if let storageQuota = usage["quota"] as? NSNumber {
+                self.storageQuota = storageQuota
+            }
+            
+            if let storageUsed = usage["used"] as? NSNumber {
+                self.storageUsed = storageUsed
+            }
+            
+        }
+        
         billingEmail = representation["billing_email"] as? String
         
         if let statusString = representation["status"] as? String, let status = Status(rawValue: statusString) {

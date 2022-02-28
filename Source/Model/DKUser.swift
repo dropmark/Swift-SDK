@@ -242,29 +242,6 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     
     // MARK: NSCoding
     
-//    private struct Key {
-//        static let id = "id"
-//        static let name = "name"
-//        static let email = "email"
-//        static let username = "username"
-//        static let customDomain = "custom_domain"
-//        static let sortBy = "sort_by"
-//        static let sortOrder = "sort_order"
-//        static let viewMode = "view_mode"
-//        static let labels = "labels"
-//        static let plan = "plan"
-//        static let planActive = "plan_active"
-//        static let planQuantity = "plan_quantity"
-//        static let storageQuota = "storageQuota"
-//        static let storageUsed = "storageUsed"
-//        static let billingEmail = "billing_email"
-//        static let status = "status"
-//        static let createdAt = "created_at"
-//        static let avatar = "avatar"
-//        static let teams = "teams"
-//        static let token = "token"
-//    }
-    
     /**
      
      Returns an object initialized from data in a given unarchiver.
