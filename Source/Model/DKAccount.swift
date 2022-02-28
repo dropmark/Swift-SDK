@@ -41,9 +41,9 @@ public protocol DKAccount {
     
 }
 
-extension DKAccount {
+public extension DKAccount {
     
-    var displayName: String {
+    public var displayName: String {
         if
             let user = DKSession.user,
             user.id == self.id
@@ -53,7 +53,7 @@ extension DKAccount {
         return name
     }
     
-    var storageProgress: Progress {
+    public var storageProgress: Progress {
         
         let progress = Progress(totalUnitCount: storageQuota.int64Value)
         progress.completedUnitCount = storageUsed.int64Value
