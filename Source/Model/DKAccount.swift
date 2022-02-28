@@ -37,6 +37,7 @@ public protocol DKAccount {
     var planIsActive: Bool? { get set }
     var storageQuota: NSNumber { get set }
     var storageUsed: NSNumber { get set }
+    var billingEmail: String?  { get set }
     
 }
 

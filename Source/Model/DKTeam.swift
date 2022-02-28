@@ -151,7 +151,7 @@ public final class DKTeam: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         viewMode = representation["view_mode"] as? String
         labels = representation["labels"] as? Bool
         
-        if let planString = representation["user_plan"] as? String, let plan = DKPlan(rawValue: planString) {
+        if let planString = representation["plan"] as? String, let plan = DKPlan(rawValue: planString) {
             self.plan = plan
         }
         
