@@ -26,7 +26,7 @@ import Foundation
 
 /// Represents the available thumbnails for a collection or item.
 @objc(DKThumbnails)
-public class DKThumbnails: NSObject, NSCoding {
+public class DKThumbnails: NSObject, NSCoding, Codable {
     
     /// URL for a mini thumbnail image, preserving the content's aspect ratio
     public var mini: URL?

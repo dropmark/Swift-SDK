@@ -26,7 +26,7 @@ import Foundation
 
 /// Tags are added to items and are a great way to organize items across many collections.
 @objc(DKTag)
-public final class DKTag: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable {
+public final class DKTag: NSObject, NSCoding, Codable, DKResponseObjectSerializable, DKResponseListSerializable {
     
     /// The name of the tag. Possibly contains a "#" character
     public var name: String
