@@ -31,8 +31,7 @@ import Foundation
     - Note: Only when a user is retrieved from the `/auth` API endpoint will a `token` be returned
  
  */
-@objc(DKUser)
-public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKResponseListSerializable, DKAccount {
+public struct DMUser: Codable, DKAccount {
     
     private struct Key {
         static let id = "id"
