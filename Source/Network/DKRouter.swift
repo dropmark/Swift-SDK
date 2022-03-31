@@ -522,7 +522,7 @@ public enum DKRouter: URLRequestConvertible {
             
         // Authentication
         case .authenticate(let parameters):
-            var params = parameters ?? Parameters()
+            var params = parameters
             params.addUserParams()
             urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
             
