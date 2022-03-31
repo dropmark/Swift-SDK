@@ -1,6 +1,6 @@
 {
   "name": "DropmarkSDK",
-  "version": "3.3.1",
+  "version": "3.3.3",
   "summary": "Network and model controllers for Dropmark, written in Swift.",
   "homepage": "https://github.com/dropmark/Swift-SDK",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/dropmark/Swift-SDK.git",
-    "tag": "3.3.1"
+    "tag": "3.3.3"
   },
   "social_media_url": "https://twitter.com/oakstudios",
   "swift_versions": "5.0",
@@ -24,10 +24,10 @@
   "source_files": "Source/**/*.swift",
   "dependencies": {
     "Alamofire": [
-      "~> 4.0"
+      "~> 5.5"
     ],
     "PromiseKit": [
-      "~> 6.15"
+      "~> 6.17"
     ]
   },
   "swift_version": "5.0"
