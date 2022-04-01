@@ -29,7 +29,7 @@ import DropmarkSDK
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        DKKeychain.service = "Dropmark SDK Demo"
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

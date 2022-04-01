@@ -30,10 +30,10 @@ import Foundation
     /// Assigns a string to the `kSecAttrAccessGroup` value in the Keychain query. Recommended if you need to share user credentials between multiple app targets.
     @objc public static var accessGroup: String?
     
-    /// Assigns a string to the `kSecAttrService` value in the Keychain query. Used to identify what the Keychain entry is used for.
-    @objc public static var service = "com.dropmark.user"
+    /// Assigns a string to the `kSecAttrService` value in the Keychain query. Used to identify which app or service this keychain record is used for.
+    @objc public static var service = "com.dropmark.app"
     
-    /// Assigns a string to the `kSecAttrAccount` value in the Keychain query. Used primarily as a key to get the user data from Keychain.
+    /// Assigns a string to the `kSecAttrAccount` value in the Keychain query. Used to identify the account for this keychain record. Typically this is the user's email address.
     @objc public static var userKey = "com.dropmark.user"
     
     /// A common set of query parameters used to set, retrieve, and delete
@@ -64,7 +64,7 @@ import Foundation
                 status == errSecSuccess,
                 let existingItem = item as? [String : Any],
                 let userData = existingItem[kSecValueData as String] as? Data,
-                let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? DKUser
+                let user = try? NSKeyedUnarchiver.unarchivedObject(ofClass: DKUser.self, from: userData)
             else {
                 return nil
             }
@@ -77,7 +77,13 @@ import Foundation
                     print("Attempting to store a user object without a token! Only the user object returned by the `/auth` API endpoint can operate as a user credential.")
                     return
                 }
-                let data = NSKeyedArchiver.archivedData(withRootObject: newValue) as CFData
+                
+                guard
+                    let data = try? NSKeyedArchiver.archivedData(withRootObject: newValue, requiringSecureCoding: true) as CFData
+                else {
+                    print("An error occurred archiving the DKUser data.")
+                    return
+                }
                 var attributes = baseQuery
                 attributes[kSecValueData as String] = data
                 let status = SecItemAdd(attributes as CFDictionary, nil)
