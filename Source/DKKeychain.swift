@@ -31,7 +31,7 @@ import Foundation
     @objc public static var accessGroup: String?
     
     /// Assigns a string to the `kSecAttrService` value in the Keychain query. Used to identify which app or service this keychain record is used for.
-    @objc public static var service = "com.dropmark.app"
+    @objc public static var service = "com.dropmark.user"
     
     /// Assigns a string to the `kSecAttrAccount` value in the Keychain query. Used to identify the account for this keychain record. Typically this is the user's email address.
     @objc public static var userKey = "com.dropmark.user"
