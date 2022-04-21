@@ -27,50 +27,8 @@ import Alamofire
 
 extension Dictionary {
     
-    static func listParams() -> Parameters {
-        var dictionary = Parameters()
-        dictionary.addListParams()
-        return dictionary
-    }
-    
-    static func collectionParams() -> Parameters {
-        var dictionary = Parameters()
-        dictionary.addCollectionParams()
-        return dictionary
-    }
-    
-    static func itemParams() -> Parameters {
-        var dictionary = Parameters()
-        dictionary.addItemParams()
-        return dictionary
-    }
-    
-    static func userParams() -> Parameters {
-        var dictionary = Parameters()
-        dictionary.addUserParams()
-        return dictionary
-    }
-    
-    mutating func addListParams() {
-        self.add(key: "per_page", value: DKRouter.pageSize)
-    }
-    
-    mutating func addCollectionParams() {
-        self.add(key: "include", value: ["users", "items"])
-        self.add(key: "items_per_page", value: 4)
-        self.add(key: "items_not_type", value: "stack")
-    }
-    
-    mutating func addItemParams() {
-        self.add(key: "include", value: ["items"])
-        self.add(key: "items_per_page", value: 4)
-    }
-    
-    mutating func addUserParams() {
-        self.add(key: "include", value: ["teams"])
-    }
-    
-    mutating func add(key: String, value: Any) {
+    /// Add a key/value pair only if none exists
+    public mutating func add(key: String, value: Any) {
         if
             let uKey = key as? Key,
             let uValue = value as? Value,

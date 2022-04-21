@@ -50,13 +50,13 @@ public enum DKRouter: URLRequestConvertible {
     case listCollections(queryParameters: Parameters?)
     
     /// Create a collection. Returns a `DKCollection` object.
-    case createCollection(bodyParameters: Parameters?)
+    case createCollection(queryParameters: Parameters?, bodyParameters: Parameters?)
     
     /// Get a single collection. Returns a `DKCollection` object.
-    case getCollection(id: NSNumber)
+    case getCollection(id: NSNumber, queryParameters: Parameters?)
     
     /// Update a single collection. Returns a `DKCollection` object.
-    case updateCollection(id: NSNumber, bodyParameters: Parameters)
+    case updateCollection(id: NSNumber, queryParameters: Parameters?, bodyParameters: Parameters)
     
     /// Delete a single collection. Returns only a 200 response.
     case deleteCollection(id: NSNumber)
@@ -79,7 +79,7 @@ public enum DKRouter: URLRequestConvertible {
     // MARK: Comments
     
     /// Get a list of comments associated with an item. Returns a `DKComment` list.
-    case listCommentsForItem(itemID: NSNumber)
+    case listCommentsForItem(itemID: NSNumber, bodyParameters: Parameters)
     
     /// Add a comment to an item. Returns a `DKComment` object.
     case createCommentForItem(itemID: NSNumber, bodyParameters: Parameters)
@@ -96,7 +96,7 @@ public enum DKRouter: URLRequestConvertible {
     case listEmails
     
     /// Add an email for the current user
-    case createEmail(email: String)
+    case createEmail(bodyParameters: Parameters)
     
     /// Delete an email for the current user
     case deleteEmail(id: NSNumber)
@@ -110,10 +110,10 @@ public enum DKRouter: URLRequestConvertible {
     case listItemsInCollection(id: NSNumber, queryParameters: Parameters?)
     
     /// Create a new item in a parent collection. Returns a `DKItem` object.
-    case createItemInCollection(id: NSNumber, bodyParameters: Parameters)
+    case createItemInCollection(id: NSNumber, queryParameters: Parameters?, bodyParameters: Parameters)
     
     /// Update multiple items within a collection. Returns a `DKItem` list.
-    case updateItemsInCollection(id: NSNumber, bodyParameters: Parameters)
+    case updateItemsInCollection(id: NSNumber, queryParameters: Parameters?, bodyParameters: Parameters)
     
     /// Update multiple items. Returns a `DKItem` list.
     case updateItems(bodyParameters: Parameters)
@@ -122,7 +122,7 @@ public enum DKRouter: URLRequestConvertible {
     case getItem(id: NSNumber, queryParameters: Parameters?)
     
     /// Update a single item. Returns a `DKItem` object.
-    case updateItem(id: NSNumber, bodyParameters: Parameters?)
+    case updateItem(id: NSNumber, queryParameters: Parameters?, bodyParameters: Parameters?)
     
     /// Delete a single item. Returns only a 200 response.
     case deleteItem(id: NSNumber, bodyParameters: Parameters?)
@@ -152,13 +152,13 @@ public enum DKRouter: URLRequestConvertible {
     // MARK: Tags
     
     /// Get a list of tags associated with the current user. Returns a `DKTag` list.
-    case listTags
+    case listTags(bodyParameters: Parameters?)
     
     /// Get a list of tags applied to the specified item. Returns a `DKTag` list.
-    case listTagsForItem(itemID: NSNumber)
+    case listTagsForItem(itemID: NSNumber, bodyParameters: Parameters?)
     
     /// Create a new tag and apply it to the specified item. Returns a `DKTag` object.
-    case createTagForItem(itemID: NSNumber, name: String)
+    case createTagForItem(itemID: NSNumber, bodyParameters: Parameters)
     
     /// Delete a tag. Returns only a 200 response.
     case deleteTag(id: NSNumber)
@@ -195,10 +195,10 @@ public enum DKRouter: URLRequestConvertible {
     case getUser(queryParameters: Parameters?)
     
     /// Update information for the current user. Returns a `DKUser` object.
-    case updateUser(bodyParameters: Parameters)
+    case updateUser(queryParameters: Parameters?, bodyParameters: Parameters)
     
     /// Get a list of users associated with the current user
-    case listContacts
+    case listContacts(parameters: Parameters?)
     
     /// Check if an email is available for registration. Returns a `Bool` value.
     case getEmailAvailability(email: String)
@@ -364,9 +364,9 @@ public enum DKRouter: URLRequestConvertible {
             return "/collections"
         case .createCollection:
             return "/collections"
-        case .getCollection(let id):
+        case .getCollection(let id, _):
             return "/collections/\(id)"
-        case .updateCollection(let id, _):
+        case .updateCollection(let id, _, _):
             return "/collections/\(id)"
         case .deleteCollection(let id):
             return "/collections/\(id)"
@@ -384,7 +384,7 @@ public enum DKRouter: URLRequestConvertible {
             return "/collections/\(collectionID)/users/\(userID)"
             
         // Comments
-        case .listCommentsForItem(let itemID):
+        case .listCommentsForItem(let itemID, _):
             return "/items/\(itemID)/comments"
         case .createCommentForItem(let itemID, _):
             return "/items/\(itemID)/comments"
@@ -406,15 +406,15 @@ public enum DKRouter: URLRequestConvertible {
             return "/items"
         case .listItemsInCollection(let collectionID, _):
             return "/collections/\(collectionID)/items"
-        case .createItemInCollection(let collectionID, _):
+        case .createItemInCollection(let collectionID, _, _):
             return "/collections/\(collectionID)/items"
-        case .updateItemsInCollection(let collectionID, _):
+        case .updateItemsInCollection(let collectionID, _, _):
             return "/collections/\(collectionID)/items"
         case .updateItems:
             return "/items"
         case .getItem(let id, _):
             return "/items/\(id)"
-        case .updateItem(let id, _):
+        case .updateItem(let id, _, _):
             return "/items/\(id)"
         case .deleteItem(let id, _):
             return "/items/\(id)"
@@ -438,7 +438,7 @@ public enum DKRouter: URLRequestConvertible {
         // Tags
         case .listTags:
             return "/tags"
-        case .listTagsForItem(let itemID):
+        case .listTagsForItem(let itemID, _):
             return "/items/\(itemID)/tags"
         case .createTagForItem(let itemID, _):
             return "/items/\(itemID)"
@@ -515,32 +515,24 @@ public enum DKRouter: URLRequestConvertible {
         }
         
         switch self {
-            
+        
         // Activity
         case .activity(let parameters):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
             
         // Authentication
         case .authenticate(let parameters):
-            var params = parameters
-            params.addUserParams()
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: params)
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
             
         // Collections
         case .listCollections(let queryParameters):
-            var queryParams = queryParameters ?? Parameters()
-            queryParams.addListParams()
-            queryParams.addCollectionParams()
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParams)
-        case .createCollection(let bodyParameters):
-            let queryParameters = Parameters.collectionParams()
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParameters)
+        case .createCollection(let queryParameters, let bodyParameters):
             urlRequest = try URLEncoding.queryString.encode(urlRequest, with: queryParameters)
             urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
-        case .getCollection:
-            let queryParameters = Parameters.collectionParams()
+        case .getCollection(_, let queryParameters):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParameters)
-        case .updateCollection(_, let bodyParameters):
-            let queryParameters = Parameters.collectionParams()
+        case .updateCollection(_, let queryParameters, let bodyParameters):
             urlRequest = try URLEncoding.queryString.encode(urlRequest, with: queryParameters)
             urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
         case .deleteCollection:
@@ -559,54 +551,39 @@ public enum DKRouter: URLRequestConvertible {
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
             
         // Comments
-        case .listCommentsForItem:
-            let queryParameters = Parameters.listParams()
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParameters)
-        case .createCommentForItem(_, let bodyParamaters):
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParamaters)
-        case .updateComment(_, let bodyParamaters):
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParamaters)
+        case .listCommentsForItem(_, let bodyParameters):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
+        case .createCommentForItem(_, let bodyParameters):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
+        case .updateComment(_, let bodyParameters):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
         case .deleteComment:
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
             
         // Emails
         case .listEmails:
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
-        case .createEmail(let email):
-            let bodyParameters: Parameters = [
-                "email": email
-            ]
+        case .createEmail(let bodyParameters):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
         case .deleteEmail:
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
             
         // Items
         case .listItems(let queryParameters):
-            var queryParams = queryParameters ?? Parameters()
-            queryParams.addListParams()
-            queryParams.addItemParams()
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParams)
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParameters)
         case .listItemsInCollection(_ , let queryParameters):
-            var queryParams = queryParameters ?? Parameters()
-            queryParams.addListParams()
-            queryParams.addItemParams()
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParams)
-        case .createItemInCollection(_ , let bodyParameters):
-            let queryParameters = Parameters.itemParams()
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParameters)
+        case .createItemInCollection(_ , let queryParameters, let bodyParameters):
             urlRequest = try URLEncoding.queryString.encode(urlRequest, with: queryParameters)
             urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
-        case .updateItemsInCollection(_ , let bodyParameters):
-            let queryParameters = Parameters.itemParams()
+        case .updateItemsInCollection(_ , let queryParameters, let bodyParameters):
             urlRequest = try URLEncoding.queryString.encode(urlRequest, with: queryParameters)
             urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
         case .updateItems(let bodyParameters):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
         case .getItem(_, let queryParameters):
-            var queryParams = queryParameters ?? Parameters()
-            queryParams.addItemParams()
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParams)
-        case .updateItem(_, let bodyParameters):
-            let queryParameters = Parameters.itemParams()
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParameters)
+        case .updateItem(_, let queryParameters, let bodyParameters):
             urlRequest = try URLEncoding.queryString.encode(urlRequest, with: queryParameters)
             urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
         case .deleteItem(_, let bodyParameters):
@@ -626,35 +603,21 @@ public enum DKRouter: URLRequestConvertible {
             
         // Search
         case .search(let queryParameters):
-            var queryParams = queryParameters ?? Parameters()
-            queryParams.addListParams()
-            queryParams.addItemParams()
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParams)
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParameters)
             
         // Tags
-        case .listTags:
-            let queryParamters: Parameters = [
-                "per_page": 1000
-            ]
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParamters)
-        case .listTagsForItem:
-            let queryParamters: Parameters = [
-                "per_page": 1000
-            ]
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParamters)
-        case .createTagForItem(_, let name):
-            let bodyParameters: Parameters = [
-                "name": name
-            ]
+        case .listTags(let bodyParameters):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
+        case .listTagsForItem(_, let bodyParameters):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
+        case .createTagForItem(_, let bodyParameters):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
         case .deleteTag:
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
             
         // Teams
         case .listTeams(let queryParameters):
-            var queryParams = queryParameters ?? Parameters()
-            queryParams.addListParams()
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParams)
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParameters)
         case .getTeam:
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
         case .updateTeam(_, let bodyParameters):
@@ -673,19 +636,13 @@ public enum DKRouter: URLRequestConvertible {
         case .createUser(let bodyParameters):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
         case .getUser(let queryParameters):
-            var queryParams = queryParameters ?? Parameters()
-            queryParams.addUserParams()
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParams)
-        case .updateUser(let bodyParameters):
-            let queryParameters = Parameters.userParams()
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
-            urlRequest = try URLEncoding.queryString.encode(urlRequest, with: queryParameters)
-            
-        case .listContacts:
-            let queryParameters: Parameters = [
-                "per_page": 1000
-            ]
             urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParameters)
+        case .updateUser(let queryParameters, let bodyParameters):
+            urlRequest = try URLEncoding.queryString.encode(urlRequest, with: queryParameters)
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
+            
+        case .listContacts(let parameters):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
         case .getEmailAvailability(let email):
             let queryParameters: Parameters = [
                 "email": email

@@ -19,26 +19,53 @@ public struct DKPromise {
     
     // MARK: Authentication
     
-    public static func authenticate(parameters: Parameters) -> CancellablePromise<DKUser> {
-        return request(DKRouter.authenticate(parameters: parameters)).validate().promiseObject()
+    public static func authenticate(parameters: Parameters, includeDefaultParameters: Bool = true) -> CancellablePromise<DKUser> {
+        var params = parameters
+        if includeDefaultParameters {
+            params.add(key: "include", value: ["teams"])
+        }
+        return request(DKRouter.authenticate(parameters: params)).validate().promiseObject()
     }
     
     // MARK: Collections
     
-    public static func listCollections(parameters: Parameters? = nil) -> CancellablePromise<[DKCollection]> {
-        return request(DKRouter.listCollections(queryParameters: parameters)).validate().promiseList()
+    public static func listCollections(parameters: Parameters? = nil, includeDefaultParameters: Bool = true) -> CancellablePromise<[DKCollection]> {
+        var params = parameters ?? Parameters()
+        if includeDefaultParameters {
+            params.add(key: "per_page", value: DKRouter.pageSize)
+            params.add(key: "include", value: ["users", "items"])
+            params.add(key: "items_per_page", value: 4)
+            params.add(key: "items_not_type", value: "stack")
+        }
+        return request(DKRouter.listCollections(queryParameters: params)).validate().promiseList()
     }
     
-    public static func createCollection(parameters: Parameters? = nil) -> CancellablePromise<DKCollection> {
-        return request(DKRouter.createCollection(bodyParameters: parameters)).validate().promiseObject()
+    public static func createCollection(queryParameters: Parameters? = nil, bodyParameters: Parameters, includeDefaultQueryParameters: Bool = true) -> CancellablePromise<DKCollection> {
+        var queryParams = queryParameters ?? Parameters()
+        if includeDefaultQueryParameters {
+            queryParams.add(key: "include", value: ["users", "items"])
+        }
+        return request(DKRouter.createCollection(queryParameters: queryParams, bodyParameters: bodyParameters)).validate().promiseObject()
     }
     
-    public static func getCollection(id: NSNumber) -> CancellablePromise<DKCollection> {
-        return request(DKRouter.getCollection(id: id)).validate().promiseObject()
+    public static func getCollection(id: NSNumber, parameters: Parameters? = nil, includeDefaultParameters: Bool = true) -> CancellablePromise<DKCollection> {
+        var params = parameters ?? Parameters()
+        if includeDefaultParameters {
+            params.add(key: "include", value: ["users", "items"])
+            params.add(key: "items_per_page", value: 4)
+            params.add(key: "items_not_type", value: "stack")
+        }
+        return request(DKRouter.getCollection(id: id, queryParameters: params)).validate().promiseObject()
     }
     
-    public static func updateCollection(id: NSNumber, parameters: Parameters) -> CancellablePromise<DKCollection> {
-        return request(DKRouter.updateCollection(id: id, bodyParameters: parameters)).validate().promiseObject()
+    public static func updateCollection(id: NSNumber, queryParameters: Parameters? = nil, bodyParameters: Parameters, includeDefaultQueryParameters: Bool = true) -> CancellablePromise<DKCollection> {
+        var queryParams = queryParameters ?? Parameters()
+        if includeDefaultQueryParameters {
+            queryParams.add(key: "include", value: ["users", "items"])
+            queryParams.add(key: "items_per_page", value: 4)
+            queryParams.add(key: "items_not_type", value: "stack")
+        }
+        return request(DKRouter.updateCollection(id: id, queryParameters: queryParams, bodyParameters: bodyParameters)).validate().promiseObject()
     }
     
     public static func deleteCollection(id: NSNumber) -> CancellablePromise<Void> {
@@ -67,8 +94,12 @@ public struct DKPromise {
     
     // MARK: Comments
     
-    public static func listCommentsForItem(itemID: NSNumber) -> CancellablePromise<[DKComment]> {
-        return request(DKRouter.listCommentsForItem(itemID: itemID)).validate().promiseList()
+    public static func listCommentsForItem(itemID: NSNumber, includeDefaultParameters: Bool = true) -> CancellablePromise<[DKComment]> {
+        var params = Parameters()
+        if includeDefaultParameters {
+            params.add(key: "per_page", value: 1000)
+        }
+        return request(DKRouter.listCommentsForItem(itemID: itemID, bodyParameters: params)).validate().promiseList()
     }
     
     public static func createCommentForItem(itemID: NSNumber, parameters: Parameters) -> CancellablePromise<DKComment> {
@@ -90,7 +121,10 @@ public struct DKPromise {
 //    }
     
     public static func createEmail(email: String) -> CancellablePromise<Void> {
-        return request(DKRouter.createEmail(email: email)).validate().promise()
+        let bodyParameters: Parameters = [
+            "email": email
+        ]
+        return request(DKRouter.createEmail(bodyParameters: bodyParameters)).validate().promise()
     }
     
     public static func deleteEmail(id: NSNumber) -> CancellablePromise<Void> {
@@ -99,32 +133,64 @@ public struct DKPromise {
     
     // MARK: Items
     
-    public static func listItems(parameters: Parameters) -> CancellablePromise<[DKItem]> {
-        return request(DKRouter.listItems(queryParameters: parameters)).validate().promiseList()
+    public static func listItems(parameters: Parameters, includeDefaultParameters: Bool = true) -> CancellablePromise<[DKItem]> {
+        var params = parameters
+        if includeDefaultParameters {
+            params.add(key: "per_page", value: DKRouter.pageSize)
+            params.add(key: "include", value: ["items"])
+            params.add(key: "items_per_page", value: 4)
+        }
+        return request(DKRouter.listItems(queryParameters: params)).validate().promiseList()
     }
     
-    public static func listItemsInCollection(id: NSNumber, parameters: Parameters) -> CancellablePromise<[DKItem]> {
-        return request(DKRouter.listItemsInCollection(id: id, queryParameters: parameters)).validate().promiseList()
+    public static func listItemsInCollection(id: NSNumber, parameters: Parameters, includeDefaultParameters: Bool = true) -> CancellablePromise<[DKItem]> {
+        var params = parameters
+        if includeDefaultParameters {
+            params.add(key: "per_page", value: DKRouter.pageSize)
+            params.add(key: "include", value: ["items"])
+            params.add(key: "items_per_page", value: 4)
+        }
+        return request(DKRouter.listItemsInCollection(id: id, queryParameters: params)).validate().promiseList()
     }
     
-    public static func createItemInCollection(id: NSNumber, parameters: Parameters) -> CancellablePromise<DKItem> {
-        return request(DKRouter.createItemInCollection(id: id, bodyParameters: parameters)).validate().promiseObject()
+    public static func createItemInCollection(id: NSNumber, queryParameters: Parameters? = nil, bodyParameters: Parameters, includeDefaultQueryParameters: Bool = true) -> CancellablePromise<DKItem> {
+        var queryParams = queryParameters ?? Parameters()
+        if includeDefaultQueryParameters {
+            queryParams.add(key: "include", value: ["items"])
+            queryParams.add(key: "items_per_page", value: 4)
+        }
+        return request(DKRouter.createItemInCollection(id: id, queryParameters: queryParams, bodyParameters: bodyParameters)).validate().promiseObject()
     }
     
-    public static func updateItemsInCollection(id: NSNumber, parameters: Parameters) -> CancellablePromise<[DKItem]> {
-        return request(DKRouter.updateItemsInCollection(id: id, bodyParameters: parameters)).validate().promiseList()
+    public static func updateItemsInCollection(id: NSNumber, queryParameters: Parameters? = nil, bodyParameters: Parameters, includeDefaultQueryParameters: Bool = true) -> CancellablePromise<[DKItem]> {
+        var queryParams = queryParameters ?? Parameters()
+        if includeDefaultQueryParameters {
+            queryParams.add(key: "include", value: ["items"])
+            queryParams.add(key: "items_per_page", value: 4)
+        }
+        return request(DKRouter.updateItemsInCollection(id: id, queryParameters: queryParams, bodyParameters: bodyParameters)).validate().promiseList()
     }
     
     public static func updateItems(parameters: Parameters) -> CancellablePromise<[DKItem]> {
         return request(DKRouter.updateItems(bodyParameters: parameters)).validate().promiseList()
     }
     
-    public static func getItem(id: NSNumber, parameters: Parameters? = nil) -> CancellablePromise<DKItem> {
-        return request(DKRouter.getItem(id: id, queryParameters: parameters)).validate().promiseObject()
+    public static func getItem(id: NSNumber, parameters: Parameters? = nil, includeDefaultParameters: Bool = true) -> CancellablePromise<DKItem> {
+        var params = parameters ?? Parameters()
+        if includeDefaultParameters {
+            params.add(key: "include", value: ["items"])
+            params.add(key: "items_per_page", value: 4)
+        }
+        return request(DKRouter.getItem(id: id, queryParameters: params)).validate().promiseObject()
     }
     
-    public static func updateItem(id: NSNumber, parameters: Parameters) -> CancellablePromise<DKItem> {
-        return request(DKRouter.updateItem(id: id, bodyParameters: parameters)).validate().promiseObject()
+    public static func updateItem(id: NSNumber, queryParameters: Parameters? = nil, bodyParameters: Parameters, includeDefaultQueryParameters: Bool = true) -> CancellablePromise<DKItem> {
+        var queryParams = queryParameters ?? Parameters()
+        if includeDefaultQueryParameters {
+            queryParams.add(key: "include", value: ["items"])
+            queryParams.add(key: "items_per_page", value: 4)
+        }
+        return request(DKRouter.updateItem(id: id, queryParameters: queryParams, bodyParameters: bodyParameters)).validate().promiseObject()
     }
     
     public static func deleteItem(id: NSNumber, parameters: Parameters? = nil) -> CancellablePromise<Void> {
@@ -155,22 +221,39 @@ public struct DKPromise {
     
     // MARK: Search
     
-    public static func search(parameters: Parameters) -> CancellablePromise<[Any]> {
-        return request(DKRouter.search(queryParameters: parameters)).validate().promiseListAny()
+    public static func search(parameters: Parameters, includeDefaultParameters: Bool = true) -> CancellablePromise<[Any]> {
+        var params = parameters
+        if includeDefaultParameters {
+            params.add(key: "per_page", value: DKRouter.pageSize)
+            params.add(key: "include", value: ["items"])
+            params.add(key: "items_per_page", value: 4)
+        }
+        return request(DKRouter.search(queryParameters: params)).validate().promiseListAny()
     }
     
     // MARK: Tags
     
-    public static func listTags() -> CancellablePromise<[DKTag]> {
-        return request(DKRouter.listTags).validate().promiseList()
+    public static func listTags(parameters: Parameters? = nil, includeDefaultParameters: Bool = true) -> CancellablePromise<[DKTag]> {
+        var params = parameters ?? Parameters()
+        if includeDefaultParameters {
+            params.add(key: "per_page", value: 1000)
+        }
+        return request(DKRouter.listTags(bodyParameters: params)).validate().promiseList()
     }
     
-    public static func listTagsForItem(id: NSNumber) -> CancellablePromise<[DKTag]> {
-        return request(DKRouter.listTagsForItem(itemID: id)).validate().promiseList()
+    public static func listTagsForItem(id: NSNumber, parameters: Parameters? = nil, includeDefaultParameters: Bool = true) -> CancellablePromise<[DKTag]> {
+        var params = parameters ?? Parameters()
+        if includeDefaultParameters {
+            params.add(key: "per_page", value: 1000)
+        }
+        return request(DKRouter.listTagsForItem(itemID: id, bodyParameters: params)).validate().promiseList()
     }
     
     public static func createTagForItem(id: NSNumber, name: String) -> CancellablePromise<DKTag> {
-        return request(DKRouter.createTagForItem(itemID: id, name: name)).validate().promiseObject()
+        let bodyParameters: Parameters = [
+            "name": name
+        ]
+        return request(DKRouter.createTagForItem(itemID: id, bodyParameters: bodyParameters)).validate().promiseObject()
     }
     
     public static func deleteTag(id: NSNumber) -> CancellablePromise<Void> {
@@ -179,8 +262,12 @@ public struct DKPromise {
     
     // MARK: Teams
     
-    public static func listTeams(parameters: Parameters? = nil) -> CancellablePromise<[DKTeam]> {
-        return request(DKRouter.listTeams(queryParameters: parameters)).validate().promiseList()
+    public static func listTeams(parameters: Parameters? = nil, includeDefaultParameters: Bool = true) -> CancellablePromise<[DKTeam]> {
+        var params = parameters ?? Parameters()
+        if includeDefaultParameters {
+            params.add(key: "per_page", value: DKRouter.pageSize)
+        }
+        return request(DKRouter.listTeams(queryParameters: params)).validate().promiseList()
     }
     
     public static func getTeam(id: NSNumber) -> CancellablePromise<DKTeam> {
@@ -213,16 +300,28 @@ public struct DKPromise {
         return request(DKRouter.createUser(bodyParameters: parameters)).validate().promiseObject()
     }
     
-    public static func getUser(parameters: Parameters? = nil) -> CancellablePromise<DKUser> {
-        return request(DKRouter.getUser(queryParameters: parameters)).validate().promiseObject()
+    public static func getUser(parameters: Parameters? = nil, includeDefaultParameters: Bool = true) -> CancellablePromise<DKUser> {
+        var params = parameters ?? Parameters()
+        if includeDefaultParameters {
+            params.add(key: "include", value: ["teams"])
+        }
+        return request(DKRouter.getUser(queryParameters: params)).validate().promiseObject()
     }
     
-    public static func updateUser(parameters: Parameters) -> CancellablePromise<DKUser> {
-        return request(DKRouter.updateUser(bodyParameters: parameters)).validate().promiseObject()
+    public static func updateUser(queryParameters: Parameters? = nil, bodyParameters: Parameters, includeDefaultQueryParameters: Bool = true) -> CancellablePromise<DKUser> {
+        var queryParams = queryParameters ?? Parameters()
+        if includeDefaultQueryParameters {
+            queryParams.add(key: "include", value: ["teams"])
+        }
+        return request(DKRouter.updateUser(queryParameters: queryParams, bodyParameters: bodyParameters)).validate().promiseObject()
     }
     
-    public static func listContacts() -> CancellablePromise<[DKUser]> {
-        return request(DKRouter.listContacts).validate().promiseList()
+    public static func listContacts(parameters: Parameters? = nil, includeDefaultParameters: Bool = true) -> CancellablePromise<[DKUser]> {
+        var params = parameters ?? Parameters()
+        if includeDefaultParameters {
+            params.add(key: "per_page", value: 1000)
+        }
+        return request(DKRouter.listContacts(parameters: params)).validate().promiseList()
     }
     
 //    public static func getEmailAvailability(email: String) -> CancellablePromise<Bool> {
