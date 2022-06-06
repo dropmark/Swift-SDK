@@ -12,7 +12,7 @@ public enum DKDirectoryError: Error {
 }
 
 /// Encaspulates (and validates) a directory destination
-public struct DKDirectory {
+public struct DKDirectory: Equatable {
 
     /// The unique identifier of the destination collection
     public var collectionID: NSNumber
