@@ -8,6 +8,15 @@
 import Foundation
 import PromiseKit
 import Alamofire
+import Combine
+
+public struct DKReactive {
+    
+//    public static func authenticate(parameters: Parameters? = nil) -> AnyPublisher<DKUser, Error> {
+//        return request(DKRouter.activity(parameters: parameters)).validate().promiseList()
+//    }
+    
+}
 
 public struct DKPromise {
     

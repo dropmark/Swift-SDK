@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DMCollection" representedClassName="DMCollection" syncable="YES" codeGenerationType="class">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="descriptionText" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isArchived" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isHighlighted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="kindRaw" optional="YES" attributeType="String"/>
+        <attribute name="lastAccessedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="shortURL" optional="YES" attributeType="URI"/>
+        <attribute name="showLabels" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="sort" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sortByRaw" optional="YES" attributeType="String"/>
+        <attribute name="sortOrderRaw" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="url" optional="YES" attributeType="URI"/>
+        <attribute name="usersTotalCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="viewModeRaw" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="DMComment" representedClassName="DMComment" syncable="YES" codeGenerationType="class">
+        <attribute name="annotation" optional="YES" attributeType="URI"/>
+        <attribute name="body" optional="YES" attributeType="String"/>
+        <attribute name="collectionID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="collectionName" optional="YES" attributeType="String"/>
+        <attribute name="collectionURL" optional="YES" attributeType="URI"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="itemID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="itemName" optional="YES" attributeType="String"/>
+        <attribute name="shortURL" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="url" optional="YES" attributeType="URI"/>
+    </entity>
+    <entity name="DMItem" representedClassName="DMItem" syncable="YES" codeGenerationType="class">
+        <attribute name="collectionID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="collectionName" optional="YES" attributeType="String"/>
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="deletedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="descriptionText" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isShareable" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isURL" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="link" optional="YES" attributeType="URI"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="metadata" optional="YES" attributeType="Binary"/>
+        <attribute name="mime" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="parentID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="parentName" optional="YES" attributeType="String"/>
+        <attribute name="reactionsTotalCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="shortURL" optional="YES" attributeType="URI"/>
+        <attribute name="size" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="thumbnail" optional="YES" attributeType="URI"/>
+        <attribute name="typeRaw" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="url" optional="YES" attributeType="URI"/>
+    </entity>
+    <entity name="DMReaction" representedClassName="DMReaction" syncable="YES" codeGenerationType="class">
+        <attribute name="collectionID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="collectionName" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="itemID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="itemName" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="DMTag" representedClassName="DMTag" syncable="YES" codeGenerationType="class">
+        <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="DMUser" representedClassName="DMUser" syncable="YES" codeGenerationType="class">
+        <attribute name="avatar" optional="YES" attributeType="URI"/>
+        <attribute name="billingEmail" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="customDomain" optional="YES" attributeType="URI"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="planIsActive" optional="YES" attributeType="String"/>
+        <attribute name="planQuantity" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="planRaw" optional="YES" attributeType="String"/>
+        <attribute name="showLabels" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="sortByRaw" optional="YES" attributeType="String"/>
+        <attribute name="sortOrderRaw" optional="YES" attributeType="String"/>
+        <attribute name="statusRaw" optional="YES" attributeType="String"/>
+        <attribute name="storageQuota" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="storageUsed" optional="YES" attributeType="String"/>
+        <attribute name="token" optional="YES" attributeType="String"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+        <attribute name="viewModeRaw" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="DMCollection" positionX="-63" positionY="-18" width="128" height="313"/>
+        <element name="DMUser" positionX="-279.5703125" positionY="-29.98046875" width="128" height="328"/>
+        <element name="DMComment" positionX="185.57421875" positionY="-186.7109375" width="128" height="209"/>
+        <element name="DMItem" positionX="144.953125" positionY="177.26171875" width="128" height="418"/>
+        <element name="DMTag" positionX="-9" positionY="225" width="128" height="59"/>
+        <element name="DMReaction" positionX="0" positionY="234" width="128" height="119"/>
+    </elements>
+</model>
