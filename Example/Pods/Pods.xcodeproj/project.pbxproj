@@ -247,6 +247,12 @@
 		A03E3278286A159200EBDCF9 /* Dropmark.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A03E3276286A159200EBDCF9 /* Dropmark.xcdatamodeld */; };
 		A03E3279286A159200EBDCF9 /* Dropmark.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A03E3276286A159200EBDCF9 /* Dropmark.xcdatamodeld */; };
 		A03E327A286A159200EBDCF9 /* Dropmark.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A03E3276286A159200EBDCF9 /* Dropmark.xcdatamodeld */; };
+		A03E327C286AC22200EBDCF9 /* ColorAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E327B286AC22200EBDCF9 /* ColorAttributeTransformer.swift */; };
+		A03E327D286AC22200EBDCF9 /* ColorAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E327B286AC22200EBDCF9 /* ColorAttributeTransformer.swift */; };
+		A03E327E286AC22200EBDCF9 /* ColorAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E327B286AC22200EBDCF9 /* ColorAttributeTransformer.swift */; };
+		A03E3280286AC64400EBDCF9 /* NSDictionaryAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E327F286AC64400EBDCF9 /* NSDictionaryAttributeTransformer.swift */; };
+		A03E3281286AC64400EBDCF9 /* NSDictionaryAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E327F286AC64400EBDCF9 /* NSDictionaryAttributeTransformer.swift */; };
+		A03E3282286AC64400EBDCF9 /* NSDictionaryAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03E327F286AC64400EBDCF9 /* NSDictionaryAttributeTransformer.swift */; };
 		A1441CBF04D7DF64C847ED31971BA815 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1641C7C9BBB16A87EFBD2F4EC86445E /* Configuration.swift */; };
 		A2D960D171D60FA9C6EE29E3D4DAADBE /* PMKFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF75D5744D7413DBE7A9AC8D4CA1EC0 /* PMKFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A304E40CF5DF67EFF823841408E66DC0 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462949B207B4490E717EEB3BA7E6CAF8 /* ServerTrustPolicy.swift */; };
@@ -721,6 +727,8 @@
 		9FD1589BD6DE2E791B24B98243E73BEF /* LogEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogEvent.swift; path = Sources/LogEvent.swift; sourceTree = "<group>"; };
 		A01A32A992810C1C0FCAE54DB3B4B253 /* Pods-iOS Demo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Demo-Info.plist"; sourceTree = "<group>"; };
 		A03E3277286A159200EBDCF9 /* Dropmark.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Dropmark.xcdatamodel; sourceTree = "<group>"; };
+		A03E327B286AC22200EBDCF9 /* ColorAttributeTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorAttributeTransformer.swift; sourceTree = "<group>"; };
+		A03E327F286AC64400EBDCF9 /* NSDictionaryAttributeTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSDictionaryAttributeTransformer.swift; sourceTree = "<group>"; };
 		A0AA4C2FD6A0541171567B0ADDD19E86 /* DKAccount.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKAccount.html; path = docs/Protocols/DKAccount.html; sourceTree = "<group>"; };
 		A0F047DE62879A79EC6733ACB45C8AE8 /* DKItemType.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKItemType.html; path = docs/Enums/DKItemType.html; sourceTree = "<group>"; };
 		A215AC715CFE041EF4805361DECAFE11 /* PromiseKit-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PromiseKit-iOS-umbrella.h"; sourceTree = "<group>"; };
@@ -1196,6 +1204,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A03E3283286AC81A00EBDCF9 /* Attribute Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				A03E327B286AC22200EBDCF9 /* ColorAttributeTransformer.swift */,
+				A03E327F286AC64400EBDCF9 /* NSDictionaryAttributeTransformer.swift */,
+			);
+			path = "Attribute Transformers";
+			sourceTree = "<group>";
+		};
 		B7376DA0A414BDB010F2A43C7FAFF439 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1582,9 +1599,10 @@
 		F816ADBED2C74A12DE23AD57F69CE236 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				A03E3276286A159200EBDCF9 /* Dropmark.xcdatamodeld */,
 				E72F606C3C6797A86CED7941B0B0E35A /* CoreDataStack.swift */,
 				FC12E218382BD3FA7CD3456662BFDE30 /* URLSession+Combine.swift */,
-				A03E3276286A159200EBDCF9 /* Dropmark.xcdatamodeld */,
+				A03E3283286AC81A00EBDCF9 /* Attribute Transformers */,
 			);
 			name = "Core Data";
 			path = "Source/Core Data";
@@ -2146,6 +2164,7 @@
 				45E614DB97B4CE0182038946ACC0E506 /* DKTag.swift in Sources */,
 				A9C1E5BC3838304A0BEDAD80D8F073C5 /* DKTeam.swift in Sources */,
 				DC0856FF986137753C2201DAB529A7A4 /* DKThumbnails.swift in Sources */,
+				A03E3282286AC64400EBDCF9 /* NSDictionaryAttributeTransformer.swift in Sources */,
 				2AC24DE643774C147CA79730FF1DB32B /* DKUploadSignature.swift in Sources */,
 				4FB63FE712000892B32FC7CF26048209 /* DKUser.swift in Sources */,
 				4C93D7A66D8671F080AE26A1D83A6735 /* DropmarkSDK-tvOS-dummy.m in Sources */,
@@ -2154,6 +2173,7 @@
 				B06C23216A41FBB9F159595E8ED3C102 /* race.swift in Sources */,
 				3B8755086D0DA11CE8D48C9E0EAF286F /* then.swift in Sources */,
 				7B2E67393844153B3AFCB11837CF8D78 /* URLSession+Combine.swift in Sources */,
+				A03E327E286AC22200EBDCF9 /* ColorAttributeTransformer.swift in Sources */,
 				07DD7BB653208192C0534A846674D97C /* UTIKit.swift in Sources */,
 				7D7DC40FFEB14079BA1562914B008530 /* UTIKit+Extensions.swift in Sources */,
 				421D3C5EFBF3212D198E6ECB687F671D /* when.swift in Sources */,
@@ -2195,6 +2215,7 @@
 				46BA1ACE30F81C1D5B82028AC3385008 /* DKTag.swift in Sources */,
 				EC13074A54CCAF0091018ECE37CB35B8 /* DKTeam.swift in Sources */,
 				EC06E8C3CD7AADD0290010A89B4B5E1A /* DKThumbnails.swift in Sources */,
+				A03E3281286AC64400EBDCF9 /* NSDictionaryAttributeTransformer.swift in Sources */,
 				7C48D1AE602318B0FBA37FE0E87D7901 /* DKUploadSignature.swift in Sources */,
 				7B6BD0E3A40A5C3773E6A20BBD6AE9EB /* DKUser.swift in Sources */,
 				D27CE5B7050B251DDBD6C0D8E5A2A4B6 /* DropmarkSDK-macOS-dummy.m in Sources */,
@@ -2203,6 +2224,7 @@
 				3D301DD84221BFA4AF4AAEAB7B76819E /* race.swift in Sources */,
 				4069BE420915CDB340BC1F155EF9FA81 /* then.swift in Sources */,
 				5C0F05A1B9F35659B1102043C74923E1 /* URLSession+Combine.swift in Sources */,
+				A03E327D286AC22200EBDCF9 /* ColorAttributeTransformer.swift in Sources */,
 				0197C48F02B2DBB77DE2442A8FAE4F30 /* UTIKit.swift in Sources */,
 				1B3B5AC450CA9230F6787A4CA6B2F5F1 /* UTIKit+Extensions.swift in Sources */,
 				338D77D42BF78CA490707D7AB3E56767 /* when.swift in Sources */,
@@ -2373,6 +2395,7 @@
 				200B558D06C4E8EB3D7CBD67D98D0E43 /* DKTag.swift in Sources */,
 				898C27F0B70A8CDD41CEF4EF4B81A740 /* DKTeam.swift in Sources */,
 				FC43C03E370EE116563C7880121C693F /* DKThumbnails.swift in Sources */,
+				A03E3280286AC64400EBDCF9 /* NSDictionaryAttributeTransformer.swift in Sources */,
 				C389802DF5D29DE663BF7BF0372ECABD /* DKUploadSignature.swift in Sources */,
 				7D07C36DD43C35274D6E0770C09458C6 /* DKUser.swift in Sources */,
 				8D31072E32A840A1DADDBF443D1AA236 /* DropmarkSDK-iOS-dummy.m in Sources */,
@@ -2381,6 +2404,7 @@
 				F364857FC57FF30CF8C49B57BF14BB07 /* race.swift in Sources */,
 				27CB12A37F8919B26B9B5D35A300178F /* then.swift in Sources */,
 				FD475D75ACE5B613D48E228DE2846ACD /* URLSession+Combine.swift in Sources */,
+				A03E327C286AC22200EBDCF9 /* ColorAttributeTransformer.swift in Sources */,
 				287D594D5714DC0E2125A82B9B8BC1FD /* UTIKit.swift in Sources */,
 				AB9B52CAC4AC8E998AB01B6C68D3CD65 /* UTIKit+Extensions.swift in Sources */,
 				10AB0B830E82DFCBFEC6F5FC3C53F9DE /* when.swift in Sources */,
