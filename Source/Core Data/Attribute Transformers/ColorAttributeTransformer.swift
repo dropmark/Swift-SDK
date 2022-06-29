@@ -7,11 +7,10 @@
 
 import UIKit
 
-class ColorAttributeTransformer: NSSecureUnarchiveFromDataTransformer {
+public class ColorAttributeTransformer: NSSecureUnarchiveFromDataTransformer {
 
-    override static var allowedTopLevelClasses: [AnyClass] {
+    public override static var allowedTopLevelClasses: [AnyClass] {
         [UIColor.self]
-        
     }
 
     static func register() {

@@ -34,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         DKKeychain.service = "Dropmark SDK Demo"
         
+        NSDictionaryAttributeTransformer.register()
+                  
         return true
     }
 

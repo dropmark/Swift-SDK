@@ -29,7 +29,30 @@ import DropmarkSDK
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        
         DKKeychain.service = "Dropmark SDK Demo"
+        
+        NSDictionaryAttributeTransformer.register()
+        
+        // Save test bow tie
+        let item = NSEntityDescription.insertNewObject(forEntityName: "DMItem", into: CoreDataStack.shared.persistentContainer.viewContext) as! DMItem
+        item.name = "My bow tie"
+        item.createdAt = Date()
+        CoreDataStack.shared.saveContext()
+
+        // Retrieve test bow tie
+        let request: NSFetchRequest<DMItem> = DMItem.fetchRequest()
+
+        if
+            let items = try? CoreDataStack.shared.persistentContainer.viewContext.fetch(request),
+            let testName = items.first?.name,
+            let testCreatedAt = items.first?.createdAt
+        {
+            print("Name: \(testName), Created At: \(testCreatedAt)")
+        } else {
+            print("Test failed.")
+        }
+        
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

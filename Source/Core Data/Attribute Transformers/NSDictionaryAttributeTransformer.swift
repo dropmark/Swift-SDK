@@ -7,14 +7,14 @@
 
 import Foundation
 
-class NSDictionaryAttributeTransformer: NSSecureUnarchiveFromDataTransformer {
+public class NSDictionaryAttributeTransformer: NSSecureUnarchiveFromDataTransformer {
 
-    override static var allowedTopLevelClasses: [AnyClass] {
+    public override static var allowedTopLevelClasses: [AnyClass] {
         [NSDictionary.self]
         
     }
 
-    static func register() {
+    public static func register() {
         let className = String(describing: NSDictionaryAttributeTransformer.self)
         let name = NSValueTransformerName(className)
         let transformer = NSDictionaryAttributeTransformer()
