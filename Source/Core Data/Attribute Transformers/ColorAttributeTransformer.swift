@@ -5,6 +5,8 @@
 //  Created by Alex Givens on 6/28/22.
 //
 
+#if os(iOS) || os(tvOS)
+
 import UIKit
 
 public class ColorAttributeTransformer: NSSecureUnarchiveFromDataTransformer {
@@ -21,3 +23,5 @@ public class ColorAttributeTransformer: NSSecureUnarchiveFromDataTransformer {
     }
     
 }
+
+#endif

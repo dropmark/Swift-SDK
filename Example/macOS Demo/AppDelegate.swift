@@ -44,7 +44,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let request: NSFetchRequest<DMItem> = DMItem.fetchRequest()
 
         if
-            let items = try? CoreDataStack.shared.persistentContainer.viewContext.fetch(request),
+            let items = try? CoreDataStack.shared.viewContext.fetch(request),
             let testName = items.first?.name,
             let testCreatedAt = items.first?.createdAt
         {

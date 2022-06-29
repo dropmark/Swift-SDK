@@ -30,8 +30,41 @@ public class CoreDataStack {
     static public let shared = CoreDataStack()
     public var errorHandler: (Error) -> Void = {_ in }
     
+    lazy public var managedObjectModel: NSManagedObjectModel = {
+
+        var rawBundle: Bundle? {
+
+            if let bundle = Bundle(identifier: "org.cocoapods.DropmarkSDK") {
+                return bundle
+            }
+
+            guard
+                let resourceBundleURL = Bundle(for: type(of: self)).url(forResource: "DropmarkSDK", withExtension: "bundle"),
+                let realBundle = Bundle(url: resourceBundleURL)
+            else {
+                return nil
+            }
+
+            return realBundle
+        }
+
+        guard let bundle = rawBundle else {
+            print("Could not get bundle that contains the model ")
+            return NSManagedObjectModel()
+        }
+
+        guard
+            let modelURL = bundle.url(forResource: "Dropmark", withExtension: "momd")
+        else {
+            print("Could not get bundle for managed object model")
+            return NSManagedObjectModel()
+        }
+
+        return NSManagedObjectModel(contentsOf: modelURL) ?? NSManagedObjectModel()
+    }()
+
     lazy public var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Dropmark")
+        let container = NSPersistentContainer(name: "Dropmark", managedObjectModel: managedObjectModel)
         container.loadPersistentStores { [weak self] storeDescription, error in
             guard let error = error as? NSError else { return }
             print("Core Data error \(error), \(error.userInfo)")
@@ -40,11 +73,11 @@ public class CoreDataStack {
         return container
     }()
     
-    lazy var viewContext: NSManagedObjectContext = {
+    lazy public var viewContext: NSManagedObjectContext = {
         return self.persistentContainer.viewContext
     }()
     
-    lazy var backgroundContext: NSManagedObjectContext = {
+    lazy public var backgroundContext: NSManagedObjectContext = {
         return self.persistentContainer.newBackgroundContext()
     }()
     
@@ -62,13 +95,13 @@ public class CoreDataStack {
         }
     }
     
-    func performForegroundTask(_ block: @escaping (NSManagedObjectContext) -> Void) {
+    public func performForegroundTask(_ block: @escaping (NSManagedObjectContext) -> Void) {
         self.viewContext.perform {
             block(self.viewContext)
         }
     }
     
-    func performBackgroundTask(_ block: @escaping (NSManagedObjectContext) -> Void) {
+    public func performBackgroundTask(_ block: @escaping (NSManagedObjectContext) -> Void) {
         self.persistentContainer.performBackgroundTask(block)
     }
     

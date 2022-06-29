@@ -4,7 +4,7 @@
 Pod::Spec.new do |s|
 
   s.name             = 'DropmarkSDK'
-  s.version          = '4.0.0'
+  s.version          = '5.0.0'
   s.summary          = 'Network and model controllers for Dropmark, written in Swift.'
 
   s.homepage         = 'https://github.com/dropmark/Swift-SDK'
@@ -19,7 +19,9 @@ Pod::Spec.new do |s|
   s.osx.deployment_target   = '10.15'
   s.tvos.deployment_target  = '13.0'
 
-  s.source_files = 'Source/**/*.swift'
+  s.source_files  = 'Source/**/*.swift'
+  s.resources     = 'Source/**/*.xcdatamodeld'
+  s.frameworks    = 'CoreData'
 
   s.dependency 'Alamofire', '~> 4.0'
   s.dependency 'PromiseKit', '~> 6.15'
