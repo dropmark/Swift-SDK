@@ -96,10 +96,10 @@
     </entity>
     <elements>
         <element name="DMCollection" positionX="-63" positionY="-18" width="128" height="313"/>
-        <element name="DMUser" positionX="-279.5703125" positionY="-29.98046875" width="128" height="328"/>
         <element name="DMComment" positionX="185.57421875" positionY="-186.7109375" width="128" height="209"/>
-        <element name="DMItem" positionX="144.953125" positionY="177.26171875" width="128" height="418"/>
-        <element name="DMTag" positionX="-9" positionY="225" width="128" height="59"/>
+        <element name="DMItem" positionX="144.953125" positionY="177.26171875" width="128" height="404"/>
         <element name="DMReaction" positionX="0" positionY="234" width="128" height="119"/>
+        <element name="DMTag" positionX="-9" positionY="225" width="128" height="59"/>
+        <element name="DMUser" positionX="-279.5703125" positionY="-29.98046875" width="128" height="328"/>
     </elements>
 </model>

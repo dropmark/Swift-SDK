@@ -17,10 +17,12 @@ extension URLSession {
     /// Function that wraps the existing dataTaskPublisher method and attempts to decode the result and publish it
     /// - Parameter url: The URL to be retrieved.
     /// - Returns: Publisher that sends a DecodedResult if the response can be decoded correctly.
-    func dataTaskPublisher<T: Decodable>(for urlRequest: URLRequest) -> AnyPublisher<T, Error> {
+    public func dataTaskPublisher<T: Decodable>(for urlRequest: URLRequest) -> AnyPublisher<T, Error> {
         
         return self.dataTaskPublisher(for: urlRequest)
             .tryMap({ (data, response) -> Data in
+                
+                print("Made it to the combine pattern")
                 if
                     let response = response as? HTTPURLResponse,
                     (200..<300).contains(response.statusCode) == false

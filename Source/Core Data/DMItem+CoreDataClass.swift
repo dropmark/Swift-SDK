@@ -2,14 +2,16 @@
 //  DMItem+CoreDataClass.swift
 //  Pods
 //
-//  Created by Alex Givens on 6/28/22.
+//  Created by Alex Givens on 7/1/22.
 //
 //
 
 import Foundation
 import CoreData
 
-@objc(DMItem)
-public class DMItem: NSManagedObject {
+public typealias DMItems = [DMItem]
 
+@objc(DMItem)
+public final class DMItem: NSManagedObject {
+    
 }

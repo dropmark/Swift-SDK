@@ -10,11 +10,22 @@ import PromiseKit
 import Alamofire
 import Combine
 
-public struct DKReactive {
+public struct DMPromise {
     
-//    public static func authenticate(parameters: Parameters? = nil) -> AnyPublisher<DKUser, Error> {
-//        return request(DKRouter.activity(parameters: parameters)).validate().promiseList()
-//    }
+    public static func listItemsInCollection(id: NSNumber, parameters: Parameters, includeDefaultParameters: Bool = true) -> AnyPublisher<DMItem, Error> {
+        var params = parameters
+        if includeDefaultParameters {
+            params.add(key: "per_page", value: DKRouter.pageSize)
+            params.add(key: "include", value: ["items"])
+            params.add(key: "items_per_page", value: 4)
+        }
+        guard let urlRequest = DKRouter.listItemsInCollection(id: id, queryParameters: params).urlRequest else {
+            fatalError("Unable to generate request")
+        }
+        return URLSession.shared.dataTaskPublisher(for: urlRequest)
+        
+//        return request(DKRouter.listItemsInCollection(id: id, queryParameters: params)).validate().promiseList()
+    }
     
 }
 

@@ -26,6 +26,7 @@ import UIKit
 import Alamofire
 import PromiseKit
 import DropmarkSDK
+import Combine
 
 class ItemListViewController: UITableViewController {
     
@@ -73,6 +74,43 @@ class ItemListViewController: UITableViewController {
             let alert = UIAlertController(error: error)
             self?.present(alert, animated: true)
         }
+        
+        testCombineRequest()
+        
+    }
+    
+    var cancellable: AnyCancellable?
+    
+    func testCombineRequest() {
+        
+        let parameters: Parameters = [
+            "per_page": 24,
+            "include": ["items"],
+            "items_per_page": 4,
+            "page": 1,
+            "parent_id": self.stack?.id ?? ""
+        ]
+        
+        guard let urlRequest = DKRouter.listItemsInCollection(id: self.collection.id, queryParameters: parameters).urlRequest else {
+            print("Unable to form a URL Request")
+            return
+        }
+        
+        let decoder = JSONDecoder()
+        decoder.userInfo[CodingUserInfoKey.managedObjectContext] = CoreDataStack.shared.viewContext
+        decoder.dateDecodingStrategy = .formatted(Formatter.dropmark)
+        
+        cancellable = URLSession.shared.dataTaskPublisher(for: urlRequest)
+            .tryMap() { element -> Data in
+                guard let httpResponse = element.response as? HTTPURLResponse,
+                    httpResponse.statusCode == 200 else {
+                        throw URLError(.badServerResponse)
+                    }
+                return element.data
+                }
+            .decode(type: DMItems.self, decoder: decoder)
+            .sink(receiveCompletion: { print ("Received completion: \($0).") },
+                  receiveValue: { items in print ("Received items: \(items.count).")})
         
     }
     
