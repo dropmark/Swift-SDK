@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-extension DMItem: Codable {
+extension DKItem: Codable {
     
     enum CodingKeys: String, CodingKey {
         case collectionID = "collection_id"
@@ -22,8 +22,8 @@ extension DMItem: Codable {
         case isURL = "is_url"
         case itemsTotalCount = "items_total_count"
         case latitude
-        case longitiude
         case link
+        case longitiude
         case metadata
         case mime
         case name
@@ -39,9 +39,7 @@ extension DMItem: Codable {
     }
 
     public convenience init(from decoder: Decoder) throws {
-        
-        print("Made it to the decoder")
-        
+                
         guard let context = decoder.userInfo[CodingUserInfoKey.managedObjectContext] as? NSManagedObjectContext else {
             throw DecoderConfigurationError.missingManagedObjectContext
         }
@@ -49,7 +47,7 @@ extension DMItem: Codable {
         self.init(context: context)
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.collectionID = try container.decode(Int64.self, forKey: .collectionID)
+        self.collectionID = try container.decode(Int.self, forKey: .collectionID) as NSNumber
         self.collectionName = try container.decodeIfPresent(String.self, forKey: .collectionName)
         self.content = try container.decodeIfPresent(String.self, forKey: .content)
         self.createdAt = try container.decode(Date.self, forKey: .createdAt)
@@ -58,13 +56,31 @@ extension DMItem: Codable {
         self.id = try container.decode(Int64.self, forKey: .id)
         self.isShareable = try container.decodeIfPresent(Bool.self, forKey: .isShareable) ?? false
         self.isURL = try container.decodeIfPresent(Bool.self, forKey: .isURL) ?? false
+        self.itemsTotalCount = try container.decodeIfPresent(Int.self, forKey: .itemsTotalCount) as? NSNumber
+        self.latitude = try container.decodeIfPresent(Double.self, forKey: .latitude) as? NSNumber
+        self.link = try container.decode(URL.self, forKey: .link)
+        self.longitude = try container.decodeIfPresent(Double.self, forKey: .longitiude) as? NSNumber
+        self.metadata = try container.decodeIfPresent([String: Any].self, forKey: .metadata) as? NSDictionary
+        self.mime = try container.decodeIfPresent(String.self, forKey: .mime)
+        self.name = try container.decodeIfPresent(String.self, forKey: .name)
+        self.parentID = try container.decodeIfPresent(Int.self, forKey: .parentID) as? NSNumber
+        self.parentName = try container.decodeIfPresent(String.self, forKey: .parentName)
+        self.reactionsTotalCount = try container.decodeIfPresent(Int.self, forKey: .reactionsTotalCount) as? NSNumber
+        self.shortURL = try container.decode(URL.self, forKey: .shortURL)
+        self.size = try container.decodeIfPresent(Int.self, forKey: .size) as? NSNumber
+        self.thumbnail = try container.decodeIfPresent(URL.self, forKey: .thumbnail)
+        self.typeRaw = try container.decodeIfPresent(String.self, forKey: .typeRaw)
+        self.updatedAt = try container.decodeIfPresent(Date.self, forKey: .updatedAt)
+        self.url = try container.decode(URL.self, forKey: .url)
         
     }
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(collectionID, forKey: .collectionID)
-
+        try container.encode(collectionID.intValue, forKey: .collectionID)
+        try container.encode(collectionName, forKey: .collectionName)
+        try container.encode(content, forKey: .content)
+        try container.encode(createdAt, forKey: .createdAt)
     }
     
 }

@@ -12,21 +12,6 @@ import Combine
 
 public struct DMPromise {
     
-//    public static func listItemsInCollection(id: NSNumber, parameters: Parameters, includeDefaultParameters: Bool = true) -> AnyPublisher<DMItem, Error> {
-//        var params = parameters
-//        if includeDefaultParameters {
-//            params.add(key: "per_page", value: DKRouter.pageSize)
-//            params.add(key: "include", value: ["items"])
-//            params.add(key: "items_per_page", value: 4)
-//        }
-//        guard let urlRequest = DKRouter.listItemsInCollection(id: id, queryParameters: params).urlRequest else {
-//            fatalError("Unable to generate request")
-//        }
-//        return URLSession.shared.dataTaskPublisher(for: urlRequest)
-//
-////        return request(DKRouter.listItemsInCollection(id: id, queryParameters: params)).validate().promiseList()
-//    }
-    
     public static var jsonDecoder: JSONDecoder = {
         let decoder = JSONDecoder()
         decoder.userInfo[CodingUserInfoKey.managedObjectContext] = CoreDataStack.shared.viewContext
@@ -34,34 +19,20 @@ public struct DMPromise {
         return decoder
     }()
     
-    public static func listItemsInCollection(id: NSNumber, parameters: Parameters, includeDefaultParameters: Bool = true) async throws -> [DMItem]  {
+    public static func listItemsInCollection(id: NSNumber, parameters: Parameters) async throws -> [DMItem]  {
         
-        var params = parameters
-        if includeDefaultParameters {
-            params.add(key: "per_page", value: DKRouter.pageSize)
-            params.add(key: "include", value: ["items"])
-            params.add(key: "items_per_page", value: 4)
-        }
-        
-        guard let urlRequest = DKRouter.listItemsInCollection(id: id, queryParameters: params).urlRequest else {
+        guard let urlRequest = DKRouter.listItemsInCollection(id: id, queryParameters: parameters).urlRequest else {
             fatalError("Unable to generate request")
         }
         
         if #available(iOS 15.0, *) {
             let (data, _) = try await URLSession.shared.data(for: urlRequest)
+            return try jsonDecoder.decode([DMItem].self, from: data)
         } else {
             fatalError()
         }
-        
-        return URLSession.shared.dataTaskPublisher(for: urlRequest)
-        
+                
     }
-    
-    //    func loadItems(from url: URL) async throws -> [Item] {
-    //            let (data, _) = try await session.data(from: url)
-    //            let decoder = JSONDecoder()
-    //            return try decoder.decode([Item].self, from: data)
-    //        }
     
 }
 
