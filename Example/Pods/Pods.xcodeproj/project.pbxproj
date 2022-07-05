@@ -216,6 +216,9 @@
 		A028F519286FB32E0080EE2E /* Formatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A028F518286FB32E0080EE2E /* Formatter+Extensions.swift */; };
 		A028F51A286FB32E0080EE2E /* Formatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A028F518286FB32E0080EE2E /* Formatter+Extensions.swift */; };
 		A028F51B286FB32E0080EE2E /* Formatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A028F518286FB32E0080EE2E /* Formatter+Extensions.swift */; };
+		A028F51D2873AD8D0080EE2E /* DMPagingGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A028F51C2873AD8D0080EE2E /* DMPagingGenerator.swift */; };
+		A028F51E2873AD8D0080EE2E /* DMPagingGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A028F51C2873AD8D0080EE2E /* DMPagingGenerator.swift */; };
+		A028F51F2873AD8D0080EE2E /* DMPagingGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A028F51C2873AD8D0080EE2E /* DMPagingGenerator.swift */; };
 		A0D44716286EC2C10046F4C6 /* DMItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D44714286EC2C10046F4C6 /* DMItem+CoreDataClass.swift */; };
 		A0D44717286EC2C10046F4C6 /* DMItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D44714286EC2C10046F4C6 /* DMItem+CoreDataClass.swift */; };
 		A0D44718286EC2C10046F4C6 /* DMItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D44714286EC2C10046F4C6 /* DMItem+CoreDataClass.swift */; };
@@ -743,6 +746,7 @@
 		9FD1589BD6DE2E791B24B98243E73BEF /* LogEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LogEvent.swift; path = Sources/LogEvent.swift; sourceTree = "<group>"; };
 		A01A32A992810C1C0FCAE54DB3B4B253 /* Pods-iOS Demo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Demo-Info.plist"; sourceTree = "<group>"; };
 		A028F518286FB32E0080EE2E /* Formatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extensions.swift"; sourceTree = "<group>"; };
+		A028F51C2873AD8D0080EE2E /* DMPagingGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMPagingGenerator.swift; sourceTree = "<group>"; };
 		A0D44714286EC2C10046F4C6 /* DMItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DMItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A0D44715286EC2C10046F4C6 /* DMItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DMItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A0D4471C286ECA390046F4C6 /* DMItem+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DMItem+Codable.swift"; sourceTree = "<group>"; };
@@ -1235,8 +1239,8 @@
 				B15F75A3E9561DC77B9B9C1500FF473C /* CoreDataStack.swift */,
 				A0D44720286ECAEE0046F4C6 /* CoreData+Codable.swift */,
 				A0D44714286EC2C10046F4C6 /* DMItem+CoreDataClass.swift */,
-				A0D4471C286ECA390046F4C6 /* DMItem+Codable.swift */,
 				A0D44715286EC2C10046F4C6 /* DMItem+CoreDataProperties.swift */,
+				A0D4471C286ECA390046F4C6 /* DMItem+Codable.swift */,
 				12F865E6A3FAC5C8381AFF1AA1E7156A /* URLSession+Combine.swift */,
 				DE0D65D77217B3FBDE9EDA8E63F1C7D5 /* Attribute Transformers */,
 			);
@@ -1628,6 +1632,7 @@
 			isa = PBXGroup;
 			children = (
 				5B3FAFA79C86482A70A9DE438CEC443B /* DKPagingGenerator.swift */,
+				A028F51C2873AD8D0080EE2E /* DMPagingGenerator.swift */,
 				69C7542DFF18C8DB5FD90F3400287A98 /* DKPromise.swift */,
 				16D895882B7C2172AF6CE2353CC52C66 /* DKRouter.swift */,
 				F81DA2E794F0311C6ECE115903F3A4C1 /* DKServerError.swift */,
@@ -2345,6 +2350,7 @@
 				3AC51BC92CE7FFE41430C3AC542AB170 /* race.swift in Sources */,
 				5E3A808CC5830D342A0546E7D74E200C /* then.swift in Sources */,
 				03CD00A5E3280B5504588C3839710CE2 /* URLSession+Combine.swift in Sources */,
+				A028F51D2873AD8D0080EE2E /* DMPagingGenerator.swift in Sources */,
 				F995F3B41C4549FE7B5E48D7A9470E85 /* UTIKit.swift in Sources */,
 				95F0C93D4ED74FE6345FDF0E832FBC7A /* UTIKit+Extensions.swift in Sources */,
 				19EA3258008A273D67214EB543B82262 /* when.swift in Sources */,
@@ -2401,6 +2407,7 @@
 				8B5F6AD1E0241D32125D535F70A52FB9 /* race.swift in Sources */,
 				D1AC7479574FF98E43EEF1EBC0C3D8ED /* then.swift in Sources */,
 				CF4B517D73282AB1D75D349ED2A62D15 /* URLSession+Combine.swift in Sources */,
+				A028F51E2873AD8D0080EE2E /* DMPagingGenerator.swift in Sources */,
 				C14699480EA5BECC8B6AD971B4B52671 /* UTIKit.swift in Sources */,
 				F8CF5CE1121F76B244D3343402B530E9 /* UTIKit+Extensions.swift in Sources */,
 				AADC8C81877CDC5B2CFABBD53203DD77 /* when.swift in Sources */,
@@ -2555,6 +2562,7 @@
 				3F3FCFB5000532959D3B75D83C04C515 /* race.swift in Sources */,
 				2D99F7D0058F4F4CE38DFDBFEF00956F /* then.swift in Sources */,
 				9E5D09809D5CE5A5880558207C3DE07A /* URLSession+Combine.swift in Sources */,
+				A028F51F2873AD8D0080EE2E /* DMPagingGenerator.swift in Sources */,
 				9A03A4265AB8918C1B287933D095EBED /* UTIKit.swift in Sources */,
 				8EDA7AA8212F5C2C4742833341615C04 /* UTIKit+Extensions.swift in Sources */,
 				33498C897792037FC440A6D98D18F922 /* when.swift in Sources */,
