@@ -10,7 +10,8 @@ import PromiseKit
 import Alamofire
 import Combine
 
-public struct DMPromise {
+@available(iOS 15, *)
+public struct DKNetwork {
     
     public static var jsonDecoder: JSONDecoder = {
         let decoder = JSONDecoder()
@@ -19,19 +20,10 @@ public struct DMPromise {
         return decoder
     }()
     
-    public static func listItemsInCollection(id: NSNumber, parameters: Parameters) async throws -> [DMItem]  {
-        
-        guard let urlRequest = DKRouter.listItemsInCollection(id: id, queryParameters: parameters).urlRequest else {
-            fatalError("Unable to generate request")
-        }
-        
-        if #available(iOS 15.0, *) {
-            let (data, _) = try await URLSession.shared.data(for: urlRequest)
-            return try jsonDecoder.decode([DMItem].self, from: data)
-        } else {
-            fatalError()
-        }
-                
+    public static func listItemsInCollection(id: NSNumber, parameters: Parameters) async throws -> [DKItem]  {
+        let urlRequest = DKRouter.listItemsInCollection(id: id, queryParameters: parameters).urlRequest!
+        let (data, _) = try await URLSession.shared.data(for: urlRequest)
+        return try jsonDecoder.decode([DKItem].self, from: data)
     }
     
 }
@@ -41,7 +33,8 @@ public struct DKPromise {
     // MARK: Activity
     
     public static func activity(parameters: Parameters? = nil) -> CancellablePromise<[DKItem]> {
-        return request(DKRouter.activity(parameters: parameters)).validate().promiseList()
+        let request = DKRouter.activity(parameters: parameters).urlRequest!
+        return genericPromise(request: request)
     }
     
     // MARK: Authentication
@@ -167,7 +160,8 @@ public struct DKPromise {
             params.add(key: "include", value: ["items"])
             params.add(key: "items_per_page", value: 4)
         }
-        return request(DKRouter.listItems(queryParameters: params)).validate().promiseList()
+        let request = DKRouter.listItems(queryParameters: params).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func listItemsInCollection(id: NSNumber, parameters: Parameters, includeDefaultParameters: Bool = true) -> CancellablePromise<[DKItem]> {
@@ -177,7 +171,45 @@ public struct DKPromise {
             params.add(key: "include", value: ["items"])
             params.add(key: "items_per_page", value: 4)
         }
-        return request(DKRouter.listItemsInCollection(id: id, queryParameters: params)).validate().promiseList()
+        let request = DKRouter.listItemsInCollection(id: id, queryParameters: parameters).urlRequest!
+        return genericPromise(request: request)
+    }
+    
+    public static func genericPromise<T: Decodable>(request: URLRequest) -> CancellablePromise<T> {
+        
+        return CancellablePromise<T> ( resolver: { resolver in
+            
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                
+                if let data = data {
+                    
+                    let decoder = JSONDecoder()
+                    decoder.userInfo[CodingUserInfoKey.managedObjectContext] = CoreDataStack.shared.viewContext
+                    decoder.dateDecodingStrategy = .formatted(Formatter.dropmark)
+                    
+                    do {
+                        let objects = try decoder.decode(T.self, from: data)
+                        resolver.fulfill(objects)
+                    } catch {
+                        resolver.reject(error)
+                    }
+                    
+                } else if let error = error {
+                    resolver.reject(error)
+                } else {
+                    resolver.reject(DKError.unableToSerializeJSON)
+                }
+                
+            }
+
+            task.resume()
+            
+            return {
+                task.cancel()
+            }
+            
+        })
+        
     }
     
     public static func createItemInCollection(id: NSNumber, queryParameters: Parameters? = nil, bodyParameters: Parameters, includeDefaultQueryParameters: Bool = true) -> CancellablePromise<DKItem> {
@@ -186,7 +218,8 @@ public struct DKPromise {
             queryParams.add(key: "include", value: ["items"])
             queryParams.add(key: "items_per_page", value: 4)
         }
-        return request(DKRouter.createItemInCollection(id: id, queryParameters: queryParams, bodyParameters: bodyParameters)).validate().promiseObject()
+        let request = DKRouter.createItemInCollection(id: id, queryParameters: queryParams, bodyParameters: bodyParameters).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func updateItemsInCollection(id: NSNumber, queryParameters: Parameters? = nil, bodyParameters: Parameters, includeDefaultQueryParameters: Bool = true) -> CancellablePromise<[DKItem]> {
@@ -195,10 +228,12 @@ public struct DKPromise {
             queryParams.add(key: "include", value: ["items"])
             queryParams.add(key: "items_per_page", value: 4)
         }
-        return request(DKRouter.updateItemsInCollection(id: id, queryParameters: queryParams, bodyParameters: bodyParameters)).validate().promiseList()
+        let request = DKRouter.updateItemsInCollection(id: id, queryParameters: queryParams, bodyParameters: bodyParameters).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func updateItems(parameters: Parameters) -> CancellablePromise<[DKItem]> {
+        let request = 
         return request(DKRouter.updateItems(bodyParameters: parameters)).validate().promiseList()
     }
     
