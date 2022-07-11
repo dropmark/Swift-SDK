@@ -46,11 +46,13 @@ public struct DKResponseListAny {
             
         for objectRepresentation in listRepresentation {
             
-            if let item = DKItem(response: response, representation: objectRepresentation) {
-                
-                list.append(item)
-                
-            } else if let collection = DKCollection(response: response, representation: objectRepresentation) {
+            // TODO: DKItem serialization
+//            if let item = DKItem(response: response, representation: objectRepresentation) {
+//
+//                list.append(item)
+//
+//            } else
+            if let collection = DKCollection(response: response, representation: objectRepresentation) {
                 
                 list.append(collection)
                 

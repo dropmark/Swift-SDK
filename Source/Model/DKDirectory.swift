@@ -40,7 +40,7 @@ public struct DKDirectory: Equatable {
             guard stack.type == .stack else {
                 throw DKDirectoryError.invalidDirectory
             }
-            self.stackID = stack.id
+            self.stackID = stack.id as NSNumber
         }
         
     }

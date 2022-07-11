@@ -283,9 +283,10 @@ public final class DKCollection: NSObject, NSCoding, DKResponseObjectSerializabl
             users = userRepresentations.compactMap{ DKUser(response: response, representation: $0) }
         }
         
-        if let itemRepresentations = representation["items"] as? [Any] {
-            items = itemRepresentations.compactMap{ DKItem(response: response, representation: $0) }
-        }
+        // TODO: DKItem relationship
+//        if let itemRepresentations = representation["items"] as? [Any] {
+//            items = itemRepresentations.compactMap{ DKItem(response: response, representation: $0) }
+//        }
         
     }
     

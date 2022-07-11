@@ -10,23 +10,23 @@ import PromiseKit
 import Alamofire
 import Combine
 
-@available(iOS 15, *)
-public struct DKNetwork {
-    
-    public static var jsonDecoder: JSONDecoder = {
-        let decoder = JSONDecoder()
-        decoder.userInfo[CodingUserInfoKey.managedObjectContext] = CoreDataStack.shared.viewContext
-        decoder.dateDecodingStrategy = .formatted(Formatter.dropmark)
-        return decoder
-    }()
-    
-    public static func listItemsInCollection(id: NSNumber, parameters: Parameters) async throws -> [DKItem]  {
-        let urlRequest = DKRouter.listItemsInCollection(id: id, queryParameters: parameters).urlRequest!
-        let (data, _) = try await URLSession.shared.data(for: urlRequest)
-        return try jsonDecoder.decode([DKItem].self, from: data)
-    }
-    
-}
+//@available(iOS 15, *)
+//public struct DKNetwork {
+//    
+//    public static var jsonDecoder: JSONDecoder = {
+//        let decoder = JSONDecoder()
+//        decoder.userInfo[CodingUserInfoKey.managedObjectContext] = CoreDataStack.shared.viewContext
+//        decoder.dateDecodingStrategy = .formatted(Formatter.dropmark)
+//        return decoder
+//    }()
+//    
+//    public static func listItemsInCollection(id: NSNumber, parameters: Parameters) async throws -> [DKItem]  {
+//        let urlRequest = DKRouter.listItemsInCollection(id: id, queryParameters: parameters).urlRequest!
+//        let (data, _) = try await URLSession.shared.data(for: urlRequest)
+//        return try jsonDecoder.decode([DKItem].self, from: data)
+//    }
+//    
+//}
 
 public struct DKPromise {
     
@@ -175,43 +175,6 @@ public struct DKPromise {
         return genericPromise(request: request)
     }
     
-    public static func genericPromise<T: Decodable>(request: URLRequest) -> CancellablePromise<T> {
-        
-        return CancellablePromise<T> ( resolver: { resolver in
-            
-            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-                
-                if let data = data {
-                    
-                    let decoder = JSONDecoder()
-                    decoder.userInfo[CodingUserInfoKey.managedObjectContext] = CoreDataStack.shared.viewContext
-                    decoder.dateDecodingStrategy = .formatted(Formatter.dropmark)
-                    
-                    do {
-                        let objects = try decoder.decode(T.self, from: data)
-                        resolver.fulfill(objects)
-                    } catch {
-                        resolver.reject(error)
-                    }
-                    
-                } else if let error = error {
-                    resolver.reject(error)
-                } else {
-                    resolver.reject(DKError.unableToSerializeJSON)
-                }
-                
-            }
-
-            task.resume()
-            
-            return {
-                task.cancel()
-            }
-            
-        })
-        
-    }
-    
     public static func createItemInCollection(id: NSNumber, queryParameters: Parameters? = nil, bodyParameters: Parameters, includeDefaultQueryParameters: Bool = true) -> CancellablePromise<DKItem> {
         var queryParams = queryParameters ?? Parameters()
         if includeDefaultQueryParameters {
@@ -233,8 +196,8 @@ public struct DKPromise {
     }
     
     public static func updateItems(parameters: Parameters) -> CancellablePromise<[DKItem]> {
-        let request = 
-        return request(DKRouter.updateItems(bodyParameters: parameters)).validate().promiseList()
+        let request = DKRouter.updateItems(bodyParameters: parameters).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func getItem(id: NSNumber, parameters: Parameters? = nil, includeDefaultParameters: Bool = true) -> CancellablePromise<DKItem> {
@@ -243,7 +206,8 @@ public struct DKPromise {
             params.add(key: "include", value: ["items"])
             params.add(key: "items_per_page", value: 4)
         }
-        return request(DKRouter.getItem(id: id, queryParameters: params)).validate().promiseObject()
+        let request = DKRouter.getItem(id: id, queryParameters: params).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func updateItem(id: NSNumber, queryParameters: Parameters? = nil, bodyParameters: Parameters, includeDefaultQueryParameters: Bool = true) -> CancellablePromise<DKItem> {
@@ -252,7 +216,8 @@ public struct DKPromise {
             queryParams.add(key: "include", value: ["items"])
             queryParams.add(key: "items_per_page", value: 4)
         }
-        return request(DKRouter.updateItem(id: id, queryParameters: queryParams, bodyParameters: bodyParameters)).validate().promiseObject()
+        let request = DKRouter.updateItem(id: id, queryParameters: queryParams, bodyParameters: bodyParameters).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func deleteItem(id: NSNumber, parameters: Parameters? = nil) -> CancellablePromise<Void> {
@@ -264,7 +229,8 @@ public struct DKPromise {
     }
     
     public static func copyItems(parameters: Parameters) -> CancellablePromise<[DKItem]> {
-        return request(DKRouter.copyItems(bodyParameters: parameters)).validate().promiseList()
+        let request = DKRouter.copyItems(bodyParameters: parameters).urlRequest!
+        return genericPromise(request: request)
     }
     
     // MARK: Reactions
@@ -419,6 +385,45 @@ public struct DKPromise {
             
             return {
                 signatureRequest.cancel()
+            }
+            
+        })
+        
+    }
+    
+    // MARK: Utility
+    
+    public static func genericPromise<T: Decodable>(request: URLRequest) -> CancellablePromise<T> {
+        
+        return CancellablePromise<T> ( resolver: { resolver in
+            
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                
+                if let data = data {
+                    
+                    let decoder = JSONDecoder()
+                    decoder.userInfo[CodingUserInfoKey.managedObjectContext] = CoreDataStack.shared.viewContext
+                    decoder.dateDecodingStrategy = .formatted(Formatter.dropmark)
+                    
+                    do {
+                        let objects = try decoder.decode(T.self, from: data)
+                        resolver.fulfill(objects)
+                    } catch {
+                        resolver.reject(error)
+                    }
+                    
+                } else if let error = error {
+                    resolver.reject(error)
+                } else {
+                    resolver.reject(DKError.unableToSerializeJSON)
+                }
+                
+            }
+
+            task.resume()
+            
+            return {
+                task.cancel()
             }
             
         })

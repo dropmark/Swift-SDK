@@ -2,7 +2,7 @@
 //  DKItem+CoreDataProperties.swift
 //  Pods
 //
-//  Created by Alex Givens on 7/5/22.
+//  Created by Alex Givens on 7/9/22.
 //
 //
 
@@ -16,7 +16,7 @@ extension DKItem {
         return NSFetchRequest<DKItem>(entityName: "DKItem")
     }
 
-    @NSManaged public var collectionID: NSNumber
+    @NSManaged public var collectionID: Int64
     @NSManaged public var collectionName: String?
     @NSManaged public var content: String?
     @NSManaged public var createdAt: Date?
@@ -41,6 +41,7 @@ extension DKItem {
     @NSManaged public var typeRaw: String?
     @NSManaged public var updatedAt: Date?
     @NSManaged public var url: URL?
+    @NSManaged public var thumbnails: DKThumbnails?
 
 }
 

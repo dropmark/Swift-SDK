@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DKCollection" representedClassName="DKCollection" syncable="YES">
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="descriptionText" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isArchived" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isHighlighted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="kindRaw" optional="YES" attributeType="String"/>
+        <attribute name="lastAccessedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="shortURL" optional="YES" attributeType="URI"/>
+        <attribute name="showLabels" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="sort" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sortByRaw" optional="YES" attributeType="String"/>
+        <attribute name="sortOrderRaw" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="url" optional="YES" attributeType="URI"/>
+        <attribute name="usersTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="viewModeRaw" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="DKComment" representedClassName="DKComment" syncable="YES">
+        <attribute name="annotation" optional="YES" attributeType="URI"/>
+        <attribute name="body" attributeType="String"/>
+        <attribute name="collectionID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="collectionName" optional="YES" attributeType="String"/>
+        <attribute name="collectionURL" optional="YES" attributeType="URI"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="itemID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="itemName" optional="YES" attributeType="String"/>
+        <attribute name="shortURL" optional="YES" attributeType="URI"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="url" optional="YES" attributeType="URI"/>
+    </entity>
     <entity name="DKItem" representedClassName="DKItem" syncable="YES">
-        <attribute name="collectionID" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="collectionID" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="collectionName" optional="YES" attributeType="String"/>
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
@@ -26,40 +60,17 @@
         <attribute name="typeRaw" optional="YES" attributeType="String"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="url" attributeType="URI"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKComment"/>
+        <relationship name="thumbnails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKThumbnails"/>
     </entity>
-    <entity name="DMCollection" representedClassName="DMCollection" syncable="YES">
-        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="descriptionText" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="isArchived" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="isHighlighted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="kindRaw" optional="YES" attributeType="String"/>
-        <attribute name="lastAccessedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="shortURL" optional="YES" attributeType="URI"/>
-        <attribute name="showLabels" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="sort" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="sortByRaw" optional="YES" attributeType="String"/>
-        <attribute name="sortOrderRaw" optional="YES" attributeType="String"/>
-        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="url" optional="YES" attributeType="URI"/>
-        <attribute name="usersTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="viewModeRaw" optional="YES" attributeType="String"/>
-    </entity>
-    <entity name="DMComment" representedClassName="DMComment" syncable="YES" codeGenerationType="class">
-        <attribute name="annotation" optional="YES" attributeType="URI"/>
-        <attribute name="body" optional="YES" attributeType="String"/>
-        <attribute name="collectionID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="collectionName" optional="YES" attributeType="String"/>
-        <attribute name="collectionURL" optional="YES" attributeType="URI"/>
-        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="itemID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="itemName" optional="YES" attributeType="String"/>
-        <attribute name="shortURL" optional="YES" attributeType="String"/>
-        <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="url" optional="YES" attributeType="URI"/>
+    <entity name="DKThumbnails" representedClassName="DKThumbnails" syncable="YES">
+        <attribute name="cropped" optional="YES" attributeType="URI"/>
+        <attribute name="croppedAnimated" optional="YES" attributeType="URI"/>
+        <attribute name="large" optional="YES" attributeType="URI"/>
+        <attribute name="mini" optional="YES" attributeType="URI"/>
+        <attribute name="small" optional="YES" attributeType="URI"/>
+        <attribute name="uncropped" optional="YES" attributeType="URI"/>
+        <attribute name="uncroppedAnimated" optional="YES" attributeType="URI"/>
     </entity>
     <entity name="DMReaction" representedClassName="DMReaction" syncable="YES" codeGenerationType="class">
         <attribute name="collectionID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -95,9 +106,10 @@
         <attribute name="viewModeRaw" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="DMCollection" positionX="-63" positionY="-18" width="128" height="313"/>
-        <element name="DMComment" positionX="185.57421875" positionY="-186.7109375" width="128" height="209"/>
-        <element name="DKItem" positionX="144.953125" positionY="177.26171875" width="128" height="404"/>
+        <element name="DKItem" positionX="144.953125" positionY="177.26171875" width="128" height="434"/>
+        <element name="DKThumbnails" positionX="-72" positionY="-27" width="128" height="134"/>
+        <element name="DKCollection" positionX="-63" positionY="-18" width="128" height="299"/>
+        <element name="DKComment" positionX="185.57421875" positionY="-186.7109375" width="128" height="209"/>
         <element name="DMReaction" positionX="0" positionY="234" width="128" height="119"/>
         <element name="DMTag" positionX="-9" positionY="225" width="128" height="59"/>
         <element name="DMUser" positionX="-279.5703125" positionY="-29.98046875" width="128" height="328"/>

@@ -50,6 +50,7 @@ class ItemViewController: UIViewController {
         
         title = item.name
         
+        // TODO: Thumbnails
         if let thumbnailURL = item.thumbnails?.cropped { // Load thumbnail
             
             Alamofire.request(thumbnailURL).responseData { response in
