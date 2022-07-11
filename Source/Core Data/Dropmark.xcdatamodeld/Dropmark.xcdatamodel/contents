@@ -61,6 +61,7 @@
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="url" attributeType="URI"/>
         <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKComment"/>
+        <relationship name="reactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKReaction"/>
         <relationship name="thumbnails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKThumbnails"/>
     </entity>
     <entity name="DKReaction" representedClassName="DKReaction" syncable="YES">
@@ -72,6 +73,10 @@
         <attribute name="itemName" optional="YES" attributeType="String"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
+    <entity name="DKTag" representedClassName="DKTag" syncable="YES">
+        <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="name" attributeType="String"/>
+    </entity>
     <entity name="DKThumbnails" representedClassName="DKThumbnails" syncable="YES">
         <attribute name="cropped" optional="YES" attributeType="URI"/>
         <attribute name="croppedAnimated" optional="YES" attributeType="URI"/>
@@ -80,10 +85,6 @@
         <attribute name="small" optional="YES" attributeType="URI"/>
         <attribute name="uncropped" optional="YES" attributeType="URI"/>
         <attribute name="uncroppedAnimated" optional="YES" attributeType="URI"/>
-    </entity>
-    <entity name="DMTag" representedClassName="DMTag" syncable="YES" codeGenerationType="class">
-        <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <entity name="DMUser" representedClassName="DMUser" syncable="YES" codeGenerationType="class">
         <attribute name="avatar" optional="YES" attributeType="URI"/>
@@ -107,12 +108,12 @@
         <attribute name="viewModeRaw" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="DKItem" positionX="144.953125" positionY="177.26171875" width="128" height="434"/>
+        <element name="DKItem" positionX="144.953125" positionY="177.26171875" width="128" height="449"/>
         <element name="DKThumbnails" positionX="-72" positionY="-27" width="128" height="134"/>
         <element name="DKCollection" positionX="-63" positionY="-18" width="128" height="299"/>
         <element name="DKComment" positionX="185.57421875" positionY="-186.7109375" width="128" height="209"/>
         <element name="DKReaction" positionX="0" positionY="234" width="128" height="134"/>
-        <element name="DMTag" positionX="-9" positionY="225" width="128" height="59"/>
+        <element name="DKTag" positionX="-9" positionY="225" width="128" height="59"/>
         <element name="DMUser" positionX="-279.5703125" positionY="-29.98046875" width="128" height="328"/>
     </elements>
 </model>
