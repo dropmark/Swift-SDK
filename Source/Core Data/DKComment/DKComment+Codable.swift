@@ -35,18 +35,18 @@ extension DKComment: Codable {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        self.annotation = try container.decodeIfPresent(URL.self, forKey: .annotation)
-        self.body = try container.decodeIfPresent(String.self, forKey: .body)
-        self.collectionID = try container.decodeIfPresent(Int64.self, forKey: .collectionID) as NSNumber?
+        self.annotation     = try container.decodeIfPresent(URL.self, forKey: .annotation)
+        self.body           = try container.decodeIfPresent(String.self, forKey: .body)
+        self.collectionID   = try container.decodeIfPresent(Int64.self, forKey: .collectionID) as NSNumber?
         self.collectionName = try container.decodeIfPresent(String.self, forKey: .collectionName)
-        self.collectionURL = try container.decodeIfPresent(URL.self, forKey: .collectionURL)
-        self.createdAt = try container.decode(Date.self, forKey: .createdAt)
-        self.id = try container.decode(Int64.self, forKey: .id)
-        self.itemID = try container.decodeIfPresent(Int64.self, forKey: .itemID) as? NSNumber
-        self.itemName = try container.decodeIfPresent(String.self, forKey: .itemName)
-        self.shortURL = try container.decodeIfPresent(URL.self, forKey: .shortURL)
-        self.updatedAt = try container.decodeIfPresent(Date.self, forKey: .updatedAt)
-        self.url = try container.decodeIfPresent(URL.self, forKey: .url)
+        self.collectionURL  = try container.decodeIfPresent(URL.self, forKey: .collectionURL)
+        self.createdAt      = try container.decode(Date.self, forKey: .createdAt)
+        self.id             = try container.decode(Int64.self, forKey: .id)
+        self.itemID         = try container.decodeIfPresent(Int64.self, forKey: .itemID) as? NSNumber
+        self.itemName       = try container.decodeIfPresent(String.self, forKey: .itemName)
+        self.shortURL       = try container.decodeIfPresent(URL.self, forKey: .shortURL)
+        self.updatedAt      = try container.decodeIfPresent(Date.self, forKey: .updatedAt)
+        self.url            = try container.decodeIfPresent(URL.self, forKey: .url)
         
     }
     
