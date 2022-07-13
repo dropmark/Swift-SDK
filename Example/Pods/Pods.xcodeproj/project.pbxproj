@@ -187,7 +187,7 @@
 		7616BBD3641AE8B538F8D74D5D8734E8 /* Alamofire-macOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B072179F94CB60388DAE07BA89803E14 /* Alamofire-macOS-dummy.m */; };
 		7633348C7C423C2756D76D5B337BB2B5 /* URLSession+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BF5D8F4DD09485513390A84657B3982 /* URLSession+Combine.swift */; };
 		768DAAAA55D475A3A9E4AA12390A2632 /* PromiseKit.root-CorePromise-Foundation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CF217B08B137334450578C210B49D51 /* PromiseKit.root-CorePromise-Foundation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7A12794D57A52E43C3068207940DE4B7 /* DKTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE86FDA9E38B70C0A2B86A7BDDE3A4 /* DKTag.swift */; };
+		7A12794D57A52E43C3068207940DE4B7 /* DKTag - Old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE86FDA9E38B70C0A2B86A7BDDE3A4 /* DKTag - Old.swift */; };
 		7B734914306AEE14711FCFDFC694ED29 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22BB62FD3B8D3ABDC4F54E92584D4E7 /* Alamofire.swift */; };
 		7B746826A870EE391015E7552AE710EC /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B39477CD5B1F16A13EA8845DE3C0510 /* SessionManager.swift */; };
 		7B9F22AF6ED63D8233ABEA8BED5E702D /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CB49D98F60F412AC8BFCC804AFCBFC /* Box.swift */; };
@@ -201,13 +201,12 @@
 		83B0B44A2814EA3013FB24DD656D08CA /* DKResponseObjectSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B500855132946552B7D28E480FD6C739 /* DKResponseObjectSerializable.swift */; };
 		847D366AC50049D00AFA42FAEB57E985 /* Formatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C521BA5110DC9D7B712C16A6760E76EF /* Formatter+Extensions.swift */; };
 		84E0AFC82211D5F72B9A0F1FD50BE19B /* DKThumbnails - Old.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7940953179343F491DB0B2BBE9E5BE /* DKThumbnails - Old.swift */; };
-		84EC2AE0644D2E546FC8A4053F1B5A8E /* DKTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE86FDA9E38B70C0A2B86A7BDDE3A4 /* DKTag.swift */; };
+		84EC2AE0644D2E546FC8A4053F1B5A8E /* DKTag - Old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE86FDA9E38B70C0A2B86A7BDDE3A4 /* DKTag - Old.swift */; };
 		8713E11EE3995B69F98CD6326F27ECB6 /* DKPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD0BD218E6FDCD84FFFEEFC794D6418 /* DKPermissions.swift */; };
 		88A8FDF5C78779462FCF51E29B900600 /* DKThumbnails+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7689D5533E8E58CD36373A45C1196DF /* DKThumbnails+CoreDataProperties.swift */; };
 		88D6E0CA2F2E349C2C1613AAA66C9616 /* NSTask+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 03278AC7FFA90230C38098506CD2EA7F /* NSTask+AnyPromise.m */; };
 		88F623E68B6F6B84CC4721451F83F051 /* DKRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD98E9F33C45FE1EA10CB56A4B74024 /* DKRouter.swift */; };
 		8994934DEAD2865537C0249544E0BD86 /* PMKFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF75D5744D7413DBE7A9AC8D4CA1EC0 /* PMKFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8AB5734B98F83B6C520A310E71652828 /* DKItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673230F9338DEE6D04A005D5BE0E3AB /* DKItem+CoreDataProperties.swift */; };
 		8AF2C5F65F121EFE998973B4C1603314 /* Pods-iOS Demo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DF0717BE586412D1349384D5020D03C /* Pods-iOS Demo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8B5800A39688746AE90D3A16EBC5E289 /* NSDictionaryAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5002037711A27F984485FFFC78E8955C /* NSDictionaryAttributeTransformer.swift */; };
 		8BD7BF9072AEE3C8786B3523A5E6BF9A /* DKItem+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3936F5CFC39FFADE0D8B0E1F9BC1E800 /* DKItem+Codable.swift */; };
@@ -245,9 +244,6 @@
 		A004B29D287CD2C7007C3C52 /* DKReaction+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A004B29C287CD2C7007C3C52 /* DKReaction+Codable.swift */; };
 		A004B29E287CD2C7007C3C52 /* DKReaction+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A004B29C287CD2C7007C3C52 /* DKReaction+Codable.swift */; };
 		A004B29F287CD2C7007C3C52 /* DKReaction+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A004B29C287CD2C7007C3C52 /* DKReaction+Codable.swift */; };
-		A004B2A2287CD657007C3C52 /* DKItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A004B2A0287CD657007C3C52 /* DKItem+CoreDataClass.swift */; };
-		A004B2A3287CD657007C3C52 /* DKItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A004B2A0287CD657007C3C52 /* DKItem+CoreDataClass.swift */; };
-		A004B2A4287CD657007C3C52 /* DKItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A004B2A0287CD657007C3C52 /* DKItem+CoreDataClass.swift */; };
 		A004B2A5287CD657007C3C52 /* DKItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A004B2A1287CD657007C3C52 /* DKItem+CoreDataProperties.swift */; };
 		A004B2A6287CD657007C3C52 /* DKItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A004B2A1287CD657007C3C52 /* DKItem+CoreDataProperties.swift */; };
 		A004B2A7287CD657007C3C52 /* DKItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A004B2A1287CD657007C3C52 /* DKItem+CoreDataProperties.swift */; };
@@ -261,6 +257,15 @@
 		A004B2B3287CD714007C3C52 /* DKTag+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A004B2B1287CD714007C3C52 /* DKTag+Codable.swift */; };
 		A004B2B4287CD714007C3C52 /* DKTag+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A004B2B1287CD714007C3C52 /* DKTag+Codable.swift */; };
 		A0A1B3DB1298753FABFA7D2C61805904 /* LogEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD1589BD6DE2E791B24B98243E73BEF /* LogEvent.swift */; };
+		A0A52A20287F58B800852E52 /* DKCollection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A52A1E287F58B800852E52 /* DKCollection+CoreDataClass.swift */; };
+		A0A52A21287F58B800852E52 /* DKCollection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A52A1E287F58B800852E52 /* DKCollection+CoreDataClass.swift */; };
+		A0A52A22287F58B800852E52 /* DKCollection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A52A1E287F58B800852E52 /* DKCollection+CoreDataClass.swift */; };
+		A0A52A23287F58B800852E52 /* DKCollection+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A52A1F287F58B800852E52 /* DKCollection+CoreDataProperties.swift */; };
+		A0A52A24287F58B800852E52 /* DKCollection+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A52A1F287F58B800852E52 /* DKCollection+CoreDataProperties.swift */; };
+		A0A52A25287F58B800852E52 /* DKCollection+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A52A1F287F58B800852E52 /* DKCollection+CoreDataProperties.swift */; };
+		A0A52A28287F590B00852E52 /* DKCollection+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A52A27287F590B00852E52 /* DKCollection+Codable.swift */; };
+		A0A52A29287F590B00852E52 /* DKCollection+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A52A27287F590B00852E52 /* DKCollection+Codable.swift */; };
+		A0A52A2A287F590B00852E52 /* DKCollection+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A52A27287F590B00852E52 /* DKCollection+Codable.swift */; };
 		A1E9DC9ECDC91354C4E8879F98756A35 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31D594413A32D9DF0631B51098F4EBEA /* Foundation.framework */; };
 		A304E40CF5DF67EFF823841408E66DC0 /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462949B207B4490E717EEB3BA7E6CAF8 /* ServerTrustPolicy.swift */; };
 		A3F992F7944C5114D3FCA23B1FE39268 /* LogEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD1589BD6DE2E791B24B98243E73BEF /* LogEvent.swift */; };
@@ -360,7 +365,6 @@
 		D69E48C3F0730491FACA4D0234DC044D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021DB6960CB8D279B135E22FC872C297 /* CoreDataStack.swift */; };
 		D6BBBEE313C6025F6F7EFA4E9F71D71C /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462949B207B4490E717EEB3BA7E6CAF8 /* ServerTrustPolicy.swift */; };
 		D6BCA69336BE42B2D6E1CDA95CECE64D /* Alamofire-macOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D6893D47AB191E2402CC4E47C65A736A /* Alamofire-macOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D710401A9DF463814246CFBF99672A21 /* DKItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673230F9338DEE6D04A005D5BE0E3AB /* DKItem+CoreDataProperties.swift */; };
 		D730B2F488B50090902EB69473E5418C /* DKPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929BDFC016AB19A3F83ADA0274A287B4 /* DKPlan.swift */; };
 		D74153A1CFF0B5375840AEA773069C65 /* Thenable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D948FA21AD1318D3FE83C7D022CBC2 /* Thenable.swift */; };
 		D8710348E778D8BCB537C751F2D90CF1 /* NSTask+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 03278AC7FFA90230C38098506CD2EA7F /* NSTask+AnyPromise.m */; };
@@ -372,7 +376,6 @@
 		DB747AE87DD0F6A7C151163DE6776C28 /* DKAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC3F341EDF759C4EF83074D60323685E /* DKAccount.swift */; };
 		DC1607A7CF4AB716615F1F9BE747A65B /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CB49D98F60F412AC8BFCC804AFCBFC /* Box.swift */; };
 		DCE707331745A538D85FB0849B742AFA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38B33D9C821F730C5AF785E771D8693 /* Foundation.framework */; };
-		DCFC557FC081BB6FF690B8ABE1FA510B /* DKItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A673230F9338DEE6D04A005D5BE0E3AB /* DKItem+CoreDataProperties.swift */; };
 		DE24409B90B3A2780C2922DC34FDEF67 /* ColorAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9503881598F6052E1C305F15E288BC6F /* ColorAttributeTransformer.swift */; };
 		DF48F39EF8757ACB5EF79DE22499674B /* UIViewController+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = C612DF9C8F9894E9B6F28BF07483ED78 /* UIViewController+AnyPromise.m */; };
 		E0015CB1B83BE671EE601B00B7F721EF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84BD1687F04E3E5B1BD03FFC8C673E8 /* Result.swift */; };
@@ -413,7 +416,7 @@
 		F73B65AA9ABD68BC3694DA93276F0AF5 /* DKCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EF71C8564DF58B8AF1E3561FADDF91 /* DKCollection.swift */; };
 		F843AAD9C37B9C2347A011440CF0B547 /* PMKFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BF75D5744D7413DBE7A9AC8D4CA1EC0 /* PMKFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F84C05DEEF948EC5CFA88D3E1CCE1BD2 /* dispatch_promise.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AB52F1A743CBA193089A2430B4B094 /* dispatch_promise.m */; };
-		F8FA8E467DB6B2099E8B9CB05ADB4109 /* DKTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE86FDA9E38B70C0A2B86A7BDDE3A4 /* DKTag.swift */; };
+		F8FA8E467DB6B2099E8B9CB05ADB4109 /* DKTag - Old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CE86FDA9E38B70C0A2B86A7BDDE3A4 /* DKTag - Old.swift */; };
 		F9344911B784AADC388E2851262E5BCE /* TaskDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A9AA8F34853ED2FA637BF42A504204 /* TaskDelegate.swift */; };
 		F9F0021555F0267DC40BF356245370A6 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA89AED6AD90B63B00FB5F9C498A0DE /* ParameterEncoding.swift */; };
 		FA44073856629AE83E1888C1793A1646 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38378C93D1BA3B26E6D344BD0EE7494F /* UIKit.framework */; };
@@ -714,7 +717,7 @@
 		60E0FC3C79523992D38CCE64A054F808 /* UIView+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Promise.swift"; path = "Extensions/UIKit/Sources/UIView+Promise.swift"; sourceTree = "<group>"; };
 		614DD52C1F0271015E85D60C2E2B3C99 /* DKSession.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKSession.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKSession.html; sourceTree = "<group>"; };
 		620C3A4D3BFA33031CF0D4AC486CE336 /* Functions.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Functions.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Functions.html; sourceTree = "<group>"; };
-		63CE86FDA9E38B70C0A2B86A7BDDE3A4 /* DKTag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKTag.swift; sourceTree = "<group>"; };
+		63CE86FDA9E38B70C0A2B86A7BDDE3A4 /* DKTag - Old.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DKTag - Old.swift"; sourceTree = "<group>"; };
 		63EDDB3BC56C5DF370E9B83E13A8E297 /* DKPlan.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKPlan.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Enums/DKPlan.html; sourceTree = "<group>"; };
 		63FFEA3BD3B22C7634536AD88331502A /* DKRouterError.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKRouterError.html; path = docs/Enums/DKRouterError.html; sourceTree = "<group>"; };
 		6450E5544C33A8387DC337C350E96E2B /* UserKind.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = UserKind.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKTeam/UserKind.html; sourceTree = "<group>"; };
@@ -812,13 +815,15 @@
 		A004B293287CD1B5007C3C52 /* DKReaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKReaction+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A004B294287CD1B5007C3C52 /* DKReaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKReaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A004B29C287CD2C7007C3C52 /* DKReaction+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKReaction+Codable.swift"; sourceTree = "<group>"; };
-		A004B2A0287CD657007C3C52 /* DKItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKItem+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A004B2A1287CD657007C3C52 /* DKItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A004B2A8287CD6C4007C3C52 /* DKTag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKTag+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A004B2A9287CD6C4007C3C52 /* DKTag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKTag+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A004B2B1287CD714007C3C52 /* DKTag+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKTag+Codable.swift"; sourceTree = "<group>"; };
 		A01A32A992810C1C0FCAE54DB3B4B253 /* Pods-iOS Demo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Demo-Info.plist"; sourceTree = "<group>"; };
 		A02A3A4F88C6F6223CDFC1B0056A2B0B /* SortBy.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = SortBy.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKCollection/SortBy.html; sourceTree = "<group>"; };
+		A0A52A1E287F58B800852E52 /* DKCollection+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKCollection+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A0A52A1F287F58B800852E52 /* DKCollection+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKCollection+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A0A52A27287F590B00852E52 /* DKCollection+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKCollection+Codable.swift"; sourceTree = "<group>"; };
 		A2116F8AA52C172F598D3C5018E1905F /* DKKeychain.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = DKKeychain.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Structs/DKKeychain.html; sourceTree = "<group>"; };
 		A215AC715CFE041EF4805361DECAFE11 /* PromiseKit-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PromiseKit-iOS-umbrella.h"; sourceTree = "<group>"; };
 		A22BB62FD3B8D3ABDC4F54E92584D4E7 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
@@ -827,7 +832,6 @@
 		A41286457133D0327781DAE780184543 /* NSNotificationCenter+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNotificationCenter+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSNotificationCenter+AnyPromise.m"; sourceTree = "<group>"; };
 		A4626AB48A6F3451CEA2497A14801575 /* DKThumbnails.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKThumbnails.html; path = docs/Classes/DKThumbnails.html; sourceTree = "<group>"; };
 		A55DFFE585A793CC1801377BFD6D1A2E /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
-		A673230F9338DEE6D04A005D5BE0E3AB /* DKItem+CoreDataProperties.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DKItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A683AE25147304A61B187CCD6445934A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
 		A68E4569C59406783F140E221CE78302 /* DropmarkSDK-macOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "DropmarkSDK-macOS-umbrella.h"; path = "../DropmarkSDK-macOS/DropmarkSDK-macOS-umbrella.h"; sourceTree = "<group>"; };
 		A6AB00080EA397177E65E5795A2CA12F /* Alamofire-macOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Alamofire-macOS.release.xcconfig"; path = "../Alamofire-macOS/Alamofire-macOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -1344,7 +1348,7 @@
 				DBD0BD218E6FDCD84FFFEEFC794D6418 /* DKPermissions.swift */,
 				929BDFC016AB19A3F83ADA0274A287B4 /* DKPlan.swift */,
 				FD0728DA121D55FDE691F5BAA250BA53 /* DKReaction - Old.swift */,
-				63CE86FDA9E38B70C0A2B86A7BDDE3A4 /* DKTag.swift */,
+				63CE86FDA9E38B70C0A2B86A7BDDE3A4 /* DKTag - Old.swift */,
 				75B14949625CE6B60734AAE9920A27E7 /* DKTeam.swift */,
 				BD7940953179343F491DB0B2BBE9E5BE /* DKThumbnails - Old.swift */,
 				8AE9A8EB315BA5C8D69A66C437EC2966 /* DKUploadSignature.swift */,
@@ -1520,8 +1524,6 @@
 		A004B29B287CD1B8007C3C52 /* DKReaction */ = {
 			isa = PBXGroup;
 			children = (
-				A004B2A0287CD657007C3C52 /* DKItem+CoreDataClass.swift */,
-				A004B2A1287CD657007C3C52 /* DKItem+CoreDataProperties.swift */,
 				A004B29C287CD2C7007C3C52 /* DKReaction+Codable.swift */,
 				A004B293287CD1B5007C3C52 /* DKReaction+CoreDataClass.swift */,
 				A004B294287CD1B5007C3C52 /* DKReaction+CoreDataProperties.swift */,
@@ -1539,17 +1541,28 @@
 			path = DKTag;
 			sourceTree = "<group>";
 		};
+		A0A52A26287F58C100852E52 /* DKCollection */ = {
+			isa = PBXGroup;
+			children = (
+				A0A52A27287F590B00852E52 /* DKCollection+Codable.swift */,
+				A0A52A1E287F58B800852E52 /* DKCollection+CoreDataClass.swift */,
+				A0A52A1F287F58B800852E52 /* DKCollection+CoreDataProperties.swift */,
+			);
+			path = DKCollection;
+			sourceTree = "<group>";
+		};
 		A80983525F4001EED29CE14C6FBC07FA /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				A004B2B0287CD6CB007C3C52 /* DKTag */,
 				B911DC444852C80EE54E87B286B785EA /* CoreData+Codable.swift */,
 				021DB6960CB8D279B135E22FC872C297 /* CoreDataStack.swift */,
 				F57EF435B753EFCAE508501558E57C70 /* Dictonary-Decoder.swift */,
 				4BF5D8F4DD09485513390A84657B3982 /* URLSession+Combine.swift */,
 				B211C143462A921A9A36CEE71DF0B049 /* Attribute Transformers */,
+				A0A52A26287F58C100852E52 /* DKCollection */,
 				A004B28E287CA201007C3C52 /* DKComment */,
 				CAA98B9C210FDC867C3368E2E2E628C3 /* DKItem */,
+				A004B2B0287CD6CB007C3C52 /* DKTag */,
 				7FB36F14297890F8896886F7DB807E28 /* DKThumbnails */,
 				A004B29B287CD1B8007C3C52 /* DKReaction */,
 			);
@@ -1688,7 +1701,7 @@
 			children = (
 				3936F5CFC39FFADE0D8B0E1F9BC1E800 /* DKItem+Codable.swift */,
 				CC1AAB2C1D1F3E48F43266C7B979E3ED /* DKItem+CoreDataClass.swift */,
-				A673230F9338DEE6D04A005D5BE0E3AB /* DKItem+CoreDataProperties.swift */,
+				A004B2A1287CD657007C3C52 /* DKItem+CoreDataProperties.swift */,
 			);
 			path = DKItem;
 			sourceTree = "<group>";
@@ -2336,7 +2349,6 @@
 			files = (
 				67BEE7B4C26100DB5C11281BEC77F1B5 /* Bundle+Extensions.swift in Sources */,
 				C3D307FCFD6413A8B9308BF7BCCF3050 /* CancellablePromise.swift in Sources */,
-				A004B2A3287CD657007C3C52 /* DKItem+CoreDataClass.swift in Sources */,
 				31000715D7B6C1721301A0E1CC5A56EF /* CancellablePromiseError.swift in Sources */,
 				DE24409B90B3A2780C2922DC34FDEF67 /* ColorAttributeTransformer.swift in Sources */,
 				A9CC7AB2162D42FCC19F54D86E70687D /* CoreData+Codable.swift in Sources */,
@@ -2357,7 +2369,6 @@
 				9D6F6FBE634D734B1FEA57F26B9EB21C /* DKItem - Old.swift in Sources */,
 				8BD7BF9072AEE3C8786B3523A5E6BF9A /* DKItem+Codable.swift in Sources */,
 				300A4326236E481C8B6749FFDED27F3E /* DKItem+CoreDataClass.swift in Sources */,
-				D710401A9DF463814246CFBF99672A21 /* DKItem+CoreDataProperties.swift in Sources */,
 				A449AC609DCC7E6C53811D6A124B2B3B /* DKItemType.swift in Sources */,
 				A004B296287CD1B5007C3C52 /* DKReaction+CoreDataClass.swift in Sources */,
 				A539A4C755C747A0EF6D39D63E0933F9 /* DKKeychain.swift in Sources */,
@@ -2365,6 +2376,7 @@
 				BDE0DBAF7ACE08A579435E5F27653832 /* DKPagingGenerator.swift in Sources */,
 				3C3342CD92BD396D56667BE7A6E9F7C3 /* DKPermissions.swift in Sources */,
 				3D7D28DB399E6FF4E7A8AB595715D51C /* DKPlan.swift in Sources */,
+				A0A52A29287F590B00852E52 /* DKCollection+Codable.swift in Sources */,
 				2AC4D8F2CF2D2F666E3A9A428B65BF46 /* DKPromise.swift in Sources */,
 				005ABF121AA43E47C0C93A83901101BF /* DKReaction - Old.swift in Sources */,
 				9CB7348023E3D5C78BFA46B8A005A7DE /* DKResponseListAny.swift in Sources */,
@@ -2374,7 +2386,7 @@
 				046DD7F67B526C211219BE1ED57932B3 /* DKRouter.swift in Sources */,
 				730EF41C2D34024F0345A6B1226333E2 /* DKServerError.swift in Sources */,
 				2F9366A657501C43218B8076725AC690 /* DKSession.swift in Sources */,
-				F8FA8E467DB6B2099E8B9CB05ADB4109 /* DKTag.swift in Sources */,
+				F8FA8E467DB6B2099E8B9CB05ADB4109 /* DKTag - Old.swift in Sources */,
 				513F54127AE099DF070F507B1329BCF0 /* DKTeam.swift in Sources */,
 				84E0AFC82211D5F72B9A0F1FD50BE19B /* DKThumbnails - Old.swift in Sources */,
 				4582AEC75F89AC8868B61144C9154F00 /* DKThumbnails+Codable.swift in Sources */,
@@ -2388,12 +2400,14 @@
 				2AEF854F75F8C5CDD84DA7CEC767EBF4 /* DropmarkSDK-macOS-dummy.m in Sources */,
 				80984BB10846F225113CDBDA577D95DB /* Formatter+Extensions.swift in Sources */,
 				6EFA4E13508E541C35EA51AE8A483148 /* map.swift in Sources */,
+				A0A52A21287F58B800852E52 /* DKCollection+CoreDataClass.swift in Sources */,
 				A004B2AB287CD6C4007C3C52 /* DKTag+CoreDataClass.swift in Sources */,
 				A004B289287CA1FC007C3C52 /* DKComment+CoreDataClass.swift in Sources */,
 				2907666DEA15E18FBC562D984ADE60BB /* NSDictionaryAttributeTransformer.swift in Sources */,
 				20FAB50C841C7C8A4B5A8DD94B242BCA /* Promise+CancellablePromise.swift in Sources */,
 				6B12E43F166665FE99897B8522D5AF2C /* race.swift in Sources */,
 				1AFCF3D33A6C7BF7E1C99AC9FACCD99D /* then.swift in Sources */,
+				A0A52A24287F58B800852E52 /* DKCollection+CoreDataProperties.swift in Sources */,
 				33F81512615073DA124F9BAFA0C13AE7 /* URLSession+Combine.swift in Sources */,
 				A645BDA01E1A0C862C72A05F14D3F4C9 /* UTIKit.swift in Sources */,
 				526D7F3BD9B37440D5B27D0FBEAF4097 /* UTIKit+Extensions.swift in Sources */,
@@ -2485,7 +2499,6 @@
 			files = (
 				E12265F669593850C78E60D3CB06111D /* Bundle+Extensions.swift in Sources */,
 				8146AB660F26C2823948ADD1B02EA0E8 /* CancellablePromise.swift in Sources */,
-				A004B2A2287CD657007C3C52 /* DKItem+CoreDataClass.swift in Sources */,
 				218CA56C45712297A3CA6F0369C5F50A /* CancellablePromiseError.swift in Sources */,
 				252587537955B33CC5D66173BBBF142B /* ColorAttributeTransformer.swift in Sources */,
 				0A7183B6E1B17E2C2FD39A98D3D84DC4 /* CoreData+Codable.swift in Sources */,
@@ -2506,7 +2519,6 @@
 				37B4FBE616FCC58EF534D04E7EA8EC1C /* DKItem - Old.swift in Sources */,
 				FF130201BBA69604B73738D90E1A482F /* DKItem+Codable.swift in Sources */,
 				B5BC67BC6DBF3F19F8A52B9F529C84F2 /* DKItem+CoreDataClass.swift in Sources */,
-				8AB5734B98F83B6C520A310E71652828 /* DKItem+CoreDataProperties.swift in Sources */,
 				130E0E2004B6B86339D2B1FCB49F055B /* DKItemType.swift in Sources */,
 				A004B295287CD1B5007C3C52 /* DKReaction+CoreDataClass.swift in Sources */,
 				D177E4D04CD7DF82921056DD9956FFD9 /* DKKeychain.swift in Sources */,
@@ -2514,6 +2526,7 @@
 				C2F7697A4C99084AF87E8538FC034C92 /* DKPagingGenerator.swift in Sources */,
 				C2F38351783524B47375E6AB72E4EE26 /* DKPermissions.swift in Sources */,
 				D730B2F488B50090902EB69473E5418C /* DKPlan.swift in Sources */,
+				A0A52A28287F590B00852E52 /* DKCollection+Codable.swift in Sources */,
 				0E71D22D4AC541B8CA13DC68A64B64BC /* DKPromise.swift in Sources */,
 				B447D1B8917EC50CEB9D44EBDE635FE1 /* DKReaction - Old.swift in Sources */,
 				0EDB438D653085C622158D253511CC02 /* DKResponseListAny.swift in Sources */,
@@ -2523,7 +2536,7 @@
 				88F623E68B6F6B84CC4721451F83F051 /* DKRouter.swift in Sources */,
 				1BE74BCFA5162694D7361E6F8059C341 /* DKServerError.swift in Sources */,
 				5444AEE76B10468EFBEA8887BB00E5D0 /* DKSession.swift in Sources */,
-				84EC2AE0644D2E546FC8A4053F1B5A8E /* DKTag.swift in Sources */,
+				84EC2AE0644D2E546FC8A4053F1B5A8E /* DKTag - Old.swift in Sources */,
 				558DE0BBB513D049D373975F1ECC8921 /* DKTeam.swift in Sources */,
 				A60EFD00878439BDF2ED154D840ED6A2 /* DKThumbnails - Old.swift in Sources */,
 				BC91B4DF175538A4D724E01941EB103B /* DKThumbnails+Codable.swift in Sources */,
@@ -2537,12 +2550,14 @@
 				D8F8C79482B683761C7418E6BCDC4412 /* DropmarkSDK-iOS-dummy.m in Sources */,
 				DA22FE6C987A4772B20ACE865D6EF4B4 /* Formatter+Extensions.swift in Sources */,
 				D63C8ACA432B85FA4DD8DDE06CFFE64A /* map.swift in Sources */,
+				A0A52A20287F58B800852E52 /* DKCollection+CoreDataClass.swift in Sources */,
 				A004B2AA287CD6C4007C3C52 /* DKTag+CoreDataClass.swift in Sources */,
 				A004B288287CA1FC007C3C52 /* DKComment+CoreDataClass.swift in Sources */,
 				8B5800A39688746AE90D3A16EBC5E289 /* NSDictionaryAttributeTransformer.swift in Sources */,
 				28537C23EAEDF221B91A4E9F676C2D34 /* Promise+CancellablePromise.swift in Sources */,
 				C3D93E9C05A134167B1C332941FCD95E /* race.swift in Sources */,
 				D1035E1D831A4CC82A2B740B70211CF5 /* then.swift in Sources */,
+				A0A52A23287F58B800852E52 /* DKCollection+CoreDataProperties.swift in Sources */,
 				7633348C7C423C2756D76D5B337BB2B5 /* URLSession+Combine.swift in Sources */,
 				3AB11A149B6C91F1D07863D14F0ECED3 /* UTIKit.swift in Sources */,
 				FF66CBFD338E8C1A94F288B66E099B79 /* UTIKit+Extensions.swift in Sources */,
@@ -2590,7 +2605,6 @@
 			files = (
 				0E6099C4E30C9685A41F4A5D28A373DB /* Bundle+Extensions.swift in Sources */,
 				6B65E3CA340B861C0E069C9AFC59B657 /* CancellablePromise.swift in Sources */,
-				A004B2A4287CD657007C3C52 /* DKItem+CoreDataClass.swift in Sources */,
 				384E6DA540B0F72F399BAF7088CBB51C /* CancellablePromiseError.swift in Sources */,
 				602BE1EA494A7820A7467D39A1A5A470 /* ColorAttributeTransformer.swift in Sources */,
 				00E0FC599E35E1B4F4AED5B7F8DC5A72 /* CoreData+Codable.swift in Sources */,
@@ -2611,7 +2625,6 @@
 				9B0FF3B60D2FBC7A16E6A3B09823073E /* DKItem - Old.swift in Sources */,
 				437DAA89ECB2DE8F5F6AC9A60599F01A /* DKItem+Codable.swift in Sources */,
 				055B0CF822E3A417AED65A4B58A205E6 /* DKItem+CoreDataClass.swift in Sources */,
-				DCFC557FC081BB6FF690B8ABE1FA510B /* DKItem+CoreDataProperties.swift in Sources */,
 				B88796C5E31436D4EE892DADCD1A5D8F /* DKItemType.swift in Sources */,
 				A004B297287CD1B5007C3C52 /* DKReaction+CoreDataClass.swift in Sources */,
 				E7CAFD45953BA01BFC80DD26C3CA5343 /* DKKeychain.swift in Sources */,
@@ -2619,6 +2632,7 @@
 				FB7708ECF4CF9E200304DAEEEFA8D9CA /* DKPagingGenerator.swift in Sources */,
 				8713E11EE3995B69F98CD6326F27ECB6 /* DKPermissions.swift in Sources */,
 				72AA34ADC28D2A0ECA57DAFD41CC7A0D /* DKPlan.swift in Sources */,
+				A0A52A2A287F590B00852E52 /* DKCollection+Codable.swift in Sources */,
 				BBBC8625CF265F70A15DFCBE228380FE /* DKPromise.swift in Sources */,
 				654590FB48DEDE5386DA21D580B0A400 /* DKReaction - Old.swift in Sources */,
 				18EEAA1E06C7C34E77DD26EEB717D034 /* DKResponseListAny.swift in Sources */,
@@ -2628,7 +2642,7 @@
 				41075986B9316F1522DB3CA862274FEB /* DKRouter.swift in Sources */,
 				482859BC5E17504735B4D9FE6D0AD7CD /* DKServerError.swift in Sources */,
 				D53781FB675268F755D0CF07AC5D7099 /* DKSession.swift in Sources */,
-				7A12794D57A52E43C3068207940DE4B7 /* DKTag.swift in Sources */,
+				7A12794D57A52E43C3068207940DE4B7 /* DKTag - Old.swift in Sources */,
 				5EA64F4B2172E871E44FE063928BCB7F /* DKTeam.swift in Sources */,
 				A44B47E089DD1821E5C46503A7A6FE45 /* DKThumbnails - Old.swift in Sources */,
 				21AB28AE220E9437F015A45B08D6F8CA /* DKThumbnails+Codable.swift in Sources */,
@@ -2642,12 +2656,14 @@
 				567739F5DA75B42455620932CC3E5F36 /* DropmarkSDK-tvOS-dummy.m in Sources */,
 				847D366AC50049D00AFA42FAEB57E985 /* Formatter+Extensions.swift in Sources */,
 				91D390E5CD036114A359162432D0F7C0 /* map.swift in Sources */,
+				A0A52A22287F58B800852E52 /* DKCollection+CoreDataClass.swift in Sources */,
 				A004B2AC287CD6C4007C3C52 /* DKTag+CoreDataClass.swift in Sources */,
 				A004B28A287CA1FC007C3C52 /* DKComment+CoreDataClass.swift in Sources */,
 				4A04D0E4417568BB7E9519F6ABA06B7D /* NSDictionaryAttributeTransformer.swift in Sources */,
 				177891AB761206499C0AEA072E58F996 /* Promise+CancellablePromise.swift in Sources */,
 				4ADCA0BED0348DEBE12AEB72947E7404 /* race.swift in Sources */,
 				CB54443DDB7F5F4681ECD79D11FD18F2 /* then.swift in Sources */,
+				A0A52A25287F58B800852E52 /* DKCollection+CoreDataProperties.swift in Sources */,
 				261AA4E0CB0BF55B2B228EC1F8288D43 /* URLSession+Combine.swift in Sources */,
 				ECF6777F2ABC4BC15CC239DAC67D7BE8 /* UTIKit.swift in Sources */,
 				7330E269CD52379672118E2FA51872B3 /* UTIKit+Extensions.swift in Sources */,

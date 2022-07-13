@@ -2,19 +2,21 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="DKCollection" representedClassName="DKCollection" syncable="YES">
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="customDomain" optional="YES" attributeType="URI"/>
         <attribute name="descriptionText" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="isArchived" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isHighlighted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="kindRaw" optional="YES" attributeType="String"/>
         <attribute name="lastAccessedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="shortURL" optional="YES" attributeType="URI"/>
         <attribute name="showLabels" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="sort" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sort" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="sortByRaw" optional="YES" attributeType="String"/>
         <attribute name="sortOrderRaw" optional="YES" attributeType="String"/>
+        <attribute name="thumbnail" optional="YES" attributeType="URI"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="url" optional="YES" attributeType="URI"/>
         <attribute name="usersTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
@@ -108,12 +110,12 @@
         <attribute name="viewModeRaw" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="DKItem" positionX="144.953125" positionY="177.26171875" width="128" height="449"/>
-        <element name="DKThumbnails" positionX="-72" positionY="-27" width="128" height="134"/>
-        <element name="DKCollection" positionX="-63" positionY="-18" width="128" height="299"/>
+        <element name="DKCollection" positionX="-63" positionY="-18" width="128" height="329"/>
         <element name="DKComment" positionX="185.57421875" positionY="-186.7109375" width="128" height="209"/>
+        <element name="DKItem" positionX="144.953125" positionY="177.26171875" width="128" height="449"/>
         <element name="DKReaction" positionX="0" positionY="234" width="128" height="134"/>
         <element name="DKTag" positionX="-9" positionY="225" width="128" height="59"/>
+        <element name="DKThumbnails" positionX="-72" positionY="-27" width="128" height="134"/>
         <element name="DMUser" positionX="-279.5703125" positionY="-29.98046875" width="128" height="328"/>
     </elements>
 </model>

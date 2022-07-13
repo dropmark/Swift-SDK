@@ -119,15 +119,18 @@ public struct DKPromise {
         if includeDefaultParameters {
             params.add(key: "per_page", value: 1000)
         }
-        return request(DKRouter.listCommentsForItem(itemID: itemID, bodyParameters: params)).validate().promiseList()
+        let request = DKRouter.listCommentsForItem(itemID: itemID, bodyParameters: params).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func createCommentForItem(itemID: NSNumber, parameters: Parameters) -> CancellablePromise<DKComment> {
-        return request(DKRouter.createCommentForItem(itemID: itemID, bodyParameters: parameters)).validate().promiseObject()
+        let request = DKRouter.createCommentForItem(itemID: itemID, bodyParameters: parameters).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func updateComment(id: NSNumber, parameters: Parameters) -> CancellablePromise<DKComment> {
-        return request(DKRouter.updateComment(id: id, bodyParameters: parameters)).validate().promiseObject()
+        let request = DKRouter.updateComment(id: id, bodyParameters: parameters).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func deleteComment(id: NSNumber) -> CancellablePromise<Void> {
@@ -236,11 +239,13 @@ public struct DKPromise {
     // MARK: Reactions
     
     public static func listReactionsForItem(id: NSNumber) -> CancellablePromise<[DKReaction]> {
-        return request(DKRouter.listReactionsForItem(itemID: id)).validate().promiseList()
+        let request = DKRouter.listReactionsForItem(itemID: id).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func createReactionForItem(id: NSNumber) -> CancellablePromise<DKReaction> {
-        return request(DKRouter.createReactionForItem(itemID: id)).validate().promiseObject()
+        let request = DKRouter.createReactionForItem(itemID: id).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func deleteReaction(id: NSNumber) -> CancellablePromise<Void> {
@@ -266,7 +271,8 @@ public struct DKPromise {
         if includeDefaultParameters {
             params.add(key: "per_page", value: 1000)
         }
-        return request(DKRouter.listTags(bodyParameters: params)).validate().promiseList()
+        let request = DKRouter.listTags(bodyParameters: params).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func listTagsForItem(id: NSNumber, parameters: Parameters? = nil, includeDefaultParameters: Bool = true) -> CancellablePromise<[DKTag]> {
@@ -274,14 +280,16 @@ public struct DKPromise {
         if includeDefaultParameters {
             params.add(key: "per_page", value: 1000)
         }
-        return request(DKRouter.listTagsForItem(itemID: id, bodyParameters: params)).validate().promiseList()
+        let request = DKRouter.listTagsForItem(itemID: id, bodyParameters: params).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func createTagForItem(id: NSNumber, name: String) -> CancellablePromise<DKTag> {
         let bodyParameters: Parameters = [
             "name": name
         ]
-        return request(DKRouter.createTagForItem(itemID: id, bodyParameters: bodyParameters)).validate().promiseObject()
+        let request = DKRouter.createTagForItem(itemID: id, bodyParameters: bodyParameters).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func deleteTag(id: NSNumber) -> CancellablePromise<Void> {

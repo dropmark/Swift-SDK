@@ -54,6 +54,8 @@ extension DKItem: Codable {
         case updatedAt              = "updated_at"
         case url
         case thumbnails
+        case comments
+        case reactions
     }
 
     public convenience init(from decoder: Decoder) throws {
@@ -91,6 +93,9 @@ extension DKItem: Codable {
         self.typeRaw                = try container.decodeIfPresent(String.self, forKey: .typeRaw)
         self.updatedAt              = try container.decodeIfPresent(Date.self, forKey: .updatedAt)
         self.url                    = try container.decode(URL.self, forKey: .url)
+        self.thumbnails             = try container.decodeIfPresent(DKThumbnails.self, forKey: .thumbnails)
+        self.comments               = try container.decodeIfPresent(Set<DKComment>.self, forKey: .comments)
+        self.reactions              = try container.decodeIfPresent(Set<DKReaction>.self, forKey: .reactions)
         
     }
     
