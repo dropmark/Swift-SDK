@@ -43,8 +43,7 @@ extension DKUser: Codable {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        if let avatarString = try? container.decodeIfPresent(String.self, forKey: .avatar)
-        {
+        if let avatarString = try? container.decodeIfPresent(String.self, forKey: .avatar) {
             self.avatar = URL(string: avatarString)
         } else if let avatarString = try? container.decodeIfPresent(String.self, forKey: .userAvatar) {
             self.avatar = URL(string: avatarString)
@@ -65,11 +64,11 @@ extension DKUser: Codable {
         self.statusRaw = try container.decodeIfPresent(String.self, forKey: .statusRaw)
         
         if let usageDictionary = try? container.decodeIfPresent(Dictionary<String, Any>.self, forKey: .usage) {
-            if let storageUsed = usageDictionary["used"] as? NSNumber {
-                self.storageUsed = storageUsed
-            }
             if let storageQuota = usageDictionary["quota"] as? NSNumber {
                 self.storageQuota = storageQuota
+            }
+            if let storageUsed = usageDictionary["used"] as? NSNumber {
+                self.storageUsed = storageUsed
             }
         }
         

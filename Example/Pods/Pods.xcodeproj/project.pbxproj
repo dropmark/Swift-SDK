@@ -259,6 +259,12 @@
 		A027A2152881F1EC0084D9DC /* DKUser+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A2142881F1EC0084D9DC /* DKUser+Codable.swift */; };
 		A027A2162881F1EC0084D9DC /* DKUser+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A2142881F1EC0084D9DC /* DKUser+Codable.swift */; };
 		A027A2172881F1EC0084D9DC /* DKUser+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A2142881F1EC0084D9DC /* DKUser+Codable.swift */; };
+		A027A219288205240084D9DC /* DKSortBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A218288205240084D9DC /* DKSortBy.swift */; };
+		A027A21A288205240084D9DC /* DKSortBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A218288205240084D9DC /* DKSortBy.swift */; };
+		A027A21B288205240084D9DC /* DKSortBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A218288205240084D9DC /* DKSortBy.swift */; };
+		A027A21D288206350084D9DC /* DKSortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A21C288206350084D9DC /* DKSortOrder.swift */; };
+		A027A21E288206350084D9DC /* DKSortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A21C288206350084D9DC /* DKSortOrder.swift */; };
+		A027A21F288206350084D9DC /* DKSortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A21C288206350084D9DC /* DKSortOrder.swift */; };
 		A0A1B3DB1298753FABFA7D2C61805904 /* LogEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD1589BD6DE2E791B24B98243E73BEF /* LogEvent.swift */; };
 		A0A52A20287F58B800852E52 /* DKCollection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A52A1E287F58B800852E52 /* DKCollection+CoreDataClass.swift */; };
 		A0A52A21287F58B800852E52 /* DKCollection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A52A1E287F58B800852E52 /* DKCollection+CoreDataClass.swift */; };
@@ -830,6 +836,8 @@
 		A004B2B1287CD714007C3C52 /* DKTag+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKTag+Codable.swift"; sourceTree = "<group>"; };
 		A01A32A992810C1C0FCAE54DB3B4B253 /* Pods-iOS Demo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-iOS Demo-Info.plist"; sourceTree = "<group>"; };
 		A027A2142881F1EC0084D9DC /* DKUser+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKUser+Codable.swift"; sourceTree = "<group>"; };
+		A027A218288205240084D9DC /* DKSortBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSortBy.swift; sourceTree = "<group>"; };
+		A027A21C288206350084D9DC /* DKSortOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSortOrder.swift; sourceTree = "<group>"; };
 		A02A3A4F88C6F6223CDFC1B0056A2B0B /* SortBy.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = SortBy.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKCollection/SortBy.html; sourceTree = "<group>"; };
 		A0A52A1E287F58B800852E52 /* DKCollection+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKCollection+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A0A52A1F287F58B800852E52 /* DKCollection+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKCollection+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -1359,6 +1367,8 @@
 				3A4DA9FA864F6669F873EDBAE97DB139 /* DKItemType.swift */,
 				DBD0BD218E6FDCD84FFFEEFC794D6418 /* DKPermissions.swift */,
 				929BDFC016AB19A3F83ADA0274A287B4 /* DKPlan.swift */,
+				A027A218288205240084D9DC /* DKSortBy.swift */,
+				A027A21C288206350084D9DC /* DKSortOrder.swift */,
 				FD0728DA121D55FDE691F5BAA250BA53 /* DKReaction - Old.swift */,
 				63CE86FDA9E38B70C0A2B86A7BDDE3A4 /* DKTag - Old.swift */,
 				75B14949625CE6B60734AAE9920A27E7 /* DKTeam.swift */,
@@ -2424,11 +2434,13 @@
 				C8E87D7EA7AEC776D675A29D37B52328 /* DMPagingGenerator.swift in Sources */,
 				BE63412C98AB0DC1224E294C31FC64E9 /* Dropmark.xcdatamodeld in Sources */,
 				2AEF854F75F8C5CDD84DA7CEC767EBF4 /* DropmarkSDK-macOS-dummy.m in Sources */,
+				A027A21E288206350084D9DC /* DKSortOrder.swift in Sources */,
 				80984BB10846F225113CDBDA577D95DB /* Formatter+Extensions.swift in Sources */,
 				6EFA4E13508E541C35EA51AE8A483148 /* map.swift in Sources */,
 				A0A52A21287F58B800852E52 /* DKCollection+CoreDataClass.swift in Sources */,
 				A004B2AB287CD6C4007C3C52 /* DKTag+CoreDataClass.swift in Sources */,
 				A004B289287CA1FC007C3C52 /* DKComment+CoreDataClass.swift in Sources */,
+				A027A21A288205240084D9DC /* DKSortBy.swift in Sources */,
 				2907666DEA15E18FBC562D984ADE60BB /* NSDictionaryAttributeTransformer.swift in Sources */,
 				20FAB50C841C7C8A4B5A8DD94B242BCA /* Promise+CancellablePromise.swift in Sources */,
 				6B12E43F166665FE99897B8522D5AF2C /* race.swift in Sources */,
@@ -2577,11 +2589,13 @@
 				457E8867E6C6C027D44FCE211C4D9A9E /* DMPagingGenerator.swift in Sources */,
 				3D4978A505A8A057AA438FF60959D3C1 /* Dropmark.xcdatamodeld in Sources */,
 				D8F8C79482B683761C7418E6BCDC4412 /* DropmarkSDK-iOS-dummy.m in Sources */,
+				A027A21D288206350084D9DC /* DKSortOrder.swift in Sources */,
 				DA22FE6C987A4772B20ACE865D6EF4B4 /* Formatter+Extensions.swift in Sources */,
 				D63C8ACA432B85FA4DD8DDE06CFFE64A /* map.swift in Sources */,
 				A0A52A20287F58B800852E52 /* DKCollection+CoreDataClass.swift in Sources */,
 				A004B2AA287CD6C4007C3C52 /* DKTag+CoreDataClass.swift in Sources */,
 				A004B288287CA1FC007C3C52 /* DKComment+CoreDataClass.swift in Sources */,
+				A027A219288205240084D9DC /* DKSortBy.swift in Sources */,
 				8B5800A39688746AE90D3A16EBC5E289 /* NSDictionaryAttributeTransformer.swift in Sources */,
 				28537C23EAEDF221B91A4E9F676C2D34 /* Promise+CancellablePromise.swift in Sources */,
 				C3D93E9C05A134167B1C332941FCD95E /* race.swift in Sources */,
@@ -2686,11 +2700,13 @@
 				C1726AAD6999E87CAB87472235EA0682 /* DMPagingGenerator.swift in Sources */,
 				E0F75D8766737D7EE5DB6D9973BFD3C9 /* Dropmark.xcdatamodeld in Sources */,
 				567739F5DA75B42455620932CC3E5F36 /* DropmarkSDK-tvOS-dummy.m in Sources */,
+				A027A21F288206350084D9DC /* DKSortOrder.swift in Sources */,
 				847D366AC50049D00AFA42FAEB57E985 /* Formatter+Extensions.swift in Sources */,
 				91D390E5CD036114A359162432D0F7C0 /* map.swift in Sources */,
 				A0A52A22287F58B800852E52 /* DKCollection+CoreDataClass.swift in Sources */,
 				A004B2AC287CD6C4007C3C52 /* DKTag+CoreDataClass.swift in Sources */,
 				A004B28A287CA1FC007C3C52 /* DKComment+CoreDataClass.swift in Sources */,
+				A027A21B288205240084D9DC /* DKSortBy.swift in Sources */,
 				4A04D0E4417568BB7E9519F6ABA06B7D /* NSDictionaryAttributeTransformer.swift in Sources */,
 				177891AB761206499C0AEA072E58F996 /* Promise+CancellablePromise.swift in Sources */,
 				4ADCA0BED0348DEBE12AEB72947E7404 /* race.swift in Sources */,
