@@ -82,7 +82,25 @@ extension DKUser: Codable {
         
         var container = encoder.container(keyedBy: CodingKeys.self)
         
-        
+        try container.encode(avatar, forKey: .avatar)
+        try container.encode(billingEmail, forKey: .billingEmail)
+        try container.encode(createdAt, forKey: .createdAt)
+        try container.encode(customDomain, forKey: .customDomain)
+        try container.encode(email, forKey: .email)
+        try container.encode(id, forKey: .id)
+        try container.encode(name, forKey: .name)
+        try container.encode(planIsActive, forKey: .planIsActive)
+        try container.encode(planQuantity, forKey: .planQuantity)
+        try container.encode(planRaw, forKey: .planRaw)
+        try container.encode(showLabels, forKey: .showLabels)
+        try container.encode(sortByRaw, forKey: .sortByRaw)
+        try container.encode(sortOrderRaw, forKey: .sortOrderRaw)
+        try container.encode(statusRaw, forKey: .statusRaw)
+        try container.encode(statusRaw, forKey: .statusRaw)
+        try container.encode(storageQuota?.int64Value, forKey: .storageQuota)
+        try container.encode(storageUsed?.int64Value, forKey: .storageUsed)
+        try container.encode(username, forKey: .username)
+        try container.encode(viewModeRaw, forKey: .viewModeRaw)
         
     }
     
