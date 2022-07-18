@@ -21,7 +21,10 @@
         <attribute name="url" optional="YES" attributeType="URI"/>
         <attribute name="usersTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="viewModeRaw" optional="YES" attributeType="String"/>
+        <relationship name="creator" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKUser"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKItem" inverseName="collection" inverseEntity="DKItem"/>
+        <relationship name="thumbnails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKThumbnails"/>
+        <relationship name="users" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKUser"/>
     </entity>
     <entity name="DKComment" representedClassName="DKComment" syncable="YES">
         <attribute name="annotation" optional="YES" attributeType="URI"/>
@@ -141,7 +144,7 @@
         <relationship name="teams" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKTeam"/>
     </entity>
     <elements>
-        <element name="DKCollection" positionX="-132.98828125" positionY="229.5390625" width="128" height="358"/>
+        <element name="DKCollection" positionX="-132.98828125" positionY="229.5390625" width="128" height="403"/>
         <element name="DKComment" positionX="278.3984375" positionY="535.0234375" width="128" height="238"/>
         <element name="DKItem" positionX="74.98828125" positionY="349.30078125" width="128" height="523"/>
         <element name="DKReaction" positionX="435.31640625" positionY="655.77734375" width="128" height="163"/>

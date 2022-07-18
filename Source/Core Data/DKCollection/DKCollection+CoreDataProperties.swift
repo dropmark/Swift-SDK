@@ -37,6 +37,9 @@ extension DKCollection {
     @NSManaged public var usersTotalCount: NSNumber?
     @NSManaged public var viewModeRaw: String?
     @NSManaged public var items: NSSet?
+    @NSManaged public var thumbnails: DKThumbnails?
+    @NSManaged public var creator: DKUser?
+    @NSManaged public var users: DKUser?
 
 }
 
