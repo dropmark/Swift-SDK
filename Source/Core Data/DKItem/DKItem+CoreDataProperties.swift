@@ -2,7 +2,7 @@
 //  DKItem+CoreDataProperties.swift
 //  Pods
 //
-//  Created by Alex Givens on 7/11/22.
+//  Created by Alex Givens on 7/18/22.
 //
 //
 
@@ -25,25 +25,29 @@ extension DKItem {
     @NSManaged public var id: Int64
     @NSManaged public var isShareable: Bool
     @NSManaged public var isURL: Bool
-    @NSManaged public var itemsTotalCount: NSNumber?
+    @NSManaged public var itemsTotalCount: Int32
     @NSManaged public var latitude: NSNumber?
     @NSManaged public var link: URL?
     @NSManaged public var longitude: NSNumber?
     @NSManaged public var metadata: NSDictionary?
     @NSManaged public var mime: String?
     @NSManaged public var name: String?
-    @NSManaged public var parentID: NSNumber?
+    @NSManaged public var parentID: Int64
     @NSManaged public var parentName: String?
-    @NSManaged public var reactionsTotalCount: NSNumber?
+    @NSManaged public var reactionsTotalCount: Int32
     @NSManaged public var shortURL: URL?
-    @NSManaged public var size: NSNumber?
+    @NSManaged public var size: Int64
     @NSManaged public var thumbnail: URL?
     @NSManaged public var typeRaw: String?
     @NSManaged public var updatedAt: Date?
     @NSManaged public var url: URL?
+    @NSManaged public var comments: NSSet?
+    @NSManaged public var reactions: NSSet?
     @NSManaged public var thumbnails: DKThumbnails?
-    @NSManaged public var comments: Set<DKComment>?
-    @NSManaged public var reactions: Set<DKReaction>?
+    @NSManaged public var collection: DKCollection?
+    @NSManaged public var items: NSSet?
+    @NSManaged public var stack: DKItem?
+    @NSManaged public var tags: NSSet?
 
 }
 
@@ -78,6 +82,40 @@ extension DKItem {
 
     @objc(removeReactions:)
     @NSManaged public func removeFromReactions(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for items
+extension DKItem {
+
+    @objc(addItemsObject:)
+    @NSManaged public func addToItems(_ value: DKItem)
+
+    @objc(removeItemsObject:)
+    @NSManaged public func removeFromItems(_ value: DKItem)
+
+    @objc(addItems:)
+    @NSManaged public func addToItems(_ values: NSSet)
+
+    @objc(removeItems:)
+    @NSManaged public func removeFromItems(_ values: NSSet)
+
+}
+
+// MARK: Generated accessors for tags
+extension DKItem {
+
+    @objc(addTagsObject:)
+    @NSManaged public func addToTags(_ value: DKTag)
+
+    @objc(removeTagsObject:)
+    @NSManaged public func removeFromTags(_ value: DKTag)
+
+    @objc(addTags:)
+    @NSManaged public func addToTags(_ values: NSSet)
+
+    @objc(removeTags:)
+    @NSManaged public func removeFromTags(_ values: NSSet)
 
 }
 

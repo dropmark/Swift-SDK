@@ -127,7 +127,7 @@
 		4A04D0E4417568BB7E9519F6ABA06B7D /* NSDictionaryAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5002037711A27F984485FFFC78E8955C /* NSDictionaryAttributeTransformer.swift */; };
 		4ADCA0BED0348DEBE12AEB72947E7404 /* race.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63961511B0939E9ABC10FF4E735D810 /* race.swift */; };
 		4FA0427C2DF578465E854A6A4752B5F7 /* NSURLSession+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FE6C0782E48B779577A9D82EF9DF2E /* NSURLSession+Promise.swift */; };
-		513F54127AE099DF070F507B1329BCF0 /* DKTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B14949625CE6B60734AAE9920A27E7 /* DKTeam.swift */; };
+		513F54127AE099DF070F507B1329BCF0 /* DKTeam - Old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B14949625CE6B60734AAE9920A27E7 /* DKTeam - Old.swift */; };
 		51C77846071BDDF94410A88D646374A9 /* NSURLSession+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F151197F0E847F729EAF1C1D53A6380 /* NSURLSession+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		51F798F8FB4DF7D9E456E8415674AF3A /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D877629DBF7F9580D796F15C2DA468 /* SessionDelegate.swift */; };
 		51F7B62EBDDDF287DCB9BC9F952B5668 /* Alamofire-tvOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 715962AD127EA02038B986C96636B11C /* Alamofire-tvOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -136,7 +136,7 @@
 		53BE6CAD6AB13EFD6A8419DE21E2CC1C /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED6EE02DFE62FECDCD1C69D215F1DB6 /* Notifications.swift */; };
 		53D08B5F82DE92D6C7E041CCE8F83076 /* NSObject+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF273AEE67D3A477D891055F024A88AE /* NSObject+Promise.swift */; };
 		5444AEE76B10468EFBEA8887BB00E5D0 /* DKSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239C9DB66A52C31DD47131C5EF58F337 /* DKSession.swift */; };
-		558DE0BBB513D049D373975F1ECC8921 /* DKTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B14949625CE6B60734AAE9920A27E7 /* DKTeam.swift */; };
+		558DE0BBB513D049D373975F1ECC8921 /* DKTeam - Old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B14949625CE6B60734AAE9920A27E7 /* DKTeam - Old.swift */; };
 		559E0711B71E1B8FA4270E3ECF532EAC /* AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = AB2EB3A569DC84C259B2A181846CD2A3 /* AnyPromise.m */; };
 		562107640247B96E13EC885CE3A958E8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A683AE25147304A61B187CCD6445934A /* CoreData.framework */; };
 		567739F5DA75B42455620932CC3E5F36 /* DropmarkSDK-tvOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D6B33C8DD95128A807ABF60EC9BB18 /* DropmarkSDK-tvOS-dummy.m */; };
@@ -151,7 +151,7 @@
 		5CF5C2BB4F842607747762A429AFE6E9 /* race.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57A54E04BADE482A0E5A6E88D2D24EE /* race.swift */; };
 		5DE29E323B0FBD454A6388535EBA5347 /* when.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A78DEDC0DC4756EF26F4A6261DE3E0 /* when.swift */; };
 		5E81832249EB40A592B3E906E45319CA /* CustomStringConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDBA766FAF5FC77C53CD13D171E8C27D /* CustomStringConvertible.swift */; };
-		5EA64F4B2172E871E44FE063928BCB7F /* DKTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B14949625CE6B60734AAE9920A27E7 /* DKTeam.swift */; };
+		5EA64F4B2172E871E44FE063928BCB7F /* DKTeam - Old.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B14949625CE6B60734AAE9920A27E7 /* DKTeam - Old.swift */; };
 		5FCF35BEF06A3BBFACE33BF30C87DC7E /* dispatch_promise.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AB52F1A743CBA193089A2430B4B094 /* dispatch_promise.m */; };
 		5FE7196784A0E7DAD73453EF147A5BED /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55DFFE585A793CC1801377BFD6D1A2E /* AFError.swift */; };
 		602BE1EA494A7820A7467D39A1A5A470 /* ColorAttributeTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9503881598F6052E1C305F15E288BC6F /* ColorAttributeTransformer.swift */; };
@@ -265,6 +265,15 @@
 		A027A21D288206350084D9DC /* DKSortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A21C288206350084D9DC /* DKSortOrder.swift */; };
 		A027A21E288206350084D9DC /* DKSortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A21C288206350084D9DC /* DKSortOrder.swift */; };
 		A027A21F288206350084D9DC /* DKSortOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A21C288206350084D9DC /* DKSortOrder.swift */; };
+		A027A22228820E0A0084D9DC /* DKTeam+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A22028820E0A0084D9DC /* DKTeam+CoreDataClass.swift */; };
+		A027A22328820E0A0084D9DC /* DKTeam+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A22028820E0A0084D9DC /* DKTeam+CoreDataClass.swift */; };
+		A027A22428820E0A0084D9DC /* DKTeam+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A22028820E0A0084D9DC /* DKTeam+CoreDataClass.swift */; };
+		A027A22528820E0A0084D9DC /* DKTeam+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A22128820E0A0084D9DC /* DKTeam+CoreDataProperties.swift */; };
+		A027A22628820E0A0084D9DC /* DKTeam+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A22128820E0A0084D9DC /* DKTeam+CoreDataProperties.swift */; };
+		A027A22728820E0A0084D9DC /* DKTeam+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A22128820E0A0084D9DC /* DKTeam+CoreDataProperties.swift */; };
+		A027A22A28820E3C0084D9DC /* DKTeam+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A22928820E3C0084D9DC /* DKTeam+Codable.swift */; };
+		A027A22B28820E3C0084D9DC /* DKTeam+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A22928820E3C0084D9DC /* DKTeam+Codable.swift */; };
+		A027A22C28820E3C0084D9DC /* DKTeam+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A027A22928820E3C0084D9DC /* DKTeam+Codable.swift */; };
 		A0A1B3DB1298753FABFA7D2C61805904 /* LogEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD1589BD6DE2E791B24B98243E73BEF /* LogEvent.swift */; };
 		A0A52A20287F58B800852E52 /* DKCollection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A52A1E287F58B800852E52 /* DKCollection+CoreDataClass.swift */; };
 		A0A52A21287F58B800852E52 /* DKCollection+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0A52A1E287F58B800852E52 /* DKCollection+CoreDataClass.swift */; };
@@ -756,7 +765,7 @@
 		7315E31836573A719FF8E69CA55DBCBF /* Plan.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = Plan.html; path = docs/Classes/DKTeam/Plan.html; sourceTree = "<group>"; };
 		7496AD091890A999150CF1270ABB88F3 /* NSURLSession+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLSession+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSURLSession+AnyPromise.m"; sourceTree = "<group>"; };
 		74BC39D6C71C6BC8C46D7D7633D9589F /* DKPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKPromise.swift; sourceTree = "<group>"; };
-		75B14949625CE6B60734AAE9920A27E7 /* DKTeam.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DKTeam.swift; sourceTree = "<group>"; };
+		75B14949625CE6B60734AAE9920A27E7 /* DKTeam - Old.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DKTeam - Old.swift"; sourceTree = "<group>"; };
 		75F08FF1DA963A077A6FE135D14FAC7B /* PromiseKit.root-CorePromise-Foundation-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = "PromiseKit.root-CorePromise-Foundation-Info.plist"; path = "../PromiseKit.root-CorePromise-Foundation/PromiseKit.root-CorePromise-Foundation-Info.plist"; sourceTree = "<group>"; };
 		761D787407F063AE6E45CCE0EB20A744 /* DKPlan.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = DKPlan.html; path = docs/Enums/DKPlan.html; sourceTree = "<group>"; };
 		780F38FAB01A2E0E8313963BD8143F39 /* Status.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = Status.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKTeam/Status.html; sourceTree = "<group>"; };
@@ -838,6 +847,9 @@
 		A027A2142881F1EC0084D9DC /* DKUser+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKUser+Codable.swift"; sourceTree = "<group>"; };
 		A027A218288205240084D9DC /* DKSortBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSortBy.swift; sourceTree = "<group>"; };
 		A027A21C288206350084D9DC /* DKSortOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DKSortOrder.swift; sourceTree = "<group>"; };
+		A027A22028820E0A0084D9DC /* DKTeam+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKTeam+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A027A22128820E0A0084D9DC /* DKTeam+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKTeam+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A027A22928820E3C0084D9DC /* DKTeam+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKTeam+Codable.swift"; sourceTree = "<group>"; };
 		A02A3A4F88C6F6223CDFC1B0056A2B0B /* SortBy.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html.documentation; name = SortBy.html; path = docs/docsets/DropmarkSDK.docset/Contents/Resources/Documents/Classes/DKCollection/SortBy.html; sourceTree = "<group>"; };
 		A0A52A1E287F58B800852E52 /* DKCollection+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKCollection+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A0A52A1F287F58B800852E52 /* DKCollection+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DKCollection+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -1359,22 +1371,15 @@
 			isa = PBXGroup;
 			children = (
 				CC3F341EDF759C4EF83074D60323685E /* DKAccount.swift */,
-				56EF71C8564DF58B8AF1E3561FADDF91 /* DKCollection - Old.swift */,
-				EBFAABD31323915BD4528318BB8AD6BC /* DKComment - Old.swift */,
 				D19C2BA62812576135E853D383624A51 /* DKDirectory.swift */,
 				C26518EA2161C01E32DA2937737287C9 /* DKInvite.swift */,
-				1D0139C557C09B6648A810FF20E55FC2 /* DKItem - Old.swift */,
 				3A4DA9FA864F6669F873EDBAE97DB139 /* DKItemType.swift */,
 				DBD0BD218E6FDCD84FFFEEFC794D6418 /* DKPermissions.swift */,
 				929BDFC016AB19A3F83ADA0274A287B4 /* DKPlan.swift */,
 				A027A218288205240084D9DC /* DKSortBy.swift */,
 				A027A21C288206350084D9DC /* DKSortOrder.swift */,
-				FD0728DA121D55FDE691F5BAA250BA53 /* DKReaction - Old.swift */,
-				63CE86FDA9E38B70C0A2B86A7BDDE3A4 /* DKTag - Old.swift */,
-				75B14949625CE6B60734AAE9920A27E7 /* DKTeam.swift */,
-				BD7940953179343F491DB0B2BBE9E5BE /* DKThumbnails - Old.swift */,
 				8AE9A8EB315BA5C8D69A66C437EC2966 /* DKUploadSignature.swift */,
-				48D0FE9419EBA41E169B8A7AAB40BE0F /* DKUser - Old.swift */,
+				A027A22D2885EB2E0084D9DC /* Old Classes */,
 			);
 			name = Model;
 			path = Source/Model;
@@ -1563,6 +1568,31 @@
 			path = DKTag;
 			sourceTree = "<group>";
 		};
+		A027A22828820E110084D9DC /* DKTeam */ = {
+			isa = PBXGroup;
+			children = (
+				A027A22928820E3C0084D9DC /* DKTeam+Codable.swift */,
+				A027A22028820E0A0084D9DC /* DKTeam+CoreDataClass.swift */,
+				A027A22128820E0A0084D9DC /* DKTeam+CoreDataProperties.swift */,
+			);
+			path = DKTeam;
+			sourceTree = "<group>";
+		};
+		A027A22D2885EB2E0084D9DC /* Old Classes */ = {
+			isa = PBXGroup;
+			children = (
+				75B14949625CE6B60734AAE9920A27E7 /* DKTeam - Old.swift */,
+				56EF71C8564DF58B8AF1E3561FADDF91 /* DKCollection - Old.swift */,
+				EBFAABD31323915BD4528318BB8AD6BC /* DKComment - Old.swift */,
+				1D0139C557C09B6648A810FF20E55FC2 /* DKItem - Old.swift */,
+				FD0728DA121D55FDE691F5BAA250BA53 /* DKReaction - Old.swift */,
+				63CE86FDA9E38B70C0A2B86A7BDDE3A4 /* DKTag - Old.swift */,
+				BD7940953179343F491DB0B2BBE9E5BE /* DKThumbnails - Old.swift */,
+				48D0FE9419EBA41E169B8A7AAB40BE0F /* DKUser - Old.swift */,
+			);
+			path = "Old Classes";
+			sourceTree = "<group>";
+		};
 		A0A52A26287F58C100852E52 /* DKCollection */ = {
 			isa = PBXGroup;
 			children = (
@@ -1586,7 +1616,6 @@
 		A80983525F4001EED29CE14C6FBC07FA /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
-				A0A52A332880C56300852E52 /* DKUser */,
 				B911DC444852C80EE54E87B286B785EA /* CoreData+Codable.swift */,
 				021DB6960CB8D279B135E22FC872C297 /* CoreDataStack.swift */,
 				F57EF435B753EFCAE508501558E57C70 /* Dictonary-Decoder.swift */,
@@ -1596,8 +1625,10 @@
 				A004B28E287CA201007C3C52 /* DKComment */,
 				CAA98B9C210FDC867C3368E2E2E628C3 /* DKItem */,
 				A004B2B0287CD6CB007C3C52 /* DKTag */,
+				A027A22828820E110084D9DC /* DKTeam */,
 				7FB36F14297890F8896886F7DB807E28 /* DKThumbnails */,
 				A004B29B287CD1B8007C3C52 /* DKReaction */,
+				A0A52A332880C56300852E52 /* DKUser */,
 			);
 			name = "Core Data";
 			path = "Source/Core Data";
@@ -2400,6 +2431,7 @@
 				ED33E56B9BAFDA6FF8390928217722D9 /* DKError.swift in Sources */,
 				A004B299287CD1B5007C3C52 /* DKReaction+CoreDataProperties.swift in Sources */,
 				D3E10CC7B148DE0EB673C75D0E98AD1D /* DKInvite.swift in Sources */,
+				A027A22B28820E3C0084D9DC /* DKTeam+Codable.swift in Sources */,
 				9D6F6FBE634D734B1FEA57F26B9EB21C /* DKItem - Old.swift in Sources */,
 				8BD7BF9072AEE3C8786B3523A5E6BF9A /* DKItem+Codable.swift in Sources */,
 				300A4326236E481C8B6749FFDED27F3E /* DKItem+CoreDataClass.swift in Sources */,
@@ -2423,7 +2455,7 @@
 				730EF41C2D34024F0345A6B1226333E2 /* DKServerError.swift in Sources */,
 				2F9366A657501C43218B8076725AC690 /* DKSession.swift in Sources */,
 				F8FA8E467DB6B2099E8B9CB05ADB4109 /* DKTag - Old.swift in Sources */,
-				513F54127AE099DF070F507B1329BCF0 /* DKTeam.swift in Sources */,
+				513F54127AE099DF070F507B1329BCF0 /* DKTeam - Old.swift in Sources */,
 				84E0AFC82211D5F72B9A0F1FD50BE19B /* DKThumbnails - Old.swift in Sources */,
 				4582AEC75F89AC8868B61144C9154F00 /* DKThumbnails+Codable.swift in Sources */,
 				71AE016972A61480E3A00275CFC34637 /* DKThumbnails+CoreDataClass.swift in Sources */,
@@ -2442,7 +2474,9 @@
 				A004B289287CA1FC007C3C52 /* DKComment+CoreDataClass.swift in Sources */,
 				A027A21A288205240084D9DC /* DKSortBy.swift in Sources */,
 				2907666DEA15E18FBC562D984ADE60BB /* NSDictionaryAttributeTransformer.swift in Sources */,
+				A027A22628820E0A0084D9DC /* DKTeam+CoreDataProperties.swift in Sources */,
 				20FAB50C841C7C8A4B5A8DD94B242BCA /* Promise+CancellablePromise.swift in Sources */,
+				A027A22328820E0A0084D9DC /* DKTeam+CoreDataClass.swift in Sources */,
 				6B12E43F166665FE99897B8522D5AF2C /* race.swift in Sources */,
 				1AFCF3D33A6C7BF7E1C99AC9FACCD99D /* then.swift in Sources */,
 				A0A52A24287F58B800852E52 /* DKCollection+CoreDataProperties.swift in Sources */,
@@ -2555,6 +2589,7 @@
 				154E2166B58630C025CE1C3E92D01AD4 /* DKError.swift in Sources */,
 				A004B298287CD1B5007C3C52 /* DKReaction+CoreDataProperties.swift in Sources */,
 				EC91826CC567E030B0AD5107F60E9E71 /* DKInvite.swift in Sources */,
+				A027A22A28820E3C0084D9DC /* DKTeam+Codable.swift in Sources */,
 				37B4FBE616FCC58EF534D04E7EA8EC1C /* DKItem - Old.swift in Sources */,
 				FF130201BBA69604B73738D90E1A482F /* DKItem+Codable.swift in Sources */,
 				B5BC67BC6DBF3F19F8A52B9F529C84F2 /* DKItem+CoreDataClass.swift in Sources */,
@@ -2578,7 +2613,7 @@
 				1BE74BCFA5162694D7361E6F8059C341 /* DKServerError.swift in Sources */,
 				5444AEE76B10468EFBEA8887BB00E5D0 /* DKSession.swift in Sources */,
 				84EC2AE0644D2E546FC8A4053F1B5A8E /* DKTag - Old.swift in Sources */,
-				558DE0BBB513D049D373975F1ECC8921 /* DKTeam.swift in Sources */,
+				558DE0BBB513D049D373975F1ECC8921 /* DKTeam - Old.swift in Sources */,
 				A60EFD00878439BDF2ED154D840ED6A2 /* DKThumbnails - Old.swift in Sources */,
 				BC91B4DF175538A4D724E01941EB103B /* DKThumbnails+Codable.swift in Sources */,
 				5C1A983CF704B96802FCEFBE79A82B44 /* DKThumbnails+CoreDataClass.swift in Sources */,
@@ -2597,7 +2632,9 @@
 				A004B288287CA1FC007C3C52 /* DKComment+CoreDataClass.swift in Sources */,
 				A027A219288205240084D9DC /* DKSortBy.swift in Sources */,
 				8B5800A39688746AE90D3A16EBC5E289 /* NSDictionaryAttributeTransformer.swift in Sources */,
+				A027A22528820E0A0084D9DC /* DKTeam+CoreDataProperties.swift in Sources */,
 				28537C23EAEDF221B91A4E9F676C2D34 /* Promise+CancellablePromise.swift in Sources */,
+				A027A22228820E0A0084D9DC /* DKTeam+CoreDataClass.swift in Sources */,
 				C3D93E9C05A134167B1C332941FCD95E /* race.swift in Sources */,
 				D1035E1D831A4CC82A2B740B70211CF5 /* then.swift in Sources */,
 				A0A52A23287F58B800852E52 /* DKCollection+CoreDataProperties.swift in Sources */,
@@ -2666,6 +2703,7 @@
 				BD9478474304CAB558B968731F82A71A /* DKError.swift in Sources */,
 				A004B29A287CD1B5007C3C52 /* DKReaction+CoreDataProperties.swift in Sources */,
 				309093E596F692CC977953E1D41B61BF /* DKInvite.swift in Sources */,
+				A027A22C28820E3C0084D9DC /* DKTeam+Codable.swift in Sources */,
 				9B0FF3B60D2FBC7A16E6A3B09823073E /* DKItem - Old.swift in Sources */,
 				437DAA89ECB2DE8F5F6AC9A60599F01A /* DKItem+Codable.swift in Sources */,
 				055B0CF822E3A417AED65A4B58A205E6 /* DKItem+CoreDataClass.swift in Sources */,
@@ -2689,7 +2727,7 @@
 				482859BC5E17504735B4D9FE6D0AD7CD /* DKServerError.swift in Sources */,
 				D53781FB675268F755D0CF07AC5D7099 /* DKSession.swift in Sources */,
 				7A12794D57A52E43C3068207940DE4B7 /* DKTag - Old.swift in Sources */,
-				5EA64F4B2172E871E44FE063928BCB7F /* DKTeam.swift in Sources */,
+				5EA64F4B2172E871E44FE063928BCB7F /* DKTeam - Old.swift in Sources */,
 				A44B47E089DD1821E5C46503A7A6FE45 /* DKThumbnails - Old.swift in Sources */,
 				21AB28AE220E9437F015A45B08D6F8CA /* DKThumbnails+Codable.swift in Sources */,
 				3192EE2036EF183D80A127E1F3AAC7C8 /* DKThumbnails+CoreDataClass.swift in Sources */,
@@ -2708,7 +2746,9 @@
 				A004B28A287CA1FC007C3C52 /* DKComment+CoreDataClass.swift in Sources */,
 				A027A21B288205240084D9DC /* DKSortBy.swift in Sources */,
 				4A04D0E4417568BB7E9519F6ABA06B7D /* NSDictionaryAttributeTransformer.swift in Sources */,
+				A027A22728820E0A0084D9DC /* DKTeam+CoreDataProperties.swift in Sources */,
 				177891AB761206499C0AEA072E58F996 /* Promise+CancellablePromise.swift in Sources */,
+				A027A22428820E0A0084D9DC /* DKTeam+CoreDataClass.swift in Sources */,
 				4ADCA0BED0348DEBE12AEB72947E7404 /* race.swift in Sources */,
 				CB54443DDB7F5F4681ECD79D11FD18F2 /* then.swift in Sources */,
 				A0A52A25287F58B800852E52 /* DKCollection+CoreDataProperties.swift in Sources */,

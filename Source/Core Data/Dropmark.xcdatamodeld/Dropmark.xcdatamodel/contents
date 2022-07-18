@@ -7,13 +7,13 @@
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="isArchived" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isHighlighted" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="kindRaw" optional="YES" attributeType="String"/>
         <attribute name="lastAccessedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="shortURL" optional="YES" attributeType="URI"/>
         <attribute name="showLabels" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="sort" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="sort" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="sortByRaw" optional="YES" attributeType="String"/>
         <attribute name="sortOrderRaw" optional="YES" attributeType="String"/>
         <attribute name="thumbnail" optional="YES" attributeType="URI"/>
@@ -21,20 +21,22 @@
         <attribute name="url" optional="YES" attributeType="URI"/>
         <attribute name="usersTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="viewModeRaw" optional="YES" attributeType="String"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKItem" inverseName="collection" inverseEntity="DKItem"/>
     </entity>
     <entity name="DKComment" representedClassName="DKComment" syncable="YES">
         <attribute name="annotation" optional="YES" attributeType="URI"/>
         <attribute name="body" attributeType="String"/>
-        <attribute name="collectionID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="collectionID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="collectionName" optional="YES" attributeType="String"/>
         <attribute name="collectionURL" optional="YES" attributeType="URI"/>
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="itemID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="itemID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="itemName" optional="YES" attributeType="String"/>
         <attribute name="shortURL" optional="YES" attributeType="URI"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="url" optional="YES" attributeType="URI"/>
+        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKItem" inverseName="comments" inverseEntity="DKItem"/>
     </entity>
     <entity name="DKItem" representedClassName="DKItem" syncable="YES">
         <attribute name="collectionID" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -46,38 +48,67 @@
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="isShareable" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isURL" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO"/>
         <attribute name="link" optional="YES" attributeType="URI"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO"/>
         <attribute name="metadata" optional="YES" attributeType="Transformable" valueTransformerName="NSDictionaryAttributeTransformer" customClassName="NSDictionary"/>
         <attribute name="mime" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="parentID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="parentID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="parentName" optional="YES" attributeType="String"/>
-        <attribute name="reactionsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="reactionsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="shortURL" attributeType="URI"/>
-        <attribute name="size" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="size" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="thumbnail" optional="YES" attributeType="URI"/>
         <attribute name="typeRaw" optional="YES" attributeType="String"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="url" attributeType="URI"/>
-        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKComment"/>
-        <relationship name="reactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKReaction"/>
+        <relationship name="collection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKCollection" inverseName="items" inverseEntity="DKCollection"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKComment" inverseName="item" inverseEntity="DKComment"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKItem" inverseName="stack" inverseEntity="DKItem"/>
+        <relationship name="reactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKReaction" inverseName="item" inverseEntity="DKReaction"/>
+        <relationship name="stack" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKItem" inverseName="items" inverseEntity="DKItem"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKTag" inverseName="item" inverseEntity="DKTag"/>
         <relationship name="thumbnails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKThumbnails"/>
     </entity>
     <entity name="DKReaction" representedClassName="DKReaction" syncable="YES">
-        <attribute name="collectionID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="collectionID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="collectionName" optional="YES" attributeType="String"/>
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="itemID" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="itemName" optional="YES" attributeType="String"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKItem" inverseName="reactions" inverseEntity="DKItem"/>
     </entity>
     <entity name="DKTag" representedClassName="DKTag" syncable="YES">
-        <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
+        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKItem" inverseName="tags" inverseEntity="DKItem"/>
+    </entity>
+    <entity name="DKTeam" representedClassName="DKTeam" syncable="YES">
+        <attribute name="avatar" optional="YES" attributeType="URI"/>
+        <attribute name="billingEmail" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="customDomain" optional="YES" attributeType="URI"/>
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="feedKey" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="planIsActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="planQuantity" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="planRaw" optional="YES" attributeType="String"/>
+        <attribute name="showLabels" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="sortByRaw" optional="YES" attributeType="String"/>
+        <attribute name="sortOrderRaw" optional="YES" attributeType="String"/>
+        <attribute name="statusRaw" optional="YES" attributeType="String"/>
+        <attribute name="storageQuota" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="storageUsed" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="userKindRaw" optional="YES" attributeType="String"/>
+        <attribute name="username" optional="YES" attributeType="String"/>
+        <attribute name="viewModeRaw" optional="YES" attributeType="String"/>
+        <relationship name="users" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKUser"/>
     </entity>
     <entity name="DKThumbnails" representedClassName="DKThumbnails" syncable="YES">
         <attribute name="cropped" optional="YES" attributeType="URI"/>
@@ -94,7 +125,7 @@
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="customDomain" optional="YES" attributeType="URI"/>
         <attribute name="email" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="planIsActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="planQuantity" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -103,19 +134,20 @@
         <attribute name="sortByRaw" optional="YES" attributeType="String"/>
         <attribute name="sortOrderRaw" optional="YES" attributeType="String"/>
         <attribute name="statusRaw" optional="YES" attributeType="String"/>
-        <attribute name="storageQuota" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
-        <attribute name="storageUsed" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
-        <attribute name="token" optional="YES" attributeType="String"/>
+        <attribute name="storageQuota" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="storageUsed" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="username" optional="YES" attributeType="String"/>
         <attribute name="viewModeRaw" optional="YES" attributeType="String"/>
+        <relationship name="teams" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKTeam"/>
     </entity>
     <elements>
-        <element name="DKCollection" positionX="-63" positionY="-18" width="128" height="329"/>
-        <element name="DKComment" positionX="185.57421875" positionY="-186.7109375" width="128" height="209"/>
-        <element name="DKItem" positionX="144.953125" positionY="177.26171875" width="128" height="449"/>
-        <element name="DKReaction" positionX="0" positionY="234" width="128" height="134"/>
-        <element name="DKTag" positionX="-9" positionY="225" width="128" height="59"/>
-        <element name="DKThumbnails" positionX="-72" positionY="-27" width="128" height="134"/>
-        <element name="DKUser" positionX="-279.5703125" positionY="-29.98046875" width="128" height="314"/>
+        <element name="DKCollection" positionX="-132.98828125" positionY="229.5390625" width="128" height="358"/>
+        <element name="DKComment" positionX="278.3984375" positionY="535.0234375" width="128" height="238"/>
+        <element name="DKItem" positionX="74.98828125" positionY="349.30078125" width="128" height="523"/>
+        <element name="DKReaction" positionX="435.31640625" positionY="655.77734375" width="128" height="163"/>
+        <element name="DKTag" positionX="282.53515625" positionY="442.984375" width="128" height="88"/>
+        <element name="DKThumbnails" positionX="613.6015625" positionY="727.48828125" width="128" height="134"/>
+        <element name="DKUser" positionX="78.1640625" positionY="-84.3359375" width="128" height="328"/>
+        <element name="DKTeam" positionX="354.71875" positionY="-91.640625" width="128" height="358"/>
     </elements>
 </model>

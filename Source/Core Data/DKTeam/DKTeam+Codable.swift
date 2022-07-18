@@ -1,5 +1,5 @@
 //
-//  DKUser+Codable.swift
+//  DKTeam+Codable.swift
 //  Pods
 //
 //  Created by Alex Givens on 7/15/22.
@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-extension DKUser: Codable {
+extension DKTeam: Codable {
     
     enum CodingKeys: String, CodingKey {
         case avatar
@@ -104,3 +104,4 @@ extension DKUser: Codable {
     }
     
 }
+

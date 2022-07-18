@@ -2,7 +2,7 @@
 //  DKTag+CoreDataProperties.swift
 //  Pods
 //
-//  Created by Alex Givens on 7/11/22.
+//  Created by Alex Givens on 7/18/22.
 //
 //
 
@@ -16,8 +16,9 @@ extension DKTag {
         return NSFetchRequest<DKTag>(entityName: "DKTag")
     }
 
-    @NSManaged public var itemsTotalCount: NSNumber?
+    @NSManaged public var itemsTotalCount: Int32
     @NSManaged public var name: String?
+    @NSManaged public var item: DKItem?
 
 }
 
