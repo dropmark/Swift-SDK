@@ -35,9 +35,9 @@ extension DKCollection: Codable {
         case isArchived         = "archived"
         case isHighlighted      = "highlighted"
         case itemsTotalCount    = "items_total_count"
-        case kindRaw            = "type"
         case lastAccessedAt     = "last_accessed_at"
         case name
+        case privacyRaw         = "type"
         case shortURL           = "short_url"
         case showLabels         = "labels"
         case sort
@@ -67,7 +67,7 @@ extension DKCollection: Codable {
         self.isArchived         = try container.decodeIfPresent(Bool.self, forKey: .isArchived) as? NSNumber
         self.isHighlighted      = try container.decodeIfPresent(Bool.self, forKey: .isHighlighted) as? NSNumber
         self.itemsTotalCount    = try container.decodeIfPresent(Int32.self, forKey: .itemsTotalCount) as? NSNumber
-        self.kindRaw            = try container.decodeIfPresent(String.self, forKey: .kindRaw)
+        self.privacyRaw         = try container.decodeIfPresent(String.self, forKey: .privacyRaw)
         self.lastAccessedAt     = try container.decodeIfPresent(Date.self, forKey: .lastAccessedAt)
         self.name               = try container.decode(String.self, forKey: .name)
         self.shortURL           = try container.decodeIfPresent(URL.self, forKey: .shortURL)
@@ -94,7 +94,7 @@ extension DKCollection: Codable {
         try container.encode(isArchived?.boolValue, forKey: .isArchived)
         try container.encode(isHighlighted?.boolValue, forKey: .isHighlighted)
         try container.encode(itemsTotalCount?.int32Value, forKey: .itemsTotalCount)
-        try container.encode(kindRaw, forKey: .kindRaw)
+        try container.encode(privacyRaw, forKey: .privacyRaw)
         try container.encode(lastAccessedAt, forKey: .lastAccessedAt)
         try container.encode(name, forKey: .name)
         try container.encode(shortURL, forKey: .shortURL)

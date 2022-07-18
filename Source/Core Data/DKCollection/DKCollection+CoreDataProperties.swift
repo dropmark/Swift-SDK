@@ -23,9 +23,9 @@ extension DKCollection {
     @NSManaged public var isArchived: NSNumber?
     @NSManaged public var isHighlighted: NSNumber?
     @NSManaged public var itemsTotalCount: NSNumber?
-    @NSManaged public var kindRaw: String?
     @NSManaged public var lastAccessedAt: Date?
     @NSManaged public var name: String // Altered from generated subclass
+    @NSManaged public var privacyRaw: String?
     @NSManaged public var shortURL: URL?
     @NSManaged public var showLabels: NSNumber?
     @NSManaged public var sort: NSNumber?
