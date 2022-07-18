@@ -39,6 +39,7 @@
         <attribute name="shortURL" optional="YES" attributeType="URI"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="url" optional="YES" attributeType="URI"/>
+        <relationship name="creator" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKUser"/>
         <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKItem" inverseName="comments" inverseEntity="DKItem"/>
     </entity>
     <entity name="DKItem" representedClassName="DKItem" syncable="YES">
@@ -145,7 +146,7 @@
     </entity>
     <elements>
         <element name="DKCollection" positionX="-132.98828125" positionY="229.5390625" width="128" height="403"/>
-        <element name="DKComment" positionX="278.3984375" positionY="535.0234375" width="128" height="238"/>
+        <element name="DKComment" positionX="278.3984375" positionY="535.0234375" width="128" height="253"/>
         <element name="DKItem" positionX="74.98828125" positionY="349.30078125" width="128" height="523"/>
         <element name="DKReaction" positionX="435.31640625" positionY="655.77734375" width="128" height="163"/>
         <element name="DKTag" positionX="282.53515625" positionY="442.984375" width="128" height="88"/>

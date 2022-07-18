@@ -21,14 +21,15 @@ extension DKComment {
     @NSManaged public var collectionID: NSNumber?
     @NSManaged public var collectionName: String?
     @NSManaged public var collectionURL: URL?
-    @NSManaged public var createdAt: Date?
-    @NSManaged public var id: NSNumber?
+    @NSManaged public var createdAt: Date // Altered from generated subclass
+    @NSManaged public var id: NSNumber // Altered from generated subclass
     @NSManaged public var itemID: NSNumber?
     @NSManaged public var itemName: String?
     @NSManaged public var shortURL: URL?
     @NSManaged public var updatedAt: Date?
     @NSManaged public var url: URL?
     @NSManaged public var item: DKItem?
+    @NSManaged public var creator: DKUser?
 
 }
 

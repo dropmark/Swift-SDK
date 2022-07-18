@@ -58,7 +58,7 @@ extension DKComment: Codable {
         self.collectionName = try container.decodeIfPresent(String.self, forKey: .collectionName)
         self.collectionURL  = try container.decodeIfPresent(URL.self, forKey: .collectionURL)
         self.createdAt      = try container.decode(Date.self, forKey: .createdAt)
-        self.id             = try container.decode(Int64.self, forKey: .id)
+        self.id             = try container.decode(Int64.self, forKey: .id) as NSNumber
         self.itemID         = try container.decodeIfPresent(Int64.self, forKey: .itemID) as? NSNumber
         self.itemName       = try container.decodeIfPresent(String.self, forKey: .itemName)
         self.shortURL       = try container.decodeIfPresent(URL.self, forKey: .shortURL)
@@ -77,8 +77,8 @@ extension DKComment: Codable {
         try container.encode(collectionName, forKey: .collectionName)
         try container.encode(collectionURL, forKey: .collectionURL)
         try container.encode(createdAt, forKey: .createdAt)
-        try container.encode(id, forKey: .id)
-        try container.encode(itemID?.intValue, forKey: .itemID)
+        try container.encode(id.int64Value, forKey: .id)
+        try container.encode(itemID?.int64Value, forKey: .itemID)
         try container.encode(itemName, forKey: .itemName)
         try container.encode(shortURL, forKey: .shortURL)
         try container.encode(updatedAt, forKey: .updatedAt)
