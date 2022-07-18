@@ -31,7 +31,7 @@ public final class DKItem: NSManagedObject {
     
     /// The effective file path for an item on Dropmark's servers
     public var directory: DKDirectory {
-        return DKDirectory(collectionID: collectionID as NSNumber, stackID: parentID)
+        return DKDirectory(collectionID: collectionID, stackID: parentID)
     }
     
     public var location: CLLocation? {

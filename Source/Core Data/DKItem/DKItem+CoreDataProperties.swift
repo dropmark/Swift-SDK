@@ -16,15 +16,15 @@ extension DKItem {
         return NSFetchRequest<DKItem>(entityName: "DKItem")
     }
 
-    @NSManaged public var collectionID: NSNumber?
+    @NSManaged public var collectionID: NSNumber // Altered from generated subclass
     @NSManaged public var collectionName: String?
     @NSManaged public var content: String?
     @NSManaged public var createdAt: Date?
     @NSManaged public var deletedAt: Date?
     @NSManaged public var descriptionText: String?
-    @NSManaged public var id: NSNumber?
-    @NSManaged public var isShareable: Bool
-    @NSManaged public var isURL: Bool
+    @NSManaged public var id: NSNumber // Altered from generated subclass
+    @NSManaged public var isShareable: NSNumber?
+    @NSManaged public var isURL: NSNumber?
     @NSManaged public var itemsTotalCount: NSNumber?
     @NSManaged public var latitude: NSNumber?
     @NSManaged public var link: URL?
@@ -41,13 +41,13 @@ extension DKItem {
     @NSManaged public var typeRaw: String?
     @NSManaged public var updatedAt: Date?
     @NSManaged public var url: URL?
-    @NSManaged public var comments: NSSet?
-    @NSManaged public var reactions: NSSet?
+    @NSManaged public var comments: Set<DKComment>? // Altered from generated subclass
+    @NSManaged public var reactions: Set<DKReaction>? // Altered from generated subclass
     @NSManaged public var thumbnails: DKThumbnails?
     @NSManaged public var collection: DKCollection?
-    @NSManaged public var items: NSSet?
+    @NSManaged public var items: Set<DKItem>? // Altered from generated subclass
     @NSManaged public var stack: DKItem?
-    @NSManaged public var tags: NSSet?
+    @NSManaged public var tags: Set<DKTag>? // Altered from generated subclass
 
 }
 

@@ -68,18 +68,18 @@ extension DKItem: Codable {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        self.collectionID           = try container.decode(Int64.self, forKey: .collectionID)
+        self.collectionID           = try container.decode(Int64.self, forKey: .collectionID) as NSNumber
         self.collectionName         = try container.decodeIfPresent(String.self, forKey: .collectionName)
         self.content                = try container.decodeIfPresent(String.self, forKey: .content)
-        self.createdAt              = try container.decode(Date.self, forKey: .createdAt)
+        self.createdAt              = try container.decodeIfPresent(Date.self, forKey: .createdAt)
         self.deletedAt              = try container.decodeIfPresent(Date.self, forKey: .deletedAt)
         self.descriptionText        = try container.decodeIfPresent(String.self, forKey: .descriptionText)
-        self.id                     = try container.decode(Int64.self, forKey: .id)
-        self.isShareable            = try container.decodeIfPresent(Bool.self, forKey: .isShareable) ?? false
-        self.isURL                  = try container.decodeIfPresent(Bool.self, forKey: .isURL) ?? false
+        self.id                     = try container.decode(Int64.self, forKey: .id) as NSNumber
+        self.isShareable            = try container.decodeIfPresent(Bool.self, forKey: .isShareable) as? NSNumber
+        self.isURL                  = try container.decodeIfPresent(Bool.self, forKey: .isURL) as? NSNumber
         self.itemsTotalCount        = try container.decodeIfPresent(Int.self, forKey: .itemsTotalCount) as? NSNumber
         self.latitude               = try container.decodeIfPresent(Double.self, forKey: .latitude) as? NSNumber
-        self.link                   = try container.decode(URL.self, forKey: .link)
+        self.link                   = try container.decodeIfPresent(URL.self, forKey: .link)
         self.longitude              = try container.decodeIfPresent(Double.self, forKey: .longitude) as? NSNumber
         self.metadata               = try container.decodeIfPresent([String: Any].self, forKey: .metadata) as? NSDictionary
         self.mime                   = try container.decodeIfPresent(String.self, forKey: .mime)
@@ -87,12 +87,12 @@ extension DKItem: Codable {
         self.parentID               = try container.decodeIfPresent(Int.self, forKey: .parentID) as? NSNumber
         self.parentName             = try container.decodeIfPresent(String.self, forKey: .parentName)
         self.reactionsTotalCount    = try container.decodeIfPresent(Int.self, forKey: .reactionsTotalCount) as? NSNumber
-        self.shortURL               = try container.decode(URL.self, forKey: .shortURL)
+        self.shortURL               = try container.decodeIfPresent(URL.self, forKey: .shortURL)
         self.size                   = try container.decodeIfPresent(Int.self, forKey: .size) as? NSNumber
         self.thumbnail              = try container.decodeIfPresent(URL.self, forKey: .thumbnail)
         self.typeRaw                = try container.decodeIfPresent(String.self, forKey: .typeRaw)
         self.updatedAt              = try container.decodeIfPresent(Date.self, forKey: .updatedAt)
-        self.url                    = try container.decode(URL.self, forKey: .url)
+        self.url                    = try container.decodeIfPresent(URL.self, forKey: .url)
         self.thumbnails             = try container.decodeIfPresent(DKThumbnails.self, forKey: .thumbnails)
         self.comments               = try container.decodeIfPresent(Set<DKComment>.self, forKey: .comments)
         self.reactions              = try container.decodeIfPresent(Set<DKReaction>.self, forKey: .reactions)
@@ -103,16 +103,16 @@ extension DKItem: Codable {
         
         var container = encoder.container(keyedBy: CodingKeys.self)
         
-        try container.encode(collectionID, forKey: .collectionID)
+        try container.encode(collectionID.int64Value, forKey: .collectionID)
         try container.encode(collectionName, forKey: .collectionName)
         try container.encode(content, forKey: .content)
         try container.encode(createdAt, forKey: .createdAt)
         try container.encode(deletedAt, forKey: .deletedAt)
         try container.encode(descriptionText, forKey: .descriptionText)
-        try container.encode(id, forKey: .id)
-        try container.encode(isShareable, forKey: .isShareable)
-        try container.encode(isURL, forKey: .isURL)
-        try container.encode(itemsTotalCount?.intValue, forKey: .itemsTotalCount)
+        try container.encode(id.int64Value, forKey: .id)
+        try container.encode(isShareable?.boolValue, forKey: .isShareable)
+        try container.encode(isURL?.boolValue, forKey: .isURL)
+        try container.encode(itemsTotalCount?.int32Value, forKey: .itemsTotalCount)
         try container.encode(latitude?.doubleValue, forKey: .latitude)
         try container.encode(link, forKey: .link)
         try container.encode(longitude?.doubleValue, forKey: .longitude)
@@ -120,11 +120,11 @@ extension DKItem: Codable {
 //        try container.encode((metadata as? Dictionary<String, Any>), forKey: .metadata)
         try container.encode(mime, forKey: .mime)
         try container.encode(name, forKey: .name)
-        try container.encode(parentID?.intValue, forKey: .parentID)
+        try container.encode(parentID?.int64Value, forKey: .parentID)
         try container.encode(parentName, forKey: .parentName)
-        try container.encode(reactionsTotalCount?.intValue, forKey: .reactionsTotalCount)
+        try container.encode(reactionsTotalCount?.int32Value, forKey: .reactionsTotalCount)
         try container.encode(shortURL, forKey: .shortURL)
-        try container.encode(size?.intValue, forKey: .size)
+        try container.encode(size?.int64Value, forKey: .size)
         try container.encode(thumbnail, forKey: .thumbnail)
         try container.encode(typeRaw, forKey: .typeRaw)
         try container.encode(updatedAt, forKey: .updatedAt)
