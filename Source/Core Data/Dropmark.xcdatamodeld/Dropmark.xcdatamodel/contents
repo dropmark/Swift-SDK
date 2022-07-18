@@ -29,12 +29,12 @@
     <entity name="DKComment" representedClassName="DKComment" syncable="YES">
         <attribute name="annotation" optional="YES" attributeType="URI"/>
         <attribute name="body" attributeType="String"/>
-        <attribute name="collectionID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="collectionID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="collectionName" optional="YES" attributeType="String"/>
         <attribute name="collectionURL" optional="YES" attributeType="URI"/>
         <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="itemID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="itemID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="itemName" optional="YES" attributeType="String"/>
         <attribute name="shortURL" optional="YES" attributeType="URI"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>

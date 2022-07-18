@@ -18,12 +18,12 @@ extension DKComment {
 
     @NSManaged public var annotation: URL?
     @NSManaged public var body: String?
-    @NSManaged public var collectionID: Int64
+    @NSManaged public var collectionID: NSNumber?
     @NSManaged public var collectionName: String?
     @NSManaged public var collectionURL: URL?
     @NSManaged public var createdAt: Date?
-    @NSManaged public var id: Int64
-    @NSManaged public var itemID: Int64
+    @NSManaged public var id: NSNumber?
+    @NSManaged public var itemID: NSNumber?
     @NSManaged public var itemName: String?
     @NSManaged public var shortURL: URL?
     @NSManaged public var updatedAt: Date?
