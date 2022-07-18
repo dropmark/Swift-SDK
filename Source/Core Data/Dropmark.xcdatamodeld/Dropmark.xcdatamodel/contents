@@ -4,7 +4,7 @@
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="customDomain" optional="YES" attributeType="URI"/>
         <attribute name="descriptionText" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="isArchived" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
         <attribute name="isHighlighted" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
         <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
@@ -28,11 +28,11 @@
     </entity>
     <entity name="DKComment" representedClassName="DKComment" syncable="YES">
         <attribute name="annotation" optional="YES" attributeType="URI"/>
-        <attribute name="body" attributeType="String"/>
+        <attribute name="body" optional="YES" attributeType="String"/>
         <attribute name="collectionID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="collectionName" optional="YES" attributeType="String"/>
         <attribute name="collectionURL" optional="YES" attributeType="URI"/>
-        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="itemID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="itemName" optional="YES" attributeType="String"/>
@@ -43,31 +43,31 @@
         <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKItem" inverseName="comments" inverseEntity="DKItem"/>
     </entity>
     <entity name="DKItem" representedClassName="DKItem" syncable="YES">
-        <attribute name="collectionID" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="collectionID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="collectionName" optional="YES" attributeType="String"/>
         <attribute name="content" optional="YES" attributeType="String"/>
-        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="deletedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="descriptionText" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="isShareable" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="isURL" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO"/>
         <attribute name="link" optional="YES" attributeType="URI"/>
         <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO"/>
         <attribute name="metadata" optional="YES" attributeType="Transformable" valueTransformerName="NSDictionaryAttributeTransformer" customClassName="NSDictionary"/>
         <attribute name="mime" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="parentID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="parentID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="parentName" optional="YES" attributeType="String"/>
-        <attribute name="reactionsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="shortURL" attributeType="URI"/>
-        <attribute name="size" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="reactionsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="shortURL" optional="YES" attributeType="URI"/>
+        <attribute name="size" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="thumbnail" optional="YES" attributeType="URI"/>
         <attribute name="typeRaw" optional="YES" attributeType="String"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="url" attributeType="URI"/>
+        <attribute name="url" optional="YES" attributeType="URI"/>
         <relationship name="collection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKCollection" inverseName="items" inverseEntity="DKCollection"/>
         <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKComment" inverseName="item" inverseEntity="DKComment"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKItem" inverseName="stack" inverseEntity="DKItem"/>

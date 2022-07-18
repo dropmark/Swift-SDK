@@ -16,27 +16,27 @@ extension DKItem {
         return NSFetchRequest<DKItem>(entityName: "DKItem")
     }
 
-    @NSManaged public var collectionID: Int64
+    @NSManaged public var collectionID: NSNumber?
     @NSManaged public var collectionName: String?
     @NSManaged public var content: String?
     @NSManaged public var createdAt: Date?
     @NSManaged public var deletedAt: Date?
     @NSManaged public var descriptionText: String?
-    @NSManaged public var id: Int64
+    @NSManaged public var id: NSNumber?
     @NSManaged public var isShareable: Bool
     @NSManaged public var isURL: Bool
-    @NSManaged public var itemsTotalCount: Int32
+    @NSManaged public var itemsTotalCount: NSNumber?
     @NSManaged public var latitude: NSNumber?
     @NSManaged public var link: URL?
     @NSManaged public var longitude: NSNumber?
     @NSManaged public var metadata: NSDictionary?
     @NSManaged public var mime: String?
     @NSManaged public var name: String?
-    @NSManaged public var parentID: Int64
+    @NSManaged public var parentID: NSNumber?
     @NSManaged public var parentName: String?
-    @NSManaged public var reactionsTotalCount: Int32
+    @NSManaged public var reactionsTotalCount: NSNumber?
     @NSManaged public var shortURL: URL?
-    @NSManaged public var size: Int64
+    @NSManaged public var size: NSNumber?
     @NSManaged public var thumbnail: URL?
     @NSManaged public var typeRaw: String?
     @NSManaged public var updatedAt: Date?
