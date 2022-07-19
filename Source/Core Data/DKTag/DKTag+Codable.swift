@@ -49,7 +49,7 @@ extension DKTag: Codable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         
         try container.encode(name, forKey: .name)
-        try container.encode(itemsTotalCount?.intValue, forKey: .itemsTotalCount)
+        try container.encode(itemsTotalCount?.int32Value, forKey: .itemsTotalCount)
         
     }
     

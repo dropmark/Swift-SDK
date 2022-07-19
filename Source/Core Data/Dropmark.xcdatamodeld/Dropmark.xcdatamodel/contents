@@ -73,7 +73,7 @@
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKItem" inverseName="stack" inverseEntity="DKItem"/>
         <relationship name="reactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKReaction"/>
         <relationship name="stack" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKItem" inverseName="items" inverseEntity="DKItem"/>
-        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKTag" inverseName="item" inverseEntity="DKTag"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKTag"/>
         <relationship name="thumbnails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKThumbnails"/>
     </entity>
     <entity name="DKReaction" representedClassName="DKReaction" syncable="YES">
@@ -87,9 +87,8 @@
         <relationship name="creator" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKUser"/>
     </entity>
     <entity name="DKTag" representedClassName="DKTag" syncable="YES">
-        <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String"/>
-        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKItem" inverseName="tags" inverseEntity="DKItem"/>
     </entity>
     <entity name="DKTeam" representedClassName="DKTeam" syncable="YES">
         <attribute name="avatar" optional="YES" attributeType="URI"/>
@@ -149,7 +148,7 @@
         <element name="DKComment" positionX="278.3984375" positionY="535.0234375" width="128" height="253"/>
         <element name="DKItem" positionX="74.98828125" positionY="349.30078125" width="128" height="523"/>
         <element name="DKReaction" positionX="435.31640625" positionY="655.77734375" width="128" height="163"/>
-        <element name="DKTag" positionX="282.53515625" positionY="442.984375" width="128" height="88"/>
+        <element name="DKTag" positionX="282.53515625" positionY="442.984375" width="128" height="73"/>
         <element name="DKThumbnails" positionX="613.6015625" positionY="727.48828125" width="128" height="134"/>
         <element name="DKUser" positionX="78.1640625" positionY="-84.3359375" width="128" height="328"/>
         <element name="DKTeam" positionX="354.71875" positionY="-91.640625" width="128" height="358"/>

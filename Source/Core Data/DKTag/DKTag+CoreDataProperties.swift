@@ -16,9 +16,8 @@ extension DKTag {
         return NSFetchRequest<DKTag>(entityName: "DKTag")
     }
 
-    @NSManaged public var itemsTotalCount: Int32
+    @NSManaged public var itemsTotalCount: NSNumber?
     @NSManaged public var name: String?
-    @NSManaged public var item: DKItem?
 
 }
 
