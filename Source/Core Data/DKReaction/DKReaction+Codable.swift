@@ -47,11 +47,11 @@ extension DKReaction: Codable {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        self.collectionID   = try container.decodeIfPresent(Int64.self, forKey: .collectionID) as? NSNumber
+        self.collectionID   = try container.decode(Int64.self, forKey: .collectionID) as NSNumber
         self.collectionName = try container.decodeIfPresent(String.self, forKey: .collectionName)
         self.createdAt      = try container.decode(Date.self, forKey: .createdAt)
-        self.id             = try container.decode(Int64.self, forKey: .id)
-        self.itemID         = try container.decode(Int64.self, forKey: .itemID)
+        self.id             = try container.decode(Int64.self, forKey: .id) as NSNumber
+        self.itemID         = try container.decode(Int64.self, forKey: .itemID) as NSNumber
         self.itemName       = try container.decodeIfPresent(String.self, forKey: .itemName)
         self.updatedAt      = try container.decodeIfPresent(Date.self, forKey: .updatedAt)
         
@@ -61,11 +61,11 @@ extension DKReaction: Codable {
         
         var container = encoder.container(keyedBy: CodingKeys.self)
         
-        try container.encode(collectionID?.intValue, forKey: .collectionID)
+        try container.encode(collectionID.int64Value, forKey: .collectionID)
         try container.encode(collectionName, forKey: .collectionName)
         try container.encode(createdAt, forKey: .createdAt)
-        try container.encode(id, forKey: .id)
-        try container.encode(itemID, forKey: .itemID)
+        try container.encode(id.int64Value, forKey: .id)
+        try container.encode(itemID.int64Value, forKey: .itemID)
         try container.encode(itemName, forKey: .itemName)
         try container.encode(updatedAt, forKey: .updatedAt)
         

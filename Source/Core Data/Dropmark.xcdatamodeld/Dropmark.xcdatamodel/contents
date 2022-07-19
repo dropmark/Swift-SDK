@@ -71,7 +71,7 @@
         <relationship name="collection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKCollection" inverseName="items" inverseEntity="DKCollection"/>
         <relationship name="comments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKComment" inverseName="item" inverseEntity="DKComment"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKItem" inverseName="stack" inverseEntity="DKItem"/>
-        <relationship name="reactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKReaction" inverseName="item" inverseEntity="DKReaction"/>
+        <relationship name="reactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKReaction"/>
         <relationship name="stack" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKItem" inverseName="items" inverseEntity="DKItem"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKTag" inverseName="item" inverseEntity="DKTag"/>
         <relationship name="thumbnails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKThumbnails"/>
@@ -84,7 +84,7 @@
         <attribute name="itemID" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="itemName" optional="YES" attributeType="String"/>
         <attribute name="updatedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="item" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKItem" inverseName="reactions" inverseEntity="DKItem"/>
+        <relationship name="creator" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DKUser"/>
     </entity>
     <entity name="DKTag" representedClassName="DKTag" syncable="YES">
         <attribute name="itemsTotalCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
