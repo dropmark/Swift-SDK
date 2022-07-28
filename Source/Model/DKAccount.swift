@@ -46,7 +46,7 @@ public extension DKAccount {
     var displayName: String {
         if
             let user = DKSession.user,
-            user.id == self.id.int64Value
+            user.id == self.id
         {
             return "Personal"
         }

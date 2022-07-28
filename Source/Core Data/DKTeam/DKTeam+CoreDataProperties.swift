@@ -2,7 +2,7 @@
 //  DKTeam+CoreDataProperties.swift
 //  Pods
 //
-//  Created by Alex Givens on 7/18/22.
+//  Created by Alex Givens on 7/19/22.
 //
 //
 
@@ -17,8 +17,8 @@ extension DKTeam {
     }
 
     @NSManaged public var avatar: URL?
-    @NSManaged public var id: Int64
-    @NSManaged public var name: String?
+    @NSManaged public var id: NSNumber // Altered from generated subclass
+    @NSManaged public var name: String  // Altered from generated subclass
     @NSManaged public var email: String?
     @NSManaged public var username: String?
     @NSManaged public var customDomain: URL?
@@ -26,17 +26,17 @@ extension DKTeam {
     @NSManaged public var sortOrderRaw: String?
     @NSManaged public var statusRaw: String?
     @NSManaged public var viewModeRaw: String?
-    @NSManaged public var showLabels: Bool
+    @NSManaged public var showLabels: NSNumber?
     @NSManaged public var planRaw: String?
-    @NSManaged public var planIsActive: Bool
-    @NSManaged public var planQuantity: Int64
+    @NSManaged public var planIsActive: NSNumber?
+    @NSManaged public var planQuantity: NSNumber?
     @NSManaged public var billingEmail: String?
     @NSManaged public var createdAt: Date?
     @NSManaged public var feedKey: String?
-    @NSManaged public var storageQuota: Int64
-    @NSManaged public var storageUsed: Int64
+    @NSManaged public var storageQuota: NSNumber?
+    @NSManaged public var storageUsed: NSNumber?
     @NSManaged public var userKindRaw: String?
-    @NSManaged public var users: NSSet?
+    @NSManaged public var users: Set<DKUser>? // Altered from generated subclass
 
 }
 

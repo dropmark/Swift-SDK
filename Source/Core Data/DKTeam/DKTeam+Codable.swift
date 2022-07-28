@@ -53,12 +53,12 @@ extension DKTeam: Codable {
         self.createdAt      = try container.decodeIfPresent(Date.self, forKey: .createdAt)
         self.customDomain   = try container.decodeIfPresent(URL.self, forKey: .customDomain)
         self.email          = try container.decodeIfPresent(String.self, forKey: .email)
-        self.id             = try container.decode(Int64.self, forKey: .id)
+        self.id             = try container.decode(Int64.self, forKey: .id) as NSNumber
         self.name           = try container.decode(String.self, forKey: .name)
-        self.planIsActive   = try container.decodeIfPresent(Bool.self, forKey: .planIsActive) ?? false
-        self.planQuantity   = try container.decodeIfPresent(Int64.self, forKey: .planQuantity) ?? 0
+        self.planIsActive   = try container.decodeIfPresent(Bool.self, forKey: .planIsActive) as? NSNumber
+        self.planQuantity   = try container.decodeIfPresent(Int64.self, forKey: .planQuantity) as? NSNumber
         self.planRaw        = try container.decodeIfPresent(String.self, forKey: .planRaw)
-        self.showLabels     = try container.decodeIfPresent(Bool.self, forKey: .showLabels) ?? true
+        self.showLabels     = try container.decodeIfPresent(Bool.self, forKey: .showLabels) as? NSNumber
         self.sortByRaw      = try container.decodeIfPresent(String.self, forKey: .sortByRaw)
         self.sortOrderRaw   = try container.decodeIfPresent(String.self, forKey: .sortOrderRaw)
         self.statusRaw      = try container.decodeIfPresent(String.self, forKey: .statusRaw)
@@ -86,12 +86,12 @@ extension DKTeam: Codable {
         try container.encode(createdAt, forKey: .createdAt)
         try container.encode(customDomain, forKey: .customDomain)
         try container.encode(email, forKey: .email)
-        try container.encode(id, forKey: .id)
+        try container.encode(id.int64Value, forKey: .id)
         try container.encode(name, forKey: .name)
-        try container.encode(planIsActive, forKey: .planIsActive)
-        try container.encode(planQuantity, forKey: .planQuantity)
+        try container.encode(planIsActive?.boolValue, forKey: .planIsActive)
+        try container.encode(planQuantity?.int64Value, forKey: .planQuantity)
         try container.encode(planRaw, forKey: .planRaw)
-        try container.encode(showLabels, forKey: .showLabels)
+        try container.encode(showLabels?.boolValue, forKey: .showLabels)
         try container.encode(sortByRaw, forKey: .sortByRaw)
         try container.encode(sortOrderRaw, forKey: .sortOrderRaw)
         try container.encode(statusRaw, forKey: .statusRaw)

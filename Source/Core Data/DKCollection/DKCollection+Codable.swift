@@ -71,14 +71,14 @@ extension DKCollection: Codable {
         self.lastAccessedAt     = try container.decodeIfPresent(Date.self, forKey: .lastAccessedAt)
         self.name               = try container.decode(String.self, forKey: .name)
         self.shortURL           = try container.decodeIfPresent(URL.self, forKey: .shortURL)
-        self.showLabels         = try container.decodeIfPresent(Bool.self, forKey: .showLabels) as NSNumber?
+        self.showLabels         = try container.decodeIfPresent(Bool.self, forKey: .showLabels) as? NSNumber
         self.sort               = try container.decodeIfPresent(Int32.self, forKey: .sort) as? NSNumber
         self.sortByRaw          = try container.decodeIfPresent(String.self, forKey: .sortByRaw)
         self.sortOrderRaw       = try container.decodeIfPresent(String.self, forKey: .sortOrderRaw)
         self.thumbnail          = try container.decodeIfPresent(URL.self, forKey: .thumbnail)
         self.updatedAt          = try container.decodeIfPresent(Date.self, forKey: .updatedAt)
         self.url                = try container.decodeIfPresent(URL.self, forKey: .url)
-        self.usersTotalCount    = try container.decodeIfPresent(Int32.self, forKey: .usersTotalCount) as NSNumber?
+        self.usersTotalCount    = try container.decodeIfPresent(Int32.self, forKey: .usersTotalCount) as? NSNumber
         self.viewModeRaw        = try container.decodeIfPresent(String.self, forKey: .viewModeRaw)
         
     }

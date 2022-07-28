@@ -97,17 +97,17 @@
         <attribute name="customDomain" optional="YES" attributeType="URI"/>
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="feedKey" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="planIsActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="planQuantity" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="planIsActive" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
+        <attribute name="planQuantity" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="planRaw" optional="YES" attributeType="String"/>
-        <attribute name="showLabels" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="showLabels" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
         <attribute name="sortByRaw" optional="YES" attributeType="String"/>
         <attribute name="sortOrderRaw" optional="YES" attributeType="String"/>
         <attribute name="statusRaw" optional="YES" attributeType="String"/>
-        <attribute name="storageQuota" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="storageUsed" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="storageQuota" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="storageUsed" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="userKindRaw" optional="YES" attributeType="String"/>
         <attribute name="username" optional="YES" attributeType="String"/>
         <attribute name="viewModeRaw" optional="YES" attributeType="String"/>
@@ -128,17 +128,17 @@
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="customDomain" optional="YES" attributeType="URI"/>
         <attribute name="email" optional="YES" attributeType="String"/>
-        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="planIsActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <attribute name="planQuantity" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="planIsActive" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
+        <attribute name="planQuantity" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="planRaw" optional="YES" attributeType="String"/>
-        <attribute name="showLabels" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="showLabels" optional="YES" attributeType="Boolean" usesScalarValueType="NO"/>
         <attribute name="sortByRaw" optional="YES" attributeType="String"/>
         <attribute name="sortOrderRaw" optional="YES" attributeType="String"/>
         <attribute name="statusRaw" optional="YES" attributeType="String"/>
-        <attribute name="storageQuota" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="storageUsed" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="storageQuota" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
+        <attribute name="storageUsed" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="NO"/>
         <attribute name="username" optional="YES" attributeType="String"/>
         <attribute name="viewModeRaw" optional="YES" attributeType="String"/>
         <relationship name="teams" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DKTeam"/>
@@ -149,8 +149,8 @@
         <element name="DKItem" positionX="74.98828125" positionY="349.30078125" width="128" height="523"/>
         <element name="DKReaction" positionX="435.31640625" positionY="655.77734375" width="128" height="163"/>
         <element name="DKTag" positionX="282.53515625" positionY="442.984375" width="128" height="73"/>
-        <element name="DKThumbnails" positionX="613.6015625" positionY="727.48828125" width="128" height="134"/>
-        <element name="DKUser" positionX="78.1640625" positionY="-84.3359375" width="128" height="328"/>
         <element name="DKTeam" positionX="354.71875" positionY="-91.640625" width="128" height="358"/>
+        <element name="DKThumbnails" positionX="613.6015625" positionY="727.48828125" width="128" height="134"/>
+        <element name="DKUser" positionX="78.1640625" positionY="-84.3359375" width="128" height="314"/>
     </elements>
 </model>
