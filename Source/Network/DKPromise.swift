@@ -44,7 +44,8 @@ public struct DKPromise {
         if includeDefaultParameters {
             params.add(key: "include", value: ["teams"])
         }
-        return request(DKRouter.authenticate(parameters: params)).validate().promiseObject()
+        let request = DKRouter.authenticate(parameters: params).urlRequest!
+        return genericPromise(request: request)
     }
     
     // MARK: Collections
@@ -57,7 +58,8 @@ public struct DKPromise {
             params.add(key: "items_per_page", value: 4)
             params.add(key: "items_not_type", value: "stack")
         }
-        return request(DKRouter.listCollections(queryParameters: params)).validate().promiseList()
+        let request = DKRouter.listCollections(queryParameters: params).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func createCollection(queryParameters: Parameters? = nil, bodyParameters: Parameters, includeDefaultQueryParameters: Bool = true) -> CancellablePromise<DKCollection> {
@@ -65,7 +67,8 @@ public struct DKPromise {
         if includeDefaultQueryParameters {
             queryParams.add(key: "include", value: ["users", "items"])
         }
-        return request(DKRouter.createCollection(queryParameters: queryParams, bodyParameters: bodyParameters)).validate().promiseObject()
+        let request = DKRouter.createCollection(queryParameters: queryParams, bodyParameters: bodyParameters).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func getCollection(id: NSNumber, parameters: Parameters? = nil, includeDefaultParameters: Bool = true) -> CancellablePromise<DKCollection> {
@@ -75,7 +78,8 @@ public struct DKPromise {
             params.add(key: "items_per_page", value: 4)
             params.add(key: "items_not_type", value: "stack")
         }
-        return request(DKRouter.getCollection(id: id, queryParameters: params)).validate().promiseObject()
+        let request = DKRouter.getCollection(id: id, queryParameters: params).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func updateCollection(id: NSNumber, queryParameters: Parameters? = nil, bodyParameters: Parameters, includeDefaultQueryParameters: Bool = true) -> CancellablePromise<DKCollection> {
@@ -85,7 +89,8 @@ public struct DKPromise {
             queryParams.add(key: "items_per_page", value: 4)
             queryParams.add(key: "items_not_type", value: "stack")
         }
-        return request(DKRouter.updateCollection(id: id, queryParameters: queryParams, bodyParameters: bodyParameters)).validate().promiseObject()
+        let request = DKRouter.updateCollection(id: id, queryParameters: queryParams, bodyParameters: bodyParameters).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func deleteCollection(id: NSNumber) -> CancellablePromise<Void> {
@@ -101,7 +106,8 @@ public struct DKPromise {
 //    }
     
     public static func listCollaboratorsInCollection(id: NSNumber) -> CancellablePromise<[DKUser]> {
-        return request(DKRouter.listCollaboratorsInCollection(id: id)).validate().promiseList()
+        let request = DKRouter.listCollaboratorsInCollection(id: id).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func addCollaboratorToCollection(id: NSNumber, parameters: Parameters) -> CancellablePromise<Void> {
@@ -303,27 +309,33 @@ public struct DKPromise {
         if includeDefaultParameters {
             params.add(key: "per_page", value: DKRouter.pageSize)
         }
-        return request(DKRouter.listTeams(queryParameters: params)).validate().promiseList()
+        let request = DKRouter.listTeams(queryParameters: params).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func getTeam(id: NSNumber) -> CancellablePromise<DKTeam> {
-        return request(DKRouter.getTeam(id: id)).validate().promiseObject()
+        let request = DKRouter.getTeam(id: id).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func updateTeam(id: NSNumber, parameters: Parameters) -> CancellablePromise<DKTeam> {
-        return request(DKRouter.updateTeam(id: id, bodyParameters: parameters)).validate().promiseObject()
+        let request = DKRouter.updateTeam(id: id, bodyParameters: parameters).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func listUsersInTeam(id: NSNumber) -> CancellablePromise<[DKUser]> {
-        return request(DKRouter.listUsersInTeam(id: id)).validate().promiseList()
+        let request = DKRouter.listUsersInTeam(id: id).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func createUserInTeam(id: NSNumber, parameters: Parameters) -> CancellablePromise<DKUser> {
-        return request(DKRouter.createUserInTeam(id: id, bodyParameters: parameters)).validate().promiseObject()
+        let request = DKRouter.createUserInTeam(id: id, bodyParameters: parameters).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func updateUserInTeam(teamID: NSNumber, userID: NSNumber, parameters: Parameters) -> CancellablePromise<DKUser> {
-        return request(DKRouter.updateUserInTeam(teamID: teamID, userID: userID, bodyParameters: parameters)).validate().promiseObject()
+        let request = DKRouter.updateUserInTeam(teamID: teamID, userID: userID, bodyParameters: parameters).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func deleteUserInTeam(teamID: NSNumber, userID: NSNumber) -> CancellablePromise<Void> {
@@ -333,7 +345,8 @@ public struct DKPromise {
     // MARK: Users
     
     public static func createUser(parameters: Parameters) -> CancellablePromise<DKUser> {
-        return request(DKRouter.createUser(bodyParameters: parameters)).validate().promiseObject()
+        let request = DKRouter.createUser(bodyParameters: parameters).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func getUser(parameters: Parameters? = nil, includeDefaultParameters: Bool = true) -> CancellablePromise<DKUser> {
@@ -341,7 +354,8 @@ public struct DKPromise {
         if includeDefaultParameters {
             params.add(key: "include", value: ["teams"])
         }
-        return request(DKRouter.getUser(queryParameters: params)).validate().promiseObject()
+        let request = DKRouter.getUser(queryParameters: params).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func updateUser(queryParameters: Parameters? = nil, bodyParameters: Parameters, includeDefaultQueryParameters: Bool = true) -> CancellablePromise<DKUser> {
@@ -349,7 +363,8 @@ public struct DKPromise {
         if includeDefaultQueryParameters {
             queryParams.add(key: "include", value: ["teams"])
         }
-        return request(DKRouter.updateUser(queryParameters: queryParams, bodyParameters: bodyParameters)).validate().promiseObject()
+        let request = DKRouter.updateUser(queryParameters: queryParams, bodyParameters: bodyParameters).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func listContacts(parameters: Parameters? = nil, includeDefaultParameters: Bool = true) -> CancellablePromise<[DKUser]> {
@@ -357,7 +372,8 @@ public struct DKPromise {
         if includeDefaultParameters {
             params.add(key: "per_page", value: 1000)
         }
-        return request(DKRouter.listContacts(parameters: params)).validate().promiseList()
+        let request = DKRouter.listContacts(parameters: params).urlRequest!
+        return genericPromise(request: request)
     }
     
 //    public static func getEmailAvailability(email: String) -> CancellablePromise<Bool> {
