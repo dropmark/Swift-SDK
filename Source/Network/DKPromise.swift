@@ -39,13 +39,84 @@ public struct DKPromise {
     
     // MARK: Authentication
     
-    public static func authenticate(parameters: Parameters, includeDefaultParameters: Bool = true) -> CancellablePromise<DKUser> {
+    public static func authenticate(parameters: Parameters, includeDefaultParameters: Bool = true) -> CancellablePromise<(DKUser, String)> {
+        
         var params = parameters
         if includeDefaultParameters {
             params.add(key: "include", value: ["teams"])
         }
         let request = DKRouter.authenticate(parameters: params).urlRequest!
-        return genericPromise(request: request)
+        
+        return CancellablePromise<(DKUser, String)> ( resolver: { resolver in
+            
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                
+                if let data = data {
+                    
+                    let decoder = JSONDecoder()
+                    decoder.userInfo[CodingUserInfoKey.managedObjectContext] = CoreDataStack.shared.viewContext
+                    decoder.dateDecodingStrategy = .formatted(Formatter.dropmark)
+                    
+                    do {
+                        
+                        // Create the user object
+                        let user = try decoder.decode(DKUser.self, from: data)
+                        
+                        // Extract token, then encode the user ID and token for API authentication use
+                        let json = try JSONSerialization.jsonObject(with: data, options: [])
+                        
+                        guard
+                            let dictionary = json as? [String: Any],
+                            dictionary.keys.contains("token"),
+                            let userID = dictionary["id"] as? NSNumber,
+                            let userToken = dictionary["token"] as? String
+                        else {
+                            throw DKError.missingUserToken
+                        }
+                        
+                        let plainString = "\(userID):\(userToken)" as NSString
+                        let plainData = plainString.data(using: String.Encoding.utf8.rawValue)
+                        
+                        guard let base64String = plainData?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0)) else {
+                            throw DKError.missingUserToken
+                        }
+                        
+                        resolver.fulfill((user, base64String))
+                        
+                    } catch {
+                        
+                        if
+                            let httpResponse = response as? HTTPURLResponse,
+                            let error = DKServerError(response: httpResponse, data: data)
+                        {
+                            resolver.reject(error)
+                        } else {
+                            resolver.reject(error)
+                        }
+                        
+                    }
+                    
+                } else if
+                    let httpResponse = response as? HTTPURLResponse,
+                    let error = DKServerError(response: httpResponse, data: data)
+                {
+                    resolver.reject(error)
+                } else if let error = error {
+                    resolver.reject(error)
+                } else {
+                    resolver.reject(DKError.unableToSerializeJSON)
+                }
+                
+            }
+
+            task.resume()
+            
+            return {
+                task.cancel()
+            }
+            
+        })
+
     }
     
     // MARK: Collections
@@ -391,14 +462,16 @@ public struct DKPromise {
         return CancellablePromise<DKUploadSignature> ( resolver: { resolver in
             
             let signatureRequest = request(DKRouter.createUploadSignature(bodyParameters: parameters)).validate().responseData() { response in
-                
+
                 if
                     let data = response.data,
                     let signature = try? JSONDecoder().decode(DKUploadSignature.self, from: data)
                 {
                     resolver.fulfill(signature)
                 } else {
-                    if let error = response.error {
+                    if let error = DKServerError(response: response.response, data: response.data) {
+                        resolver.reject(error)
+                    } else if let error = response.error {
                         resolver.reject(error)
                     } else {
                         resolver.reject(DKError.unableToSerializeJSON)

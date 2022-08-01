@@ -699,19 +699,24 @@ public enum DKRouter: URLRequestConvertible {
     
     public static func authorizeUserRequest(_ urlRequest: inout URLRequest) throws {
         
-        guard let user = DKSession.user else {
-            print("DKSession user object was not set. Be sure to assign a user to access credentialed API endpoints.")
-            throw DKError.missingUser
-        }
+//        guard let user = DKSession.user else {
+//            print("DKSession user object was not set. Be sure to assign a user to access credentialed API endpoints.")
+//            throw DKError.missingUser
+//        }
+//
+//        guard let userToken = user.token else {
+//            print("DKSession user object does not contain a token. Remember - only the user object returned from the /auth endpoint contains a token.")
+//            throw DKError.missingUserToken
+//        }
+//
+//        let plainString = "\(user.id):\(userToken)" as NSString
+//        let plainData = plainString.data(using: String.Encoding.utf8.rawValue)
+//        let base64String = plainData?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
         
-        guard let userToken = user.token else {
-            print("DKSession user object does not contain a token. Remember - only the user object returned from the /auth endpoint contains a token.")
+        guard let userDictionary = DKKeychain.userDictionary else {
             throw DKError.missingUserToken
         }
         
-        let plainString = "\(user.id):\(userToken)" as NSString
-        let plainData = plainString.data(using: String.Encoding.utf8.rawValue)
-        let base64String = plainData?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
         urlRequest.setValue("Basic \(base64String!)", forHTTPHeaderField: "Authorization")
         
     }
