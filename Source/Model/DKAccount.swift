@@ -45,8 +45,8 @@ public extension DKAccount {
     
     var displayName: String {
         if
-            let user = DKSession.user,
-            user.id == self.id
+            let currentUserID = DKUserDefaults.currentUserID,
+            currentUserID == self.id
         {
             return "Personal"
         }

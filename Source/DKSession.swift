@@ -28,7 +28,7 @@ import Foundation
 @objc public class DKSession: NSObject {
     
     /// The user object used to authenticate all network requests during lifetime of the app session. This object must contain a `token` to authenticate the network requests. A user with the `token` variable is only returned by the `/auth` API endpoint.
-    @objc public static var user: DKUser?
+//    @objc public static var user: DKUser?
     
     /// The token used to authenticate all requests with the Dropmark API. Set this token as soon as the app starts to ensure generated requests are properly authenticated. The variable can be set manually on app launch, or optionally set by a `keys.plist` file belonging to the target.
     @objc public static var apiToken: String? {

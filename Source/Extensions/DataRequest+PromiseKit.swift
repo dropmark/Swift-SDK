@@ -103,28 +103,28 @@ public extension DataRequest {
     }
     
     /// Generate a `CancellablePromise` from a `DataRequest`, returning a list of objects of any type.
-    func promiseListAny() -> CancellablePromise<[Any]> {
-        return CancellablePromise<[Any]> ( resolver: { [weak self] resolver in
-           
-            guard let self = self else {
-                resolver.reject(DKError.requestIsNil)
-                return { }
-            }
-            
-            self.responseListAny { (response: DataResponse<[Any]>) in
-                switch response.result {
-                case .success(let objects):
-                    resolver.fulfill(objects)
-                case .failure(let error):
-                    resolver.reject(error)
-                }
-            }
-            
-            return { [weak self] in
-                self?.cancel()
-            }
-            
-        })
-    }
+//    func promiseListAny() -> CancellablePromise<[Any]> {
+//        return CancellablePromise<[Any]> ( resolver: { [weak self] resolver in
+//           
+//            guard let self = self else {
+//                resolver.reject(DKError.requestIsNil)
+//                return { }
+//            }
+//            
+//            self.responseListAny { (response: DataResponse<[Any]>) in
+//                switch response.result {
+//                case .success(let objects):
+//                    resolver.fulfill(objects)
+//                case .failure(let error):
+//                    resolver.reject(error)
+//                }
+//            }
+//            
+//            return { [weak self] in
+//                self?.cancel()
+//            }
+//            
+//        })
+//    }
     
 }

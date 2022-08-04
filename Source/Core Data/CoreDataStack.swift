@@ -30,7 +30,9 @@ public class CoreDataStack {
     static public let shared = CoreDataStack()
     public var errorHandler: (Error) -> Void = {_ in }
     
-    lazy public var managedObjectModel: NSManagedObjectModel = {
+    public static let modelName = "Dropmark"
+    
+    lazy public var model: NSManagedObjectModel = {
 
         var rawBundle: Bundle? {
 
@@ -64,7 +66,7 @@ public class CoreDataStack {
     }()
 
     lazy public var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Dropmark", managedObjectModel: managedObjectModel)
+        let container = NSPersistentContainer(name: CoreDataStack.modelName, managedObjectModel: model)
         container.loadPersistentStores { [weak self] storeDescription, error in
             guard let error = error as? NSError else { return }
             print("Core Data error \(error), \(error.userInfo)")
@@ -106,3 +108,24 @@ public class CoreDataStack {
     }
     
 }
+
+// https://www.raywenderlich.com/books/core-data-by-tutorials/v8.0/chapters/7-unit-testing
+
+//class TestCoreDataStack: CoreDataStack {
+//
+//    override init() {
+//        super.init()
+//
+//        let container = NSPersistentContainer(name: CoreDataStack.modelName, managedObjectModel: model)
+//        container.persistentStoreDescriptions[0].url = URL(fileURLWithPath: "/dev/null")
+//
+//        container.loadPersistentStores { _, error in
+//            if let error = error as NSError? {
+//            fatalError(
+//            "Unresolved error \(error), \(error.userInfo)")
+//            }
+//        }
+//
+//        self.storeContainer = container
+//    }
+//}

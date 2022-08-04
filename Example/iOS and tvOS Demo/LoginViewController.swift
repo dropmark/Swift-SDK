@@ -49,11 +49,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // If a user already exist in our keychain, skip login
-        if let user = DKKeychain.user {
-            
-            // Authenticate requests for the current app session
-            DKSession.user = user
+        if let apiKey = DKKeychain.userAPIKey, apiKey.isEmpty == false {
             
             let collectionListViewController = UIStoryboard.collectionListViewController
             navigationController?.pushViewController(collectionListViewController, animated: false)
@@ -81,10 +77,9 @@ class LoginViewController: UIViewController {
             
             DKPromise.authenticate(parameters: ["email": email, "password": password])
             
+        }.map { (user: DKUser, token: String) in
+            try DKKeychain.setUserAPIKeyWith(userID: user.id, userToken: token)
         }.done {
-            
-            DKKeychain.user = $0 // Securely store the user for future app sessions
-            DKSession.user = $0 // Retain the user for the current app session
             
             self.passwordTextField.text = nil
             self.emailTextField.text = nil

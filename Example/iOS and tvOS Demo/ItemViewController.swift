@@ -58,7 +58,7 @@ class ItemViewController: UIViewController {
                 self.imageView.image = image
             }
             
-        } else if item.type == .text, let text = item.content as? String { // Show text view for text items
+        } else if item.type == .text, let text = item.content { // Show text view for text items
             
             textView.text = text
             textView.isHidden = false
@@ -67,7 +67,7 @@ class ItemViewController: UIViewController {
         
 #if os(iOS)
         
-        dropmarkLinkButton.setTitle(item.url.absoluteString, for: .normal)
+        dropmarkLinkButton.setTitle(item.url?.absoluteString, for: .normal)
         sourceLinkButton.setTitle(item.link?.absoluteString, for: .normal)
         
 #elseif os(tvOS)
@@ -82,7 +82,9 @@ class ItemViewController: UIViewController {
 #if os(iOS)
     
     @IBAction func didPressDropmarkLinkButton(_ sender: Any) {
-        UIApplication.shared.open(item.url)
+        if let url = item.url {
+            UIApplication.shared.open(url)
+        }
     }
     
     @IBAction func didPressSourceLinkButton(_ sender: Any) {

@@ -129,8 +129,14 @@ public struct DKPromise {
             params.add(key: "items_per_page", value: 4)
             params.add(key: "items_not_type", value: "stack")
         }
-        let request = DKRouter.listCollections(queryParameters: params).urlRequest!
-        return genericPromise(request: request)
+        do {
+            let request = try DKRouter.listCollections(queryParameters: params).asURLRequest()
+            return genericPromise(request: request)
+        } catch {
+            print("Error: \(error) \(error.localizedDescription)")
+            fatalError("Unable to use list collections")
+        }
+        
     }
     
     public static func createCollection(queryParameters: Parameters? = nil, bodyParameters: Parameters, includeDefaultQueryParameters: Bool = true) -> CancellablePromise<DKCollection> {
@@ -331,15 +337,15 @@ public struct DKPromise {
     
     // MARK: Search
     
-    public static func search(parameters: Parameters, includeDefaultParameters: Bool = true) -> CancellablePromise<[Any]> {
-        var params = parameters
-        if includeDefaultParameters {
-            params.add(key: "per_page", value: DKRouter.pageSize)
-            params.add(key: "include", value: ["items"])
-            params.add(key: "items_per_page", value: 4)
-        }
-        return request(DKRouter.search(queryParameters: params)).validate().promiseListAny()
-    }
+//    public static func search(parameters: Parameters, includeDefaultParameters: Bool = true) -> CancellablePromise<[Any]> {
+//        var params = parameters
+//        if includeDefaultParameters {
+//            params.add(key: "per_page", value: DKRouter.pageSize)
+//            params.add(key: "include", value: ["items"])
+//            params.add(key: "items_per_page", value: 4)
+//        }
+//        return request(DKRouter.search(queryParameters: params)).validate().promiseListAny()
+//    }
     
     // MARK: Tags
     

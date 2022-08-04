@@ -64,8 +64,8 @@ class CollectionListViewController: UITableViewController {
     @objc func didPressLogoutButton() {
         
         // Rudimentary logout function. Be sure to clean up all identifying information from memory and disk if necessary.
-        DKKeychain.user = nil
-        DKSession.user = nil
+        DKKeychain.userAPIKey = nil
+        DKUserDefaults.currentUserID = nil
         
         navigationController?.popToRootViewController(animated: true)
         
