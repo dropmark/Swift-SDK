@@ -68,20 +68,12 @@ public struct DKPromise {
                         guard
                             let dictionary = json as? [String: Any],
                             dictionary.keys.contains("token"),
-                            let userID = dictionary["id"] as? NSNumber,
                             let userToken = dictionary["token"] as? String
                         else {
                             throw DKError.missingUserToken
                         }
                         
-                        let plainString = "\(userID):\(userToken)" as NSString
-                        let plainData = plainString.data(using: String.Encoding.utf8.rawValue)
-                        
-                        guard let base64String = plainData?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0)) else {
-                            throw DKError.missingUserToken
-                        }
-                        
-                        resolver.fulfill((user, base64String))
+                        resolver.fulfill((user, userToken))
                         
                     } catch {
                         
@@ -512,7 +504,13 @@ public struct DKPromise {
                         let objects = try decoder.decode(T.self, from: data)
                         resolver.fulfill(objects)
                     } catch {
-                        resolver.reject(error)
+                        if
+                            let httpResponse = response as? HTTPURLResponse,
+                            let error = DKServerError(response: httpResponse, data: data) {
+                            resolver.reject(error)
+                        } else {
+                            resolver.reject(error)
+                        }
                     }
                     
                 } else if let error = error {

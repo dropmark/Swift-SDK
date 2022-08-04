@@ -81,7 +81,11 @@ extension DKItem: Codable {
         self.latitude               = try container.decodeIfPresent(Double.self, forKey: .latitude) as? NSNumber
         self.link                   = try container.decodeIfPresent(URL.self, forKey: .link)
         self.longitude              = try container.decodeIfPresent(Double.self, forKey: .longitude) as? NSNumber
-        self.metadata               = try container.decodeIfPresent([String: Any].self, forKey: .metadata) as? NSDictionary
+        
+        if let usageDictionary = try? container.decodeIfPresent(Dictionary<String, Any>.self, forKey: .metadata) {
+            self.metadata = usageDictionary as NSDictionary
+        }
+        
         self.mime                   = try container.decodeIfPresent(String.self, forKey: .mime)
         self.name                   = try container.decodeIfPresent(String.self, forKey: .name)
         self.parentID               = try container.decodeIfPresent(Int.self, forKey: .parentID) as? NSNumber

@@ -55,20 +55,31 @@ class CollectionListViewController: UITableViewController {
         paging.next = { DKPromise.listCollections(parameters: ["page": $0]) }
         
         getNextPageOfCollections().catch { [weak self] error in
-            let alert = UIAlertController(error: error)
-            self?.present(alert, animated: true)
+            
+            if
+                let serverError = error as? DKServerError,
+                serverError.statusCode == 403
+            {
+                self?.logout()
+            } else {
+                let alert = UIAlertController(error: error)
+                self?.present(alert, animated: true)
+            }
+            
         }
         
     }
     
     @objc func didPressLogoutButton() {
-        
+        logout()
+    }
+    
+    func logout() {
         // Rudimentary logout function. Be sure to clean up all identifying information from memory and disk if necessary.
         DKKeychain.userAPIKey = nil
         DKUserDefaults.currentUserID = nil
         
         navigationController?.popToRootViewController(animated: true)
-        
     }
     
     @discardableResult func getNextPageOfCollections() -> Promise<Void> {
