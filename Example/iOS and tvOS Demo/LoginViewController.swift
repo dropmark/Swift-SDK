@@ -28,6 +28,10 @@ import DropmarkSDK
 
 class LoginViewController: UIViewController {
     
+    enum LoginError: Error {
+        case noCredentialsFound
+    }
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
@@ -49,13 +53,41 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let apiKey = DKKeychain.userAPIKey, apiKey.isEmpty == false {
+        isLoading = true
+        
+        authenticateExistingCredentials().done { [weak self] user in
+            
+            DKUserDefaults.currentUserID = user.id
             
             let collectionListViewController = UIStoryboard.collectionListViewController
-            navigationController?.pushViewController(collectionListViewController, animated: false)
+            self?.navigationController?.pushViewController(collectionListViewController, animated: false)
+            
+        }.ensure { [weak self] in
+            
+            self?.isLoading = false
+            
+        }.catch { error in
+            
+            if
+                let serverError = error as? DKServerError,
+                (400..<500).contains(serverError.statusCode)
+            {
+                let title = "Credentials invalid"
+                let message = "Please re-enter your email and password for your Dropmark account."
+                let alert = UIAlertController(title: title, message: message)
+                self.present(alert, animated: true)
+            }
             
         }
         
+    }
+    
+    func authenticateExistingCredentials() -> Promise<DKUser> {
+        guard
+            let apiKey = DKKeychain.userAPIKey,
+            apiKey.isEmpty == false
+        else { return Promise(error: LoginError.noCredentialsFound) }
+        return DKPromise.getUser().asPromise()
     }
     
     @IBAction func didPressLoginButton(_ sender: Any) {
@@ -77,9 +109,16 @@ class LoginViewController: UIViewController {
             
             DKPromise.authenticate(parameters: ["email": email, "password": password])
             
-        }.map { (user: DKUser, token: String) in
+        }.compactMap { (user: DKUser, token: String) in
             try DKKeychain.setUserAPIKeyWith(userID: user.id, userToken: token)
-        }.done {
+            return user
+        }.done { (user: DKUser) in
+            
+            DKUserDefaults.currentUserID = user.id
+            
+            if let userID = DKUserDefaults.currentUserID {
+                print("Got user id: \(userID)")
+            }
             
             self.passwordTextField.text = nil
             self.emailTextField.text = nil
