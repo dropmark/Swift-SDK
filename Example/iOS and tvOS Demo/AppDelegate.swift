@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         DKUserDefaults.suiteName = "group.com.dropmark.ios"
+//        DKKeychain.shouldPrintDebug = true
         DKKeychain.service = "Dropmark SDK Demo"
         
         NSDictionaryAttributeTransformer.register()
