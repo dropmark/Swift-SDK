@@ -58,7 +58,7 @@ class LoginViewController: UIViewController {
         authenticateExistingCredentials().done { [weak self] user in
             
             DKUserDefaults.currentUserID = user.id
-            
+
             let collectionListViewController = UIStoryboard.collectionListViewController
             self?.navigationController?.pushViewController(collectionListViewController, animated: false)
             
@@ -82,6 +82,7 @@ class LoginViewController: UIViewController {
         
     }
     
+    // Check for an existing API Key in the Keychain, then refresh the user object to test the key
     func authenticateExistingCredentials() -> Promise<DKUser> {
         guard
             let apiKey = DKKeychain.userAPIKey,

@@ -32,6 +32,7 @@ extension DKUser: Codable {
         case storageUsed    = "used"
         case username
         case viewModeRaw    = "view_mode"
+        case teams
     }
     
     public convenience init(from decoder: Decoder) throws {
@@ -85,6 +86,7 @@ extension DKUser: Codable {
         
         self.username       = try container.decodeIfPresent(String.self, forKey: .username)
         self.viewModeRaw    = try container.decodeIfPresent(String.self, forKey: .viewModeRaw)
+        self.teams          = try container.decodeIfPresent(Set<DKTeam>.self, forKey: .teams)
         
     }
     
