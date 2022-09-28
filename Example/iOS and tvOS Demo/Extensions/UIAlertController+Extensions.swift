@@ -34,6 +34,9 @@ extension UIAlertController {
     
     convenience init(error: Error) {
         
+        print(error)
+        print(error.localizedDescription)
+        
         if let serverError = error as? DKServerError {
             
             let title = "Server Error (\(serverError.statusCode))"

@@ -28,27 +28,25 @@ import PromiseKit
 /// Use this class to load consecutive "pages" of content from a listable API endpoint. Includes utilities to check for new content while scrolling in a UICollectionView, UITableView, NSCollectionView, or NSTableView.
 public class DKPagingGenerator<T> {
     
-    /**
-     Required - Set this closure to process a single page of results, and return your request packaged in a CancellablePromiseKit promise. A single page is requested and returned in the promise format. By calling `getNext()`, this closure will be used.
-     */
-    public var next: ((_ page: Int) -> CancellablePromise<[T]>)!
+    /// The first page to start paginating from. Defaults to 1.
+    private var startPage: Int = 1
     
     /// The current page
     public var page: Int
     
     /// The number of items in a single page request. This integer is used to calculate when a list endpoint reaches the end.
-    public var pageSize: Int = DKRouter.pageSize
+    public var pageSize: Int
     
-    /// The first page to start paginating from. Defaults to 1.
-    private var startPage: Int = 1
-    
-    /// Test if pagination loaded all objects from the list.
-    public var didReachEnd: Bool = false
+    /// Required - Set this closure to process a single page of results, and return your request packaged in a CancellablePromiseKit promise. A single page is requested and returned in the promise format. By calling `getNext()`, this closure will be used.
+    public var next: ((_ page: Int, _ pageSize: Int) -> CancellablePromise<[T]>)!
     
     /// Test if pagination is in the process of retrieving a page.
     public var isFetchingPage: Bool {
         return currentChain?.isPending ?? false
     }
+    
+    /// Test if pagination loaded all objects from the list.
+    public var didReachEnd: Bool = false
     
     internal var currentChain: CancellablePromise<[T]>?
     
@@ -60,9 +58,10 @@ public class DKPagingGenerator<T> {
          - startPage: An integer specifying which page to begin paginating from
  
      */
-    public init(startPage: Int) {
+    public init(startPage: Int, pageSize: Int = DKRouter.pageSize) {
         self.startPage = startPage
         self.page = startPage
+        self.pageSize = pageSize
     }
     
     deinit {
@@ -78,7 +77,7 @@ public class DKPagingGenerator<T> {
             return Promise.value(emptyArray).asCancellable()
         }
         
-        let chain: CancellablePromise<[T]> = next(page).then { [weak self] objects in
+        let chain: CancellablePromise<[T]> = next(page, pageSize).then { [weak self] objects in
             self?.page += 1
             if let pageSize = self?.pageSize, objects.count < pageSize {
                 self?.didReachEnd = true

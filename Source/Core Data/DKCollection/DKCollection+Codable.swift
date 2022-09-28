@@ -44,6 +44,7 @@ extension DKCollection: Codable {
         case sortByRaw          = "sort_by"
         case sortOrderRaw       = "sort_order"
         case thumbnail
+        case thumbnails
         case updatedAt          = "updated_at"
         case url
         case usersTotalCount    = "users_total_count"
@@ -76,6 +77,7 @@ extension DKCollection: Codable {
         self.sortByRaw          = try container.decodeIfPresent(String.self, forKey: .sortByRaw)
         self.sortOrderRaw       = try container.decodeIfPresent(String.self, forKey: .sortOrderRaw)
         self.thumbnail          = try container.decodeIfPresent(URL.self, forKey: .thumbnail)
+        self.thumbnails         = try container.decodeIfPresent(DKThumbnails.self, forKey: .thumbnails)
         self.updatedAt          = try container.decodeIfPresent(Date.self, forKey: .updatedAt)
         self.url                = try container.decodeIfPresent(URL.self, forKey: .url)
         self.usersTotalCount    = try container.decodeIfPresent(Int32.self, forKey: .usersTotalCount) as? NSNumber
@@ -103,6 +105,7 @@ extension DKCollection: Codable {
         try container.encode(sortByRaw, forKey: .sortByRaw)
         try container.encode(sortOrderRaw, forKey: .sortOrderRaw)
         try container.encode(thumbnail, forKey: .thumbnail)
+        try container.encode(thumbnails, forKey: .thumbnails)
         try container.encode(updatedAt, forKey: .updatedAt)
         try container.encode(url, forKey: .url)
         try container.encode(usersTotalCount?.int32Value, forKey: .usersTotalCount)

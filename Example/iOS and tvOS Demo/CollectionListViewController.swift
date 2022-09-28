@@ -31,7 +31,7 @@ class CollectionListViewController: UITableViewController {
     
     let collectionCellIdentifier = "com.dropmark.cell.collection"
     
-    let paging = DKPagingGenerator<DKCollection>(startPage: 1)
+    let paging = DKPagingGenerator<DKCollection>(startPage: 1, pageSize: 32)
     
     var collections = [DKCollection]() {
         didSet {
@@ -52,7 +52,16 @@ class CollectionListViewController: UITableViewController {
         
 #endif
         
-        paging.next = { DKPromise.listCollections(parameters: ["page": $0]) }
+        paging.next = { page, pageSize in
+            let parameters: Parameters = [
+                "page": page,
+                "per_page": pageSize,
+                "include": ["users", "items"],
+                "items_per_page": 4,
+                "items_not_type": "stack"
+            ]
+            return DKPromise.listCollections(parameters: parameters)
+        }
         
         getNextPageOfCollections().catch { [weak self] error in
             
@@ -82,15 +91,16 @@ class CollectionListViewController: UITableViewController {
         navigationController?.popToRootViewController(animated: true)
     }
     
-    @discardableResult func getNextPageOfCollections() -> Promise<Void> {
-        return paging.getNext().done { [unowned self] in
+    @discardableResult func getNextPageOfCollections() -> CancellablePromise<Void> {
+        return paging.getNext().done { [weak self] in
+            guard let self = self else { return }
             self.collections.insert(contentsOf: $0, at: self.collections.endIndex)
-        }
+        }.asCancellable()
     }
     
     // MARK: Refresh
     
-    @discardableResult func refresh() -> Promise<Void> {
+    @discardableResult func refresh() -> CancellablePromise<Void> {
         paging.reset()
         collections.removeAll()
         return getNextPageOfCollections()
@@ -140,14 +150,20 @@ extension CollectionListViewController {
         // Image
         cell.imageView?.image = #imageLiteral(resourceName: "Thumbnail Placeholder")
         if let thumbnailURL = collection.thumbnails?.cropped {
-            Alamofire.request(thumbnailURL).responseData { [weak cell] response in
+            
+            let task = URLSession.shared.dataTask(with: thumbnailURL) { data, response, error in
                 guard
-                    let data = response.data,
-                    let image = UIImage(data: data),
-                    response.response?.url == thumbnailURL
-                    else { return }
-                cell?.imageView?.image = image
+                    let data = data,
+                    response?.url == thumbnailURL,
+                    error == nil
+                else { return }
+                DispatchQueue.main.async { /// execute on main thread
+                    cell.imageView?.image = UIImage(data: data)
+                }
             }
+            
+            task.resume()
+            
         }
         
         return cell

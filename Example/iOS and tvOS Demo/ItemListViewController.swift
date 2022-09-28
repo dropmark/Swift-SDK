@@ -38,7 +38,7 @@ class ItemListViewController: UITableViewController {
     /// Parent stack of the item list
     weak var stack: DKItem?
     
-    var paging = DKPagingGenerator<DKItem>(startPage: 1)
+    var paging = DKPagingGenerator<DKItem>(startPage: 1, pageSize: 48)
     
     var items = [DKItem]() {
         didSet {
@@ -62,10 +62,14 @@ class ItemListViewController: UITableViewController {
         
 #endif
         
-        paging.next = { [unowned self] page in
+        paging.next = { [weak self] page, pageSize in
+            guard let self = self else { return Promise(error: DKError.userCancelled).asCancellable() }
             let parameters: Parameters = [
                 "page": page,
-                "parent_id": self.stack?.id ?? ""
+                "per_page": pageSize,
+                "parent_id": self.stack?.id ?? "",
+                "include": ["items"],
+                "items_per_page": 4
             ]
             return DKPromise.listItemsInCollection(id: self.collection.id, parameters: parameters)
         }
@@ -76,9 +80,7 @@ class ItemListViewController: UITableViewController {
         }
         
     }
-    
-    var cancellable: AnyCancellable?
-    
+        
     @discardableResult func getNextPageOfItems() -> Promise<Void> {
         return paging.getNext().done { [weak self] in
             guard let self = self else { return }

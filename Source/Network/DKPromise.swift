@@ -242,13 +242,7 @@ public struct DKPromise {
         return genericPromise(request: request)
     }
     
-    public static func listItemsInCollection(id: NSNumber, parameters: Parameters, includeDefaultParameters: Bool = true) -> CancellablePromise<[DKItem]> {
-        var params = parameters
-        if includeDefaultParameters {
-            params.add(key: "per_page", value: DKRouter.pageSize)
-            params.add(key: "include", value: ["items"])
-            params.add(key: "items_per_page", value: 4)
-        }
+    public static func listItemsInCollection(id: NSNumber, parameters: Parameters) -> CancellablePromise<[DKItem]> {
         let request = DKRouter.listItemsInCollection(id: id, queryParameters: parameters).urlRequest!
         return genericPromise(request: request)
     }
@@ -496,6 +490,10 @@ public struct DKPromise {
                 
                 if let data = data {
                     
+//                    if let string = String(data: data, encoding: .utf8) {
+//                        print(string)
+//                    }
+                    
                     let decoder = JSONDecoder()
                     decoder.userInfo[CodingUserInfoKey.managedObjectContext] = CoreDataStack.shared.viewContext
                     decoder.dateDecodingStrategy = .formatted(Formatter.dropmark)
@@ -506,7 +504,8 @@ public struct DKPromise {
                     } catch {
                         if
                             let httpResponse = response as? HTTPURLResponse,
-                            let error = DKServerError(response: httpResponse, data: data) {
+                            let error = DKServerError(response: httpResponse, data: data)
+                        {
                             resolver.reject(error)
                         } else {
                             resolver.reject(error)

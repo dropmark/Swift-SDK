@@ -16,7 +16,7 @@ extension DKReaction {
         return NSFetchRequest<DKReaction>(entityName: "DKReaction")
     }
 
-    @NSManaged public var collectionID: NSNumber // Altered from generated subclass
+    @NSManaged public var collectionID: NSNumber?
     @NSManaged public var collectionName: String?
     @NSManaged public var createdAt: Date?
     @NSManaged public var id: NSNumber // Altered from generated subclass

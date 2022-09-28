@@ -48,9 +48,10 @@ public struct DKServerError: Error {
     
     public init?(response: HTTPURLResponse?, data: Data?) {
         
-        guard let statusCode = response?.statusCode else {
-            return nil
-        }
+        guard
+            let statusCode = response?.statusCode,
+            (200..<300).contains(statusCode) == false
+        else { return nil }
         
         self.statusCode = statusCode
         
