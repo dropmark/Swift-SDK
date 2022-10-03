@@ -113,22 +113,9 @@ public struct DKPromise {
     
     // MARK: Collections
     
-    public static func listCollections(parameters: Parameters? = nil, includeDefaultParameters: Bool = true) -> CancellablePromise<[DKCollection]> {
-        var params = parameters ?? Parameters()
-        if includeDefaultParameters {
-            params.add(key: "per_page", value: DKRouter.pageSize)
-            params.add(key: "include", value: ["users", "items"])
-            params.add(key: "items_per_page", value: 4)
-            params.add(key: "items_not_type", value: "stack")
-        }
-        do {
-            let request = try DKRouter.listCollections(queryParameters: params).asURLRequest()
-            return genericPromise(request: request)
-        } catch {
-            print("Error: \(error) \(error.localizedDescription)")
-            fatalError("Unable to use list collections")
-        }
-        
+    public static func listCollections(parameters: Parameters? = nil) -> CancellablePromise<[DKCollection]> {
+        let request = DKRouter.listCollections(queryParameters: parameters).urlRequest!
+        return genericPromise(request: request)
     }
     
     public static func createCollection(queryParameters: Parameters? = nil, bodyParameters: Parameters, includeDefaultQueryParameters: Bool = true) -> CancellablePromise<DKCollection> {

@@ -37,6 +37,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DKKeychain.service = "Dropmark SDK Demo"
         
         NSDictionaryAttributeTransformer.register()
+        
+        print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!")
+
                   
         return true
     }

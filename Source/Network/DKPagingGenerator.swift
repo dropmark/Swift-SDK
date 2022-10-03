@@ -24,9 +24,10 @@
 
 import Foundation
 import PromiseKit
+import CoreData
 
 /// Use this class to load consecutive "pages" of content from a listable API endpoint. Includes utilities to check for new content while scrolling in a UICollectionView, UITableView, NSCollectionView, or NSTableView.
-public class DKPagingGenerator<T> {
+public class DKPagingGenerator<T: NSManagedObject> {
     
     /// The first page to start paginating from. Defaults to 1.
     private var startPage: Int = 1
