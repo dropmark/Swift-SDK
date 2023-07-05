@@ -25,22 +25,26 @@
 import Foundation
 
 /// Custom date formatter corresponds with the Dropmark API formatted date strings
-public class DKDateFormatter: DateFormatter {
+public class DKDateFormatter: NSObject {
     
-    public override init() {
-        super.init()
-        initialize()
-    }
+    let firstFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(identifier: "UTC")
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        return formatter
+    }()
     
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        initialize()
-    }
+    let secondFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(identifier: "UTC")
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        return formatter
+    }()
     
-    private func initialize() {
-        self.locale = Locale(identifier: "en_US_POSIX")
-        self.timeZone = TimeZone(identifier: "UTC")
-        self.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+    func date(from string: String) -> Date? {
+        return firstFormatter.date(from: string) ?? secondFormatter.date(from: string)
     }
     
 }
