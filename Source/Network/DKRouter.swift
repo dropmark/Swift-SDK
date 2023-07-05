@@ -25,6 +25,18 @@
 import Foundation
 import Alamofire
 
+//public typealias Parameters = [String: Any]
+
+/// Types adopting the `URLRequestConvertible` protocol can be used to construct URL requests.
+//public protocol URLRequestConvertible {
+//    /// Returns a URL request or throws if an `Error` was encountered.
+//    ///
+//    /// - throws: An `Error` if the underlying `URLRequest` is `nil`.
+//    ///
+//    /// - returns: A URL request.
+//    func asURLRequest() throws -> URLRequest
+//}
+
 /// Route network traffic across all supported API endpoints for Dropmark
 public enum DKRouter: URLRequestConvertible {
     
