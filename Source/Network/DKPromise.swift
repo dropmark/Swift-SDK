@@ -316,6 +316,10 @@ public struct DKPromise {
         return request(DKRouter.updateUser(queryParameters: queryParams, bodyParameters: bodyParameters)).validate().promiseObject()
     }
     
+    public static func deleteUser() -> CancellablePromise<Void> {
+        return request(DKRouter.deleteUser).validate().promise()
+    }
+    
     public static func listContacts(parameters: Parameters? = nil, includeDefaultParameters: Bool = true) -> CancellablePromise<[DKUser]> {
         var params = parameters ?? Parameters()
         if includeDefaultParameters {

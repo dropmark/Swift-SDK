@@ -197,6 +197,9 @@ public enum DKRouter: URLRequestConvertible {
     /// Update information for the current user. Returns a `DKUser` object.
     case updateUser(queryParameters: Parameters?, bodyParameters: Parameters)
     
+    /// Delete the current User. NOTE: All collections and teams must be deleted prior to running this action.
+    case deleteUser
+    
     /// Get a list of users associated with the current user
     case listContacts(parameters: Parameters?)
     
@@ -333,6 +336,8 @@ public enum DKRouter: URLRequestConvertible {
             return .get
         case .updateUser:
             return .put
+        case .deleteUser:
+            return .delete
             
         case .listContacts:
             return .get
@@ -468,6 +473,8 @@ public enum DKRouter: URLRequestConvertible {
         case .getUser:
             return "/users/me"
         case .updateUser:
+            return "/users/me"
+        case .deleteUser:
             return "/users/me"
             
         case .listContacts:
@@ -640,6 +647,8 @@ public enum DKRouter: URLRequestConvertible {
         case .updateUser(let queryParameters, let bodyParameters):
             urlRequest = try URLEncoding.queryString.encode(urlRequest, with: queryParameters)
             urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
+        case .deleteUser:
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
             
         case .listContacts(let parameters):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
