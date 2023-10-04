@@ -55,6 +55,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         public static let createdAt = "created_at"
         public static let avatar = "avatar"
         public static let teams = "teams"
+        public static let metadata = "metadata"
         public static let token = "token"
     }
     
@@ -145,6 +146,9 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     
     /// A list of all teams of which the user is a member.
     public var teams: [DKTeam]?
+    
+    /// Contains a range of other data associated with the user
+    public var metadata: [String: AnyObject]?
     
     /// Used to authenticate requests on behalf of the user. **Note**: A token value only returns from the `/auth` API endpoint
     @objc public var token: String?
@@ -299,6 +303,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         createdAt = aDecoder.decodeObject(forKey: Key.createdAt) as? Date
         avatar = aDecoder.decodeObject(forKey: Key.avatar) as? URL
         teams = aDecoder.decodeObject(forKey: Key.teams) as? [DKTeam]
+        metadata = aDecoder.decodeObject(forKey: Key.metadata) as? [String: AnyObject]
         token = aDecoder.decodeObject(forKey: Key.token) as? String
         
     }
@@ -333,6 +338,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         aCoder.encode(createdAt, forKey: Key.createdAt)
         aCoder.encode(avatar, forKey: Key.avatar)
         aCoder.encode(teams, forKey: Key.teams)
+        aCoder.encode(metadata, forKey: Key.metadata)
         aCoder.encode(token, forKey: Key.token)
         
     }
