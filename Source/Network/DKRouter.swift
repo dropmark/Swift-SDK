@@ -189,7 +189,7 @@ public enum DKRouter: URLRequestConvertible {
     // MARK: Users
     
     /// Create a user (aka register a new account). Returns a `DKUser` object.
-    case createUser(bodyParameters: Parameters)
+    case createUser(queryParameters: Parameters?, bodyParameters: Parameters)
     
     /// Get the user object for the current user. NOTE: The user object returned by this endpoint will not contain a 'token' for authentication. Returns a `DKUser` object.
     case getUser(queryParameters: Parameters?)
@@ -640,7 +640,8 @@ public enum DKRouter: URLRequestConvertible {
             urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
             
         // Users
-        case .createUser(let bodyParameters):
+        case .createUser(let queryParameters, let bodyParameters):
+            urlRequest = try URLEncoding.queryString.encode(urlRequest, with: queryParameters)
             urlRequest = try URLEncoding.default.encode(urlRequest, with: bodyParameters)
         case .getUser(let queryParameters):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: queryParameters)

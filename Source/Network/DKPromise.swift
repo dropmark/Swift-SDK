@@ -296,8 +296,12 @@ public struct DKPromise {
     
     // MARK: Users
     
-    public static func createUser(parameters: Parameters) -> CancellablePromise<DKUser> {
-        return request(DKRouter.createUser(bodyParameters: parameters)).validate().promiseObject()
+    public static func createUser(queryParameters: Parameters? = nil, bodyParameters: Parameters, includeDefaultQueryParameters: Bool = true) -> CancellablePromise<DKUser> {
+        var queryParams = queryParameters ?? Parameters()
+        if includeDefaultQueryParameters {
+            queryParams.add(key: "include", value: ["metadata", "billing", "teams", "stripe_id"])
+        }
+        return request(DKRouter.createUser(queryParameters: queryParams, bodyParameters: bodyParameters)).validate().promiseObject()
     }
     
     public static func getUser(parameters: Parameters? = nil, includeDefaultParameters: Bool = true) -> CancellablePromise<DKUser> {
@@ -311,7 +315,7 @@ public struct DKPromise {
     public static func updateUser(queryParameters: Parameters? = nil, bodyParameters: Parameters, includeDefaultQueryParameters: Bool = true) -> CancellablePromise<DKUser> {
         var queryParams = queryParameters ?? Parameters()
         if includeDefaultQueryParameters {
-            queryParams.add(key: "include", value: ["teams"])
+            queryParams.add(key: "include", value: ["metadata", "billing", "teams", "stripe_id"])
         }
         return request(DKRouter.updateUser(queryParameters: queryParams, bodyParameters: bodyParameters)).validate().promiseObject()
     }
