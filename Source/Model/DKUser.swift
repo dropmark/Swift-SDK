@@ -54,6 +54,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         public static let status = "status"
         public static let createdAt = "created_at"
         public static let avatar = "avatar"
+        public static let stripeID = "stripe_id"
         public static let teams = "teams"
         public static let metadata = "metadata"
         public static let token = "token"
@@ -144,6 +145,9 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     /// The URL of the user's avatar image
     public var avatar: URL?
     
+    /// If the user starts a  subscription on the web, this field will contain their unique ID for Stripe
+    public var stripeID: String?
+    
     /// A list of all teams of which the user is a member.
     public var teams: [DKTeam]?
     
@@ -231,9 +235,13 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         }
         
         if let avatarString = representation[Key.avatar] as? String {
-            avatar =  URL(string: avatarString)
+            avatar = URL(string: avatarString)
         } else if let avatarString = representation["user_avatar"] as? String {
-            avatar =  URL(string: avatarString)
+            avatar = URL(string: avatarString)
+        }
+        
+        if let stripeID = representation[Key.stripeID] as? String {
+            self.stripeID = stripeID
         }
         
         if let teamRepresentations = representation[Key.teams] as? [Any] {
@@ -302,6 +310,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         
         createdAt = aDecoder.decodeObject(forKey: Key.createdAt) as? Date
         avatar = aDecoder.decodeObject(forKey: Key.avatar) as? URL
+        stripeID = aDecoder.decodeObject(forKey: Key.stripeID) as? String
         teams = aDecoder.decodeObject(forKey: Key.teams) as? [DKTeam]
         metadata = aDecoder.decodeObject(forKey: Key.metadata) as? [String: AnyObject]
         token = aDecoder.decodeObject(forKey: Key.token) as? String
@@ -337,6 +346,7 @@ public final class DKUser: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         aCoder.encode(status.rawValue, forKey: Key.status)
         aCoder.encode(createdAt, forKey: Key.createdAt)
         aCoder.encode(avatar, forKey: Key.avatar)
+        aCoder.encode(stripeID, forKey: Key.stripeID)
         aCoder.encode(teams, forKey: Key.teams)
         aCoder.encode(metadata, forKey: Key.metadata)
         aCoder.encode(token, forKey: Key.token)

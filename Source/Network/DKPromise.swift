@@ -303,7 +303,7 @@ public struct DKPromise {
     public static func getUser(parameters: Parameters? = nil, includeDefaultParameters: Bool = true) -> CancellablePromise<DKUser> {
         var params = parameters ?? Parameters()
         if includeDefaultParameters {
-            params.add(key: "include", value: ["metadata", "billing", "teams"])
+            params.add(key: "include", value: ["metadata", "billing", "teams", "stripe_id"])
         }
         return request(DKRouter.getUser(queryParameters: params)).validate().promiseObject()
     }
