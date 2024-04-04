@@ -110,6 +110,9 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
     /// Contains a range of other data associated with the item's content. For example, an image item may contain the image's EXIF data as a key-value set
     public var metadata : [String: AnyObject]?
     
+    /// Representation of which actions the current user can and cannot perform.
+    public var permissions : DKPermissions?
+    
     /// If the item is a stack, this contains a list of child items. Usually this is used to temporarily store up to 4 child items for a quadrant thumbnail, not as a store of all children items.
     public var items: [DKItem]?
     
@@ -215,6 +218,10 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         
         if let thumbnailsRepresentation = representation["thumbnails"]  {
             thumbnails = DKThumbnails(response: response, representation: thumbnailsRepresentation)
+        }
+        
+        if let permissionsRepresentation = representation["permissions"]  {
+            permissions = DKPermissions(response: response, representation: permissionsRepresentation)
         }
         
         if let metadataDict = representation["metadata"] as? [String: AnyObject] {
@@ -325,6 +332,7 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         self.shortURL = shortURL
         isURL = aDecoder.decodeObject(forKey: "is_url") as? Bool
         thumbnails = aDecoder.decodeObject(forKey: "thumbnails") as? DKThumbnails
+        permissions = aDecoder.decodeObject(forKey: "permissions") as? DKPermissions
         metadata = aDecoder.decodeObject(forKey: "metadata") as? [String: AnyObject]
         items = aDecoder.decodeObject(forKey: "items") as? [DKItem]
         
@@ -374,6 +382,7 @@ public final class DKItem: NSObject, NSCoding, DKResponseObjectSerializable, DKR
         aCoder.encode(isURL, forKey: "is_url")
         aCoder.encode(tags, forKey: "tags")
         aCoder.encode(metadata, forKey: "metadata")
+        aCoder.encode(permissions, forKey: "permissions")
         aCoder.encode(items, forKey: "items")
         aCoder.encode(itemsTotalCount, forKey: "items_total_count")
         aCoder.encode(user, forKey: "user")

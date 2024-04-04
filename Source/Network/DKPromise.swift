@@ -312,12 +312,12 @@ public struct DKPromise {
         return request(DKRouter.getUser(queryParameters: params)).validate().promiseObject()
     }
     
-    public static func updateUser(queryParameters: Parameters? = nil, bodyParameters: Parameters, includeDefaultQueryParameters: Bool = true) -> CancellablePromise<DKUser> {
-        var queryParams = queryParameters ?? Parameters()
-        if includeDefaultQueryParameters {
-            queryParams.add(key: "include", value: ["metadata", "billing", "teams", "stripe_id"])
+    public static func updateUser(queryParameters: Parameters? = nil, bodyParameters: Parameters, includeDefaultBodyParameters: Bool = true) -> CancellablePromise<DKUser> {
+        var bodyParams = bodyParameters
+        if includeDefaultBodyParameters {
+            bodyParams.add(key: "include", value: ["metadata", "billing", "teams", "stripe_id"])
         }
-        return request(DKRouter.updateUser(queryParameters: queryParams, bodyParameters: bodyParameters)).validate().promiseObject()
+        return request(DKRouter.updateUser(queryParameters: queryParameters, bodyParameters: bodyParams)).validate().promiseObject()
     }
     
     public static func deleteUser() -> CancellablePromise<Void> {
